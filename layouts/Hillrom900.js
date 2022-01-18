@@ -1,13 +1,15 @@
-const axios = require('axios');
+const dbHillrom900 = require('../controllers/hillrom900')
 
 async function getHillrom900()
 {
-    const res = await axios.get("http://localhost:8091/api/pdf-hillroom/progressa")
-    const prices = res.data[0]
-    const patientSiderail = res.data[1]
-    const mobility  = res.data[2]
-    const permanentPole = res.data[3]
-    const transportShelf = res.data[4]
+    const res = await dbHillrom900.getDataHillrom900()
+    const prices = res[0]
+    const optionsData = res[1]
+    const controlsData  = res[2]
+    const brakeData = res[3]
+    const castorsData = res[4]
+    const steeringWheelData = res[5]
+    const plugData = res[6]
 
     var options =[]
     var pSItems = 0;
@@ -19,270 +21,414 @@ async function getHillrom900()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    options[pSItems] = [
-        {text: "SHS", style: 'textotabla', alignment: 'center'},
-        {text: "Stationary Head Section", style: 'textotabla'},
-        {text: "$345", style: 'textotabla', alignment: 'center'}, 
-    ]
+    var i=0;
+    var optionsFlag = false
+    while(optionsFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*1
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< optionsData.length && countC<1)
+        {
+           precios[preciosCount] = optionsData[j].Price
+           printCaracter[preciosCount] = optionsData[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: optionsData[j-1].Id_Item,
+            Item_Long_Desc: optionsData[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    pSItems++
+        var precio1;
 
-    options[pSItems] = [
-        {text: "EC", style: 'textotabla', alignment: 'center'},
-        {text: "EasyChair / flat positioning and low height indicator", style: 'textotabla'},
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
+        
+        options[pSItems] = [
+            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+        ]
 
-    pSItems++
+        pSItems++
 
-    options[pSItems] = [
-        {text: "HV", style: 'textotabla', alignment: 'center'},
-        {text: "Bilateral High-Low foot control", style: 'textotabla'},
-        {text: "$401", style: 'textotabla', alignment: 'center'}, 
-    ]
+        //console.log(data)
 
-    pSItems++
-
-    options[pSItems] = [
-        {text: "EXT-LNH", style: 'textotabla', alignment: 'center'},
-        {text: "Bed extension with linen holder", style: 'textotabla'},
-        {text: "$232", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "250K", style: 'textotabla', alignment: 'center'},
-        {text: "250 kg SWL (not compatible with Shock Position)", style: 'textotabla'},
-        {text: "$277", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "BOA", style: 'textotabla', alignment: 'center'},
-        {text: "Brake-off Indicator", style: 'textotabla'},
-        {text: "$145", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "NL", style: 'textotabla', alignment: 'center'},
-        {text: "Intelligent Night Light", style: 'textotabla'},
-        {text: "$155", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "SHO + NL", style: 'textotabla', alignment: 'center'},
-        {text: "Shock Position and Night Light with bilateral caregiver control panel (not compatible)", style: 'textotabla'},
-        {text: "$330", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "SHO + NL + BOA", style: 'textotabla', alignment: 'center'},
-        {text: "Shock Position, Night Light and Brake-off indicator with bilateral caregiver control panel (not compatible with 250K)", style: 'textotabla'},
-        {text: "$478", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "FP", style: 'textotabla', alignment: 'center'},
-        {text: "Caregiver foot end pendant (not compatible with BC nor BEA)", style: 'textotabla'},
-        {text: "$324", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "BEA + WCO + NL", style: 'textotabla', alignment: 'center'},
-        {text: "3 Mode Bed Exit Alarm + 37 pin Wired connection + Intelligent night light (requires SHS)", style: 'textotabla'},
-        {text: "$2,340", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "NC", style: 'textotabla', alignment: 'center'},
-        {text: "Nurse call (only with BEA)", style: 'textotabla'},
-        {text: "$339", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "ABF", style: 'textotabla', alignment: 'center'},
-        {text: "Accessory bar support at foot (only with BEA)", style: 'textotabla'},
-        {text: "$90", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+        if(j >= optionsData.length)
+        {
+            optionsFlag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
     
     var controls = []
     pSItems = 0
 
      /*ESTO VA EN UN CICLO*/
-    controls[pSItems] = [
-        {text: "C0", style: 'textotabla', alignment: 'center'},
-        {text: "One caregiver/patient hand pendant (not compatible with BEA)", style: 'textotabla'},
-        {text: "$211", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    controls[pSItems] = [
-        {text: "C0", style: 'textotabla', alignment: 'center'},
-        {text: "One caregiver/patient hand pendant (only with BEA)", style: 'textotabla'},
-        {text: "$211", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    controls[pSItems] = [
-        {text: "B0", style: 'textotabla', alignment: 'center'},
-        {text: "Control on flexible arm (Not compatible with BEA)", style: 'textotabla'},
-        {text: "$466", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    controls[pSItems] = [
-        {text: "BC", style: 'textotabla', alignment: 'center'},
-        {text: "Control on flexible arm and caregiver/patient pendant control (not compatible with B)", style: 'textotabla'},
-        {text: "$677", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+     i=0;
+     var controlsFlag = false
+     while(controlsFlag === false)
+     {
+         var j;
+         if(i===0)
+         {
+             j=0
+         }
+         else {
+             j = i*1
+         }
+         var precios = []
+         var preciosCount = 0
+         var countC=0
+         var printCaracter = []
+         while(j< controlsData.length && countC<1)
+         {
+            precios[preciosCount] = controlsData[j].Price
+            printCaracter[preciosCount] = controlsData[j].Print_Character
+            preciosCount++
+            j++
+            countC++
+         }
+         var data = {
+             Id_Item: controlsData[j-1].Id_Item,
+             Item_Long_Desc: controlsData[j-1].Item_Long_Desc,
+             Prices: precios,
+             Print_Character: printCaracter
+         }
+ 
+         var precio1;
+ 
+         if(data.Print_Character[0] !== null)
+         {
+             if(data.Print_Character[0] === "*")
+             {
+                 precio1 = "●"
+             }
+             else {
+                 precio1 = "-"
+             }
+         }
+         else {
+             precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+         }
+         
+         controls[pSItems] = [
+             {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+             {text: data.Item_Long_Desc, style: 'textotabla'},
+             {text: precio1, style: 'textotabla', alignment: 'center'}, 
+         ]
+ 
+         pSItems++
+ 
+         //console.log(data)
+ 
+         if(j >= controlsData.length)
+         {
+            controlsFlag = true
+         }
+         i++
+     }   
      /*TERMINA CICLO*/
 
     var brake = []
     pSItems = 0
 
     /*ESTO VA EN UN CICLO*/
-    brake[pSItems] = [
-        {text: "BRK", style: 'textotabla', alignment: 'center'},
-        {text: "Brake and steer at head and foot end (only with SHS)", style: 'textotabla'},
-        {text: "$151", style: 'textotabla', alignment: 'center'}, 
-    ]
+    i=0;
+    var brakeFlag = false
+    while(brakeFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*1
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< brakeData.length && countC<1)
+        {
+           precios[preciosCount] = brakeData[j].Price
+           printCaracter[preciosCount] = brakeData[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: brakeData[j-1].Id_Item,
+            Item_Long_Desc: brakeData[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    pSItems++
+        var precio1;
+
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
+        
+        brake[pSItems] = [
+            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+        ]
+
+        pSItems++
+
+        //console.log(data)
+
+        if(j >= brakeData.length)
+        {
+            brakeFlag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
 
     var castors = []
     pSItems = 0
 
      /*ESTO VA EN UN CICLO*/
-     castors[pSItems] = [
-        {text: "R4", style: 'textotabla', alignment: 'center'},
-        {text: "150 mm antistatic double band castors", style: 'textotabla'},
-        {text: "$291", style: 'textotabla', alignment: 'center'}, 
-    ]
+    i=0;
+    var castorsFlag = false
+    while(castorsFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*1
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< castorsData.length && countC<1)
+        {
+           precios[preciosCount] = castorsData[j].Price
+           printCaracter[preciosCount] = castorsData[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: castorsData[j-1].Id_Item,
+            Item_Long_Desc: castorsData[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    pSItems++
+        var precio1;
 
-    castors[pSItems] = [
-        {text: "R6", style: 'textotabla', alignment: 'center'},
-        {text: "25 mm antistatic double band castors (only with BEA)", style: 'textotabla'},
-        {text: "$324", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
+        
+        castors[pSItems] = [
+            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+        ]
 
-    pSItems++
+        pSItems++
+
+        //console.log(data)
+
+        if(j >= castorsData.length)
+        {
+            castorsFlag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
 
     var steering = []
     pSItems = 0
 
      /*ESTO VA EN UN CICLO*/
-     steering[pSItems] = [
-        {text: "RDP", style: 'textotabla', alignment: 'center'},
-        {text: "Steering wheel at footend", style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    steering[pSItems] = [
-        {text: "5RO", style: 'textotabla', alignment: 'center'},
-        {text: "5th castor", style: 'textotabla'},
-        {text: "$522", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+     i=0;
+     var steeringFlag = false
+     while(steeringFlag === false)
+     {
+         var j;
+         if(i===0)
+         {
+             j=0
+         }
+         else {
+             j = i*1
+         }
+         var precios = []
+         var preciosCount = 0
+         var countC=0
+         var printCaracter = []
+         while(j< steeringWheelData.length && countC<1)
+         {
+            precios[preciosCount] = steeringWheelData[j].Price
+            printCaracter[preciosCount] = steeringWheelData[j].Print_Character
+            preciosCount++
+            j++
+            countC++
+         }
+         var data = {
+             Id_Item: steeringWheelData[j-1].Id_Item,
+             Item_Long_Desc: steeringWheelData[j-1].Item_Long_Desc,
+             Prices: precios,
+             Print_Character: printCaracter
+         }
+ 
+         var precio1;
+ 
+         if(data.Print_Character[0] !== null)
+         {
+             if(data.Print_Character[0] === "*")
+             {
+                 precio1 = "●"
+             }
+             else {
+                 precio1 = "-"
+             }
+         }
+         else {
+             precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+         }
+         
+         steering[pSItems] = [
+             {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+             {text: data.Item_Long_Desc, style: 'textotabla'},
+             {text: precio1, style: 'textotabla', alignment: 'center'}, 
+         ]
+ 
+         pSItems++
+ 
+         //console.log(data)
+ 
+         if(j >= steeringWheelData.length)
+         {
+            steeringFlag = true
+         }
+         i++
+     }   
     /*TERMINA CICLO*/
 
     var plug = []
     pSItems = 0
 
      /*ESTO VA EN UN CICLO*/
-    plug[pSItems] = [
-        {text: "EU", style: 'textotabla', alignment: 'center'},
-        {text: "EU Plug", style: 'textotabla'},
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    plug[pSItems] = [
-        {text: "UK", style: 'textotabla', alignment: 'center'},
-        {text: "UK Plug", style: 'textotabla'},
-        {text: "$18", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    plug[pSItems] = [
-        {text: "IT", style: 'textotabla', alignment: 'center'},
-        {text: "Italian Plug", style: 'textotabla'},
-        {text: "$60", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    plug[pSItems] = [
-        {text: "US", style: 'textotabla', alignment: 'center'},
-        {text: "USA Plug", style: 'textotabla'},
-        {text: "$23", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    plug[pSItems] = [
-        {text: "AU", style: 'textotabla', alignment: 'center'},
-        {text: "Australian Plug", style: 'textotabla'},
-        {text: "$60", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    plug[pSItems] = [
-        {text: "BZ", style: 'textotabla', alignment: 'center'},
-        {text: "Brazilian Plug", style: 'textotabla'},
-        {text: "$124", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    plug[pSItems] = [
-        {text: "230V", style: 'textotabla', alignment: 'center'},
-        {text: "230V", style: 'textotabla'},
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    plug[pSItems] = [
-        {text: "120V", style: 'textotabla', alignment: 'center'},
-        {text: "120V", style: 'textotabla'},
-        {text: "$114", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+     i=0;
+     var plugFlag = false
+     while(plugFlag === false)
+     {
+         var j;
+         if(i===0)
+         {
+             j=0
+         }
+         else {
+             j = i*1
+         }
+         var precios = []
+         var preciosCount = 0
+         var countC=0
+         var printCaracter = []
+         while(j< plugData.length && countC<1)
+         {
+            precios[preciosCount] = plugData[j].Price
+            printCaracter[preciosCount] = plugData[j].Print_Character
+            preciosCount++
+            j++
+            countC++
+         }
+         var data = {
+             Id_Item: plugData[j-1].Id_Item,
+             Item_Long_Desc: plugData[j-1].Item_Long_Desc,
+             Prices: precios,
+             Print_Character: printCaracter
+         }
+ 
+         var precio1;
+ 
+         if(data.Print_Character[0] !== null)
+         {
+             if(data.Print_Character[0] === "*")
+             {
+                 precio1 = "●"
+             }
+             else {
+                 precio1 = "-"
+             }
+         }
+         else {
+             precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+         }
+         
+         plug[pSItems] = [
+             {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+             {text: data.Item_Long_Desc, style: 'textotabla'},
+             {text: precio1, style: 'textotabla', alignment: 'center'}, 
+         ]
+ 
+         pSItems++
+ 
+         //console.log(data)
+ 
+         if(j >= plugData.length)
+         {
+            plugFlag = true
+         }
+         i++
+     }   
     /*TERMINA CICLO*/
 
     var hillrom900 = [
@@ -361,7 +507,7 @@ async function getHillrom900()
                             ],
                             [
                                 {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                {text: "$5,687", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
                             ],
                         ]
                     },

@@ -27,7 +27,10 @@ var therapySurfaces = require("./layouts/TherapySurfaces.js")
 var accumax = require("./layouts/Accumax.js")
 var poweredSurfaces = require("./layouts/PoweredSurfaces.js")
 var stretchers = require("./layouts/Stretchers.js")
-var catoniCollection = require("./layouts/Catoni.js")
+var catoniClassic = require("./layouts/CatoniClassic.js")
+var catoniStyle = require("./layouts/CatoniStyle.js")
+var catoniBedSide = require("./layouts/CatoniBedside.js")
+var coloursCatoni = require("./layouts/ColoursCatoni.js")
 var overbedTables = require("./layouts/OverbedTables.js")
 var transportChairs = require("./layouts/TransportChairs.js")
 var hillromColoursCollection = require("./layouts/HillromColoursCollection.js")
@@ -35,15 +38,9 @@ var coatedFabricColours = require("./layouts/CoatedFabricColours.js")
 var seatingFurniture = require("./layouts/SeatingFurniture.js")
 var sleeperSofa = require("./layouts/SleeperSofa.js")
 var sleeperChair = require("./layouts/SleeperChair.js")
-var healthCareFurniture = require("./layouts/HealthCareFurniture.js")
 var overbedTables2 = require("./layouts/OverbedTables2.js")
 var bedsideCabinets = require("./layouts/BedsideCabinets.js")
-var artOfCareCollection = require("./layouts/ArtOfCareCollection.js")
-var recliners = require("./layouts/Recliners.js")
-var artOfCareRecliners = require("./layouts/ArtOfCareRecliners.js")
-var dayBedSleeper = require("./layouts/DayBedSleeper.js")
-var clubSleeper = require("./layouts/ClubSleeper.js")
-var patientRoomSeating = require("./layouts/PatientRoomSeating.js")
+var transferBoard = require("./layouts/TransferBoard.js")
 
 async function createDocument()
 {
@@ -63,7 +60,10 @@ async function createDocument()
     var accumaxLayout = await accumax.getAccumax()
     var poweredSurfacesLayout = await poweredSurfaces.getPoweredSurfaces()
     var stretchersLayout = await stretchers.getStretchers()
-    var catoniCollectionLayout = await catoniCollection.getCatoni()
+    var catoniClassicLayout = await catoniClassic.getCatoni()
+    var catoniStyleLayout = await catoniStyle.getCatoniStyle()
+    var catoniBedSideLayout = await catoniBedSide.getCatoniBedSide()
+    var coloursCatoniLayout = await coloursCatoni.getColoursCatoni()
     var overbedTablesLayout = await overbedTables.getOverbedTables()
     var transportChairsLayout = await transportChairs.getTransportChairs()
     var hillromColoursCollectionLayout = await hillromColoursCollection.getHillromColoursCollection()
@@ -71,15 +71,9 @@ async function createDocument()
     var seatingFurnitureLayout = await seatingFurniture.getSeatingFurniture()
     var sleeperSofaLayout = await sleeperSofa.getSleeperSofa()
     var sleeperChairLayout = await sleeperChair.getSleeperChair()
-    var healthCareFurnitureLayout = await healthCareFurniture.getHealthcareFurniture()
     var overbedTables2Layout = await overbedTables2.getOverbedTables()
     var bedsideCabinetsLayout = await bedsideCabinets.getBedsideCabinets()
-    var artOfCareCollectionLayout = await artOfCareCollection.getArtOfCareCollection()
-    var reclinersLayout = await recliners.getRecliners()
-    var artOfCareReclinersLayout = await artOfCareRecliners.getArtOfCareRecliners()
-    var dayBedSleeperLayout = await dayBedSleeper.getDayBedSleeper()
-    var clubSleeperLayout = await clubSleeper.getClubSleeper()
-    var patientRoomSeatingLayout = await patientRoomSeating.getPatientRoomSeating()
+    var transferBoardLayout = await transferBoard.getTransferBoard()
 
     const fecha = new Date();
     fecha.toLocaleDateString()
@@ -217,7 +211,10 @@ async function createDocument()
             accumaxLayout,
             poweredSurfacesLayout,
             stretchersLayout,
-            catoniCollectionLayout,
+            catoniClassicLayout,
+            catoniStyleLayout,
+            catoniBedSideLayout,
+            coloursCatoniLayout,
             overbedTablesLayout,
             transportChairsLayout,
             hillromColoursCollectionLayout,
@@ -225,15 +222,9 @@ async function createDocument()
             seatingFurnitureLayout,
             sleeperSofaLayout,
             sleeperChairLayout,
-            healthCareFurnitureLayout,
             overbedTables2Layout,
             bedsideCabinetsLayout,
-            artOfCareCollectionLayout,
-            reclinersLayout,
-            artOfCareReclinersLayout,
-            dayBedSleeperLayout,
-            clubSleeperLayout,
-            patientRoomSeatingLayout
+            transferBoardLayout
         ],
         pageBreakBefore: function(currentNode, followingNodesOnPage, nodesOnNextPage, previousNodesOnPage) {
             return currentNode.headlineLevel === 1 && followingNodesOnPage.length === 0;

@@ -1,13 +1,10 @@
-const axios = require('axios');
+const dbReconditionated = require('../controllers/reconditionatedversacare')
 
 async function getReconditionatedVersaCare()
 {
-    const res = await axios.get("http://localhost:8091/api/pdf-hillroom/progressa")
-    const prices = res.data[0]
-    const patientSiderail = res.data[1]
-    const mobility  = res.data[2]
-    const permanentPole = res.data[3]
-    const transportShelf = res.data[4]
+    const res = await dbReconditionated.getDataReconditionated()
+    const prices = res[0]
+    const optionsData = res[1]
 
     var options =[]
     var pSItems = 0;
@@ -24,174 +21,149 @@ async function getReconditionatedVersaCare()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    options[pSItems] = [
-        {text: "RVC-NUL", style: 'textotabla', alignment: 'center'},
-        {text: "Siderail NurseCall, Universal TV and Lighting Controls (includes P3207A01 Docking Pendant) - Enables smart bed connectivity", style: 'textotabla'},
-        {text: "$652", style: 'textotabla', alignment: 'center'}, 
-        {text: "$652", style: 'textotabla', alignment: 'center'}, 
-        {text: "$652", style: 'textotabla', alignment: 'center'}, 
-        {text: "$652", style: 'textotabla', alignment: 'center'}, 
-        {text: "$652", style: 'textotabla', alignment: 'center'}, 
-        {text: "$652", style: 'textotabla', alignment: 'center'}, 
-    ]
+    var i=0;
+    var optionsFlag = false
+    while(optionsFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*6
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< optionsData.length && countC<6)
+        {
+           precios[preciosCount] = optionsData[j].Price
+           printCaracter[preciosCount] = optionsData[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: optionsData[j-1].Id_Item,
+            Item_Long_Desc: optionsData[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
+        var precio5;
+        var precio6;
 
-    options[pSItems] = [
-        {text: "RVC-SNC", style: 'textotabla', alignment: 'center'},
-        {text: "Siderail NurseCall (Does not include Docking Pendant) - Enables smart bed connectivity", style: 'textotabla'},
-        {text: "$427", style: 'textotabla', alignment: 'center'}, 
-        {text: "$427", style: 'textotabla', alignment: 'center'}, 
-        {text: "$427", style: 'textotabla', alignment: 'center'}, 
-        {text: "$427", style: 'textotabla', alignment: 'center'}, 
-        {text: "$427", style: 'textotabla', alignment: 'center'}, 
-        {text: "$427", style: 'textotabla', alignment: 'center'},
-    ]
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
 
-    pSItems++
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
 
-    options[pSItems] = [
-        {text: "RVC-SNC", style: 'textotabla', alignment: 'center'},
-        {text: "Bed Controls Only, Exit alarm to nurse station, no n/c buttons in rails-enables smart bed connectivity", style: 'textotabla'},
-        {text: "$186", style: 'textotabla', alignment: 'center'}, 
-        {text: "$186", style: 'textotabla', alignment: 'center'}, 
-        {text: "$186", style: 'textotabla', alignment: 'center'}, 
-        {text: "$186", style: 'textotabla', alignment: 'center'}, 
-        {text: "$186", style: 'textotabla', alignment: 'center'}, 
-        {text: "$186", style: 'textotabla', alignment: 'center'},
-    ]
+        if(data.Print_Character[2] !== null)
+        {
+            if(data.Print_Character[2] === "*")
+            {
+                precio3 = "●"
+            }
+            else {
+                precio3 = "-"
+            }
+        }
+        else {
+            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+        }
 
-    pSItems++
+        if(data.Print_Character[3] !== null)
+        {
+            if(data.Print_Character[3] === "*")
+            {
+                precio4 = "●"
+            }
+            else {
+                precio4 = "-"
+            }
+        }
+        else {
+            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
+        }
 
-    options[pSItems] = [
-        {text: "RVC-BOTH", style: 'textotabla', alignment: 'center'},
-        {text: "Footend Fraction Frame Adaptor (factory installed) and Patient Helper Adaptor", style: 'textotabla'},
-        {text: "$178", style: 'textotabla', alignment: 'center'}, 
-        {text: "$178", style: 'textotabla', alignment: 'center'}, 
-        {text: "$178", style: 'textotabla', alignment: 'center'}, 
-        {text: "$178", style: 'textotabla', alignment: 'center'}, 
-        {text: "$178", style: 'textotabla', alignment: 'center'}, 
-        {text: "$178", style: 'textotabla', alignment: 'center'},
-    ]
+        if(data.Print_Character[4] !== null)
+        {
+            if(data.Print_Character[4] === "*")
+            {
+                precio5 = "●"
+            }
+            else {
+                precio5 = "-"
+            }
+        }
+        else {
+            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
+        }
 
-    pSItems++
+        if(data.Print_Character[5] !== null)
+        {
+            if(data.Print_Character[5] === "*")
+            {
+                precio6 = "●"
+            }
+            else {
+                precio6 = "-"
+            }
+        }
+        else {
+            precio6 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[5])
+        }
+        
+        options[pSItems] = [
+            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: precio4, style: 'textotabla', alignment: 'center'}, 
+            {text: precio5, style: 'textotabla', alignment: 'center'}, 
+            {text: precio6, style: 'textotabla', alignment: 'center'}, 
+        ]
 
-    options[pSItems] = [
-        {text: "RVC-AR", style: 'textotabla', alignment: 'center'},
-        {text: "Accesory Outlet", style: 'textotabla'},
-        {text: "$368", style: 'textotabla', alignment: 'center'}, 
-        {text: "$368", style: 'textotabla', alignment: 'center'}, 
-        {text: "$368", style: 'textotabla', alignment: 'center'}, 
-        {text: "$368", style: 'textotabla', alignment: 'center'}, 
-        {text: "$368", style: 'textotabla', alignment: 'center'}, 
-        {text: "$368", style: 'textotabla', alignment: 'center'},
-    ]
+        pSItems++
 
-    pSItems++
+        //console.log(data)
 
-    options[pSItems] = [
-        {text: "RVC-OSI", style: 'textotabla', alignment: 'center'},
-        {text: "P3212A Patient Helper Sleeve", style: 'textotabla'},
-        {text: "$308", style: 'textotabla', alignment: 'center'}, 
-        {text: "$308", style: 'textotabla', alignment: 'center'}, 
-        {text: "$308", style: 'textotabla', alignment: 'center'}, 
-        {text: "$308", style: 'textotabla', alignment: 'center'}, 
-        {text: "$308", style: 'textotabla', alignment: 'center'}, 
-        {text: "$308", style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "RVC-EVACAIR", style: 'textotabla', alignment: 'center'},
-        {text: "Versacare Evacuation Device", style: 'textotabla'},
-        {text: "$105", style: 'textotabla', alignment: 'center'}, 
-        {text: "$105", style: 'textotabla', alignment: 'center'}, 
-        {text: "$105", style: 'textotabla', alignment: 'center'}, 
-        {text: "$105", style: 'textotabla', alignment: 'center'}, 
-        {text: "$105", style: 'textotabla', alignment: 'center'}, 
-        {text: "$105", style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "RVC-ID", style: 'textotabla', alignment: 'center'},
-        {text: "IntelliDrive Powered Transport Mechanism", style: 'textotabla'},
-        {text: "$4,367", style: 'textotabla', alignment: 'center'}, 
-        {text: "$4,367", style: 'textotabla', alignment: 'center'}, 
-        {text: "$4,367", style: 'textotabla', alignment: 'center'}, 
-        {text: "$4,367", style: 'textotabla', alignment: 'center'}, 
-        {text: "$4,367", style: 'textotabla', alignment: 'center'}, 
-        {text: "$4,367", style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "RVC-BES", style: 'textotabla', alignment: 'center'},
-        {text: "Bed Exit Silence", style: 'textotabla'},
-        {text: "$569", style: 'textotabla', alignment: 'center'}, 
-        {text: "$569", style: 'textotabla', alignment: 'center'}, 
-        {text: "$569", style: 'textotabla', alignment: 'center'}, 
-        {text: "$569", style: 'textotabla', alignment: 'center'}, 
-        {text: "$569", style: 'textotabla', alignment: 'center'}, 
-        {text: "$569", style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "RVC-LM", style: 'textotabla', alignment: 'center'},
-        {text: "Line Manager", style: 'textotabla'},
-        {text: "$149", style: 'textotabla', alignment: 'center'}, 
-        {text: "$149", style: 'textotabla', alignment: 'center'}, 
-        {text: "$149", style: 'textotabla', alignment: 'center'}, 
-        {text: "$149", style: 'textotabla', alignment: 'center'}, 
-        {text: "$149", style: 'textotabla', alignment: 'center'}, 
-        {text: "$149", style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "RVC-BO", style: 'textotabla', alignment: 'center'},
-        {text: "Boost Function", style: 'textotabla'},
-        {text: "$652", style: 'textotabla', alignment: 'center'}, 
-        {text: "$652", style: 'textotabla', alignment: 'center'}, 
-        {text: "$652", style: 'textotabla', alignment: 'center'}, 
-        {text: "$652", style: 'textotabla', alignment: 'center'}, 
-        {text: "$652", style: 'textotabla', alignment: 'center'}, 
-        {text: "$652", style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "RVC-I", style: 'textotabla', alignment: 'center'},
-        {text: "IV Push Handles", style: 'textotabla'},
-        {text: "$942", style: 'textotabla', alignment: 'center'}, 
-        {text: "$942", style: 'textotabla', alignment: 'center'}, 
-        {text: "$942", style: 'textotabla', alignment: 'center'}, 
-        {text: "$942", style: 'textotabla', alignment: 'center'}, 
-        {text: "$942", style: 'textotabla', alignment: 'center'}, 
-        {text: "$942", style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "RVC-DA", style: 'textotabla', alignment: 'center'},
-        {text: "Digital Head of Bed Angle Display and Alarm", style: 'textotabla'},
-        {text: "$1,663", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,663", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,663", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,663", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,663", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,663", style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+        if(j >= optionsData.length)
+        {
+            optionsFlag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
 
     var reconditionatedVersaCare = [
@@ -336,12 +308,12 @@ async function getReconditionatedVersaCare()
                     ],
                     [
                         {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                        {text: "$17,889", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                        {text: "$18,568", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: "$15,314", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: "$15,993", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                        {text: "$10,444", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: "$11,122", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[4].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[5].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
                     ],
                 ]
             },
@@ -363,7 +335,7 @@ async function getReconditionatedVersaCare()
         "\n",
         {
             table: {
-                widths: [40, "*", 30, 30, 30, 30, 30, 30],
+                widths: [60, "*", 30, 30, 30, 30, 30, 30],
                 body: options
             },
             layout: {

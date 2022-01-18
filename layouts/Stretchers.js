@@ -1,13 +1,25 @@
-const axios = require('axios');
+const dbStretchers = require('../controllers/stretchers')
 
 async function getStretchers()
 {
-    const res = await axios.get("http://localhost:8091/api/pdf-hillroom/progressa")
-    const prices = res.data[0]
-    const patientSiderail = res.data[1]
-    const mobility  = res.data[2]
-    const permanentPole = res.data[3]
-    const transportShelf = res.data[4]
+    const res = await dbStretchers.getDataStretchers()
+    const prices = res[0]
+    const deckWidth = res[1]
+    const surfaceData  = res[2]
+    const pushHandlesData = res[3]
+    const ivPoleType = res[4]
+    const ivPoleTransport = res[5]
+    const steering = res[6]
+    const brakePedals = res[7]
+    const surface2Data = res[8]
+    const hidraulicControl = res[9]
+    const siderails = res[10]
+    const bumperColour = res[11]
+    const additionalOptions = res[12]
+    const surfacesData = res[13]
+    const accesoriesData = res[14]
+    const accesoriesData2 = res[15]
+    const accesoriesData3 = res[16]
 
     var options =[]
     var pSItems = 0;
@@ -35,29 +47,134 @@ async function getStretchers()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    options[pSItems] = [
-        {text: "26", style: 'textotabla', alignment: 'center'},
-        {text: '26" (66 cm)', style: 'textotabla'},
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
 
-    pSItems++
+    var i=0;
+    var deckWidthFlag = false
+    while(deckWidthFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*5
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< deckWidth.length && countC<5)
+        {
+           precios[preciosCount] = deckWidth[j].Price
+           printCaracter[preciosCount] = deckWidth[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: deckWidth[j-1].Id_Item,
+            Item_Long_Desc: deckWidth[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    options[pSItems] = [
-        {text: "30", style: 'textotabla', alignment: 'center'},
-        {text: '30" (76,2 cm)', style: 'textotabla'},
-        {text: "$476", style: 'textotabla', alignment: 'center'}, 
-        {text: "$476", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-    ]
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
+        var precio5;
 
-    pSItems++
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
+
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
+
+        if(data.Print_Character[2] !== null)
+        {
+            if(data.Print_Character[2] === "*")
+            {
+                precio3 = "●"
+            }
+            else {
+                precio3 = "-"
+            }
+        }
+        else {
+            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+        }
+
+        if(data.Print_Character[3] !== null)
+        {
+            if(data.Print_Character[3] === "*")
+            {
+                precio4 = "●"
+            }
+            else {
+                precio4 = "-"
+            }
+        }
+        else {
+            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
+        }
+
+        if(data.Print_Character[4] !== null)
+        {
+            if(data.Print_Character[4] === "*")
+            {
+                precio5 = "●"
+            }
+            else {
+                precio5 = "-"
+            }
+        }
+        else {
+            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
+        }
+        
+        options[pSItems] = [
+            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: precio4, style: 'textotabla', alignment: 'center'}, 
+            {text: precio5, style: 'textotabla', alignment: 'center'}, 
+        ]
+
+        pSItems++
+
+        //console.log(data)
+
+        if(j >= deckWidth.length)
+        {
+            deckWidthFlag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
     
     options[pSItems] = [
@@ -73,125 +190,133 @@ async function getStretchers()
     pSItems ++
 
     /*ESTO VA EN UN CICLO*/
-    options[pSItems] = [
-        {text: "3S", style: 'textotabla', alignment: 'center'},
-        {text: '3" (7,6 cm) thick - 26" (66 cm) width - surface with fire barrier', style: 'textotabla'},
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+    i=0;
+    var surfaceFlag = false
+    while(surfaceFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*5
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< surfaceData.length && countC<5)
+        {
+           precios[preciosCount] = surfaceData[j].Price
+           printCaracter[preciosCount] = surfaceData[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: surfaceData[j-1].Id_Item,
+            Item_Long_Desc: surfaceData[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
+        var precio5;
 
-    options[pSItems] = [
-        {text: "3W", style: 'textotabla', alignment: 'center'},
-        {text: '3" (7,6 cm) thick - 30" (76,2 cm) width - surface with fire barrier', style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
 
-    pSItems++
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
 
-    options[pSItems] = [
-        {text: "4S", style: 'textotabla', alignment: 'center'},
-        {text: '4" (10,2 cm ) thick - 26" (66 cm) width - surface with fire barrier', style: 'textotabla'},
-        {text: "$47", style: 'textotabla', alignment: 'center'}, 
-        {text: "$47", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$47", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[2] !== null)
+        {
+            if(data.Print_Character[2] === "*")
+            {
+                precio3 = "●"
+            }
+            else {
+                precio3 = "-"
+            }
+        }
+        else {
+            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+        }
 
-    pSItems++
+        if(data.Print_Character[3] !== null)
+        {
+            if(data.Print_Character[3] === "*")
+            {
+                precio4 = "●"
+            }
+            else {
+                precio4 = "-"
+            }
+        }
+        else {
+            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
+        }
 
-    options[pSItems] = [
-        {text: "4W", style: 'textotabla', alignment: 'center'},
-        {text: '4" (10,2 cm) thick - 30" (76,2 cm) width - surface with fire barrier', style: 'textotabla'},
-        {text: "$47", style: 'textotabla', alignment: 'center'}, 
-        {text: "$47", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[4] !== null)
+        {
+            if(data.Print_Character[4] === "*")
+            {
+                precio5 = "●"
+            }
+            else {
+                precio5 = "-"
+            }
+        }
+        else {
+            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
+        }
+        
+        options[pSItems] = [
+            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: precio4, style: 'textotabla', alignment: 'center'}, 
+            {text: precio5, style: 'textotabla', alignment: 'center'}, 
+        ]
 
-    pSItems++
+        pSItems++
 
-    options[pSItems] = [
-        {text: "5S", style: 'textotabla', alignment: 'center'},
-        {text: '5" (12,7 cm) thick - 26" (66 cm) width - surface with fire barrier', style: 'textotabla'},
-        {text: "$180", style: 'textotabla', alignment: 'center'}, 
-        {text: "$180", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$180", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+        //console.log(data)
 
-    pSItems++
-
-    options[pSItems] = [
-        {text: "5W", style: 'textotabla', alignment: 'center'},
-        {text: '5" (12,7 cm) thick - 30" (76,2 cm) width - surface with fire barrier', style: 'textotabla'},
-        {text: "$180", style: 'textotabla', alignment: 'center'}, 
-        {text: "$180", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "2P", style: 'textotabla', alignment: 'center'},
-        {text: '4" Surgical Surface-2 pc Flat/Concave Head Cushion Set', style: 'textotabla'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "FL", style: 'textotabla', alignment: 'center'},
-        {text: '4" Surgical Surface w/ Flat Head Cushion Set', style: 'textotabla'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "3O", style: 'textotabla', alignment: 'center'},
-        {text: '3" (7,6 cm) thick - OB/GYN surface', style: 'textotabla'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "NONE", style: 'textotabla', alignment: 'center'},
-        {text: 'without surface', style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+        if(j >= surfaceData.length)
+        {
+            surfaceFlag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
 
     options[pSItems] = [
@@ -207,55 +332,133 @@ async function getStretchers()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    
-    options[pSItems] = [
-        {text: "NONE", style: 'textotabla', alignment: 'center'},
-        {text: "no push handles", style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-    ]
+    i=0;
+    var pushHandlesFlag = false
+    while(pushHandlesFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*5
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< pushHandlesData.length && countC<5)
+        {
+           precios[preciosCount] = pushHandlesData[j].Price
+           printCaracter[preciosCount] = pushHandlesData[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: pushHandlesData[j-1].Id_Item,
+            Item_Long_Desc: pushHandlesData[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
+        var precio5;
 
-    options[pSItems] = [
-        {text: "HEAD", style: 'textotabla', alignment: 'center'},
-        {text: "at head end", style: 'textotabla'},
-        {text: "$590", style: 'textotabla', alignment: 'center'}, 
-        {text: "$590", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$590", style: 'textotabla', alignment: 'center'}, 
-        {text: "$590", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
 
-    pSItems++
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
 
-    options[pSItems] = [
-        {text: "FOOT", style: 'textotabla', alignment: 'center'},
-        {text: "at foot end", style: 'textotabla'},
-        {text: "$590", style: 'textotabla', alignment: 'center'}, 
-        {text: "$590", style: 'textotabla', alignment: 'center'}, 
-        {text: "$590", style: 'textotabla', alignment: 'center'}, 
-        {text: "$590", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[2] !== null)
+        {
+            if(data.Print_Character[2] === "*")
+            {
+                precio3 = "●"
+            }
+            else {
+                precio3 = "-"
+            }
+        }
+        else {
+            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+        }
 
-    pSItems++
+        if(data.Print_Character[3] !== null)
+        {
+            if(data.Print_Character[3] === "*")
+            {
+                precio4 = "●"
+            }
+            else {
+                precio4 = "-"
+            }
+        }
+        else {
+            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
+        }
 
-    options[pSItems] = [
-        {text: "HDFT", style: 'textotabla', alignment: 'center'},
-        {text: "at head and foot end", style: 'textotabla'},
-        {text: "$1,180", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,180", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,180", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[4] !== null)
+        {
+            if(data.Print_Character[4] === "*")
+            {
+                precio5 = "●"
+            }
+            else {
+                precio5 = "-"
+            }
+        }
+        else {
+            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
+        }
+        
+        options[pSItems] = [
+            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: precio4, style: 'textotabla', alignment: 'center'}, 
+            {text: precio5, style: 'textotabla', alignment: 'center'}, 
+        ]
 
-    pSItems++
+        pSItems++
 
+        //console.log(data)
+
+        if(j >= pushHandlesData.length)
+        {
+            pushHandlesFlag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
 
     options[pSItems] = [
@@ -271,55 +474,133 @@ async function getStretchers()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    
-    options[pSItems] = [
-        {text: "NONE", style: 'textotabla', alignment: 'center'},
-        {text: "No IV pole", style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-    ]
+    i=0;
+    var ivPoleTypeFlag = false
+    while(ivPoleTypeFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*5
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< ivPoleType.length && countC<5)
+        {
+           precios[preciosCount] = ivPoleType[j].Price
+           printCaracter[preciosCount] = ivPoleType[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: ivPoleType[j-1].Id_Item,
+            Item_Long_Desc: ivPoleType[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
+        var precio5;
 
-    options[pSItems] = [
-        {text: "3SONE", style: 'textotabla', alignment: 'center'},
-        {text: "3 stage at head - HEAD", style: 'textotabla'},
-        {text: "$905", style: 'textotabla', alignment: 'center'}, 
-        {text: "$905", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$905", style: 'textotabla', alignment: 'center'}, 
-        {text: "$905", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
 
-    pSItems++
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
 
-    options[pSItems] = [
-        {text: "3SONE", style: 'textotabla', alignment: 'center'},
-        {text: "3 stage at foot - FOOT", style: 'textotabla'},
-        {text: "$905", style: 'textotabla', alignment: 'center'}, 
-        {text: "$905", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$905", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[2] !== null)
+        {
+            if(data.Print_Character[2] === "*")
+            {
+                precio3 = "●"
+            }
+            else {
+                precio3 = "-"
+            }
+        }
+        else {
+            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+        }
 
-    pSItems++
+        if(data.Print_Character[3] !== null)
+        {
+            if(data.Print_Character[3] === "*")
+            {
+                precio4 = "●"
+            }
+            else {
+                precio4 = "-"
+            }
+        }
+        else {
+            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
+        }
 
-    options[pSItems] = [
-        {text: "3STWO", style: 'textotabla', alignment: 'center'},
-        {text: "3 stage at head and foot - BOTH", style: 'textotabla'},
-        {text: "$1,810", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,810", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,810", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,810", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[4] !== null)
+        {
+            if(data.Print_Character[4] === "*")
+            {
+                precio5 = "●"
+            }
+            else {
+                precio5 = "-"
+            }
+        }
+        else {
+            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
+        }
+        
+        options[pSItems] = [
+            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: precio4, style: 'textotabla', alignment: 'center'}, 
+            {text: precio5, style: 'textotabla', alignment: 'center'}, 
+        ]
 
-    pSItems++
+        pSItems++
 
+        //console.log(data)
+
+        if(j >= ivPoleType.length)
+        {
+            ivPoleTypeFlag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
 
     options[pSItems] = [
@@ -335,115 +616,133 @@ async function getStretchers()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    
-    options[pSItems] = [
-        {text: "BSB", style: 'textotabla', alignment: 'center'},
-        {text: "Both ends - Right and left side", style: 'textotabla'},
-        {text: "$2,285", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$2,285", style: 'textotabla', alignment: 'center'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+    i=0;
+    var ivPoleTransportFlag = false
+    while(ivPoleTransportFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*5
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< ivPoleTransport.length && countC<5)
+        {
+           precios[preciosCount] = ivPoleTransport[j].Price
+           printCaracter[preciosCount] = ivPoleTransport[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: ivPoleTransport[j-1].Id_Item,
+            Item_Long_Desc: ivPoleTransport[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
+        var precio5;
 
-    options[pSItems] = [
-        {text: "BSH", style: 'textotabla', alignment: 'center'},
-        {text: "Head end - Right and left side", style: 'textotabla'},
-        {text: "$1,144", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,144", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,144", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,144", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
 
-    pSItems++
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
 
-    options[pSItems] = [
-        {text: "BSF", style: 'textotabla', alignment: 'center'},
-        {text: "Foot end - Right and left side", style: 'textotabla'},
-        {text: "$1,144", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,144", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,144", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[2] !== null)
+        {
+            if(data.Print_Character[2] === "*")
+            {
+                precio3 = "●"
+            }
+            else {
+                precio3 = "-"
+            }
+        }
+        else {
+            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+        }
 
-    pSItems++
+        if(data.Print_Character[3] !== null)
+        {
+            if(data.Print_Character[3] === "*")
+            {
+                precio4 = "●"
+            }
+            else {
+                precio4 = "-"
+            }
+        }
+        else {
+            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
+        }
 
-    options[pSItems] = [
-        {text: "RSB", style: 'textotabla', alignment: 'center'},
-        {text: "Both ends - Right side", style: 'textotabla'},
-        {text: "$1,144", style: 'textotabla', alignment: 'center'}, 
-        {text: "_", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,144", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[4] !== null)
+        {
+            if(data.Print_Character[4] === "*")
+            {
+                precio5 = "●"
+            }
+            else {
+                precio5 = "-"
+            }
+        }
+        else {
+            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
+        }
+        
+        options[pSItems] = [
+            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: precio4, style: 'textotabla', alignment: 'center'}, 
+            {text: precio5, style: 'textotabla', alignment: 'center'}, 
+        ]
 
-    pSItems++
+        pSItems++
 
-    options[pSItems] = [
-        {text: "LSB", style: 'textotabla', alignment: 'center'},
-        {text: "Both ends - Left side", style: 'textotabla'},
-        {text: "$1,144", style: 'textotabla', alignment: 'center'}, 
-        {text: "_", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,144", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+        //console.log(data)
 
-    pSItems++
-
-    options[pSItems] = [
-        {text: "RSF", style: 'textotabla', alignment: 'center'},
-        {text: "Foot end - Right side", style: 'textotabla'},
-        {text: "$574", style: 'textotabla', alignment: 'center'}, 
-        {text: "_", style: 'textotabla', alignment: 'center'}, 
-        {text: "$574", style: 'textotabla', alignment: 'center'}, 
-        {text: "$574", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "LSF", style: 'textotabla', alignment: 'center'},
-        {text: "Foot end - Left side", style: 'textotabla'},
-        {text: "$574", style: 'textotabla', alignment: 'center'}, 
-        {text: "_", style: 'textotabla', alignment: 'center'}, 
-        {text: "$574", style: 'textotabla', alignment: 'center'}, 
-        {text: "$574", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "RSH", style: 'textotabla', alignment: 'center'},
-        {text: "Head end - Right side", style: 'textotabla'},
-        {text: "$574", style: 'textotabla', alignment: 'center'}, 
-        {text: "$574", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$574", style: 'textotabla', alignment: 'center'}, 
-        {text: "$574", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "LSH", style: 'textotabla', alignment: 'center'},
-        {text: "Head end - Left side", style: 'textotabla'},
-        {text: "$574", style: 'textotabla', alignment: 'center'}, 
-        {text: "$574", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$574", style: 'textotabla', alignment: 'center'}, 
-        {text: "$574", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
+        if(j >= ivPoleTransport.length)
+        {
+            ivPoleTransportFlag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
 
     options[pSItems] = [
@@ -459,30 +758,133 @@ async function getStretchers()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    
-    options[pSItems] = [
-        {text: "LSC", style: 'textotabla', alignment: 'center'},
-        {text: "Locking steering castor as pivot", style: 'textotabla'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "$761", style: 'textotabla', alignment: 'center'}, 
-        {text: "$761", style: 'textotabla', alignment: 'center'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+    i=0;
+    var steeringFlag = false
+    while(steeringFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*5
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< steering.length && countC<5)
+        {
+           precios[preciosCount] = steering[j].Price
+           printCaracter[preciosCount] = steering[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: steering[j-1].Id_Item,
+            Item_Long_Desc: steering[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
+        var precio5;
 
-    options[pSItems] = [
-        {text: "SP", style: 'textotabla', alignment: 'center'},
-        {text: "Steering Plus™ System (5th castor)", style: 'textotabla'},
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "$761", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
 
-    pSItems++
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
+
+        if(data.Print_Character[2] !== null)
+        {
+            if(data.Print_Character[2] === "*")
+            {
+                precio3 = "●"
+            }
+            else {
+                precio3 = "-"
+            }
+        }
+        else {
+            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+        }
+
+        if(data.Print_Character[3] !== null)
+        {
+            if(data.Print_Character[3] === "*")
+            {
+                precio4 = "●"
+            }
+            else {
+                precio4 = "-"
+            }
+        }
+        else {
+            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
+        }
+
+        if(data.Print_Character[4] !== null)
+        {
+            if(data.Print_Character[4] === "*")
+            {
+                precio5 = "●"
+            }
+            else {
+                precio5 = "-"
+            }
+        }
+        else {
+            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
+        }
+        
+        options[pSItems] = [
+            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: precio4, style: 'textotabla', alignment: 'center'}, 
+            {text: precio5, style: 'textotabla', alignment: 'center'}, 
+        ]
+
+        pSItems++
+
+        //console.log(data)
+
+        if(j >= steering.length)
+        {
+            steeringFlag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
 
     options[pSItems] = [
@@ -498,30 +900,133 @@ async function getStretchers()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    
-    options[pSItems] = [
-        {text: "BSHF", style: 'textotabla', alignment: 'center'},
-        {text: "Brake pedals at head & foot", style: 'textotabla'},
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'},
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-    ]
+    i=0;
+    var brakePedalsFlag = false
+    while(brakePedalsFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*5
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< brakePedals.length && countC<5)
+        {
+           precios[preciosCount] = brakePedals[j].Price
+           printCaracter[preciosCount] = brakePedals[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: brakePedals[j-1].Id_Item,
+            Item_Long_Desc: brakePedals[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
+        var precio5;
 
-    options[pSItems] = [
-        {text: "4SBS", style: 'textotabla', alignment: 'center'},
-        {text: "4 brake & steer pedals", style: 'textotabla'},
-        {text: "$714", style: 'textotabla', alignment: 'center'}, 
-        {text: "$714", style: 'textotabla', alignment: 'center'}, 
-        {text: "$714", style: 'textotabla', alignment: 'center'}, 
-        {text: "$714", style: 'textotabla', alignment: 'center'}, 
-        {text: "$714", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
 
-    pSItems++
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
+
+        if(data.Print_Character[2] !== null)
+        {
+            if(data.Print_Character[2] === "*")
+            {
+                precio3 = "●"
+            }
+            else {
+                precio3 = "-"
+            }
+        }
+        else {
+            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+        }
+
+        if(data.Print_Character[3] !== null)
+        {
+            if(data.Print_Character[3] === "*")
+            {
+                precio4 = "●"
+            }
+            else {
+                precio4 = "-"
+            }
+        }
+        else {
+            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
+        }
+
+        if(data.Print_Character[4] !== null)
+        {
+            if(data.Print_Character[4] === "*")
+            {
+                precio5 = "●"
+            }
+            else {
+                precio5 = "-"
+            }
+        }
+        else {
+            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
+        }
+        
+        options[pSItems] = [
+            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: precio4, style: 'textotabla', alignment: 'center'}, 
+            {text: precio5, style: 'textotabla', alignment: 'center'}, 
+        ]
+
+        pSItems++
+
+        //console.log(data)
+
+        if(j >= brakePedals.length)
+        {
+            brakePedalsFlag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
 
     options[pSItems] = [
@@ -537,42 +1042,133 @@ async function getStretchers()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    
-    options[pSItems] = [
-        {text: "N", style: 'textotabla', alignment: 'center'},
-        {text: "Hard pan non-rad sleep surface", style: 'textotabla'},
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+    i=0;
+    var surface2Flag = false
+    while(surface2Flag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*5
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< surface2Data.length && countC<5)
+        {
+           precios[preciosCount] = surface2Data[j].Price
+           printCaracter[preciosCount] = surface2Data[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: surface2Data[j-1].Id_Item,
+            Item_Long_Desc: surface2Data[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
+        var precio5;
 
-    options[pSItems] = [
-        {text: "R", style: 'textotabla', alignment: 'center'},
-        {text: "radiolucent surface - not available with (AC) and/or (FO) and", style: 'textotabla'},
-        {text: "$515", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
 
-    pSItems++
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
 
-    options[pSItems] = [
-        {text: "RH", style: 'textotabla', alignment: 'center'},
-        {text: "radiolucent head section - not available with (O2)", style: 'textotabla'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,066", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[2] !== null)
+        {
+            if(data.Print_Character[2] === "*")
+            {
+                precio3 = "●"
+            }
+            else {
+                precio3 = "-"
+            }
+        }
+        else {
+            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+        }
 
-    pSItems++
+        if(data.Print_Character[3] !== null)
+        {
+            if(data.Print_Character[3] === "*")
+            {
+                precio4 = "●"
+            }
+            else {
+                precio4 = "-"
+            }
+        }
+        else {
+            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
+        }
+
+        if(data.Print_Character[4] !== null)
+        {
+            if(data.Print_Character[4] === "*")
+            {
+                precio5 = "●"
+            }
+            else {
+                precio5 = "-"
+            }
+        }
+        else {
+            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
+        }
+        
+        options[pSItems] = [
+            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: precio4, style: 'textotabla', alignment: 'center'}, 
+            {text: precio5, style: 'textotabla', alignment: 'center'}, 
+        ]
+
+        pSItems++
+
+        //console.log(data)
+
+        if(j >= surface2Data.length)
+        {
+            surface2Flag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
 
     options[pSItems] = [
@@ -588,31 +1184,133 @@ async function getStretchers()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    
-    options[pSItems] = [
-        {text: "HBS", style: 'textotabla', alignment: 'center'},
-        {text: "On both side", style: 'textotabla'},
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'},
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-    ]
+    i=0;
+    var hidraulicControlFlag = false
+    while(hidraulicControlFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*5
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< hidraulicControl.length && countC<5)
+        {
+           precios[preciosCount] = hidraulicControl[j].Price
+           printCaracter[preciosCount] = hidraulicControl[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: hidraulicControl[j-1].Id_Item,
+            Item_Long_Desc: hidraulicControl[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
+        var precio5;
 
-    options[pSItems] = [
-        {text: "HBSF", style: 'textotabla', alignment: 'center'},
-        {text: "On both sides and foot end", style: 'textotabla'},
-        {text: "$476", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$476", style: 'textotabla', alignment: 'center'}, 
-        {text: "$476", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
 
-    pSItems++
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
 
+        if(data.Print_Character[2] !== null)
+        {
+            if(data.Print_Character[2] === "*")
+            {
+                precio3 = "●"
+            }
+            else {
+                precio3 = "-"
+            }
+        }
+        else {
+            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+        }
+
+        if(data.Print_Character[3] !== null)
+        {
+            if(data.Print_Character[3] === "*")
+            {
+                precio4 = "●"
+            }
+            else {
+                precio4 = "-"
+            }
+        }
+        else {
+            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
+        }
+
+        if(data.Print_Character[4] !== null)
+        {
+            if(data.Print_Character[4] === "*")
+            {
+                precio5 = "●"
+            }
+            else {
+                precio5 = "-"
+            }
+        }
+        else {
+            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
+        }
+        
+        options[pSItems] = [
+            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: precio4, style: 'textotabla', alignment: 'center'}, 
+            {text: precio5, style: 'textotabla', alignment: 'center'}, 
+        ]
+
+        pSItems++
+
+        //console.log(data)
+
+        if(j >= hidraulicControl.length)
+        {
+            hidraulicControlFlag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
 
     var options2 = []
@@ -643,41 +1341,133 @@ async function getStretchers()
     pSItems ++
 
      /*ESTO VA EN UN CICLO*/
-     options2[pSItems] = [
-        {text: "HE", style: 'textotabla', alignment: 'center'},
-        {text: 'Gap at head end', style: 'textotabla'},
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: '-', style: 'textotabla'},
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-    ]
+    i=0;
+    var siderailsFlag = false
+    while(siderailsFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*5
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< siderails.length && countC<5)
+        {
+           precios[preciosCount] = siderails[j].Price
+           printCaracter[preciosCount] = siderails[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: siderails[j-1].Id_Item,
+            Item_Long_Desc: siderails[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
+        var precio5;
 
-    options2[pSItems] = [
-        {text: "FE", style: 'textotabla', alignment: 'center'},
-        {text: "Gap at foot end", style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'},
-    ]
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
 
-    pSItems++
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
 
-    options2[pSItems] = [
-        {text: "KX1", style: 'textotabla', alignment: 'center'},
-        {text: "Additional coverage siderail-gap at foot end only (not compatible with AC)", style: 'textotabla'},
-        {text: "$834", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'},
-    ]
+        if(data.Print_Character[2] !== null)
+        {
+            if(data.Print_Character[2] === "*")
+            {
+                precio3 = "●"
+            }
+            else {
+                precio3 = "-"
+            }
+        }
+        else {
+            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+        }
 
-    pSItems++
+        if(data.Print_Character[3] !== null)
+        {
+            if(data.Print_Character[3] === "*")
+            {
+                precio4 = "●"
+            }
+            else {
+                precio4 = "-"
+            }
+        }
+        else {
+            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
+        }
+
+        if(data.Print_Character[4] !== null)
+        {
+            if(data.Print_Character[4] === "*")
+            {
+                precio5 = "●"
+            }
+            else {
+                precio5 = "-"
+            }
+        }
+        else {
+            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
+        }
+        
+        options2[pSItems] = [
+            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: precio4, style: 'textotabla', alignment: 'center'}, 
+            {text: precio5, style: 'textotabla', alignment: 'center'}, 
+        ]
+
+        pSItems++
+
+        //console.log(data)
+
+        if(j >= siderails.length)
+        {
+            siderailsFlag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
 
     options2[pSItems] = [
@@ -693,65 +1483,133 @@ async function getStretchers()
     pSItems ++
 
     /*ESTO VA EN UN CICLO*/
-    options2[pSItems] = [
-        {text: "BLUE", style: 'textotabla', alignment: 'center'},
-        {text: "Blue", style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-    ]
+    i=0;
+    var bumperColourFlag = false
+    while(bumperColourFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*5
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< bumperColour.length && countC<5)
+        {
+           precios[preciosCount] = bumperColour[j].Price
+           printCaracter[preciosCount] = bumperColour[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: bumperColour[j-1].Id_Item,
+            Item_Long_Desc: bumperColour[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
+        var precio5;
 
-    options2[pSItems] = [
-        {text: "TEAL", style: 'textotabla', alignment: 'center'},
-        {text: 'Teal', style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
 
-    pSItems++
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
 
-    options2[pSItems] = [
-        {text: "RED", style: 'textotabla', alignment: 'center'},
-        {text: 'Red', style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[2] !== null)
+        {
+            if(data.Print_Character[2] === "*")
+            {
+                precio3 = "●"
+            }
+            else {
+                precio3 = "-"
+            }
+        }
+        else {
+            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+        }
 
-    pSItems++
+        if(data.Print_Character[3] !== null)
+        {
+            if(data.Print_Character[3] === "*")
+            {
+                precio4 = "●"
+            }
+            else {
+                precio4 = "-"
+            }
+        }
+        else {
+            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
+        }
 
-    options2[pSItems] = [
-        {text: "PURPLE", style: 'textotabla', alignment: 'center'},
-        {text: 'Purple', style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[4] !== null)
+        {
+            if(data.Print_Character[4] === "*")
+            {
+                precio5 = "●"
+            }
+            else {
+                precio5 = "-"
+            }
+        }
+        else {
+            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
+        }
+        
+        options2[pSItems] = [
+            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: precio4, style: 'textotabla', alignment: 'center'}, 
+            {text: precio5, style: 'textotabla', alignment: 'center'}, 
+        ]
 
-    pSItems++
+        pSItems++
 
-    options2[pSItems] = [
-        {text: "LGTNET", style: 'textotabla', alignment: 'center'},
-        {text: 'Light neutral', style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-    ]
+        //console.log(data)
 
-    pSItems++
+        if(j >= bumperColour.length)
+        {
+            bumperColourFlag = true
+        }
+        i++
+    }   
      /*TERMINA CICLO*/
 
      options2[pSItems] = [
@@ -767,77 +1625,133 @@ async function getStretchers()
     pSItems ++
 
     /*ESTO VA EN UN CICLO*/
-    options2[pSItems] = [
-        {text: "AC", style: 'textotabla', alignment: 'center'},
-        {text: 'Auto Contour™ with knee gatch & Backsaver Fowler™ (not compatible with KX1)', style: 'textotabla'},
-        {text: "$1,555", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: '-', style: 'textotabla'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+    i=0;
+    var additionalOptionsFlag = false
+    while(additionalOptionsFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*5
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< additionalOptions.length && countC<5)
+        {
+           precios[preciosCount] = additionalOptions[j].Price
+           printCaracter[preciosCount] = additionalOptions[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: additionalOptions[j-1].Id_Item,
+            Item_Long_Desc: additionalOptions[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
+        var precio5;
 
-    options2[pSItems] = [
-        {text: "KN", style: 'textotabla', alignment: 'center'},
-        {text: 'Knee gatch', style: 'textotabla'},
-        {text: "$651", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: '●', style: 'textotabla'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
 
-    pSItems++
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
 
-    options2[pSItems] = [
-        {text: "FO", style: 'textotabla', alignment: 'center'},
-        {text: 'Backsaver Fowler™ including knee gatch', style: 'textotabla'},
-        {text: "$1,081", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: '-', style: 'textotabla'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[2] !== null)
+        {
+            if(data.Print_Character[2] === "*")
+            {
+                precio3 = "●"
+            }
+            else {
+                precio3 = "-"
+            }
+        }
+        else {
+            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+        }
 
-    pSItems++
+        if(data.Print_Character[3] !== null)
+        {
+            if(data.Print_Character[3] === "*")
+            {
+                precio4 = "●"
+            }
+            else {
+                precio4 = "-"
+            }
+        }
+        else {
+            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
+        }
 
-    options2[pSItems] = [
-        {text: "O2", style: 'textotabla', alignment: 'center'},
-        {text: 'Integrated O2 tank holder/utility tray - push handles required', style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: '-', style: 'textotabla'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[4] !== null)
+        {
+            if(data.Print_Character[4] === "*")
+            {
+                precio5 = "●"
+            }
+            else {
+                precio5 = "-"
+            }
+        }
+        else {
+            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
+        }
+        
+        options2[pSItems] = [
+            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: precio4, style: 'textotabla', alignment: 'center'}, 
+            {text: precio5, style: 'textotabla', alignment: 'center'}, 
+        ]
 
-    pSItems++
+        pSItems++
 
-    options2[pSItems] = [
-        {text: "UCH", style: 'textotabla', alignment: 'center'},
-        {text: 'Upright cassette holder', style: 'textotabla'},
-        {text: "$979", style: 'textotabla', alignment: 'center'}, 
-        {text: "$979", style: 'textotabla', alignment: 'center'}, 
-        {text: '-', style: 'textotabla'},
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-    ]
+        //console.log(data)
 
-    pSItems++
-
-    options2[pSItems] = [
-        {text: "SC", style: 'textotabla', alignment: 'center'},
-        {text: 'Dual Display Integrated Scale', style: 'textotabla'},
-        {text: "$2,584", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: '-', style: 'textotabla'},
-        {text: "$2,584", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+        if(j >= additionalOptions.length)
+        {
+            additionalOptionsFlag = true
+        }
+        i++
+    }   
      /*TERMINA CICLO*/
 
     var surfaces = []
@@ -857,122 +1771,71 @@ async function getStretchers()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    surfaces[pSItems] = [
-        {text: "STRETCHERMAT", style: 'textotabla', alignment: 'center'},
-        {text: 'Replacement Surface 26" x 75" x 3"', style: 'textotabla'},
-        {text: "P1430ECS3", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+    i=0;
+    var surfacesFlag = false
+    while(surfacesFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*5
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< surfacesData.length && countC<5)
+        {
+           precios[preciosCount] = surfacesData[j].Price
+           printCaracter[preciosCount] = surfacesData[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Kit_Name: surfacesData[j-1].KitName,
+            Item_Long_Desc: surfacesData[j-1].Item_Long_Desc,
+            Part: surfacesData[j-1].Part,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
+        var precio5;
 
-    surfaces[pSItems] = [
-        {text: "STRETCHERMAT", style: 'textotabla', alignment: 'center'},
-        {text: 'Replacement Surface 26" x 75" x 3"', style: 'textotabla'},
-        {text: "P1430ECS3", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+        precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+        precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
+        precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
+        
+        surfaces[pSItems] = [
+            {text: data.Kit_Name, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: data.Part, style: 'textotabla', alignment: 'center'}, 
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: precio4, style: 'textotabla', alignment: 'center'}, 
+            {text: precio5, style: 'textotabla', alignment: 'center'}, 
+        ]
 
-    pSItems++
+        pSItems++
 
-    surfaces[pSItems] = [
-        {text: "STRETCHERMAT", style: 'textotabla', alignment: 'center'},
-        {text: 'Replacement Surface 26" x 75" x 3"', style: 'textotabla'},
-        {text: "P1430ECS3", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+        //console.log(data)
 
-    pSItems++
-
-    surfaces[pSItems] = [
-        {text: "STRETCHERMAT", style: 'textotabla', alignment: 'center'},
-        {text: 'Replacement Surface 26" x 75" x 3"', style: 'textotabla'},
-        {text: "P1430ECS3", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    surfaces[pSItems] = [
-        {text: "STRETCHERMAT", style: 'textotabla', alignment: 'center'},
-        {text: 'Replacement Surface 26" x 75" x 3"', style: 'textotabla'},
-        {text: "P1430ECS3", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    surfaces[pSItems] = [
-        {text: "STRETCHERMAT", style: 'textotabla', alignment: 'center'},
-        {text: 'Replacement Surface 26" x 75" x 3"', style: 'textotabla'},
-        {text: "P1430ECS3", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    surfaces[pSItems] = [
-        {text: "STRETCHERMAT", style: 'textotabla', alignment: 'center'},
-        {text: 'Replacement Surface 26" x 75" x 3"', style: 'textotabla'},
-        {text: "P1430ECS3", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    surfaces[pSItems] = [
-        {text: "STRETCHERMAT", style: 'textotabla', alignment: 'center'},
-        {text: 'Replacement Surface 26" x 75" x 3"', style: 'textotabla'},
-        {text: "P1430ECS3", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    surfaces[pSItems] = [
-        {text: "STRETCHERMAT", style: 'textotabla', alignment: 'center'},
-        {text: 'Replacement Surface 26" x 75" x 3"', style: 'textotabla'},
-        {text: "P1430ECS3", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$678", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+        if(j >= surfacesData.length)
+        {
+            surfacesFlag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
 
     var accesories = []
@@ -988,293 +1851,17 @@ async function getStretchers()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] = [
-        {text: "MISCACCESSORIES", style: 'textotabla', alignment: 'center'},
-        {text: "Removable two section, telescopic IV pole", style: 'textotabla'},
-        {text: "P2217A", style: 'textotabla', alignment: 'center'}, 
-        {text: "$117", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "MISCACCESSORIES", style: 'textotabla', alignment: 'center'},
-        {text: "Vertical Oxygen Tank Holder", style: 'textotabla'},
-        {text: "P27601", style: 'textotabla', alignment: 'center'}, 
-        {text: "$385", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Universal Instrument Tray", style: 'textotabla'},
-        {text: "P278B", style: 'textotabla', alignment: 'center'}, 
-        {text: "$375", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Universal Instrument Tray", style: 'textotabla'},
-        {text: "P278B", style: 'textotabla', alignment: 'center'}, 
-        {text: "$375", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports, Telescoping (Fully Padded w/Telescoping Height Adjustment) - Pair", style: 'textotabla'},
-        {text: "P35745A", style: 'textotabla', alignment: 'center'}, 
-        {text: "$3,152", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Labor Bar", style: 'textotabla'},
-        {text: "P3613B", style: 'textotabla', alignment: 'center'}, 
-        {text: "$714", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Drainage Bag (Foley) Hook Kit", style: 'textotabla'},
-        {text: "P3623", style: 'textotabla', alignment: 'center'}, 
-        {text: "$262", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P3705A", style: 'textotabla', alignment: 'center'}, 
-        {text: "$2,190", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "2 Permanent IV poles 18 kg (foldable)", style: 'textotabla'},
-        {text: "P3732A", style: 'textotabla', alignment: 'center'}, 
-        {text: "$588", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Integrated line managers", style: 'textotabla'},
-        {text: "P3733A", style: 'textotabla', alignment: 'center'}, 
-        {text: "$193", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Full Leg Supports, Telescoping (Fully Padded W/Telescoping Height Adjustment) - Pair", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+    for(var i=0; i<accesoriesData.length; i++)
+    {
+        accesories[pSItems] = [
+            {text: accesoriesData[i].KitName, style: 'textotabla', alignment: 'center'},
+            {text: accesoriesData[i].Item_Long_Desc, style: 'textotabla'},
+            {text: accesoriesData[i].Part, style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData[i].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+    }
     /*TERMINA CICLO*/
 
     accesories[pSItems] = [
@@ -1287,23 +1874,17 @@ async function getStretchers()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+    for(var i=0; i<accesoriesData2.length; i++)
+    {
+        accesories[pSItems] = [
+            {text: accesoriesData2[i].KitName, style: 'textotabla', alignment: 'center'},
+            {text: accesoriesData2[i].Item_Long_Desc, style: 'textotabla'},
+            {text: accesoriesData2[i].Part, style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData2[i].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+    }
     /*TERMINA CICLO*/
 
     accesories[pSItems] = [
@@ -1316,54 +1897,21 @@ async function getStretchers()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+    for(var i=0; i<accesoriesData3.length; i++)
+    {
+        accesories[pSItems] = [
+            {text: accesoriesData3[i].KitName, style: 'textotabla', alignment: 'center'},
+            {text: accesoriesData3[i].Item_Long_Desc, style: 'textotabla'},
+            {text: accesoriesData3[i].Part, style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData3[i].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
     
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+        pSItems++
+    }
     /*TERMINA CICLO*/
 
     var stretchers = [
-        { text: 'Stretchers', style: 'header', tocItem: 'compella'},
+        { text: 'Stretchers', style: 'header', tocItem: 'stretchers'},
         { text: 'Country of origin: México\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
         {
@@ -1447,11 +1995,11 @@ async function getStretchers()
                             ],
                             [
                                 {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                {text: "$9,243", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                {text: "$6,906", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                {text: "$12,361", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                {text: "$12,078", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                {text: "$14,237", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[4].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
                             ],
                         ]
                     },
@@ -1493,7 +2041,8 @@ async function getStretchers()
 				},
             }
         },
-        "\n",
+        {text: '', pageBreak: 'after'  },
+        '\n',
         {
             table: {
                 widths: [50, "*", 30, 30, 30, 30, 30],
@@ -1519,6 +2068,7 @@ async function getStretchers()
         { text: '= - not available', style: 'parrafo' },
         "\n",
         { image: "images/Stretchers.png", width: 370, height: 160, alignment: 'center'},
+        {text: '', pageBreak: 'after'  },
         '\n',
         { text: 'SURFACES', style: 'textotablaboldlarge' },
         { text: 'Fire Code Compliance: Surfaces comply with North American Federal Regulations: (16CFR1632, 16CFR1633 and CAN/CGSB-4.1 No. 27.7)\n Country of Origin: USA', style: 'parrafo' },
@@ -1542,7 +2092,6 @@ async function getStretchers()
 				},
             }
         },
-        {text: '', pageBreak: 'after'  },
         '\n',
         { text: 'ACCESORIES', style: 'textotablaboldlarge' },
         {

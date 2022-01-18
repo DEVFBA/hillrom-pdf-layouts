@@ -1,22 +1,20 @@
-const axios = require('axios');
+const dbAccumax = require('../controllers/accumax')
 
 async function getAccumax()
 {
-    const res = await axios.get("http://localhost:8091/api/pdf-hillroom/progressa")
-    const prices = res.data[0]
-    const patientSiderail = res.data[1]
-    const mobility  = res.data[2]
-    const permanentPole = res.data[3]
-    const transportShelf = res.data[4]
+    const res = await dbAccumax.getAccumax()
+    const careassistData = res[0]
+    const versacareData = res[1]
+    const totalcareData = res[2]
 
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'SIZE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'SIZE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
     ]
     pSItems++
 
@@ -31,25 +29,18 @@ async function getAccumax()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    options[pSItems] = [
-        {text: "ACCUMAX", style: 'textotabla', alignment: 'center'},
-        {text: "AccuMax Quantum VPC - Dartex Top Cover - Handles", style: 'textotabla'},
-        {text: '(89 cm x 203 cm x 18 cm) (35" x 80" x 7")', style: 'textotabla', alignment: 'center'}, 
-        {text: "PAH005010180-1", style: 'textotabla', alignment: 'center'}, 
-        {text: "$2,670", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "ACCUMAX", style: 'textotabla', alignment: 'center'},
-        {text: "AccuMax Quantum VPC - Dartex Top Cover - Handles", style: 'textotabla'},
-        {text: '(89 cm x 213 cm x 18 cm) (35" x 84" x 7")', style: 'textotabla', alignment: 'center'}, 
-        {text: "PAH005010184-1", style: 'textotabla', alignment: 'center'}, 
-        {text: "$2,670", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+    for(var i=0; i<careassistData.length; i++)
+    {
+        options[pSItems] = [
+            {text: careassistData[i].KitName, style: 'textotabla', alignment: 'center'},
+            {text: careassistData[i].Item_Long_Desc, style: 'textotabla'},
+            {text: careassistData[i].Size, style: 'textotabla', alignment: 'center'},
+            {text: careassistData[i].Part, style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(careassistData[i].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+    }
     /*TERMINA CICLO*/
     
     options[pSItems] = [
@@ -63,15 +54,18 @@ async function getAccumax()
     pSItems ++
 
     /*ESTO VA EN UN CICLO*/
-    options[pSItems] = [
-        {text: "ACCUMAX", style: 'textotabla', alignment: 'center'},
-        {text: 'AccuMax Quantum VPC - Dartex Top Cover - Handles', style: 'textotabla'},
-        {text: '(89 cm x 218 cm x 19 cm) (35" x 86" x 7.5")', style: 'textotabla', alignment: 'center'}, 
-        {text: "PAF0052101XX-1", style: 'textotabla', alignment: 'center'}, 
-        {text: "$2,670", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+    for(var i=0; i<versacareData.length; i++)
+    {
+        options[pSItems] = [
+            {text: versacareData[i].KitName, style: 'textotabla', alignment: 'center'},
+            {text: versacareData[i].Item_Long_Desc, style: 'textotabla'},
+            {text: versacareData[i].Size, style: 'textotabla', alignment: 'center'},
+            {text: versacareData[i].Part, style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(versacareData[i].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+    }
     /*TERMINA CICLO*/
 
     options[pSItems] = [
@@ -85,20 +79,22 @@ async function getAccumax()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
+    for(var i=0; i<totalcareData.length; i++)
+    {
+        options[pSItems] = [
+            {text: totalcareData[i].KitName, style: 'textotabla', alignment: 'center'},
+            {text: totalcareData[i].Item_Long_Desc, style: 'textotabla'},
+            {text: totalcareData[i].Size, style: 'textotabla', alignment: 'center'},
+            {text: totalcareData[i].Part, style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(totalcareData[i].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
     
-    options[pSItems] = [
-        {text: "ACCUMAX", style: 'textotabla', alignment: 'center'},
-        {text: "AccuMax Quantum VPC - Dartex Top Cover - Handles -", style: 'textotabla'},
-        {text: '(89 cm x 213 cm x 19 cm) (35" x 84" x 7.5")', style: 'textotabla', alignment: 'center'}, 
-        {text: "PAU001010784-1", style: 'textotabla', alignment: 'center'}, 
-        {text: "$2,681", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+        pSItems++
+    }
     /*TERMINA CICLO*/
 
     var accumax = [
-        { text: 'ACCUMAX', style: 'header', tocItem: 'compella'},
+        { text: 'ACCUMAX', style: 'header', tocItem: 'accumax'},
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
         {
@@ -111,7 +107,7 @@ async function getAccumax()
         "\n",
         {
             table: {
-                widths: [50, "*", 80, 60, 40],
+                widths: [70, "*", 90, 60, 40],
                 body: options
             },
             layout: {

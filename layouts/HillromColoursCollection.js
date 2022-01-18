@@ -1,14 +1,5 @@
-const axios = require('axios');
-
 async function getHillromColoursCollection()
 {
-    const res = await axios.get("http://localhost:8091/api/pdf-hillroom/progressa")
-    const prices = res.data[0]
-    const patientSiderail = res.data[1]
-    const mobility  = res.data[2]
-    const permanentPole = res.data[3]
-    const transportShelf = res.data[4]
-
     var hillromColours = [
         "\n",
         { text: 'Hillrom Colours Collection', style: 'header', tocItem: 'compella'},

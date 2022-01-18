@@ -1,13 +1,129 @@
-const axios = require('axios');
+const dbSleeperChair= require('../controllers/sleeperchair')
 
 async function getSleeperChair()
 {
-    const res = await axios.get("http://localhost:8091/api/pdf-hillroom/progressa")
-    const prices = res.data[0]
-    const patientSiderail = res.data[1]
-    const mobility  = res.data[2]
-    const permanentPole = res.data[3]
-    const transportShelf = res.data[4]
+    const res = await dbSleeperChair.getDataSleeperChair()
+    const mainTableData = res[0]
+    const optionsData = res[1]
+
+    var mainTable = []
+    var pSItems = 0;
+
+    mainTable[pSItems] = [
+        {border: [false, false, false, false], text: ''},
+        {text: 'SLEEPERCHAIR', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
+        {},
+    ],
+    pSItems++
+
+    mainTable[pSItems] = [
+        {border: [false, false, false, false], text: 'PART #', style: 'textotablaboldblack'},
+        {text: '35" Sleeper Chair', style: 'textotabla', alignment: 'center'},
+        {text: '45" Sleeper Chair', style: 'textotabla', alignment: 'center'},
+    ]
+    pSItems++
+
+    mainTable[pSItems] = [
+        {border: [false, false, false, false], text: 'PART #', style: 'textotablaboldblack'},
+        {text: 'P9135A', style: 'textotablaboldblack', alignment: 'center'},
+        {text: 'P9145A', style: 'textotablaboldblack', alignment: 'center'},
+    ]
+    pSItems++
+
+    mainTable[pSItems] = [
+        {text: 'Weight Capacity', style: 'textotabla'},
+        {text: '350 lbs', style: 'textotabla', alignment: 'center'},
+        {text: '350 lbs', style: 'textotabla', alignment: 'center'}, 
+    ]
+    pSItems++
+
+    mainTable[pSItems] = [
+        {text: 'Overall weight', style: 'textotabla'},
+        {text: '175 lbs', style: 'textotabla', alignment: 'center'},
+        {text: '182 lbs', style: 'textotabla', alignment: 'center'}, 
+    ]
+    pSItems++
+
+    /*ESTO VA EN UN CICLO*/
+    var i=0;
+    var mainTableFlag = false
+    while(mainTableFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*2
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< mainTableData.length && countC<2)
+        {
+           precios[preciosCount] = mainTableData[j].Price
+           printCaracter[preciosCount] = mainTableData[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: mainTableData[j-1].Id_Item,
+            Item_Long_Desc: mainTableData[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
+
+        var precio1;
+        var precio2;
+
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
+
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
+        
+        mainTable[pSItems] = [
+            {text: data.Item_Long_Desc, style: 'textotablacolornormal', fillColor: '#546ce4'},
+            {text: precio1, style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+            {text: precio2, style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+        ]
+
+        pSItems++
+
+        //console.log(data)
+
+        if(j >= mainTableData.length)
+        {
+            mainTableFlag = true
+        }
+        i++
+    }   
+    /*TERMINA CICLO*/
 
     var options =[]
     var pSItems = 0;
@@ -19,17 +135,90 @@ async function getSleeperChair()
     pSItems++
 
     /*EMPIEZA CICLO*/
-    options[pSItems] = [
-        {text: "Casters", style: 'textotabla'},
-        {text: "$686", style: 'textotabla'},
-        {text: "$686", style: 'textotabla', alignment: 'center'}, 
-    ]
-    pSItems++
+   /*EMPIEZA CICLO*/
+   var i=0;
+   var optionsFlag = false
+   while(optionsFlag === false)
+   {
+       var j;
+       if(i===0)
+       {
+           j=0
+       }
+       else {
+           j = i*2
+       }
+       var precios = []
+       var preciosCount = 0
+       var countC=0
+       var printCaracter = []
+       while(j< optionsData.length && countC<2)
+       {
+          precios[preciosCount] = optionsData[j].Price
+          printCaracter[preciosCount] = optionsData[j].Print_Character
+          preciosCount++
+          j++
+          countC++
+       }
+       var data = {
+           Id_Item: optionsData[j-1].Id_Item,
+           Item_Long_Desc: optionsData[j-1].Item_Long_Desc,
+           Prices: precios,
+           Print_Character: printCaracter
+       }
+
+       var precio1;
+       var precio2;
+
+       if(data.Print_Character[0] !== null)
+       {
+           if(data.Print_Character[0] === "*")
+           {
+               precio1 = "●"
+           }
+           else {
+               precio1 = "-"
+           }
+       }
+       else {
+           precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+       }
+
+       if(data.Print_Character[1] !== null)
+       {
+           if(data.Print_Character[1] === "*")
+           {
+               precio2 = "●"
+           }
+           else {
+               precio2 = "-"
+           }
+       }
+       else {
+           precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+       }
+       
+       options[pSItems] = [
+           {text: data.Item_Long_Desc, style: 'textotabla'},
+           {text: precio1, style: 'textotabla', alignment: 'center'}, 
+           {text: precio2, style: 'textotabla', alignment: 'center'}, 
+       ]
+
+       pSItems++
+
+       //console.log(data)
+
+       if(j >= optionsData.length)
+       {
+           optionsFlag = true
+       }
+       i++
+    }   
     /*TERMINA CICLO*/
 
     var sleeperChair = [
         '\n',
-        { text: 'SLEEPER CHAIR', style: 'header' },
+        { text: 'SLEEPER CHAIR', style: 'header', tocItem: "sleeperChair" },
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         '\n',
         { text:'Features & Benefits\n', style: 'textotablaboldlarge'},
@@ -59,73 +248,7 @@ async function getSleeperChair()
                     width: 350,
                     table: {
                         widths: [140, 80, 80],
-                        body: [
-                            [
-                                {border: [false, false, false, false], text: ''},
-                                {text: 'SLEEPERCHAIR', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
-                                {},
-                            ],
-                            [
-                                {border: [false, false, false, false], text: 'PART #', style: 'textotablaboldblack'},
-                                {text: '35" Sleeper Chair', style: 'textotabla', alignment: 'center'},
-                                {text: '45" Sleeper Chair', style: 'textotabla', alignment: 'center'},
-                            ],
-                            [
-                                {border: [false, false, false, false], text: 'PART #', style: 'textotablaboldblack'},
-                                {text: 'P9135A', style: 'textotablaboldblack', alignment: 'center'},
-                                {text: 'P9145A', style: 'textotablaboldblack', alignment: 'center'},
-                            ],
-                            [
-                                {text: 'Weight Capacity', style: 'textotabla'},
-                                {text: '350 lbs', style: 'textotabla', alignment: 'center'},
-                                {text: '350 lbs', style: 'textotabla', alignment: 'center'}, 
-                            ],
-                            [
-                                {text: 'Overall weight', style: 'textotabla'},
-                                {text: '170 lbs', style: 'textotabla', alignment: 'center'},
-                                {text: '220 lbs', style: 'textotabla', alignment: 'center'}, 
-                            ],
-                            [
-                                {text: 'Grade 1 Upholstery', style: 'textotablacolornormal', fillColor: '#546ce4'},
-                                {text: '$3,492', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: '$4,341', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-                            ],
-                            [
-                                {text: 'Grade 2 Upholstery', style: 'textotablacolornormal', fillColor: '#546ce4'},
-                                {text: '$3,617', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-                            ],
-                            [
-                                {text: 'Grade 3 Upholstery', style: 'textotablacolornormal', fillColor: '#546ce4'},
-                                {text: '$3,742', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: '$4,658', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-                            ],
-                            [
-                                {text: 'Grade 4 Upholstery', style: 'textotablacolornormal', fillColor: '#546ce4'},
-                                {text: '$3,867', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: '$4,816', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-                            ],
-                            [
-                                {text: 'Grade 5 Upholstery', style: 'textotablacolornormal', fillColor: '#546ce4'},
-                                {text: '$3,992', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: '$4,975', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-                            ],
-                            [
-                                {text: 'Grade 6 Upholstery', style: 'textotablacolornormal', fillColor: '#546ce4'},
-                                {text: '$4,117', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: '$5,133', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-                            ],
-                            [
-                                {text: 'Grade 7 Upholstery', style: 'textotablacolornormal', fillColor: '#546ce4'},
-                                {text: '$4,242', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: '$5,291', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-                            ],
-                            [
-                                {text: 'Grade 8 Upholstery', style: 'textotablacolornormal', fillColor: '#546ce4'},
-                                {text: '$4,992', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: '$6,241', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-                            ],
-                        ]
+                        body: mainTable
                     },
                     layout: {
                         hLineWidth: function () {

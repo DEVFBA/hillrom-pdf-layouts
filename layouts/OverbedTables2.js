@@ -1,21 +1,20 @@
-const axios = require('axios');
+const dbOverbedTablesArtOfCare = require('../controllers/overbedtablesartofcare')
 
 async function getOverbedTables()
 {
-    const res = await axios.get("http://localhost:8091/api/pdf-hillroom/progressa")
-    const prices = res.data[0]
-    const patientSiderail = res.data[1]
-    const mobility  = res.data[2]
-    const permanentPole = res.data[3]
-    const transportShelf = res.data[4]
+    const res = await dbOverbedTablesArtOfCare.getOverbedTablesArtOfCare()
+    const prices = res[0]
+    const topStyleData = res[1]
+    const mirrorStorageData = res[2]
+    const accesoriesData = res[3]
 
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTIONS', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-        {text: 'SLP-732', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-        {text: 'SLP-735', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-        {text: 'SLP-755', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+        {text: 'OPTIONS', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+        {text: 'SLP-732', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+        {text: 'SLP-735', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+        {text: 'SLP-755', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
     ]
     pSItems++
 
@@ -28,29 +27,100 @@ async function getOverbedTables()
     pSItems++
 
     /*EMPIEZA CICLO*/
-    options[pSItems] = [
-        {text: "CAL 133 Flammability Barrier (CAL)", style: 'textotabla'},
-        {text: "$195", style: 'textotabla', alignment: 'center'},
-        {text: "$195", style: 'textotabla', alignment: 'center'}, 
-        {text: "$195", style: 'textotabla', alignment: 'center'},
-    ]
-    pSItems++
+    var i=0;
+    var topStyleFlag = false
+    while(topStyleFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*3
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< topStyleData.length && countC<3)
+        {
+           precios[preciosCount] = topStyleData[j].Price
+           printCaracter[preciosCount] = topStyleData[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: topStyleData[j-1].Id_Item,
+            Item_Long_Desc: topStyleData[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    options[pSItems] = [
-        {text: "Black Urethane Arm Cap (BLK)", style: 'textotabla'},
-        {text: "$164", style: 'textotabla', alignment: 'center'},
-        {text: "$164", style: 'textotabla', alignment: 'center'}, 
-        {text: "$164", style: 'textotabla', alignment: 'center'},
-    ]
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
 
-    options[pSItems] = [
-        {text: "Black Urethane Arm Cap (BLK)", style: 'textotabla'},
-        {text: "$164", style: 'textotabla', alignment: 'center'},
-        {text: "$164", style: 'textotabla', alignment: 'center'}, 
-        {text: "$164", style: 'textotabla', alignment: 'center'},
-    ]
-    pSItems++
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
+
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
+
+        if(data.Print_Character[2] !== null)
+        {
+            if(data.Print_Character[2] === "*")
+            {
+                precio3 = "●"
+            }
+            else {
+                precio3 = "-"
+            }
+        }
+        else {
+            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+        }
+        
+        options[pSItems] = [
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+        ]
+
+        pSItems++
+
+        //console.log(data)
+
+        if(j >= topStyleData.length)
+        {
+            topStyleFlag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
     
     options[pSItems] = [
@@ -62,37 +132,100 @@ async function getOverbedTables()
     pSItems++
 
     /*EMPIEZA CICLO*/
-    options[pSItems] = [
-        {text: "CAL 133 Flammability Barrier (CAL)", style: 'textotabla'},
-        {text: "$195", style: 'textotabla', alignment: 'center'},
-        {text: "$195", style: 'textotabla', alignment: 'center'}, 
-        {text: "$195", style: 'textotabla', alignment: 'center'},
-    ]
-    pSItems++
+    var i=0;
+    var mirrorStorageFlag = false
+    while(mirrorStorageFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*3
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< mirrorStorageData.length && countC<3)
+        {
+           precios[preciosCount] = mirrorStorageData[j].Price
+           printCaracter[preciosCount] = mirrorStorageData[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: mirrorStorageData[j-1].Id_Item,
+            Item_Long_Desc: mirrorStorageData[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    options[pSItems] = [
-        {text: "Black Urethane Arm Cap (BLK)", style: 'textotabla'},
-        {text: "$164", style: 'textotabla', alignment: 'center'},
-        {text: "$164", style: 'textotabla', alignment: 'center'}, 
-        {text: "$164", style: 'textotabla', alignment: 'center'},
-    ]
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
 
-    options[pSItems] = [
-        {text: "Black Urethane Arm Cap (BLK)", style: 'textotabla'},
-        {text: "$164", style: 'textotabla', alignment: 'center'},
-        {text: "$164", style: 'textotabla', alignment: 'center'}, 
-        {text: "$164", style: 'textotabla', alignment: 'center'},
-    ]
-    pSItems++
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
 
-    options[pSItems] = [
-        {text: "Black Urethane Arm Cap (BLK)", style: 'textotabla'},
-        {text: "$164", style: 'textotabla', alignment: 'center'},
-        {text: "$164", style: 'textotabla', alignment: 'center'}, 
-        {text: "$164", style: 'textotabla', alignment: 'center'},
-    ]
-    pSItems++
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
+
+        if(data.Print_Character[2] !== null)
+        {
+            if(data.Print_Character[2] === "*")
+            {
+                precio3 = "●"
+            }
+            else {
+                precio3 = "-"
+            }
+        }
+        else {
+            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+        }
+        
+        options[pSItems] = [
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+        ]
+
+        pSItems++
+
+        //console.log(data)
+
+        if(j >= mirrorStorageData.length)
+        {
+            mirrorStorageFlag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
 
     options[pSItems] = [
@@ -112,18 +245,105 @@ async function getOverbedTables()
     pSItems++
 
     /*EMPIEZA CICLO*/
-    options[pSItems] = [
-        {text: "CAL 133 Flammability Barrier (CAL)", style: 'textotabla'},
-        {text: "$195", style: 'textotabla', alignment: 'center'},
-        {text: "$195", style: 'textotabla', alignment: 'center'}, 
-        {text: "$195", style: 'textotabla', alignment: 'center'},
-    ]
-    pSItems++
+    var i=0;
+    var accesoriesFlag = false
+    while(accesoriesFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*3
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< accesoriesData.length && countC<3)
+        {
+           precios[preciosCount] = accesoriesData[j].Price
+           printCaracter[preciosCount] = accesoriesData[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: accesoriesData[j-1].Id_Item,
+            Item_Long_Desc: accesoriesData[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
+
+        var precio1;
+        var precio2;
+        var precio3;
+
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
+
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
+
+        if(data.Print_Character[2] !== null)
+        {
+            if(data.Print_Character[2] === "*")
+            {
+                precio3 = "●"
+            }
+            else {
+                precio3 = "-"
+            }
+        }
+        else {
+            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+        }
+        
+        options[pSItems] = [
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+        ]
+
+        pSItems++
+
+        //console.log(data)
+
+        if(j >= accesoriesData.length)
+        {
+            accesoriesFlag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
 
     var healthcareFurniture = [
         '\n',
-        { text: 'Overbed Tables', style: 'header' },
+        { text: 'Overbed Tables', style: 'header', tocItem: "overbedTablesArtOfCare"},
         { text: 'Art of Care', style: 'subheader' },
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
@@ -145,7 +365,7 @@ async function getOverbedTables()
                         body: [
                             [
                                 {border: [false, false, false, false], text: ''},
-                                {text: 'PREMIUMOVERBEDTABLE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center', colSpan: 3},
+                                {text: 'PREMIUMOVERBEDTABLE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center', colSpan: 3},
                                 {},
                                 {},
                             ],
@@ -157,9 +377,9 @@ async function getOverbedTables()
                             ],
                             [
                                 {border: [false, false, false, false], text: ''},
-                                {text: 'OBT-636', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                                {text: 'OBT-635', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                                {text: 'OBT-634', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                                {text: 'OBT-636', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                                {text: 'OBT-635', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                                {text: 'OBT-634', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
                             ],
                             [
                                 {text: 'Dual Top - Food Service Tray', style: 'textotabla'},
@@ -192,10 +412,10 @@ async function getOverbedTables()
                                 {text: '-', style: 'textotabla', alignment: 'center'}, 
                             ],
                             [
-                                {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                {text: '$1,294', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: '$778', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: '$445', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},  
+                                {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},  
                             ],
                         ]
                     },

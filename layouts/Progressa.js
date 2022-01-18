@@ -1,14 +1,8 @@
-const axios = require('axios');
-
-var config = require("../dbconfig"); //instanciamos el archivo dbconfig
-const sql = require("mssql"); //necesitamos el paquete sql
 const dbProgressa = require('../controllers/progressa')
 
 async function getProgressa()
 {
     const res = await dbProgressa.getDataProgressa()
-    //console.log(res[0])
-    //const res = await axios.get("http://localhost:8091/api/pdf-hillroom/progressa")
     const prices = res[0]
     const patientSiderail = res[1]
     const mobility  = res[2]

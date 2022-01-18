@@ -389,7 +389,7 @@ async function getTheCenturisBed()
     /*TERMINA CICLO*/
 
     var theCenturisBed = [
-        { text: 'The Centuris™ Bed - P750', style: 'header', tocItem: 'compella'},
+        { text: 'The Centuris™ Bed - P750', style: 'header', tocItem: 'theCenturisBed'},
         { text: 'Country of origin: China\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
         { text:'Standard features:\n', style: 'textosubrayado', decoration: 'underline'},
@@ -480,7 +480,7 @@ async function getTheCenturisBed()
                             [
                                 {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
                                 {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                                {text: /*"$" + Intl.NumberFormat("en-IN").format(prices[1].Price)*/ "NO DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
                             ],
                         ]
                     },

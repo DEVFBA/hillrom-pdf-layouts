@@ -1,17 +1,13 @@
-const axios = require('axios');
+const dbOverbedTables = require('../controllers/overbedTablesTA270')
 
 async function getOverbedTables()
 {
-    const res = await axios.get("http://localhost:8091/api/pdf-hillroom/progressa")
-    const prices = res.data[0]
-    const patientSiderail = res.data[1]
-    const mobility  = res.data[2]
-    const permanentPole = res.data[3]
-    const transportShelf = res.data[4]
+    const res = await dbOverbedTables.getDataOverbedTables()
+    const prices = res[0]
 
     var overbedTables = [
         '\n',
-        { text: 'Overbed Tables', style: 'header', tocItem: 'compella'},
+        { text: 'Overbed Tables', style: 'header', tocItem: 'overbedTables'},
         { text: 'Country of origin: France', style: 'parrafo' },
         { text: '\n', style: 'textotabla' },
         { text: 'Overbed Table - TA270', style: 'subheader'},
@@ -58,8 +54,8 @@ async function getOverbedTables()
                     ],
                     [
                         {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                        {text: "$9,243", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                        {text: "$6,906", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
                     ],
                 ]
             },

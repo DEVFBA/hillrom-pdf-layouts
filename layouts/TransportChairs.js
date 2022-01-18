@@ -1,13 +1,16 @@
-const axios = require('axios');
+const dbTransportChairs = require('../controllers/transportchairs')
 
 async function getTransportChairs()
 {
-    const res = await axios.get("http://localhost:8091/api/pdf-hillroom/progressa")
-    const prices = res.data[0]
-    const patientSiderail = res.data[1]
-    const mobility  = res.data[2]
-    const permanentPole = res.data[3]
-    const transportShelf = res.data[4]
+    const res = await dbTransportChairs.getDataTransportChairs()
+    const prices = res[0]
+    const castorsData = res[1]
+    const accesoriesData  = res[2]
+    const towelHolderData = res[3]
+    const singleBottleData = res[4]
+    const coloursContrast = res[5]
+    const handlesData = res[6]
+
 
     var options =[]
     var pSItems = 0;
@@ -27,13 +30,69 @@ async function getTransportChairs()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    options[pSItems] = [
-        {text: "R4", style: 'textotabla', alignment: 'center'},
-        {text: '4 x 125 mm double-band with central brake', style: 'textotabla'},
-        {text: "$298", style: 'textotabla', alignment: 'center'},  
-    ]
+    var i=0;
+    var castorsFlag = false
+    while(castorsFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*1
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< castorsData.length && countC<1)
+        {
+           precios[preciosCount] = castorsData[j].Price
+           printCaracter[preciosCount] = castorsData[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: castorsData[j-1].Id_Item,
+            Item_Long_Desc: castorsData[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    pSItems++
+        var precio1;
+
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
+        
+        options[pSItems] = [
+            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+        ]
+
+        pSItems++
+
+        //console.log(data)
+
+        if(j >= castorsData.length)
+        {
+            castorsFlag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
 
     var accesories =[]
@@ -47,46 +106,22 @@ async function getTransportChairs()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] = [
-        {text: "FURNACC", style: 'textotabla', alignment: 'center'},
-        {text: 'AC901A', style: 'textotabla', alignment: 'center'},
-        {text: "Head support", style: 'textotabla'},  
-        {text: "$266", style: 'textotabla', alignment: 'center'},  
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "FURNACC", style: 'textotabla', alignment: 'center'},
-        {text: 'AC901A', style: 'textotabla', alignment: 'center'},
-        {text: "Head support", style: 'textotabla'},  
-        {text: "$266", style: 'textotabla', alignment: 'center'},  
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "FURNACC", style: 'textotabla', alignment: 'center'},
-        {text: 'AC901A', style: 'textotabla', alignment: 'center'},
-        {text: "Head support", style: 'textotabla'},  
-        {text: "$266", style: 'textotabla', alignment: 'center'},  
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "FURNACC", style: 'textotabla', alignment: 'center'},
-        {text: 'AC901A', style: 'textotabla', alignment: 'center'},
-        {text: "Head support", style: 'textotabla'},  
-        {text: "$266", style: 'textotabla', alignment: 'center'},  
-    ]
-
-    pSItems++
+    for(var i=0; i<accesoriesData.length; i++)
+    {
+        accesories[pSItems] = [
+            {text: accesoriesData[i].KitName, style: 'textotabla'},
+            {text: accesoriesData[i].Part, style: 'textotabla', alignment: 'center'},
+            {text: accesoriesData[i].Item_Long_Desc, style: 'textotabla'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData[i].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+    }
     /*TERMINA CICLO*/
 
     var transportChairs = [
         '\n',
-        { text: 'Transport Chairs', style: 'header', tocItem: 'compella'},
+        { text: 'Transport Chairs', style: 'header', tocItem: 'transportChairs'},
         '\n',
         { text: 'Transport Chair Anatome SM647B', style: 'subheader'},
         { text: 'Country of origin: France', style: 'parrafo' },
@@ -121,7 +156,7 @@ async function getTransportChairs()
                     ],
                     [
                         {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                        {text: "$2,686", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
                     ],
                 ]
             },

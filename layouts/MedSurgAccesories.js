@@ -1,34 +1,28 @@
-const axios = require('axios');
+const dbMedSurgAccesories = require('../controllers/medsurgaccesories')
 
 async function getMedSurgAccesories()
 {
-    const res = await axios.get("http://localhost:8091/api/pdf-hillroom/progressa")
-    const prices = res.data[0]
-    const patientSiderail = res.data[1]
-    const mobility  = res.data[2]
-    const permanentPole = res.data[3]
-    const transportShelf = res.data[4]
+    const res = await dbMedSurgAccesories.getMedSurgAccesories()
+    const bagHoldersData = res[0]
+    const bottleHolderData = res[1]
+    const controlsData = res[2]
 
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'AVG1600', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'AVG1200', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'HR900', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'HR900 Accella', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'Centuris Pro', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'HR900', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'HR900 Accella', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'Centuris Pro', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
     pSItems++
 
     options[pSItems] = [
         {text: "BAG HOLDERS", style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
-        {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
@@ -38,27 +32,106 @@ async function getMedSurgAccesories()
 
     pSItems++
 
-    /*ESTO VA EN UN CICLO*/
-    options[pSItems] = [
-        {text: "BAGHOLDER", style: 'textotabla', alignment: 'left'},
-        {text: "AD243A", style: 'textotabla'},
-        {text: "Urine Bag Holder Epoxy Beige (A Version only)", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'},
-        {text: "●", style: 'textotabla', alignment: 'center'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'},
-        {text: "$95", style: 'textotabla', alignment: 'center'},
-    ]
+    /*EMPIEZA CICLO*/
+    var i=0;
+    var bagHoldersFlag = false
+    while(bagHoldersFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*3
+        }
+        var precio; 
+        var countC=0
+        var printCaracterHR900X3 = false;
+        var printCaracterACCELLA = false;
+        var printCaracterCENTURISX3 = false;
+        while(j< bagHoldersData.length && countC<3)
+        {
+           precio= bagHoldersData[j].Price
+           if(bagHoldersData[j].Item_Template === "HR900 X3")
+           {
+                printCaracterHR900X3 = true; 
+           }
+           else if(bagHoldersData[j].Item_Template === "ACCELLA")
+           {
+                printCaracterACCELLA = true;
+           }
+           else 
+           {
+                printCaracterCENTURISX3 = true
+           }
+           j++
+           countC++
+        }
+        var data = {
+            Kit_Name: bagHoldersData[j-1].KitName,
+            Part: bagHoldersData[j-1].Part,
+            Item_Long_Desc: bagHoldersData[j-1].Item_Long_Desc,
+            Price: precio,
+            Print_Character_HR900X3: printCaracterHR900X3,
+            Print_Character_ACCELLA: printCaracterACCELLA,
+            Print_Character_CENTURISX3 : printCaracterCENTURISX3
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
+
+        if(data.Print_Character_HR900X3 !== false)
+        {
+            precio1 = "●"
+        }
+        else {
+            precio1 = "-"
+        }
+
+        if(data.Print_Character_ACCELLA !== false)
+        {
+            precio2 = "●"
+        }
+        else {
+            precio2 = "-"
+        }
+
+        if(data.Print_Character_CENTURISX3 !== false)
+        {
+            precio3 = "●"
+        }
+        else {
+            precio3 = "-"
+        }
+        
+        options[pSItems] = [
+            {text: data.Kit_Name, style: 'textotabla'},
+            {text: data.Part, style: 'textotabla'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(data.Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+
+        pSItems++
+
+        //console.log(data)
+
+        if(j >= bagHoldersData.length)
+        {
+            bagHoldersFlag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
     
     options[pSItems] = [
         {text: "BOTTLEHOLDER", style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
-        {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
@@ -69,47 +142,107 @@ async function getMedSurgAccesories()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    options[pSItems] = [
-        {text: "BOTTLEHOLDER", style: 'textotabla', alignment: 'left'},
-        {text: "AC908A", style: 'textotabla', alignment: 'left'},
-        {text: "Double bottle holder", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$93", style: 'textotabla', alignment: 'center'}, 
-    ]
+    var i=0;
+    var bottleHolderFlag = false
+    while(bottleHolderFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*3
+        }
+        var precio; 
+        var countC=0
+        var printCaracterHR900X3 = false;
+        var printCaracterACCELLA = false;
+        var printCaracterCENTURISX3 = false;
+        var parts = true
+        while(j< bottleHolderData.length && countC<3)
+        {
+            //if(bottleHolderData[j].Part === bottleHolderData[j+1].Part)
+            //{
+                precio= bottleHolderData[j].Price
+                if(bottleHolderData[j].Item_Template === "HR900 X3")
+                {
+                        printCaracterHR900X3 = true; 
+                }
+                else if(bottleHolderData[j].Item_Template === "ACCELLA")
+                {
+                        printCaracterACCELLA = true;
+                }
+                else 
+                {
+                        printCaracterCENTURISX3 = true
+                }
+                j++
+                countC++
+            /*}
+            else {
+                parts = false
+            }*/
+        }
+        var data = {
+            Kit_Name: bottleHolderData[j-1].KitName,
+            Part: bottleHolderData[j-1].Part,
+            Item_Long_Desc: bottleHolderData[j-1].Item_Long_Desc,
+            Price: precio,
+            Print_Character_HR900X3: printCaracterHR900X3,
+            Print_Character_ACCELLA: printCaracterACCELLA,
+            Print_Character_CENTURISX3 : printCaracterCENTURISX3
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
 
-    options[pSItems] = [
-        {text: "BOTTLEHOLDER", style: 'textotabla', alignment: 'left'},
-        {text: "AC932A", style: 'textotabla', alignment: 'left'},
-        {text: "Bottle holder 1L", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$73", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character_HR900X3 !== false)
+        {
+            precio1 = "●"
+        }
+        else {
+            precio1 = "-"
+        }
 
-    pSItems++
+        if(data.Print_Character_ACCELLA !== false)
+        {
+            precio2 = "●"
+        }
+        else {
+            precio2 = "-"
+        }
 
-    options[pSItems] = [
-        {text: "BOTTLEHOLDER", style: 'textotabla', alignment: 'left'},
-        {text: "AC962A", style: 'textotabla', alignment: 'left'},
-        {text: "Pivoting Bottle Holder 3L", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "$264", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character_CENTURISX3 !== false)
+        {
+            precio3 = "●"
+        }
+        else {
+            precio3 = "-"
+        }
+        
+        options[pSItems] = [
+            {text: data.Kit_Name, style: 'textotabla'},
+            {text: data.Part, style: 'textotabla'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(data.Price), style: 'textotabla', alignment: 'center'}, 
+        ]
 
-    pSItems++
+        pSItems++
+
+        //console.log(data)
+
+        if(j >= bottleHolderData.length)
+        {
+            bottleHolderFlag = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
 
     var controls = []
@@ -118,8 +251,6 @@ async function getMedSurgAccesories()
     controls[pSItems] = [
         {text: "CONTROLS", style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
-        {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
@@ -128,90 +259,102 @@ async function getMedSurgAccesories()
     ]
     pSItems++
 
-     /*ESTO VA EN UN CICLO*/
-    controls[pSItems] = [
-        {text: "CONTROLMODULES", style: 'textotabla', alignment: 'left'},
-        {text: "AD280A", style: 'textotabla', alignment: 'left'},
-        {text: "Control on flexible arm", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$534", style: 'textotabla', alignment: 'center'}, 
-    ]
+    /*EMPIEZA CICLO*/
+    var i=0;
+    var controlsFlag = false
+    while(controlsFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*3
+        }
+        var precio; 
+        var countC=0
+        var printCaracterHR900X3 = false;
+        var printCaracterACCELLA = false;
+        var printCaracterCENTURISX3 = false;
+        while(j< controlsData.length && countC<3)
+        {
+           precio= controlsData[j].Price
+           if(controlsData[j].Item_Template === "HR900 X3")
+           {
+                printCaracterHR900X3 = true; 
+           }
+           else if(controlsData[j].Item_Template === "ACCELLA")
+           {
+                printCaracterACCELLA = true;
+           }
+           else 
+           {
+                printCaracterCENTURISX3 = true
+           }
+           j++
+           countC++
+        }
+        var data = {
+            Kit_Name: controlsData[j-1].KitName,
+            Part: controlsData[j-1].Part,
+            Item_Long_Desc: controlsData[j-1].Item_Long_Desc,
+            Price: precio,
+            Print_Character_HR900X3: printCaracterHR900X3,
+            Print_Character_ACCELLA: printCaracterACCELLA,
+            Print_Character_CENTURISX3 : printCaracterCENTURISX3
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
 
-    controls[pSItems] = [
-        {text: "CONTROLMODULES", style: 'textotabla', alignment: 'left'},
-        {text: "AD280A", style: 'textotabla', alignment: 'left'},
-        {text: "Control on flexible arm", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$534", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character_HR900X3 !== false)
+        {
+            precio1 = "●"
+        }
+        else {
+            precio1 = "-"
+        }
 
-    pSItems++
+        if(data.Print_Character_ACCELLA !== false)
+        {
+            precio2 = "●"
+        }
+        else {
+            precio2 = "-"
+        }
 
-    controls[pSItems] = [
-        {text: "CONTROLPENDANT", style: 'textotabla', alignment: 'left'},
-        {text: "AD281B", style: 'textotabla', alignment: 'left'},
-        {text: "Hand pendant", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$226", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character_CENTURISX3 !== false)
+        {
+            precio3 = "●"
+        }
+        else {
+            precio3 = "-"
+        }
+        
+        controls[pSItems] = [
+            {text: data.Kit_Name, style: 'textotabla'},
+            {text: data.Part, style: 'textotabla'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(data.Price), style: 'textotabla', alignment: 'center'}, 
+        ]
 
-    pSItems++
+        pSItems++
 
-    controls[pSItems] = [
-        {text: "CONTROLPENDANT", style: 'textotabla', alignment: 'left'},
-        {text: "AD282A", style: 'textotabla', alignment: 'left'},
-        {text: "Hand pendant", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$226", style: 'textotabla', alignment: 'center'}, 
-    ]
+        //console.log(data)
 
-    pSItems++
-
-    controls[pSItems] = [
-        {text: "CONTROLMODULES", style: 'textotabla', alignment: 'left'},
-        {text: "AD283A", style: 'textotabla', alignment: 'left'},
-        {text: "Control on flexible arm", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$534", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    controls[pSItems] = [
-        {text: "CONTROLPENDANT", style: 'textotabla', alignment: 'left'},
-        {text: "AD284A", style: 'textotabla', alignment: 'left'},
-        {text: "Control pendant (HR900 ELIC BEA & ACCELLA)", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$230", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+        if(j >= controlsData.length)
+        {
+            controlsFlag = true
+        }
+        i++
+    }   
+    /*TERMINA CICLO*/
      /*TERMINA CICLO*/
 
     var supports = []
@@ -222,8 +365,6 @@ async function getMedSurgAccesories()
         {text: "FURNACC", style: 'textotabla', alignment: 'left'},
         {text: "AC968A", style: 'textotabla', alignment: 'left'},
         {text: "Equipotential Cable Link", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
@@ -239,8 +380,6 @@ async function getMedSurgAccesories()
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "$88", style: 'textotabla', alignment: 'center'}, 
     ]
 
@@ -253,8 +392,6 @@ async function getMedSurgAccesories()
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "$108", style: 'textotabla', alignment: 'center'}, 
     ]
 
@@ -264,9 +401,7 @@ async function getMedSurgAccesories()
         {text: "SUPPORTACC", style: 'textotabla', alignment: 'left'},
         {text: "AD286A", style: 'textotabla', alignment: 'left'},
         {text: "Line manager and support", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'},
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "$179", style: 'textotabla', alignment: 'center'}, 
@@ -278,9 +413,7 @@ async function getMedSurgAccesories()
         {text: "SUPPORTACC", style: 'textotabla', alignment: 'left'},
         {text: "AD325A", style: 'textotabla', alignment: 'left'},
         {text: "Label Holder", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'},
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "$27", style: 'textotabla', alignment: 'center'}, 
@@ -300,8 +433,6 @@ async function getMedSurgAccesories()
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "$183", style: 'textotabla', alignment: 'center'}, 
     ]
 
@@ -311,9 +442,7 @@ async function getMedSurgAccesories()
         {text: "TANKHOLDER", style: 'textotabla', alignment: 'left'},
         {text: "AD101A", style: 'textotabla', alignment: 'left'},
         {text: "Oxygen Tank Holder 100 mm Ø (model D)", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'},
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "$219", style: 'textotabla', alignment: 'center'}, 
@@ -328,8 +457,6 @@ async function getMedSurgAccesories()
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "$264", style: 'textotabla', alignment: 'center'}, 
     ]
 
@@ -340,15 +467,13 @@ async function getMedSurgAccesories()
     pSItems = 0
 
     liftpole[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'AVG1600', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'AVG1200', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'HR900', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'HR900 Accella', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'Centuris Pro', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'HR900', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'HR900 Accella', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'Centuris Pro', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
     pSItems++
 
@@ -356,8 +481,6 @@ async function getMedSurgAccesories()
         {text: "LIFTPOLE", style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]},
@@ -374,8 +497,6 @@ async function getMedSurgAccesories()
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "$230", style: 'textotabla', alignment: 'center'}, 
     ]
 
@@ -385,8 +506,6 @@ async function getMedSurgAccesories()
         {text: "LIFTPOLE", style: 'textotabla', alignment: 'center'},
         {text: "AD811A", style: 'textotabla'},
         {text: "Angle Pivoting Lifting Pole Light Grey", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
@@ -404,8 +523,6 @@ async function getMedSurgAccesories()
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]},
-        {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
@@ -421,8 +538,6 @@ async function getMedSurgAccesories()
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "$97", style: 'textotabla', alignment: 'center'}, 
     ]
 
@@ -432,8 +547,6 @@ async function getMedSurgAccesories()
         {text: "LIFTPOLE", style: 'textotabla', alignment: 'center'},
         {text: "AD297A", style: 'textotabla'},
         {text: "Telescopic IV Pole 4 Hooks", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
@@ -449,8 +562,6 @@ async function getMedSurgAccesories()
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "$171", style: 'textotabla', alignment: 'center'}, 
     ]
 
@@ -460,8 +571,6 @@ async function getMedSurgAccesories()
         {text: "LIFTPOLE", style: 'textotabla', alignment: 'center'},
         {text: "AD299A", style: 'textotabla'},
         {text: "One hand adjustable IV pole, 4 hooks", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
@@ -479,8 +588,6 @@ async function getMedSurgAccesories()
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]},
-        {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
@@ -496,8 +603,6 @@ async function getMedSurgAccesories()
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "$631", style: 'textotabla', alignment: 'center'}, 
     ]
 
@@ -508,8 +613,6 @@ async function getMedSurgAccesories()
         {text: "AD277A", style: 'textotabla'},
         {text: "Wall Bumper (for HR900 with Mobile Head Section)", style: 'textotabla', alignment: 'left'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "$96", style: 'textotabla', alignment: 'center'}, 
@@ -524,8 +627,6 @@ async function getMedSurgAccesories()
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "$847", style: 'textotabla', alignment: 'center'}, 
     ]
 
@@ -537,8 +638,6 @@ async function getMedSurgAccesories()
         {text: "5th wheel for HR900 Integral", style: 'textotabla', alignment: 'left'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "$628", style: 'textotabla', alignment: 'center'}, 
     ]
@@ -550,8 +649,6 @@ async function getMedSurgAccesories()
         {text: "AD276A R1", style: 'textotabla'},
         {text: "5th wheel for HR900 Simple Band", style: 'textotabla', alignment: 'left'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "$628", style: 'textotabla', alignment: 'center'}, 
@@ -565,8 +662,6 @@ async function getMedSurgAccesories()
         {text: "5th wheel for HR900 Double Band", style: 'textotabla', alignment: 'left'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "$628", style: 'textotabla', alignment: 'center'}, 
     ]
@@ -578,8 +673,6 @@ async function getMedSurgAccesories()
         {text: "P379G2D", style: 'textotabla'},
         {text: 'Communication cable - 37 pin to 1/4" HR900 with BEA + NC', style: 'textotabla', alignment: 'left'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "$113", style: 'textotabla', alignment: 'center'}, 
@@ -593,8 +686,6 @@ async function getMedSurgAccesories()
         {text: 'Communication cable - 37 pin to 3.5 mm HR900 with BEA only', style: 'textotabla', alignment: 'left'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "$113", style: 'textotabla', alignment: 'center'}, 
     ]
@@ -607,8 +698,6 @@ async function getMedSurgAccesories()
         {text: '5th wheel for HR900 Doulbe Band (Elic with BEA & ACCELLA)', style: 'textotabla', alignment: 'left'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "$628", style: 'textotabla', alignment: 'center'}, 
     ]
@@ -621,8 +710,6 @@ async function getMedSurgAccesories()
         {text: 'Electric cord holder', style: 'textotabla', alignment: 'left'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "$29", style: 'textotabla', alignment: 'center'}, 
     ]
@@ -637,8 +724,6 @@ async function getMedSurgAccesories()
         {text: "SIDERAIL ACCESORIES", style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]},
@@ -655,8 +740,6 @@ async function getMedSurgAccesories()
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "$283", style: 'textotabla', alignment: 'center'}, 
     ]
 
@@ -669,8 +752,6 @@ async function getMedSurgAccesories()
     trays[pSItems] = [
         {text: "TRAYS", style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
-        {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
@@ -688,8 +769,6 @@ async function getMedSurgAccesories()
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "$421", style: 'textotabla', alignment: 'center'}, 
     ]
 
@@ -700,8 +779,6 @@ async function getMedSurgAccesories()
         {text: "AD244B", style: 'textotabla'},
         {text: "Monitor tray Grey (B Version only)", style: 'textotabla', alignment: 'left'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "$574", style: 'textotabla', alignment: 'center'}, 
@@ -718,8 +795,6 @@ async function getMedSurgAccesories()
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]},
-        {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
@@ -733,8 +808,6 @@ async function getMedSurgAccesories()
         {text: "AD270B", style: 'textotabla'},
         {text: "Foot Section Support - Grey (B Version only)", style: 'textotabla', alignment: 'left'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "$204", style: 'textotabla', alignment: 'center'}, 
@@ -746,8 +819,6 @@ async function getMedSurgAccesories()
         {text: "TRACTION", style: 'textotabla', alignment: 'center'},
         {text: "ST865A", style: 'textotabla'},
         {text: "Kinetec Kit 1A for traction/suspension of inferior limb", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
@@ -762,8 +833,6 @@ async function getMedSurgAccesories()
         {text: "Kinetec Kit 2 for traction/suspension of superior limb", style: 'textotabla', alignment: 'left'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "1,293", style: 'textotabla', alignment: 'center'}, 
     ]
@@ -774,8 +843,6 @@ async function getMedSurgAccesories()
         {text: "TRACTION", style: 'textotabla', alignment: 'center'},
         {text: "ST868A", style: 'textotabla'},
         {text: "Kinetec Kit 3 for pelvic suspension", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
@@ -790,8 +857,6 @@ async function getMedSurgAccesories()
         {text: "Kinetec Kit 4 for cervical suspension", style: 'textotabla', alignment: 'left'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "$848", style: 'textotabla', alignment: 'center'}, 
     ]
@@ -802,8 +867,6 @@ async function getMedSurgAccesories()
         {text: "TRACTION", style: 'textotabla', alignment: 'center'},
         {text: "ST870A", style: 'textotabla'},
         {text: "Kinetec Tube T13", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
@@ -819,8 +882,6 @@ async function getMedSurgAccesories()
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "$240", style: 'textotabla', alignment: 'center'}, 
     ]
 
@@ -830,8 +891,6 @@ async function getMedSurgAccesories()
         {text: "TRACTION", style: 'textotabla', alignment: 'center'},
         {text: "ST873A", style: 'textotabla'},
         {text: "Traction - Partial Assembly at foot-end", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
@@ -846,8 +905,6 @@ async function getMedSurgAccesories()
         {text: 'Fixed clamp bar of 40cm (16")', style: 'textotabla', alignment: 'left'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "$628", style: 'textotabla', alignment: 'center'}, 
     ]
@@ -859,9 +916,7 @@ async function getMedSurgAccesories()
         {text: "ST875A", style: 'textotabla'},
         {text: 'Traction frame T39 (HR900 with Stationary Head Section)', style: 'textotabla', alignment: 'left'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'},
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "$9,062", style: 'textotabla', alignment: 'center'}, 
     ]
@@ -873,9 +928,7 @@ async function getMedSurgAccesories()
         {text: "ST876A", style: 'textotabla'},
         {text: 'Head porch bar', style: 'textotabla', alignment: 'left'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'},
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "$2,156", style: 'textotabla', alignment: 'center'}, 
     ]
@@ -888,8 +941,6 @@ async function getMedSurgAccesories()
         {text: 'Foot porch bar', style: 'textotabla', alignment: 'left'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "$2,678", style: 'textotabla', alignment: 'center'}, 
     ]
@@ -903,7 +954,7 @@ async function getMedSurgAccesories()
         "\n",
         {
             table: {
-                widths: [70, 30, "*", 30, 30, 30, 30, 30, 30],
+                widths: [70, 50, "*", 50, 50, 50, 50],
                 body: options
             },
             layout: {
@@ -927,7 +978,7 @@ async function getMedSurgAccesories()
         { text: '\n', style: 'parrafo' },
         {
             table: {
-                widths: [70, 30, "*", 30, 30, 30, 30, 30, 30],
+                widths: [70, 50, "*", 50, 50, 50, 50],
                 body: controls
             },
             layout: {
@@ -951,7 +1002,7 @@ async function getMedSurgAccesories()
         { text: 'SUPPORTS ACCESORIES', style: 'textotablaboldlarge' },
         {
             table: {
-                widths: [70, 30, "*", 30, 30, 30, 30, 30, 30],
+                widths: [70, 50, "*", 50, 50, 50, 50],
                 body: supports
             },
             layout: {
@@ -973,7 +1024,7 @@ async function getMedSurgAccesories()
         { text: 'TANKHOLDER', style: 'textotablaboldlarge' },
         {
             table: {
-                widths: [70, 30, "*", 30, 30, 30, 30, 30, 30],
+                widths: [70, 50, "*", 50, 50, 50, 50],
                 body: tankholder
             },
             layout: {
@@ -996,7 +1047,7 @@ async function getMedSurgAccesories()
         '\n',
         {
             table: {
-                widths: [70, 30, "*", 30, 30, 30, 30, 30, 30],
+                widths: [70, 50, "*", 50, 50, 50, 50],
                 body: liftpole
             },
             layout: {
@@ -1016,7 +1067,7 @@ async function getMedSurgAccesories()
         },
         {
             table: {
-                widths: [70, 30, "*", 30, 30, 30, 30, 30, 30],
+                widths: [70, 50, "*", 50, 50, 50, 50],
                 body: ivpole
             },
             layout: {
@@ -1036,7 +1087,7 @@ async function getMedSurgAccesories()
         },
         {
             table: {
-                widths: [70, 30, "*", 30, 30, 30, 30, 30, 30],
+                widths: [70, 50, "*", 50, 50, 50, 50],
                 body: optionUpgrade
             },
             layout: {
@@ -1056,7 +1107,7 @@ async function getMedSurgAccesories()
         },
         {
             table: {
-                widths: [70, 30, "*", 30, 30, 30, 30, 30, 30],
+                widths: [70, 50, "*", 50, 50, 50, 50],
                 body: siderailAccesories
             },
             layout: {
@@ -1076,7 +1127,7 @@ async function getMedSurgAccesories()
         },
         {
             table: {
-                widths: [70, 30, "*", 30, 30, 30, 30, 30, 30],
+                widths: [70, 50, "*", 50, 50, 50, 50],
                 body: trays
             },
             layout: {
@@ -1096,7 +1147,7 @@ async function getMedSurgAccesories()
         },
         {
             table: {
-                widths: [70, 30, "*", 30, 30, 30, 30, 30, 30],
+                widths: [70, 50, "*", 50, 50, 50, 50],
                 body: traction
             },
             layout: {

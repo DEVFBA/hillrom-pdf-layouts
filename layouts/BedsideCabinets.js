@@ -1,13 +1,10 @@
-const axios = require('axios');
+const dbBedsideCabinets = require('../controllers/bedsidecabinetspremiumAOC')
 
 async function getBedsideCabinets()
 {
-    const res = await axios.get("http://localhost:8091/api/pdf-hillroom/progressa")
-    const prices = res.data[0]
-    const patientSiderail = res.data[1]
-    const mobility  = res.data[2]
-    const permanentPole = res.data[3]
-    const transportShelf = res.data[4]
+    const res = await dbBedsideCabinets.getBedsideCabinetsPremiumAOC()
+    const prices = res[0]
+    const optionsData = res[1]
 
     var options =[]
     var pSItems = 0;
@@ -19,24 +16,92 @@ async function getBedsideCabinets()
     pSItems++
 
     /*EMPIEZA CICLO*/
-    options[pSItems] = [
-        {text: "CAL 133 Flammability Barrier (CAL)", style: 'textotabla'},
-        {text: "$195", style: 'textotabla', alignment: 'center'},
-        {text: "$195", style: 'textotabla', alignment: 'center'}, 
-    ]
-    pSItems++
+    /*EMPIEZA CICLO*/
+    var i=0;
+    var optionsFlag = false
+    while(optionsFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*3
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< optionsData.length && countC<3)
+        {
+           precios[preciosCount] = optionsData[j].Price
+           printCaracter[preciosCount] = optionsData[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: optionsData[j-1].Id_Item,
+            Item_Long_Desc: optionsData[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    options[pSItems] = [
-        {text: "Black Urethane Arm Cap (BLK)", style: 'textotabla'},
-        {text: "$164", style: 'textotabla', alignment: 'center'},
-        {text: "$164", style: 'textotabla', alignment: 'center'}, 
-    ]
-    pSItems++
+        var precio1;
+        var precio2;
+
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
+
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
+
+        
+        options[pSItems] = [
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+        ]
+
+        pSItems++
+
+        //console.log(data)
+
+        if(j >= optionsData.length)
+        {
+            optionsFlag = true
+        }
+        i++
+    }   
+    /*TERMINA CICLO*/
     /*TERMINA CICLO*/
 
     var bedsideCabinets = [
         '\n',
-        { text: 'Bedside Cabinets', style: 'header' },
+        { text: 'Bedside Cabinets', style: 'header', tocItem: "bedsideCabinets"},
         { text: 'Premium (AOC)\n', style: 'subheader' },
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
@@ -96,8 +161,8 @@ async function getBedsideCabinets()
                             ],
                             [
                                 {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                {text: '$1,487', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: '$1,487', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
                             ],
                         ]
                     },

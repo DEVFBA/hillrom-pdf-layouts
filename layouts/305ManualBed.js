@@ -1,13 +1,12 @@
-const axios = require('axios');
+const db305ManualBed = require('../controllers/305manualbed')
 
 async function get305ManualBed()
 {
-    const res = await axios.get("http://localhost:8091/api/pdf-hillroom/progressa")
-    const prices = res.data[0]
-    const patientSiderail = res.data[1]
-    const mobility  = res.data[2]
-    const permanentPole = res.data[3]
-    const transportShelf = res.data[4]
+    const res = await db305ManualBed.getData305ManualBed()
+    const prices = res[0]
+    const np50 = res[1]
+    const surface  = res[2]
+    const accesoriesData = res[3]
 
     var options =[]
     var pSItems = 0;
@@ -21,25 +20,18 @@ async function get305ManualBed()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    options[pSItems] = [
-        {text: "NP50MAT", style: 'textotabla', alignment: 'center'},
-        {text: "NP50 (non-powered) Surface MRS", style: 'textotabla'},
-        {text: '80" x 35.5" x 6"', style: 'textotabla', alignment: 'center'}, 
-        {text: "P50A7F", style: 'textotabla'},
-        {text: "$462", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "NP100MAT", style: 'textotabla', alignment: 'center'},
-        {text: "NP100 (non-powered) Surface", style: 'textotabla'},
-        {text: '80" x 35.5" x 6"', style: 'textotabla', alignment: 'center'}, 
-        {text: "P100A4", style: 'textotabla'},
-        {text: "$770", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+    for(var i=0; i<np50.length; i++)
+    {
+        options[pSItems] = [
+            {text: np50[i].KitName, style: 'textotabla', alignment: 'center'},
+            {text: np50[i].Item_Long_Desc, style: 'textotabla'},
+            {text: np50[i].Size, style: 'textotabla', alignment: 'center'}, 
+            {text: np50[i].Part, style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(np50[i].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+    }
     /*TERMINA CICLO*/
     
     var options2 = []
@@ -55,15 +47,18 @@ async function get305ManualBed()
     pSItems++
 
      /*ESTO VA EN UN CICLO*/
-    options2[pSItems] = [
-        {text: "SURFACE", style: 'textotabla', alignment: 'center'},
-        {text: "NP50 SW - Sewn cover", style: 'textotabla'},
-        {text: "198x90x14cm", style: 'textotabla', alignment: 'center'}, 
-        {text: "ASS028CN", style: 'textotabla'},
-        {text: "$391", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+     for(var i=0; i<surface.length; i++)
+     {
+        options2[pSItems] = [
+             {text: surface[i].KitName, style: 'textotabla', alignment: 'center'},
+             {text: surface[i].Item_Long_Desc, style: 'textotabla'},
+             {text: surface[i].Size, style: 'textotabla', alignment: 'center'}, 
+             {text: surface[i].Part, style: 'textotabla', alignment: 'center'}, 
+             {text: "$" + Intl.NumberFormat("en-IN").format(surface[i].Price), style: 'textotabla', alignment: 'center'}, 
+         ]
+     
+         pSItems++
+     }
     /*TERMINA CICLO*/
 
     var accesories = []
@@ -78,14 +73,17 @@ async function get305ManualBed()
     pSItems++
 
      /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] = [
-        {text: "ENTER AS END ITEM", style: 'textotabla', alignment: 'center'},
-        {text: "IV Pole (Made in CHINA)", style: 'textotabla'},
-        {text: "P1445A", style: 'textotabla', alignment: 'center'}, 
-        {text: "$108", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+     for(var i=0; i<accesoriesData.length; i++)
+     {
+        accesories[pSItems] = [
+             {text: accesoriesData[i].KitName, style: 'textotabla', alignment: 'center'},
+             {text: accesoriesData[i].Item_Long_Desc, style: 'textotabla'},
+             {text: accesoriesData[i].Part, style: 'textotabla', alignment: 'center'}, 
+             {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData[i].Price), style: 'textotabla', alignment: 'center'}, 
+         ]
+     
+         pSItems++
+     }
     /*TERMINA CICLO*/
 
     var t305ManualBed = [
@@ -156,7 +154,7 @@ async function get305ManualBed()
                                     ],
                                     [
                                         {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                        {text: "$2,605", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
                                     ],
                                     [
                                         {border: [false, false, false, false], text: '', style: 'textotablabold'},

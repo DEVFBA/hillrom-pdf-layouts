@@ -1,13 +1,16 @@
-const axios = require('axios');
+const dbAffinity = require('../controllers/affinity4birthingbed')
 
 async function getAffinity4BirthingBed()
 {
-    const res = await axios.get("http://localhost:8091/api/pdf-hillroom/progressa")
-    const prices = res.data[0]
-    const patientSiderail = res.data[1]
-    const mobility  = res.data[2]
-    const permanentPole = res.data[3]
-    const transportShelf = res.data[4]
+    const res = await dbAffinity.getAffinity()
+    const prices = res[0]
+    const straight = res[1]
+    const surfaceFoot = res[2]
+    const additionalOptions = res[3]
+    const replacementSurfacesHead = res[4]
+    const replacementSurfacesFoot = res[5]
+    const replacementSurfacesFoot35 = res[6]
+    const accesoriesData = res[7]
 
     var options =[]
     var pSItems = 0;
@@ -41,37 +44,183 @@ async function getAffinity4BirthingBed()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    options[pSItems] = [
-        {text: "S", style: 'textotabla', alignment: 'center'},
-        {text: "Straight Cut", style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-    ]
+    var i=0;
+    var straightLayout = false
+    while(straightLayout === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*8
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< straight.length && countC<8)
+        {
+           precios[preciosCount] = straight[j].Price
+           printCaracter[preciosCount] = straight[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: straight[j-1].Id_Item,
+            Item_Long_Desc: straight[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
+        var precio5;
+        var precio6;
+        var precio7;
+        var precio8;
 
-    options[pSItems] = [
-        {text: "V", style: 'textotabla', alignment: 'center'},
-        {text: "V Cut", style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
 
-    pSItems++
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
+
+        if(data.Print_Character[2] !== null)
+        {
+            if(data.Print_Character[2] === "*")
+            {
+                precio3 = "●"
+            }
+            else {
+                precio3 = "-"
+            }
+        }
+        else {
+            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+        }
+
+        if(data.Print_Character[3] !== null)
+        {
+            if(data.Print_Character[3] === "*")
+            {
+                precio4 = "●"
+            }
+            else {
+                precio4 = "-"
+            }
+        }
+        else {
+            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
+        }
+
+        if(data.Print_Character[4] !== null)
+        {
+            if(data.Print_Character[4] === "*")
+            {
+                precio5 = "●"
+            }
+            else {
+                precio5 = "-"
+            }
+        }
+        else {
+            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
+        }
+
+        if(data.Print_Character[5] !== null)
+        {
+            if(data.Print_Character[5] === "*")
+            {
+                precio6 = "●"
+            }
+            else {
+                precio6 = "-"
+            }
+        }
+        else {
+            precio6 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[5])
+        }
+
+        if(data.Print_Character[6] !== null)
+        {
+            if(data.Print_Character[6] === "*")
+            {
+                precio7 = "●"
+            }
+            else {
+                precio7 = "-"
+            }
+        }
+        else {
+            precio7 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[6])
+        }
+
+        if(data.Print_Character[7] !== null)
+        {
+            if(data.Print_Character[7] === "*")
+            {
+                precio8 = "●"
+            }
+            else {
+                precio8 = "-"
+            }
+        }
+        else {
+            precio8 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[7])
+        }
+        
+        options[pSItems] = [
+            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: precio4, style: 'textotabla', alignment: 'center'}, 
+            {text: precio5, style: 'textotabla', alignment: 'center'}, 
+            {text: precio6, style: 'textotabla', alignment: 'center'}, 
+            {text: precio7, style: 'textotabla', alignment: 'center'},
+            {text: precio8, style: 'textotabla', alignment: 'center'}
+        ]
+
+        pSItems++
+
+        //console.log(data)
+
+        if(j >= straight.length)
+        {
+            straightLayout = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
-    
+ 
     options[pSItems] = [
         {text: 'Surface Foot Section', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
@@ -88,20 +237,181 @@ async function getAffinity4BirthingBed()
     pSItems ++
 
     /*ESTO VA EN UN CICLO*/
-    options[pSItems] = [
-        {text: "4.5", style: 'textotabla', alignment: 'center'},
-        {text: 'Thickness 4.5" (11,4 cm)', style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+    var i=0;
+    var surfaceFootLayout = false
+    while(surfaceFootLayout === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*8
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< surfaceFoot.length && countC<8)
+        {
+           precios[preciosCount] = surfaceFoot[j].Price
+           printCaracter[preciosCount] = surfaceFoot[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: surfaceFoot[j-1].Id_Item,
+            Item_Long_Desc: surfaceFoot[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
+        var precio5;
+        var precio6;
+        var precio7;
+        var precio8;
+
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
+
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
+
+        if(data.Print_Character[2] !== null)
+        {
+            if(data.Print_Character[2] === "*")
+            {
+                precio3 = "●"
+            }
+            else {
+                precio3 = "-"
+            }
+        }
+        else {
+            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+        }
+
+        if(data.Print_Character[3] !== null)
+        {
+            if(data.Print_Character[3] === "*")
+            {
+                precio4 = "●"
+            }
+            else {
+                precio4 = "-"
+            }
+        }
+        else {
+            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
+        }
+
+        if(data.Print_Character[4] !== null)
+        {
+            if(data.Print_Character[4] === "*")
+            {
+                precio5 = "●"
+            }
+            else {
+                precio5 = "-"
+            }
+        }
+        else {
+            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
+        }
+
+        if(data.Print_Character[5] !== null)
+        {
+            if(data.Print_Character[5] === "*")
+            {
+                precio6 = "●"
+            }
+            else {
+                precio6 = "-"
+            }
+        }
+        else {
+            precio6 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[5])
+        }
+
+        if(data.Print_Character[6] !== null)
+        {
+            if(data.Print_Character[6] === "*")
+            {
+                precio7 = "●"
+            }
+            else {
+                precio7 = "-"
+            }
+        }
+        else {
+            precio7 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[6])
+        }
+
+        if(data.Print_Character[7] !== null)
+        {
+            if(data.Print_Character[7] === "*")
+            {
+                precio8 = "●"
+            }
+            else {
+                precio8 = "-"
+            }
+        }
+        else {
+            precio8 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[7])
+        }
+        
+        options[pSItems] = [
+            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: precio4, style: 'textotabla', alignment: 'center'}, 
+            {text: precio5, style: 'textotabla', alignment: 'center'}, 
+            {text: precio6, style: 'textotabla', alignment: 'center'}, 
+            {text: precio7, style: 'textotabla', alignment: 'center'},
+            {text: precio8, style: 'textotabla', alignment: 'center'}
+        ]
+
+        pSItems++
+
+        //console.log(data)
+
+        if(j >= surfaceFoot.length)
+        {
+            surfaceFootLayout = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
 
     options[pSItems] = [
@@ -120,37 +430,181 @@ async function getAffinity4BirthingBed()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    
-    options[pSItems] = [
-        {text: "CALF", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports", style: 'textotabla'},
-        {text: "$2,190", style: 'textotabla', alignment: 'center'}, 
-        {text: "$2,190", style: 'textotabla', alignment: 'center'}, 
-        {text: "$2,190", style: 'textotabla', alignment: 'center'}, 
-        {text: "$2,190", style: 'textotabla', alignment: 'center'},
-        {text: "$2,190", style: 'textotabla', alignment: 'center'}, 
-        {text: "$2,190", style: 'textotabla', alignment: 'center'},
-        {text: "$2,190", style: 'textotabla', alignment: 'center'}, 
-        {text: "$2,190", style: 'textotabla', alignment: 'center'},
-    ]
+    var i=0;
+    var additionalOptionsLayout = false
+    while(additionalOptionsLayout === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*8
+        }
+        var precios = []
+        var preciosCount = 0
+        var countC=0
+        var printCaracter = []
+        while(j< additionalOptions.length && countC<8)
+        {
+           precios[preciosCount] = additionalOptions[j].Price
+           printCaracter[preciosCount] = additionalOptions[j].Print_Character
+           preciosCount++
+           j++
+           countC++
+        }
+        var data = {
+            Id_Item: additionalOptions[j-1].Id_Item,
+            Item_Long_Desc: additionalOptions[j-1].Item_Long_Desc,
+            Prices: precios,
+            Print_Character: printCaracter
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
+        var precio5;
+        var precio6;
+        var precio7;
+        var precio8;
 
-    options[pSItems] = [
-        {text: "PH", style: 'textotabla', alignment: 'center'},
-        {text: "Push Handles with IV Hook", style: 'textotabla'},
-        {text: "$425", style: 'textotabla', alignment: 'center'}, 
-        {text: "$425", style: 'textotabla', alignment: 'center'}, 
-        {text: "$425", style: 'textotabla', alignment: 'center'}, 
-        {text: "$425", style: 'textotabla', alignment: 'center'}, 
-        {text: "$425", style: 'textotabla', alignment: 'center'}, 
-        {text: "$425", style: 'textotabla', alignment: 'center'}, 
-        {text: "$425", style: 'textotabla', alignment: 'center'}, 
-        {text: "$425", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character[0] !== null)
+        {
+            if(data.Print_Character[0] === "*")
+            {
+                precio1 = "●"
+            }
+            else {
+                precio1 = "-"
+            }
+        }
+        else {
+            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+        }
 
-    pSItems++
+        if(data.Print_Character[1] !== null)
+        {
+            if(data.Print_Character[1] === "*")
+            {
+                precio2 = "●"
+            }
+            else {
+                precio2 = "-"
+            }
+        }
+        else {
+            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+        }
 
+        if(data.Print_Character[2] !== null)
+        {
+            if(data.Print_Character[2] === "*")
+            {
+                precio3 = "●"
+            }
+            else {
+                precio3 = "-"
+            }
+        }
+        else {
+            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+        }
+
+        if(data.Print_Character[3] !== null)
+        {
+            if(data.Print_Character[3] === "*")
+            {
+                precio4 = "●"
+            }
+            else {
+                precio4 = "-"
+            }
+        }
+        else {
+            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
+        }
+
+        if(data.Print_Character[4] !== null)
+        {
+            if(data.Print_Character[4] === "*")
+            {
+                precio5 = "●"
+            }
+            else {
+                precio5 = "-"
+            }
+        }
+        else {
+            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
+        }
+
+        if(data.Print_Character[5] !== null)
+        {
+            if(data.Print_Character[5] === "*")
+            {
+                precio6 = "●"
+            }
+            else {
+                precio6 = "-"
+            }
+        }
+        else {
+            precio6 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[5])
+        }
+
+        if(data.Print_Character[6] !== null)
+        {
+            if(data.Print_Character[6] === "*")
+            {
+                precio7 = "●"
+            }
+            else {
+                precio7 = "-"
+            }
+        }
+        else {
+            precio7 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[6])
+        }
+
+        if(data.Print_Character[7] !== null)
+        {
+            if(data.Print_Character[7] === "*")
+            {
+                precio8 = "●"
+            }
+            else {
+                precio8 = "-"
+            }
+        }
+        else {
+            precio8 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[7])
+        }
+        
+        options[pSItems] = [
+            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: precio4, style: 'textotabla', alignment: 'center'}, 
+            {text: precio5, style: 'textotabla', alignment: 'center'}, 
+            {text: precio6, style: 'textotabla', alignment: 'center'}, 
+            {text: precio7, style: 'textotabla', alignment: 'center'},
+            {text: precio8, style: 'textotabla', alignment: 'center'}
+        ]
+
+        pSItems++
+
+        //console.log(data)
+
+        if(j >= additionalOptions.length)
+        {
+            additionalOptionsLayout = true
+        }
+        i++
+    }   
     /*TERMINA CICLO*/
 
     var surfaces = []
@@ -175,41 +629,17 @@ async function getAffinity4BirthingBed()
     pSItems ++
 
      /*ESTO VA EN UN CICLO*/
-    surfaces[pSItems] = [
-        {text: "AFFINITYMAT", style: 'textotabla', alignment: 'center'},
-        {text: 'Foam "V" Cut', style: 'textotabla'},
-        {text: "P3610FB01", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,129", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    surfaces[pSItems] = [
-        {text: "AFFINITYMAT", style: 'textotabla', alignment: 'center'},
-        {text: "Foam Straight Cut (Previously S4622802)", style: 'textotabla'},
-        {text: "P3611FB01", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,129", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    surfaces[pSItems] = [
-        {text: "AFFINITYMAT", style: 'textotabla', alignment: 'center'},
-        {text: "Air Straight Cut (Previously S4622602)", style: 'textotabla'},
-        {text: "P3614FB01", style: 'textotabla', alignment: 'center'}, 
-        {text: "$2,040", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    surfaces[pSItems] = [
-        {text: "AFFINITYMAT", style: 'textotabla', alignment: 'center'},
-        {text: 'Air "V" Cut (Previously S4622602)', style: 'textotabla'},
-        {text: "P3615FB01", style: 'textotabla', alignment: 'center'}, 
-        {text: "$2,040", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+     for(var i=0; i<replacementSurfacesHead.length; i++)
+     {
+         surfaces[pSItems] = [
+             {text: replacementSurfacesHead[i].KitName, style: 'textotabla', alignment: 'center'},
+             {text: replacementSurfacesHead[i].Item_Long_Desc, style: 'textotabla'},
+             {text: replacementSurfacesHead[i].Part, style: 'textotabla', alignment: 'center'}, 
+             {text: "$" + Intl.NumberFormat("en-IN").format(replacementSurfacesHead[i].Price), style: 'textotabla', alignment: 'center'}, 
+         ]
+     
+         pSItems++
+     }
      /*TERMINA CICLO*/
 
     surfaces[pSItems] = [
@@ -222,23 +652,17 @@ async function getAffinity4BirthingBed()
     pSItems ++
 
     /*ESTO VA EN UN CICLO*/
-    surfaces[pSItems] = [
-        {text: "AFFINITYMAT", style: 'textotabla', alignment: 'center'},
-        {text: "Foam Straight Cut (Previously S4622802)", style: 'textotabla'},
-        {text: "P3611FB01", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,129", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    surfaces[pSItems] = [
-        {text: "AFFINITYMAT", style: 'textotabla', alignment: 'center'},
-        {text: 'Foam "V" Cut (Lift-Off)', style: 'textotabla'},
-        {text: "P3610FB02", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,020", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+    for(var i=0; i<replacementSurfacesFoot.length; i++)
+     {
+         surfaces[pSItems] = [
+             {text: replacementSurfacesFoot[i].KitName, style: 'textotabla', alignment: 'center'},
+             {text: replacementSurfacesFoot[i].Item_Long_Desc, style: 'textotabla'},
+             {text: replacementSurfacesFoot[i].Part, style: 'textotabla', alignment: 'center'}, 
+             {text: "$" + Intl.NumberFormat("en-IN").format(replacementSurfacesFoot[i].Price), style: 'textotabla', alignment: 'center'}, 
+         ]
+     
+         pSItems++
+     }
      /*TERMINA CICLO*/
 
      surfaces[pSItems] = [
@@ -251,32 +675,17 @@ async function getAffinity4BirthingBed()
     pSItems ++
 
     /*ESTO VA EN UN CICLO*/
-    surfaces[pSItems] = [
-        {text: "AFFINITYMAT", style: 'textotabla', alignment: 'center'},
-        {text: 'Foam "V" Cut (Lift-Off)', style: 'textotabla'},
-        {text: "P3610FB03", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,020", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    surfaces[pSItems] = [
-        {text: "AFFINITYMAT", style: 'textotabla', alignment: 'center'},
-        {text: 'Foam "V" Cut (Stow and Go) - Bed revision A & B', style: 'textotabla'},
-        {text: "P3610FB04", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,020", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    surfaces[pSItems] = [
-        {text: "AFFINITYMAT", style: 'textotabla', alignment: 'center'},
-        {text: 'Foam "V" Cut (Stow and Go) - Bed revision A & B', style: 'textotabla'},
-        {text: "P3610FB04", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,020", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+    for(var i=0; i<replacementSurfacesFoot35.length; i++)
+     {
+         surfaces[pSItems] = [
+             {text: replacementSurfacesFoot35[i].KitName, style: 'textotabla', alignment: 'center'},
+             {text: replacementSurfacesFoot35[i].Item_Long_Desc, style: 'textotabla'},
+             {text: replacementSurfacesFoot35[i].Part, style: 'textotabla', alignment: 'center'}, 
+             {text: "$" + Intl.NumberFormat("en-IN").format(replacementSurfacesFoot35[i].Price), style: 'textotabla', alignment: 'center'}, 
+         ]
+     
+         pSItems++
+     }
      /*TERMINA CICLO*/
 
     var accesories = []
@@ -292,108 +701,21 @@ async function getAffinity4BirthingBed()
     pSItems++
 
      /*ESTO VA EN UN CICLO*/
-     accesories[pSItems] = [
-        {text: "MISCACCESSORIES", style: 'textotabla', alignment: 'center'},
-        {text: "Removable two section, telescopic IV pole", style: 'textotabla'},
-        {text: "P2217A", style: 'textotabla', alignment: 'center'}, 
-        {text: "$117", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "MISCACCESSORIES", style: 'textotabla', alignment: 'center'},
-        {text: "Vertical Oxygen Tank Holder", style: 'textotabla'},
-        {text: "P27601", style: 'textotabla', alignment: 'center'}, 
-        {text: "$385", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Universal Instrument Tray", style: 'textotabla'},
-        {text: "P278B", style: 'textotabla', alignment: 'center'}, 
-        {text: "$375", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Universal Instrument Tray", style: 'textotabla'},
-        {text: "P278B", style: 'textotabla', alignment: 'center'}, 
-        {text: "$375", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports, Telescoping (Fully Padded w/Telescoping Height Adjustment) - Pair", style: 'textotabla'},
-        {text: "P35745A", style: 'textotabla', alignment: 'center'}, 
-        {text: "$3,152", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Labor Bar", style: 'textotabla'},
-        {text: "P3613B", style: 'textotabla', alignment: 'center'}, 
-        {text: "$714", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Drainage Bag (Foley) Hook Kit", style: 'textotabla'},
-        {text: "P3623", style: 'textotabla', alignment: 'center'}, 
-        {text: "$262", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Calf Supports - Pair (Affinity IV)", style: 'textotabla'},
-        {text: "P3705A", style: 'textotabla', alignment: 'center'}, 
-        {text: "$2,190", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "2 Permanent IV poles 18 kg (foldable)", style: 'textotabla'},
-        {text: "P3732A", style: 'textotabla', alignment: 'center'}, 
-        {text: "$588", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Integrated line managers", style: 'textotabla'},
-        {text: "P3733A", style: 'textotabla', alignment: 'center'}, 
-        {text: "$193", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "AFFINITYACC", style: 'textotabla', alignment: 'center'},
-        {text: "Full Leg Supports, Telescoping (Fully Padded W/Telescoping Height Adjustment) - Pair", style: 'textotabla'},
-        {text: "P7634C", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,705", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+     for(var i=0; i<accesoriesData.length; i++)
+     {
+        accesories[pSItems] = [
+             {text: accesoriesData[i].KitName, style: 'textotabla', alignment: 'center'},
+             {text: accesoriesData[i].Item_Long_Desc, style: 'textotabla'},
+             {text: accesoriesData[i].Part, style: 'textotabla', alignment: 'center'}, 
+             {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData[i].Price), style: 'textotabla', alignment: 'center'}, 
+         ]
+     
+         pSItems++
+     }
     /*TERMINA CICLO*/
 
     var affinity4 = [
-        { text: 'Affinity™ 4 Birthing Bed', style: 'header', tocItem: 'compella'},
+        { text: 'Affinity™ 4 Birthing Bed', style: 'header', tocItem: 'affinity4BirthingBed'},
         { text: 'Maternity', style: 'subheader', tocItem: 'compella'},
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
@@ -556,14 +878,14 @@ async function getAffinity4BirthingBed()
                             ],
                             [
                                 {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                {text: "$30,315", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                {text: "$31,557", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                {text: "$36,191", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                {text: "$37,323", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                {text: "$35,670", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                {text: "$36,944", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                {text: "$40,860", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                {text: "$41,958", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[4].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[5].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[6].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[7].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
                             ],
                         ]
                     },
@@ -677,7 +999,7 @@ async function getAffinity4BirthingBed()
         { text: 'ACCESORIES', style: 'textotablaboldlarge' },
         {
             table: {
-                widths: [80, "*", 80, 80],
+                widths: [70, '*', 70, 70],
                 body: accesories
             },
             layout: {
