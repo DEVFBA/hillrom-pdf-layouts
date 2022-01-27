@@ -388,7 +388,12 @@ async function getTheCenturisBed()
      }
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var theCenturisBed = [
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         { text: 'The Centuris™ Bed - P750', style: 'header', tocItem: 'theCenturisBed'},
         { text: 'Country of origin: China\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
@@ -533,6 +538,7 @@ async function getTheCenturisBed()
             ]
         },
         {text: '', pageBreak: 'after'  },
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
         '\n',
         { text: 'SURFACES', style: 'textotablaboldlarge' },
         { text: 'Country of Origin: France', style: 'parrafo' },

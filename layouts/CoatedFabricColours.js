@@ -1,11 +1,16 @@
+const fecha = new Date();
+fecha.toLocaleDateString()
+
 async function getCoatedFabricColours()
 {
     var coatedFabricColours = [
-        "\n",
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         {
             columns: [
                 [
-                    { text: 'Coated Fabric Colours', style: 'header', tocItem: 'compella'},
+                    { text: 'Coated Fabric Colours', style: 'header'},
+                    { text: 'Fabrics', style: { fontSize: 0}, tocItem: 'coatedFabricColours'},
                     { text: 'For wood and metal chairs', style: 'parrafo' },
                     { text: 'Country of origin: France', style: 'parrafo' },
                 ],

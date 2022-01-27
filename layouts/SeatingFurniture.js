@@ -215,10 +215,16 @@ async function getSeatingFurniture()
     }   
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var seatingFurniture = [
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         { text: 'Seating Furniture', style: 'header' },
         { text: 'Country of origin: USA\n', style: 'parrafo' },
-        { text: 'RECLINERS\n', style: 'subheader', tocItem: 'seatingFurniture' },
+        { text: 'RECLINERS\n', style: 'subheader'},
+        { text: 'Recliners, Sleeper Sofa and Sleeper Chair', style: { fontSize: 0}, tocItem: 'seatingFurniture'},
         '\n',
         { text:'Features & Benefits\n', style: 'textotablaboldlarge'},
         { text: '\n', style: 'parrafo' },

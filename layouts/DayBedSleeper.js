@@ -1,5 +1,8 @@
 const axios = require('axios');
 
+const fecha = new Date();
+fecha.toLocaleDateString()
+
 async function getDayBedSleeper()
 {
     /*const res = await axios.get("http://localhost:8091/api/pdf-hillroom/progressa")
@@ -149,7 +152,8 @@ async function getDayBedSleeper()
     /*TERMINA CICLO*/
 
     var getDayBedSleeper = [
-        '\n',
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         { text: 'Day Bed Sleeper\n', style: 'subheader' },
         "\n",
         {

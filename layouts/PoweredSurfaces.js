@@ -238,8 +238,14 @@ async function getPoweredSurfaces()
     }
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var poweredSurfaces = [
-        { text: 'Powered Surfaces', style: 'header', tocItem: 'poweredSurfaces'},
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
+        { text: 'Powered Surfaces', style: 'header'},
+        { text: 'Covers / Accessories', style: { fontSize: 0}, tocItem: 'poweredSurfaces'},
         { text: 'Country of origin: France', style: 'parrafo' },
         "\n",
         {

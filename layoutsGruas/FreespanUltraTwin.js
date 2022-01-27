@@ -208,8 +208,12 @@ async function getFreespanUltraTwin()
 
     pSItems++
     /*TERMINA CICLO*/
+
+    const fecha = new Date();
+    fecha.toLocaleDateString()
     
     var freespanUltraTwin = [
+        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {

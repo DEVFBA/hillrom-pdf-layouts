@@ -93,8 +93,14 @@ async function getAccumax()
     }
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var accumax = [
-        { text: 'ACCUMAX', style: 'header', tocItem: 'accumax'},
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
+        { text: 'ACCUMAX', style: 'header'},
+        { text: 'AccuMax Quantum™ VPC', style: { fontSize: 0}, tocItem: 'accumax'},
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
         {

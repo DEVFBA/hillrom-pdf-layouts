@@ -244,7 +244,12 @@ async function getSlingsForAdults()
     pSItems++
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var slingsForAdults = [
+        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
+        "\n",
         { text: 'SLINGS FOR ADULTS', style: 'header' },
         "\n",
         {

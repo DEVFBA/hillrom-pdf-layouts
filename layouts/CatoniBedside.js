@@ -567,7 +567,12 @@ async function getCatoniBedSide()
     }   
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var catoni = [
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         {
             table: {
                 widths: ["*", 80, 80],
@@ -583,7 +588,7 @@ async function getCatoniBedSide()
                         {},
                     ],
                     [
-                        {border: [false, false, false, false], text: 'Catoni Bedside Cabinet with overbed table - bilateral functionality', style: 'textotablaboldlarge', tocItem: "catoniBedSide"},
+                        {border: [false, false, false, false], text: 'Catoni Bedside Cabinet with overbed table - bilateral functionality', style: 'textotablaboldlarge'},
                         {text: 'B03', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
                         {text: 'B04', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
                     ],

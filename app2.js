@@ -10,6 +10,7 @@ var fonts = {
 var PdfPrinter = require('pdfmake');
 var printer = new PdfPrinter(fonts);
 var fs = require('fs');
+var ruta = "/Users/alexishernandezolvera/Desktop/GTC/PROYECTOS/hillrom-pdf-layouts/"
 
 var mobileLifts = require("./layoutsGruas/MobileLifts.js")
 var viking = require("./layoutsGruas/Viking.js")
@@ -19,6 +20,8 @@ var overheadLifts = require("./layoutsGruas/OverheadLifts.js")
 var railSystemH70 = require("./layoutsGruas/RailSystemH70.js")
 var railSystemH100 = require("./layoutsGruas/RailSystemH100.js")
 var railSystemH140 = require("./layoutsGruas/RailSystemH140.js")
+var assemblyParts = require("./layoutsGruas/AssemblyParts.js")
+var railSwitchSystem = require("./layoutsGruas/RailSwitchSystem.js")
 var freespanStraightRail = require("./layoutsGruas/FreespanStraightRail.js")
 var freespanTraverse = require("./layoutsGruas/FreespanTraverse.js")
 var freespanUltraTwin = require("./layoutsGruas/FreespanUltraTwin.js")
@@ -27,7 +30,15 @@ var freeSpirit = require("./layoutsGruas/FreeSpirit.js")
 var liftingAccesories = require("./layoutsGruas/LiftingAccesories.js")
 var slingsForChildren = require("./layoutsGruas/SlingsForChildren.js")
 var slingsForAdults = require("./layoutsGruas/SlingsForAdults.js")
+var accesoriesForSlings = require("./layoutsGruas/AccesoriesForSlings.js")
 var likoOriginalHighback = require("./layoutsGruas/LikoHighback.js")
+var likoConfortsling = require("./layoutsGruas/LikoConfortSling.js")
+var likoMastervest = require("./layoutsGruas/LikoMastervest.js")
+var likoLiftPants = require("./layoutsGruas/LikoLiftPants.js")
+var likoStretchers = require("./layoutsGruas/LikoStretchers.js")
+var likoFlexostretch = require("./layoutsGruas/LikoFlexostretch.js")
+var reposheet = require("./layoutsGruas/Reposheet.js")
+var manualAIDS = require("./layoutsGruas/ManualAids.js")
 
 async function createDocument()
 {
@@ -39,6 +50,8 @@ async function createDocument()
     var railSystemH70Layout = await railSystemH70.getRailSystemH70()
     var railSystemH100Layout = await railSystemH100.getRailSystemH100()
     var railSystemH140Layout = await railSystemH140.getRailSystemH140()
+    var assemblyPartsLayout = await assemblyParts.getAssemblyParts()
+    var railSwitchSystemLayout = await railSwitchSystem.getRailSwitchSystem()
     var freespanStraightRailLayout = await freespanStraightRail.getFreespanStraightRail()
     var freespanTraverseLayout = await freespanTraverse.getFreespanTraverse()
     var freespanUltraTwinLayout = await freespanUltraTwin.getFreespanUltraTwin()
@@ -47,14 +60,24 @@ async function createDocument()
     var liftingAccesoriesLayout = await liftingAccesories.getLiftingAccesories()
     var slingsForChildrenLayout = await slingsForChildren.getSlingsForChildren()
     var slingsForAdultsLayout = await slingsForAdults.getSlingsForAdults()
+    var accesoriesForSlingsLayout = await accesoriesForSlings.getAccesoriesForSlings()
     var likoOriginalHighbackLayout = await likoOriginalHighback.getLikoOriginalHighback()
+    var likoConfortslingLayout = await likoConfortsling.getLikoConfortsling()
+    var likoMastervestLayout = await likoMastervest.getLikoMastervest()
+    var likoLiftPantsLayout = await likoLiftPants.getLikoLiftPants()
+    var likoStretchersLayout = await likoStretchers.getLikoStretchers()
+    var likoFlexostretchLayout = await likoFlexostretch.getLikoFlexostretch()
+    var reposheetLayout = await reposheet.getReposheet()
+    var manualAIDSLayout = await manualAIDS.getManualAIDS()
 
     const fecha = new Date();
     fecha.toLocaleDateString()
 
     var coverPage = [
-        '\n\n\n\n\n\n\n\n\n\n\n\n\n',
-        { image: "images/Hillroom.png", width: 110, height: 40, alignment: 'center'},
+        '\n\n',
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        '\n\n\n\n\n\n\n\n\n\n\n',
+        { image: "images/Hillroom.png", width: 120, height: 47, alignment: 'center'},
         { text: 'LIKO PRICEBOOK 2021', style: 'header', alignment: "center" },
         { text: 'USD - NAME COUNTRY HERE', style: 'header', alignment: "center" },
         { image: "images/Cover2.png", width: 400, height: 250, alignment: 'center'},
@@ -126,16 +149,16 @@ async function createDocument()
     ]
     
     var docDefinition = {
-        pageMargins: [ 30, 50, 30, 30 ],
-        header: function(currentPage) 
+        pageMargins: [ 30, 10, 30, 30 ],
+        /*header: function(currentPage) 
         {
             if(currentPage > 2){
                 return {
                     margin: [30, 20],
                     columns: [
-                        {
-                            image: "images/Hillroom.png", width: 90, height: 30  
-                        },
+                        [
+                            {image: "images/Baxter.png", width: 90, height: 20},
+                        ],
                         {
                             text: fecha.toLocaleDateString(), style: 'footer', alignment: 'right'
                         },
@@ -143,10 +166,22 @@ async function createDocument()
                             text: 'Mobile Lifts', style: 'footer', alignment: 'right',
                         },
                        
+                    ],
+                    columns: [
+                        [
+                            {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
+                        ],
+                        {
+                            text: ""
+                        },
+                        {
+                            text: ""
+                        },
+                       
                     ]
                 }
             }
-        },
+        },*/
         footer: function(currentPage, pageCount) {
             if(currentPage > 2)
             {
@@ -177,6 +212,8 @@ async function createDocument()
             railSystemH70Layout,
             railSystemH100Layout,
             railSystemH140Layout,
+            assemblyPartsLayout,
+            railSwitchSystemLayout,
             freespanStraightRailLayout,
             freespanTraverseLayout,
             freespanUltraTwinLayout,
@@ -185,7 +222,15 @@ async function createDocument()
             liftingAccesoriesLayout,
             slingsForChildrenLayout,
             slingsForAdultsLayout,
-            likoOriginalHighbackLayout
+            accesoriesForSlingsLayout,
+            likoOriginalHighbackLayout,
+            likoConfortslingLayout,
+            likoMastervestLayout,
+            likoLiftPantsLayout,
+            likoStretchersLayout,
+            likoFlexostretchLayout,
+            reposheetLayout,
+            manualAIDSLayout
         ],
         pageBreakBefore: function(currentNode, followingNodesOnPage, nodesOnNextPage, previousNodesOnPage) {
             return currentNode.headlineLevel === 1 && followingNodesOnPage.length === 0;

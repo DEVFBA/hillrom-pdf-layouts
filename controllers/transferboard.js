@@ -6,7 +6,7 @@ async function getTransferBoard(){
     try{
         let pool = await sql.connect(config);
         let users = await pool.request()   
-            .input('pvIdLine', sql.VarChar, "TRANBO")
+            .input('pvLayoutRef', sql.VarChar, "TRANBO")
             .execute('spPDF_Layout_Get_Info_Records')
         return users.recordsets
     }catch(error){

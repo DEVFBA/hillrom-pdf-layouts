@@ -9,7 +9,12 @@ async function getArtOfCareRecliners()
     const permanentPole = res.data[3]
     const transportShelf = res.data[4]*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var artOfCareRecliners = [
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         '\n',
         { text: 'Art of Care® Recliners (cont.)', style: 'header' },
         { text: '\n', style: 'parrafo' },

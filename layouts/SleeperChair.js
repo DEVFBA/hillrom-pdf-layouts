@@ -216,9 +216,14 @@ async function getSleeperChair()
     }   
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var sleeperChair = [
-        '\n',
-        { text: 'SLEEPER CHAIR', style: 'header', tocItem: "sleeperChair" },
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
+        { text: 'SLEEPER CHAIR', style: 'header'},
+        { text: 'Sleeper Chair', style: { fontSize: 0}, tocItem: 'sleeperChair'},
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         '\n',
         { text:'Features & Benefits\n', style: 'textotablaboldlarge'},

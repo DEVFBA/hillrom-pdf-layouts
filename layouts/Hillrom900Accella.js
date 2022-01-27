@@ -172,7 +172,12 @@ async function getHillrom900Accella()
     }
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var hillrom900Accella = [
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         { text: 'Hillrom® 900 Accella', style: 'header', tocItem: 'hillroom900Accella'},
         { text: 'Country of origin: France\n', style: 'parrafo' },
         { text:'Standard features:\n', style: 'textosubrayado', decoration: 'underline'},

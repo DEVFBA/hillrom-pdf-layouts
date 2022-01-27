@@ -215,9 +215,14 @@ async function getSleeperSofa()
     }   
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var sleeperSofa = [
-        '\n',
-        { text: 'SLEEPER SOFA', style: 'header', tocItem: "sleeperSofa" },
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
+        { text: 'SLEEPER SOFA', style: 'header'},
+        { text: 'Sleeper Sofa', style: { fontSize: 0}, tocItem: 'sleeperSofa'},
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         '\n',
         { text:'Features & Benefits\n', style: 'textotablaboldlarge'},

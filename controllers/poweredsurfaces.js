@@ -6,7 +6,7 @@ async function getPoweredSurfaces(){
     try{
         let pool = await sql.connect(config);
         let users = await pool.request()   
-            .input('pvIdLine', sql.VarChar, "POWSURF")
+            .input('pvLayoutRef', sql.VarChar, "POWSURF")
             .execute('spPDF_Layout_Get_Info_Records')
         return users.recordsets
     }catch(error){

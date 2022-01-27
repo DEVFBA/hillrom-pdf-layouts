@@ -627,7 +627,12 @@ async function getLiftingAccesories()
     pSItems++
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var liftingAccesories = [
+        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
+        "\n",
         { text: 'LIFTING ACCESSORIES', style: 'header' },
         "\n",
         {
@@ -708,6 +713,7 @@ async function getLiftingAccesories()
             }
         },
         {text: '', pageBreak: 'after'  },
+        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {

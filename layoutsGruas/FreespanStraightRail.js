@@ -224,8 +224,13 @@ async function getFreespanStraightRail()
 
     pSItems++
     /*TERMINA CICLO*/
+    
+    const fecha = new Date();
+    fecha.toLocaleDateString()
 
     var freespanStraightRail = [
+        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
+        "\n",
         { text: 'FREESTANDING LIFT SYSTEM', style: 'header' },
         "\n",
         {

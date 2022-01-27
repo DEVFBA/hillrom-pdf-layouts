@@ -1,11 +1,22 @@
 const dbMedSurgAccesories = require('../controllers/medsurgaccesories')
 
+const fecha = new Date();
+fecha.toLocaleDateString()
+
 async function getMedSurgAccesories()
 {
     const res = await dbMedSurgAccesories.getMedSurgAccesories()
     const bagHoldersData = res[0]
     const bottleHolderData = res[1]
     const controlsData = res[2]
+    const supportsData = res[3]
+    const tankHolderData = res[4]
+    const liftPoleData = res[5]
+    const ivPoleData = res[6]
+    const optionUpgradeData = res[7]
+    const sidelaicData = res[8]
+    const traysData = res[9]
+    const tractionData = res[10]
 
     var options =[]
     var pSItems = 0;
@@ -81,7 +92,6 @@ async function getMedSurgAccesories()
         var precio1;
         var precio2;
         var precio3;
-        var precio4;
 
         if(data.Print_Character_HR900X3 !== false)
         {
@@ -260,9 +270,91 @@ async function getMedSurgAccesories()
     pSItems++
 
     /*EMPIEZA CICLO*/
+    for(var i=0; i<controlsData.length; i++)
+    {
+        controls[pSItems] = [
+            {text: controlsData[i].KitName, style: 'textotabla'},
+            {text: controlsData[i].Part, style: 'textotabla'},
+            {text: controlsData[i].Item_Long_Desc, style: 'textotabla'},
+            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(controlsData[i].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+        pSItems++
+    }
+     /*TERMINA CICLO*/
+
+     /*EMPIEZA CICLO*/
+
+
+    var supports = []
+    pSItems = 0
+
+    /*ESTO VA EN UN CICLO*/
+    supports[pSItems] = [
+        {text: supportsData[0].KitName, style: 'textotabla'},
+        {text: supportsData[0].Part, style: 'textotabla'},
+        {text: supportsData[0].Item_Long_Desc, style: 'textotabla'},
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(supportsData[0].Price), style: 'textotabla', alignment: 'center'}, 
+    ]
+    pSItems++
+
+    supports[pSItems] = [
+        {text: supportsData[3].KitName, style: 'textotabla'},
+        {text: supportsData[3].Part, style: 'textotabla'},
+        {text: supportsData[3].Item_Long_Desc, style: 'textotabla'},
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(supportsData[3].Price), style: 'textotabla', alignment: 'center'}, 
+    ]
+    pSItems++
+
+    supports[pSItems] = [
+        {text: supportsData[6].KitName, style: 'textotabla'},
+        {text: supportsData[6].Part, style: 'textotabla'},
+        {text: supportsData[6].Item_Long_Desc, style: 'textotabla'},
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(supportsData[6].Price), style: 'textotabla', alignment: 'center'}, 
+    ]
+    pSItems++
+
+    supports[pSItems] = [
+        {text: supportsData[8].KitName, style: 'textotabla'},
+        {text: supportsData[8].Part, style: 'textotabla'},
+        {text: supportsData[8].Item_Long_Desc, style: 'textotabla'},
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(supportsData[8].Price), style: 'textotabla', alignment: 'center'}, 
+    ]
+    pSItems++
+
+    supports[pSItems] = [
+        {text: supportsData[10].KitName, style: 'textotabla'},
+        {text: supportsData[10].Part, style: 'textotabla'},
+        {text: supportsData[10].Item_Long_Desc, style: 'textotabla'},
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(supportsData[10].Price), style: 'textotabla', alignment: 'center'}, 
+    ]
+    pSItems++
+    /*TERMINA CICLO*/
+
+    var tankholder = []
+    pSItems = 0
+
+     /*ESTO VA EN UN CICLO*/
     var i=0;
-    var controlsFlag = false
-    while(controlsFlag === false)
+    var tankHolderFlag = false
+    while(tankHolderFlag === false)
     {
         var j;
         if(i===0)
@@ -277,28 +369,35 @@ async function getMedSurgAccesories()
         var printCaracterHR900X3 = false;
         var printCaracterACCELLA = false;
         var printCaracterCENTURISX3 = false;
-        while(j< controlsData.length && countC<3)
+        var parts = true
+        while(j< tankHolderData.length && countC<3)
         {
-           precio= controlsData[j].Price
-           if(controlsData[j].Item_Template === "HR900 X3")
-           {
-                printCaracterHR900X3 = true; 
-           }
-           else if(controlsData[j].Item_Template === "ACCELLA")
-           {
-                printCaracterACCELLA = true;
-           }
-           else 
-           {
-                printCaracterCENTURISX3 = true
-           }
-           j++
-           countC++
+            //if(bottleHolderData[j].Part === bottleHolderData[j+1].Part)
+            //{
+                precio= tankHolderData[j].Price
+                if(tankHolderData[j].Item_Template === "HR900 X3")
+                {
+                        printCaracterHR900X3 = true; 
+                }
+                else if(tankHolderData[j].Item_Template === "ACCELLA")
+                {
+                        printCaracterACCELLA = true;
+                }
+                else 
+                {
+                        printCaracterCENTURISX3 = true
+                }
+                j++
+                countC++
+            /*}
+            else {
+                parts = false
+            }*/
         }
         var data = {
-            Kit_Name: controlsData[j-1].KitName,
-            Part: controlsData[j-1].Part,
-            Item_Long_Desc: controlsData[j-1].Item_Long_Desc,
+            Kit_Name: tankHolderData[j-1].KitName,
+            Part: tankHolderData[j-1].Part,
+            Item_Long_Desc: tankHolderData[j-1].Item_Long_Desc,
             Price: precio,
             Print_Character_HR900X3: printCaracterHR900X3,
             Print_Character_ACCELLA: printCaracterACCELLA,
@@ -334,7 +433,7 @@ async function getMedSurgAccesories()
             precio3 = "-"
         }
         
-        controls[pSItems] = [
+        tankholder[pSItems] = [
             {text: data.Kit_Name, style: 'textotabla'},
             {text: data.Part, style: 'textotabla'},
             {text: data.Item_Long_Desc, style: 'textotabla'},
@@ -348,119 +447,12 @@ async function getMedSurgAccesories()
 
         //console.log(data)
 
-        if(j >= controlsData.length)
+        if(j >= tankHolderData.length)
         {
-            controlsFlag = true
+            tankHolderFlag = true
         }
         i++
-    }   
-    /*TERMINA CICLO*/
-     /*TERMINA CICLO*/
-
-    var supports = []
-    pSItems = 0
-
-    /*ESTO VA EN UN CICLO*/
-    supports[pSItems] = [
-        {text: "FURNACC", style: 'textotabla', alignment: 'left'},
-        {text: "AC968A", style: 'textotabla', alignment: 'left'},
-        {text: "Equipotential Cable Link", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "$155", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    supports[pSItems] = [
-        {text: "SUPPORTACC", style: 'textotabla', alignment: 'left'},
-        {text: "AC953A", style: 'textotabla', alignment: 'left'},
-        {text: "IV hooks on patient helper", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "$88", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    supports[pSItems] = [
-        {text: "SUPPORTACC", style: 'textotabla', alignment: 'left'},
-        {text: "AD222A", style: 'textotabla', alignment: 'left'},
-        {text: "V Line Manager (requires AD216A for AVG1600 & AVG1200)", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$108", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    supports[pSItems] = [
-        {text: "SUPPORTACC", style: 'textotabla', alignment: 'left'},
-        {text: "AD286A", style: 'textotabla', alignment: 'left'},
-        {text: "Line manager and support", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'},
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$179", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    supports[pSItems] = [
-        {text: "SUPPORTACC", style: 'textotabla', alignment: 'left'},
-        {text: "AD325A", style: 'textotabla', alignment: 'left'},
-        {text: "Label Holder", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'},
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "$27", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-    /*TERMINA CICLO*/
-
-    var tankholder = []
-    pSItems = 0
-
-     /*ESTO VA EN UN CICLO*/
-     tankholder[pSItems] = [
-        {text: "TANKHOLDER", style: 'textotabla', alignment: 'left'},
-        {text: "AC959A", style: 'textotabla', alignment: 'left'},
-        {text: "Oxygen Tank Holder 140 mm Ø (model B5)", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "$183", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    tankholder[pSItems] = [
-        {text: "TANKHOLDER", style: 'textotabla', alignment: 'left'},
-        {text: "AD101A", style: 'textotabla', alignment: 'left'},
-        {text: "Oxygen Tank Holder 100 mm Ø (model D)", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'},
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "$219", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    tankholder[pSItems] = [
-        {text: "TANKHOLDER", style: 'textotabla', alignment: 'left'},
-        {text: "AD102A", style: 'textotabla'},
-        {text: "Oxygen Tank Holder 100 mm Ø (model E)", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "$264", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+    } 
     /*TERMINA CICLO*/
 
     var liftpole = []
@@ -490,29 +482,107 @@ async function getMedSurgAccesories()
     pSItems++
 
      /*ESTO VA EN UN CICLO*/
-    liftpole[pSItems] = [
-        {text: "LIFTPOLE", style: 'textotabla', alignment: 'center'},
-        {text: "AD810A", style: 'textotabla'},
-        {text: "Fixed lifting pole Light Grey", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "$230", style: 'textotabla', alignment: 'center'}, 
-    ]
+    var i=0;
+    var liftPoleFlag = false
+    while(liftPoleFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*3
+        }
+        var precio; 
+        var countC=0
+        var printCaracterHR900X3 = false;
+        var printCaracterACCELLA = false;
+        var printCaracterCENTURISX3 = false;
+        var parts = true
+        while(j< liftPoleData.length && countC<3)
+        {
+            //if(bottleHolderData[j].Part === bottleHolderData[j+1].Part)
+            //{
+                precio= liftPoleData[j].Price
+                if(liftPoleData[j].Item_Template === "HR900 X3")
+                {
+                        printCaracterHR900X3 = true; 
+                }
+                else if(liftPoleData[j].Item_Template === "ACCELLA")
+                {
+                        printCaracterACCELLA = true;
+                }
+                else 
+                {
+                        printCaracterCENTURISX3 = true
+                }
+                j++
+                countC++
+            /*}
+            else {
+                parts = false
+            }*/
+        }
+        var data = {
+            Kit_Name: liftPoleData[j-1].KitName,
+            Part: liftPoleData[j-1].Part,
+            Item_Long_Desc: liftPoleData[j-1].Item_Long_Desc,
+            Price: precio,
+            Print_Character_HR900X3: printCaracterHR900X3,
+            Print_Character_ACCELLA: printCaracterACCELLA,
+            Print_Character_CENTURISX3 : printCaracterCENTURISX3
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
 
-    liftpole[pSItems] = [
-        {text: "LIFTPOLE", style: 'textotabla', alignment: 'center'},
-        {text: "AD811A", style: 'textotabla'},
-        {text: "Angle Pivoting Lifting Pole Light Grey", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "$324", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character_HR900X3 !== false)
+        {
+            precio1 = "●"
+        }
+        else {
+            precio1 = "-"
+        }
 
-    pSItems++
+        if(data.Print_Character_ACCELLA !== false)
+        {
+            precio2 = "●"
+        }
+        else {
+            precio2 = "-"
+        }
+
+        if(data.Print_Character_CENTURISX3 !== false)
+        {
+            precio3 = "●"
+        }
+        else {
+            precio3 = "-"
+        }
+        
+        liftpole[pSItems] = [
+            {text: data.Kit_Name, style: 'textotabla'},
+            {text: data.Part, style: 'textotabla'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(data.Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+
+        pSItems++
+
+        //console.log(data)
+
+        if(j >= liftPoleData.length)
+        {
+            liftPoleFlag = true
+        }
+        i++
+    } 
     /*TERMINA CICLO*/
 
     var ivpole = []
@@ -531,53 +601,106 @@ async function getMedSurgAccesories()
     pSItems++
 
      /*ESTO VA EN UN CICLO*/
-     ivpole[pSItems] = [
-        {text: "IVPOLE", style: 'textotabla', alignment: 'center'},
-        {text: "AD294A", style: 'textotabla'},
-        {text: "Straight Fixed Height IV pole, 4 hooks", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "$97", style: 'textotabla', alignment: 'center'}, 
-    ]
+     var ivPoleFlag = false
+    while(ivPoleFlag === false)
+    {
+        var j;
+        if(i===0)
+        {
+            j=0
+        }
+        else {
+            j = i*3
+        }
+        var precio; 
+        var countC=0
+        var printCaracterHR900X3 = false;
+        var printCaracterACCELLA = false;
+        var printCaracterCENTURISX3 = false;
+        var parts = true
+        while(j< ivPoleData.length && countC<3)
+        {
+            //if(bottleHolderData[j].Part === bottleHolderData[j+1].Part)
+            //{
+                precio= ivPoleData[j].Price
+                if(ivPoleData[j].Item_Template === "HR900 X3")
+                {
+                        printCaracterHR900X3 = true; 
+                }
+                else if(ivPoleData[j].Item_Template === "ACCELLA")
+                {
+                        printCaracterACCELLA = true;
+                }
+                else 
+                {
+                        printCaracterCENTURISX3 = true
+                }
+                j++
+                countC++
+            /*}
+            else {
+                parts = false
+            }*/
+        }
+        var data = {
+            Kit_Name: ivPoleData[j-1].KitName,
+            Part: ivPoleData[j-1].Part,
+            Item_Long_Desc: ivPoleData[j-1].Item_Long_Desc,
+            Price: precio,
+            Print_Character_HR900X3: printCaracterHR900X3,
+            Print_Character_ACCELLA: printCaracterACCELLA,
+            Print_Character_CENTURISX3 : printCaracterCENTURISX3
+        }
 
-    pSItems++
+        var precio1;
+        var precio2;
+        var precio3;
+        var precio4;
 
-    ivpole[pSItems] = [
-        {text: "LIFTPOLE", style: 'textotabla', alignment: 'center'},
-        {text: "AD297A", style: 'textotabla'},
-        {text: "Telescopic IV Pole 4 Hooks", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$207", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character_HR900X3 !== false)
+        {
+            precio1 = "●"
+        }
+        else {
+            precio1 = "-"
+        }
 
-    pSItems++
+        if(data.Print_Character_ACCELLA !== false)
+        {
+            precio2 = "●"
+        }
+        else {
+            precio2 = "-"
+        }
 
-    ivpole[pSItems] = [
-        {text: "LIFTPOLE", style: 'textotabla', alignment: 'center'},
-        {text: "AD298A", style: 'textotabla'},
-        {text: "Adjustable IV pole, 4 hooks", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$171", style: 'textotabla', alignment: 'center'}, 
-    ]
+        if(data.Print_Character_CENTURISX3 !== false)
+        {
+            precio3 = "●"
+        }
+        else {
+            precio3 = "-"
+        }
+        
+        ivpole[pSItems] = [
+            {text: data.Kit_Name, style: 'textotabla'},
+            {text: data.Part, style: 'textotabla'},
+            {text: data.Item_Long_Desc, style: 'textotabla'},
+            {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(data.Price), style: 'textotabla', alignment: 'center'}, 
+        ]
 
-    pSItems++
+        pSItems++
 
-    ivpole[pSItems] = [
-        {text: "LIFTPOLE", style: 'textotabla', alignment: 'center'},
-        {text: "AD299A", style: 'textotabla'},
-        {text: "One hand adjustable IV pole, 4 hooks", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$262", style: 'textotabla', alignment: 'center'}, 
-    ]
+        //console.log(data)
 
-    pSItems++
+        if(j >= ivPoleData.length)
+        {
+            ivPoleFlag = true
+        }
+        i++
+    } 
     /*TERMINA CICLO*/
 
     var optionUpgrade = []
@@ -597,123 +720,36 @@ async function getMedSurgAccesories()
 
      /*ESTO VA EN UN CICLO*/
      optionUpgrade[pSItems] = [
-        {text: "OPTIONUPGRADE", style: 'textotabla', alignment: 'center'},
-        {text: "AD242A", style: 'textotabla'},
-        {text: "42A In Bed Thoracic X-RAY (for split siderails bed models)", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "$631", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    optionUpgrade[pSItems] = [
-        {text: "OPTIONUPGRADE", style: 'textotabla', alignment: 'center'},
-        {text: "AD277A", style: 'textotabla'},
-        {text: "Wall Bumper (for HR900 with Mobile Head Section)", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "$96", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    optionUpgrade[pSItems] = [
-        {text: "OPTIONUPGRADE", style: 'textotabla', alignment: 'center'},
-        {text: "AD315A", style: 'textotabla'},
-        {text: "Wifi Accesory Module (For accella from serial # HRP004026834)", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$847", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    optionUpgrade[pSItems] = [
-        {text: "OPTIONUPGRADE", style: 'textotabla', alignment: 'center'},
-        {text: "AD276A R0", style: 'textotabla'},
-        {text: "5th wheel for HR900 Integral", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$628", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    optionUpgrade[pSItems] = [
-        {text: "OPTIONUPGRADE", style: 'textotabla', alignment: 'center'},
-        {text: "AD276A R1", style: 'textotabla'},
-        {text: "5th wheel for HR900 Simple Band", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$628", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    optionUpgrade[pSItems] = [
-        {text: "OPTIONUPGRADE", style: 'textotabla', alignment: 'center'},
-        {text: "AD276A R2", style: 'textotabla'},
-        {text: "5th wheel for HR900 Double Band", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$628", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    optionUpgrade[pSItems] = [
-        {text: "OPTIONUPGRADE", style: 'textotabla', alignment: 'center'},
-        {text: "P379G2D", style: 'textotabla'},
-        {text: 'Communication cable - 37 pin to 1/4" HR900 with BEA + NC', style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$113", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    optionUpgrade[pSItems] = [
-        {text: "OPTIONUPGRADE", style: 'textotabla', alignment: 'center'},
-        {text: "P379W33C", style: 'textotabla'},
-        {text: 'Communication cable - 37 pin to 3.5 mm HR900 with BEA only', style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$113", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    optionUpgrade[pSItems] = [
-        {text: "OPTIONUPGRADE", style: 'textotabla', alignment: 'center'},
-        {text: "P379W33C", style: 'textotabla'},
-        {text: '5th wheel for HR900 Doulbe Band (Elic with BEA & ACCELLA)', style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$628", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    optionUpgrade[pSItems] = [
-        {text: "OPTIONUPGRADE", style: 'textotabla', alignment: 'center'},
-        {text: "AD292A", style: 'textotabla'},
-        {text: 'Electric cord holder', style: 'textotabla', alignment: 'left'}, 
+        {text: optionUpgradeData[0].KitName, style: 'textotabla'},
+        {text: optionUpgradeData[0].Part, style: 'textotabla'},
+        {text: optionUpgradeData[0].Item_Long_Desc, style: 'textotabla'},
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$29", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionUpgradeData[0].Price), style: 'textotabla', alignment: 'center'}, 
     ]
+    pSItems++
 
+    optionUpgrade[pSItems] = [
+        {text: optionUpgradeData[3].KitName, style: 'textotabla'},
+        {text: optionUpgradeData[3].Part, style: 'textotabla'},
+        {text: optionUpgradeData[3].Item_Long_Desc, style: 'textotabla'},
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionUpgradeData[3].Price), style: 'textotabla', alignment: 'center'}, 
+    ]
+    pSItems++
+
+    optionUpgrade[pSItems] = [
+        {text: optionUpgradeData[5].KitName, style: 'textotabla'},
+        {text: optionUpgradeData[5].Part, style: 'textotabla'},
+        {text: optionUpgradeData[5].Item_Long_Desc, style: 'textotabla'},
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionUpgradeData[5].Price), style: 'textotabla', alignment: 'center'}, 
+    ]
     pSItems++
     /*TERMINA CICLO*/
 
@@ -734,15 +770,14 @@ async function getMedSurgAccesories()
 
      /*ESTO VA EN UN CICLO*/
      siderailAccesories[pSItems] = [
-        {text: "SIDERAILACC", style: 'textotabla', alignment: 'center'},
-        {text: "AD312A", style: 'textotabla'},
-        {text: "Safety Nets", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: sidelaicData[0].KitName, style: 'textotabla'},
+        {text: sidelaicData[0].Part, style: 'textotabla'},
+        {text: sidelaicData[0].Item_Long_Desc, style: 'textotabla'},
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "$283", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(sidelaicData[0].Price), style: 'textotabla', alignment: 'center'}, 
     ]
-
     pSItems++
     /*TERMINA CICLO*/
 
@@ -762,29 +797,107 @@ async function getMedSurgAccesories()
     pSItems++
 
      /*ESTO VA EN UN CICLO*/
-    trays[pSItems] = [
-        {text: "TRAYS", style: 'textotabla', alignment: 'center'},
-        {text: "AC963A", style: 'textotabla'},
-        {text: "Syringe Driver Tray", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "$421", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    trays[pSItems] = [
-        {text: "TRAYS", style: 'textotabla', alignment: 'center'},
-        {text: "AD244B", style: 'textotabla'},
-        {text: "Monitor tray Grey (B Version only)", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "$574", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+     var i=0;
+     var traysFlag = false
+     while(traysFlag === false)
+     {
+         var j;
+         if(i===0)
+         {
+             j=0
+         }
+         else {
+             j = i*3
+         }
+         var precio; 
+         var countC=0
+         var printCaracterHR900X3 = false;
+         var printCaracterACCELLA = false;
+         var printCaracterCENTURISX3 = false;
+         var parts = true
+         while(j< traysData.length && countC<3)
+         {
+             //if(bottleHolderData[j].Part === bottleHolderData[j+1].Part)
+             //{
+                 precio= traysData[j].Price
+                 if(traysData[j].Item_Template === "HR900 X3")
+                 {
+                         printCaracterHR900X3 = true; 
+                 }
+                 else if(traysData[j].Item_Template === "ACCELLA")
+                 {
+                         printCaracterACCELLA = true;
+                 }
+                 else 
+                 {
+                         printCaracterCENTURISX3 = true
+                 }
+                 j++
+                 countC++
+             /*}
+             else {
+                 parts = false
+             }*/
+         }
+         var data = {
+             Kit_Name: traysData[j-1].KitName,
+             Part: traysData[j-1].Part,
+             Item_Long_Desc: traysData[j-1].Item_Long_Desc,
+             Price: precio,
+             Print_Character_HR900X3: printCaracterHR900X3,
+             Print_Character_ACCELLA: printCaracterACCELLA,
+             Print_Character_CENTURISX3 : printCaracterCENTURISX3
+         }
+ 
+         var precio1;
+         var precio2;
+         var precio3;
+         var precio4;
+ 
+         if(data.Print_Character_HR900X3 !== false)
+         {
+             precio1 = "●"
+         }
+         else {
+             precio1 = "-"
+         }
+ 
+         if(data.Print_Character_ACCELLA !== false)
+         {
+             precio2 = "●"
+         }
+         else {
+             precio2 = "-"
+         }
+ 
+         if(data.Print_Character_CENTURISX3 !== false)
+         {
+             precio3 = "●"
+         }
+         else {
+             precio3 = "-"
+         }
+         
+         trays[pSItems] = [
+             {text: data.Kit_Name, style: 'textotabla'},
+             {text: data.Part, style: 'textotabla'},
+             {text: data.Item_Long_Desc, style: 'textotabla'},
+             {text: precio1, style: 'textotabla', alignment: 'center'}, 
+             {text: precio2, style: 'textotabla', alignment: 'center'}, 
+             {text: precio3, style: 'textotabla', alignment: 'center'}, 
+             {text: "$" + Intl.NumberFormat("en-IN").format(data.Price), style: 'textotabla', alignment: 'center'}, 
+         ]
+ 
+         pSItems++
+ 
+         //console.log(data)
+ 
+         if(j >= traysData.length)
+         {
+            traysFlag = true
+         }
+         i++
+     } 
     /*TERMINA CICLO*/
 
     var traction = []
@@ -804,152 +917,155 @@ async function getMedSurgAccesories()
 
      /*ESTO VA EN UN CICLO*/
     traction[pSItems] = [
-        {text: "TRACTION", style: 'textotabla', alignment: 'center'},
-        {text: "AD270B", style: 'textotabla'},
-        {text: "Foot Section Support - Grey (B Version only)", style: 'textotabla', alignment: 'left'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: tractionData[0].KitName, style: 'textotabla'},
+        {text: tractionData[0].Part, style: 'textotabla'},
+        {text: tractionData[0].Item_Long_Desc, style: 'textotabla'},
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$204", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[0].Price), style: 'textotabla', alignment: 'center'}, 
     ]
-
     pSItems++
 
     traction[pSItems] = [
-        {text: "TRACTION", style: 'textotabla', alignment: 'center'},
-        {text: "ST865A", style: 'textotabla'},
-        {text: "Kinetec Kit 1A for traction/suspension of inferior limb", style: 'textotabla', alignment: 'left'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: tractionData[2].KitName, style: 'textotabla'},
+        {text: tractionData[2].Part, style: 'textotabla'},
+        {text: tractionData[2].Item_Long_Desc, style: 'textotabla'},
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$2,986", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[2].Price), style: 'textotabla', alignment: 'center'}, 
     ]
-
     pSItems++
 
     traction[pSItems] = [
-        {text: "TRACTION", style: 'textotabla', alignment: 'center'},
-        {text: "ST867A", style: 'textotabla'},
-        {text: "Kinetec Kit 2 for traction/suspension of superior limb", style: 'textotabla', alignment: 'left'}, 
+        {text: tractionData[3].KitName, style: 'textotabla'},
+        {text: tractionData[3].Part, style: 'textotabla'},
+        {text: tractionData[3].Item_Long_Desc, style: 'textotabla'},
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "1,293", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[3].Price), style: 'textotabla', alignment: 'center'}, 
     ]
-
     pSItems++
 
     traction[pSItems] = [
-        {text: "TRACTION", style: 'textotabla', alignment: 'center'},
-        {text: "ST868A", style: 'textotabla'},
-        {text: "Kinetec Kit 3 for pelvic suspension", style: 'textotabla', alignment: 'left'}, 
+        {text: tractionData[5].KitName, style: 'textotabla'},
+        {text: tractionData[5].Part, style: 'textotabla'},
+        {text: tractionData[5].Item_Long_Desc, style: 'textotabla'},
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$1,409", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[5].Price), style: 'textotabla', alignment: 'center'}, 
     ]
-
     pSItems++
 
     traction[pSItems] = [
-        {text: "TRACTION", style: 'textotabla', alignment: 'center'},
-        {text: "ST869A", style: 'textotabla'},
-        {text: "Kinetec Kit 4 for cervical suspension", style: 'textotabla', alignment: 'left'}, 
+        {text: tractionData[7].KitName, style: 'textotabla'},
+        {text: tractionData[7].Part, style: 'textotabla'},
+        {text: tractionData[7].Item_Long_Desc, style: 'textotabla'},
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$848", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[7].Price), style: 'textotabla', alignment: 'center'}, 
     ]
-
     pSItems++
 
     traction[pSItems] = [
-        {text: "TRACTION", style: 'textotabla', alignment: 'center'},
-        {text: "ST870A", style: 'textotabla'},
-        {text: "Kinetec Tube T13", style: 'textotabla', alignment: 'left'}, 
+        {text: tractionData[9].KitName, style: 'textotabla'},
+        {text: tractionData[9].Part, style: 'textotabla'},
+        {text: tractionData[9].Item_Long_Desc, style: 'textotabla'},
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$285", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[9].Price), style: 'textotabla', alignment: 'center'}, 
     ]
-
     pSItems++
 
     traction[pSItems] = [
-        {text: "TRACTION", style: 'textotabla', alignment: 'center'},
-        {text: "ST871A", style: 'textotabla'},
-        {text: "Kinetec Tube T25", style: 'textotabla', alignment: 'left'}, 
+        {text: tractionData[11].KitName, style: 'textotabla'},
+        {text: tractionData[11].Part, style: 'textotabla'},
+        {text: tractionData[11].Item_Long_Desc, style: 'textotabla'},
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "$240", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[11].Price), style: 'textotabla', alignment: 'center'}, 
     ]
-
     pSItems++
 
     traction[pSItems] = [
-        {text: "TRACTION", style: 'textotabla', alignment: 'center'},
-        {text: "ST873A", style: 'textotabla'},
-        {text: "Traction - Partial Assembly at foot-end", style: 'textotabla', alignment: 'left'}, 
+        {text: tractionData[13].KitName, style: 'textotabla'},
+        {text: tractionData[13].Part, style: 'textotabla'},
+        {text: tractionData[13].Item_Long_Desc, style: 'textotabla'},
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$2,249", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[13].Price), style: 'textotabla', alignment: 'center'}, 
     ]
-
     pSItems++
 
     traction[pSItems] = [
-        {text: "TRACTION", style: 'textotabla', alignment: 'center'},
-        {text: "ST874A", style: 'textotabla'},
-        {text: 'Fixed clamp bar of 40cm (16")', style: 'textotabla', alignment: 'left'}, 
+        {text: tractionData[15].KitName, style: 'textotabla'},
+        {text: tractionData[15].Part, style: 'textotabla'},
+        {text: tractionData[15].Item_Long_Desc, style: 'textotabla'},
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$628", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[15].Price), style: 'textotabla', alignment: 'center'}, 
     ]
-
     pSItems++
 
     traction[pSItems] = [
-        {text: "TRACTION", style: 'textotabla', alignment: 'center'},
-        {text: "ST875A", style: 'textotabla'},
-        {text: 'Traction frame T39 (HR900 with Stationary Head Section)', style: 'textotabla', alignment: 'left'}, 
+        {text: tractionData[17].KitName, style: 'textotabla'},
+        {text: tractionData[17].Part, style: 'textotabla'},
+        {text: tractionData[17].Item_Long_Desc, style: 'textotabla'},
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$9,062", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[17].Price), style: 'textotabla', alignment: 'center'}, 
     ]
-
     pSItems++
 
     traction[pSItems] = [
-        {text: "TRACTION", style: 'textotabla', alignment: 'center'},
-        {text: "ST876A", style: 'textotabla'},
-        {text: 'Head porch bar', style: 'textotabla', alignment: 'left'}, 
+        {text: tractionData[19].KitName, style: 'textotabla'},
+        {text: tractionData[19].Part, style: 'textotabla'},
+        {text: tractionData[19].Item_Long_Desc, style: 'textotabla'},
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$2,156", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[19].Price), style: 'textotabla', alignment: 'center'}, 
     ]
-
     pSItems++
 
     traction[pSItems] = [
-        {text: "TRACTION", style: 'textotabla', alignment: 'center'},
-        {text: "ST877A", style: 'textotabla'},
-        {text: 'Foot porch bar', style: 'textotabla', alignment: 'left'}, 
+        {text: tractionData[21].KitName, style: 'textotabla'},
+        {text: tractionData[21].Part, style: 'textotabla'},
+        {text: tractionData[21].Item_Long_Desc, style: 'textotabla'},
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$2,678", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[21].Price), style: 'textotabla', alignment: 'center'}, 
     ]
+    pSItems++
 
+    traction[pSItems] = [
+        {text: tractionData[22].KitName, style: 'textotabla'},
+        {text: tractionData[22].Part, style: 'textotabla'},
+        {text: tractionData[22].Item_Long_Desc, style: 'textotabla'},
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[22].Price), style: 'textotabla', alignment: 'center'}, 
+    ]
     pSItems++
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
 
     var medSurgAccesories = [
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        { text:  "\n", style: "textotabla"},
         { text: 'Med-Surg Accessories', style: 'header', tocItem: 'medSurgAccesories'},
         "\n",
         {
@@ -1044,6 +1160,7 @@ async function getMedSurgAccesories()
         },
         { text: 'The above tank holders are not available for the Hill-Rom 900 bed with 125 mm casters', style: ['quote', "small"] },
         {text: '', pageBreak: 'after'  },
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
         '\n',
         {
             table: {

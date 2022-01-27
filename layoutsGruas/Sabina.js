@@ -1,17 +1,24 @@
-const dbProgressa = require('../controllers/progressa')
+const dbSabina = require('../controllers/sabina')
+
+var ruta = "/Users/alexishernandezolvera/Desktop/GTC/PROYECTOS/hillrom-pdf-layouts/"
 
 async function getSabina()
 {
-    /*const res = await dbProgressa.getDataProgressa()
-    const prices = res[0]
-    const patientSiderail = res[1]
-    const mobility  = res[2]
-    const permanentPole = res[3]
-    const transportShelf = res[4]
-    const accumaxSurfaces = res[5]
-    const therapyIntegrated = res[6]
-    const pulmonaryIntegrated = res[7]
-    const accesoriesData = res[8]*/
+    const res = await dbSabina.getSabina()
+    const salida1 = res[0]
+    const salida2 = res[1]
+    const salida3  = res[2]
+    const salida4  = res[3]
+    const salida5  = res[4]
+    const salida6  = res[5]
+    const salida7  = res[6]
+    const salida8  = res[7]
+    const salida9  = res[8]
+    const salida10  = res[9]
+    const salida11 = res[10]
+    const salida12  = res[11]
+    const salida13  = res[12]
+    const salida14  = res[13]
 
     var accesories = []
     var pSItems = 0
@@ -31,144 +38,327 @@ async function getSabina()
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
+    for(var i=0; i<salida3.length; i++)
+    {
+        if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida3[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida3[i].Item_Long_Desc, style: 'textotabla'},
+                {border: [true, false, true, false], image: "images/Sabina2.png", width: 30, height: 60, alignment: 'center', rowSpan: 5},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida3[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida3[i].Item_Long_Desc, style: 'textotabla'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
+    /*TERMINA CICLO*/
+
+    /*ESTO VA EN UN CICLO*/
     accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotabla'},
-        {border: [true, false, true, false], image: "images/Sabina2.png", width: 30, height: 60, alignment: 'center', rowSpan: 5},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotabla'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotabla'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotabla'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotabla'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, true], text: '2020100DEFR', style: 'textotabla'},
-        {border: [true, false, true, true], text: 'Quick Reference Guide DE-FR', style: 'textotabla'},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: '$963', style: 'textotabla', alignment: 'center'},
+        {text: salida4[0].Part, style: 'textotabla'},
+        {text: salida4[0].Item_Long_Desc, style: 'textotabla'},
+        {text: ""},
+        {text: "$" + Intl.NumberFormat("en-IN").format(salida4[0].Price), style: 'textotabla', alignment: 'center'},
     ]
 
     pSItems++
     /*TERMINA CICLO*/
 
-    /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {text: '2000100', style: 'textotabla'},
-        {text: 'Holder for Quick Reference Guide', style: 'textotabla'},
-        {},
-        {text: '$30', style: 'textotabla', alignment: 'center'},
-    ]
+    console.log((salida4[0].Item_Long_Desc).length)
 
-    pSItems++
+    /*ESTO VA EN UN CICLO*/
+    for(var i = 0; i< salida5.length; i++)
+    {
+        //Para cortar cadena en 2
+        var cadena1 = "";
+        var cadena2 = "";
+        var guion;
+        for(var j = 0; j < (salida5[i].Item_Long_Desc).length; j++)
+        {
+            if((salida5[i].Item_Long_Desc).charAt(j) !== "-")
+            {
+                cadena1 = cadena1 + (salida5[i].Item_Long_Desc).charAt(j)
+            }
+            else 
+            {
+                guion = j
+                j = (salida5[i].Item_Long_Desc).length
+            }
+        }
+        for(var k = guion + 2; k < (salida5[i].Item_Long_Desc).length; k++ )
+        {
+            cadena2 = cadena2 + (salida5[i].Item_Long_Desc).charAt(k)
+        }
+        //console.log(cadena1)
+        //console.log(cadena2)
+
+        if(i === 0)
+        {
+            accesories[pSItems] =[
+                {text: salida5[i].Part, style: 'textotabla'},
+                {text: [
+                    {text: cadena1 + "\n", style: "textotablaboldblack"},
+                    {text: cadena2, style: "textotabla"}
+                ]},
+                {image: "images/Sabina3.png", width: 40, height: 30, alignment: 'center'},
+                {text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {text: salida5[i].Part, style: 'textotabla'},
+                {text: [
+                    {text: cadena1 + "\n", style: "textotablaboldblack"},
+                    {text: cadena2, style: "textotabla"}
+                ]},
+                {},
+                {text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {text: '2027011', style: 'textotabla'},
-        {text: [
-            {text: "Sabina II Heel Support\n", style: "textotablaboldblack"},
-            {text: "Fits Sabina II and Sabina 200.,", style: "textotabla"}
-        ]},
-        {image: "images/Sabina3.png", width: 40, height: 30, alignment: 'center'},
-        {text: '$30', style: 'textotabla', alignment: 'center'},
-    ]
+    for(var i = 0; i< salida6.length; i++)
+    {
+        //Para cortar cadena en 2
+        var cadena1 = "";
+        var cadena2 = "";
+        var guion;
+        for(var j = 0; j < (salida6[i].Item_Long_Desc).length; j++)
+        {
+            if((salida6[i].Item_Long_Desc).charAt(j) !== "-")
+            {
+                cadena1 = cadena1 + (salida6[i].Item_Long_Desc).charAt(j)
+            }
+            else 
+            {
+                guion = j
+                j = (salida6[i].Item_Long_Desc).length
+            }
+        }
+        for(var k = guion + 2; k < (salida6[i].Item_Long_Desc).length; k++ )
+        {
+            cadena2 = cadena2 + (salida6[i].Item_Long_Desc).charAt(k)
+        }
+        console.log(cadena1)
+        console.log(cadena2)
 
-    pSItems++
+        if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: [
+                    {text: cadena1 + "\n", style: "textotablaboldblack"},
+                    {text: cadena2, style: "textotabla"}
+                ]},
+                {border: [true, true, true, false], image: "images/Sabina4.png", width: 50, height: 30, alignment: 'center', rowSpan: salida6.length*2},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else {
+            console.log("SI ENTRE")
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: [
+                    {text: cadena1 + "\n", style: "textotablaboldblack"},
+                    {text: cadena2, style: "textotabla"}
+                ]},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+            pSItems++
+
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        
+    }
+    
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2027006', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text: "Sabina SeatStrap SlingBar\n", style: "textotablaboldblack"},
-            {text: "fits Sabina, all models", style: "textotabla"}
-        ]},
-        {border: [true, false, true, false], image: "images/Sabina4.png", width: 50, height: 30, alignment: 'center', rowSpan: 3},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
+    for(var i = 0; i< salida7.length; i++)
+    {
+        //Para cortar cadena en 2
+        var cadena1 = "";
+        var cadena2 = "";
+        var guion;
+        for(var j = 0; j < (salida7[i].Item_Long_Desc).length; j++)
+        {
+            if((salida7[i].Item_Long_Desc).charAt(j) !== "-")
+            {
+                cadena1 = cadena1 + (salida7[i].Item_Long_Desc).charAt(j)
+            }
+            else 
+            {
+                guion = j
+                j = (salida7[i].Item_Long_Desc).length
+            }
+        }
+        for(var k = guion + 2; k < (salida7[i].Item_Long_Desc).length; k++ )
+        {
+            cadena2 = cadena2 + (salida7[i].Item_Long_Desc).charAt(k)
+        }
+        console.log(cadena1)
+        console.log(cadena2)
 
-    pSItems++
+        if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: [
+                    {text: cadena1 + "\n", style: "textotablaboldblack"},
+                    {text: cadena2, style: "textotabla"}
+                ]},
+                {border: [true, true, true, false], image: "images/Sabina5.png", width: 50, height: 30, alignment: 'center', rowSpan: salida7.length*2},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
 
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else {
+            console.log("SI ENTRE")
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: [
+                    {text: cadena1 + "\n", style: "textotablaboldblack"},
+                    {text: cadena2, style: "textotabla"}
+                ]},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+            pSItems++
 
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2027006', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text: "Sabina SeatStrap SlingBar\n", style: "textotablaboldblack"},
-            {text: "fits Sabina, all models", style: "textotabla"}
-        ]},
-        {},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-    pSItems++
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {text: '2027006', style: 'textotabla'},
-        {text: [
-            {text: "Sabina SeatStrap,\n", style: "textotablaboldblack"},
-            {text: "incl. 2 pcs Loop Clips Fits Sabina, all models. Max 200 kg (440 lbs).", style: "textotabla"}
-        ]},
-        {image: "images/Sabina5.png", width: 30, height: 30, alignment: 'center'},
-        {text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-    pSItems++
-    /*TERMINA CICLO*/
+    for(var i = 0; i< salida8.length; i++)
+    {
+        //Para cortar cadena en 2
+        var cadena1 = "";
+        var cadena2 = "";
+        var guion;
+        for(var j = 0; j < (salida8[i].Item_Long_Desc).length; j++)
+        {
+            if((salida8[i].Item_Long_Desc).charAt(j) !== "-")
+            {
+                cadena1 = cadena1 + (salida8[i].Item_Long_Desc).charAt(j)
+            }
+            else 
+            {
+                guion = j
+                j = (salida8[i].Item_Long_Desc).length
+            }
+        }
+        for(var k = guion + 2; k < (salida8[i].Item_Long_Desc).length; k++ )
+        {
+            cadena2 = cadena2 + (salida8[i].Item_Long_Desc).charAt(k)
+        }
+        console.log(cadena1)
+        console.log(cadena2)
 
-    /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {text: '2027006', style: 'textotabla'},
-        {text: [
-            {text: "Sabina SeatStrap,\n", style: "textotabla"},
-            {text: "incl. 2 pcs Loop Clips Fits Sabina, all models. Max 200 kg (440 lbs).", style: "textotabla"}
-        ]},
-        {image: "images/Sabina6.png", width: 50, height: 30, alignment: 'center'},
-        {text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-    pSItems++
+        if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida8[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: [
+                    {text: cadena1 + "\n", style: "textotablaboldblack"},
+                    {text: cadena2, style: "textotabla"}
+                ]},
+                {border: [true, true, true, false], image: "images/Sabina6.png", width: 50, height: 30, alignment: 'center', rowSpan: salida8.length*2},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else {
+            console.log("SI ENTRE")
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida8[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: [
+                    {text: cadena1 + "\n", style: "textotablaboldblack"},
+                    {text: cadena2, style: "textotabla"}
+                ]},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+            pSItems++
+
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     accesories[pSItems] =[
@@ -180,130 +370,174 @@ async function getSabina()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '3591134', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text: "SupportVest with padding, S, mod 91\n", style: "textotabla"},
-            {text: "Incl. 2 pcs Loop Clips. Fits Sabina II 350 SlingBar.", style: "textotabla"}
-        ]},
-        {border: [true, false, true, false], image: "images/Sabina7.png", width: 60, height: 50, alignment: 'center', rowSpan: 4},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
+    for(var i = 0; i< salida9.length; i++)
+    {
+        if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida9[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: [
+                    {text: salida9[i].Item_Long_Desc, style: "textotabla"},
+                ]},
+                {border: [true, true, true, false], image: "images/Sabina7.png", width: 60, height: 50, alignment: 'center', rowSpan: salida9.length*2},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
 
-    pSItems++
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else {
+            console.log("SI ENTRE")
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida9[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: [
+                    {text: salida9[i].Item_Long_Desc, style: "textotabla"},
+                ]},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+            pSItems++
 
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '3591134', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text: "SupportVest with padding, S, mod 91\n", style: "textotabla"},
-            {text: "Incl. 2 pcs Loop Clips. Fits Sabina II 350 SlingBar.", style: "textotabla"}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '3591134', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text: "SupportVest with padding, S, mod 91\n", style: "textotabla"},
-            {text: "Incl. 2 pcs Loop Clips. Fits Sabina II 350 SlingBar.", style: "textotabla"}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '3591134', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text: "Sabina SeatStrap SlingBar\n", style: "textotabla"},
-            {text: "fits Sabina, all models", style: "textotabla"}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-    pSItems++
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {text: '3691107', style: 'textotabla'},
-        {text: [
-            {text: "Extension Belt III for SupportVest,\n", style: "textotabla"},
-            {text: "Extends 7-48 cm (3-19 in).", style: "textotabla"}
-        ]},
-        {image: "images/Sabina8.png", width: 60, height: 20, alignment: 'center'},
-        {text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-    pSItems++
+    for(var i = 0; i< salida10.length; i++)
+    {
+        if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida10[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: [
+                    {text: salida10[i].Item_Long_Desc, style: "textotabla"},
+                ]},
+                {border: [true, true, true, false], image: "images/Sabina8.png", width: 60, height: 20, alignment: 'center', rowSpan: salida10.length*2},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else {
+            console.log("SI ENTRE")
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida10[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: [
+                    {text: salida10[i].Item_Long_Desc, style: "textotabla"},
+                ]},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+            pSItems++
+
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '3691034', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Padding for Vest Mod.91 (3591134), S', style: 'textotabla'},
-        {border: [true, false, true, false], image: "images/Sabina9.png", width: 60, height: 30, alignment: 'center', rowSpan: 3},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
+    for(var i = 0; i< salida11.length; i++)
+    {
+        if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida11[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: [
+                    {text: salida11[i].Item_Long_Desc, style: "textotabla"},
+                ]},
+                {border: [true, true, true, true], image: "images/Sabina9.png", width: 60, height: 30, alignment: 'center', rowSpan: salida11.length*2},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
 
-    pSItems++
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida11.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida11[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: [
+                    {text: salida11[i].Item_Long_Desc, style: "textotabla"},
+                ]},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+            pSItems++
 
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '3691034', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Padding for Vest Mod.91 (3591134), S', style: 'textotabla'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else {
+            console.log("SI ENTRE")
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida11[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: [
+                    {text: salida11[i].Item_Long_Desc, style: "textotabla"},
+                ]},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+            pSItems++
 
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '3691034', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Padding for Vest Mod.91 (3591134), S', style: 'textotabla'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, true], text: '3691034', style: 'textotabla'},
-        {border: [true, false, true, true], text: 'Padding for Vest Mod.91 (3591134), S', style: 'textotabla'},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     var accesories2 = []
@@ -318,47 +552,73 @@ async function getSabina()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '3591134', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text: "SupportVest with padding, S, mod 91\n", style: "textotabla"},
-            {text: "Incl. 2 pcs Loop Clips. Fits Sabina II 350 SlingBar.", style: "textotabla"}
-        ]},
-        {border: [true, false, true, false], image: "images/Sabina10.png", width: 60, height: 60, alignment: 'center', rowSpan: 4},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
+    for(var i = 0; i< salida12.length; i++)
+    {
+        if(i === 0)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, false], text: salida12[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: [
+                    {text: salida12[i].Item_Long_Desc, style: "textotabla"},
+                ]},
+                {border: [true, true, true, true], image: "images/Sabina10.png", width: 60, height: 50, alignment: 'center', rowSpan: salida12.length*2},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
 
-    pSItems++
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida12.length-1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: salida12[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: [
+                    {text: salida11[i].Item_Long_Desc, style: "textotabla"},
+                ]},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+            pSItems++
 
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: salida12[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: [
+                    {text: salida12[i].Item_Long_Desc, style: "textotabla"},
+                ]},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+            pSItems++
 
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '3591134', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text: "SupportVest with padding, S, mod 91\n", style: "textotabla"},
-            {text: "Incl. 2 pcs Loop Clips. Fits Sabina II 350 SlingBar.", style: "textotabla"}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     accesories2[pSItems] =[
@@ -370,79 +630,73 @@ async function getSabina()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '3591134', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text: "SupportVest with padding, S, mod 91\n", style: "textotabla"},
-            {text: "Incl. 2 pcs Loop Clips. Fits Sabina II 350 SlingBar.", style: "textotabla"}
-        ]},
-        {border: [true, false, true, false], image: "images/Sabina11.png", width: 60, height: 60, alignment: 'center', rowSpan: 4},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
+    for(var i = 0; i< salida13.length; i++)
+    {
+        if(i === 0)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, false], text: salida13[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: [
+                    {text: salida13[i].Item_Long_Desc, style: "textotabla"},
+                ]},
+                {border: [true, true, true, true], image: "images/Sabina10.png", width: 60, height: 50, alignment: 'center', rowSpan: salida13.length*2},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
 
-    pSItems++
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida13.length-1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: salida13[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: [
+                    {text: salida13[i].Item_Long_Desc, style: "textotabla"},
+                ]},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+            pSItems++
 
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: salida13[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: [
+                    {text: salida13[i].Item_Long_Desc, style: "textotabla"},
+                ]},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+            pSItems++
 
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '3591134', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text: "SupportVest with padding, S, mod 91\n", style: "textotabla"},
-            {text: "Incl. 2 pcs Loop Clips. Fits Sabina II 350 SlingBar.", style: "textotabla"}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '3591134', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text: "SupportVest with padding, S, mod 91\n", style: "textotabla"},
-            {text: "Incl. 2 pcs Loop Clips. Fits Sabina II 350 SlingBar.", style: "textotabla"}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '3591134', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text: "Sabina SeatStrap SlingBar\n", style: "textotabla"},
-            {text: "fits Sabina, all models", style: "textotabla"}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-    pSItems++
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     accesories2[pSItems] =[
@@ -496,8 +750,11 @@ async function getSabina()
 
     pSItems++
     /*TERMINA CICLO*/
+    const fecha = new Date();
+    fecha.toLocaleDateString()
 
     var sabina = [
+        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {
@@ -554,14 +811,14 @@ async function getSabina()
                 widths: [80, 70, "*", 80, 60],
                 body: [
                     [
-                        {text: '\n\n\n\n\n\n\n\nSABINAII', style: 'textotablaboldblack', alignment: 'center', rowSpan: 5},
-                        {text: '2040043', style: 'textotablacatoni'},
+                        {text: '\n\n\n\n\n\n\n\n' + salida1[0].KitName, style: 'textotablaboldblack', alignment: 'center', rowSpan: 5},
+                        {text: salida1[0].Id_Item, style: 'textotablacatoni'},
                         {text: [
-                            {text: "SABINAII EE\n", style: "textotablaboldblack"},
-                            {text: "Electrical lifting/lowering motion (two speeds), Electrical base-width adjustment, Holder with Quick Reference Guide, Built-in charger, Wheels 75/75. Max 200 kg (440 lbs).", style: "textotabla"},
+                            {text: salida1[0].Item_Long_Desc + "\n", style: "textotablaboldblack"},
+                            {text: salida1[0].Specifications, style: "textotabla"},
                         ]},
                         { image: "images/Sabina1.png", width: 70, height: 70, alignment: 'center'},
-                        {text: '$6,521', style: 'textotabla', alignment: 'center'},
+                        {text: "$" + Intl.NumberFormat("en-IN").format(salida1[0].Price), style: 'textotabla', alignment: 'center'},
                     ],
                     [
                         {},
@@ -572,24 +829,24 @@ async function getSabina()
                     ],
                     [
                         {},
-                        {border: [true, false, true, false], text: '2006106', style: 'textotabla'},
-                        {border: [true, false, true, false], text: 'Battery Lead Acid', style: 'textotabla'}, 
+                        {border: [true, false, true, false], text: salida2[0].Id_Item, style: 'textotabla'},
+                        {border: [true, false, true, false], text: salida2[0].Item_Long_Desc, style: 'textotabla'}, 
                         {border: [true, false, true, false], text: ''},
-                        {border: [true, false, true, false], text: '$250', style: 'textotabla', alignment: 'center'}, 
+                        {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[0].Price), style: 'textotabla', alignment: 'center'}, 
                     ],
                     [
                         {},
-                        {border: [true, false, true, false], text: '2006106', style: 'textotabla'},
-                        {border: [true, false, true, false], text: 'Battery Lead Acid', style: 'textotabla'}, 
+                        {border: [true, false, true, false], text: salida2[1].Id_Item, style: 'textotabla'},
+                        {border: [true, false, true, false], text: salida2[1].Item_Long_Desc, style: 'textotabla'}, 
                         {border: [true, false, true, false], text: ''},
-                        {border: [true, false, true, false], text: '$250', style: 'textotabla', alignment: 'center'}, 
+                        {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[1].Price), style: 'textotabla', alignment: 'center'}, 
                     ],
                     [
                         {},
-                        {border: [true, false, true, true], text: '2006110', style: 'textotabla'},
-                        {border: [true, false, true, true], text: 'Battery Lithium Ion', style: 'textotabla'}, 
+                        {border: [true, false, true, true], text: salida2[2].Id_Item, style: 'textotabla'},
+                        {border: [true, false, true, true], text: salida2[2].Item_Long_Desc, style: 'textotabla'}, 
                         {border: [true, false, true, true], text: ''},
-                        {border: [true, false, true, true], text: '$506', style: 'textotabla', alignment: 'center'}, 
+                        {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[2].Price), style: 'textotabla', alignment: 'center'}, 
                     ],
                 ]
             },
@@ -657,6 +914,7 @@ async function getSabina()
             }
         },
         {text: '', pageBreak: 'after'  },
+        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {

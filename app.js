@@ -13,6 +13,7 @@ var fs = require('fs');
 
 var progressa = require("./layouts/Progressa.js")
 var compella = require("./layouts/Compella.js")
+var centrella = require("./layouts/Centrella.js")
 var hillrom900 = require("./layouts/Hillrom900.js")
 var hillrom900Accella = require("./layouts/Hillrom900Accella.js")
 var centurisProBed = require("./layouts/CenturisProBed.js")
@@ -46,6 +47,7 @@ async function createDocument()
 {
     var progressaLayout = await progressa.getProgressa()
     var compellaLayout = await compella.getCompella()
+    var centrellaLayout = await centrella.getCentrella()
     var hillroom900Layout = await hillrom900.getHillrom900()
     var hillroom900AccellaLayout = await hillrom900Accella.getHillrom900Accella()
     var centurisProBedLayout = await centurisProBed.getCenturisProBed()
@@ -79,10 +81,12 @@ async function createDocument()
     fecha.toLocaleDateString()
 
     var coverPage = [
-        '\n\n\n\n\n\n\n\n\n\n\n\n\n',
-        { image: "images/Hillroom.png", width: 110, height: 40, alignment: 'center'},
-        { text: 'LATAM PRICEBOOK 2021', style: 'header', alignment: "center" },
-        { text: 'USD - NAME COUNTRY HERE', style: 'header', alignment: "center" },
+        '\n\n',
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        '\n\n\n\n\n\n\n\n\n\n\n',
+        { image: "images/Hillroom.png", width: 120, height: 47, alignment: 'center'},
+        { text: 'LATAM PRICEBOOK 2022', style: 'header', alignment: "center" },
+        { text: 'USD - PUERTO RICO', style: 'header', alignment: "center" },
         { image: "images/Cover.png", width: 400, height: 250, alignment: 'center'},
         { text: 'www.hillrom.com', style: 'header', alignment: "center" },
         {text: '', pageBreak: 'after'  },
@@ -142,18 +146,279 @@ async function createDocument()
         },
         {
             toc: {
-                id: 'hillrom900',
-            },
-            toc: {
-                id: 'hillrom900Accella',
-            },
+                id: 'centrella',
+            }
         },
+        {
+            toc: {
+                id: 'hillrom900',
+            }
+        },
+        {
+            toc: {
+                id: 'hillroom900Accella',
+            }
+        },
+        {
+            toc: {
+                id: 'centurisProBed',
+            }
+        },
+        {
+            toc: {
+                id: 'theCenturisBed',
+            }
+        },
+        {
+            toc: {
+                id: '305ManualBed',
+            }
+        },
+        {
+            toc: {
+                id: 'medSurgAccesories',
+            }
+        },
+        {
+            toc: {
+                id: 'reconditionatedVersaCare',
+            }
+        },
+        {
+            table: {
+                widths: [530],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'Long-Term Care', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },
+        {
+            toc: {
+                id: 'hillrom100LowBed',
+            }
+        },
+        {
+            toc: {
+                id: 'hillromResident',
+            }
+        },
+        {
+            table: {
+                widths: [530],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'Maternity', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },
+        {
+            toc: {
+                id: 'affinity4BirthingBed',
+            }
+        },
+        {
+            columns: [
+                [
+                    { text: 'SUPPORT SURFACES', style: 'header', alignment: 'left'}
+                ],
+                [
+                    { text: 'Page', style: 'header', alignment: 'right'}
+                ]
+            ]
+        },
+        {
+            table: {
+                widths: [530],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'Foam', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },
+        {
+            toc: {
+                id: 'therapySurfaces',
+            }
+        },
+        {
+            toc: {
+                id: 'therapySurfaces2',
+            }
+        },
+        {
+            toc: {
+                id: 'accumax',
+            }
+        },
+        /*{
+            table: {
+                widths: [530],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'Powered', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },*/
+        {
+            toc: {
+                id: 'poweredSurfaces',
+            }
+        },
+        {
+            columns: [
+                [
+                    { text: 'STRETCHERS', style: 'header', alignment: 'left'}
+                ],
+                [
+                    { text: 'Page', style: 'header', alignment: 'right'}
+                ]
+            ]
+        },
+        {
+            toc: {
+                id: 'stretchers',
+            }
+        },
+        {
+            columns: [
+                [
+                    { text: 'FR FURNITURE', style: 'header', alignment: 'left'}
+                ],
+                [
+                    { text: 'Page', style: 'header', alignment: 'right'}
+                ]
+            ]
+        },
+        {
+            toc: {
+                id: 'catoni',
+            }
+        },
+        /*{
+            table: {
+                widths: [530],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'Tables', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },*/
+        {
+            toc: {
+                id: 'overbedTables',
+            }
+        },
+        /*{
+            table: {
+                widths: [530],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'Transport Chairs', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },*/
+        {
+            toc: {
+                id: 'transportChairs',
+            }
+        },
+        /*{
+            table: {
+                widths: [530],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'Colours & Fabrics', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },*/
+        {
+            toc: {
+                id: 'hillromColoursCollection',
+            }
+        },
+        {
+            toc: {
+                id: 'coatedFabricColours',
+                title: { text: "", style: "indexText"}
+            }
+        },
+        /*{
+            columns: [
+                [
+                    { text: 'US FURNITURE', style: 'header', alignment: 'left'}
+                ],
+                [
+                    { text: 'Page', style: 'header', alignment: 'right'}
+                ]
+            ]
+        },
+        {
+            table: {
+                widths: [530],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'Seating Furniture', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },
+        {
+            toc: {
+                id: 'seatingFurniture',
+                title: { text: "", style: "indexText"}
+            }
+        },
+        {
+            table: {
+                widths: [530],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'Healthcare Furniture', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },
+        {
+            toc: {
+                id: 'overbedTablesArtOfCare',
+                title: { text: "", style: "indexText"}
+            }
+        },
+        {
+            toc: {
+                id: 'bedsideCabinets',
+                title: { text: "", style: "indexText"}
+            }
+        },
+        {
+            columns: [
+                [
+                    { text: 'OTHERS', style: 'header', alignment: 'left'}
+                ],
+                [
+                    { text: 'Page', style: 'header', alignment: 'right'}
+                ]
+            ]
+        },
+        {
+            toc: {
+                id: 'transferBoard',
+            }
+        },*/
         {text: '', pageBreak: 'after'  },
     ]
     
     var docDefinition = {
-        pageMargins: [ 30, 50, 30, 30 ],
-        header: function(currentPage) 
+        pageMargins: [ 30, 12, 30, 30 ],
+        /*header: function(currentPage) 
         {
             if(currentPage > 2){
                 return {
@@ -172,7 +437,7 @@ async function createDocument()
                     ]
                 }
             }
-        },
+        },*/
         footer: function(currentPage, pageCount) {
             if(currentPage > 2)
             {
@@ -186,7 +451,7 @@ async function createDocument()
                             text: 'Page ' + currentPage.toString() + ' of ' + pageCount, style: 'footer', alignment: 'center'
                         },
                         {
-                            text: '01 - Name Country Here - 2021 Capital - IPL-USD', style: 'footer', alignment: 'right'
+                            text: '00 - Puerto Rico - 2022 Capital - IPL-USD V01 (2022)', style: 'footer', alignment: 'right'
                         },
                     ]
                 }
@@ -197,11 +462,12 @@ async function createDocument()
             index,
             progressaLayout,
             compellaLayout,
-            hillroom900Layout,
+            centrellaLayout,
+            /*hillroom900Layout,
             hillroom900AccellaLayout,
             centurisProBedLayout,
-            theCenturisBedLayout,
-            t305ManualBedLayout,
+            theCenturisBedLayout,*/
+            //t305ManualBedLayout,
             medSurgAccesoriesLayout,
             reconditionatedVersaCareLayout,
             hillrom100LowBedLayout,
@@ -209,27 +475,30 @@ async function createDocument()
             affinity4BirthingBedLayout,
             therapySurfacesLayout,
             accumaxLayout,
-            poweredSurfacesLayout,
+            //poweredSurfacesLayout,
             stretchersLayout,
             catoniClassicLayout,
             catoniStyleLayout,
             catoniBedSideLayout,
             coloursCatoniLayout,
-            overbedTablesLayout,
+            /*overbedTablesLayout,
             transportChairsLayout,
-            hillromColoursCollectionLayout,
-            coatedFabricColoursLayout,
+            hillromColoursCollectionLayout,*/
+            /*coatedFabricColoursLayout,
             seatingFurnitureLayout,
             sleeperSofaLayout,
             sleeperChairLayout,
             overbedTables2Layout,
             bedsideCabinetsLayout,
-            transferBoardLayout
+            transferBoardLayout*/
         ],
         pageBreakBefore: function(currentNode, followingNodesOnPage, nodesOnNextPage, previousNodesOnPage) {
             return currentNode.headlineLevel === 1 && followingNodesOnPage.length === 0;
         },
         styles: {
+            indexText: {
+                fontSize: 7,
+            },
             header: {
                 fontSize: 15,
                 bold: true,
@@ -316,6 +585,29 @@ async function createDocument()
             },
             textotablacolorcatoni: {
                 fontSize: 5.5,
+                color: '#ffffff',
+                bold: true,
+            },
+            textotablacentrella: {
+                fontSize: 5,
+            },
+            textotablaboldcentrella: {
+                fontSize: 5,
+                bold: true,
+                color: '#1c3384',
+            },
+            textotablaboldlargecentrella: {
+                fontSize: 6,
+                bold: true,
+                color: '#1c3384',
+            },
+            textotablaboldblackcentrella: {
+                fontSize: 5,
+                bold: true,
+                color: '#000000',
+            },
+            textotablacolorcentrella: {
+                fontSize: 5,
                 color: '#ffffff',
                 bold: true,
             },

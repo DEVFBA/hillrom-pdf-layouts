@@ -38,8 +38,12 @@ async function getPatientRoomSeating()
     pSItems++
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var patientRoomSeating = [
-        '\n',
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         { text: 'Art of Care® Collection\n', style: 'header' },
         { text: 'Country of origin: USA', style: 'parrafo' },
         "\n",

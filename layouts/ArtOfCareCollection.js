@@ -164,12 +164,16 @@ async function getArtOfCareCollection()
     pSItems++
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var artOfCareCollection = [
-        '\n',
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         { text: 'Art of Care® Collection', style: 'header' },
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
-        { text: 'Three Position Recliner\n', style: 'subheader' },
+        { text: 'Three Position Recliner\n', style: 'subheader', tocItem: "threePosition"},
         "\n",
         {
             columns: [

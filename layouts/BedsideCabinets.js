@@ -99,7 +99,12 @@ async function getBedsideCabinets()
     /*TERMINA CICLO*/
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var bedsideCabinets = [
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         '\n',
         { text: 'Bedside Cabinets', style: 'header', tocItem: "bedsideCabinets"},
         { text: 'Premium (AOC)\n', style: 'subheader' },

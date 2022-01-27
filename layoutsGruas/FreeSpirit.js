@@ -248,8 +248,11 @@ async function getFreeSpirit()
     pSItems++
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
 
     var freeSpirit = [
+        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {

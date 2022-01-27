@@ -1,6 +1,11 @@
+const fecha = new Date();
+fecha.toLocaleDateString()
+
 async function getColoursCatoni()
 {
     var catoni = [
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         { text: 'Colours for Catoni Collection', style: 'header', tocItem: 'coloursCatoni'},
         { text: 'Country of Origin : France', style: 'parrafo' },
         "\n",
@@ -100,7 +105,7 @@ async function getColoursCatoni()
         { text: '\n', style: 'parrafo' },
         { text: 'x = optional', style: 'parrafo' },
         '\n',
-        { text: 'Handles for Catoni Collection', style: 'header', tocItem: 'compella'},
+        { text: 'Handles for Catoni Collection', style: 'header', tocItem: 'handlesForCatoni'},
         { text: 'Country of Origin : France', style: 'parrafo' },
         '\n',
         {

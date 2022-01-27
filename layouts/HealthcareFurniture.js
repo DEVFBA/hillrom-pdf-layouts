@@ -1,5 +1,8 @@
 const axios = require('axios');
 
+const fecha = new Date();
+fecha.toLocaleDateString()
+
 async function getHealthcareFurniture()
 {
     /*const res = await axios.get("http://localhost:8091/api/pdf-hillroom/progressa")
@@ -38,7 +41,8 @@ async function getHealthcareFurniture()
     /*TERMINA CICLO*/
 
     var healthcareFurniture = [
-        '\n',
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         { text: 'Healthcare Furniture', style: 'header' },
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         { text: 'Classic Seating Products\n', style: 'subheader' },

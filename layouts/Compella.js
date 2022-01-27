@@ -1,5 +1,8 @@
 const dbCompella = require('../controllers/compella')
 
+const fecha = new Date();
+fecha.toLocaleDateString()
+
 async function getCompella()
 {
     const res = await dbCompella.getDataCompella()
@@ -566,6 +569,8 @@ async function getCompella()
     /*TERMINA CICLO*/
 
     var compella = [
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         { text: 'Compella™ Bariatric Bed', style: 'header', tocItem: 'compella'},
         { text: 'Bariatric\n', style: 'subheader' },
         { text: 'Country of origin: USA\n', style: 'parrafo' },
@@ -683,8 +688,8 @@ async function getCompella()
                             ],
                             [
                                 {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
                                 {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
                             ],
                         ]
@@ -738,6 +743,7 @@ async function getCompella()
             ]
         },
         {text: '', pageBreak: 'after'  },
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
         "\n",
         {
             table: {

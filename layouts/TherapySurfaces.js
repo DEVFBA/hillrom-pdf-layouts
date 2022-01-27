@@ -300,8 +300,14 @@ async function getTherapySurfaces()
     }
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var therapySurfaces = [
-        { text: 'THERAPY SURFACES', style: 'header', tocItem: 'therapySurfaces'},
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
+        { text: 'THERAPY SURFACES', style: 'header'},
+        { text: 'NP50 / NP100 / NP150', style: { fontSize: 0}, tocItem: 'therapySurfaces'},
         { text: 'Country of origin: China\n', style: 'parrafo' },
         "\n",
         { text: 'FOAM SURFACE', style: 'textotablaboldlarge'},
@@ -351,7 +357,9 @@ async function getTherapySurfaces()
         '\n',
         { image: "images/TherapySurfaces.png", width: 500, height: 120, alignment: 'center'},
         {text: '', pageBreak: 'after'  },
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
         '\n',
+        { text: 'Extension / Covers / US surfaces', style: { fontSize: 0}, tocItem: 'therapySurfaces2'},
         { text: 'EXTENSIONS', style: 'textotablaboldlarge' },
         {
             table: {

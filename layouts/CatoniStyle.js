@@ -1027,7 +1027,12 @@ async function getCatoniStyle()
     }   
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var catoni = [
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         {
             table: {
                 widths: ["*", 60, 60, 60, 60],
@@ -1047,7 +1052,7 @@ async function getCatoniStyle()
                         {},
                     ],
                     [
-                        {border: [false, false, false, false], text: 'Catoni Style Bedside Cabinet - High', style: 'textotablaboldlargecatoni', tocItem: "catoniStyle"},
+                        {border: [false, false, false, false], text: 'Catoni Style Bedside Cabinet - High', style: 'textotablaboldlargecatoni'},
                         {text: 'B01', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
                         {text: 'B02', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
                         {text: 'B03', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},

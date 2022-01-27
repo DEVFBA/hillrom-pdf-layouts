@@ -166,8 +166,13 @@ async function getReconditionatedVersaCare()
     }   
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var reconditionatedVersaCare = [
-        { text: 'Reconditioned VersaCare® Bed', style: 'header', tocItem: 'compella'},
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
+        { text: 'Reconditioned VersaCare® Bed', style: 'header', tocItem: 'reconditionatedVersaCare'},
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
         { text:'Standard features:\n', style: 'textosubrayado', decoration: 'underline'},

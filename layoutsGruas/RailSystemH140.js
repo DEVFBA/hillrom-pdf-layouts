@@ -1,503 +1,534 @@
-const dbProgressa = require('../controllers/progressa')
+const dbRailSystem = require('../controllers/railsystem')
 
 async function getRailSystemH140()
 {
-    /*const res = await dbProgressa.getDataProgressa()
-    const prices = res[0]
-    const patientSiderail = res[1]
-    const mobility  = res[2]
-    const permanentPole = res[3]
-    const transportShelf = res[4]
-    const accumaxSurfaces = res[5]
-    const therapyIntegrated = res[6]
-    const pulmonaryIntegrated = res[7]
-    const accesoriesData = res[8]*/
+    const res = await dbRailSystem.getRailSystem()
+    const salida11 = res[10]
+    const salida12 = res[11]
+    const salida13  = res[12]
+    const salida14 = res[13]
+    const salida15 = res[14]
+    const salida16 = res[15]
+    const salida17 = res[16]
+    const salida18 = res[17]
+    const salida19 = res[18]
+    const salida20 = res[19]
 
     var accesories = []
     var pSItems = 0
 
     /*ESTO VA EN UN CICLO*/
-    /*for(var i=0; i<accesoriesData.length; i++)
+    for(var i=0; i<salida11.length; i++)
     {
-        accesories[pSItems] = [
-            {text: accesoriesData[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: accesoriesData[i].Item_Long_Desc, style: 'textotabla'},
-            {text: accesoriesData[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData[i].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
-    }*/
-    /*TERMINA CICLO*/
-
-    /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotablacatoni'},
-        {border: [true, true, true, false], text: '2,8 m Straight Rail H140 (110 in), white', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, true, true, false], text: '$329', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-
-    accesories[pSItems] =[
-        {border: [true, false, true, true], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, true], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
+        if(i === 0 && salida11.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida11[i].Part, style: 'textotablacatoni'},
+                {border: [true, true, true, true], text: salida11[i].Item_Long_Desc, style: 'textotablacatoni'},
+                {border: [true, true, true, false],  text: ""},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotablacatoni', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida11[i].Part, style: 'textotablacatoni'},
+                {border: [true, true, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablacatoni'},
+                {border: [true, true, true, false], text: ""},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotablacatoni', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida11.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida11[i].Part, style: 'textotablacatoni'},
+                {border: [true, false, true, true], text: salida11[i].Item_Long_Desc, style: 'textotablacatoni'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotablacatoni', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida11[i].Part, style: 'textotablacatoni'},
+                {border: [true, false, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablacatoni'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotablacatoni', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     var accesories2 = []
     pSItems = 0;
 
     /*ESTO VA EN UN CICLO*/
-    accesories2[pSItems] =[
-        {border: [true, true, true, false], text: '31013428N', style: 'textotablacatoni'},
-        {border: [true, true, true, false], text: '2,8 m Straight Rail H140 (110 in), natural', style: 'textotablacatoni'},
-        {border: [true, true, true, false], image: "images/RailSystemH140.png", width: 80, height: 25, alignment: 'center', rowSpan: 5},
-        {border: [true, true, true, false], text: '$312', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, true], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, true], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
+    for(var i=0; i<salida12.length; i++)
+    {
+        if(i === 0 && salida12.length === 1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, true], text: salida12[i].Part, style: 'textotablacatoni'},
+                {border: [true, true, true, true], text: salida12[i].Item_Long_Desc, style: 'textotablacatoni'},
+                {border: [true, true, true, true], image: "images/RailSystemH140.png", width: 80, height: 25, alignment: 'center', rowSpan: salida12.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotablacatoni', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, false], text: salida12[i].Part, style: 'textotablacatoni'},
+                {border: [true, true, true, false], text: salida12[i].Item_Long_Desc, style: 'textotablacatoni'},
+                {border: [true, true, true, true], image: "images/RailSystemH140.png", width: 80, height: 25, alignment: 'center', rowSpan: salida12.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotablacatoni', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida12.length-1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: salida12[i].Part, style: 'textotablacatoni'},
+                {border: [true, false, true, true], text: salida12[i].Item_Long_Desc, style: 'textotablacatoni'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotablacatoni', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: salida12[i].Part, style: 'textotablacatoni'},
+                {border: [true, false, true, false], text: salida12[i].Item_Long_Desc, style: 'textotablacatoni'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotablacatoni', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, true], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, true], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
+    for(var i=0; i<salida13.length; i++)
+    {
+        if(i === 0 && salida13.length === 1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, true], text: salida13[i].Part, style: 'textotablacatoni'},
+                {border: [true, true, true, true], text: salida13[i].Item_Long_Desc, style: 'textotablacatoni'},
+                {border: [true, true, true, false],  text: ""},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotablacatoni', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, false], text: salida13[i].Part, style: 'textotablacatoni'},
+                {border: [true, true, true, false], text: salida13[i].Item_Long_Desc, style: 'textotablacatoni'},
+                {border: [true, true, true, false], text: ""},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotablacatoni', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida13.length-1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: salida13[i].Part, style: 'textotablacatoni'},
+                {border: [true, false, true, true], text: salida13[i].Item_Long_Desc, style: 'textotablacatoni'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotablacatoni', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: salida13[i].Part, style: 'textotablacatoni'},
+                {border: [true, false, true, false], text: salida13[i].Item_Long_Desc, style: 'textotablacatoni'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotablacatoni', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
      /*TERMINA CICLO*/
 
      /*ESTO VA EN UN CICLO*/
-    accesories2[pSItems] =[
-        {border: [true, false, true, true], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, true], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, true, true, true], image: "images/RailSystemH1402.png", width: 80, height: 25, alignment: 'center'},
-        {border: [true, false, true, true], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
+     for(var i=0; i<salida14.length; i++)
+     {
+         if(i === 0 && salida14.length === 1)
+         {
+             accesories2[pSItems] =[
+                 {border: [true, true, true, true], text: salida14[i].Part, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], text: salida14[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], image: "images/RailSystemH1402.png", width: 80, height: 25, alignment: 'center', rowSpan: salida14.length},
+                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida14[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else if(i === 0)
+         {
+             accesories2[pSItems] =[
+                 {border: [true, true, true, false], text: salida14[i].Part, style: 'textotablacatoni'},
+                 {border: [true, true, true, false], text: salida14[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], image: "images/RailSystemH1402.png", width: 80, height: 25, alignment: 'center', rowSpan: salida14.length},
+                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida14[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else if(i === salida14.length-1)
+         {
+             accesories2[pSItems] =[
+                 {border: [true, false, true, true], text: salida14[i].Part, style: 'textotablacatoni'},
+                 {border: [true, false, true, true], text: salida14[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, false, true, true], text: ""},
+                 {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida14[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else {
+             accesories2[pSItems] =[
+                 {border: [true, false, true, false], text: salida14[i].Part, style: 'textotablacatoni'},
+                 {border: [true, false, true, false], text: salida14[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, false, true, false], text: ""},
+                 {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida14[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         
+     }
     /*TERMINA CICLO*/
 
      /*ESTO VA EN UN CICLO*/
-    accesories2[pSItems] =[
-        {border: [true, false, true, true], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, true], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, true, true, true], image: "images/RailSystemH1403.png", width: 80, height: 25, alignment: 'center'},
-        {border: [true, false, true, true], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
+     for(var i=0; i<salida15.length; i++)
+     {
+         if(i === 0 && salida15.length === 1)
+         {
+             accesories2[pSItems] =[
+                 {border: [true, true, true, true], text: salida15[i].Part, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], text: salida15[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], image: "images/RailSystemH1403.png", width: 80, height: 25, alignment: 'center', rowSpan: salida15.length},
+                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida15[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else if(i === 0)
+         {
+             accesories2[pSItems] =[
+                 {border: [true, true, true, false], text: salida15[i].Part, style: 'textotablacatoni'},
+                 {border: [true, true, true, false], text: salida15[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], image: "images/RailSystemH1403.png", width: 80, height: 25, alignment: 'center', rowSpan: salida15.length},
+                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida15[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else if(i === salida15.length-1)
+         {
+             accesories2[pSItems] =[
+                 {border: [true, false, true, true], text: salida15[i].Part, style: 'textotablacatoni'},
+                 {border: [true, false, true, true], text: salida15[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, false, true, true], text: ""},
+                 {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida15[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else {
+             accesories2[pSItems] =[
+                 {border: [true, false, true, false], text: salida15[i].Part, style: 'textotablacatoni'},
+                 {border: [true, false, true, false], text: salida15[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, false, true, false], text: ""},
+                 {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida15[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         
+     }
     /*TERMINA CICLO*/
 
     var accesories3 = []
     pSItems = 0;
 
     /*ESTO VA EN UN CICLO*/
-    accesories3[pSItems] =[
-        {border: [true, true, true, false], text: '31013428N', style: 'textotablacatoni'},
-        {border: [true, true, true, false], text: '2,8 m Straight Rail H140 (110 in), natural', style: 'textotablacatoni'},
-        {border: [true, true, true, false], image: "images/RailSystemH1404.png", width: 20, height: 15, alignment: 'center'},
-        {border: [true, true, true, false], text: '$312', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, true], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, true], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida16.length; i++)
+     {
+         if(i === 0 && salida16.length === 1)
+         {
+             accesories3[pSItems] =[
+                 {border: [true, true, true, true], text: salida16[i].Part, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], text: salida16[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], image: "images/RailSystemH1404.png", width: 20, height: 15, alignment: 'center', rowSpan: salida16.length},
+                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida16[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else if(i === 0)
+         {
+            accesories3[pSItems] =[
+                 {border: [true, true, true, false], text: salida16[i].Part, style: 'textotablacatoni'},
+                 {border: [true, true, true, false], text: salida16[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], image: "images/RailSystemH1404.png", width: 20, height: 15, alignment: 'center', rowSpan: salida16.length},
+                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida16[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else if(i === salida16.length-1)
+         {
+            accesories3[pSItems] =[
+                 {border: [true, false, true, true], text: salida16[i].Part, style: 'textotablacatoni'},
+                 {border: [true, false, true, true], text: salida16[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, false, true, true], text: ""},
+                 {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida16[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else {
+            accesories3[pSItems] =[
+                 {border: [true, false, true, false], text: salida16[i].Part, style: 'textotablacatoni'},
+                 {border: [true, false, true, false], text: salida16[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, false, true, false], text: ""},
+                 {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida16[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         
+     }
      /*TERMINA CICLO*/
 
      /*ESTO VA EN UN CICLO*/
-    accesories3[pSItems] =[
-        {border: [true, false, true, true], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, true], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, true, true, true], image: "images/RailSystemH1405.png", width: 20, height: 15, alignment: 'center'},
-        {border: [true, false, true, true], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
+     for(var i=0; i<salida17.length; i++)
+     {
+         if(i === 0 && salida17.length === 1)
+         {
+             accesories3[pSItems] =[
+                 {border: [true, true, true, true], text: salida17[i].Part, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], text: salida17[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], image: "images/RailSystemH1405.png", width: 20, height: 15, alignment: 'center', rowSpan: salida17.length},
+                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida17[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else if(i === 0)
+         {
+            accesories3[pSItems] =[
+                 {border: [true, true, true, false], text: salida17[i].Part, style: 'textotablacatoni'},
+                 {border: [true, true, true, false], text: salida17[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], image: "images/RailSystemH1405.png", width: 20, height: 15, alignment: 'center', rowSpan: salida17.length},
+                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida17[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else if(i === salida17.length-1)
+         {
+            accesories3[pSItems] =[
+                 {border: [true, false, true, true], text: salida17[i].Part, style: 'textotablacatoni'},
+                 {border: [true, false, true, true], text: salida17[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, false, true, true], text: ""},
+                 {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida17[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else {
+            accesories3[pSItems] =[
+                 {border: [true, false, true, false], text: salida17[i].Part, style: 'textotablacatoni'},
+                 {border: [true, false, true, false], text: salida17[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, false, true, false], text: ""},
+                 {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida17[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         
+     }
      /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, true, true, true], image: "images/RailSystemH1406.png", width: 15, height: 60, alignment: 'center', rowSpan: 6},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, true], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, true], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida18.length; i++)
+     {
+         if(i === 0 && salida18.length === 1)
+         {
+             accesories3[pSItems] =[
+                 {border: [true, true, true, true], text: salida18[i].Part, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], text: salida18[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], image: "images/RailSystemH1406.png", width: 15, height: 60, alignment: 'center', rowSpan: salida18.length},
+                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida18[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else if(i === 0)
+         {
+            accesories3[pSItems] =[
+                 {border: [true, true, true, false], text: salida18[i].Part, style: 'textotablacatoni'},
+                 {border: [true, true, true, false], text: salida18[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], image: "images/RailSystemH1406.png", width: 15, height: 60, alignment: 'center', rowSpan: salida18.length},
+                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida18[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else if(i === salida18.length-1)
+         {
+            accesories3[pSItems] =[
+                 {border: [true, false, true, true], text: salida18[i].Part, style: 'textotablacatoni'},
+                 {border: [true, false, true, true], text: salida18[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, false, true, true], text: ""},
+                 {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida18[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else {
+            accesories3[pSItems] =[
+                 {border: [true, false, true, false], text: salida18[i].Part, style: 'textotablacatoni'},
+                 {border: [true, false, true, false], text: salida18[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, false, true, false], text: ""},
+                 {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida18[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         
+     }
 
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, true, true, true], image: "images/RailSystemH1407.png", width: 20, height: 20, alignment: 'center', rowSpan: 2},
-        {border: [true, false, true, false], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, true], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, true], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
-
+    for(var i=0; i<salida19.length; i++)
+     {
+         if(i === 0 && salida19.length === 1)
+         {
+             accesories3[pSItems] =[
+                 {border: [true, true, true, true], text: salida19[i].Part, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], text: salida19[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], image: "images/RailSystemH1407.png", width: 20, height: 20, alignment: 'center', rowSpan: salida19.length},
+                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida19[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else if(i === 0)
+         {
+            accesories3[pSItems] =[
+                 {border: [true, true, true, false], text: salida19[i].Part, style: 'textotablacatoni'},
+                 {border: [true, true, true, false], text: salida19[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], image: "images/RailSystemH1407.png", width: 20, height: 20, alignment: 'center', rowSpan: salida19.length},
+                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida19[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else if(i === salida19.length-1)
+         {
+            accesories3[pSItems] =[
+                 {border: [true, false, true, true], text: salida19[i].Part, style: 'textotablacatoni'},
+                 {border: [true, false, true, true], text: salida19[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, false, true, true], text: ""},
+                 {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida19[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else {
+            accesories3[pSItems] =[
+                 {border: [true, false, true, false], text: salida19[i].Part, style: 'textotablacatoni'},
+                 {border: [true, false, true, false], text: salida19[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, false, true, false], text: ""},
+                 {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida19[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         
+     }
     /*TERMINA CICLO*/   
 
      /*ESTO VA EN UN CICLO*/
-    accesories3[pSItems] =[
-        {border: [true, false, true, true], text: '2020100DEFR', style: 'textotablacatoni'},
-        {border: [true, false, true, true], text: 'Quick Reference Guide DE-FR', style: 'textotablacatoni'},
-        {border: [true, true, true, true], image: "images/RailSystemH1408.png", width: 50, height: 20, alignment: 'center'},
-        {border: [true, false, true, true], text: '$963', style: 'textotablacatoni', alignment: 'center'},
-    ]
-
-    pSItems++
+     for(var i=0; i<salida20.length; i++)
+     {
+         if(i === 0 && salida20.length === 1)
+         {
+             accesories3[pSItems] =[
+                 {border: [true, true, true, true], text: salida20[i].Part, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], text: salida20[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], image: "images/RailSystemH1408.png", width: 50, height: 20, alignment: 'center', rowSpan: salida20.length},
+                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida20[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else if(i === 0)
+         {
+            accesories3[pSItems] =[
+                 {border: [true, true, true, false], text: salida20[i].Part, style: 'textotablacatoni'},
+                 {border: [true, true, true, false], text: salida20[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, true, true, true], image: "images/RailSystemH1408.png", width: 50, height: 20, alignment: 'center', rowSpan: salida20.length},
+                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida20[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else if(i === salida20.length-1)
+         {
+            accesories3[pSItems] =[
+                 {border: [true, false, true, true], text: salida20[i].Part, style: 'textotablacatoni'},
+                 {border: [true, false, true, true], text: salida20[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, false, true, true], text: ""},
+                 {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida20[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else {
+            accesories3[pSItems] =[
+                 {border: [true, false, true, false], text: salida20[i].Part, style: 'textotablacatoni'},
+                 {border: [true, false, true, false], text: salida20[i].Item_Long_Desc, style: 'textotablacatoni'},
+                 {border: [true, false, true, false], text: ""},
+                 {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida20[i].Price), style: 'textotablacatoni', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         
+     }
      /*TERMINA CICLO*/   
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var railSystemH140 = [
+        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {

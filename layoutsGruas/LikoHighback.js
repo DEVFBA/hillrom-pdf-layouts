@@ -330,7 +330,7 @@ async function getLikoOriginalHighback()
     accesories3[pSItems] =[
         {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
         {border: [true, true, true, false], text: 'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        {border: [true, true, true, false], image: "images/LikoHighback8.png", width: 70, height: 50, alignment: 'center', rowSpan: 5},
+        {border: [true, true, true, true], image: "images/LikoHighback8.png", width: 70, height: 50, alignment: 'center', rowSpan: 5},
         {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
     ]
 
@@ -373,7 +373,11 @@ async function getLikoOriginalHighback()
     pSItems++
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var likoOriginalHighback = [
+        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {

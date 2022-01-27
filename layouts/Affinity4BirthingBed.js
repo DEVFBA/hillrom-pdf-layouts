@@ -714,9 +714,14 @@ async function getAffinity4BirthingBed()
      }
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var affinity4 = [
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         { text: 'Affinity™ 4 Birthing Bed', style: 'header', tocItem: 'affinity4BirthingBed'},
-        { text: 'Maternity', style: 'subheader', tocItem: 'compella'},
+        { text: 'Maternity', style: 'subheader'},
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
         { text:'Standard features:\n', style: 'textosubrayado', decoration: 'underline'},
@@ -973,6 +978,7 @@ async function getAffinity4BirthingBed()
         { text: '\n', style: 'minispace' },
         { text: "MOK - Medium Oak", style: 'textolista' },
         {text: '', pageBreak: 'after'  },
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
         '\n',
         { text: 'SURFACES', style: 'textotablaboldlarge' },
         {

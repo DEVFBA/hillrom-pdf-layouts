@@ -341,8 +341,12 @@ async function getOverbedTables()
     }   
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var healthcareFurniture = [
-        '\n',
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         { text: 'Overbed Tables', style: 'header', tocItem: "overbedTablesArtOfCare"},
         { text: 'Art of Care', style: 'subheader' },
         { text: 'Country of origin: USA\n', style: 'parrafo' },

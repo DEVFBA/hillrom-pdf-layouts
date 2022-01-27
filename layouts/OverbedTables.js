@@ -5,8 +5,12 @@ async function getOverbedTables()
     const res = await dbOverbedTables.getDataOverbedTables()
     const prices = res[0]
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var overbedTables = [
-        '\n',
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         { text: 'Overbed Tables', style: 'header', tocItem: 'overbedTables'},
         { text: 'Country of origin: France', style: 'parrafo' },
         { text: '\n', style: 'textotabla' },

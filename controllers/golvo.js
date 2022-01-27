@@ -6,7 +6,7 @@ async function getGolvo(){
     try{
         let pool = await sql.connect(config);
         let users = await pool.request()   
-            .input('pvIdLine', sql.VarChar, "GOLVO9000")
+            .input('pvLayoutRef', sql.VarChar, "GOLVO9000")
             .execute('spPDF_Layout_Get_Info_Records')
         return users.recordsets
     }catch(error){

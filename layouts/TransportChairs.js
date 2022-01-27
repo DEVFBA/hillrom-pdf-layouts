@@ -119,11 +119,16 @@ async function getTransportChairs()
     }
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var transportChairs = [
-        '\n',
-        { text: 'Transport Chairs', style: 'header', tocItem: 'transportChairs'},
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
+        { text: 'Transport Chairs', style: 'header'},
         '\n',
         { text: 'Transport Chair Anatome SM647B', style: 'subheader'},
+        { text: 'Anatome', style: { fontSize: 0}, tocItem: 'transportChairs'},
         { text: 'Country of origin: France', style: 'parrafo' },
         { text: '\n', style: 'textotabla' },
         {

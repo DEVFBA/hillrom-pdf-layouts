@@ -431,7 +431,12 @@ async function getHillrom900()
      }   
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var hillrom900 = [
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         { text: 'Hillrom® 900', style: 'header', tocItem: 'hillrom900'},
         { text: 'Country of origin: France\n', style: 'parrafo' },
         { text:'Standard features:\n', style: 'textosubrayado', decoration: 'underline'},

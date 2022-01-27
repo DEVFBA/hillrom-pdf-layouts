@@ -6,7 +6,7 @@ async function getBedsideCabinetsPremiumAOC(){
     try{
         let pool = await sql.connect(config);
         let users = await pool.request()   
-            .input('pvIdLine', sql.VarChar, "BEDSPRE")
+            .input('pvLayoutRef', sql.VarChar, "BEDSPRE")
             .execute('spPDF_Layout_Get_Info_Records')
         return users.recordsets
     }catch(error){

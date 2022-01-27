@@ -86,7 +86,24 @@ async function get305ManualBed()
      }
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var t305ManualBed = [
+        /*{
+            table: {
+                widths: ["*", 160, 150],
+                body: [
+                    [
+                        {border: [false, false, false, false], image: "images/Baxter.png", width: 90, height: 20},
+                        {border: [false, false, false, false], text: fecha.toLocaleDateString(), style: 'footer', alignment: 'center'},
+                        {border: [false, false, false, false], text: 'Mobile Lifts', style: 'footer', alignment: 'right'}
+                    ]
+                ]
+            },
+        },*/
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        { text:  "\n", style: "textotabla"},
         { text: '305 Manual Bed', style: 'header', tocItem: '305ManualBed'},
         { text: 'Country of origin: China\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },

@@ -6,7 +6,7 @@ async function getMedSurgAccesories(){
     try{
         let pool = await sql.connect(config);
         let users = await pool.request()   
-            .input('pvIdLine', sql.VarChar, "MEDSURGACC")
+            .input('pvLayoutRef', sql.VarChar, "MEDSURGACC")
             .execute('spPDF_Layout_Get_Info_Records')
         return users.recordsets
     }catch(error){

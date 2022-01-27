@@ -919,7 +919,12 @@ async function getProgressa()
     }
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var progressa = [
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         { text: 'Hospital Beds - Critical Care/ICU', style: 'header' },
             '\n',
         { text: 'Progressa™ Bed System\n', style: 'subheader', tocItem: 'progressa' },
@@ -1165,9 +1170,8 @@ async function getProgressa()
                 ],
             ]
         },
-        '\n',
-        '\n',
-        '\n',
+        {text: '', pageBreak: 'after'  },
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
         {
             table: {
                 widths: [70, '*', 70, 70],

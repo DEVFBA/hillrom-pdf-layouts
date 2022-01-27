@@ -1,17 +1,16 @@
-const dbProgressa = require('../controllers/progressa')
+const dbMobileLiftAccesories = require('../controllers/mobileliftaccesories')
 
 async function getMobileLiftAccesories()
 {
-    /*const res = await dbProgressa.getDataProgressa()
-    const prices = res[0]
-    const patientSiderail = res[1]
-    const mobility  = res[2]
-    const permanentPole = res[3]
-    const transportShelf = res[4]
-    const accumaxSurfaces = res[5]
-    const therapyIntegrated = res[6]
-    const pulmonaryIntegrated = res[7]
-    const accesoriesData = res[8]*/
+    const res = await dbMobileLiftAccesories.getMobileLiftAccesories()
+    const salida1 = res[0]
+    const salida2 = res[1]
+    const salida3  = res[2]
+    const salida4 = res[3]
+    const salida5 = res[4]
+    const salida6 = res[5]
+    const salida7 = res[6]
+    const salida8 = res[7]
 
     var accesories = []
     var pSItems = 0
@@ -31,364 +30,519 @@ async function getMobileLiftAccesories()
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2004106EU', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Charger for Extra Battery, for wallmounting, EU', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], image: "images/MobileLift.png", width: 50, height: 80, alignment: 'center', rowSpan: 6},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Accessory to: Golvo 7000ES/7007ES, Uno 100/102, Sabina II, LikoLight, Liko M220/M230, Viking 300, Viking XL Prod. No. 2040003, 2040003L, Viking L Prod. No. 2040004 and Viking M Prod. No. 2040005', style: 'textotabla'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida1.length; i++)
+    {
+        if(i === 0 && salida1.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida1[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/MobileLift.png", width: 50, height: 80, alignment: 'center', rowSpan: salida1.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida1[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/MobileLift.png", width: 50, height: 80, alignment: 'center', rowSpan: salida1.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida1.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida1[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida1[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '2004106EU', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'Wall Mounted Battery Charger, EU', style: 'textotablaboldblack'},
-        {border: [true, true, true, false], image: "images/MobileLift1-1.png", width: 50, height: 80, alignment: 'center', rowSpan: 6},
-        {border: [true, true, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Fits: Viking M Prod. No. 2040015, 2040035 \nViking L Prod. No. 2040014, 2040034 \nViking XL Prod. No. 2040013, 2040033 \nGolvo 8000/8008.', style: 'textotabla'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida2.length; i++)
+    {
+        if(i === 0 && salida2.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida2[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/MobileLift1-1.png", width: 50, height: 80, alignment: 'center', rowSpan: salida2.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida2[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/MobileLift1-1.png", width: 50, height: 80, alignment: 'center', rowSpan: salida2.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida2.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida2[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida2[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '2004106EU', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'Extra Battery Box', style: 'textotablaboldblack'},
-        {border: [true, true, true, false], image: "images/MobileLift1.png", width: 50, height: 80, alignment: 'center', rowSpan: 4},
-        {border: [true, true, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
+    for(var i=0; i<salida3.length; i++)
+    {
+        if(i === 0 && salida3.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida3[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/MobileLift1.png", width: 50, height: 80, alignment: 'center', rowSpan: salida3.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida3[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/MobileLift1.png", width: 50, height: 80, alignment: 'center', rowSpan: salida3.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
 
-    pSItems++
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida3.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida3[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida3[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
 
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Fits: Viking M Prod. No. 2040015, 2040035 \nViking L Prod. No. 2040014, 2040034 \nViking XL Prod. No. 2040013, 2040033 \nGolvo 8000/8008.', style: 'textotabla'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '2004106EU', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'Cord for HandControl IR', style: 'textotablaboldblack'},
-        {border: [true, true, true, false], image: "images/MobileLift2.png", width: 60, height: 30, alignment: 'center', rowSpan: 4},
-        {border: [true, true, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
+    for(var i=0; i<salida4.length; i++)
+    {
+        if(i === 0 && salida4.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/MobileLift2.png", width: 60, height: 30, alignment: 'center', rowSpan: salida4.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/MobileLift2.png", width: 60, height: 30, alignment: 'center', rowSpan: salida4.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
 
-    pSItems++
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida4.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
 
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Fits: Viking M Prod. No. 2040015 - Viking L Prod. No. 2040014 - Viking XL \nProd. No. 2040013 \nGolvo 8000/8008.', style: 'textotabla'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '3126148', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'Extension Cable, 2,0 m (79 in.)', style: 'textotablaboldblack'},
-        {border: [true, true, true, false], image: "images/MobileLift3.png", width: 60, height: 30, alignment: 'center', rowSpan: 4},
-        {border: [true, true, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
+    for(var i=0; i<salida5.length; i++)
+    {
+        if(i === 0 && salida5.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/MobileLift3.png", width: 60, height: 30, alignment: 'center', rowSpan: salida5.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/MobileLift3.png", width: 60, height: 30, alignment: 'center', rowSpan: salida5.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
 
-    pSItems++
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida5.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
 
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Extra long charger cable for use with Sabina 200, \nUno 200, Likorall 200 and Likorall 250 S IRC.', style: 'textotabla'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '2014305', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'Wheel Set 100/100, (higher base clearance)', style: 'textotablaboldblack'},
-        {border: [true, true, true, false], image: "images/MobileLift4.png", width: 60, height: 50, alignment: 'center', rowSpan: 4},
-        {border: [true, true, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
+    for(var i=0; i<salida6.length; i++)
+    {
+        if(i === 0 && salida6.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/MobileLift4.png", width: 60, height: 50, alignment: 'center', rowSpan: salida6.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/MobileLift4.png", width: 60, height: 50, alignment: 'center', rowSpan: salida6.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
 
-    pSItems++
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida6.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
 
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Fits Sabina II EE', style: 'textotabla'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '2014306', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'Wheel Set 100/75, (lower base clearance)', style: 'textotablaboldblack'},
-        {border: [true, true, true, false], image: "images/MobileLift5.png", width: 60, height: 50, alignment: 'center', rowSpan: 4},
-        {border: [true, true, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
+    for(var i=0; i<salida7.length; i++)
+    {
+        if(i === 0 && salida7.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/MobileLift5.png", width: 60, height: 50, alignment: 'center', rowSpan: salida7.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/MobileLift5.png", width: 60, height: 50, alignment: 'center', rowSpan: salida7.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
 
-    pSItems++
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida7.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
 
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Fits Sabina II EE', style: 'textotabla'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '2107100', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'Holder for Charging Cable', style: 'textotablaboldblack'},
-        {border: [true, true, true, true], image: "images/MobileLift6.png", width: 50, height: 70, alignment: 'center', rowSpan: 4},
-        {border: [true, true, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
+    /*for(var i=0; i<salida8.length; i++)
+    {
+        if(i === 0 && salida8.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida8[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/MobileLift6.png", width: 50, height: 70, alignment: 'center', rowSpan: salida7.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/MobileLift6.png", width: 50, height: 70, alignment: 'center', rowSpan: salida8.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
 
-    pSItems++
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida8.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida8[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida8[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
 
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Fits Golvo 7000ES / 7007ES, Golvo 9000 \nUno 100/102, Sabina II, LikoLight, Liko M220 / M230 \nViking XL Prod. No. 2040003, 2040003L, 2040043 \nViking L Prod. No. 2040004, 2040044 \nViking M Prod. No. 2040005 and 2040045', style: 'textotabla'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: ""},
-    ]
-
-    pSItems++
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        
+    }*/
     /*TERMINA CICLO*/
+
+    const fecha = new Date();
+    fecha.toLocaleDateString()
 
     var mobileLiftAccesories = [
+        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
+        "\n",
         { text: 'MOBILE LIFTS - ACCESSORIES', style: 'header' },
         "\n",
         {

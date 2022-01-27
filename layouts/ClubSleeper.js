@@ -64,7 +64,12 @@ async function getClubSleeper()
     pSItems++
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var clubSleeper = [
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         '\n',
         { text: 'Club Sleeper\n', style: 'subheader' },
         "\n",

@@ -29,7 +29,12 @@ async function getTransferBoard()
     }
     /*TERMINA CICLO*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var accumax = [
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        {text:  "\n", style: "textotabla"},
         { text: 'Transfer Board', style: 'header', tocItem: 'transferBoard'},
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         "\n",
@@ -56,7 +61,6 @@ async function getTransferBoard()
         "\n",
         "\n",
         { image: "images/TransferBoard1.png", width: 230, height: 180, alignment: 'center'},
-        {text: '', pageBreak: 'after'  },
     ]
 
     return accumax;

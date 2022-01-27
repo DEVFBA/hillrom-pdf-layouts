@@ -1,14 +1,16 @@
-const axios = require('axios');
+const dbHillromResident = require('../controllers/hillromresidentlongterm')
+
+const fecha = new Date();
+fecha.toLocaleDateString()
 
 async function getHillromResidentLongTerm()
 {
-    /*const res = await axios.get("http://localhost:8091/api/pdf-hillroom/progressa")
-    const prices = res.data[0]
-    const patientSiderail = res.data[1]
-    const mobility  = res.data[2]
-    const permanentPole = res.data[3]
-    const transportShelf = res.data[4]*/
-
+    const res = await dbHillromResident.getDataHillromResident()
+    const pricesData = res[0]
+    const optionsData = res[1]
+    const miscAccesoriesData = res[2]
+    const residentAccData = res[3]
+    
     var options =[]
     var pSItems = 0;
 
@@ -26,133 +28,114 @@ async function getHillromResidentLongTerm()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    options[pSItems] = [
-        {text: 'Sleep Deck: 76" Hard Pan', style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
 
     options[pSItems] = [
-        {text: 'Sleep Deck: 76" Spring Fabric', style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: 'Sleep Deck: 80" Hard Pan', style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$v", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: 'Sleep Deck: 80" Spring Fabric', style: 'textotabla'},
-        {text: "$0", style: 'textotabla', alignment: 'center'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "Pendant Control RB-PEN", style: 'textotabla'},
-        {text: "$171", style: 'textotabla', alignment: 'center'},
-        {text: "$171", style: 'textotabla', alignment: 'center'}, 
-        {text: "$171", style: 'textotabla', alignment: 'center'}, 
-        {text: "$171", style: 'textotabla', alignment: 'center'}, 
-        {text: "$171", style: 'textotabla', alignment: 'center'}, 
-        {text: "$171", style: 'textotabla', alignment: 'center'}, 
-        {text: "$171", style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "Hearthside Headboards/ Footboards RB-HTH", style: 'textotabla'},
-        {text: "$196", style: 'textotabla', alignment: 'center'},
-        {text: "$196", style: 'textotabla', alignment: 'center'}, 
-        {text: "$196", style: 'textotabla', alignment: 'center'}, 
-        {text: "$196", style: 'textotabla', alignment: 'center'}, 
-        {text: "$196", style: 'textotabla', alignment: 'center'}, 
-        {text: "$196", style: 'textotabla', alignment: 'center'}, 
-        {text: "$196", style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "Assist Bar RB-AB", style: 'textotabla'},
+        {text: optionsData[0].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'},
         {text: "N/A", style: 'textotabla', alignment: 'center'},
-        {text: "STND", style: 'textotabla', alignment: 'center'}, 
-        {text: "$234", style: 'textotabla', alignment: 'center'}, 
-        {text: "$234", style: 'textotabla', alignment: 'center'}, 
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-        {text: "$234", style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: "Foot Rails RB-FR", style: 'textotabla'},
-        {text: "STND", style: 'textotabla', alignment: 'center'},
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
         {text: "N/A", style: 'textotabla', alignment: 'center'}, 
         {text: "N/A", style: 'textotabla', alignment: 'center'}, 
         {text: "N/A", style: 'textotabla', alignment: 'center'},
+        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
+        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
     ]
-
     pSItems++
 
     options[pSItems] = [
-        {text: "NP100 Surface RB-NP1", style: 'textotabla'},
-        {text: "$649", style: 'textotabla', alignment: 'center'},
-        {text: "$649", style: 'textotabla', alignment: 'center'}, 
-        {text: "$649", style: 'textotabla', alignment: 'center'}, 
-        {text: "$649", style: 'textotabla', alignment: 'center'}, 
-        {text: "$649", style: 'textotabla', alignment: 'center'}, 
-        {text: "$649", style: 'textotabla', alignment: 'center'}, 
-        {text: "$649", style: 'textotabla', alignment: 'center'},
+        {text: optionsData[1].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[1].Price), style: 'textotabla',alignment: 'center'},
+        {text: "N/A", style: 'textotabla', alignment: 'center'},
+        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
+        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
+        {text: "N/A", style: 'textotabla', alignment: 'center'},
+        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
+        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
     ]
-
     pSItems++
+
+    options[pSItems] = [
+        {text: optionsData[2].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[2].Price), style: 'textotabla',alignment: 'center'},
+        {text: "N/A", style: 'textotabla', alignment: 'center'},
+        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
+        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
+        {text: "N/A", style: 'textotabla', alignment: 'center'},
+        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
+        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
+    ]
+    pSItems++
+
+    options[pSItems] = [
+        {text: optionsData[3].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[3].Price), style: 'textotabla',alignment: 'center'},
+        {text: "N/A", style: 'textotabla', alignment: 'center'},
+        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
+        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
+        {text: "N/A", style: 'textotabla', alignment: 'center'},
+        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
+        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
+    ]
+    pSItems++
+
+    options[pSItems] = [
+        {text: optionsData[4].Item_Long_Desc, style: 'textotabla'},
+        {text: "N/A", style: 'textotabla',alignment: 'center'},
+        {text: "N/A", style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[4].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[5].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "N/A", style: 'textotabla', alignment: 'center'},
+        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
+        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
+    ]
+    pSItems++
+
+    options[pSItems] = [
+        {text: optionsData[6].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[6].Price), style: 'textotabla',alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[8].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[9].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[10].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[11].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[12].Price), style: 'textotabla', alignment: 'center'}, 
+    ]
+    pSItems++
+
+    options[pSItems] = [
+        {text: optionsData[13].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[13].Price), style: 'textotabla',alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[15].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[16].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[17].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[18].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[19].Price), style: 'textotabla', alignment: 'center'}, 
+    ]
+    pSItems++
+
+    options[pSItems] = [
+        {text: optionsData[20].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[20].Price), style: 'textotabla',alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[22].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[23].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "N/A", style: 'textotabla', alignment: 'center'},
+        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
+        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
+    ]
+    pSItems++
+    
      /*TERMINA CICLO*/
 
     options[pSItems] = [
         {text: "LIST PRICE", style: 'textotablacolor', fillColor: '#546ce4'},
-        {text: "$3,264", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-        {text: "$3,148", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-        {text: "$2,927", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-        {text: "$2,870", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-        {text: "$2,667", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-        {text: "$2,368", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-        {text: "$2,570", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+        {text: "$1,056.64", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+        {text: "$1,056.64", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+        {text: "$1,300", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+        {text: "$1,300", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+        {text: "$878.8", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+        {text: "$878.8", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+        {text: "$878.8", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
     ]
 
     var accesories = []
@@ -186,14 +169,17 @@ async function getHillromResidentLongTerm()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] = [
-        {text: "MDG", style: 'textotabla', alignment: 'center'},
-        {text: "Vertical Oxygen Tank Holder (Compatible on Advanta2, CareAssist, Compella, TotalCare, Resident LTC, Stretcher, Centrella)", style: 'textotabla'},
-        {text: "MS-P27601", style: 'textotabla', alignment: 'center'}, 
-        {text: "$312", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+    for(var i=0; i< miscAccesoriesData.length; i++)
+    {
+        accesories[pSItems] = [
+            {text: miscAccesoriesData[i].KitName, style: 'textotabla', alignment: 'center'},
+            {text: miscAccesoriesData[i].Item_Long_Desc, style: 'textotabla'},
+            {text: miscAccesoriesData[i].Part, style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(miscAccesoriesData[i].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+    }
      /*TERMINA CICLO*/
 
      accesories[pSItems] = [
@@ -206,109 +192,27 @@ async function getHillromResidentLongTerm()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] = [
-        {text: "RSB", style: 'textotabla', alignment: 'center'},
-        {text: "Ambulatory Assist Bar - Taupe", style: 'textotabla'},
-        {text: "RB-P00070833", style: 'textotabla', alignment: 'center'}, 
-        {text: "$233", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "RSB", style: 'textotabla', alignment: 'center'},
-        {text: "Assist Bar Set - Light Neutral", style: 'textotabla'},
-        {text: "RB-P00070848", style: 'textotabla', alignment: 'center'}, 
-        {text: "$217", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "RSB", style: 'textotabla', alignment: 'center'},
-        {text: "Battery Backup Unit", style: 'textotabla'},
-        {text: "RB-P442A", style: 'textotabla', alignment: 'center'}, 
-        {text: "$475", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "RSB", style: 'textotabla', alignment: 'center'},
-        {text: "Pendant Control", style: 'textotabla'},
-        {text: "RB-P724A01", style: 'textotabla', alignment: 'center'}, 
-        {text: "$171", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "RSB", style: 'textotabla', alignment: 'center'},
-        {text: "Trapeze Support Bracket - US", style: 'textotabla'},
-        {text: "RB-P846A01", style: 'textotabla', alignment: 'center'}, 
-        {text: "$154", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "RSB", style: 'textotabla', alignment: 'center'},
-        {text: "Surface Retainers", style: 'textotabla'},
-        {text: "RB-P864A", style: 'textotabla', alignment: 'center'}, 
-        {text: "$56", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "RSB", style: 'textotabla', alignment: 'center'},
-        {text: "Foot Rails with Top Cane", style: 'textotabla'},
-        {text: "RB-P868C01", style: 'textotabla', alignment: 'center'}, 
-        {text: "$373", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "RSB", style: 'textotabla', alignment: 'center'},
-        {text: "Foot Rails Without Top Cane", style: 'textotabla'},
-        {text: "RB-P868C02", style: 'textotabla', alignment: 'center'}, 
-        {text: "$373", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "RSB", style: 'textotabla', alignment: 'center'},
-        {text: "1/2 Length Head Rails - No Controls, Standard", style: 'textotabla'},
-        {text: "RB-P869A01", style: 'textotabla', alignment: 'center'}, 
-        {text: "$234", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "RSB", style: 'textotabla', alignment: 'center'},
-        {text: "1/2 Length Head Rails - with Embedded Controls", style: 'textotabla'},
-        {text: "RB-P869A02", style: 'textotabla', alignment: 'center'}, 
-        {text: "$621", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    accesories[pSItems] = [
-        {text: "RSB", style: 'textotabla', alignment: 'center'},
-        {text: "Bed Extender", style: 'textotabla'},
-        {text: "RB-P9912B01", style: 'textotabla', alignment: 'center'}, 
-        {text: "$642", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+    for(var i=0; i< residentAccData.length; i++)
+    {
+        accesories[pSItems] = [
+            {text: residentAccData[i].KitName, style: 'textotabla', alignment: 'center'},
+            {text: residentAccData[i].Item_Long_Desc, style: 'textotabla'},
+            {text: residentAccData[i].Part, style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(residentAccData[i].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+    }
     /*TERMINA CICLO*/
    
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var hillromResidentLongTerm = [
-        { text: 'Hillrom® Resident® Long Term Care Bed', style: 'header', tocItem: 'compella'},
+        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        { text:  "\n", style: "textotabla"},
+        { text: 'Hillrom® Resident® Long Term Care Bed', style: 'header', tocItem: 'hillromResident'},
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
         { text:'Standard features:\n', style: 'textosubrayado', decoration: 'underline'},
@@ -348,7 +252,7 @@ async function getHillromResidentLongTerm()
         "\n",
         {
             table: {
-                widths: ["*", 30, 30, 30, 30, 30, 30, 30],
+                widths: ["*", 35, 35, 35, 35, 35, 35, 35],
                 body: [
                     [
                         {border: [false, false, false, false], text: ''},
@@ -462,13 +366,13 @@ async function getHillromResidentLongTerm()
                     ],
                     [
                         {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                        {text: "$3,264", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                        {text: "$3,148", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: "$2,927", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: "$2,870", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                        {text: "$2,667", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: "$2,368", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: '$2,570', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                        {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[2].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[3].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                        {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[4].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[5].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[6].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
                     ],
                 ]
             },
@@ -490,7 +394,7 @@ async function getHillromResidentLongTerm()
         "\n",
         {
             table: {
-                widths: ["*", 30, 30, 30, 30, 30, 30, 30],
+                widths: ["*", 35, 35, 35, 35, 35, 35, 35],
                 body: options
             },
             layout: {

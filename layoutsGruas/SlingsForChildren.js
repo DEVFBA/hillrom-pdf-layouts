@@ -228,8 +228,13 @@ async function getSlingsForChildren()
     ]
 
     pSItems++
+    
+    const fecha = new Date();
+    fecha.toLocaleDateString()
 
     var slingsForChildren = [
+        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
+        "\n",
         { text: 'SLINGS FOR CHILDREN', style: 'header' },
         "\n",
         {
