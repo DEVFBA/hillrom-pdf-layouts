@@ -2030,7 +2030,7 @@ async function getStretchers()
         "\n",
         {
             table: {
-                widths: [50, "*", 30, 30, 30, 30, 30],
+                widths: [50, "*", 40, 40, 40, 40, 40],
                 body: options
             },
             layout: {
@@ -2054,7 +2054,7 @@ async function getStretchers()
         "\n",
         {
             table: {
-                widths: [50, "*", 30, 30, 30, 30, 30],
+                widths: [50, "*", 40, 40, 40, 40, 40],
                 body: options2
             },
             layout: {
