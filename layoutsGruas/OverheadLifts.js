@@ -2019,7 +2019,6 @@ async function getOverheadLifts()
     fecha.toLocaleDateString()
 
     var overheadLifts = [
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         { text: 'OVERHEAD LIFTS', style: 'header' },
         {
@@ -2027,7 +2026,10 @@ async function getOverheadLifts()
                 widths: ["*"],
                 body: [
                     [
-                        {text: 'LIKORALL', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center'},
+                        {text: [
+                            {text: 'LIKORALL', style: 'textotablacolorlarge'},
+                            {text: 'Likorall', tocItem: "likoral", style: {fontSize: 0}},
+                        ],  fillColor: '#5bbccc',  alignment: 'center'},
                     ]
                 ]
             },
@@ -2094,6 +2096,7 @@ async function getOverheadLifts()
         },
         "\n",
         { text: 'ACCESORIES', style: 'subheader' },
+        {text: 'Accesories for Likorall', tocItem: "accesoriesforlikoral", style: {fontSize: 0}},
         {
             table: {
                 widths: [80, "*", 60],
@@ -2141,7 +2144,6 @@ async function getOverheadLifts()
             }
         },
         {text: '', pageBreak: 'after'  },
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {
@@ -2190,7 +2192,6 @@ async function getOverheadLifts()
             }
         },
         {text: '', pageBreak: 'after'  },
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {
@@ -2239,7 +2240,6 @@ async function getOverheadLifts()
             }
         },
         {text: '', pageBreak: 'after'  },
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {

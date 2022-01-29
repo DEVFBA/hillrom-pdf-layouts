@@ -1,304 +1,293 @@
-const dbProgressa = require('../controllers/progressa')
+const dbSlings = require('../controllers/slingsforadults')
 
 async function getLikoConfortsling()
 {
-    /*const res = await dbProgressa.getDataProgressa()
-    const prices = res[0]
-    const patientSiderail = res[1]
-    const mobility  = res[2]
-    const permanentPole = res[3]
-    const transportShelf = res[4]
-    const accumaxSurfaces = res[5]
-    const therapyIntegrated = res[6]
-    const pulmonaryIntegrated = res[7]
-    const accesoriesData = res[8]*/
+    const res = await dbSlings.getSlingsForAdults()
+    const salida6  = res[5]
+    const salida7 = res[6]
+    const salida8 = res[7]
+    const salida9 = res[8]
+    const salida10 = res[9]
 
     var accesories = []
     var pSItems = 0
 
     /*ESTO VA EN UN CICLO*/
-    /*for(var i=0; i<accesoriesData.length; i++)
+    for(var i=0; i<salida6.length; i++)
     {
-        accesories[pSItems] = [
-            {text: accesoriesData[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: accesoriesData[i].Item_Long_Desc, style: 'textotabla'},
-            {text: accesoriesData[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData[i].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
-    }*/
-    /*TERMINA CICLO*/
-
-    /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        {border: [true, true, true, false], image: "images/LikoConfortsling1.png", width: 80, height: 80, alignment: 'center', rowSpan: 4},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+        if(i === 0 && salida6.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoConfortsling1.png", width: 80, height: 80, alignment: 'center', rowSpan: salida6.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoConfortsling1.png", width: 80, height: 80, alignment: 'center', rowSpan: salida6.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida6.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     var accesories2 = []
     var pSItems = 0
 
     /*ESTO VA EN UN CICLO*/
-    accesories2[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        {border: [true, true, true, false], image: "images/LikoConfortsling2.png", width: 80, height: 80, alignment: 'center', rowSpan: 4},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida7.length; i++)
+    {
+        if(i === 0 && salida7.length === 1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, true], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoConfortsling2.png", width: 80, height: 80, alignment: 'center', rowSpan: salida7.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, false], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoConfortsling2.png", width: 80, height: 80, alignment: 'center', rowSpan: salida7.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida7.length-1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     var accesories3 = []
     var pSItems = 0
 
     /*ESTO VA EN UN CICLO*/
-    accesories3[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        {border: [true, true, true, false], image: "images/LikoConfortsling3.png", width: 80, height: 80, alignment: 'center', rowSpan: 4},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida8.length; i++)
+    {
+        if(i === 0 && salida8.length === 1)
+        {
+            accesories3[pSItems] =[
+                {border: [true, true, true, true], text: salida8[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoConfortsling3.png", width: 80, height: 80, alignment: 'center', rowSpan: salida8.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories3[pSItems] =[
+                {border: [true, true, true, false], text: salida8[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoConfortsling3.png", width: 80, height: 80, alignment: 'center', rowSpan: salida8.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida8.length-1)
+        {
+            accesories3[pSItems] =[
+                {border: [true, false, true, true], text: salida8[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories3[pSItems] =[
+                {border: [true, false, true, false], text: salida8[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     var accesories4 = []
     var pSItems = 0
 
     /*ESTO VA EN UN CICLO*/
-    accesories4[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        {border: [true, true, true, false], image: "images/LikoConfortsling4.png", width: 80, height: 80, alignment: 'center', rowSpan: 6},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories4[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories4[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories4[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories4[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
-
-    accesories4[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
+    for(var i=0; i<salida9.length; i++)
+    {
+        if(i === 0 && salida9.length === 1)
+        {
+            accesories4[pSItems] =[
+                {border: [true, true, true, true], text: salida9[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoConfortsling4.png", width: 80, height: 80, alignment: 'center', rowSpan: salida9.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories4[pSItems] =[
+                {border: [true, true, true, false], text: salida9[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoConfortsling4.png", width: 80, height: 80, alignment: 'center', rowSpan: salida9.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida9.length-1)
+        {
+            accesories4[pSItems] =[
+                {border: [true, false, true, true], text: salida9[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories4[pSItems] =[
+                {border: [true, false, true, false], text: salida9[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     var accesories5 = []
     var pSItems = 0
 
     /*ESTO VA EN UN CICLO*/
-    accesories5[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        {border: [true, true, true, true], image: "images/LikoConfortsling5.png", width: 80, height: 100, alignment: 'center', rowSpan: 6},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories5[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories5[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories5[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories5[pSItems] =[
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-    ]
-
-    pSItems++
-
-    accesories5[pSItems] =[
-        {border: [true, false, true, true], text: '', style: 'textotabla'},
-        {border: [true, false, true, true], text: [
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
+    for(var i=0; i<salida10.length; i++)
+    {
+        if(i === 0 && salida10.length === 1)
+        {
+            accesories5[pSItems] =[
+                {border: [true, true, true, true], text: salida10[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoConfortsling5.png", width: 80, height: 100, alignment: 'center', rowSpan: salida10.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories5[pSItems] =[
+                {border: [true, true, true, false], text: salida10[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoConfortsling5.png", width: 80, height: 100, alignment: 'center', rowSpan: salida10.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida10.length-1)
+        {
+            accesories5[pSItems] =[
+                {border: [true, false, true, true], text: salida10[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories5[pSItems] =[
+                {border: [true, false, true, false], text: salida10[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     const fecha = new Date();
     fecha.toLocaleDateString()
 
     var likoConfortsling = [
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {
                 widths: [190, "*", 130],
                 body: [
                     [
-                        {text: 'LIKO COMFORTSLING PLUS™, MOD 300', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                        {text: [
+                            {text: 'LIKO COMFORTSLING PLUS™, MOD 300', style: 'textotablacolorlarge'},
+                            {text: "Liko Comfortsling Plus™, Mod 300", style: {fontSize: 0}, tocItem: "likocomfortsling300"}
+                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
                         {},
                         {}
                     ],
@@ -370,7 +359,10 @@ async function getLikoConfortsling()
                 widths: [190, "*", 130],
                 body: [
                     [
-                        {text: 'LIKO COMFORTSLING PLUS HIGH™, MOD 350', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                        {text: [
+                            {text: 'LIKO COMFORTSLING PLUS HIGH™, MOD 350', style: 'textotablacolorlarge'},
+                            {text: "Liko Comfortsling Plus High™, Mod 350", style: {fontSize: 0}, tocItem: "likocomfortsling350"}
+                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
                         {},
                         {}
                     ],
@@ -442,7 +434,10 @@ async function getLikoConfortsling()
                 widths: [190, "*", 130],
                 body: [
                     [
-                        {text: 'LIKO HYGIENESLING WITH BELT™, MOD 41', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                        {text: [
+                            {text: 'LIKO HYGIENESLING WITH BELT™, MOD 41', style: 'textotablacolorlarge'},
+                            {text: "Liko Hygienesling With Belt™, Mod 41", style: {fontSize: 0}, tocItem: "likohygienesling41"}
+                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
                         {},
                         {}
                     ],
@@ -514,7 +509,10 @@ async function getLikoConfortsling()
                 widths: [190, "*", 130],
                 body: [
                     [
-                        {text: 'LIKO HYGIENESLING WITH SAFETYBELT™, MOD 45', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                        {text: [
+                            {text: 'LIKO HYGIENESLING WITH SAFETYBELT™, MOD 45', style: 'textotablacolorlarge'},
+                            {text: "Liko Hygienesling With Safetybelt™, Mod 45", style: {fontSize: 0}, tocItem: "likohygienesling45"}
+                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
                         {},
                         {}
                     ],
@@ -586,7 +584,10 @@ async function getLikoConfortsling()
                 widths: [190, "*", 130],
                 body: [
                     [
-                        {text: 'LIKO HYGIENEVEST HIGHBACK™, MOD 55', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                        {text: [
+                            {text:'LIKO HYGIENEVEST HIGHBACK™, MOD 55', style: 'textotablacolorlarge' },
+                            {text:"Liko Hygienevest Highback™, Mod 55", style: {fontSize: 0}, tocItem: "likohygienevest55"}
+                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
                         {},
                         {}
                     ],

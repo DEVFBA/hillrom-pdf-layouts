@@ -373,7 +373,6 @@ async function getRailSystemH70()
     fecha.toLocaleDateString()
 
     var railSystemH70 = [
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         { text: 'RAIL SYSTEM', style: 'header' },
         "\n",
@@ -382,7 +381,9 @@ async function getRailSystemH70()
                 widths: ["*"],
                 body: [
                     [
-                        {text: 'Rail System H70', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center'},
+                        {text: [
+                            {text: 'Rail System H70', style: 'textotablacolorlarge', tocItem: "railsystemh70"}
+                        ], fillColor: '#5bbccc',  alignment: 'center'},
                     ]
                 ]
             },

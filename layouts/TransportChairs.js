@@ -123,8 +123,9 @@ async function getTransportChairs()
     fecha.toLocaleDateString()
 
     var transportChairs = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Transport Chairs', style: 'header'},
         '\n',
         { text: 'Transport Chair Anatome SM647B', style: 'subheader'},

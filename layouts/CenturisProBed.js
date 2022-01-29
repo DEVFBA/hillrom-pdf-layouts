@@ -111,8 +111,9 @@ async function getCenturisProBed()
     fecha.toLocaleDateString()
 
     var centurisProBed = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Centuris™ Pro Bed', style: 'header', tocItem: 'centurisProBed'},
         { text: 'Country of origin: France\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },

@@ -31,6 +31,9 @@ async function getAssemblyParts()
     const salida46 = res[45]
     const salida47 = res[46]
     const salida48 = res[47]
+    const salida49 = res[48]
+    const salida50 = res[49]
+    const salida51 = res[50]
 
     var accesories = []
     var pSItems = 0
@@ -1420,7 +1423,7 @@ async function getAssemblyParts()
             accesories3[pSItems] =[
                 {border: [true, true, true, true], text: salida48[i].Part, style: 'textotabla'},
                 {border: [true, true, true, true], text: salida48[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/AssemblyParts27.png", width: 70, height: 50, alignment: 'center', rowSpan: salida48.length},
+                {border: [true, true, true, true], image: "images/AssemblyParts28.png", width: 40, height: 25, alignment: 'center', rowSpan: salida48.length},
                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida48[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1431,7 +1434,7 @@ async function getAssemblyParts()
             accesories3[pSItems] =[
                 {border: [true, true, true, false], text: salida48[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida48[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/AssemblyParts27.png", width: 70, height: 50, alignment: 'center', rowSpan: salida48.length},
+                {border: [true, true, true, true], image: "images/AssemblyParts28.png", width: 40, height: 25, alignment: 'center', rowSpan: salida48.length},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida48[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1463,219 +1466,159 @@ async function getAssemblyParts()
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories3[pSItems] =[
-        {border: [true, true, true, false], text: '2004106EU', style: 'textotabla'},
-        {border: [true, true, true, false], text: [
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, true, true, false], text:""},
-        {border: [true, true, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida49.length; i++)
+    {
+        if(i === 0 && salida49.length === 1)
+        {
+            accesories3[pSItems] =[
+                {border: [true, true, true, true], text: salida49[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida49[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/AssemblyParts29.png", width: 70, height: 50, alignment: 'center', rowSpan: salida49.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida49[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories3[pSItems] =[
+                {border: [true, true, true, false], text: salida49[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida49[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/AssemblyParts29.png", width: 70, height: 50, alignment: 'center', rowSpan: salida49.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida49[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida49.length-1)
+        {
+            accesories3[pSItems] =[
+                {border: [true, false, true, true], text: salida49[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida49[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida49[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories3[pSItems] =[
+                {border: [true, false, true, false], text: salida49[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida49[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida49[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories3[pSItems] =[
-        {border: [true, true, true, false], text: '2004106EU', style: 'textotabla'},
-        {border: [true, true, true, false], text: [
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, true, true, false], image: "images/AssemblyParts28.png", width: 30, height: 30, alignment: 'center', rowSpan: 2},
-        {border: [true, true, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida50.length; i++)
+    {
+        if(i === 0 && salida50.length === 1)
+        {
+            accesories3[pSItems] =[
+                {border: [true, true, true, true], text: salida50[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida50[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], text: ""},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida50[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories3[pSItems] =[
+                {border: [true, true, true, false], text: salida50[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida50[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], text: ""},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida50[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida50.length-1)
+        {
+            accesories3[pSItems] =[
+                {border: [true, false, true, true], text: salida50[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida50[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida50[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories3[pSItems] =[
+                {border: [true, false, true, false], text: salida50[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida50[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida50[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories3[pSItems] =[
-        {border: [true, true, true, false], text: '2004106EU', style: 'textotabla'},
-        {border: [true, true, true, false], text: [
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, true, true, false], image: "images/AssemblyParts29.png", width: 70, height: 50, alignment: 'center', rowSpan: 6},
-        {border: [true, true, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-    /*TERMINA CICLO*/
-
-    /*ESTO VA EN UN CICLO*/
-    accesories3[pSItems] =[
-        {border: [true, true, true, false], text: '2004106EU', style: 'textotabla'},
-        {border: [true, true, true, false], text: [
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, true, true, false], text: ""},
-        {border: [true, true, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-    /*TERMINA CICLO*/
-    
-    /*ESTO VA EN UN CICLO*/
-    accesories3[pSItems] =[
-        {border: [true, true, true, true], text: '20041022222226EU', style: 'textotabla'},
-        {border: [true, true, true, true], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:' Universal SlingBarTM 35023232323232323232', style: 'textotabla'}
-        ]},
-        {border: [true, true, true, true], image: "images/AssemblyParts30.png", width: 50, height: 30, alignment: 'center'},
-        {border: [true, true, true, true], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida51.length; i++)
+    {
+        if(i === 0 && salida51.length === 1)
+        {
+            accesories3[pSItems] =[
+                {border: [true, true, true, true], text: salida51[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida51[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/AssemblyParts30.png", width: 30, height: 20, alignment: 'center', rowSpan: salida51.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida51[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories3[pSItems] =[
+                {border: [true, true, true, false], text: salida51[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida51[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/AssemblyParts30.png", width: 30, height: 20, alignment: 'center', rowSpan: salida51.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida51[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida51.length-1)
+        {
+            accesories3[pSItems] =[
+                {border: [true, false, true, true], text: salida51[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida51[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida50[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories3[pSItems] =[
+                {border: [true, false, true, false], text: salida51[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida51[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida51[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     const fecha = new Date();
     fecha.toLocaleDateString()
 
     var assemblyParts = [
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {
@@ -1685,7 +1628,10 @@ async function getAssemblyParts()
                         {text: 'Assembly Parts', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center'},
                     ],
                     [
-                        {text: 'Ceiling Mounted Rail System', style: 'textotablaboldlarge', fillColor: '#dbdbdb'},
+                        {text: [
+                            {text:'Ceiling Mounted Rail System', style: 'textotablaboldlarge'},
+                            {text:'Assembly Parts - Ceiling Mounted Rail System', style: {fontSize:  0}, tocItem: "ceilingmounted"},
+                        ], fillColor: '#dbdbdb'},
                     ]
                 ]
             },
@@ -1756,7 +1702,10 @@ async function getAssemblyParts()
                 widths: ["*"],
                 body: [
                     [
-                        {text: 'Suspended Rail System', style: 'textotablaboldlarge', fillColor: '#dbdbdb'},
+                        {text: [
+                            {text:'Suspended Rail System', style: 'textotablaboldlarge'},
+                            {text:'Assembly Parts - Suspended Rail System', style: {fontSize: 0}, tocItem: "suspendedrailsystem"},
+                        ], fillColor: '#dbdbdb'},
                     ]
                 ]
             },
@@ -1822,8 +1771,6 @@ async function getAssemblyParts()
 				},
             }
         },
-        "\n",
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {

@@ -170,7 +170,6 @@ async function getMobileLifts()
     /*TERMINA CICLO*/
 
     var mobileLifts = [
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         { text: 'MOBILE LIFTS', style: 'header' },
         "\n",
@@ -179,7 +178,10 @@ async function getMobileLifts()
                 widths: ["*"],
                 body: [
                     [
-                        {text: 'GOLVO', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', tocItem: "golvo"},
+                        {text: [
+                            {text: 'GOLVO', style: 'textotablacolorlarge'},
+                            {text: "Golvo", tocItem: "golvo", style: {fontSize: 0}}
+                        ], fillColor: '#5bbccc',  alignment: 'center', },
                     ]
                 ]
             },

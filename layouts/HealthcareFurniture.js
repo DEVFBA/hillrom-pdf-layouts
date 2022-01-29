@@ -41,8 +41,9 @@ async function getHealthcareFurniture()
     /*TERMINA CICLO*/
 
     var healthcareFurniture = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Healthcare Furniture', style: 'header' },
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         { text: 'Classic Seating Products\n', style: 'subheader' },

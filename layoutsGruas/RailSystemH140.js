@@ -528,14 +528,13 @@ async function getRailSystemH140()
     fecha.toLocaleDateString()
 
     var railSystemH140 = [
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {
                 widths: ["*"],
                 body: [
                     [
-                        {text: 'Rail System H140', style: 'textotablacolorlargecatoni', fillColor: '#5bbccc',  alignment: 'center'},
+                        {text: 'Rail System H140', style: 'textotablacolorlargecatoni', fillColor: '#5bbccc',  alignment: 'center', tocItem: "railsystemh140"},
                     ]
                 ]
             },
@@ -606,7 +605,7 @@ async function getRailSystemH140()
                 widths: ["*"],
                 body: [
                     [
-                        {text: 'Rail System H160-180', style: 'textotablacolorlargecatoni', fillColor: '#5bbccc',  alignment: 'center'},
+                        {text: 'Rail System H160-180', style: 'textotablacolorlargecatoni', fillColor: '#5bbccc',  alignment: 'center', tocItem: "railsystemh160"},
                     ]
                 ]
             },
@@ -678,7 +677,10 @@ async function getRailSystemH140()
                 widths: ["*"],
                 body: [
                     [
-                        {text: 'Rail System - End Covers', style: 'textotablacolorlargecatoni', fillColor: '#5bbccc',  alignment: 'center'},
+                        {text: [
+                            {text: 'Rail System - End Covers', style: 'textotablacolorlargecatoni'},
+                            {text: 'End Covers', style: {fontSize: 0}, tocItem: "endcovers"}
+                        ], fillColor: '#5bbccc',  alignment: 'center'},
                     ]
                 ]
             },

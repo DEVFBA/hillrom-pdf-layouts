@@ -1,209 +1,426 @@
-const dbProgressa = require('../controllers/progressa')
+const dbLiko = require('../controllers/likostretchers')
 
 async function getLikoStretchers()
 {
-    /*const res = await dbProgressa.getDataProgressa()
-    const prices = res[0]
-    const patientSiderail = res[1]
-    const mobility  = res[2]
-    const permanentPole = res[3]
-    const transportShelf = res[4]
-    const accumaxSurfaces = res[5]
-    const therapyIntegrated = res[6]
-    const pulmonaryIntegrated = res[7]
-    const accesoriesData = res[8]*/
+    const res = await dbLiko.getLiko()
+    const salida1  = res[0]
+    const salida2 = res[1]
+    const salida3 = res[2]
+    const salida4 = res[3]
+    const salida5 = res[4]
+    const salida6 = res[5]
+    const salida7 = res[6]
+    const salida8 = res[7]
 
     var accesories = []
     var pSItems = 0
 
     /*ESTO VA EN UN CICLO*/
-    /*for(var i=0; i<accesoriesData.length; i++)
+    for(var i=0; i<salida1.length; i++)
     {
-        accesories[pSItems] = [
-            {text: accesoriesData[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: accesoriesData[i].Item_Long_Desc, style: 'textotabla'},
-            {text: accesoriesData[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData[i].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
-    }*/
+        if(i === 0 && salida1.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida1[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoStretchers1.png", width: 80, height: 30, alignment: 'center', rowSpan: salida1.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida1[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoStretchers1.png", width: 80, height: 30, alignment: 'center', rowSpan: salida1.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida1.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida1[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida1[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        {border: [true, true, true, false], image: "images/LikoStretchers1.png", width: 80, height: 30, alignment: 'center'},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida2.length; i++)
+    {
+        if(i === 0 && salida2.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida2[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoStretchers2.png", width: 60, height: 40, alignment: 'center', rowSpan: salida2.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida2[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoStretchers2.png", width: 60, height: 40, alignment: 'center', rowSpan: salida2.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida2.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida2[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida2[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
-    /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, true, true, false], image: "images/LikoStretchers2.png", width: 60, height: 40, alignment: 'center', rowSpan: 2},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-    /*TERMINA CICLO*/
-
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        ]},
-        {border: [true, true, true, false], image: "images/LikoStretchers3.png", width: 60, height: 40, alignment: 'center', rowSpan: 2},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotabla'},
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida3.length; i++)
+    {
+        if(i === 0 && salida3.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida3[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoStretchers3.png", width: 60, height: 40, alignment: 'center', rowSpan: salida3.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida3[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoStretchers3.png", width: 60, height: 40, alignment: 'center', rowSpan: salida3.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida3.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida3[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida3[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
 
     /*TERMINA CICLO*/
 
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, true, true, false], image: "images/LikoStretchers4.png", width: 80, height: 30, alignment: 'center'},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida4.length; i++)
+    {
+        if(i === 0 && salida4.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoStretchers4.png", width: 80, height: 30, alignment: 'center', rowSpan: salida4.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoStretchers4.png", width: 80, height: 30, alignment: 'center', rowSpan: salida4.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida4.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     var accesories2 = []
     var pSItems = 0
 
     /*ESTO VA EN UN CICLO*/
-    accesories2[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        {border: [true, true, true, false], image: "images/LikoStretchers6.png", width: 80, height: 50, alignment: 'center', rowSpan: 3},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotabla'},
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida5.length; i++)
+    {
+        if(i === 0 && salida5.length === 1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, true], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoStretchers6.png", width: 80, height: 50, alignment: 'center', rowSpan: salida5.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, false], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoStretchers6.png", width: 80, height: 50, alignment: 'center', rowSpan: salida5.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida5.length-1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories2[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:'Universal SlingBarTM 350', style: 'textotabla'},
-        ]},
-        {border: [true, true, true, false], image: "images/LikoStretchers7.png", width: 80, height: 40, alignment: 'center'},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida6.length; i++)
+    {
+        if(i === 0 && salida6.length === 1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, true], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoStretchers7.png", width: 80, height: 40, alignment: 'center', rowSpan: salida6.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoStretchers7.png", width: 80, height: 40, alignment: 'center', rowSpan: salida6.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida6.length-1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories2[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        ]},
-        {border: [true, true, true, false], image: "images/LikoStretchers8.png", width: 80, height: 20, alignment: 'center'},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida7.length; i++)
+    {
+        if(i === 0 && salida7.length === 1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, true], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoStretchers8.png", width: 80, height: 20, alignment: 'center', rowSpan: salida7.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, false], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoStretchers8.png", width: 80, height: 20, alignment: 'center', rowSpan: salida7.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida7.length-1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories2[pSItems] =[
-        {border: [true, true, true, true], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, true], text: [
-            {text:'Universal SlingBarTM 350\n', style: 'textotablaboldblack'},
-            {text:'Universal SlingBarTM 350', style: 'textotabla'},
-        ]},
-        {border: [true, true, true, true], image: "images/LikoStretchers9.png", width: 80, height: 20, alignment: 'center'},
-        {border: [true, true, true, true], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida8.length; i++)
+    {
+        if(i === 0 && salida8.length === 1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, true], text: salida8[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoStretchers9.png", width: 80, height: 20, alignment: 'center', rowSpan: salida8.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, false], text: salida8[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoStretchers9.png", width: 80, height: 20, alignment: 'center', rowSpan: salida8.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida8.length-1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: salida8[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: salida8[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     const fecha = new Date();
     fecha.toLocaleDateString()
 
     var likoStretchers = [
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         { text: 'LIKO STRETCHERS', style: 'header' },
         "\n",
@@ -212,7 +429,10 @@ async function getLikoStretchers()
                 widths: [190, "*"],
                 body: [
                     [
-                        {text: 'LIKO OCTOSTRETCH™', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 2},
+                        {text: [
+                            {text: 'LIKO OCTOSTRETCH™', style: 'textotablacolorlarge'},
+                            {text: "Liko Octostretch™", style: {fontSize: 0}, tocItem: "likooctostretch"}
+                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 2},
                         {},
                     ],
                 ]
@@ -283,7 +503,10 @@ async function getLikoStretchers()
                 widths: [250, "*"],
                 body: [
                     [
-                        {text: 'LIKOSTRETCH MOD 600 IC™', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 2},
+                        {text: [
+                            {text: 'LIKOSTRETCH MOD 600 IC™', style: 'textotablacolorlarge'},
+                            {text: "Likostretch Mod 600 IC™", style: {fontSize: 0}, tocItem: "likostretch"}
+                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 2},
                         {}
                     ],
                     [

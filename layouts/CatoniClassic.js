@@ -1158,8 +1158,9 @@ async function getCatoni()
     fecha.toLocaleDateString()
 
     var catoni = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Catoni Collection', style: 'header'},
         { text: 'Catoni Collection - Bedside Cabinets', style: { fontSize: 0}, tocItem: 'catoni'},
         { text: 'Med-Surg', style: 'subheader'},

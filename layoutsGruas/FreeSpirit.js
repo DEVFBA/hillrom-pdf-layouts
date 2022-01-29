@@ -1,265 +1,334 @@
-const dbProgressa = require('../controllers/progressa')
+const dbCurtainSystem = require('../controllers/curtainsystem')
 
 async function getFreeSpirit()
 {
-    /*const res = await dbProgressa.getDataProgressa()
-    const prices = res[0]
-    const patientSiderail = res[1]
-    const mobility  = res[2]
-    const permanentPole = res[3]
-    const transportShelf = res[4]
-    const accumaxSurfaces = res[5]
-    const therapyIntegrated = res[6]
-    const pulmonaryIntegrated = res[7]
-    const accesoriesData = res[8]*/
+    const res = await dbCurtainSystem.getCurtainSystem()
+    const salida1 = res[0]
+    const salida2 = res[1]
+    const salida3 = res[2]
+    const salida4 = res[3]
+    const salida5 = res[4]
+    const salida6 = res[5]
 
     var accesories = []
     var pSItems = 0
 
     /*ESTO VA EN UN CICLO*/
-    /*for(var i=0; i<accesoriesData.length; i++)
+    for(var i=0; i<salida1.length; i++)
     {
-        accesories[pSItems] = [
-            {text: accesoriesData[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: accesoriesData[i].Item_Long_Desc, style: 'textotabla'},
-            {text: accesoriesData[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData[i].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
-    }*/
+        if(i === 0 && salida1.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida1[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreeSpirit1.png", width: 70, height: 60, alignment: 'center', rowSpan: salida1.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida1[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreeSpirit1.png", width: 70, height: 60, alignment: 'center', rowSpan: salida1.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida1.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida1[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida1[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, true], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, true], text: 'Pendant 90-130 E-system', style: 'textotablaboldblack'},
-        {border: [true, true, true, true], image: "images/FreeSpirit1.png", width: 70, height: 60, alignment: 'center'},
-        {border: [true, true, true, true], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida2.length; i++)
+    {
+        if(i === 0 && salida2.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida2[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreeSpirit2.png", width: 70, height: 40, alignment: 'center', rowSpan: salida2.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida2[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreeSpirit2.png", width: 70, height: 40, alignment: 'center', rowSpan: salida2.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida2.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida2[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida2[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, true], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, true], text: 'Pendant Plate 90', style: 'textotablaboldblack'},
-        {border: [true, true, true, true], image: "images/FreeSpirit2.png", width: 70, height: 40, alignment: 'center'},
-        {border: [true, true, true, true], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-    /*TERMINA CICLO*/
-
-    /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'Pendant Plate 90', style: 'textotablaboldblack'},
-        {border: [true, true, true, true], image: "images/FreeSpirit3.png", width: 70, height: 40, alignment: 'center', rowSpan: 4},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Pendant Plate 90', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, true], text: ''},
-        {border: [true, false, true, true], text: ''},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: ''},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida3.length; i++)
+    {
+        if(i === 0 && salida3.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida3[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreeSpirit3.png", width: 70, height: 40, alignment: 'center', rowSpan: salida3.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida3[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreeSpirit3.png", width: 70, height: 40, alignment: 'center', rowSpan: salida3.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida3.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida3[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida3[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     var accesories2 = []
     pSItems = 0
 
     /*ESTO VA EN UN CICLO*/
-    /*for(var i=0; i<accesoriesData.length; i++)
+    for(var i=0; i<salida4.length; i++)
     {
-        accesories[pSItems] = [
-            {text: accesoriesData[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: accesoriesData[i].Item_Long_Desc, style: 'textotabla'},
-            {text: accesoriesData[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData[i].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
-    }*/
+        if(i === 0 && salida4.length === 1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, true], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreeSpirit4.png", width: 70, height: 20, alignment: 'center', rowSpan: salida4.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreeSpirit4.png", width: 70, height: 20, alignment: 'center', rowSpan: salida4.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida4.length-1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories2[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'Pendant 90-130 E-system', style: 'textotablaboldblack'},
-        {border: [true, true, true, false], image: "images/FreeSpirit4.png", width: 70, height: 20, alignment: 'center', rowSpan: 5},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Pendant 90-130 E-system', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Pendant 90-130 E-system', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, true], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, true], text: 'Incl. draw-stick, relief string and curtain hooks.', style: 'textotabla'},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida5.length; i++)
+    {
+        if(i === 0 && salida5.length === 1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, true], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreeSpirit5.png", width: 30, height: 60, alignment: 'center', rowSpan: salida5.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, false], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreeSpirit5.png", width: 30, height: 60, alignment: 'center', rowSpan: salida5.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida5.length-1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories2[pSItems] =[
-        {border: [true, true, true, true], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, true], text: 'Pendant Plate 90', style: 'textotablaboldblack'},
-        {border: [true, true, true, true], image: "images/FreeSpirit5.png", width: 30, height: 60, alignment: 'center'},
-        {border: [true, true, true, true], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-    /*TERMINA CICLO*/
-
-    /*ESTO VA EN UN CICLO*/
-    accesories2[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'Pendant Plate 90', style: 'textotablaboldblack'},
-        {border: [true, true, true, true], image: "images/FreeSpirit6.png", width: 60, height: 90, alignment: 'center', rowSpan: 9},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Pendant Plate 90', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Pendant Plate 90', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Pendant Plate 90', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, true], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, true], text: 'Pendant Plate 90', style: 'textotablaboldblack'},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida6.length; i++)
+    {
+        if(i === 0 && salida6.length === 1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, true], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreeSpirit6.png", width: 60, height: 90, alignment: 'center', rowSpan: salida6.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreeSpirit6.png", width: 60, height: 90, alignment: 'center', rowSpan: salida6.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida6.length-1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     const fecha = new Date();
     fecha.toLocaleDateString()
 
     var freeSpirit = [
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
+        "\n",
+        { text: 'CURTAIN SYSTEM', style: 'header' },
         "\n",
         {
             table: {
                 widths: [190, "*", 130],
                 body: [
                     [
-                        {text: 'FreeSpirit™ E-System', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                        {text: 'FreeSpirit™ E-System', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 3, tocItem: "freespirit"},
                         {},
                         {}
                     ],
@@ -332,7 +401,7 @@ async function getFreeSpirit()
                 widths: [190, "*", 130],
                 body: [
                     [
-                        {text: 'FreeSpirit™ T-System', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                        {text: 'FreeSpirit™ T-System', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 3, tocItem: "freespirittsystem"},
                         {},
                         {}
                     ],

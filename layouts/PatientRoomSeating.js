@@ -42,8 +42,9 @@ async function getPatientRoomSeating()
     fecha.toLocaleDateString()
 
     var patientRoomSeating = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Art of Care® Collection\n', style: 'header' },
         { text: 'Country of origin: USA', style: 'parrafo' },
         "\n",

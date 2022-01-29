@@ -304,8 +304,9 @@ async function getTherapySurfaces()
     fecha.toLocaleDateString()
 
     var therapySurfaces = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'THERAPY SURFACES', style: 'header'},
         { text: 'NP50 / NP100 / NP150', style: { fontSize: 0}, tocItem: 'therapySurfaces'},
         { text: 'Country of origin: China\n', style: 'parrafo' },
@@ -357,8 +358,9 @@ async function getTherapySurfaces()
         '\n',
         { image: "images/TherapySurfaces.png", width: 500, height: 120, alignment: 'center'},
         {text: '', pageBreak: 'after'  },
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        '\n',
+        "\n",
+        "\n",
+        "\n",
         { text: 'Extension / Covers / US surfaces', style: { fontSize: 0}, tocItem: 'therapySurfaces2'},
         { text: 'EXTENSIONS', style: 'textotablaboldlarge' },
         {

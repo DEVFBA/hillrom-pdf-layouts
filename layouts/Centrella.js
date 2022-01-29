@@ -4,8 +4,9 @@ async function getCentrella()
     fecha.toLocaleDateString()
 
     var centrella = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Centrella™ Smart+ Bed', style: 'header', tocItem: 'centrella'},
         { text: 'Bariatric\n', style: 'subheader' },
         { text: 'Country of origin: USA\n', style: 'parrafo' },
@@ -564,8 +565,9 @@ async function getCentrella()
             }		
         },
         {text: '', pageBreak: 'after'},
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         {
             table: {
                 widths: ["*", 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
@@ -1216,8 +1218,9 @@ async function getCentrella()
             }
         },
         {text: '', pageBreak: 'after'  },
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         {
             table: {
                 widths: [150, "*", 50],
@@ -1642,8 +1645,9 @@ async function getCentrella()
             }
         },	
         {text: '', pageBreak: 'after'  },
-        {image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Frames: Bed: CentrellaTM Smart+ Bed Surfaces', style: 'textotablaboldlarge' },
         { text: 'Hillrom offers these surfaces for the CentrellaTM Smart+ Bed', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },

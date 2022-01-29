@@ -4,8 +4,9 @@ fecha.toLocaleDateString()
 async function getColoursCatoni()
 {
     var catoni = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Colours for Catoni Collection', style: 'header', tocItem: 'coloursCatoni'},
         { text: 'Country of Origin : France', style: 'parrafo' },
         "\n",

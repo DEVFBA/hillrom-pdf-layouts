@@ -78,8 +78,8 @@ async function createDocument()
         { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
         '\n\n\n\n\n\n\n\n\n\n\n',
         { image: "images/Hillroom.png", width: 120, height: 47, alignment: 'center'},
-        { text: 'LIKO PRICEBOOK 2021', style: 'header', alignment: "center" },
-        { text: 'USD - NAME COUNTRY HERE', style: 'header', alignment: "center" },
+        { text: 'LIKO PRICEBOOK 2022', style: 'header', alignment: "center" },
+        { text: 'USD - ALL COUNTRIES', style: 'header', alignment: "center" },
         { image: "images/Cover2.png", width: 400, height: 250, alignment: 'center'},
         { text: 'www.hillrom.com', style: 'header', alignment: "center" },
         {text: '', pageBreak: 'after'  },
@@ -90,7 +90,7 @@ async function createDocument()
         {
             columns: [
                 [
-                    { text: 'HOSPITAL BEDS', style: 'header', alignment: 'left'}
+                    { text: 'MOBILE LIFTS SYSTEMS', style: 'header', alignment: 'left'}
                 ],
                 [
                     { text: 'Page', style: 'header', alignment: 'right'}
@@ -99,89 +99,528 @@ async function createDocument()
         },
         {
             table: {
-                widths: [530],
+                widths: [490, 30],
                 body: [
                     [
-                        {border: [false, false, false, false], text: 'Critical Care/ICU', fillColor: '#546ce4', style: 'indexbackground'},
+                        {border: [false, false, false, false], text: 'Mobile Lifts', fillColor: '#546ce4', style: 'indexbackground'},
+                        {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
                     ],
                 ]
             }
         },
         {
             toc: {
-                id: 'progressa',
+                id: 'golvo',
+            }
+        },
+        {
+            toc: {
+                id: 'viking',
+            }
+        },
+        {
+            toc: {
+                id: 'sabina',
+            }
+        },
+        {
+            toc: {
+                id: 'safetyvestmod91',
+            }
+        },
+        {
+            toc: {
+                id: 'safetyvestmod93',
+            }
+        },
+        {
+            toc: {
+                id: 'confortvestmod95',
+            }
+        },
+        {
+            toc: {
+                id: 'safetyvestmod911',
             }
         },
         {
             table: {
-                widths: [530],
+                widths: [490, 30],
                 body: [
                     [
-                        {border: [false, false, false, false], text: 'Bariatric', fillColor: '#546ce4', style: 'indexbackground'},
+                        {border: [false, false, false, false], text: 'Accessories for Mobile Lifts', fillColor: '#546ce4', style: 'indexbackground'},
+                        {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
                     ],
                 ]
             }
         },
         {
             toc: {
-                id: 'compella',
+                id: 'accesoriesmobilelifts',
+            }
+        },
+        "\n",
+        {
+            columns: [
+                [
+                    { text: 'OVERHEAD LIFTS SYSTEMS', style: 'header', alignment: 'left'}
+                ],
+                [
+                    { text: 'Page', style: 'header', alignment: 'right'}
+                ]
+            ]
+        },
+        {
+            table: {
+                widths: [490, 30],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'Overhead Lifts', fillColor: '#546ce4', style: 'indexbackground'},
+                        {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },
+        {
+            toc: {
+                id: 'likoral',
+            }
+        },
+        {
+            toc: {
+                id: 'accesoriesforlikoral',
             }
         },
         {
             table: {
-                widths: [530],
+                widths: [490, 30],
                 body: [
                     [
-                        {border: [false, false, false, false], text: 'Med-Surg', fillColor: '#546ce4', style: 'indexbackground'},
+                        {border: [false, false, false, false], text: 'Rail System', fillColor: '#546ce4', style: 'indexbackground'},
+                        {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
                     ],
                 ]
             }
         },
         {
             toc: {
-                id: 'hillrom900',
-            },
+                id: 'railsystemh70',
+            }
+        },
+        {
             toc: {
-                id: 'hillrom900Accella',
-            },
+                id: 'railsystemh100',
+            }
+        },
+        {
+            toc: {
+                id: 'railsystemh140',
+            }
+        },
+        {
+            toc: {
+                id: 'railsystemh160',
+            }
+        },
+        {
+            toc: {
+                id: 'endcovers',
+            }
+        },
+        {
+            toc: {
+                id: 'ceilingmounted',
+            }
+        },
+        {
+            toc: {
+                id: 'suspendedrailsystem',
+            }
+        },
+        {
+            toc: {
+                id: 'railswitchsystem',
+            }
+        },
+        {
+            toc: {
+                id: 'traverserailcarrier',
+            }
+        },
+        {
+            toc: {
+                id: 'traversecarriermulti',
+            }
+        },
+        {
+            table: {
+                widths: [490, 30],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'Freestanding Lift System', fillColor: '#546ce4', style: 'indexbackground'},
+                        {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },
+        {
+            toc: {
+                id: 'freespanstraight',
+            }
+        },
+        {
+            toc: {
+                id: 'freespantraverse',
+            }
+        },
+        {
+            toc: {
+                id: 'freespanultratwin',
+            }
+        },
+        {
+            toc: {
+                id: 'freestand',
+            }
+        },
+        {
+            table: {
+                widths: [490, 30],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'Curtain System', fillColor: '#546ce4', style: 'indexbackground'},
+                        {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },
+        {
+            toc: {
+                id: 'freespirit',
+            }
+        },
+        {
+            toc: {
+                id: 'freespirittsystem',
+            }
+        },
+        {
+            table: {
+                widths: [490, 30],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'Accessories', fillColor: '#546ce4', style: 'indexbackground'},
+                        {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },
+        {
+            toc: {
+                id: 'liftingaccesories',
+            }
+        },
+        "\n",
+        {
+            columns: [
+                [
+                    { text: 'SLINGS', style: 'header', alignment: 'left'}
+                ],
+                [
+                    { text: 'Page', style: 'header', alignment: 'right'}
+                ]
+            ]
+        },
+        {
+            table: {
+                widths: [490, 30],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'Slings for Children', fillColor: '#546ce4', style: 'indexbackground'},
+                        {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },
+        {
+            toc: {
+                id: 'likohighback',
+            }
+        },
+        {
+            toc: {
+                id: 'likosilhouettesling',
+            }
+        },
+        {
+            table: {
+                widths: [490, 30],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'Slings for Children', fillColor: '#546ce4', style: 'indexbackground'},
+                        {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },
+        {
+            toc: {
+                id: 'teddyhygienesling',
+            }
+        },
+        {
+            toc: {
+                id: 'teddyhygienevest',
+            }
+        },
+        {
+            toc: {
+                id: 'teddyvest',
+            }
+        },
+        {
+            toc: {
+                id: 'legharness',
+            }
+        },
+        {
+            table: {
+                widths: [490, 30],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'Slings for Adults', fillColor: '#546ce4', style: 'indexbackground'},
+                        {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },
+        {
+            toc: {
+                id: 'likoultrasling',
+            }
+        },
+        {
+            toc: {
+                id: 'likouniversalsling',
+            }
+        },
+        {
+            toc: {
+                id: 'likohighback200',
+            }
+        },
+        {
+            toc: {
+                id: 'likosilhouettesling22',
+            }
+        },
+        {
+            toc: {
+                id: 'likosoftoriginal',
+            }
+        },
+        {
+            toc: {
+                id: 'likocomfortsling300',
+            }
+        },
+        {
+            toc: {
+                id: 'likosoflikocomfortsling350toriginal',
+            }
+        },
+        {
+            toc: {
+                id: 'likohygienesling41',
+            }
+        },
+        {
+            toc: {
+                id: 'likohygienesling45',
+            }
+        },
+        {
+            toc: {
+                id: 'likohygienevest55',
+            }
+        },
+        {
+            toc: {
+                id: 'likomastervest60',
+            }
+        },
+        {
+            toc: {
+                id: 'likomastervest64',
+            }
+        },
+        {
+            toc: {
+                id: 'likomastervest66',
+            }
+        },
+        {
+            toc: {
+                id: 'likoamputee75',
+            }
+        },
+        {
+            toc: {
+                id: 'likoliftpants92',
+            }
+        },
+        {
+            toc: {
+                id: 'ultraliftpants920',
+            }
+        },
+        {
+            toc: {
+                id: 'solohighback25',
+            }
+        },
+        {
+            table: {
+                widths: [490, 30],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'Accessories', fillColor: '#546ce4', style: 'indexbackground'},
+                        {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },
+        {
+            toc: {
+                id: 'accesoriesforslings',
+            }
+        },
+        "\n",
+        {
+            columns: [
+                [
+                    { text: 'OTHER LIKO PRODUCTS', style: 'header', alignment: 'left'}
+                ],
+                [
+                    { text: 'Page', style: 'header', alignment: 'right'}
+                ]
+            ]
+        },
+        {
+            table: {
+                widths: [490, 30],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'Liko Stretchers', fillColor: '#546ce4', style: 'indexbackground'},
+                        {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },
+        {
+            toc: {
+                id: 'likooctostretch',
+            }
+        },
+        {
+            toc: {
+                id: 'likostretch',
+            }
+        },
+        {
+            toc: {
+                id: 'likoflexostretch',
+            }
+        },
+        {
+            toc: {
+                id: 'likomiscellaneous',
+            }
+        },
+        {
+            table: {
+                widths: [490, 30],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'RepoSheet', fillColor: '#546ce4', style: 'indexbackground'},
+                        {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },
+        {
+            toc: {
+                id: 'reposheetoriginal',
+            }
+        },
+        {
+            toc: {
+                id: 'soloreposheetoriginal',
+            }
+        },
+        {
+            table: {
+                widths: [490, 30],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'MultiStrap', fillColor: '#546ce4', style: 'indexbackground'},
+                        {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },
+        {
+            toc: {
+                id: 'multistrap',
+            }
+        },
+        {
+            toc: {
+                id: 'solomultistrap',
+            }
+        },
+        {
+            table: {
+                widths: [490, 30],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: 'Manual Aids', fillColor: '#546ce4', style: 'indexbackground'},
+                        {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                    ],
+                ]
+            }
+        },
+        {
+            toc: {
+                id: 'handytube',
+            }
+        },
+        {
+            toc: {
+                id: 'handysheet',
+            }
+        },
+        {
+            toc: {
+                id: 'handybelt',
+            }
         },
         {text: '', pageBreak: 'after'  },
     ]
     
     var docDefinition = {
         pageMargins: [ 30, 10, 30, 30 ],
-        /*header: function(currentPage) 
+        header: function(currentPage) 
         {
-            if(currentPage > 2){
+            if(currentPage > 3){
                 return {
                     margin: [30, 20],
                     columns: [
-                        [
-                            {image: "images/Baxter.png", width: 90, height: 20},
-                        ],
-                        {
-                            text: fecha.toLocaleDateString(), style: 'footer', alignment: 'right'
-                        },
-                        {
-                            text: 'Mobile Lifts', style: 'footer', alignment: 'right',
-                        },
-                       
-                    ],
-                    columns: [
-                        [
-                            {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
-                        ],
-                        {
-                            text: ""
-                        },
-                        {
-                            text: ""
-                        },
-                       
+                        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
                     ]
                 }
             }
-        },*/
+        },
         footer: function(currentPage, pageCount) {
             if(currentPage > 2)
             {
@@ -195,7 +634,7 @@ async function createDocument()
                             text: 'Page ' + currentPage.toString() + ' of ' + pageCount, style: 'footer', alignment: 'center'
                         },
                         {
-                            text: '00 - Name country here - 2021 Liko Capital Price Book V06', style: 'footer', alignment: 'right'
+                            text: '00 - All Countries - 2022 Liko Capital Price Book V01', style: 'footer', alignment: 'right'
                         },
                     ]
                 }
@@ -222,11 +661,11 @@ async function createDocument()
             liftingAccesoriesLayout,
             slingsForChildrenLayout,
             slingsForAdultsLayout,
-            accesoriesForSlingsLayout,
             likoOriginalHighbackLayout,
             likoConfortslingLayout,
             likoMastervestLayout,
             likoLiftPantsLayout,
+            accesoriesForSlingsLayout,
             likoStretchersLayout,
             likoFlexostretchLayout,
             reposheetLayout,

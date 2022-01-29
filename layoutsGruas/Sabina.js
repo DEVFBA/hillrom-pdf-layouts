@@ -76,7 +76,7 @@ async function getSabina()
     pSItems++
     /*TERMINA CICLO*/
 
-    console.log((salida4[0].Item_Long_Desc).length)
+    //console.log((salida4[0].Item_Long_Desc).length)
 
     /*ESTO VA EN UN CICLO*/
     for(var i = 0; i< salida5.length; i++)
@@ -158,8 +158,8 @@ async function getSabina()
         {
             cadena2 = cadena2 + (salida6[i].Item_Long_Desc).charAt(k)
         }
-        console.log(cadena1)
-        console.log(cadena2)
+        //console.log(cadena1)
+        //console.log(cadena2)
 
         if(i === 0)
         {
@@ -185,7 +185,7 @@ async function getSabina()
             pSItems++
         }
         else {
-            console.log("SI ENTRE")
+            //console.log("SI ENTRE")
             accesories[pSItems] =[
                 {border: [true, false, true, false], text: salida6[i].Part, style: 'textotabla'},
                 {border: [true, false, true, false], text: [
@@ -234,8 +234,8 @@ async function getSabina()
         {
             cadena2 = cadena2 + (salida7[i].Item_Long_Desc).charAt(k)
         }
-        console.log(cadena1)
-        console.log(cadena2)
+        //console.log(cadena1)
+        //console.log(cadena2)
 
         if(i === 0)
         {
@@ -261,7 +261,7 @@ async function getSabina()
             pSItems++
         }
         else {
-            console.log("SI ENTRE")
+            //console.log("SI ENTRE")
             accesories[pSItems] =[
                 {border: [true, false, true, false], text: salida7[i].Part, style: 'textotabla'},
                 {border: [true, false, true, false], text: [
@@ -309,8 +309,8 @@ async function getSabina()
         {
             cadena2 = cadena2 + (salida8[i].Item_Long_Desc).charAt(k)
         }
-        console.log(cadena1)
-        console.log(cadena2)
+        //console.log(cadena1)
+        //console.log(cadena2)
 
         if(i === 0)
         {
@@ -336,7 +336,7 @@ async function getSabina()
             pSItems++
         }
         else {
-            console.log("SI ENTRE")
+            //console.log("SI ENTRE")
             accesories[pSItems] =[
                 {border: [true, false, true, false], text: salida8[i].Part, style: 'textotabla'},
                 {border: [true, false, true, false], text: [
@@ -362,7 +362,10 @@ async function getSabina()
     /*TERMINA CICLO*/
 
     accesories[pSItems] =[
-        {text: 'SUPPORT VEST MOD 91', style: "textotablaboldblack", fillColor: '#dbdbdb', colSpan: 4},
+        {text: [
+            {text: 'SUPPORT VEST MOD 91', style: "textotablaboldblack"},
+            {text: 'Support Vest Mod 91', style: {fontSize: 0}, tocItem: "safetyvestmod91"},
+        ], fillColor: '#dbdbdb', colSpan: 4},
         {},
         {},
         {},
@@ -395,7 +398,7 @@ async function getSabina()
             pSItems++
         }
         else {
-            console.log("SI ENTRE")
+            //console.log("SI ENTRE")
             accesories[pSItems] =[
                 {border: [true, false, true, false], text: salida9[i].Part, style: 'textotabla'},
                 {border: [true, false, true, false], text: [
@@ -445,7 +448,7 @@ async function getSabina()
             pSItems++
         }
         else {
-            console.log("SI ENTRE")
+            //console.log("SI ENTRE")
             accesories[pSItems] =[
                 {border: [true, false, true, false], text: salida10[i].Part, style: 'textotabla'},
                 {border: [true, false, true, false], text: [
@@ -516,7 +519,7 @@ async function getSabina()
             pSItems++
         }
         else {
-            console.log("SI ENTRE")
+            //console.log("SI ENTRE")
             accesories[pSItems] =[
                 {border: [true, false, true, false], text: salida11[i].Part, style: 'textotabla'},
                 {border: [true, false, true, false], text: [
@@ -544,7 +547,10 @@ async function getSabina()
     var pSItems = 0
 
     accesories2[pSItems] =[
-        {text: 'SAFETY VEST MOD 93', style: "textotablaboldblack", fillColor: '#dbdbdb', colSpan: 4},
+        {text: [
+            {text: 'SAFETY VEST MOD 93', style: "textotablaboldblack"},
+            {text: 'Support Vest Mod 93', style: {fontSize: 0}, tocItem: "safetyvestmod93"},
+        ], fillColor: '#dbdbdb', colSpan: 4,},
         {},
         {},
         {},
@@ -622,7 +628,10 @@ async function getSabina()
     /*TERMINA CICLO*/
 
     accesories2[pSItems] =[
-        {text: 'COMFORT VEST MOD 95', style: "textotablaboldblack", fillColor: '#dbdbdb', colSpan: 4},
+        {text: [
+            {text: 'COMFORT VEST MOD 95', style: "textotablaboldblack", },
+            {text: 'Comfort Vest Mod 95', style: {fontSize: 0}, tocItem: "confortvestmod95"},
+        ], fillColor: '#dbdbdb', colSpan: 4},
         {},
         {},
         {},
@@ -700,7 +709,10 @@ async function getSabina()
     /*TERMINA CICLO*/
 
     accesories2[pSItems] =[
-        {text: 'SOLO SUPPORT VEST MOD 911', style: "textotablaboldblack", fillColor: '#dbdbdb', colSpan: 4},
+        {text: [
+            {text: 'SOLO SUPPORT VEST MOD 911', style: "textotablaboldblack"},
+            {text: 'Solo Support Vest Mod 911', style: {fontSize: 0}, tocItem: "safetyvestmod911"},
+        ], fillColor: '#dbdbdb', colSpan: 4},
         {},
         {},
         {},
@@ -754,14 +766,16 @@ async function getSabina()
     fecha.toLocaleDateString()
 
     var sabina = [
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {
                 widths: ["*"],
                 body: [
                     [
-                        {text: 'SABINA', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center'},
+                        {text: [
+                            {text:'SABINA', style: 'textotablacolorlarge' },
+                            {text: "Sabina", tocItem: "sabina", style: {fontSize: 0}}
+                        ], fillColor: '#5bbccc',  alignment: 'center'},
                     ]
                 ]
             },
@@ -914,7 +928,6 @@ async function getSabina()
             }
         },
         {text: '', pageBreak: 'after'  },
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {

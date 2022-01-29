@@ -1,226 +1,230 @@
-const dbProgressa = require('../controllers/progressa')
+const dbFreeStand = require('../controllers/freestandingliftsystem')
 
 async function getFreespanUltraTwin()
 {
-    /*const res = await dbProgressa.getDataProgressa()
-    const prices = res[0]
-    const patientSiderail = res[1]
-    const mobility  = res[2]
-    const permanentPole = res[3]
-    const transportShelf = res[4]
-    const accumaxSurfaces = res[5]
-    const therapyIntegrated = res[6]
-    const pulmonaryIntegrated = res[7]
-    const accesoriesData = res[8]*/
+    const res = await dbFreeStand.getFreestanding()
+    const salida8 = res[7]
+    const salida9 = res[8]
+    const salida10 = res[9]
+    const salida11 = res[10]
 
     var accesories = []
     var pSItems = 0
 
     /*ESTO VA EN UN CICLO*/
-    /*for(var i=0; i<accesoriesData.length; i++)
+    for(var i=0; i<salida8.length; i++)
     {
-        accesories[pSItems] = [
-            {text: accesoriesData[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: accesoriesData[i].Item_Long_Desc, style: 'textotabla'},
-            {text: accesoriesData[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData[i].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
-    }*/
+        if(i === 0 && salida8.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida8[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreespanUltraTwin2.png", width: 50, height: 50, alignment: 'center', rowSpan: salida8.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida8[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreespanUltraTwin2.png", width: 50, height: 50, alignment: 'center', rowSpan: salida8.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida8.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida8[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida8[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'UltraTwin FreeSpan Upright Support', style: 'textotablaboldblack'},
-        {border: [true, true, true, false], image: "images/FreespanUltraTwin2.png", width: 50, height: 50, alignment: 'center', rowSpan: 3},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, true], text: ''},
-        {border: [true, false, true, true], text: 'Incl. wheels, charger plate (fits charger Prod. No. 3126101-3126104) and parking bracket for sling bar. CC-distance 300 mm (12 in).', style: 'textotabla'},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: ''},
-    ]
-
-    pSItems++
-    /*TERMINA CICLO*/
-
-    /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'Ultra Control Unit', style: 'textotablaboldblack'},
-        {border: [true, true, true, true], image: "images/FreespanUltraTwin3.png", width: 60, height: 60, alignment: 'center', rowSpan: 3},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, true], text: ''},
-        {border: [true, false, true, true], text: 'incl, hand control \nFits Likorall ES and rails with CC-distance 300 mm (12 in)', style: 'textotabla'},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: ''},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida9.length; i++)
+    {
+        if(i === 0 && salida9.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida9[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreespanUltraTwin3.png", width: 60, height: 60, alignment: 'center', rowSpan: salida9.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida9[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreespanUltraTwin3.png", width: 60, height: 60, alignment: 'center', rowSpan: salida9.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida9.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida9[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida9[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     var accesories2 = []
     var pSItems = 0
 
     /*ESTO VA EN UN CICLO*/
-    /*for(var i=0; i<accesoriesData.length; i++)
+    for(var i=0; i<salida10.length; i++)
     {
-        accesories[pSItems] = [
-            {text: accesoriesData[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: accesoriesData[i].Item_Long_Desc, style: 'textotabla'},
-            {text: accesoriesData[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData[i].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
-    }*/
+        if(i === 0 && salida10.length === 1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, true], text: salida10[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreespanUltraTwin5.png", width: 60, height: 60, alignment: 'center', rowSpan: salida10.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, false], text: salida10[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreespanUltraTwin5.png", width: 60, height: 60, alignment: 'center', rowSpan: salida10.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida10.length-1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: salida10[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: salida10[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories2[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'UltraTwin FreeSpan Upright Support, wide', style: 'textotablaboldblack'},
-        {border: [true, true, true, false], image: "images/FreespanUltraTwin5.png", width: 60, height: 60, alignment: 'center', rowSpan: 4},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: 'Including wheels, charger plate (fits charger Pro. No. 3126101-3126104) and parking bracket for sling bar. CC-distance 800 mm (32 in).', style: 'textotabla'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, true], text: ''},
-        {border: [true, false, true, true], text: 'NOTE! UltraTwist must be assembled by authorized technician.', style: 'textotabla'},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: ''},
-    ]
-
-    pSItems++
-    /*TERMINA CICLO*/
-
-    /*ESTO VA EN UN CICLO*/
-    accesories2[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'UltraTwistTM Slim', style: 'textotablaboldblack'},
-        {border: [true, true, true, true], image: "images/FreespanUltraTwin6.png", width: 60, height: 80, alignment: 'center', rowSpan: 7},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: 'incl, hand control \nFits Likorall ES and rails with CC-distance 300 mm (12 in)', style: 'textotabla'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'UltraTwistTM Wide', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-    
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: 'incl, hand control \nFits Likorall ES and rails with CC-distance 300 mm (12 in)', style: 'textotabla'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, true], text: ''},
-        {border: [true, false, true, true], text: 'Both UltraTwist models fit Likorall ES and rails with \nCC-distance 500 mm (20 in)*.\n*On request only.', style: 'textotabla'},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: ''},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida11.length; i++)
+    {
+        if(i === 0 && salida11.length === 1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, true], text: salida11[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreespanUltraTwin6.png", width: 60, height: 80, alignment: 'center', rowSpan: salida11.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, false], text: salida11[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreespanUltraTwin6.png", width: 60, height: 80, alignment: 'center', rowSpan: salida11.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida11.length-1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: salida11[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: salida11[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     const fecha = new Date();
     fecha.toLocaleDateString()
     
     var freespanUltraTwin = [
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {
                 widths: [190, "*", 130],
                 body: [
                     [
-                        {text: 'Freespan™ UltraTwin', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                        {text: 'Freespan™ UltraTwin', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 3, tocItem: "freespanultratwin"},
                         {},
                         {}
                     ],

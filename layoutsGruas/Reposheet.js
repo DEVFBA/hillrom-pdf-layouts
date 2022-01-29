@@ -1,80 +1,65 @@
-const dbProgressa = require('../controllers/progressa')
+const dbReposheet = require('../controllers/reposheet')
 
 async function getReposheet()
 {
-    /*const res = await dbProgressa.getDataProgressa()
-    const prices = res[0]
-    const patientSiderail = res[1]
-    const mobility  = res[2]
-    const permanentPole = res[3]
-    const transportShelf = res[4]
-    const accumaxSurfaces = res[5]
-    const therapyIntegrated = res[6]
-    const pulmonaryIntegrated = res[7]
-    const accesoriesData = res[8]*/
+    const res = await dbReposheet.getReposheet()
+    const salida1  = res[0]
+    const salida2 = res[1]
+    const salida3 = res[2]
+    const salida4 = res[3]
+    const salida5 = res[4]
 
     var accesories = []
     var pSItems = 0
 
     /*ESTO VA EN UN CICLO*/
-    /*for(var i=0; i<accesoriesData.length; i++)
+    for(var i=0; i<salida1.length; i++)
     {
-        accesories[pSItems] = [
-            {text: accesoriesData[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: accesoriesData[i].Item_Long_Desc, style: 'textotabla'},
-            {text: accesoriesData[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData[i].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
-    }*/
-    /*TERMINA CICLO*/
-
-    /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        ]},
-        {border: [true, false, true, false], image: "images/Reposheet1.png", width: 80, height: 80, alignment: 'center', rowSpan: 4},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+        if(i === 0 && salida1.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida1[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/Reposheet1.png", width: 80, height: 80, alignment: 'center', rowSpan: salida1.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida1[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/Reposheet1.png", width: 80, height: 80, alignment: 'center', rowSpan: salida1.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida1.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida1[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida1[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
 
     /*TERMINA CICLO*/
 
@@ -82,162 +67,189 @@ async function getReposheet()
     var pSItems = 0
 
     /*ESTO VA EN UN CICLO*/
-    accesories2[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, true, true, false], image: "images/Reposheet2.png", width: 80, height: 60, alignment: 'center', rowSpan: 4},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
+    for(var i=0; i<salida2.length; i++)
+    {
+        if(i === 0 && salida2.length === 1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, true], text: salida2[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/Reposheet2.png", width: 80, height: 60, alignment: 'center', rowSpan: salida2.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, false], text: salida2[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/Reposheet2.png", width: 80, height: 80, alignment: 'center', rowSpan: salida2.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida2.length-1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: salida2[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: salida2[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
 
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories2[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
     /*TERMINA CICLO*/
 
     var accesories3 = []
     var pSItems = 0
-
-    /*ESTO VA EN UN CICLO*/
+   
     accesories3[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, true, true, false], image: "images/Reposheet3.png", width: 80, height: 40, alignment: 'center', rowSpan: 2},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
+        {border: [true, true, true, false], text: salida3[0].Part, style: 'textotabla'},
+        {border: [true, true, true, false], text: salida3[0].Item_Long_Desc, style: 'textotablaboldblack'},
+        {border: [true, true, true, false], image: "images/Reposheet3.png", width: 80, height: 40, alignment: 'center'},
+        {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[0].Price), style: 'textotabla', alignment: 'center'},
     ]
 
     pSItems++
 
     accesories3[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
+        {border: [true, false, true, false], text: salida3[1].Part, style: 'textotabla'},
+        {border: [true, false, true, false], text: salida3[1].Item_Long_Desc, style: 'textotablaboldblack'},
+        {border: [true, false, true, false], image: "images/Reposheet4.png", width: 80, height: 40, alignment: 'center'},
+        {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[1].Price), style: 'textotabla', alignment: 'center'},
     ]
 
     pSItems++
 
     accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], image: "images/Reposheet4.png", width: 80, height: 40, alignment: 'center', rowSpan: 2},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories3[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
+        {border: [true, false, true, false], text: salida3[2].Part, style: 'textotabla'},
+        {border: [true, false, true, false], text: salida3[2].Item_Long_Desc, style: 'textotablaboldblack'},
         {border: [true, false, true, false], image: "images/Reposheet5.png", width: 80, height: 40, alignment: 'center'},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
+        {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[2].Price), style: 'textotabla', alignment: 'center'},
     ]
 
     pSItems++
+      
     /*TERMINA CICLO*/
 
     var accesories4 = []
     var pSItems = 0
 
     /*ESTO VA EN UN CICLO*/
-    accesories4[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, true, true, true], image: "images/Reposheet6.png", width: 80, height: 30, alignment: 'center', rowSpan: 2},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories4[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida4.length; i++)
+    {
+        if(i === 0 && salida4.length === 1)
+        {
+            accesories4[pSItems] =[
+                {border: [true, true, true, true], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/Reposheet6.png", width: 80, height: 30, alignment: 'center', rowSpan: salida4.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories4[pSItems] =[
+                {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/Reposheet6.png", width: 80, height: 30, alignment: 'center', rowSpan: salida4.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida4.length-1)
+        {
+            accesories4[pSItems] =[
+                {border: [true, false, true, true], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories4[pSItems] =[
+                {border: [true, false, true, false], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories4[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        ]},
-        {border: [true, true, true, true], image: "images/Reposheet7.png", width: 80, height: 30, alignment: 'center', rowSpan: 2},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories4[pSItems] =[
-        {border: [true, false, true, true], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, true], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida5.length; i++)
+    {
+        if(i === 0 && salida5.length === 1)
+        {
+            accesories4[pSItems] =[
+                {border: [true, true, true, true], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/Reposheet7.png", width: 80, height: 30, alignment: 'center', rowSpan: salida5.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories4[pSItems] =[
+                {border: [true, true, true, false], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/Reposheet7.png", width: 80, height: 30, alignment: 'center', rowSpan: salida5.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida5.length-1)
+        {
+            accesories4[pSItems] =[
+                {border: [true, false, true, true], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories4[pSItems] =[
+                {border: [true, false, true, false], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     accesories4[pSItems] =[
@@ -253,7 +265,6 @@ async function getReposheet()
     fecha.toLocaleDateString()
 
     var reposheet = [
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         { text: 'REPOSHEET - MULTISTRAP', style: 'header' },
         "\n",
@@ -262,7 +273,10 @@ async function getReposheet()
                 widths: [190, "*", 130],
                 body: [
                     [
-                        {text: 'REPOSHEET ORIGINAL', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                        {text: [
+                            {text: 'REPOSHEET ORIGINAL', style: 'textotablacolorlarge'},
+                            {text: "Reposheet Original", style: {fontSize: 0}, tocItem: "reposheetoriginal"}
+                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
                         {},
                         {}
                     ],
@@ -334,7 +348,10 @@ async function getReposheet()
                 widths: [190, "*", 130],
                 body: [
                     [
-                        {text: 'SOLO REPOSHEET™ ORIGINAL', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                        {text: [
+                            {text: 'SOLO REPOSHEET™ ORIGINAL', style: 'textotablacolorlarge'},
+                            {text: "Solo Reposheet™ Original", style: {fontSize: 0}, tocItem: "soloreposheetoriginal"}
+                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
                         {},
                         {}
                     ],
@@ -406,7 +423,10 @@ async function getReposheet()
                 widths: [190, "*", 130],
                 body: [
                     [
-                        {text: 'MULTISTRAP™', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                        {text: [
+                            {text: 'MULTISTRAP™', style: 'textotablacolorlarge'},
+                            {text: "Multistrap™", style: {fontSize: 0}, tocItem: "multistrap"}
+                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
                         {},
                         {}
                     ],
@@ -478,7 +498,10 @@ async function getReposheet()
                 widths: [190, "*", 130],
                 body: [
                     [
-                        {text: 'SOLO MULTISTRAP™', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                        {text: [
+                            {text: 'SOLO MULTISTRAP™', style: 'textotablacolorlarge'},
+                            {text: "Solo Multistrap™", style: {fontSize: 0}, tocItem: "solomultistrap"}
+                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
                         {},
                         {}
                     ],
