@@ -1164,7 +1164,7 @@ async function getCatoni()
         { text: 'Catoni Collection', style: 'header'},
         { text: 'Catoni Collection - Bedside Cabinets', style: { fontSize: 0}, tocItem: 'catoni'},
         { text: 'Med-Surg', style: 'subheader'},
-        { text: 'Country of origin: México', style: 'parrafo' },
+        { text: 'Country of origin: France', style: 'parrafo' },
         {
             table: {
                 widths: ["*", 60, 60, 60, 60],

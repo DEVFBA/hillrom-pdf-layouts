@@ -1090,7 +1090,6 @@ async function getMedSurgAccesories()
             }
         },
         { text: '\n', style: 'parrafo' },
-        { text: 'AC908A : not available for Hill-Rom 900 B-version with 125 mm castors', style: ['quote', "small"] },
         { text: 'AC962A : available for Hill-Rom 900 A-version with 150 mm castors only', style: ['quote', "small"] },
         { text: '\n', style: 'parrafo' },
         {

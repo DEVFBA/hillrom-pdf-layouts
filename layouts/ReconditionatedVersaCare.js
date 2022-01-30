@@ -288,7 +288,7 @@ async function getReconditionatedVersaCare()
                     [
                         {text: 'Safe View Alert', style: 'textotabla'},
                         {text: '', style: 'textotabla', alignment: 'center'},
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
+                        {text: 'X', style: 'textotabla', alignment: 'center'}, 
                         {text: '', style: 'textotabla', alignment: 'center'}, 
                         {text: 'X', style: 'textotabla', alignment: 'center'},
                         {text: '', style: 'textotabla', alignment: 'center'}, 
@@ -314,12 +314,12 @@ async function getReconditionatedVersaCare()
                     ],
                     [
                         {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[4].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
                         {text: "$" + Intl.NumberFormat("en-IN").format(prices[5].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[4].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
                     ],
                 ]
             },

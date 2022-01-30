@@ -37,15 +37,20 @@ async function getOverbedTables()
                         {text: 'TA270 FT', style: 'textotablaboldblack', alignment: 'center'},
                         {text: 'TA270 TT', style: 'textotablaboldblack', alignment: 'center'},
                     ],
-                    [
+/*                     [
                         {border: [false, false, false, false], text: ''},
                         {text: 'B01', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
                         {text: 'B02', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                    ],
+                    ], */
                     [
                         {border: [false, false, false, false], text: ''},
                         { image: "images/OverbedTable1.png", width: 70, height: 80, alignment: 'center'},
                         { image: "images/OverbedTable2.png", width: 70, height: 80, alignment: 'center'},
+                    ],
+                    [
+                        {text: 'HPL Tray', style: 'textotabla', },
+                        {text: "●", style: 'textotabla', alignment: 'center'},
+                        {text: "-", style: 'textotabla', alignment: 'center'}, 
                     ],
                     [
                         {text: 'Fixed table', style: 'textotabla', },
@@ -55,6 +60,11 @@ async function getOverbedTables()
                     [
                         {text: 'Tilting table', style: 'textotabla', },
                         {text: "-", style: 'textotabla', alignment: 'center'},
+                        {text: "●", style: 'textotabla', alignment: 'center'}, 
+                    ],
+                    [
+                        {text: 'H-Shaped Base', style: 'textotabla', },
+                        {text: "●", style: 'textotabla', alignment: 'center'},
                         {text: "●", style: 'textotabla', alignment: 'center'}, 
                     ],
                     [

@@ -128,7 +128,7 @@ async function createDocument()
                     ],
                 ]
             }
-        },
+        }, 
         {
             toc: {
                 id: 'compella',

@@ -565,7 +565,7 @@ async function getTheCenturisBed()
             }
         },
         { text: '\n', style: 'parrafo' },
-        { text: 'Country of Origin: China', style: 'parrafo' },
+        { text: 'Country of Origin: USA', style: 'parrafo' },
         {
             table: {
                 widths: [70, '*', 70, 70],
