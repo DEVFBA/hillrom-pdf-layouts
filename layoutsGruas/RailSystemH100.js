@@ -169,14 +169,13 @@ async function getRailSystemH100()
     fecha.toLocaleDateString()
 
     var railSystemH100 = [
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {
                 widths: ["*"],
                 body: [
                     [
-                        {text: 'Rail System H100', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center'},
+                        {text: 'Rail System H100', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', tocItem: "railsystemh100"},
                     ]
                 ]
             },

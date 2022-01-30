@@ -1,181 +1,227 @@
-const dbProgressa = require('../controllers/progressa')
+const dbFreeStand = require('../controllers/freestandingliftsystem')
 
 async function getFreespanTraverse()
 {
-    /*const res = await dbProgressa.getDataProgressa()
-    const prices = res[0]
-    const patientSiderail = res[1]
-    const mobility  = res[2]
-    const permanentPole = res[3]
-    const transportShelf = res[4]
-    const accumaxSurfaces = res[5]
-    const therapyIntegrated = res[6]
-    const pulmonaryIntegrated = res[7]
-    const accesoriesData = res[8]*/
+    const res = await dbFreeStand.getFreestanding()
+    const salida4 = res[3]
+    const salida5 = res[4]
+    const salida6 = res[5]
+    const salida7 = res[6]
 
     var accesories = []
     var pSItems = 0
 
     /*ESTO VA EN UN CICLO*/
-    /*for(var i=0; i<accesoriesData.length; i++)
+    for(var i=0; i<salida4.length; i++)
     {
-        accesories[pSItems] = [
-            {text: accesoriesData[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: accesoriesData[i].Item_Long_Desc, style: 'textotabla'},
-            {text: accesoriesData[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData[i].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
-    }*/
+        if(i === 0 && salida4.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreespanTraverse3.png", width: 80, height: 40, alignment: 'center', rowSpan: salida4.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreespanTraverse3.png", width: 80, height: 40, alignment: 'center', rowSpan: salida4.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida4.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'FreeSpan Rail 1,5 m LR (60 in), max 250 kg (550 lbs)', style: 'textotablaboldblack'},
-        {border: [true, true, true, false], image: "images/FreespanTraverse3.png", width: 80, height: 40, alignment: 'center', rowSpan: 3},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, true], text: ''},
-        {border: [true, false, true, true], text: 'Incl. screw set (8 pcs) for cross-beam.', style: 'textotabla'},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: ''},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida5.length; i++)
+    {
+        if(i === 0 && salida5.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreespanTraverse4.png", width: 80, height: 40, alignment: 'center', rowSpan: salida5.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreespanTraverse4.png", width: 80, height: 40, alignment: 'center', rowSpan: salida5.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida5.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'FreeSpan Rail 1,5 m MR (59 in), max 250 kg (550 lbs)', style: 'textotablaboldblack'},
-        {border: [true, true, true, false], image: "images/FreespanTraverse4.png", width: 80, height: 40, alignment: 'center', rowSpan: 5},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '2020100DEFR', style: 'textotabla'},
-        {border: [true, false, true, false], text: 'Quick Reference Guide DE-FR', style: 'textotablaboldblack'},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$963', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, true], text: ''},
-        {border: [true, false, true, true], text: 'Carriage S65 for Multirall (Prod. No. 3136011) is included in all of the above products.', style: 'textotabla'},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: ''},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida6.length; i++)
+    {
+        if(i === 0 && salida6.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreespanTraverse5.png", width: 80, height: 40, alignment: 'center', rowSpan: salida6.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreespanTraverse5.png", width: 80, height: 40, alignment: 'center', rowSpan: salida6.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida6.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-     accesories[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'Parking Bracket and Bracket for Charger FreeSpan Traverse', style: 'textotablaboldblack'},
-        {border: [true, true, true, false], image: "images/FreespanTraverse5.png", width: 80, height: 40, alignment: 'center', rowSpan: 3},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, true], text: ''},
-        {border: [true, false, true, true], text: 'Fits charger Prod. No. 3126101-3126104.', style: 'textotabla'},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: ''},
-    ]
-
-    pSItems++
-    /*TERMINA CICLO*/
-
-    /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: 'Parking Bracket and Bracket for Charger FreeSpan Traverse', style: 'textotablaboldblack'},
-        {border: [true, true, true, true], image: "images/FreespanTraverse6.png", width: 60, height: 40, alignment: 'center', rowSpan: 3},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, true], text: ''},
-        {border: [true, false, true, true], text: 'Incl. max. load decal 460 kg (1014 lbs). \nFits FreeSpan UltraTwin Traverse.', style: 'textotabla'},
-        {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: ''},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida7.length; i++)
+    {
+        if(i === 0 && salida7.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreespanTraverse6.png", width: 60, height: 40, alignment: 'center', rowSpan: salida7.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/FreespanTraverse6.png", width: 60, height: 40, alignment: 'center', rowSpan: salida7.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida7.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     const fecha = new Date();
     fecha.toLocaleDateString()
     
     var freespanTraverse = [
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {
                 widths: [190, "*", 130],
                 body: [
                     [
-                        {text: 'Freespan™ Traverse', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                        {text: 'Freespan™ Traverse', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 3, tocItem: "freespantraverse"},
                         {},
                         {}
                     ],

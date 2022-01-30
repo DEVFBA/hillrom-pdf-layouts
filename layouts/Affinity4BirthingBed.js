@@ -718,8 +718,9 @@ async function getAffinity4BirthingBed()
     fecha.toLocaleDateString()
 
     var affinity4 = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Affinity™ 4 Birthing Bed', style: 'header', tocItem: 'affinity4BirthingBed'},
         { text: 'Maternity', style: 'subheader'},
         { text: 'Country of origin: USA\n', style: 'parrafo' },
@@ -978,8 +979,9 @@ async function getAffinity4BirthingBed()
         { text: '\n', style: 'minispace' },
         { text: "MOK - Medium Oak", style: 'textolista' },
         {text: '', pageBreak: 'after'  },
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        '\n',
+        "\n",
+        "\n",
+        "\n",
         { text: 'SURFACES', style: 'textotablaboldlarge' },
         {
             table: {

@@ -569,8 +569,9 @@ async function getCompella()
     /*TERMINA CICLO*/
 
     var compella = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Compella™ Bariatric Bed', style: 'header', tocItem: 'compella'},
         { text: 'Bariatric\n', style: 'subheader' },
         { text: 'Country of origin: USA\n', style: 'parrafo' },
@@ -743,7 +744,8 @@ async function getCompella()
             ]
         },
         {text: '', pageBreak: 'after'  },
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        "\n",
+        "\n",
         "\n",
         {
             table: {

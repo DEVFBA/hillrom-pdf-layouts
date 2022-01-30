@@ -1,122 +1,216 @@
-const dbProgressa = require('../controllers/progressa')
+const dbLiko = require('../controllers/likostretchers')
 
 async function getLikoFlexostretch()
 {
-    /*const res = await dbProgressa.getDataProgressa()
-    const prices = res[0]
-    const patientSiderail = res[1]
-    const mobility  = res[2]
-    const permanentPole = res[3]
-    const transportShelf = res[4]
-    const accumaxSurfaces = res[5]
-    const therapyIntegrated = res[6]
-    const pulmonaryIntegrated = res[7]
-    const accesoriesData = res[8]*/
+    const res = await dbLiko.getLiko()
+    const salida9  = res[8]
+    const salida10 = res[9]
+    const salida11 = res[10]
+    const salida12 = res[11]
 
     var accesories = []
     var pSItems = 0
 
     /*ESTO VA EN UN CICLO*/
-    /*for(var i=0; i<accesoriesData.length; i++)
+    for(var i=0; i<salida9.length; i++)
     {
-        accesories[pSItems] = [
-            {text: accesoriesData[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: accesoriesData[i].Item_Long_Desc, style: 'textotabla'},
-            {text: accesoriesData[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData[i].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
-    }*/
+        if(i === 0 && salida9.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida9[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoFlexostretch1.png", width: 80, height: 30, alignment: 'center', rowSpan: salida9.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida9[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoFlexostretch1.png", width: 80, height: 30, alignment: 'center', rowSpan: salida9.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida9.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida9[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida9[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, true, true, false], image: "images/LikoFlexostretch1.png", width: 80, height: 30, alignment: 'center'},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida10.length; i++)
+    {
+        if(i === 0 && salida10.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida10[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoFlexostretch2.png", width: 60, height: 40, alignment: 'center', rowSpan: salida10.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida10[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoFlexostretch2.png", width: 60, height: 40, alignment: 'center', rowSpan: salida10.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida10.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida10[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida10[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
-    /*ESTO VA EN UN CICLO*/
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-            {text:' Universal SlingBarTM 350', style: 'textotabla'}
-        ]},
-        {border: [true, true, true, false], image: "images/LikoFlexostretch2.png", width: 60, height: 40, alignment: 'center'},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-    /*TERMINA CICLO*/
-
-    accesories[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        ]},
-        {border: [true, true, true, false], image: "images/LikoFlexostretch3.png", width: 60, height: 40, alignment: 'center', rowSpan: 4},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotablaboldblack'},
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: ''},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
-    accesories[pSItems] =[
-        {border: [true, false, true, false], text: '', style: 'textotabla'},
-        {border: [true, false, true, false], text: [
-            {text:'Universal SlingBarTM 350', style: 'textotabla'},
-        ]},
-        {border: [true, false, true, false], text: ""},
-        {border: [true, false, true, false], text: ''},
-    ]
-
-    pSItems++
-
+    for(var i=0; i<salida11.length; i++)
+    {
+        if(i === 0 && salida11.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, true], text: salida11[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoFlexostretch3.png", width: 60, height: 40, alignment: 'center', rowSpan: salida11.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida11[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoFlexostretch3.png", width: 60, height: 40, alignment: 'center', rowSpan: salida11.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida11.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida11[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida11[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     var accesories2 = []
     var pSItems = 0
 
     /*ESTO VA EN UN CICLO*/
-    accesories2[pSItems] =[
-        {border: [true, true, true, false], text: '31013428V', style: 'textotabla'},
-        {border: [true, true, true, false], text: [
-            {text:'Universal SlingBarTM 350\n', style: 'textotablaboldblack'},
-            {text:'Fits Mod 600 IC, Prod. No. 3156065 and 3156065B and OctoStretch, Prod. No. 3156055. Max 300 kg (660 lbs).', style: 'textotabla'}
-        ]},
-        {border: [true, true, true, false], image: "images/LikoFlexostretch4.png", width: 80, height: 50, alignment: 'center'},
-        {border: [true, true, true, false], text: '$329', style: 'textotabla', alignment: 'center'},
-    ]
-
-    pSItems++
+    for(var i=0; i<salida12.length; i++)
+    {
+        if(i === 0 && salida12.length === 1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, true], text: salida12[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida12[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoFlexostretch4.png", width: 80, height: 50, alignment: 'center', rowSpan: salida12.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, false], text: salida12[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida12[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LikoFlexostretch4.png", width: 80, height: 50, alignment: 'center', rowSpan: salida12.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida12.length-1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: salida12[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida12[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: salida12[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida12[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
     /*TERMINA CICLO*/
 
     accesories2[pSItems] =[
@@ -132,14 +226,16 @@ async function getLikoFlexostretch()
     fecha.toLocaleDateString()
 
     var likoFlexostretch = [
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {
                 widths: [190, "*"],
                 body: [
                     [
-                        {text: 'LIKO FLEXOSTRETCH™, LIKO ULTRASTRETCH™', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 2},
+                        {text: [
+                            {text: 'LIKO FLEXOSTRETCH™, LIKO ULTRASTRETCH™', style: 'textotablacolorlarge'},
+                            {text: "Liko Flexostretch™, Liko Ultrastretch™", style: {fontSize: 0}, tocItem: "likoflexostretch"}
+                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 2},
                         {},
                     ],
                 ]
@@ -210,7 +306,10 @@ async function getLikoFlexostretch()
                 widths: [250, "*"],
                 body: [
                     [
-                        {text: 'LIKO STRETCHERS - MISCELLANEOUS', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 2},
+                        {text: [
+                            {text: 'LIKO STRETCHERS - MISCELLANEOUS', style: 'textotablacolorlarge'},
+                            {text: "Liko Stretchers - Miscellaneous", style: {fontSize: 0}, tocItem: "likomiscellaneous"}
+                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 2},
                         {}
                     ],
                 ]

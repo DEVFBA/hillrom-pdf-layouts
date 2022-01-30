@@ -152,8 +152,9 @@ async function getDayBedSleeper()
     /*TERMINA CICLO*/
 
     var getDayBedSleeper = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Day Bed Sleeper\n', style: 'subheader' },
         "\n",
         {

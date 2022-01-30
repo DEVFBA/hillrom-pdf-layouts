@@ -9,8 +9,9 @@ async function getHilrom100LowBed()
     const prices = res[0]
 
     var hillroom100Low = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Hillrom® 100 Low Bed', style: 'header', tocItem: 'hillrom100LowBed'},
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },

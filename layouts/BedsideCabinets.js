@@ -103,9 +103,9 @@ async function getBedsideCabinets()
     fecha.toLocaleDateString()
 
     var bedsideCabinets = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
-        '\n',
+        "\n",
+        "\n",
+        "\n",
         { text: 'Bedside Cabinets', style: 'header', tocItem: "bedsideCabinets"},
         { text: 'Premium (AOC)\n', style: 'subheader' },
         { text: 'Country of origin: USA\n', style: 'parrafo' },

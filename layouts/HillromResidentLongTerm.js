@@ -210,8 +210,9 @@ async function getHillromResidentLongTerm()
     fecha.toLocaleDateString()
 
     var hillromResidentLongTerm = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        { text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Hillrom® Resident® Long Term Care Bed', style: 'header', tocItem: 'hillromResident'},
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },

@@ -219,8 +219,9 @@ async function getSeatingFurniture()
     fecha.toLocaleDateString()
 
     var seatingFurniture = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Seating Furniture', style: 'header' },
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         { text: 'RECLINERS\n', style: 'subheader'},

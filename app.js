@@ -86,7 +86,7 @@ async function createDocument()
         '\n\n\n\n\n\n\n\n\n\n\n',
         { image: "images/Hillroom.png", width: 120, height: 47, alignment: 'center'},
         { text: 'LATAM PRICEBOOK 2022', style: 'header', alignment: "center" },
-        { text: 'USD - PUERTO RICO', style: 'header', alignment: "center" },
+        { text: 'USD - ALL COUNTRIES', style: 'header', alignment: "center" },
         { image: "images/Cover.png", width: 400, height: 250, alignment: 'center'},
         { text: 'www.hillrom.com', style: 'header', alignment: "center" },
         {text: '', pageBreak: 'after'  },
@@ -254,7 +254,7 @@ async function createDocument()
                 id: 'accumax',
             }
         },
-        /*{
+        {
             table: {
                 widths: [530],
                 body: [
@@ -263,7 +263,7 @@ async function createDocument()
                     ],
                 ]
             }
-        },*/
+        },
         {
             toc: {
                 id: 'poweredSurfaces',
@@ -299,7 +299,7 @@ async function createDocument()
                 id: 'catoni',
             }
         },
-        /*{
+        {
             table: {
                 widths: [530],
                 body: [
@@ -308,13 +308,13 @@ async function createDocument()
                     ],
                 ]
             }
-        },*/
+        },
         {
             toc: {
                 id: 'overbedTables',
             }
         },
-        /*{
+        {
             table: {
                 widths: [530],
                 body: [
@@ -323,13 +323,13 @@ async function createDocument()
                     ],
                 ]
             }
-        },*/
+        },
         {
             toc: {
                 id: 'transportChairs',
             }
         },
-        /*{
+        {
             table: {
                 widths: [530],
                 body: [
@@ -338,7 +338,7 @@ async function createDocument()
                     ],
                 ]
             }
-        },*/
+        },
         {
             toc: {
                 id: 'hillromColoursCollection',
@@ -350,7 +350,7 @@ async function createDocument()
                 title: { text: "", style: "indexText"}
             }
         },
-        /*{
+        {
             columns: [
                 [
                     { text: 'US FURNITURE', style: 'header', alignment: 'left'}
@@ -376,6 +376,8 @@ async function createDocument()
                 title: { text: "", style: "indexText"}
             }
         },
+        "\n",
+        "\n",
         {
             table: {
                 widths: [530],
@@ -412,32 +414,23 @@ async function createDocument()
             toc: {
                 id: 'transferBoard',
             }
-        },*/
+        },
         {text: '', pageBreak: 'after'  },
     ]
     
     var docDefinition = {
-        pageMargins: [ 30, 12, 30, 30 ],
-        /*header: function(currentPage) 
+        pageMargins: [ 30, 6, 30, 30 ],
+        header: function(currentPage) 
         {
-            if(currentPage > 2){
+            if(currentPage > 3){
                 return {
-                    margin: [30, 20],
+                    margin: [30, 10],
                     columns: [
-                        {
-                            image: "images/Hillroom.png", width: 90, height: 30  
-                        },
-                        {
-                            text: fecha.toLocaleDateString(), style: 'footer', alignment: 'right'
-                        },
-                        {
-                            text: 'Hospital Beds - Critical Care/ICU', style: 'footer', alignment: 'right',
-                        },
-                       
+                        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
                     ]
                 }
             }
-        },*/
+        },
         footer: function(currentPage, pageCount) {
             if(currentPage > 2)
             {
@@ -451,7 +444,7 @@ async function createDocument()
                             text: 'Page ' + currentPage.toString() + ' of ' + pageCount, style: 'footer', alignment: 'center'
                         },
                         {
-                            text: '00 - Puerto Rico - 2022 Capital - IPL-USD V01 (2022)', style: 'footer', alignment: 'right'
+                            text: '00 - All Countries - 2022 Capital - IPL-USD V01 (2022)', style: 'footer', alignment: 'right'
                         },
                     ]
                 }
@@ -463,11 +456,11 @@ async function createDocument()
             progressaLayout,
             compellaLayout,
             centrellaLayout,
-            /*hillroom900Layout,
+            hillroom900Layout,
             hillroom900AccellaLayout,
             centurisProBedLayout,
-            theCenturisBedLayout,*/
-            //t305ManualBedLayout,
+            theCenturisBedLayout,
+            t305ManualBedLayout,
             medSurgAccesoriesLayout,
             reconditionatedVersaCareLayout,
             hillrom100LowBedLayout,
@@ -475,22 +468,22 @@ async function createDocument()
             affinity4BirthingBedLayout,
             therapySurfacesLayout,
             accumaxLayout,
-            //poweredSurfacesLayout,
+            poweredSurfacesLayout,
             stretchersLayout,
             catoniClassicLayout,
             catoniStyleLayout,
             catoniBedSideLayout,
             coloursCatoniLayout,
-            /*overbedTablesLayout,
+            overbedTablesLayout,
             transportChairsLayout,
-            hillromColoursCollectionLayout,*/
-            /*coatedFabricColoursLayout,
+            hillromColoursCollectionLayout,
+            coatedFabricColoursLayout,
             seatingFurnitureLayout,
             sleeperSofaLayout,
             sleeperChairLayout,
             overbedTables2Layout,
             bedsideCabinetsLayout,
-            transferBoardLayout*/
+            transferBoardLayout
         ],
         pageBreakBefore: function(currentNode, followingNodesOnPage, nodesOnNextPage, previousNodesOnPage) {
             return currentNode.headlineLevel === 1 && followingNodesOnPage.length === 0;

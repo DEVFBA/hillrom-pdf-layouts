@@ -1031,8 +1031,9 @@ async function getCatoniStyle()
     fecha.toLocaleDateString()
 
     var catoni = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         {
             table: {
                 widths: ["*", 60, 60, 60, 60],

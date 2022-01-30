@@ -4,8 +4,9 @@ fecha.toLocaleDateString()
 async function getHillromColoursCollection()
 {
     var hillromColours = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        { text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Hillrom Colours Collection', style: 'header'},
         { text: 'Colours', style: { fontSize: 0}, tocItem: 'hillromColoursCollection'},
         { text: 'Country of origin: France', style: 'parrafo' },
@@ -106,7 +107,7 @@ async function getHillromColoursCollection()
         { text: '\n', style: 'parrafo' },
         { text: '● = available', style: 'parrafo' },
         { text: '- = not available', style: 'parrafo' },
-        //{text: '', pageBreak: 'after'  },
+        {text: '', pageBreak: 'after'  },
     ]
 
     return hillromColours;

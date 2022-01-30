@@ -9,8 +9,9 @@ async function getOverbedTables()
     fecha.toLocaleDateString()
 
     var overbedTables = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Overbed Tables', style: 'header', tocItem: 'overbedTables'},
         { text: 'Country of origin: France', style: 'parrafo' },
         { text: '\n', style: 'textotabla' },

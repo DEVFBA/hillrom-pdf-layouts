@@ -1064,8 +1064,9 @@ async function getMedSurgAccesories()
     fecha.toLocaleDateString()
 
     var medSurgAccesories = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        { text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Med-Surg Accessories', style: 'header', tocItem: 'medSurgAccesories'},
         "\n",
         {
@@ -1160,8 +1161,9 @@ async function getMedSurgAccesories()
         },
         { text: 'The above tank holders are not available for the Hill-Rom 900 bed with 125 mm casters', style: ['quote', "small"] },
         {text: '', pageBreak: 'after'  },
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        '\n',
+        "\n",
+        "\n",
+        "\n",
         {
             table: {
                 widths: [70, 50, "*", 50, 50, 50, 50],

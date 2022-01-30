@@ -268,8 +268,9 @@ async function getRecliners()
     fecha.toLocaleDateString()
 
     var recliners = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Recliners\n', style: 'subheader' },
         "\n",
         {

@@ -923,8 +923,9 @@ async function getProgressa()
     fecha.toLocaleDateString()
 
     var progressa = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Hospital Beds - Critical Care/ICU', style: 'header' },
             '\n',
         { text: 'Progressa™ Bed System\n', style: 'subheader', tocItem: 'progressa' },
@@ -1171,7 +1172,9 @@ async function getProgressa()
             ]
         },
         {text: '', pageBreak: 'after'  },
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        "\n",
+        "\n",
+        "\n",
         {
             table: {
                 widths: [70, '*', 70, 70],

@@ -13,9 +13,9 @@ async function getArtOfCareRecliners()
     fecha.toLocaleDateString()
 
     var artOfCareRecliners = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
-        '\n',
+        "\n",
+        "\n",
+        "\n",
         { text: 'Art of Care® Recliners (cont.)', style: 'header' },
         { text: '\n', style: 'parrafo' },
         {

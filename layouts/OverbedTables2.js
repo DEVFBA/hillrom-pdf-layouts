@@ -345,8 +345,9 @@ async function getOverbedTables()
     fecha.toLocaleDateString()
 
     var healthcareFurniture = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Overbed Tables', style: 'header', tocItem: "overbedTablesArtOfCare"},
         { text: 'Art of Care', style: 'subheader' },
         { text: 'Country of origin: USA\n', style: 'parrafo' },

@@ -199,14 +199,16 @@ async function getViking()
     fecha.toLocaleDateString()
 
     var viking = [
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         {
             table: {
                 widths: ["*"],
                 body: [
                     [
-                        {text: 'VIKING', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center'},
+                        {text: [
+                            {text: 'VIKING', style: 'textotablacolorlarge'},
+                            {text: "Viking", tocItem: "viking", style: {fontSize: 0}}
+                        ], fillColor: '#5bbccc',  alignment: 'center', },
                     ]
                 ]
             },

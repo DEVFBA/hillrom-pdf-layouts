@@ -220,8 +220,9 @@ async function getSleeperChair()
     fecha.toLocaleDateString()
 
     var sleeperChair = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'SLEEPER CHAIR', style: 'header'},
         { text: 'Sleeper Chair', style: { fontSize: 0}, tocItem: 'sleeperChair'},
         { text: 'Country of origin: USA\n', style: 'parrafo' },

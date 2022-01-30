@@ -242,8 +242,9 @@ async function getPoweredSurfaces()
     fecha.toLocaleDateString()
 
     var poweredSurfaces = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Powered Surfaces', style: 'header'},
         { text: 'Covers / Accessories', style: { fontSize: 0}, tocItem: 'poweredSurfaces'},
         { text: 'Country of origin: France', style: 'parrafo' },

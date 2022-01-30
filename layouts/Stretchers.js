@@ -1914,8 +1914,9 @@ async function getStretchers()
     fecha.toLocaleDateString()
 
     var stretchers = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'Stretchers', style: 'header'},
         { text: 'Procedural / Transport / Surgical / Electric / Trauma / OB-GYN', style: { fontSize: 0}, tocItem: 'stretchers'},
         { text: 'Country of origin: México\n', style: 'parrafo' },
@@ -2029,7 +2030,7 @@ async function getStretchers()
         "\n",
         {
             table: {
-                widths: [50, "*", 30, 30, 30, 30, 30],
+                widths: [50, "*", 40, 40, 40, 40, 40],
                 body: options
             },
             layout: {
@@ -2048,11 +2049,12 @@ async function getStretchers()
             }
         },
         {text: '', pageBreak: 'after'  },
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        '\n',
+        "\n",
+        "\n",
+        "\n",
         {
             table: {
-                widths: [50, "*", 30, 30, 30, 30, 30],
+                widths: [50, "*", 40, 40, 40, 40, 40],
                 body: options2
             },
             layout: {
@@ -2076,7 +2078,8 @@ async function getStretchers()
         "\n",
         { image: "images/Stretchers.png", width: 370, height: 160, alignment: 'center'},
         {text: '', pageBreak: 'after'  },
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
+        '\n',
+        '\n',
         '\n',
         { text: 'SURFACES', style: 'textotablaboldlarge' },
         { text: 'Fire Code Compliance: Surfaces comply with North American Federal Regulations: (16CFR1632, 16CFR1633 and CAN/CGSB-4.1 No. 27.7)\n Country of Origin: USA', style: 'parrafo' },

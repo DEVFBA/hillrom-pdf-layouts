@@ -541,7 +541,6 @@ async function getMobileLiftAccesories()
     fecha.toLocaleDateString()
 
     var mobileLiftAccesories = [
-        {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
         "\n",
         { text: 'MOBILE LIFTS - ACCESSORIES', style: 'header' },
         "\n",
@@ -550,7 +549,10 @@ async function getMobileLiftAccesories()
                 widths: ["*"],
                 body: [
                     [
-                        {text: 'Mobile Lifts Accessories', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center'},
+                        {text:[
+                            {text: 'Mobile Lifts Accessories', style: 'textotablacolorlarge'},
+                            {text: "Accesories for Mobile Lifts", tocItem: "accesoriesmobilelifts", style: {fontSize: 0}}
+                        ] , fillColor: '#5bbccc',  alignment: 'center'},
                     ]
                 ]
             },

@@ -97,8 +97,9 @@ async function getAccumax()
     fecha.toLocaleDateString()
 
     var accumax = [
-        { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-        {text:  "\n", style: "textotabla"},
+        "\n",
+        "\n",
+        "\n",
         { text: 'ACCUMAX', style: 'header'},
         { text: 'AccuMax Quantum™ VPC', style: { fontSize: 0}, tocItem: 'accumax'},
         { text: 'Country of origin: USA\n', style: 'parrafo' },
