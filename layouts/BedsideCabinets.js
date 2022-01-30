@@ -222,11 +222,12 @@ async function getBedsideCabinets()
             columns: [
                 [
                     {text: '31M - Natural Maple', style: 'textotabla'},
-                    {text: 'T9M - Wild Cherry', style: 'textotabla'},
-                    {text: 'V11 - Shaker Cherry', style: 'textotabla'},
-                    {text: 'V13 - Frosty white', style: 'textotabla'},
+                    {text: 'T9C - Wild Cherry', style: 'textotabla'},
+                    {text: 'H4C - Darh Cherry', style: 'textotabla'},
+                    {text: 'CCM - Colonial Cherry', style: 'textotabla'},
                     {text: 'MWM - Montana Walnut', style: 'textotabla'},
                     {text: 'HMM - Honey Maple', style: 'textotabla'},
+                    {text: 'R3O - Light Oak', style: 'textotabla'},
                     {text: '82O- Medium Oak', style: 'textotabla'},
                 ],
             ]

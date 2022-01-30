@@ -128,7 +128,7 @@ async function createDocument()
                     ],
                 ]
             }
-        },
+        }, 
         {
             toc: {
                 id: 'compella',
@@ -254,7 +254,7 @@ async function createDocument()
                 id: 'accumax',
             }
         },
-        /*{
+        {
             table: {
                 widths: [530],
                 body: [
@@ -263,7 +263,7 @@ async function createDocument()
                     ],
                 ]
             }
-        },*/
+        },
         {
             toc: {
                 id: 'poweredSurfaces',
@@ -299,7 +299,7 @@ async function createDocument()
                 id: 'catoni',
             }
         },
-        /*{
+        {
             table: {
                 widths: [530],
                 body: [
@@ -308,13 +308,13 @@ async function createDocument()
                     ],
                 ]
             }
-        },*/
+        },
         {
             toc: {
                 id: 'overbedTables',
             }
         },
-        /*{
+        {
             table: {
                 widths: [530],
                 body: [
@@ -323,13 +323,13 @@ async function createDocument()
                     ],
                 ]
             }
-        },*/
+        },
         {
             toc: {
                 id: 'transportChairs',
             }
         },
-        /*{
+        {
             table: {
                 widths: [530],
                 body: [
@@ -338,7 +338,7 @@ async function createDocument()
                     ],
                 ]
             }
-        },*/
+        },
         {
             toc: {
                 id: 'hillromColoursCollection',
@@ -350,7 +350,7 @@ async function createDocument()
                 title: { text: "", style: "indexText"}
             }
         },
-        /*{
+        {
             columns: [
                 [
                     { text: 'US FURNITURE', style: 'header', alignment: 'left'}
@@ -412,7 +412,7 @@ async function createDocument()
             toc: {
                 id: 'transferBoard',
             }
-        },*/
+        },
         {text: '', pageBreak: 'after'  },
     ]
     
@@ -463,11 +463,11 @@ async function createDocument()
             progressaLayout,
             compellaLayout,
             centrellaLayout,
-            /*hillroom900Layout,
+            hillroom900Layout,
             hillroom900AccellaLayout,
             centurisProBedLayout,
-            theCenturisBedLayout,*/
-            //t305ManualBedLayout,
+            theCenturisBedLayout,
+            t305ManualBedLayout,
             medSurgAccesoriesLayout,
             reconditionatedVersaCareLayout,
             hillrom100LowBedLayout,
@@ -475,22 +475,22 @@ async function createDocument()
             affinity4BirthingBedLayout,
             therapySurfacesLayout,
             accumaxLayout,
-            //poweredSurfacesLayout,
+            poweredSurfacesLayout,
             stretchersLayout,
             catoniClassicLayout,
             catoniStyleLayout,
             catoniBedSideLayout,
             coloursCatoniLayout,
-            /*overbedTablesLayout,
+            overbedTablesLayout,
             transportChairsLayout,
-            hillromColoursCollectionLayout,*/
-            /*coatedFabricColoursLayout,
+            hillromColoursCollectionLayout,
+            coatedFabricColoursLayout,
             seatingFurnitureLayout,
             sleeperSofaLayout,
             sleeperChairLayout,
             overbedTables2Layout,
             bedsideCabinetsLayout,
-            transferBoardLayout*/
+            transferBoardLayout
         ],
         pageBreakBefore: function(currentNode, followingNodesOnPage, nodesOnNextPage, previousNodesOnPage) {
             return currentNode.headlineLevel === 1 && followingNodesOnPage.length === 0;

@@ -12,9 +12,9 @@ async function getOverbedTables()
     var pSItems = 0;
     options[pSItems] = [
         {text: 'OPTIONS', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
-        {text: 'SLP-732', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
-        {text: 'SLP-735', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
-        {text: 'SLP-755', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+        {text: 'OBT-636', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+        {text: 'OBT-635', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+        {text: 'OBT-634', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
     ]
     pSItems++
 
@@ -348,7 +348,7 @@ async function getOverbedTables()
         { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
         {text:  "\n", style: "textotabla"},
         { text: 'Overbed Tables', style: 'header', tocItem: "overbedTablesArtOfCare"},
-        { text: 'Art of Care', style: 'subheader' },
+        { text: 'Art of Care Last Order Date April 29, 2022', style: 'subheader' },
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
         {
@@ -418,8 +418,8 @@ async function getOverbedTables()
                             [
                                 {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
                                 {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
-                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
-                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},  
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},  
                             ],
                         ]
                     },
@@ -481,10 +481,8 @@ async function getOverbedTables()
                                         [
                                             {text: 'V07 Natural Maple', style: 'textotabla'},
                                             {text: 'V08 Wild cherry', style: 'textotabla'},
-                                            {text: 'V09 Medium Oak', style: 'textotabla'},
                                             {text: 'V10 HoneyMaple', style: 'textotabla'},
                                             {text: 'V11 Shaker Cherry', style: 'textotabla'},
-                                            {text: 'V12 Montana Walnut', style: 'textotabla'},
                                             {text: 'V13 Frosty white', style: 'textotabla'},
                                         ],
                                     ]

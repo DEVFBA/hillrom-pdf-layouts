@@ -1917,7 +1917,7 @@ async function getStretchers()
         { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
         {text:  "\n", style: "textotabla"},
         { text: 'Stretchers', style: 'header'},
-        { text: 'Procedural / Transport / Surgical / Electric / Trauma / OB-GYN', style: { fontSize: 0}, tocItem: 'stretchers'},
+        { text: 'Procedural / Transport / Surgical / Trauma / OB-GYN', style: { fontSize: 0}, tocItem: 'stretchers'},
         { text: 'Country of origin: México\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
         {

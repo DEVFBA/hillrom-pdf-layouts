@@ -106,9 +106,9 @@ async function getHilrom100LowBed()
                     ],
                     [
                         {text: 'Finial Style - Traditional (LB-TRAD)', style: 'textotabla'},
-                        {text: '$149', style: 'textotabla', alignment: 'center'},
-                        {text: '$149', style: 'textotabla', alignment: 'center'}, 
-                        {text: '$149', style: 'textotabla', alignment: 'center'}, 
+                        {text: '$159', style: 'textotabla', alignment: 'center'},
+                        {text: '$159', style: 'textotabla', alignment: 'center'}, 
+                        {text: '$159', style: 'textotabla', alignment: 'center'}, 
                     ],
                     [
                         {text: 'Casters (3" or NONE)', style: 'textotabla'},
