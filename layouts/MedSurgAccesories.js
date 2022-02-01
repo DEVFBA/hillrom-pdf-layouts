@@ -617,6 +617,8 @@ async function getMedSurgAccesories()
 
      /*ESTO VA EN UN CICLO*/
     var ivPoleFlag = false
+    var i=0
+    console.log(ivPoleData.length)
     while(ivPoleFlag === false)
     {
         var j;
