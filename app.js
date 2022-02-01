@@ -2,8 +2,8 @@ var fonts = {
     Roboto: {
       normal: './fonts/CenturyGothic.ttf',
       bold: './fonts/CenturyGothicBold.ttf',
-      italics: './fonts/CenturyGothic.ttf',
-      bolditalics: './fonts/CenturyGothic.ttf'
+      italics: './fonts/CenturyGothicBoldItalic.ttf',
+      bolditalics: './fonts/CenturyGothicBoldItalic.ttf'
     }
 };
 
@@ -511,6 +511,12 @@ async function createDocument()
                 fontSize: 13,
                 bold: true,
                 color: '#1c3384',
+            },
+            subheader2: {
+                fontSize: 13,
+                bold: true,
+                color: '#FF0000',
+                italics: true
             },
             textosubrayado: {
                 fontSize: 9,

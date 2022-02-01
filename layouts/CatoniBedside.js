@@ -109,7 +109,7 @@ async function getCatoniBedSide()
             overbedTableFlag = true
         }
         i++
-    }   
+    }
     /*TERMINA CICLO*/
     
     options3[pSItems] = [
@@ -122,7 +122,7 @@ async function getCatoniBedSide()
     pSItems ++
 
     /*ESTO VA EN UN CICLO*/
-    var i=0;
+    /*var i=0;
     var plasticDrawerFlag = false
     while(plasticDrawerFlag === false)
     {
@@ -200,7 +200,25 @@ async function getCatoniBedSide()
             plasticDrawerFlag = true
         }
         i++
-    }   
+    }*/
+    
+    options3[pSItems] = [
+        {text: plasticDrawerData[0].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: plasticDrawerData[0].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[0].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[1].Price), style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    options3[pSItems] = [
+        {text: plasticDrawerData[2].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: plasticDrawerData[2].Item_Long_Desc, style: 'textotabla'},
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[2].Price), style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
     /*TERMINA CICLO*/
 
     options3[pSItems] = [

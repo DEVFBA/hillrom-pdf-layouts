@@ -270,20 +270,35 @@ async function getMedSurgAccesories()
     pSItems++
 
     /*EMPIEZA CICLO*/
-    for(var i=0; i<controlsData.length; i++)
+    for(var i=0; i<controlsData.length-1; i++)
     {
-        controls[pSItems] = [
-            {text: controlsData[i].KitName, style: 'textotabla'},
-            {text: controlsData[i].Part, style: 'textotabla'},
-            {text: controlsData[i].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(controlsData[i].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-        pSItems++
+        if(i === controlsData.length-2)
+        {
+            controls[pSItems] = [
+                {text: controlsData[i].KitName, style: 'textotabla'},
+                {text: controlsData[i].Part, style: 'textotabla'},
+                {text: controlsData[i].Item_Long_Desc, style: 'textotabla'},
+                {text: "●", style: 'textotabla', alignment: 'center'}, 
+                {text: "●", style: 'textotabla', alignment: 'center'}, 
+                {text: "-", style: 'textotabla', alignment: 'center'}, 
+                {text: "$" + Intl.NumberFormat("en-IN").format(controlsData[i].Price), style: 'textotabla', alignment: 'center'}, 
+            ]
+            pSItems++
+        }
+        else {
+            controls[pSItems] = [
+                {text: controlsData[i].KitName, style: 'textotabla'},
+                {text: controlsData[i].Part, style: 'textotabla'},
+                {text: controlsData[i].Item_Long_Desc, style: 'textotabla'},
+                {text: "●", style: 'textotabla', alignment: 'center'}, 
+                {text: "-", style: 'textotabla', alignment: 'center'}, 
+                {text: "-", style: 'textotabla', alignment: 'center'}, 
+                {text: "$" + Intl.NumberFormat("en-IN").format(controlsData[i].Price), style: 'textotabla', alignment: 'center'}, 
+            ]
+            pSItems++
+        }
     }
-     /*TERMINA CICLO*/
+    /*TERMINA CICLO*/
 
      /*EMPIEZA CICLO*/
 
@@ -601,7 +616,7 @@ async function getMedSurgAccesories()
     pSItems++
 
      /*ESTO VA EN UN CICLO*/
-     var ivPoleFlag = false
+    var ivPoleFlag = false
     while(ivPoleFlag === false)
     {
         var j;
@@ -749,6 +764,17 @@ async function getMedSurgAccesories()
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "$" + Intl.NumberFormat("en-IN").format(optionUpgradeData[5].Price), style: 'textotabla', alignment: 'center'}, 
+    ]
+    pSItems++
+
+    optionUpgrade[pSItems] = [
+        {text: optionUpgradeData[6].KitName, style: 'textotabla'},
+        {text: optionUpgradeData[6].Part, style: 'textotabla'},
+        {text: optionUpgradeData[6].Item_Long_Desc, style: 'textotabla'},
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionUpgradeData[6].Price), style: 'textotabla', alignment: 'center'}, 
     ]
     pSItems++
     /*TERMINA CICLO*/

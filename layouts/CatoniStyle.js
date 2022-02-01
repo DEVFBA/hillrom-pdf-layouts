@@ -1,3 +1,4 @@
+const { fix } = require('mssql')
 const dbCatonicStyle = require('../controllers/catoniCH700B3')
 
 async function getCatoniStyle()
@@ -37,7 +38,7 @@ async function getCatoniStyle()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    var i=0;
+    /*var i=0;
     var hingeFlag = false
     while(hingeFlag === false)
     {
@@ -147,8 +148,41 @@ async function getCatoniStyle()
             hingeFlag = true
         }
         i++
-    }   
+    }*/   
     /*TERMINA CICLO*/
+
+    options2[pSItems] = [
+        {text: hingeData[0].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: hingeData[0].Item_Long_Desc, style: 'textotabla'},
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'},
+        {text: "-", style: 'textotabla', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options2[pSItems] = [
+        {text: hingeData[3].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: hingeData[3].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[3].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[4].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[5].Price), style: 'textotabla', alignment: 'center'},
+        {text: "-", style: 'textotabla', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options2[pSItems] = [
+        {text: hingeData[6].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: hingeData[6].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[6].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[7].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[8].Price), style: 'textotabla', alignment: 'center'},
+        {text: "-", style: 'textotabla', alignment: 'center'},  
+    ]
+
+    pSItems++
     
     options2[pSItems] = [
         {text: 'Plastic drawer insert', style: 'textotablaboldlargecatoni', border: [false, false, false, false], colSpan: 2},
@@ -162,7 +196,7 @@ async function getCatoniStyle()
     pSItems ++
 
     /*ESTO VA EN UN CICLO*/
-    var i=0;
+    /*var i=0;
     var plasticDrawerFlag = false
     while(plasticDrawerFlag === false)
     {
@@ -272,7 +306,29 @@ async function getCatoniStyle()
             plasticDrawerFlag = true
         }
         i++
-    }   
+    }*/
+    
+    options2[pSItems] = [
+        {text: plasticDrawerData[0].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: plasticDrawerData[0].Item_Long_Desc, style: 'textotabla'},
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[0].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[1].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[2].Price), style: 'textotabla', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options2[pSItems] = [
+        {text: plasticDrawerData[3].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: plasticDrawerData[3].Item_Long_Desc, style: 'textotabla'},
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[3].Price), style: 'textotabla', alignment: 'center'},  
+    ]
+
+    pSItems++
     /*TERMINA CICLO*/
 
     options2[pSItems] = [
@@ -398,7 +454,7 @@ async function getCatoniStyle()
             fixedStripFlag = true
         }
         i++
-    }   
+    }
     /*TERMINA CICLO*/
 
     options2[pSItems] = [
@@ -413,7 +469,7 @@ async function getCatoniStyle()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    var i=0;
+    /*var i=0;
     var castorsFlag= false
     while(castorsFlag === false)
     {
@@ -523,7 +579,51 @@ async function getCatoniStyle()
             castorsFlag = true
         }
         i++
-    }   
+    }  */
+    
+    options2[pSItems] = [
+        {text: castorsData[0].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: castorsData[0].Item_Long_Desc, style: 'textotabla'},
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'},
+        {text: "●", style: 'textotabla', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options2[pSItems] = [
+        {text: castorsData[4].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: castorsData[4].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[4].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[5].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[6].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[7].Price), style: 'textotabla', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options2[pSItems] = [
+        {text: castorsData[8].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: castorsData[8].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[8].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[9].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[10].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[11].Price), style: 'textotabla', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options2[pSItems] = [
+        {text: castorsData[12].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: castorsData[12].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[12].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[13].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[14].Price), style: 'textotabla', alignment: 'center'},
+        {text: "-", style: 'textotabla', alignment: 'center'},  
+    ]
+
+    pSItems++
     /*TERMINA CICLO*/
 
     options2[pSItems] = [
@@ -649,7 +749,8 @@ async function getCatoniStyle()
             accesoryBarFlag = true
         }
         i++
-    }   
+    }
+
     /*TERMINA CICLO*/
 
     options2[pSItems] = [
@@ -664,7 +765,7 @@ async function getCatoniStyle()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    var i=0;
+    /*var i=0;
     var additionalOptionsFlag= false
     while(additionalOptionsFlag === false)
     {
@@ -774,7 +875,73 @@ async function getCatoniStyle()
             additionalOptionsFlag = true
         }
         i++
-    }   
+    } */
+    
+    options2[pSItems] = [
+        {text: additionalOptionsData[0].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: additionalOptionsData[0].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[0].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[1].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[2].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[3].Price), style: 'textotabla', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options2[pSItems] = [
+        {text: additionalOptionsData[4].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: additionalOptionsData[4].Item_Long_Desc, style: 'textotabla'},
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[4].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[5].Price), style: 'textotabla', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options2[pSItems] = [
+        {text: additionalOptionsData[6].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: additionalOptionsData[6].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[6].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[7].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[8].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[9].Price), style: 'textotabla', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options2[pSItems] = [
+        {text: additionalOptionsData[10].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: additionalOptionsData[10].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[10].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[11].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[12].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[13].Price), style: 'textotabla', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options2[pSItems] = [
+        {text: additionalOptionsData[14].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: additionalOptionsData[14].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[14].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[15].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[16].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[17].Price), style: 'textotabla', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options2[pSItems] = [
+        {text: additionalOptionsData[18].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: additionalOptionsData[18].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[18].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[19].Price), style: 'textotabla', alignment: 'center'},
+        {text: "-", style: 'textotabla', alignment: 'center'},  
+    ]
+
+    pSItems++
     /*TERMINA CICLO*/
 
     options2[pSItems] = [
@@ -789,7 +956,7 @@ async function getCatoniStyle()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    var i=0;
+    /*var i=0;
     var coloursFlag= false
     while(coloursFlag === false)
     {
@@ -899,8 +1066,30 @@ async function getCatoniStyle()
             coloursFlag = true
         }
         i++
-    }   
+    }   */
     /*TERMINA CICLO*/
+
+    options2[pSItems] = [
+        {text: coloursContrastData[0].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: coloursContrastData[0].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[0].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[1].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[2].Price), style: 'textotabla', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options2[pSItems] = [
+        {text: coloursContrastData[3].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: coloursContrastData[3].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[3].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[4].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[5].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[6].Price), style: 'textotabla', alignment: 'center'},  
+    ]
+
+    pSItems++
 
     options2[pSItems] = [
         {text: 'Handles', style: 'textotablaboldlargecatoni', border: [false, false, false, false], colSpan: 2},
@@ -1024,7 +1213,7 @@ async function getCatoniStyle()
             handlesFlag = true
         }
         i++
-    }   
+    } 
     /*TERMINA CICLO*/
 
     const fecha = new Date();

@@ -16,7 +16,6 @@ async function getBedsideCabinets()
     pSItems++
 
     /*EMPIEZA CICLO*/
-    /*EMPIEZA CICLO*/
     var i=0;
     var optionsFlag = false
     while(optionsFlag === false)
@@ -27,13 +26,13 @@ async function getBedsideCabinets()
             j=0
         }
         else {
-            j = i*3
+            j = i*2
         }
         var precios = []
         var preciosCount = 0
         var countC=0
         var printCaracter = []
-        while(j< optionsData.length && countC<3)
+        while(j< optionsData.length && countC<2)
         {
            precios[preciosCount] = optionsData[j].Price
            printCaracter[preciosCount] = optionsData[j].Print_Character
@@ -217,26 +216,20 @@ async function getBedsideCabinets()
         { text: '● = standard', style: 'parrafo' },
         { text: '= - not available', style: 'parrafo' },
         '\n',
-        { text: 'Finish Options:', style: 'textotablaboldlarge' },
         {
             columns: [
                 [
+                    {text: 'Finish Options:', style: 'textotablaboldlarge' },
                     {text: '31M - Natural Maple', style: 'textotabla'},
                     {text: 'T9C - Wild Cherry', style: 'textotabla'},
-                    {text: 'H4C - Darh Cherry', style: 'textotabla'},
+                    {text: 'H4C - Dark Cherry', style: 'textotabla'},
                     {text: 'CCM - Colonial Cherry', style: 'textotabla'},
                     {text: 'MWM - Montana Walnut', style: 'textotabla'},
                     {text: 'HMM - Honey Maple', style: 'textotabla'},
                     {text: 'R3O - Light Oak', style: 'textotabla'},
                     {text: '82O- Medium Oak', style: 'textotabla'},
-                ],
-            ]
-        },
-        '\n',
-        { text: 'Powder Coat Options:', style: 'textotablaboldlarge' },
-        {
-            columns: [
-                [
+                    '\n',
+                    { text: 'Powder Coat Options:', style: 'textotablaboldlarge' },
                     {text: '(Metropolitan Style only)', style: 'textotabla'},
                     {text: 'QSL - Metalic Quicksilver', style: 'textotabla'},
                     {text: 'GRA - Stonetone Graphite', style: 'textotabla'},
@@ -244,6 +237,21 @@ async function getBedsideCabinets()
                     {text: 'ESP - Metallic Expresso', style: 'textotabla'},
                     {text: 'SAF - Mettallic Saffron', style: 'textotabla'},
                 ],
+                [
+                    {text: 'Laminate Options:', style: 'textotablaboldlarge' },
+                    {text: '734 - Natural Maple', style: 'textotabla'},
+                    {text: '705 - Wild Cherry', style: 'textotabla'},
+                    {text: '084 - Dark Cherry', style: 'textotabla'},
+                    {text: '935 - Shaker Cherry (matches Colonial Cherry in wood finish)', style: 'textotabla'},
+                    {text: '70T - Montana Walnut', style: 'textotabla'},
+                    {text: 'WM9 - Honey Maple', style: 'textotabla'},
+                    {text: 'MOK - Medium Oak', style: 'textotabla'},
+                    {text: '293 - Almond Leather', style: 'textotabla'},
+                    {text: '655 - Natural Legacy', style: 'textotabla'},
+                    {text: '157 - Antique White', style: 'textotabla'},
+                    {text: '462 - White Nebula', style: 'textotabla'},
+                    {text: 'M07 - Light Neutral', style: 'textotabla'},
+                ]
             ]
         },
         {text: '', pageBreak: 'after'  },

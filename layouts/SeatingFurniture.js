@@ -135,7 +135,7 @@ async function getSeatingFurniture()
     pSItems++
 
     /*EMPIEZA CICLO*/
-    var i=0;
+    /*var i=0;
     var optionsFlag = false
     while(optionsFlag === false)
     {
@@ -212,7 +212,23 @@ async function getSeatingFurniture()
             optionsFlag = true
         }
         i++
-    }   
+    }   */
+
+    options[pSItems] = [
+        {text: optionsData[0].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: optionsData[1].Item_Long_Desc, style: 'textotabla'},
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[1].Price), style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
     /*TERMINA CICLO*/
 
     const fecha = new Date();

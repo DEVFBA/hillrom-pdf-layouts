@@ -12,6 +12,7 @@ async function getTherapySurfaces()
     const bidensity2Data = res[6]
     const viscoelastic2Data = res[7]
     const usSurfacesData = res[8]
+    const usSurfacesData2 = res[9]
 
     var foamSurface =[]
     var pSItems = 0;
@@ -287,13 +288,34 @@ async function getTherapySurfaces()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<viscoelastic2Data.length; i++)
+    for(var i=0; i<usSurfacesData.length; i++)
     {
         usSurfaces[pSItems] = [
-             {text: viscoelastic2Data[i].KitName, style: 'textotabla', alignment: 'center'},
-             {text: viscoelastic2Data[i].Item_Long_Desc, style: 'textotabla'},
-             {text: viscoelastic2Data[i].Part, style: 'textotabla', alignment: 'center'}, 
-             {text: "$" + Intl.NumberFormat("en-IN").format(viscoelastic2Data[i].Price), style: 'textotabla', alignment: 'center'}, 
+             {text: usSurfacesData[i].KitName, style: 'textotabla', alignment: 'center'},
+             {text: usSurfacesData[i].Item_Long_Desc, style: 'textotabla'},
+             {text: usSurfacesData[i].Part, style: 'textotabla', alignment: 'center'}, 
+             {text: "$" + Intl.NumberFormat("en-IN").format(usSurfacesData[i].Price), style: 'textotabla', alignment: 'center'}, 
+         ]
+     
+         pSItems++
+    }
+
+    usSurfaces[pSItems] = [
+        {border: [false, false, false, false], text: ''},
+        {border: [false, false, false, false], text: ''},
+        {border: [false, false, false, false], text: ''},
+        {border: [false, false, false, false], text: ''}, 
+    ]
+
+    pSItems++
+
+    for(var i=0; i<usSurfacesData2.length; i++)
+    {
+        usSurfaces[pSItems] = [
+             {text: usSurfacesData2[i].KitName, style: 'textotabla', alignment: 'center'},
+             {text: usSurfacesData2[i].Item_Long_Desc, style: 'textotabla'},
+             {text: usSurfacesData2[i].Part, style: 'textotabla', alignment: 'center'}, 
+             {text: "$" + Intl.NumberFormat("en-IN").format(usSurfacesData2[i].Price), style: 'textotabla', alignment: 'center'}, 
          ]
      
          pSItems++

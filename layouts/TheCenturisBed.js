@@ -18,7 +18,7 @@ async function getTheCenturisBed()
         {text: 'OPTION CODE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
         {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
         {text: 'C', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'D', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        //{text: 'D', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
     ]
     pSItems++
 
@@ -26,7 +26,7 @@ async function getTheCenturisBed()
         {text: "Brake", style: 'textotablabold', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
+        //{text: '', border: [false, false, false, false]}, 
     ]
 
     pSItems++
@@ -97,7 +97,7 @@ async function getTheCenturisBed()
             {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
             {text: data.Item_Long_Desc, style: 'textotabla'},
             {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            //{text: precio2, style: 'textotabla', alignment: 'center'}, 
         ]
 
         pSItems++
@@ -115,14 +115,14 @@ async function getTheCenturisBed()
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
+        //{text: '', border: [false, false, false, false]}, 
     ]
 
     options[pSItems] = [
         {text: 'Country Of Origin', style: 'textotablabold', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
+        //{text: '', border: [false, false, false, false]}, 
     ]
 
     pSItems++
@@ -195,7 +195,7 @@ async function getTheCenturisBed()
              {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
              {text: data.Item_Long_Desc, style: 'textotabla'},
              {text: precio1, style: 'textotabla', alignment: 'center'}, 
-             {text: precio2, style: 'textotabla', alignment: 'center'}, 
+             //{text: precio2, style: 'textotabla', alignment: 'center'}, 
          ]
  
          pSItems++
@@ -215,14 +215,14 @@ async function getTheCenturisBed()
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
+        //{text: '', border: [false, false, false, false]}, 
     ]
 
     options[pSItems] = [
         {text: 'Voltaje', style: 'textotablabold', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
+        //{text: '', border: [false, false, false, false]}, 
     ]
 
     pSItems++
@@ -245,9 +245,9 @@ async function getTheCenturisBed()
             price = "$" + Intl.NumberFormat("en-IN").format(voltaje[i].Price)
         }
          options[pSItems] = [
-             {text: voltaje[i].KitName, style: 'textotabla', alignment: 'center'},
+             {text: voltaje[i].Id_Item, style: 'textotabla', alignment: 'center'},
              {text: voltaje[i].Item_Long_Desc, style: 'textotabla'},
-             {text: voltaje[i].Part, style: 'textotabla', alignment: 'center'}, 
+             //{text: voltaje[i].Part, style: 'textotabla', alignment: 'center'}, 
              {text: price, style: 'textotabla', alignment: 'center'}, 
          ]
      
@@ -441,52 +441,52 @@ async function getTheCenturisBed()
                 {
                     width: "*",
                     table: {
-                        widths: ["*", 50, 50],
+                        widths: ["*", 50, /*50*/],
                         body: [
                             [
                                 {border: [false, false, false, false], text: ''},
-                                {text: 'CENTURIS', style: 'textotablacolor', colSpan: 2, fillColor: '#546ce4',  alignment: 'center'},
-                                {},
+                                {text: 'CENTURIS', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                                //{}
                             ],
                             [
                                 {border: [false, false, false, false], text: ''},
                                 {text: 'C', style: 'textotablaboldblack', alignment: 'center'},
-                                {text: 'D', style: 'textotablaboldblack', alignment: 'center'},
+                                //{text: 'D', style: 'textotablaboldblack', alignment: 'center'},
                             ],
                             [
                                 {text: 'Bed Controls - hand-held pendant', style: 'textotabla'},
                                 {text: '-', style: 'textotabla', alignment: 'center'},
-                                {text: '-', style: 'textotabla', alignment: 'center'}, 
+                                //{text: '-', style: 'textotabla', alignment: 'center'}, 
                             ],
                             [
                                 {text: 'Bed Controls - intergrated in siderails', style: 'textotabla'},
                                 {text: '●', style: 'textotabla', alignment: 'center'},
-                                {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                //{text: '●', style: 'textotabla', alignment: 'center'}, 
                             ],
                             [
                                 {text: 'Function Lockouts', style: 'textotabla'},
                                 {text: 'Individual', style: 'textotabla', alignment: 'center'},
-                                {text: 'Individual', style: 'textotabla', alignment: 'center'}, 
+                                //{text: 'Individual', style: 'textotabla', alignment: 'center'}, 
                             ],
                             [
                                 {text: 'Electric Trend/Rev. Trendelenburg', style: 'textotabla'},
                                 {text: '●', style: 'textotabla', alignment: 'center'},
-                                {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                //{text: '●', style: 'textotabla', alignment: 'center'}, 
                             ],
                             [
                                 {text: 'Battery', style: 'textotabla'},
                                 {text: '●', style: 'textotabla', alignment: 'center'},
-                                {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                //{text: '●', style: 'textotabla', alignment: 'center'}, 
                             ],
                             [
                                 {text: 'Bed Extension', style: 'textotabla'},
                                 {text: '-', style: 'textotabla', alignment: 'center'},
-                                {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                //{text: '●', style: 'textotabla', alignment: 'center'}, 
                             ],
                             [
                                 {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
                                 {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                {text: /*"$" + Intl.NumberFormat("en-IN").format(prices[1].Price)*/ "NO DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                                //{text: /*"$" + Intl.NumberFormat("en-IN").format(prices[1].Price)*/ "NO DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
                             ],
                         ]
                     },
@@ -510,7 +510,7 @@ async function getTheCenturisBed()
         "\n",
         {
             table: {
-                widths: [80, "*", 50, 50],
+                widths: [80, "*", 50, /*50*/],
                 body: options
             },
             layout: {

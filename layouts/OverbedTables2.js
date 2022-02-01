@@ -27,7 +27,7 @@ async function getOverbedTables()
     pSItems++
 
     /*EMPIEZA CICLO*/
-    var i=0;
+    /*var i=0;
     var topStyleFlag = false
     while(topStyleFlag === false)
     {
@@ -120,7 +120,34 @@ async function getOverbedTables()
             topStyleFlag = true
         }
         i++
-    }   
+    }  */ 
+
+    options[pSItems] = [
+        {text: topStyleData[0].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(topStyleData[0].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: topStyleData[1].Item_Long_Desc, style: 'textotabla'},
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(topStyleData[1].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: topStyleData[2].Item_Long_Desc, style: 'textotabla'},
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(topStyleData[2].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
     /*TERMINA CICLO*/
     
     options[pSItems] = [
@@ -132,7 +159,7 @@ async function getOverbedTables()
     pSItems++
 
     /*EMPIEZA CICLO*/
-    var i=0;
+    /*var i=0;
     var mirrorStorageFlag = false
     while(mirrorStorageFlag === false)
     {
@@ -225,7 +252,44 @@ async function getOverbedTables()
             mirrorStorageFlag = true
         }
         i++
-    }   
+    }  */
+
+    options[pSItems] = [
+        {text: mirrorStorageData[0].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(mirrorStorageData[0].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(mirrorStorageData[1].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: mirrorStorageData[2].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(mirrorStorageData[2].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: mirrorStorageData[3].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(mirrorStorageData[3].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(mirrorStorageData[4].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: mirrorStorageData[5].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(mirrorStorageData[5].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
+    
     /*TERMINA CICLO*/
 
     options[pSItems] = [
@@ -349,7 +413,11 @@ async function getOverbedTables()
         "\n",
         "\n",
         { text: 'Overbed Tables', style: 'header', tocItem: "overbedTablesArtOfCare"},
-        { text: 'Art of Care Last Order Date April 29, 2022', style: 'subheader' },
+        { text: [
+                {text: 'Art of Care ', style: 'subheader'},
+                {text: "Last Order Date April 29, 2022", style: 'subheader2' }
+            ]
+        },
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
         {

@@ -32,111 +32,111 @@ async function getHillromResidentLongTerm()
     options[pSItems] = [
         {text: optionsData[0].Item_Long_Desc, style: 'textotabla'},
         {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'},
-        {text: "N/A", style: 'textotabla', alignment: 'center'},
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-        {text: "N/A", style: 'textotabla', alignment: 'center'},
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'}, 
     ]
     pSItems++
 
     options[pSItems] = [
-        {text: optionsData[1].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[1].Price), style: 'textotabla',alignment: 'center'},
-        {text: "N/A", style: 'textotabla', alignment: 'center'},
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-        {text: "N/A", style: 'textotabla', alignment: 'center'},
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-    ]
-    pSItems++
-
-    options[pSItems] = [
-        {text: optionsData[2].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[2].Price), style: 'textotabla',alignment: 'center'},
-        {text: "N/A", style: 'textotabla', alignment: 'center'},
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-        {text: "N/A", style: 'textotabla', alignment: 'center'},
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-    ]
-    pSItems++
-
-    options[pSItems] = [
-        {text: optionsData[3].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[3].Price), style: 'textotabla',alignment: 'center'},
-        {text: "N/A", style: 'textotabla', alignment: 'center'},
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-        {text: "N/A", style: 'textotabla', alignment: 'center'},
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-    ]
-    pSItems++
-
-    options[pSItems] = [
-        {text: optionsData[4].Item_Long_Desc, style: 'textotabla'},
-        {text: "N/A", style: 'textotabla',alignment: 'center'},
-        {text: "N/A", style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[4].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[5].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "N/A", style: 'textotabla', alignment: 'center'},
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-    ]
-    pSItems++
-
-    options[pSItems] = [
-        {text: optionsData[6].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[6].Price), style: 'textotabla',alignment: 'center'},
+        {text: optionsData[7].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla',alignment: 'center'},
         {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[8].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[9].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[10].Price), style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[11].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[12].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla', alignment: 'center'}, 
     ]
     pSItems++
 
     options[pSItems] = [
-        {text: optionsData[13].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[13].Price), style: 'textotabla',alignment: 'center'},
+        {text: optionsData[14].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla',alignment: 'center'},
         {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[15].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[16].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[17].Price), style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[18].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[19].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla', alignment: 'center'}, 
     ]
     pSItems++
 
     options[pSItems] = [
-        {text: optionsData[20].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[20].Price), style: 'textotabla',alignment: 'center'},
+        {text: optionsData[21].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla',alignment: 'center'},
         {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[22].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[23].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "N/A", style: 'textotabla', alignment: 'center'},
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
-        {text: "N/A", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla', alignment: 'center'}, 
+    ]
+    pSItems++
+
+    options[pSItems] = [
+        {text: optionsData[28].Item_Long_Desc, style: 'textotabla'},
+        {text: "$0", style: 'textotabla',alignment: 'center'},
+        {text: "$0", style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[28].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[29].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$0", style: 'textotabla', alignment: 'center'},
+        {text: "$0", style: 'textotabla', alignment: 'center'}, 
+        {text: "$0", style: 'textotabla', alignment: 'center'}, 
+    ]
+    pSItems++
+
+    options[pSItems] = [
+        {text: optionsData[30].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla',alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla', alignment: 'center'}, 
+    ]
+    pSItems++
+
+    options[pSItems] = [
+        {text: optionsData[37].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla',alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla', alignment: 'center'}, 
+    ]
+    pSItems++
+
+    options[pSItems] = [
+        {text: optionsData[44].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[44].Price), style: 'textotabla',alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[44].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[44].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[44].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$0", style: 'textotabla', alignment: 'center'},
+        {text: "$0", style: 'textotabla', alignment: 'center'}, 
+        {text: "$0", style: 'textotabla', alignment: 'center'}, 
     ]
     pSItems++
     
      /*TERMINA CICLO*/
 
-    options[pSItems] = [
+    /*options[pSItems] = [
         {text: "LIST PRICE", style: 'textotablacolor', fillColor: '#546ce4'},
-        {text: "$1,056.64", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-        {text: "$1,056.64", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-        {text: "$1,300", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-        {text: "$1,300", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-        {text: "$878.8", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-        {text: "$878.8", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-        {text: "$878.8", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-    ]
+        {text: "$1,082", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+        {text: "$1,082", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+        {text: "$1,332", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+        {text: "$1,332", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+        {text: "$899", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+        {text: "$899", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+        {text: "$899", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+    ]*/
 
     var accesories = []
     pSItems = 0

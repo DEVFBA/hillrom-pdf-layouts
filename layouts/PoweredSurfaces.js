@@ -240,6 +240,8 @@ async function getPoweredSurfaces()
             }
         },
         "\n",
+        {text: "*Only compatible with Hill-Rom 900 Accella. Beds with a reference starting with CS900B41XXXXX", style: "textotabla"},
+        "\n",
         {
             columns: [
                 [

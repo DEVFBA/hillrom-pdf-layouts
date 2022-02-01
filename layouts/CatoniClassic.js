@@ -38,7 +38,7 @@ async function getCatoni()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    var i=0;
+   /*var i=0;
     var hingeFlag = false
     while(hingeFlag === false)
     {
@@ -148,7 +148,40 @@ async function getCatoni()
             hingeFlag = true
         }
         i++
-    }   
+    }   */
+
+    options[pSItems] = [
+        {text: hingeData[0].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+        {text: hingeData[0].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[0].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[1].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[2].Price), style: 'textotablacatoni', alignment: 'center'},
+        {text: "-", style: 'textotablacatoni', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: hingeData[3].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+        {text: hingeData[3].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[3].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[4].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[5].Price), style: 'textotablacatoni', alignment: 'center'},
+        {text: "-", style: 'textotablacatoni', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: hingeData[6].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+        {text: hingeData[6].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[6].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[7].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[8].Price), style: 'textotablacatoni', alignment: 'center'},
+        {text: "-", style: 'textotablacatoni', alignment: 'center'},  
+    ]
+
+    pSItems++
     /*TERMINA CICLO*/
     
     options[pSItems] = [
@@ -163,7 +196,7 @@ async function getCatoni()
     pSItems ++
 
     /*ESTO VA EN UN CICLO*/
-    var i=0;
+    /*var i=0;
     var plasticDrawerFlag = false
     while(plasticDrawerFlag === false)
     {
@@ -273,7 +306,29 @@ async function getCatoni()
             plasticDrawerFlag = true
         }
         i++
-    }   
+    }  */
+    
+    options[pSItems] = [
+        {text: plasticDrawerData[0].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+        {text: plasticDrawerData[0].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[0].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[1].Price), style: 'textotablacatoni', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[2].Price), style: 'textotablacatoni', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: plasticDrawerData[3].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+        {text: plasticDrawerData[3].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[3].Price), style: 'textotablacatoni', alignment: 'center'},  
+    ]
+
+    pSItems++
     /*TERMINA CICLO*/
 
     options[pSItems] = [
@@ -288,7 +343,7 @@ async function getCatoni()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    var i=0;
+    /*var i=0;
     var lockableDrawerFlag= false
     while(lockableDrawerFlag === false)
     {
@@ -398,7 +453,29 @@ async function getCatoni()
             lockableDrawerFlag = true
         }
         i++
-    }   
+    }   */
+
+    options[pSItems] = [
+        {text: lockableDrawerData[0].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+        {text: lockableDrawerData[0].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(lockableDrawerData[0].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(lockableDrawerData[1].Price), style: 'textotablacatoni', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(lockableDrawerData[2].Price), style: 'textotablacatoni', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: lockableDrawerData[3].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+        {text: lockableDrawerData[3].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(lockableDrawerData[3].Price), style: 'textotablacatoni', alignment: 'center'},  
+    ]
+
+    pSItems++
     /*TERMINA CICLO*/
 
     options[pSItems] = [
@@ -789,7 +866,7 @@ async function getCatoni()
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    var i=0;
+    /*var i=0;
     var additionalOptionsFlag= false
     while(additionalOptionsFlag === false)
     {
@@ -899,7 +976,73 @@ async function getCatoni()
             additionalOptionsFlag = true
         }
         i++
-    }   
+    } */
+    
+    options[pSItems] = [
+        {text: additionalOptionsData[0].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+        {text: additionalOptionsData[0].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[0].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[1].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[2].Price), style: 'textotablacatoni', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[3].Price), style: 'textotablacatoni', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: additionalOptionsData[4].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+        {text: additionalOptionsData[4].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[4].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[5].Price), style: 'textotablacatoni', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: additionalOptionsData[6].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+        {text: additionalOptionsData[6].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[6].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[7].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[8].Price), style: 'textotablacatoni', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[9].Price), style: 'textotablacatoni', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: additionalOptionsData[10].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+        {text: additionalOptionsData[10].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[10].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[11].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[12].Price), style: 'textotablacatoni', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[13].Price), style: 'textotablacatoni', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: additionalOptionsData[14].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+        {text: additionalOptionsData[14].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[14].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[15].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[16].Price), style: 'textotablacatoni', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[17].Price), style: 'textotablacatoni', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: additionalOptionsData[18].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+        {text: additionalOptionsData[18].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[18].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[19].Price), style: 'textotablacatoni', alignment: 'center'},
+        {text: "-", style: 'textotablacatoni', alignment: 'center'},  
+    ]
+
+    pSItems++
     /*TERMINA CICLO*/
 
     options[pSItems] = [
@@ -915,7 +1058,7 @@ async function getCatoni()
 
     /*ESTO VA EN UN CICLO*/
     /*ESTO VA EN UN CICLO*/
-    var i=0;
+    /*var i=0;
     var coloursFlag= false
     while(coloursFlag === false)
     {
@@ -1025,8 +1168,29 @@ async function getCatoni()
             coloursFlag = true
         }
         i++
-    }   
-    /*TERMINA CICLO*/
+    }*/
+    
+    options[pSItems] = [
+        {text: coloursContrastData[0].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+        {text: coloursContrastData[0].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[0].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[1].Price), style: 'textotablacatoni', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[2].Price), style: 'textotablacatoni', alignment: 'center'},  
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: coloursContrastData[3].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+        {text: coloursContrastData[3].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[3].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[4].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[5].Price), style: 'textotablacatoni', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[6].Price), style: 'textotablacatoni', alignment: 'center'},  
+    ]
+
+    pSItems++
     /*TERMINA CICLO*/
 
     options[pSItems] = [
