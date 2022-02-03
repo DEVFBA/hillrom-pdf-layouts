@@ -169,6 +169,8 @@ async function getFreespanStraightRail()
 
     var freespanStraightRail = [
         "\n",
+        "\n",
+        "\n",
         { text: 'FREESTANDING LIFT SYSTEM', style: 'header' },
         "\n",
         {

@@ -36,6 +36,8 @@ async function getLiftingAccesories()
     var accesories = []
     var pSItems = 0
 
+    console.log(salida27)
+
     /*ESTO VA EN UN CICLO*/
     for(var i=0; i<salida1.length; i++)
     {
@@ -1290,6 +1292,56 @@ async function getLiftingAccesories()
     /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
+    for(var i=0; i<salida27.length; i++)
+    {
+        if(i === 0 && salida27.length === 1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, true], text: salida27[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida27[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LiftingAccesories28.png", width: 30, height: 30, alignment: 'center', rowSpan: salida27.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida27[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, false], text: salida27[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida27[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/LiftingAccesories28.png", width: 30, height: 30, alignment: 'center', rowSpan: salida27.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida27[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida27.length-1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: salida27[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida27[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida27[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: salida27[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida27[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida27[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
+    /*TERMINA CICLO*/
+
+    /*ESTO VA EN UN CICLO*/
     for(var i=0; i<salida26.length; i++)
     {
         if(i === 0 && salida26.length === 1)
@@ -1297,7 +1349,7 @@ async function getLiftingAccesories()
             accesories2[pSItems] =[
                 {border: [true, true, true, true], text: salida26[i].Part, style: 'textotabla'},
                 {border: [true, true, true, true], text: salida26[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/LiftingAccesories28.png", width: 30, height: 30, alignment: 'center', rowSpan: salida26.length},
+                {border: [true, true, true, true], image: "images/LiftingAccesories29.png", width: 30, height: 30, alignment: 'center', rowSpan: salida26.length},
                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida26[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1308,7 +1360,7 @@ async function getLiftingAccesories()
             accesories2[pSItems] =[
                 {border: [true, true, true, false], text: salida26[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida26[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/LiftingAccesories28.png", width: 30, height: 30, alignment: 'center', rowSpan: salida26.length},
+                {border: [true, true, true, true], image: "images/LiftingAccesories29.png", width: 30, height: 30, alignment: 'center', rowSpan: salida26.length},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida26[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1343,6 +1395,8 @@ async function getLiftingAccesories()
     fecha.toLocaleDateString()
 
     var liftingAccesories = [
+        "\n",
+        "\n",
         "\n",
         { text: 'LIFTING ACCESSORIES', style: 'header' },
         "\n",
@@ -1424,6 +1478,8 @@ async function getLiftingAccesories()
             }
         },
         {text: '', pageBreak: 'after'  },
+        "\n",
+        "\n",
         "\n",
         {
             table: {

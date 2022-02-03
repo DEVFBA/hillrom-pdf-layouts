@@ -422,6 +422,8 @@ async function getLikoStretchers()
 
     var likoStretchers = [
         "\n",
+        "\n",
+        "\n",
         { text: 'LIKO STRETCHERS', style: 'header' },
         "\n",
         {

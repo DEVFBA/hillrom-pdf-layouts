@@ -153,9 +153,9 @@ async function getCatoni()
     options[pSItems] = [
         {text: hingeData[0].Id_Item, style: 'textotablacatoni', alignment: 'center'},
         {text: hingeData[0].Item_Long_Desc, style: 'textotablacatoni'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[0].Price), style: 'textotablacatoni', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[1].Price), style: 'textotablacatoni', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[2].Price), style: 'textotablacatoni', alignment: 'center'},
+        {text: "●", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "●", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "●", style: 'textotablacatoni', alignment: 'center'},
         {text: "-", style: 'textotablacatoni', alignment: 'center'},  
     ]
 
@@ -1368,10 +1368,10 @@ async function getCatoni()
                     ],
                     [
                         {text: 'LIST PRICE', style: 'textotablacolorcatoni', fillColor: '#546ce4'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'}, 
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'}, 
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'}, 
                     ],
                 ]
             },

@@ -321,6 +321,8 @@ async function getFreeSpirit()
 
     var freeSpirit = [
         "\n",
+        "\n",
+        "\n",
         { text: 'CURTAIN SYSTEM', style: 'header' },
         "\n",
         {

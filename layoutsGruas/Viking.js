@@ -200,6 +200,8 @@ async function getViking()
 
     var viking = [
         "\n",
+        "\n",
+        "\n",
         {
             table: {
                 widths: ["*"],

@@ -212,20 +212,12 @@ async function getLikoFlexostretch()
         
     }
     /*TERMINA CICLO*/
-
-    accesories2[pSItems] =[
-        {border: [true, true, true, true], text: 'Some of the slings may be special made in other material/design. Contact Liko for more information and price. All of Liko’s accessories and slings are approved for a maximum load of 200 kg (440 lbs) if nothing else is described.', style: 'textotabla', colSpan: 4, fillColor: '#dbdbdb',  alignment: 'center'},
-        {border: [true, true, true, true], text: ""},
-        {border: [true, true, true, true], text: ""},
-        {border: [true, true, true, true], text: ""},
-    ]
-
-    pSItems++
-
     const fecha = new Date();
     fecha.toLocaleDateString()
 
     var likoFlexostretch = [
+        "\n",
+        "\n",
         "\n",
         {
             table: {

@@ -160,7 +160,7 @@ async function getReposheet()
             accesories4[pSItems] =[
                 {border: [true, true, true, true], text: salida4[i].Part, style: 'textotabla'},
                 {border: [true, true, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Reposheet6.png", width: 80, height: 30, alignment: 'center', rowSpan: salida4.length},
+                {border: [true, true, true, true], image: "images/Reposheet9.png", width: 80, height: 40, alignment: 'center', rowSpan: salida4.length},
                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -171,7 +171,7 @@ async function getReposheet()
             accesories4[pSItems] =[
                 {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Reposheet6.png", width: 80, height: 30, alignment: 'center', rowSpan: salida4.length},
+                {border: [true, true, true, true], image: "images/Reposheet9.png", width: 80, height: 40, alignment: 'center', rowSpan: salida4.length},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -210,7 +210,7 @@ async function getReposheet()
             accesories4[pSItems] =[
                 {border: [true, true, true, true], text: salida5[i].Part, style: 'textotabla'},
                 {border: [true, true, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Reposheet7.png", width: 80, height: 30, alignment: 'center', rowSpan: salida5.length},
+                {border: [true, true, true, true], image: "images/Reposheet8.png", width: 80, height: 30, alignment: 'center', rowSpan: salida5.length},
                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -221,7 +221,7 @@ async function getReposheet()
             accesories4[pSItems] =[
                 {border: [true, true, true, false], text: salida5[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Reposheet7.png", width: 80, height: 30, alignment: 'center', rowSpan: salida5.length},
+                {border: [true, true, true, true], image: "images/Reposheet8.png", width: 80, height: 30, alignment: 'center', rowSpan: salida5.length},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -252,19 +252,12 @@ async function getReposheet()
     }
     /*TERMINA CICLO*/
 
-    accesories4[pSItems] =[
-        {border: [true, true, true, true], text: 'Some of the slings may be special made in other material/design. Contact Liko for more information and price. All of Liko’s accessories and slings are approved for a maximum load of 200 kg (440 lbs) if nothing else is described.', style: 'textotabla', colSpan: 4, fillColor: '#dbdbdb',  alignment: 'center'},
-        {border: [true, true, true, true], text: ""},
-        {border: [true, true, true, true], text: ""},
-        {border: [true, true, true, true], text: ""},
-    ]
-
-    pSItems++
-
     const fecha = new Date();
     fecha.toLocaleDateString()
 
     var reposheet = [
+        "\n",
+        "\n",
         "\n",
         { text: 'REPOSHEET - MULTISTRAP', style: 'header' },
         "\n",

@@ -16,7 +16,7 @@ async function getBedsideCabinets()
     pSItems++
 
     /*EMPIEZA CICLO*/
-    var i=0;
+    /*var i=0;
     var optionsFlag = false
     while(optionsFlag === false)
     {
@@ -26,13 +26,13 @@ async function getBedsideCabinets()
             j=0
         }
         else {
-            j = i*2
+            j = i*1
         }
         var precios = []
         var preciosCount = 0
         var countC=0
         var printCaracter = []
-        while(j< optionsData.length && countC<2)
+        while(j< optionsData.length && countC<1)
         {
            precios[preciosCount] = optionsData[j].Price
            printCaracter[preciosCount] = optionsData[j].Print_Character
@@ -78,7 +78,6 @@ async function getBedsideCabinets()
             precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
         }
 
-        
         options[pSItems] = [
             {text: data.Item_Long_Desc, style: 'textotabla'},
             {text: precio1, style: 'textotabla', alignment: 'center'}, 
@@ -94,8 +93,39 @@ async function getBedsideCabinets()
             optionsFlag = true
         }
         i++
-    }   
-    /*TERMINA CICLO*/
+    } */
+    
+    options[pSItems] = [
+        {text: optionsData[0].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: optionsData[1].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[1].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: optionsData[2].Item_Long_Desc, style: 'textotabla'},
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[2].Price), style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: optionsData[3].Item_Long_Desc, style: 'textotabla'},
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[3].Price), style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
     /*TERMINA CICLO*/
 
     const fecha = new Date();
@@ -147,11 +177,6 @@ async function getBedsideCabinets()
                                 {border: [false, false, false, false], text: ''},
                                 { image: "images/BedsideCabinets1.png", width: 70, height: 70, alignment: 'center'},
                                 { image: "images/BedsideCabinets2.png", width: 70, height: 70, alignment: 'center'},
-                            ],
-                            [
-                                {text: '35" (width) Sleeper Chair', style: 'textotabla'},
-                                {text: '-', style: 'textotabla', alignment: 'center'},
-                                {text: '●', style: 'textotabla', alignment: 'center'}, 
                             ],
                             [
                                 {text: '3 Drawers', style: 'textotabla'},

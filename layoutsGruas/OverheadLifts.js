@@ -42,6 +42,7 @@ async function getOverheadLifts()
     const salida37 = res[36]
     const salida38 = res[37]
     const salida39 = res[38]
+    const salida40 = res[39]
 
     var accesories = []
     var pSItems = 0
@@ -66,10 +67,19 @@ async function getOverheadLifts()
         if(i === 0 && salida1.length === 1)
         {
             accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida1[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral1.png", width: 60, height: 40, alignment: 'center', rowSpan: salida1.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida1[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral1.png", width: 60, height: 40, alignment: 'center', rowSpan: salida1.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida1[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -79,7 +89,7 @@ async function getOverheadLifts()
             accesories[pSItems] =[
                 {border: [true, true, true, false], text: salida1[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral1.png", width: 60, height: 40, alignment: 'center', rowSpan: salida1.length},
+                {border: [true, true, true, false], image: "images/Likoral1.png", width: 60, height: 40, alignment: 'center', rowSpan: salida1.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -88,10 +98,19 @@ async function getOverheadLifts()
         else if(i === salida1.length-1)
         {
             accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida1[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida1[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida1[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -116,10 +135,19 @@ async function getOverheadLifts()
         if(i === 0 && salida2.length === 1)
         {
             accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida2[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral2.png", width: 55, height: 55, alignment: 'center', rowSpan: salida2.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida2[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral2.png", width: 55, height: 55, alignment: 'center', rowSpan: salida2.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida2[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -129,7 +157,7 @@ async function getOverheadLifts()
             accesories[pSItems] =[
                 {border: [true, true, true, false], text: salida2[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral2.png", width: 55, height: 55, alignment: 'center', rowSpan: salida2.length},
+                {border: [true, true, true, false], image: "images/Likoral2.png", width: 55, height: 55, alignment: 'center', rowSpan: salida2.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -138,10 +166,19 @@ async function getOverheadLifts()
         else if(i === salida2.length-1)
         {
             accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida2[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida2[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida2[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -166,10 +203,19 @@ async function getOverheadLifts()
         if(i === 0 && salida3.length === 1)
         {
             accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida3[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral3.png", width: 55, height: 55, alignment: 'center', rowSpan: salida3.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida3[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral3.png", width: 55, height: 55, alignment: 'center', rowSpan: salida3.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida3[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -179,7 +225,7 @@ async function getOverheadLifts()
             accesories[pSItems] =[
                 {border: [true, true, true, false], text: salida3[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral3.png", width: 55, height: 55, alignment: 'center', rowSpan: salida3.length},
+                {border: [true, true, true, false], image: "images/Likoral3.png", width: 55, height: 55, alignment: 'center', rowSpan: salida3.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -188,10 +234,19 @@ async function getOverheadLifts()
         else if(i === salida3.length-1)
         {
             accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida3[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida3[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida3[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -216,10 +271,19 @@ async function getOverheadLifts()
         if(i === 0 && salida4.length === 1)
         {
             accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida4[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral4.png", width: 55, height: 55, alignment: 'center', rowSpan: salida4.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/Likoral4.png", width: 55, height: 55, alignment: 'center', rowSpan: salida4.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida4[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -229,7 +293,7 @@ async function getOverheadLifts()
             accesories[pSItems] =[
                 {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral4.png", width: 55, height: 55, alignment: 'center', rowSpan: salida4.length},
+                {border: [true, true, true, true], image: "images/Likoral4.png", width: 55, height: 55, alignment: 'center', rowSpan: salida4.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -238,10 +302,19 @@ async function getOverheadLifts()
         else if(i === salida4.length-1)
         {
             accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida4[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida4[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -287,10 +360,19 @@ async function getOverheadLifts()
         if(i === 0 && salida5.length === 1)
         {
             accesories2[pSItems] =[
-                {border: [true, true, true, true], text: salida5[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida5[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, true, true, true], image: "images/Likoral5.png", width: 40, height: 90, alignment: 'center', rowSpan: salida5.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida5[i].Item_Long_Desc, style: 'textotabla'},
+                {border: [true, true, true, false], image: "images/Likoral5.png", width: 40, height: 90, alignment: 'center', rowSpan: salida5.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida5[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -300,7 +382,7 @@ async function getOverheadLifts()
             accesories2[pSItems] =[
                 {border: [true, true, true, false], text: salida5[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida5[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, true, true, true], image: "images/Likoral5.png", width: 40, height: 90, alignment: 'center', rowSpan: salida5.length},
+                {border: [true, true, true, false], image: "images/Likoral5.png", width: 40, height: 90, alignment: 'center', rowSpan: salida5.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -309,10 +391,19 @@ async function getOverheadLifts()
         else if(i === salida5.length-1)
         {
             accesories2[pSItems] =[
-                {border: [true, false, true, true], text: salida5[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida5[i].Item_Long_Desc, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida5[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida5[i].Item_Long_Desc, style: 'textotabla'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories2[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida5[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -346,10 +437,19 @@ async function getOverheadLifts()
         if(i === 0 && salida6.length === 1)
         {
             accesories2[pSItems] =[
-                {border: [true, true, true, true], text: salida6[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida6[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, true, true, true], image: "images/Likoral6.png", width: 40, height: 90, alignment: 'center', rowSpan: salida6.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida6[i].Item_Long_Desc, style: 'textotabla'},
+                {border: [true, true, true, false], image: "images/Likoral6.png", width: 40, height: 90, alignment: 'center', rowSpan: salida6.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida6[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -359,7 +459,7 @@ async function getOverheadLifts()
             accesories2[pSItems] =[
                 {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida6[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, true, true, true], image: "images/Likoral6.png", width: 40, height: 90, alignment: 'center', rowSpan: salida6.length},
+                {border: [true, true, true, false], image: "images/Likoral6.png", width: 40, height: 90, alignment: 'center', rowSpan: salida6.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -368,10 +468,19 @@ async function getOverheadLifts()
         else if(i === salida6.length-1)
         {
             accesories2[pSItems] =[
-                {border: [true, false, true, true], text: salida6[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida6[i].Item_Long_Desc, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida6[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida6[i].Item_Long_Desc, style: 'textotabla'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories2[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida6[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -396,10 +505,19 @@ async function getOverheadLifts()
         if(i === 0 && salida7.length === 1)
         {
             accesories2[pSItems] =[
-                {border: [true, true, true, true], text: salida7[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral7.png", width: 80, height: 20, alignment: 'center', rowSpan: salida7.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral7.png", width: 80, height: 20, alignment: 'center', rowSpan: salida7.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida7[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -409,7 +527,7 @@ async function getOverheadLifts()
             accesories2[pSItems] =[
                 {border: [true, true, true, false], text: salida7[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral7.png", width: 80, height: 20, alignment: 'center', rowSpan: salida7.length},
+                {border: [true, true, true, false], image: "images/Likoral7.png", width: 80, height: 20, alignment: 'center', rowSpan: salida7.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -418,10 +536,19 @@ async function getOverheadLifts()
         else if(i === salida7.length-1)
         {
             accesories2[pSItems] =[
-                {border: [true, false, true, true], text: salida7[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida7[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories2[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida7[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -444,10 +571,19 @@ async function getOverheadLifts()
         if(i === 0 && salida8.length === 1)
         {
             accesories2[pSItems] =[
-                {border: [true, true, true, true], text: salida8[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral8.png", width: 80, height: 20, alignment: 'center', rowSpan: salida8.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida8[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral8.png", width: 80, height: 20, alignment: 'center', rowSpan: salida8.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida8[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -457,7 +593,7 @@ async function getOverheadLifts()
             accesories2[pSItems] =[
                 {border: [true, true, true, false], text: salida8[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral8.png", width: 80, height: 20, alignment: 'center', rowSpan: salida8.length},
+                {border: [true, true, true, false], image: "images/Likoral8.png", width: 80, height: 20, alignment: 'center', rowSpan: salida8.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -466,10 +602,19 @@ async function getOverheadLifts()
         else if(i === salida8.length-1)
         {
             accesories2[pSItems] =[
-                {border: [true, false, true, true], text: salida8[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida8[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories2[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida8[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -492,10 +637,19 @@ async function getOverheadLifts()
         if(i === 0 && salida9.length === 1)
         {
             accesories2[pSItems] =[
-                {border: [true, true, true, true], text: salida9[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral9.png", width: 80, height: 20, alignment: 'center', rowSpan: salida9.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida9[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/Likoral9.png", width: 80, height: 20, alignment: 'center', rowSpan: salida9.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida9[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -505,7 +659,7 @@ async function getOverheadLifts()
             accesories2[pSItems] =[
                 {border: [true, true, true, false], text: salida9[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral9.png", width: 80, height: 20, alignment: 'center', rowSpan: salida9.length},
+                {border: [true, true, true, true], image: "images/Likoral9.png", width: 80, height: 20, alignment: 'center', rowSpan: salida9.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -514,10 +668,19 @@ async function getOverheadLifts()
         else if(i === salida9.length-1)
         {
             accesories2[pSItems] =[
-                {border: [true, false, true, true], text: salida9[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida9[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories2[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida9[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -535,25 +698,37 @@ async function getOverheadLifts()
         
     }
 
+    var accesories3 = []
+    pSItems = 0;
+
     for(var i=0; i<salida10.length; i++)
     {
         if(i === 0 && salida10.length === 1)
         {
-            accesories2[pSItems] =[
-                {border: [true, true, true, true], text: salida10[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral10.png", width: 80, height: 20, alignment: 'center', rowSpan: salida10.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+            accesories3[pSItems] =[
+                {border: [true, true, true, false], text: salida10[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral10.png", width: 80, height: 20, alignment: 'center', rowSpan: salida10.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories3[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida10[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
         }
         else if(i === 0)
         {
-            accesories2[pSItems] =[
+            accesories3[pSItems] =[
                 {border: [true, true, true, false], text: salida10[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral10.png", width: 80, height: 20, alignment: 'center', rowSpan: salida10.length},
+                {border: [true, true, true, false], image: "images/Likoral10.png", width: 80, height: 20, alignment: 'center', rowSpan: salida10.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -561,17 +736,26 @@ async function getOverheadLifts()
         }
         else if(i === salida10.length-1)
         {
-            accesories2[pSItems] =[
-                {border: [true, false, true, true], text: salida10[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+            accesories3[pSItems] =[
+                {border: [true, false, true, false], text: salida10[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories3[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida10[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
         }
         else {
-            accesories2[pSItems] =[
+            accesories3[pSItems] =[
                 {border: [true, false, true, false], text: salida10[i].Part, style: 'textotabla'},
                 {border: [true, false, true, false], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
                 {border: [true, false, true, false], text: ""},
@@ -587,21 +771,30 @@ async function getOverheadLifts()
     {
         if(i === 0 && salida11.length === 1)
         {
-            accesories2[pSItems] =[
-                {border: [true, true, true, true], text: salida11[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral11.png", width: 30, height: 30, alignment: 'center', rowSpan: salida11.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+            accesories3[pSItems] =[
+                {border: [true, true, true, false], text: salida11[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral11.png", width: 30, height: 30, alignment: 'center', rowSpan: salida11.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories3[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida11[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
         }
         else if(i === 0)
         {
-            accesories2[pSItems] =[
+            accesories3[pSItems] =[
                 {border: [true, true, true, false], text: salida11[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral11.png", width: 30, height: 30, alignment: 'center', rowSpan: salida11.length},
+                {border: [true, true, true, false], image: "images/Likoral11.png", width: 30, height: 30, alignment: 'center', rowSpan: salida11.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -609,17 +802,26 @@ async function getOverheadLifts()
         }
         else if(i === salida11.length-1)
         {
-            accesories2[pSItems] =[
-                {border: [true, false, true, true], text: salida11[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+            accesories3[pSItems] =[
+                {border: [true, false, true, false], text: salida11[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories3[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida11[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
         }
         else {
-            accesories2[pSItems] =[
+            accesories3[pSItems] =[
                 {border: [true, false, true, false], text: salida11[i].Part, style: 'textotabla'},
                 {border: [true, false, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
                 {border: [true, false, true, false], text: ""},
@@ -635,21 +837,30 @@ async function getOverheadLifts()
     {
         if(i === 0 && salida12.length === 1)
         {
-            accesories2[pSItems] =[
-                {border: [true, true, true, true], text: salida12[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida12[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral12.png", width: 40, height: 30, alignment: 'center', rowSpan: salida12.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
+            accesories3[pSItems] =[
+                {border: [true, true, true, false], text: salida12[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida12[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral12.png", width: 40, height: 30, alignment: 'center', rowSpan: salida12.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories3[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida12[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
         }
         else if(i === 0)
         {
-            accesories2[pSItems] =[
+            accesories3[pSItems] =[
                 {border: [true, true, true, false], text: salida12[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida12[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral12.png", width: 40, height: 30, alignment: 'center', rowSpan: salida12.length},
+                {border: [true, true, true, false], image: "images/Likoral12.png", width: 40, height: 30, alignment: 'center', rowSpan: salida12.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -657,17 +868,26 @@ async function getOverheadLifts()
         }
         else if(i === salida12.length-1)
         {
-            accesories2[pSItems] =[
-                {border: [true, false, true, true], text: salida12[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida12[i].Item_Long_Desc, style: 'textotablaboldblack'},
+            accesories3[pSItems] =[
+                {border: [true, false, true, false], text: salida12[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida12[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories3[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida12[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
         }
         else {
-            accesories2[pSItems] =[
+            accesories3[pSItems] =[
                 {border: [true, false, true, false], text: salida12[i].Part, style: 'textotabla'},
                 {border: [true, false, true, false], text: salida12[i].Item_Long_Desc, style: 'textotablaboldblack'},
                 {border: [true, false, true, false], text: ""},
@@ -680,8 +900,7 @@ async function getOverheadLifts()
     }
     /*TERMINA CICLO*/
 
-    var accesories3 = []
-    pSItems = 0;
+    
 
     /*ESTO VA EN UN CICLO*/
     for(var i=0; i<salida13.length; i++)
@@ -689,10 +908,19 @@ async function getOverheadLifts()
         if(i === 0 && salida13.length === 1)
         {
             accesories3[pSItems] =[
-                {border: [true, true, true, true], text: salida13[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida13[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral13.png", width: 70, height: 40, alignment: 'center', rowSpan: salida13.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida13[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida13[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral13.png", width: 70, height: 40, alignment: 'center', rowSpan: salida13.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories3[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida13[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -702,7 +930,7 @@ async function getOverheadLifts()
             accesories3[pSItems] =[
                 {border: [true, true, true, false], text: salida13[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida13[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral13.png", width: 70, height: 40, alignment: 'center', rowSpan: salida13.length},
+                {border: [true, true, true, false], image: "images/Likoral13.png", width: 70, height: 40, alignment: 'center', rowSpan: salida13.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -711,10 +939,19 @@ async function getOverheadLifts()
         else if(i === salida13.length-1)
         {
             accesories3[pSItems] =[
-                {border: [true, false, true, true], text: salida13[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida13[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida13[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida13[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories3[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida13[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -737,10 +974,19 @@ async function getOverheadLifts()
         if(i === 0 && salida14.length === 1)
         {
             accesories3[pSItems] =[
-                {border: [true, true, true, true], text: salida14[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida14[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral14.png", width: 80, height: 30, alignment: 'center', rowSpan: salida14.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida14[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida14[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida14[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral14.png", width: 80, height: 30, alignment: 'center', rowSpan: salida14.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida14[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories3[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida14[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -750,7 +996,7 @@ async function getOverheadLifts()
             accesories3[pSItems] =[
                 {border: [true, true, true, false], text: salida14[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida14[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral14.png", width: 80, height: 30, alignment: 'center', rowSpan: salida14.length},
+                {border: [true, true, true, false], image: "images/Likoral14.png", width: 80, height: 30, alignment: 'center', rowSpan: salida14.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida14[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -759,10 +1005,19 @@ async function getOverheadLifts()
         else if(i === salida14.length-1)
         {
             accesories3[pSItems] =[
-                {border: [true, false, true, true], text: salida14[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida14[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida14[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida14[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida14[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories3[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida14[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida14[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -785,10 +1040,19 @@ async function getOverheadLifts()
         if(i === 0 && salida15.length === 1)
         {
             accesories3[pSItems] =[
-                {border: [true, true, true, true], text: salida15[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida15[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral15.png", width: 80, height: 20, alignment: 'center', rowSpan: salida15.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida15[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida15[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida15[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral15.png", width: 80, height: 20, alignment: 'center', rowSpan: salida15.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida15[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories3[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida15[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -798,7 +1062,7 @@ async function getOverheadLifts()
             accesories3[pSItems] =[
                 {border: [true, true, true, false], text: salida15[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida15[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral15.png", width: 80, height: 20, alignment: 'center', rowSpan: salida15.length},
+                {border: [true, true, true, false], image: "images/Likoral15.png", width: 80, height: 20, alignment: 'center', rowSpan: salida15.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida15[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -807,10 +1071,19 @@ async function getOverheadLifts()
         else if(i === salida15.length-1)
         {
             accesories3[pSItems] =[
-                {border: [true, false, true, true], text: salida15[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida15[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida15[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida15[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida15[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories3[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida15[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida15[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -835,10 +1108,19 @@ async function getOverheadLifts()
         if(i === 0 && salida16.length === 1)
         {
             accesories3[pSItems] =[
-                {border: [true, true, true, true], text: salida16[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida16[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral16.png", width: 50, height: 55, alignment: 'center', rowSpan: salida16.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida16[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida16[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida16[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral16.png", width: 50, height: 55, alignment: 'center', rowSpan: salida16.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida16[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories3[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida16[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -848,7 +1130,7 @@ async function getOverheadLifts()
             accesories3[pSItems] =[
                 {border: [true, true, true, false], text: salida16[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida16[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral16.png", width: 50, height: 55, alignment: 'center', rowSpan: salida16.length},
+                {border: [true, true, true, false], image: "images/Likoral16.png", width: 50, height: 55, alignment: 'center', rowSpan: salida16.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida16[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -857,10 +1139,19 @@ async function getOverheadLifts()
         else if(i === salida16.length-1)
         {
             accesories3[pSItems] =[
-                {border: [true, false, true, true], text: salida16[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida16[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida16[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida16[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida16[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories3[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida16[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida16[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -885,10 +1176,19 @@ async function getOverheadLifts()
         if(i === 0 && salida17.length === 1)
         {
             accesories3[pSItems] =[
-                {border: [true, true, true, true], text: salida17[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida17[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral18.png", width: 30, height: 30, alignment: 'center', rowSpan: salida17.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida17[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida17[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida17[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral18.png", width: 30, height: 30, alignment: 'center', rowSpan: salida17.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida17[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories3[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida17[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -898,7 +1198,7 @@ async function getOverheadLifts()
             accesories3[pSItems] =[
                 {border: [true, true, true, false], text: salida17[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida17[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral18.png", width: 30, height: 30, alignment: 'center', rowSpan: salida17.length},
+                {border: [true, true, true, false], image: "images/Likoral18.png", width: 30, height: 30, alignment: 'center', rowSpan: salida17.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida17[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -907,10 +1207,19 @@ async function getOverheadLifts()
         else if(i === salida17.length-1)
         {
             accesories3[pSItems] =[
-                {border: [true, false, true, true], text: salida17[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida17[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida17[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida17[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida17[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories3[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida17[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida17[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -933,10 +1242,19 @@ async function getOverheadLifts()
         if(i === 0 && salida18.length === 1)
         {
             accesories3[pSItems] =[
-                {border: [true, true, true, true], text: salida18[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida18[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral19.png", width: 30, height: 30, alignment: 'center', rowSpan: salida18.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida18[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida18[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida18[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral19.png", width: 30, height: 30, alignment: 'center', rowSpan: salida18.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida18[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories3[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida18[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -946,7 +1264,7 @@ async function getOverheadLifts()
             accesories3[pSItems] =[
                 {border: [true, true, true, false], text: salida18[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida18[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral19.png", width: 30, height: 30, alignment: 'center', rowSpan: salida18.length},
+                {border: [true, true, true, true], image: "images/Likoral19.png", width: 30, height: 30, alignment: 'center', rowSpan: salida18.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida18[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -955,10 +1273,19 @@ async function getOverheadLifts()
         else if(i === salida18.length-1)
         {
             accesories3[pSItems] =[
-                {border: [true, false, true, true], text: salida18[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida18[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida18[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida18[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida18[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories3[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida18[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida18[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -986,10 +1313,19 @@ async function getOverheadLifts()
         if(i === 0 && salida19.length === 1)
         {
             accesories4[pSItems] =[
-                {border: [true, true, true, true], text: salida19[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida19[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral20.png", width: 30, height: 30, alignment: 'center', rowSpan: salida19.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida19[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida19[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida19[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral20.png", width: 30, height: 30, alignment: 'center', rowSpan: salida19.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida19[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida19[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -999,7 +1335,7 @@ async function getOverheadLifts()
             accesories4[pSItems] =[
                 {border: [true, true, true, false], text: salida19[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida19[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral20.png", width: 30, height: 30, alignment: 'center', rowSpan: salida19.length},
+                {border: [true, true, true, false], image: "images/Likoral20.png", width: 30, height: 30, alignment: 'center', rowSpan: salida19.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida19[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1008,10 +1344,19 @@ async function getOverheadLifts()
         else if(i === salida19.length-1)
         {
             accesories4[pSItems] =[
-                {border: [true, false, true, true], text: salida19[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida19[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida19[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida19[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida19[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida19[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida19[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1036,10 +1381,19 @@ async function getOverheadLifts()
         if(i === 0 && salida20.length === 1)
         {
             accesories4[pSItems] =[
-                {border: [true, true, true, true], text: salida20[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida20[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral21.png", width: 30, height: 30, alignment: 'center', rowSpan: salida20.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida20[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida20[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida20[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral21.png", width: 30, height: 30, alignment: 'center', rowSpan: salida20.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida20[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida20[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1049,7 +1403,7 @@ async function getOverheadLifts()
             accesories4[pSItems] =[
                 {border: [true, true, true, false], text: salida20[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida20[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral21.png", width: 30, height: 30, alignment: 'center', rowSpan: salida20.length},
+                {border: [true, true, true, false], image: "images/Likoral21.png", width: 30, height: 30, alignment: 'center', rowSpan: salida20.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida20[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1058,10 +1412,19 @@ async function getOverheadLifts()
         else if(i === salida20.length-1)
         {
             accesories4[pSItems] =[
-                {border: [true, false, true, true], text: salida20[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida20[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida20[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida20[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida20[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida20[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida20[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1086,10 +1449,19 @@ async function getOverheadLifts()
         if(i === 0 && salida21.length === 1)
         {
             accesories4[pSItems] =[
-                {border: [true, true, true, true], text: salida21[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida21[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral22.png", width: 40, height: 40, alignment: 'center', rowSpan: salida21.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida21[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida21[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida21[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral22.png", width: 40, height: 40, alignment: 'center', rowSpan: salida21.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida21[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida21[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1099,7 +1471,7 @@ async function getOverheadLifts()
             accesories4[pSItems] =[
                 {border: [true, true, true, false], text: salida21[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida21[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral22.png", width: 40, height: 40, alignment: 'center', rowSpan: salida21.length},
+                {border: [true, true, true, false], image: "images/Likoral22.png", width: 40, height: 40, alignment: 'center', rowSpan: salida21.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida21[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1108,10 +1480,19 @@ async function getOverheadLifts()
         else if(i === salida21.length-1)
         {
             accesories4[pSItems] =[
-                {border: [true, false, true, true], text: salida21[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida21[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida21[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida21[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida21[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida21[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida21[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1136,10 +1517,19 @@ async function getOverheadLifts()
         if(i === 0 && salida22.length === 1)
         {
             accesories4[pSItems] =[
-                {border: [true, true, true, true], text: salida22[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida22[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral23.png", width: 40, height: 40, alignment: 'center', rowSpan: salida22.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida22[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida22[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida22[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral23.png", width: 40, height: 40, alignment: 'center', rowSpan: salida22.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida22[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida22[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1149,7 +1539,7 @@ async function getOverheadLifts()
             accesories4[pSItems] =[
                 {border: [true, true, true, false], text: salida22[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida22[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral23.png", width: 40, height: 40, alignment: 'center', rowSpan: salida22.length},
+                {border: [true, true, true, false], image: "images/Likoral23.png", width: 40, height: 40, alignment: 'center', rowSpan: salida22.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida22[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1158,10 +1548,19 @@ async function getOverheadLifts()
         else if(i === salida22.length-1)
         {
             accesories4[pSItems] =[
-                {border: [true, false, true, true], text: salida22[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida22[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida22[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida22[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida22[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida22[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida22[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1184,10 +1583,19 @@ async function getOverheadLifts()
         if(i === 0 && salida23.length === 1)
         {
             accesories4[pSItems] =[
-                {border: [true, true, true, true], text: salida23[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida23[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral24.png", width: 30, height: 30, alignment: 'center', rowSpan: salida23.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida23[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida23[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida23[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral24.png", width: 30, height: 30, alignment: 'center', rowSpan: salida23.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida23[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida23[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1197,7 +1605,7 @@ async function getOverheadLifts()
             accesories4[pSItems] =[
                 {border: [true, true, true, false], text: salida23[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida23[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral24.png", width: 30, height: 30, alignment: 'center', rowSpan: salida23.length},
+                {border: [true, true, true, false], image: "images/Likoral24.png", width: 30, height: 30, alignment: 'center', rowSpan: salida23.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida23[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1206,10 +1614,19 @@ async function getOverheadLifts()
         else if(i === salida23.length-1)
         {
             accesories4[pSItems] =[
-                {border: [true, false, true, true], text: salida23[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida23[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida23[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida23[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida23[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida23[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida23[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1232,10 +1649,19 @@ async function getOverheadLifts()
         if(i === 0 && salida24.length === 1)
         {
             accesories4[pSItems] =[
-                {border: [true, true, true, true], text: salida24[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida24[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral25.png", width: 40, height: 30, alignment: 'center', rowSpan: salida24.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida24[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida24[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida24[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral25.png", width: 40, height: 30, alignment: 'center', rowSpan: salida24.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida24[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida24[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1245,7 +1671,7 @@ async function getOverheadLifts()
             accesories4[pSItems] =[
                 {border: [true, true, true, false], text: salida24[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida24[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral25.png", width: 40, height: 30, alignment: 'center', rowSpan: salida24.length},
+                {border: [true, true, true, false], image: "images/Likoral25.png", width: 40, height: 30, alignment: 'center', rowSpan: salida24.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida24[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1254,10 +1680,19 @@ async function getOverheadLifts()
         else if(i === salida24.length-1)
         {
             accesories4[pSItems] =[
-                {border: [true, false, true, true], text: salida24[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida24[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida24[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida24[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida24[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida24[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida24[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1275,15 +1710,157 @@ async function getOverheadLifts()
         
     }
 
+    for(var i=0; i<salida39.length; i++)
+    {
+        if(i === 0 && salida39.length === 1)
+        {
+            accesories4[pSItems] =[
+                {border: [true, true, true, false], text: salida39[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida39[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral26.png", width: 30, height: 30, alignment: 'center', rowSpan: salida39.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida39[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida39[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories4[pSItems] =[
+                {border: [true, true, true, false], text: salida39[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida39[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral26.png", width: 30, height: 30, alignment: 'center', rowSpan: salida39.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida39[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida39.length-1)
+        {
+            accesories4[pSItems] =[
+                {border: [true, false, true, false], text: salida39[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida39[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida39[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida39[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories4[pSItems] =[
+                {border: [true, false, true, false], text: salida39[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida39[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida39[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
+
+    for(var i=0; i<salida40.length; i++)
+    {
+        if(i === 0 && salida40.length === 1)
+        {
+            accesories4[pSItems] =[
+                {border: [true, true, true, false], text: salida40[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida40[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral27.png", width: 30, height: 30, alignment: 'center', rowSpan: salida40.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida40[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida40[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories4[pSItems] =[
+                {border: [true, true, true, false], text: salida40[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida40[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral26.png", width: 30, height: 30, alignment: 'center', rowSpan: salida39.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida40[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida40.length-1)
+        {
+            accesories4[pSItems] =[
+                {border: [true, false, true, false], text: salida40[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida40[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida40[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida40[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories4[pSItems] =[
+                {border: [true, false, true, false], text: salida40[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida40[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida40[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
+
+
     for(var i=0; i<salida25.length; i++)
     {
         if(i === 0 && salida25.length === 1)
         {
             accesories4[pSItems] =[
-                {border: [true, true, true, true], text: salida25[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida25[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral28.png", width: 30, height: 50, alignment: 'center', rowSpan: salida25.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida25[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida25[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida25[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral28.png", width: 30, height: 50, alignment: 'center', rowSpan: salida25.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida25[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida25[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1293,7 +1870,7 @@ async function getOverheadLifts()
             accesories4[pSItems] =[
                 {border: [true, true, true, false], text: salida25[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida25[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral28.png", width: 30, height: 50, alignment: 'center', rowSpan: salida25.length},
+                {border: [true, true, true, false], image: "images/Likoral28.png", width: 30, height: 50, alignment: 'center', rowSpan: salida25.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida25[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1302,10 +1879,19 @@ async function getOverheadLifts()
         else if(i === salida25.length-1)
         {
             accesories4[pSItems] =[
-                {border: [true, false, true, true], text: salida25[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida25[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida25[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida25[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida25[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida25[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida25[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1328,10 +1914,19 @@ async function getOverheadLifts()
         if(i === 0 && salida26.length === 1)
         {
             accesories4[pSItems] =[
-                {border: [true, true, true, true], text: salida26[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida26[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral29.png", width: 40, height: 40, alignment: 'center', rowSpan: salida26.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida26[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida26[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida26[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral29.png", width: 40, height: 40, alignment: 'center', rowSpan: salida26.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida26[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida26[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1341,7 +1936,7 @@ async function getOverheadLifts()
             accesories4[pSItems] =[
                 {border: [true, true, true, false], text: salida26[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida26[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral29.png", width: 80, height: 120, alignment: 'center', rowSpan: salida26.length},
+                {border: [true, true, true, false], image: "images/Likoral29.png", width: 80, height: 120, alignment: 'center', rowSpan: salida26.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida26[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1350,10 +1945,19 @@ async function getOverheadLifts()
         else if(i === salida26.length-1)
         {
             accesories4[pSItems] =[
-                {border: [true, false, true, true], text: salida26[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida26[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida26[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida26[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida26[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida26[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida26[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1376,10 +1980,19 @@ async function getOverheadLifts()
         if(i === 0 && salida27.length === 1)
         {
             accesories4[pSItems] =[
-                {border: [true, true, true, true], text: salida27[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida27[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral30.png", width: 60, height: 30, alignment: 'center', rowSpan: salida27.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida27[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida27[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida27[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral30.png", width: 60, height: 30, alignment: 'center', rowSpan: salida27.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida27[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida27[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1389,7 +2002,7 @@ async function getOverheadLifts()
             accesories4[pSItems] =[
                 {border: [true, true, true, false], text: salida27[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida27[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral30.png", width: 60, height: 30, alignment: 'center', rowSpan: salida27.length},
+                {border: [true, true, true, false], image: "images/Likoral30.png", width: 60, height: 30, alignment: 'center', rowSpan: salida27.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida27[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1398,10 +2011,19 @@ async function getOverheadLifts()
         else if(i === salida27.length-1)
         {
             accesories4[pSItems] =[
-                {border: [true, false, true, true], text: salida27[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida27[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida27[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida27[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida27[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida27[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida27[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1426,10 +2048,19 @@ async function getOverheadLifts()
         if(i === 0 && salida28.length === 1)
         {
             accesories4[pSItems] =[
-                {border: [true, true, true, true], text: salida28[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida28[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral31.png", width: 80, height: 20, alignment: 'center', rowSpan: salida28.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida28[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida28[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida28[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral31.png", width: 80, height: 20, alignment: 'center', rowSpan: salida28.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida28[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida28[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1439,7 +2070,7 @@ async function getOverheadLifts()
             accesories4[pSItems] =[
                 {border: [true, true, true, false], text: salida28[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida28[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral31.png", width: 80, height: 20, alignment: 'center', rowSpan: salida28.length},
+                {border: [true, true, true, false], image: "images/Likoral31.png", width: 80, height: 20, alignment: 'center', rowSpan: salida28.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida28[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1448,10 +2079,19 @@ async function getOverheadLifts()
         else if(i === salida28.length-1)
         {
             accesories4[pSItems] =[
-                {border: [true, false, true, true], text: salida28[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida28[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida28[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida28[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida28[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida28[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida28[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1476,10 +2116,19 @@ async function getOverheadLifts()
         if(i === 0 && salida29.length === 1)
         {
             accesories4[pSItems] =[
-                {border: [true, true, true, true], text: salida29[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida29[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral32.png", width: 60, height: 40, alignment: 'center', rowSpan: salida29.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida29[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida29[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida29[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/Likoral32.png", width: 60, height: 40, alignment: 'center', rowSpan: salida29.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida29[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida29[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1489,7 +2138,7 @@ async function getOverheadLifts()
             accesories4[pSItems] =[
                 {border: [true, true, true, false], text: salida29[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida29[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral32.png", width: 60, height: 40, alignment: 'center', rowSpan: salida29.length},
+                {border: [true, true, true, true], image: "images/Likoral32.png", width: 60, height: 40, alignment: 'center', rowSpan: salida29.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida29[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1498,10 +2147,19 @@ async function getOverheadLifts()
         else if(i === salida29.length-1)
         {
             accesories4[pSItems] =[
-                {border: [true, false, true, true], text: salida29[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida29[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida29[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida29[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida29[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories4[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida29[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida29[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1579,10 +2237,19 @@ async function getOverheadLifts()
         if(i === 0 && salida30.length === 1)
         {
             accesories5[pSItems] =[
-                {border: [true, true, true, true], text: salida30[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida30[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral33.png", width: 50, height: 60, alignment: 'center', rowSpan: salida30.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida30[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida30[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida30[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral33.png", width: 50, height: 60, alignment: 'center', rowSpan: salida30.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida30[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories5[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida30[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1592,7 +2259,7 @@ async function getOverheadLifts()
             accesories5[pSItems] =[
                 {border: [true, true, true, false], text: salida30[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida30[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral33.png", width: 50, height: 60, alignment: 'center', rowSpan: salida30.length},
+                {border: [true, true, true, false], image: "images/Likoral33.png", width: 50, height: 60, alignment: 'center', rowSpan: salida30.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida30[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1601,10 +2268,19 @@ async function getOverheadLifts()
         else if(i === salida30.length-1)
         {
             accesories5[pSItems] =[
-                {border: [true, false, true, true], text: salida30[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida30[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida30[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida30[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida30[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories5[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida30[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida30[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1631,8 +2307,17 @@ async function getOverheadLifts()
             accesories5[pSItems] =[
                 {border: [true, true, true, true], text: salida31[i].Part, style: 'textotabla'},
                 {border: [true, true, true, true], text: salida31[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral34.png", width: 60, height: 40, alignment: 'center', rowSpan: salida31.length},
+                {border: [true, true, true, true], image: "images/Likoral34.png", width: 60, height: 40, alignment: 'center', rowSpan: salida31.length+1},
                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida31[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories5[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida31[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1642,7 +2327,7 @@ async function getOverheadLifts()
             accesories5[pSItems] =[
                 {border: [true, true, true, false], text: salida31[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida31[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral34.png", width: 60, height: 40, alignment: 'center', rowSpan: salida31.length},
+                {border: [true, true, true, false], image: "images/Likoral34.png", width: 60, height: 40, alignment: 'center', rowSpan: salida31.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida31[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1651,10 +2336,19 @@ async function getOverheadLifts()
         else if(i === salida31.length-1)
         {
             accesories5[pSItems] =[
-                {border: [true, false, true, true], text: salida31[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida31[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida31[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida31[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida31[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories5[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida31[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida31[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1679,10 +2373,19 @@ async function getOverheadLifts()
         if(i === 0 && salida32.length === 1)
         {
             accesories5[pSItems] =[
-                {border: [true, true, true, true], text: salida32[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida32[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral35.png", width: 80, height: 20, alignment: 'center', rowSpan: salida32.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida32[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida32[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida32[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral35.png", width: 80, height: 20, alignment: 'center', rowSpan: salida32.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida32[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories5[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida32[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1692,7 +2395,7 @@ async function getOverheadLifts()
             accesories5[pSItems] =[
                 {border: [true, true, true, false], text: salida32[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida32[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral34.png", width: 80, height: 20, alignment: 'center', rowSpan: salida32.length},
+                {border: [true, true, true, false], image: "images/Likoral34.png", width: 80, height: 20, alignment: 'center', rowSpan: salida32.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida32[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1701,10 +2404,19 @@ async function getOverheadLifts()
         else if(i === salida32.length-1)
         {
             accesories5[pSItems] =[
-                {border: [true, false, true, true], text: salida32[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida32[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida32[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida32[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida32[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories5[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida32[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida32[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1729,10 +2441,19 @@ async function getOverheadLifts()
         if(i === 0 && salida33.length === 1)
         {
             accesories5[pSItems] =[
-                {border: [true, true, true, true], text: salida33[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida33[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral36.png", width: 40, height: 70, alignment: 'center', rowSpan: salida33.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida33[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida33[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida33[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral36.png", width: 40, height: 70, alignment: 'center', rowSpan: salida33.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida33[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories5[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida33[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1742,7 +2463,7 @@ async function getOverheadLifts()
             accesories5[pSItems] =[
                 {border: [true, true, true, false], text: salida33[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida33[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral36.png", width: 40, height: 70, alignment: 'center', rowSpan: salida33.length},
+                {border: [true, true, true, false], image: "images/Likoral36.png", width: 40, height: 70, alignment: 'center', rowSpan: salida33.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida33[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1751,10 +2472,19 @@ async function getOverheadLifts()
         else if(i === salida33.length-1)
         {
             accesories5[pSItems] =[
-                {border: [true, false, true, true], text: salida33[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida33[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida33[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida33[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida33[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories5[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida33[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida33[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1779,10 +2509,19 @@ async function getOverheadLifts()
         if(i === 0 && salida34.length === 1)
         {
             accesories5[pSItems] =[
-                {border: [true, true, true, true], text: salida34[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida34[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral37.png", width: 25, height: 40, alignment: 'center', rowSpan: salida34.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida34[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida34[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida34[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral37.png", width: 25, height: 40, alignment: 'center', rowSpan: salida34.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida34[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories5[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida34[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1792,7 +2531,7 @@ async function getOverheadLifts()
             accesories5[pSItems] =[
                 {border: [true, true, true, false], text: salida34[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida34[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral37.png", width: 25, height: 40, alignment: 'center', rowSpan: salida34.length},
+                {border: [true, true, true, false], image: "images/Likoral37.png", width: 25, height: 40, alignment: 'center', rowSpan: salida34.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida34[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1801,10 +2540,19 @@ async function getOverheadLifts()
         else if(i === salida34.length-1)
         {
             accesories5[pSItems] =[
-                {border: [true, false, true, true], text: salida34[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida34[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida34[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida34[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida34[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories5[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida34[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida34[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1827,10 +2575,19 @@ async function getOverheadLifts()
         if(i === 0 && salida35.length === 1)
         {
             accesories5[pSItems] =[
-                {border: [true, true, true, true], text: salida35[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida35[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral38.png", width: 25, height: 40, alignment: 'center', rowSpan: salida35.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida35[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida35[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida35[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral38.png", width: 25, height: 40, alignment: 'center', rowSpan: salida35.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida35[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories5[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida35[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1840,7 +2597,7 @@ async function getOverheadLifts()
             accesories5[pSItems] =[
                 {border: [true, true, true, false], text: salida35[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida35[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral38.png", width: 25, height: 40, alignment: 'center', rowSpan: salida35.length},
+                {border: [true, true, true, false], image: "images/Likoral38.png", width: 25, height: 40, alignment: 'center', rowSpan: salida35.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida35[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1849,10 +2606,19 @@ async function getOverheadLifts()
         else if(i === salida35.length-1)
         {
             accesories5[pSItems] =[
-                {border: [true, false, true, true], text: salida35[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida35[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida35[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida35[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida35[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories5[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida35[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida35[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1875,10 +2641,19 @@ async function getOverheadLifts()
         if(i === 0 && salida36.length === 1)
         {
             accesories5[pSItems] =[
-                {border: [true, true, true, true], text: salida36[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida36[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral39.png", width: 25, height: 40, alignment: 'center', rowSpan: salida36.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida36[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida36[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida36[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral39.png", width: 25, height: 40, alignment: 'center', rowSpan: salida36.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida36[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories5[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida36[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1888,7 +2663,7 @@ async function getOverheadLifts()
             accesories5[pSItems] =[
                 {border: [true, true, true, false], text: salida36[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida36[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral39.png", width: 25, height: 40, alignment: 'center', rowSpan: salida36.length},
+                {border: [true, true, true, false], image: "images/Likoral39.png", width: 25, height: 40, alignment: 'center', rowSpan: salida36.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida36[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1897,10 +2672,19 @@ async function getOverheadLifts()
         else if(i === salida36.length-1)
         {
             accesories5[pSItems] =[
-                {border: [true, false, true, true], text: salida36[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida36[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida36[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida36[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida36[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories5[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida36[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida36[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1923,10 +2707,19 @@ async function getOverheadLifts()
         if(i === 0 && salida37.length === 1)
         {
             accesories5[pSItems] =[
-                {border: [true, true, true, true], text: salida37[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida37[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral40.png", width: 70, height: 25, alignment: 'center', rowSpan: salida37.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida37[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida37[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida37[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, false], image: "images/Likoral40.png", width: 70, height: 25, alignment: 'center', rowSpan: salida37.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida37[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories5[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida37[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1936,7 +2729,7 @@ async function getOverheadLifts()
             accesories5[pSItems] =[
                 {border: [true, true, true, false], text: salida37[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida37[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral40.png", width: 70, height: 25, alignment: 'center', rowSpan: salida37.length},
+                {border: [true, true, true, false], image: "images/Likoral40.png", width: 70, height: 25, alignment: 'center', rowSpan: salida37.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida37[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1945,10 +2738,19 @@ async function getOverheadLifts()
         else if(i === salida37.length-1)
         {
             accesories5[pSItems] =[
-                {border: [true, false, true, true], text: salida37[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida37[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida37[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida37[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida37[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories5[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida37[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida37[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1971,10 +2773,19 @@ async function getOverheadLifts()
         if(i === 0 && salida38.length === 1)
         {
             accesories5[pSItems] =[
-                {border: [true, true, true, true], text: salida38[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida38[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral41.png", width: 80, height: 25, alignment: 'center', rowSpan: salida38.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida38[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, true, true, false], text: salida38[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida38[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/Likoral41.png", width: 80, height: 25, alignment: 'center', rowSpan: salida38.length+1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida38[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories5[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida38[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -1984,7 +2795,7 @@ async function getOverheadLifts()
             accesories5[pSItems] =[
                 {border: [true, true, true, false], text: salida38[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida38[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/Likoral40.png", width: 80, height: 25, alignment: 'center', rowSpan: salida38.length},
+                {border: [true, true, true, true], image: "images/Likoral40.png", width: 80, height: 25, alignment: 'center', rowSpan: salida38.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida38[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1993,10 +2804,19 @@ async function getOverheadLifts()
         else if(i === salida38.length-1)
         {
             accesories5[pSItems] =[
-                {border: [true, false, true, true], text: salida38[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida38[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: salida38[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida38[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida38[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories5[pSItems] =[
                 {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida38[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, true], text: salida38[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
             ]
         
             pSItems++
@@ -2019,6 +2839,8 @@ async function getOverheadLifts()
     fecha.toLocaleDateString()
 
     var overheadLifts = [
+        "\n",
+        "\n",
         "\n",
         { text: 'OVERHEAD LIFTS', style: 'header' },
         {
@@ -2145,6 +2967,8 @@ async function getOverheadLifts()
         },
         {text: '', pageBreak: 'after'  },
         "\n",
+        "\n",
+        "\n",
         {
             table: {
                 widths: [80, "*", 60],
@@ -2193,6 +3017,8 @@ async function getOverheadLifts()
         },
         {text: '', pageBreak: 'after'  },
         "\n",
+        "\n",
+        "\n",
         {
             table: {
                 widths: [80, "*", 60],
@@ -2240,6 +3066,8 @@ async function getOverheadLifts()
             }
         },
         {text: '', pageBreak: 'after'  },
+        "\n",
+        "\n",
         "\n",
         {
             table: {

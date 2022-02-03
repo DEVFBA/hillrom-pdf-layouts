@@ -117,6 +117,8 @@ async function getSlingsForAdults()
 
     var slingsForAdults = [
         "\n",
+        "\n",
+        "\n",
         { text: 'SLINGS FOR ADULTS', style: 'header' },
         "\n",
         {

@@ -327,20 +327,13 @@ async function getSlingsForChildren()
         
     }
     /*TERMINA CICLO*/
-
-    accesories6[pSItems] =[
-        {border: [true, true, true, true], text: 'The TeddySlings in teddy bear patterned warp knitted polyester are now produced without the teddy bear prints. Teddyslings will be delivered without pattern but in the same soft fabric. Product number and name remains. \nSome of the slings may be special made in other material/design. Contact Liko for more information and price. All of Liko’s accessories and slings are approved for a maximum load of 200 kg (440 lbs) if nothing else is described.', style: 'textotabla', colSpan: 4, fillColor: '#dbdbdb',  alignment: 'center'},
-        {border: [true, true, true, true], text: ""},
-        {border: [true, true, true, true], text: ""},
-        {border: [true, true, true, true], text: ""},
-    ]
-
-    pSItems++
     
     const fecha = new Date();
     fecha.toLocaleDateString()
 
     var slingsForChildren = [
+        "\n",
+        "\n",
         "\n",
         { text: 'SLINGS FOR CHILDREN', style: 'header' },
         "\n",

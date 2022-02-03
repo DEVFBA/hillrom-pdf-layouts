@@ -17,14 +17,14 @@ async function getAffinity4BirthingBed()
     options[pSItems] = [
         {text: 'OPTION CODE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
         {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'C', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'D', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'C', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'D', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'C', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'D', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'C', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'D', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'AF400', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'AF450', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'AF500', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'AF550', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'AF600', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'AF650', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'AF700', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'AF750', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
     ]
     pSItems++
 

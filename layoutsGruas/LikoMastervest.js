@@ -226,6 +226,8 @@ async function getLikoMastervest()
     
     var likoMastervest = [
         "\n",
+        "\n",
+        "\n",
         {
             table: {
                 widths: [190, "*", 130],

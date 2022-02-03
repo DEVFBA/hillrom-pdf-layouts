@@ -346,9 +346,9 @@ async function getStretchers()
     options[pSItems] = [
         {text: surfaceData[0].Id_Item, style: 'textotabla', alignment: 'center'},
         {text: surfaceData[0].Item_Long_Desc, style: 'textotabla'},
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
     ]
@@ -399,6 +399,66 @@ async function getStretchers()
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[9].Price), style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: surfaceData[10].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: surfaceData[10].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[10].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[11].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: surfaceData[12].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: surfaceData[12].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[12].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[13].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[14].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: surfaceData[15].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: surfaceData[15].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[15].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[16].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: surfaceData[17].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: surfaceData[17].Item_Long_Desc, style: 'textotabla'},
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[17].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: surfaceData[18].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: surfaceData[18].Item_Long_Desc, style: 'textotabla'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[18].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[19].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[20].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[21].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[22].Price), style: 'textotabla', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -1178,8 +1238,8 @@ async function getStretchers()
     options[pSItems] = [
         {text: steering[0].Id_Item, style: 'textotabla', alignment: 'center'},
         {text: steering[0].Item_Long_Desc, style: 'textotabla'},
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'},
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
@@ -1191,8 +1251,8 @@ async function getStretchers()
         {text: steering[1].Id_Item, style: 'textotabla', alignment: 'center'},
         {text: steering[1].Item_Long_Desc, style: 'textotabla'},
         {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "●", style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(steering[3].Price), style: 'textotabla', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(steering[2].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'},
         {text: "●", style: 'textotabla', alignment: 'center'}, 
         {text: "●", style: 'textotabla', alignment: 'center'}, 
     ]
@@ -1366,7 +1426,10 @@ async function getStretchers()
     pSItems++
 
 
-    options[pSItems] = [
+    var optionsSurface =[]
+    pSItems = 0; 
+
+    optionsSurface[pSItems] = [
         {text: 'Surface', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
@@ -1508,7 +1571,7 @@ async function getStretchers()
     }*/   
     /*TERMINA CICLO*/
 
-    options[pSItems] = [
+    optionsSurface[pSItems] = [
         {text: surface2Data[0].Id_Item, style: 'textotabla', alignment: 'center'},
         {text: surface2Data[0].Item_Long_Desc, style: 'textotabla'},
         {text: "●", style: 'textotabla', alignment: 'center'}, 
@@ -1520,10 +1583,10 @@ async function getStretchers()
 
     pSItems++
 
-    options[pSItems] = [
+    optionsSurface[pSItems] = [
         {text: surface2Data[3].Id_Item, style: 'textotabla', alignment: 'center'},
         {text: surface2Data[3].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(brakePedals[3].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(surface2Data[3].Price), style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'},
         {text: "●", style: 'textotabla', alignment: 'center'}, 
@@ -1532,7 +1595,19 @@ async function getStretchers()
 
     pSItems++
 
-    options[pSItems] = [
+    optionsSurface[pSItems] = [
+        {text: surface2Data[6].Id_Item, style: 'textotabla', alignment: 'center'},
+        {text: surface2Data[6].Item_Long_Desc, style: 'textotabla'},
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(surface2Data[6].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'},
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    optionsSurface[pSItems] = [
         {text: 'Hydraulic control pedals', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
@@ -1674,7 +1749,7 @@ async function getStretchers()
     }*/   
     /*TERMINA CICLO*/
     
-    options[pSItems] = [
+    optionsSurface[pSItems] = [
         {text: hidraulicControl[0].Id_Item, style: 'textotabla', alignment: 'center'},
         {text: hidraulicControl[0].Item_Long_Desc, style: 'textotabla'},
         {text: "●", style: 'textotabla', alignment: 'center'}, 
@@ -1686,7 +1761,7 @@ async function getStretchers()
 
     pSItems++
 
-    options[pSItems] = [
+    optionsSurface[pSItems] = [
         {text: hidraulicControl[5].Id_Item, style: 'textotabla', alignment: 'center'},
         {text: hidraulicControl[5].Item_Long_Desc, style: 'textotabla'},
         {text: "$" + Intl.NumberFormat("en-IN").format(hidraulicControl[5].Price), style: 'textotabla', alignment: 'center'}, 
@@ -2289,8 +2364,8 @@ async function getStretchers()
         {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptions[8].Price), style: 'textotabla', alignment: 'center'}, 
         {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptions[9].Price), style: 'textotabla', alignment: 'center'}, 
         {text: "-", style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptions[10].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptions[11].Price), style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
+        {text: "●", style: 'textotabla', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -2380,66 +2455,118 @@ async function getStretchers()
     }*/
     
     surfaces[pSItems] = [
-        {text: surfacesData[0].KitName, style: 'textotabla', alignment: 'center'},
-        {text: surfacesData[0].Item_Long_Desc, style: 'textotabla'},
-        {text: surfacesData[0].Part, style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[0].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[1].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[2].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: surfacesData[0].KitName, style: 'textotablacatoni', alignment: 'center'},
+        {text: surfacesData[0].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: surfacesData[0].Part, style: 'textotablacatoni', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[0].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[1].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[2].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
     ]
 
     pSItems++
 
     surfaces[pSItems] = [
-        {text: surfacesData[3].KitName, style: 'textotabla', alignment: 'center'},
-        {text: surfacesData[3].Item_Long_Desc, style: 'textotabla'},
-        {text: surfacesData[3].Part, style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[3].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[4].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[5].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: surfacesData[3].KitName, style: 'textotablacatoni', alignment: 'center'},
+        {text: surfacesData[3].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: surfacesData[3].Part, style: 'textotablacatoni', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[3].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[4].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[5].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
     ]
 
     pSItems++
 
     surfaces[pSItems] = [
-        {text: surfacesData[6].KitName, style: 'textotabla', alignment: 'center'},
-        {text: surfacesData[6].Item_Long_Desc, style: 'textotabla'},
-        {text: surfacesData[6].Part, style: 'textotabla', alignment: 'center'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[6].Price), style: 'textotabla', alignment: 'center'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: surfacesData[6].KitName, style: 'textotablacatoni', alignment: 'center'},
+        {text: surfacesData[6].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: surfacesData[6].Part, style: 'textotablacatoni', alignment: 'center'},
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[6].Price), style: 'textotablacatoni', alignment: 'center'},
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
     ]
 
     pSItems++
 
     surfaces[pSItems] = [
-        {text: surfacesData[7].KitName, style: 'textotabla', alignment: 'center'},
-        {text: surfacesData[7].Item_Long_Desc, style: 'textotabla'},
-        {text: surfacesData[7].Part, style: 'textotabla', alignment: 'center'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[7].Price), style: 'textotabla', alignment: 'center'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: surfacesData[7].KitName, style: 'textotablacatoni', alignment: 'center'},
+        {text: surfacesData[7].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: surfacesData[7].Part, style: 'textotablacatoni', alignment: 'center'},
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[7].Price), style: 'textotablacatoni', alignment: 'center'},
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
     ]
 
     pSItems++
 
     surfaces[pSItems] = [
-        {text: surfacesData[8].KitName, style: 'textotabla', alignment: 'center'},
-        {text: surfacesData[8].Item_Long_Desc, style: 'textotabla'},
-        {text: surfacesData[8].Part, style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[8].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[9].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: surfacesData[8].KitName, style: 'textotablacatoni', alignment: 'center'},
+        {text: surfacesData[8].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: surfacesData[8].Part, style: 'textotablacatoni', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[8].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[9].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'},
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    surfaces[pSItems] = [
+        {text: surfacesData[10].KitName, style: 'textotablacatoni', alignment: 'center'},
+        {text: surfacesData[10].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: surfacesData[10].Part, style: 'textotablacatoni', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[10].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[10].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'},
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    surfaces[pSItems] = [
+        {text: surfacesData[12].KitName, style: 'textotablacatoni', alignment: 'center'},
+        {text: surfacesData[12].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: surfacesData[12].Part, style: 'textotablacatoni', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[12].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[12].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[12].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    surfaces[pSItems] = [
+        {text: surfacesData[15].KitName, style: 'textotablacatoni', alignment: 'center'},
+        {text: surfacesData[15].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: surfacesData[15].Part, style: 'textotablacatoni', alignment: 'center'},
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[15].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[16].Price), style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'},
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    surfaces[pSItems] = [
+        {text: surfacesData[17].KitName, style: 'textotablacatoni', alignment: 'center'},
+        {text: surfacesData[17].Item_Long_Desc, style: 'textotablacatoni'},
+        {text: surfacesData[17].Part, style: 'textotablacatoni', alignment: 'center'},
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "-", style: 'textotablacatoni', alignment: 'center'},
+        {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+        {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[17].Price), style: 'textotablacatoni', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -2461,10 +2588,10 @@ async function getStretchers()
     for(var i=0; i<accesoriesData.length; i++)
     {
         accesories[pSItems] = [
-            {text: accesoriesData[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: accesoriesData[i].Item_Long_Desc, style: 'textotabla'},
-            {text: accesoriesData[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData[i].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: accesoriesData[i].KitName, style: 'textotablacatoni', alignment: 'center'},
+            {text: accesoriesData[i].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: accesoriesData[i].Part, style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData[i].Price), style: 'textotablacatoni', alignment: 'center'}, 
         ]
     
         pSItems++
@@ -2484,10 +2611,10 @@ async function getStretchers()
     for(var i=0; i<accesoriesData2.length; i++)
     {
         accesories[pSItems] = [
-            {text: accesoriesData2[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: accesoriesData2[i].Item_Long_Desc, style: 'textotabla'},
-            {text: accesoriesData2[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData2[i].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: accesoriesData2[i].KitName, style: 'textotablacatoni', alignment: 'center'},
+            {text: accesoriesData2[i].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: accesoriesData2[i].Part, style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData2[i].Price), style: 'textotablacatoni', alignment: 'center'}, 
         ]
     
         pSItems++
@@ -2507,10 +2634,10 @@ async function getStretchers()
     for(var i=0; i<accesoriesData3.length; i++)
     {
         accesories[pSItems] = [
-            {text: accesoriesData3[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: accesoriesData3[i].Item_Long_Desc, style: 'textotabla'},
-            {text: accesoriesData3[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData3[i].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: accesoriesData3[i].KitName, style: 'textotablacatoni', alignment: 'center'},
+            {text: accesoriesData3[i].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: accesoriesData3[i].Part, style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData3[i].Price), style: 'textotablacatoni', alignment: 'center'}, 
         ]
     
         pSItems++
@@ -2658,6 +2785,27 @@ async function getStretchers()
         {text: '', pageBreak: 'after'  },
         "\n",
         "\n",
+        "\n",
+        {
+            table: {
+                widths: [50, "*", 40, 40, 40, 40, 40],
+                body: optionsSurface
+            },
+            layout: {
+                hLineWidth: function () {
+					return  0.7;
+                },
+                vLineWidth: function () {
+					return 0.7;
+				},
+                hLineColor: function () {
+					return 'gray';
+				},
+				vLineColor: function () {
+					return 'gray';
+				},
+            }
+        },
         "\n",
         {
             table: {

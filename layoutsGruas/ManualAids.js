@@ -22,7 +22,7 @@ async function getManualAIDS()
             accesories[pSItems] =[
                 {border: [true, true, true, true], text: salida1[i].Part, style: 'textotabla'},
                 {border: [true, true, true, true], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/ManualAIDS2.png", width: 60, height: 30, alignment: 'center', rowSpan: salida1.length},
+                {border: [true, true, true, true], image: "images/ManualAIDS1.png", width: 60, height: 30, alignment: 'center', rowSpan: salida1.length},
                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -33,7 +33,7 @@ async function getManualAIDS()
             accesories[pSItems] =[
                 {border: [true, true, true, false], text: salida1[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/ManualAIDS2.png", width: 80, height: 80, alignment: 'center', rowSpan: salida1.length},
+                {border: [true, true, true, true], image: "images/ManualAIDS1.png", width: 80, height: 30, alignment: 'center', rowSpan: salida1.length},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -72,7 +72,7 @@ async function getManualAIDS()
             accesories[pSItems] =[
                 {border: [true, true, true, true], text: salida2[i].Part, style: 'textotabla'},
                 {border: [true, true, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/ManualAIDS3.png", width: 80, height: 30, alignment: 'center', rowSpan: salida2.length},
+                {border: [true, true, true, true], image: "images/ManualAIDS2.png", width: 80, height: 30, alignment: 'center', rowSpan: salida2.length},
                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -83,7 +83,7 @@ async function getManualAIDS()
             accesories[pSItems] =[
                 {border: [true, true, true, false], text: salida2[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/ManualAIDS3.png", width: 80, height: 30, alignment: 'center', rowSpan: salida2.length},
+                {border: [true, true, true, true], image: "images/ManualAIDS2.png", width: 80, height: 30, alignment: 'center', rowSpan: salida2.length},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -177,7 +177,7 @@ async function getManualAIDS()
             accesories2[pSItems] =[
                 {border: [true, true, true, true], text: salida4[i].Part, style: 'textotabla'},
                 {border: [true, true, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/ManualAIDS3.png", width: 80, height: 50, alignment: 'center', rowSpan: salida4.length},
+                {border: [true, true, true, true], image: "images/ManualAIDS4.png", width: 60, height: 60, alignment: 'center', rowSpan: salida4.length},
                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -188,7 +188,7 @@ async function getManualAIDS()
             accesories2[pSItems] =[
                 {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/ManualAIDS3.png", width: 80, height: 50, alignment: 'center', rowSpan: salida4.length},
+                {border: [true, true, true, true], image: "images/ManualAIDS4.png", width: 60, height: 60, alignment: 'center', rowSpan: salida4.length},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -376,6 +376,8 @@ async function getManualAIDS()
     fecha.toLocaleDateString()
 
     var manualAIDS = [
+        "\n",
+        "\n",
         "\n",
         { text: 'MANUAL AIDS', style: 'header' },
         "\n",

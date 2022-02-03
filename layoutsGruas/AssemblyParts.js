@@ -1323,7 +1323,7 @@ async function getAssemblyParts()
             accesories3[pSItems] =[
                 {border: [true, true, true, true], text: salida46[i].Part, style: 'textotabla'},
                 {border: [true, true, true, true], text: salida46[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/AssemblyParts27.png", width: 70, height: 50, alignment: 'center', rowSpan: salida46.length},
+                {border: [true, true, true, true], image: "images/AssemblyParts27.png", width: 70, height: 50, alignment: 'center', rowSpan: salida46.length + salida47.length},
                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida46[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1334,7 +1334,7 @@ async function getAssemblyParts()
             accesories3[pSItems] =[
                 {border: [true, true, true, false], text: salida46[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida46[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/AssemblyParts27.png", width: 70, height: 50, alignment: 'center', rowSpan: salida46.length},
+                {border: [true, true, true, true], image: "images/AssemblyParts27.png", width: 70, height: 50, alignment: 'center', rowSpan: salida46.length + salida47.length},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida46[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -1343,10 +1343,10 @@ async function getAssemblyParts()
         else if(i === salida46.length-1)
         {
             accesories3[pSItems] =[
-                {border: [true, false, true, true], text: salida46[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida46[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida46[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, false], text: salida46[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida46[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida46[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
             pSItems++
@@ -1371,10 +1371,10 @@ async function getAssemblyParts()
         if(i === 0 && salida47.length === 1)
         {
             accesories3[pSItems] =[
-                {border: [true, true, true, true], text: salida47[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida47[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], text: ""},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida47[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, false], text: salida47[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida47[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida47[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
             pSItems++
@@ -1382,10 +1382,10 @@ async function getAssemblyParts()
         else if(i === 0)
         {
             accesories3[pSItems] =[
-                {border: [true, true, true, false], text: salida47[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida47[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, false], text: ""},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida47[i].Price), style: 'textotabla', alignment: 'center'},
+                {border: [true, false, true, false], text: salida47[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida47[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida47[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
             pSItems++
@@ -1620,6 +1620,8 @@ async function getAssemblyParts()
 
     var assemblyParts = [
         "\n",
+        "\n",
+        "\n",
         {
             table: {
                 widths: ["*"],
@@ -1771,6 +1773,8 @@ async function getAssemblyParts()
 				},
             }
         },
+        "\n",
+        "\n",
         "\n",
         {
             table: {

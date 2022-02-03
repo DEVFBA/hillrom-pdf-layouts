@@ -164,10 +164,19 @@ async function getAccesoriesForSlings()
     pSItems++
 
     accesories[pSItems] =[
-        {border: [true, false, true, true], text: salida3[5].Part, style: 'textotabla'},
-        {border: [true, false, true, true], text: salida3[5].Item_Long_Desc, style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: salida3[5].Part, style: 'textotabla'},
+        {border: [true, false, true, false], text: salida3[5].Item_Long_Desc, style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[5].Price), style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, true], text: salida3[6].Part, style: 'textotabla'},
+        {border: [true, false, true, true], text: salida3[6].Item_Long_Desc, style: 'textotablaboldblack'},
         {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[5].Price), style: 'textotabla', alignment: 'center'},
+        {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[6].Price), style: 'textotabla', alignment: 'center'},
     ]
 
     pSItems++
@@ -233,7 +242,7 @@ async function getAccesoriesForSlings()
             accesories[pSItems] =[
                 {border: [true, true, true, true], text: salida5[i].Part, style: 'textotabla'},
                 {border: [true, true, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/AccesoriesForSlings6.png", width: 80, height: 15, alignment: 'center', rowSpan: salida5.length},
+                {border: [true, true, true, true], image: "images/AccesoriesForSlings8.png", width: 80, height: 30, alignment: 'center', rowSpan: salida5.length},
                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -244,7 +253,7 @@ async function getAccesoriesForSlings()
             accesories[pSItems] =[
                 {border: [true, true, true, false], text: salida5[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/AccesoriesForSlings6.png", width: 80, height: 15, alignment: 'center', rowSpan: salida5.length},
+                {border: [true, true, true, true], image: "images/AccesoriesForSlings8.png", width: 80, height: 30, alignment: 'center', rowSpan: salida5.length},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -475,10 +484,10 @@ async function getAccesoriesForSlings()
     /*TERMINA CICLO*/
 
     accesories[pSItems] =[
-        {border: [true, true, true, false], text: 'All of Liko’s accessories and slings are approved for a maximum load of 200 kg (440 lbs) if nothing else is described.', style: 'textotabla', fillColor: '#dbdbdb', colSpan: 4, alignment: "center"},
-        {border: [true, true, true, false], text: ""},
-        {border: [true, true, true, false], text: ""},
-        {border: [true, true, true, false], text: ''},
+        {border: [true, true, true, true], text: 'All of Liko’s accessories and slings are approved for a maximum load of 200 kg (440 lbs) if nothing else is described.', style: 'textotabla', fillColor: '#dbdbdb', colSpan: 4, alignment: "center"},
+        {border: [true, true, true, true], text: ""},
+        {border: [true, true, true, true], text: ""},
+        {border: [true, true, true, true], text: ''},
     ]
 
     pSItems++
@@ -487,6 +496,8 @@ async function getAccesoriesForSlings()
     fecha.toLocaleDateString()
 
     var accesoriesForSlings = [
+        "\n",
+        "\n",
         "\n",
         { text: 'ACCESORIES FOR SLINGS', style: 'header' },
         { text: 'Accesories For Slings', style: {fontSize: 0}, tocItem: "accesoriesforslings"},

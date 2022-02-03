@@ -279,6 +279,8 @@ async function getLikoConfortsling()
 
     var likoConfortsling = [
         "\n",
+        "\n",
+        "\n",
         {
             table: {
                 widths: [190, "*", 130],

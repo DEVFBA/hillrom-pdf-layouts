@@ -114,6 +114,8 @@ async function getFreeStand()
 
     var freeStand = [
         "\n",
+        "\n",
+        "\n",
         {
             table: {
                 widths: [190, "*", 130],

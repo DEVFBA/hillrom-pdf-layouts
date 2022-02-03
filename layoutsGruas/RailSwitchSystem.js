@@ -19,6 +19,9 @@ async function getRailSwitchSystem()
     const salida65 = res[64]
     const salida66 = res[65]
     const salida67 = res[66]
+    const salida68 = res[67]
+    const salida69 = res[68]
+    const salida70 = res[69]
 
     var accesories = []
     var pSItems = 0
@@ -322,6 +325,102 @@ async function getRailSwitchSystem()
          
     }
 
+    for(var i=0; i<salida68.length; i++)
+    {
+         if(i === 0 && salida68.length === 1)
+         {
+             accesories[pSItems] =[
+                 {border: [true, true, true, true], text: salida68[i].Part, style: 'textotabla'},
+                 {border: [true, true, true, true], text: salida68[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                 {border: [true, true, true, true], image: "images/RailSwitch17.png", width: 60, height: 20, alignment: 'center', rowSpan: salida68.length},
+                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida68[i].Price), style: 'textotabla', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else if(i === 0)
+         {
+             accesories[pSItems] =[
+                 {border: [true, true, true, false], text: salida68[i].Part, style: 'textotabla'},
+                 {border: [true, true, true, false], text: salida68[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                 {border: [true, true, true, true], image: "images/RailSwitch17.png", width: 60, height: 20, alignment: 'center', rowSpan: salida68.length},
+                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida68[i].Price), style: 'textotabla', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else if(i === salida68.length-1)
+         {
+             accesories[pSItems] =[
+                 {border: [true, false, true, true], text: salida68[i].Part, style: 'textotabla'},
+                 {border: [true, false, true, true], text: salida68[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                 {border: [true, false, true, true], text: ""},
+                 {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida68[i].Price), style: 'textotabla', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else {
+             accesories[pSItems] =[
+                 {border: [true, false, true, false], text: salida68[i].Part, style: 'textotabla'},
+                 {border: [true, false, true, false], text: salida68[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                 {border: [true, false, true, false], text: ""},
+                 {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida68[i].Price), style: 'textotabla', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         
+    }
+
+    for(var i=0; i<salida69.length; i++)
+    {
+         if(i === 0 && salida69.length === 1)
+         {
+             accesories[pSItems] =[
+                 {border: [true, true, true, true], text: salida69[i].Part, style: 'textotabla'},
+                 {border: [true, true, true, true], text: salida69[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                 {border: [true, true, true, true], image: "images/RailSwitch18.png", width: 60, height: 20, alignment: 'center', rowSpan: salida69.length},
+                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida69[i].Price), style: 'textotabla', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else if(i === 0)
+         {
+             accesories[pSItems] =[
+                 {border: [true, true, true, false], text: salida69[i].Part, style: 'textotabla'},
+                 {border: [true, true, true, false], text: salida69[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                 {border: [true, true, true, true], image: "images/RailSwitch18.png", width: 60, height: 20, alignment: 'center', rowSpan: salida69.length},
+                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida69[i].Price), style: 'textotabla', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else if(i === salida69.length-1)
+         {
+             accesories[pSItems] =[
+                 {border: [true, false, true, true], text: salida69[i].Part, style: 'textotabla'},
+                 {border: [true, false, true, true], text: salida69[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                 {border: [true, false, true, true], text: ""},
+                 {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida69[i].Price), style: 'textotabla', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         else {
+             accesories[pSItems] =[
+                 {border: [true, false, true, false], text: salida69[i].Part, style: 'textotabla'},
+                 {border: [true, false, true, false], text: salida69[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                 {border: [true, false, true, false], text: ""},
+                 {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida69[i].Price), style: 'textotabla', alignment: 'center'},
+             ]
+         
+             pSItems++
+         }
+         
+    }
+
     /*ESTO VA EN UN CICLO*/
     for(var i=0; i<salida58.length; i++)
     {
@@ -521,6 +620,54 @@ async function getRailSwitchSystem()
     }
     /*TERMINA CICLO*/
 
+    for(var i=0; i<salida70.length; i++)
+    {
+        if(i === 0 && salida70.length === 1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, true], text: salida70[i].Part, style: 'textotabla'},
+                {border: [true, true, true, true], text: salida70[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/RailSwitch19.png", width: 60, height: 30, alignment: 'center', rowSpan: salida70.length},
+                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida70[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories2[pSItems] =[
+                {border: [true, true, true, false], text: salida70[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida70[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/RailSwitch19.png", width: 60, height: 30, alignment: 'center', rowSpan: salida70.length},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida70[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida70.length-1)
+        {
+            accesories2[pSItems] =[
+                {border: [true, false, true, true], text: salida70[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida70[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida70[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories2[pSItems] =[
+                {border: [true, false, true, false], text: salida70[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida70[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida70[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+    }
+    /*TERMINA CICLO*/
+
     /*ESTO VA EN UN CICLO*/
     for(var i=0; i<salida62.length; i++)
     {
@@ -619,7 +766,6 @@ async function getRailSwitchSystem()
             pSItems++
         }
     }
-    /*TERMINA CICLO*/
 
     /*ESTO VA EN UN CICLO*/
     for(var i=0; i<salida64.length; i++)
@@ -822,6 +968,8 @@ async function getRailSwitchSystem()
 
     var railSwitchSystem = [
         "\n",
+        "\n",
+        "\n",
         {
             table: {
                 widths: ["*"],
@@ -968,6 +1116,8 @@ async function getRailSwitchSystem()
             }
         },
         {text: '', pageBreak: 'after'  },
+        "\n",
+        "\n",
         "\n",
         {
             table: {

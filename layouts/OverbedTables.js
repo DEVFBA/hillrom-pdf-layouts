@@ -50,7 +50,7 @@ async function getOverbedTables()
                     [
                         {text: 'HPL Tray', style: 'textotabla', },
                         {text: "●", style: 'textotabla', alignment: 'center'},
-                        {text: "-", style: 'textotabla', alignment: 'center'}, 
+                        {text: "●", style: 'textotabla', alignment: 'center'}, 
                     ],
                     [
                         {text: 'Fixed table', style: 'textotabla', },

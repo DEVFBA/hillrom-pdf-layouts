@@ -171,6 +171,8 @@ async function getMobileLifts()
 
     var mobileLifts = [
         "\n",
+        "\n",
+        "\n",
         { text: 'MOBILE LIFTS', style: 'header' },
         "\n",
         {

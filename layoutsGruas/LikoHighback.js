@@ -399,6 +399,8 @@ async function getLikoOriginalHighback()
 
     var likoOriginalHighback = [
         "\n",
+        "\n",
+        "\n",
         {
             table: {
                 widths: [190, "*", 130],

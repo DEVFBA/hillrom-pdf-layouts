@@ -40,8 +40,10 @@ var seatingFurniture = require("./layouts/SeatingFurniture.js")
 var sleeperSofa = require("./layouts/SleeperSofa.js")
 var sleeperChair = require("./layouts/SleeperChair.js")
 var overbedTables2 = require("./layouts/OverbedTables2.js")
+var overbedTables3 = require("./layouts/OverbedTables3.js")
 var bedsideCabinets = require("./layouts/BedsideCabinets.js")
 var transferBoard = require("./layouts/TransferBoard.js")
+var thermofoilOptions = require("./layouts/ThermofoilOptions.js")
 
 async function createDocument()
 {
@@ -74,8 +76,10 @@ async function createDocument()
     var sleeperSofaLayout = await sleeperSofa.getSleeperSofa()
     var sleeperChairLayout = await sleeperChair.getSleeperChair()
     var overbedTables2Layout = await overbedTables2.getOverbedTables()
+    var overbedTables3Layout = await overbedTables3.getOverbedTables()
     var bedsideCabinetsLayout = await bedsideCabinets.getBedsideCabinets()
     var transferBoardLayout = await transferBoard.getTransferBoard()
+    var thermofoilOptionsLayout = await thermofoilOptions.getThermofoilOptions()
 
     const fecha = new Date();
     fecha.toLocaleDateString()
@@ -473,7 +477,7 @@ async function createDocument()
             catoniClassicLayout,
             catoniStyleLayout,
             catoniBedSideLayout,
-            coloursCatoniLayout,
+            //coloursCatoniLayout,
             overbedTablesLayout,
             transportChairsLayout,
             hillromColoursCollectionLayout,
@@ -481,7 +485,9 @@ async function createDocument()
             seatingFurnitureLayout,
             sleeperSofaLayout,
             sleeperChairLayout,
+            overbedTables3Layout,
             overbedTables2Layout,
+            thermofoilOptionsLayout,
             bedsideCabinetsLayout,
             transferBoardLayout
         ],

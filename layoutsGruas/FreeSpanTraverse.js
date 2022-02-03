@@ -216,6 +216,8 @@ async function getFreespanTraverse()
     
     var freespanTraverse = [
         "\n",
+        "\n",
+        "\n",
         {
             table: {
                 widths: [190, "*", 130],
