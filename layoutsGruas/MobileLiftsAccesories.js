@@ -13,6 +13,7 @@ async function getMobileLiftAccesories()
     const salida8 = res[7]
     const salida9 = res[8]
     const salida10 = res[9]
+    const salida11 = res[10]
 
     var accesories = []
     var pSItems = 0
@@ -99,6 +100,74 @@ async function getMobileLiftAccesories()
     }
     /*TERMINA CICLO*/
 
+    /*ESTO VA EN UN CICLO*/
+    for(var i=0; i<salida11.length; i++)
+    {
+        if(i === 0 && salida11.length === 1)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida11[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/MobileLift7.png", width: 40, height: 50, alignment: 'center', rowSpan: salida11.length + 1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: salida11[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else if(i === 0)
+        {
+            accesories[pSItems] =[
+                {border: [true, true, true, false], text: salida11[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, true, true, true], image: "images/MobileLift7.png", width: 40, height: 50, alignment: 'center', rowSpan: salida11.length + 1},
+                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        else if(i === salida11.length-1)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida11[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: salida11[i].Specifications, style: 'textotabla'},
+                {border: [true, false, true, true], text: ""},
+                {border: [true, false, true, true], text: ""},
+            ]
+        
+            pSItems++
+        }
+        else {
+            accesories[pSItems] =[
+                {border: [true, false, true, false], text: salida11[i].Part, style: 'textotabla'},
+                {border: [true, false, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
+        
+            pSItems++
+        }
+        
+    }
+    /*TERMINA CICLO*/
+
     for(var i=0; i<salida8.length; i++)
     {
         if(i === 0 && salida8.length === 1)
@@ -106,7 +175,7 @@ async function getMobileLiftAccesories()
             accesories[pSItems] =[
                 {border: [true, true, true, false], text: salida8[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/MobileLift7.png", width: 30, height: 40, alignment: 'center', rowSpan: salida8.length+1},
+                {border: [true, true, true, true], image: "images/MobileLift6.png", width: 40, height: 50, alignment: 'center', rowSpan: salida8.length+1},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
@@ -126,7 +195,7 @@ async function getMobileLiftAccesories()
             accesories[pSItems] =[
                 {border: [true, true, true, false], text: salida8[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/MobileLift7.png", width: 30, height: 40, alignment: 'center', rowSpan: salida8.length},
+                {border: [true, true, true, true], image: "images/MobileLift6.png", width: 40, height: 50, alignment: 'center', rowSpan: salida8.length},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         

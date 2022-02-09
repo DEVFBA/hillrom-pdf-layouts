@@ -187,50 +187,39 @@ async function getAccesoriesForSlings()
     /*ESTO VA EN UN CICLO*/
     for(var i=0; i<salida4.length; i++)
     {
-        if(i === 0 && salida4.length === 1)
-        {
-            accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida4[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/AccesoriesForSlings5.png", width: 60, height: 15, alignment: 'center', rowSpan: salida4.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === 0)
+        if(i === 0)
         {
             accesories[pSItems] =[
                 {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/AccesoriesForSlings5.png", width: 60, height: 15, alignment: 'center', rowSpan: salida4.length},
+                {border: [true, true, true, false], image: "images/AccesoriesForSlings7.png", width: 80, height: 15, alignment: 'center'},
                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
             pSItems++
         }
-        else if(i === salida4.length-1)
+        else if(i === 1)
         {
-            accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida4[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
             accesories[pSItems] =[
                 {border: [true, false, true, false], text: salida4[i].Part, style: 'textotabla'},
                 {border: [true, false, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, false], text: ""},
+                {border: [true, false, true, false], image: "images/AccesoriesForSlings5.png", width: 70, height: 17, alignment: 'center'},
                 {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
             ]
         
             pSItems++
         }
+        else if(i === 2)
+        {
+            accesories[pSItems] =[
+                {border: [true, false, true, true], text: salida4[i].Part, style: 'textotabla'},
+                {border: [true, false, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                {border: [true, false, true, true], image: "images/AccesoriesForSlings6.png", width: 80, height: 17, alignment: 'center'},
+                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+            ]
         
+            pSItems++
+        }
     }
     /*TERMINA CICLO*/
 

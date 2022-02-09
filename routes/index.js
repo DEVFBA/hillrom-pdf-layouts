@@ -8,4 +8,10 @@ router.get('/', (req, res)=>{
 
 /*PDF Hillrom*/
 
+//Rutas de los usuarios
+router.use('/security-users', require('./security-users.js'));
+
+//Rutas para la generacion del PDF
+router.use('/generate-pdf', require('./generate-pdf.js'));
+
 module.exports = router;

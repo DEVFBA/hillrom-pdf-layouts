@@ -10,8 +10,269 @@ async function getLikoOriginalHighback()
     var accesories = []
     var pSItems = 0
 
+    accesories[pSItems] =[
+        {border: [true, true, true, false], text: "35200105", style: 'textotabla'},
+        {border: [true, true, true, false], text: "polyester, M", style: 'textotablaboldblack'},
+        {border: [true, true, true, true], image: "images/LikoHighback9.png", width: 70, height: 120, alignment: 'center', rowSpan: 28},
+        {border: [true, true, true, false], text: "$272", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "35200106", style: 'textotabla'},
+        {border: [true, false, true, false], text: "polyester, L", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "$326", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "35200107", style: 'textotabla'},
+        {border: [true, false, true, false], text: "polyester, XL max 300 kg (660 lbs) (No shortening position)", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "$365", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "35210115", style: 'textotabla'},
+        {border: [true, false, true, false], text: "polyester, reinforced leg supp, M-Slim (slim adult)", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "$285", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "35200115", style: 'textotabla'},
+        {border: [true, false, true, false], text: "polyester, reinforced leg supp, M", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "$294", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "35200116", style: 'textotabla'},
+        {border: [true, false, true, false], text: "polyester, reinforced leg supp, L", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "$306", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "35200117", style: 'textotabla'},
+        {border: [true, false, true, false], text: "polyester, reinforced leg supp, XL max 500 kg (1100 lbs)(No shortening position)", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "$376", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "35210305", style: 'textotabla'},
+        {border: [true, false, true, false], text: "net polyester, M-Slim (slim adult)", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "$306", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "35200305", style: 'textotabla'},
+        {border: [true, false, true, false], text: "net polyester, M", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "$285", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "35200306", style: 'textotabla'},
+        {border: [true, false, true, false], text: "net polyester, L", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "$292", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "35200307", style: 'textotabla'},
+        {border: [true, false, true, false], text: "net polyester, XL max 500 kg (1100 lbs)(No shortening position)", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "$369", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "35210315", style: 'textotabla'},
+        {border: [true, false, true, false], text: "net polyester, reinforced leg supp, M-Slim (slim adult)", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "$349", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "35200315", style: 'textotabla'},
+        {border: [true, false, true, false], text: "net polyester, reinforced leg supp, M", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "$354", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "35200316", style: 'textotabla'},
+        {border: [true, false, true, false], text: "net polyester, reinforced leg supp, L", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "$363", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "35200317", style: 'textotabla'},
+        {border: [true, false, true, false], text: "net polyester, reinforced leg supp, XL max 500 kg (1100 lbs)(No shortening position)", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "$388", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+        {border: [true, false, true, false], text: "", style: "textotabla"},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "35210405", style: 'textotabla'},
+        {border: [true, false, true, false], text: "plastic coated net (bath), M-Slim (slim adult)", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "$306", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "35200405", style: 'textotabla'},
+        {border: [true, false, true, false], text: "plastic coated net (bath), M", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "$281", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "35200406", style: 'textotabla'},
+        {border: [true, false, true, false], text: "plastic coated net (bath), L", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "$326", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "35200407", style: 'textotabla'},
+        {border: [true, false, true, false], text: "plastic coated net (bath), XL (No shortening position) max 500 kg (1100 lbs)", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "$342", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, true], text: "35200418", style: 'textotabla'},
+        {border: [true, false, true, true], text: "plastic coated net (bath), reinforced leg supports, XXL max 500 kg (1100 lbs) (No shortening position)", style: 'textotablaboldblack'},
+        {border: [true, false, true, true], text: ""},
+        {border: [true, false, true, true], text: "$888", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "31590006", style: 'textotabla'},
+        {border: [true, false, true, false], text: "Lath, 43 cm (17 in)", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], image: "images/LikoHighback6.png", width: 70, height: 15, alignment: 'center'},
+        {border: [true, false, true, false], text: "$15", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
     /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<4; i++)
+    /*for(var i=0; i<4; i++)
     {
         if(i === 0 && salida3.length === 1)
         {
@@ -57,9 +318,9 @@ async function getLikoOriginalHighback()
             pSItems++
         }
         
-    }
+    }*/
 
-    for(var i=4; i<7; i++)
+    /*for(var i=4; i<7; i++)
     {
         if(i === 0 && salida3.length === 1)
         {
@@ -105,9 +366,9 @@ async function getLikoOriginalHighback()
             pSItems++
         }
         
-    }
+    }*/
 
-    for(var i=7; i<10; i++)
+    /*for(var i=7; i<10; i++)
     {
         if(i === 0 && salida3.length === 1)
         {
@@ -153,10 +414,10 @@ async function getLikoOriginalHighback()
             pSItems++
         }
         
-    }
+    }*/
 
 
-    for(var i=10; i<13; i++)
+    /*for(var i=10; i<13; i++)
     {
         if(i === 0 && salida3.length === 1)
         {
@@ -285,7 +546,7 @@ async function getLikoOriginalHighback()
             pSItems++
         }
         
-    }
+    }*/
     /*TERMINA CICLO*/
 
     var accesories2 = []

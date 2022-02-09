@@ -19,7 +19,7 @@
     "mssql": "^7.3.0",
     "pdfmake": "^0.2.4",
     "pm2": "^5.1.2",
-    "winston": "^3.3.3"
+    "winston": "^3.5.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

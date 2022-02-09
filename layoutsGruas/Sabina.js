@@ -733,8 +733,8 @@ async function getSabina()
 
     accesories2[pSItems] =[
         {text: [
-            {text: 'SOLO SUPPORT VEST MOD 911', style: "textotablaboldblack"},
-            {text: 'Solo Support Vest Mod 911', style: {fontSize: 0}, tocItem: "safetyvestmod911"},
+            {text: 'SOLO SUPPORT VEST', style: "textotablaboldblack"},
+            {text: 'Solo Support Vest', style: {fontSize: 0}, tocItem: "safetyvestmod911"},
         ], fillColor: '#dbdbdb', colSpan: 4},
         {},
         {},
@@ -747,7 +747,7 @@ async function getSabina()
         if(i === 0)
         {
             accesories2[pSItems] =[
-                {border: [true, true, true, false], text: salida13[i].Part, style: 'textotabla'},
+                {border: [true, true, true, false], text: salida14[i].Part, style: 'textotabla'},
                 {border: [true, true, true, false], text: [
                     {text: salida14[i].Item_Long_Desc, style: "textotabla"},
                 ]},
