@@ -79,13 +79,17 @@ async function createPdf(params){
                     
                             var ruta = await dbGeneralParameters.getGeneralParametersbyID("55")
                             var rutaPdf = ruta[0][0].Value
+
+                            var rutaIp = await dbGeneralParameters.getGeneralParametersbyID("56")
+                            var rutaPdfIp = rutaIp[0][0].Value
+
                             var zone = await dbZones.getZones(params.pdfZone)
                             //console.log(zone[0][0])
-                            var nombreArchivo = zone[0][0].Short_Desc + " - " + priceList + " - " + "V" + pdfVersion + "_" + anio + mes + dia + hora + minutos + segundos
+                            var nombreArchivo = zone[0][0].Short_Desc + "-" + priceList + "-" + "V" + pdfVersion + "_" + anio + mes + dia + hora + minutos + segundos
                             var zonaNombre = zone[0][0].Short_Desc
                             //console.log(nombreArchivo)
                             //console.log("Voy a crear documento de camas")
-                            return await camas.createDocument(rutaPdf, nombreArchivo, zonaNombre, pdfVersion, listPrice.recordsets[0])
+                            return await camas.createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zonaNombre, pdfVersion, listPrice.recordsets[0])
                         }
                         else {
                             const fecha = new Date();
@@ -114,12 +118,16 @@ async function createPdf(params){
                     
                             var ruta = await dbGeneralParameters.getGeneralParametersbyID("55")
                             var rutaPdf = ruta[0][0].Value
+
+                            var rutaIp = await dbGeneralParameters.getGeneralParametersbyID("56")
+                            var rutaPdfIp = rutaIp[0][0].Value
+
                             var zone = await dbZones.getZones(params.pdfZone)
                             //console.log(zone[0][0])
-                            var nombreArchivo = zone[0][0].Short_Desc + " - " + priceList + " - " + "V" + pdfVersion + "_" + anio + mes + dia + hora + minutos + segundos
+                            var nombreArchivo = zone[0][0].Short_Desc + "-" + priceList + "-" + "V" + pdfVersion + "_" + anio + mes + dia + hora + minutos + segundos
                             var zonaNombre = zone[0][0].Short_Desc
                             //console.log(listPrice.recordsets[0])
-                            return await gruas.createDocument(rutaPdf, nombreArchivo, zonaNombre, pdfVersion, listPrice.recordsets[0])
+                            return await gruas.createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zonaNombre, pdfVersion, listPrice.recordsets[0])
                             //console.log("Voy a crear documento de gruas")
                         }
                     }

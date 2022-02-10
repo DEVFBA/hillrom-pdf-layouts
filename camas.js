@@ -46,7 +46,7 @@ var transferBoard = require("./layouts/TransferBoard.js")
 var thermofoilOptions = require("./layouts/ThermofoilOptions.js");
 const { version } = require('os');
 
-async function createDocument(rutaPdf, nombreArchivo, zona, pdfVersion, layouts)
+async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersion, layouts)
 {
     try {
         var progressaLayout = await progressa.getProgressa()
@@ -850,7 +850,7 @@ async function createDocument(rutaPdf, nombreArchivo, zona, pdfVersion, layouts)
             data: {
                 status: 1,
                 message: "PDF generado de manera exitosa",
-                pdfPath: rutaPdf + nombreArchivo + ".pdf"
+                pdfPath: rutaPdfIp + nombreArchivo + ".pdf"
             }
         } 
     

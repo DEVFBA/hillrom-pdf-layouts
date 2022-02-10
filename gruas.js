@@ -40,7 +40,7 @@ var likoFlexostretch = require("./layoutsGruas/LikoFlexostretch.js")
 var reposheet = require("./layoutsGruas/Reposheet.js")
 var manualAIDS = require("./layoutsGruas/ManualAids.js")
 
-async function createDocument(rutaPdf, nombreArchivo, zona, pdfVersion, layouts)
+async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersion, layouts)
 {
     try{
         var mobileLiftsLayout = await mobileLifts.getMobileLifts()
@@ -915,7 +915,7 @@ async function createDocument(rutaPdf, nombreArchivo, zona, pdfVersion, layouts)
             data: {
                 status: 1,
                 message: "PDF generado de manera exitosa",
-                pdfPath: rutaPdf + nombreArchivo + ".pdf"
+                pdfPath: rutaPdfIp + nombreArchivo + ".pdf"
             }
         } 
     }catch(error){
