@@ -100,7 +100,7 @@ async function getOverbedTables()
         "\n",
         "\n",
         "\n",
-        { text: 'Overbed Tables', style: 'header', tocItem: "overbedTablesArtOfCare"},
+        { text: 'Overbed Tables', style: 'header', tocItem: "overbedTables2"},
         { text: 'Country of origin: Canada\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
         {

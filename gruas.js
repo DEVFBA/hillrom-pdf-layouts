@@ -38,7 +38,8 @@ var likoLiftPants = require("./layoutsGruas/LikoLiftPants.js")
 var likoStretchers = require("./layoutsGruas/LikoStretchers.js")
 var likoFlexostretch = require("./layoutsGruas/LikoFlexostretch.js")
 var reposheet = require("./layoutsGruas/Reposheet.js")
-var manualAIDS = require("./layoutsGruas/ManualAids.js")
+var manualAIDS = require("./layoutsGruas/ManualAids.js");
+const curtainsystem = require('./controllers/curtainsystem.js');
 
 async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersion, layouts)
 {
@@ -672,7 +673,83 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
         contenido.push(coverPage)
         contenido.push(index2)
 
-        if(layouts.find(isGolvo) !== undefined)
+        for(var i=0; i<layouts.length; i++)
+        {
+            if(layouts[i].Id_Layout === "MLS-MLS-GOLVO9000")
+            {
+                contenido.push(mobileLiftsLayout)
+            }
+            else if(layouts[i].Id_Layout === "MLS-MLS-VIKING")
+            {
+                contenido.push(vikingLayout)
+            }
+            else if(layouts[i].Id_Layout === "MLS-MLS-SABINA")
+            {
+                contenido.push(sabinaLayout)
+            }
+            else if(layouts[i].Id_Layout === "MLS-MLS-MOBLIFTACCE")
+            {
+                contenido.push(mobileLiftsAccesoriesLayout)
+            }
+            else if(layouts[i].Id_Layout === "OLS-OLS-OLLIKORALL")
+            {
+                contenido.push(overheadLiftsLayout)
+            }
+            else if(layouts[i].Id_Layout === "OLS-OLS-RAILSYSTEM")
+            {
+                contenido.push(railSystemH70Layout)
+                contenido.push(railSystemH100Layout)
+                contenido.push(railSystemH140Layout)
+                contenido.push(assemblyPartsLayout)
+                contenido.push(railSwitchSystemLayout)
+            }
+            else if(layouts[i].Id_Layout === "FREESTLIFT")
+            {
+                contenido.push(freespanStraightRailLayout)
+                contenido.push(freespanTraverseLayout)
+                contenido.push(freespanUltraTwinLayout)
+                contenido.push(freeStandLayout)
+            }
+            else if(layouts[i].Id_Layout === "CURTAINSYST")
+            {
+                contenido.push(freeSpiritLayout)
+            }
+            else if(layouts[i].Id_Layout === "LIFTINGACCE")
+            {
+                contenido.push(liftingAccesoriesLayout)
+            }
+            else if(layouts[i].Id_Layout === "SLINGCHILDREN")
+            {
+                contenido.push(slingsForChildrenLayout)
+            }
+            else if(layouts[i].Id_Layout === "SLINGADULTS")
+            {
+                contenido.push(slingsForAdultsLayout)
+                contenido.push(likoOriginalHighbackLayout)
+                contenido.push(likoConfortslingLayout)
+                contenido.push(likoMastervestLayout)
+                contenido.push(likoLiftPantsLayout)
+            }
+            else if(layouts[i].Id_Layout === "SLINGACCESS")
+            {
+                contenido.push(accesoriesForSlingsLayout)
+            }
+            else if(layouts[i].Id_Layout === "LIKOSTRET")
+            {
+                contenido.push(likoStretchersLayout)
+                contenido.push(likoFlexostretchLayout)
+            }
+            else if(layouts[i].Id_Layout === "REPOMULTI")
+            {
+                contenido.push(reposheetLayout)
+            }
+            else if(layouts[i].Id_Layout === "MANUALAIDS")
+            {
+                contenido.push(manualAIDSLayout)
+            }
+        }
+
+        /*if(layouts.find(isGolvo) !== undefined)
         {
             contenido.push(mobileLiftsLayout)
         }
@@ -743,7 +820,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
         if(layouts.find(isManualAids) !== undefined)
         {
             contenido.push(manualAIDSLayout)
-        }
+        }*/
 
         
         var docDefinition = {

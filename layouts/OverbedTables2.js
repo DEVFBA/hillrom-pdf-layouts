@@ -412,7 +412,7 @@ async function getOverbedTables()
         "\n",
         "\n",
         "\n",
-        { text: 'Overbed Tables', style: 'header'},
+        { text: 'Overbed Tables', style: 'header', tocItem: "overbedTablesArtOfCare"},
         { text: [
                 {text: 'Art of Care ', style: 'subheader'},
                 {text: "Last Order Date April 29, 2022", style: 'subheader2' }

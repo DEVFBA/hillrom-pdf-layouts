@@ -100,19 +100,477 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
         ]
 
         var index2 = []
-        index2.push({text: 'TABLE OF CONTENTS', style: 'header', alignment: 'center' })
+        index2.push({text: 'TABLE OF CONTENTS', style: 'headerindex', alignment: 'center' })
         index2.push( {
             columns: [
                 [
-                    { text: 'HOSPITAL BEDS', style: 'header', alignment: 'left'}
+                    { text: 'HOSPITAL BEDS', style: 'headerindex', alignment: 'left'}
                 ],
                 [
-                    { text: 'Page', style: 'header', alignment: 'right'}
+                    { text: 'Page', style: 'headerindex', alignment: 'right'}
                 ]
             ]
         })
 
-        if(layouts.find(isProgressa) !== undefined)
+        var medSurgFlag = true
+        var longTermFlag = true
+        var supportSurfacesFlag = true
+        var foamFlag = true
+        var frFurnitureFlag = true
+        var coloursFlag = true
+        var usFurnitureFlag = true
+        var seatingFurnitureFlag = true
+        var healthcareFurnitureFlag = true
+        for(var i=0; i< layouts.length; i++)
+        {
+            if(layouts[i].Id_Layout === "HOB-CCI-PRP7500")
+            {
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: 'Critical Care/ICU', fillColor: '#546ce4', style: 'indexbackground'},
+                            ],
+                        ]
+                    }
+                },)
+
+                index2.push(
+                    {
+                        toc: {
+                            id: 'progressa',
+                        }
+                    }
+                )
+
+            }
+            else if(layouts[i].Id_Layout === "HOB-BAR-CP7800A")
+            {
+                index2.push(
+                    {
+                        table: {
+                            widths: [530],
+                            body: [
+                                [
+                                    {border: [false, false, false, false], text: 'Bariatric', fillColor: '#546ce4', style: 'indexbackground'},
+                                ],
+                            ]
+                        }
+                    }
+                )
+
+                index2.push(
+                    {
+                        toc: {
+                            id: 'compella'
+                        }
+                    }
+                )
+            }
+            else if((layouts[i].Id_Layout === "HOB-MES-CENTMB" || layouts[i].Id_Layout === "HOB-MES-HIRO900" || layouts[i].Id_Layout === "HOB-MES-ACCELLA"
+            || layouts[i].Id_Layout === "HOB-MES-CENTURI" || layouts[i].Id_Layout === "HOB-MES-CENP750" || layouts[i].Id_Layout === "HOB-MES-305MABE"
+            || layouts[i].Id_Layout === "ACCE-MES" || layouts[i].Id_Layout === "HOB-MES-RVP3200") && medSurgFlag === true)
+            {
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: 'Med-Surg', fillColor: '#546ce4', style: 'indexbackground'},
+                            ],
+                        ]
+                    }
+                })
+
+                index2.push({
+                    toc: {
+                        id: 'centrella',
+                    }
+                })
+                index2.push({
+                    toc: {
+                        id: 'hillrom900',
+                    }
+                })
+                index2.push({
+                    toc: {
+                        id: 'hillroom900Accella',
+                    }
+                })
+                index2.push({
+                    toc: {
+                        id: 'centurisProBed',
+                    }
+                })
+                index2.push({
+                    toc: {
+                        id: 'theCenturisBed',
+                    }
+                })
+                index2.push({
+                    toc: {
+                        id: '305ManualBed',
+                    }
+                })
+                index2.push({
+                    toc: {
+                        id: 'medSurgAccesories',
+                    }
+                })
+                index2.push({
+                    toc: {
+                        id: 'reconditionatedVersaCare',
+                    }
+                })
+
+                medSurgFlag = false
+            }
+            else if((layouts[i].Id_Layout === "HOB-LTC-HR100LB" || layouts[i].Id_Layout === "HOB-LTC-HRRP870") && longTermFlag === true)
+            {
+                index2.push(
+                    {
+                        table: {
+                            widths: [530],
+                            body: [
+                                [
+                                    {border: [false, false, false, false], text: 'Long-Term Care', fillColor: '#546ce4', style: 'indexbackground'},
+                                ],
+                            ]
+                        }
+                    }
+                )
+
+                index2.push( {
+                    toc: {
+                        id: 'hillrom100LowBed',
+                    }
+                })
+        
+                index2.push({
+                    toc: {
+                        id: 'hillromResident',
+                    }
+                })
+
+                longTermFlag = false
+            }
+            else if(layouts[i].Id_Layout === "HOB-MAT-AFF4P37")
+            {
+                index2.push(
+                    {
+                        table: {
+                            widths: [530],
+                            body: [
+                                [
+                                    {border: [false, false, false, false], text: 'Maternity', fillColor: '#546ce4', style: 'indexbackground'},
+                                ],
+                            ]
+                        }
+                    }
+                )
+
+                index2.push(
+                    {
+                        toc: {
+                            id: 'affinity4BirthingBed',
+                        }
+                    }
+                )
+            }
+            else if((layouts[i].Id_Layout === "SURFACES-THESUR" || layouts[i].Id_Layout === "SURFACES-ACCUMAX" ||  layouts[i].Id_Layout === "SURFACES-POWERED") && supportSurfacesFlag === true)
+            {
+                index2.push(
+                    {
+                        columns: [
+                            [
+                                { text: 'SUPPORT SURFACES', style: 'headerindex', alignment: 'left'}
+                            ],
+                            [
+                                { text: 'Page', style: 'headerindex', alignment: 'right'}
+                            ]
+                        ]
+                    }
+                )
+
+                supportSurfacesFlag = false
+            }
+            else if((layouts[i].Id_Layout === "SURFACES-THESUR" || layouts[i].Id_Layout === "SURFACES-ACCUMAX") &&  foamFlag === true)
+            {
+
+                index2.push(
+                    {
+                        table: {
+                            widths: [530],
+                            body: [
+                                [
+                                    {border: [false, false, false, false], text: 'Foam', fillColor: '#546ce4', style: 'indexbackground'},
+                                ],
+                            ]
+                        }
+                    }
+                )
+
+                index2.push({
+                    toc: {
+                        id: 'therapySurfaces',
+                    }
+                })
+        
+                index2.push({
+                    toc: {
+                        id: 'therapySurfaces2',
+                    }
+                })
+        
+                index2.push(
+                    {
+                        toc: {
+                            id: 'accumax',
+                        }
+                    }
+                )
+
+                foamFlag = false
+            }
+            else if(layouts[i].Id_Layout === "SURFACES-POWERED")
+            {
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: 'Powered', fillColor: '#546ce4', style: 'indexbackground'},
+                            ],
+                        ]
+                    }
+                })
+
+                index2.push(
+                    {
+                        toc: {
+                            id: 'poweredSurfaces',
+                        }
+                    }
+                )
+            }
+            else if(layouts[i].Id_Layout === "STR-STR-STP80XX")
+            {
+                index2.push({
+                    columns: [
+                        [
+                            { text: 'STRETCHERS', style: 'headerindex', alignment: 'left'}
+                        ],
+                        [
+                            { text: 'Page', style: 'headerindex', alignment: 'right'}
+                        ]
+                    ]
+                })
+                index2.push({
+                    toc: {
+                        id: 'stretchers',
+                    }
+                })
+            }
+            else if((layouts[i].Id_Layout === "FRH-MES-CH700B4" || layouts[i].Id_Layout === "FRH-MES-CH700B3" || layouts[i].Id_Layout === "FRH-MES-SCH770A" || layouts[i].Id_Layout === "FRH-MES-OTTA270" || layouts[i].Id_Layout === "FRH-TRC-TRCHANA" || layouts[i].Id_Layout === "FRH-MES-HILLRCOL" || layouts[i].Id_Layout === "COAFABRCOLO") && frFurnitureFlag === true)
+            {
+                index2.push({
+                    columns: [
+                        [
+                            { text: 'FR FURNITURE', style: 'headerindex', alignment: 'left'}
+                        ],
+                        [
+                            { text: 'Page', style: 'headerindex', alignment: 'right'}
+                        ]
+                    ]
+                })
+
+                index2.push({
+                    toc: {
+                        id: 'catoni',
+                    }
+                })
+
+                frFurnitureFlag = false
+            }
+            else if(layouts[i].Id_Layout === "FRH-MES-OTTA270")
+            {
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: 'Tables', fillColor: '#546ce4', style: 'indexbackground'},
+                            ],
+                        ]
+                    }
+                })
+
+                index2.push({
+                    toc: {
+                        id: 'overbedTables',
+                    }
+                })
+            }
+            else if(layouts[i].Id_Layout === "FRH-TRC-TRCHANA")
+            {
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: 'Transport Chairs', fillColor: '#546ce4', style: 'indexbackground'},
+                            ],
+                        ]
+                    }
+                })
+           
+                index2.push(
+                    {
+                        toc: {
+                            id: 'transportChairs',
+                        }
+                    }
+                )
+            }
+            else if((layouts[i].Id_Layout === "FRH-MES-HILLRCOL" || layouts[i].Id_Layout === "COAFABRCOLO") && coloursFlag=== true)
+            {
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: 'Colours & Fabrics', fillColor: '#546ce4', style: 'indexbackground'},
+                            ],
+                        ]
+                    }
+                })
+    
+                index2.push(
+                    {
+                        toc: {
+                            id: 'hillromColoursCollection',
+                        }
+                    }
+                )
+        
+                index2.push({
+                    toc: {
+                        id: 'coatedFabricColours',
+                        title: { text: "", style: "indexText"}
+                    }
+                })
+
+                coloursFlag = false
+            }
+            else if((layouts[i].Id_Layout === "UHF-REC-SEAFURN" || layouts[i].Id_Layout === "UHF-SEF-SLEESOFA" || layouts[i].Id_Layout === "UHF-SEF-SLEECHAI" ||
+             layouts[i].Id_Layout === "UHF-OVT-OBTAOC" || layouts[i].Id_Layout === "UHF-BSC-BEDSPRE" || layouts[i].Id_Layout === "UHF-OVT-P0094XX" || layouts[i].Id_Layout === "FRH-MES-THERMOFOIL") && usFurnitureFlag === true)
+            {
+                index2.push(
+                    {
+                        columns: [
+                            [
+                                { text: 'US FURNITURE', style: 'headerindex', alignment: 'left'}
+                            ],
+                            [
+                                { text: 'Page', style: 'headerindex', alignment: 'right'}
+                            ]
+                        ]
+                    }
+                )
+                usFurnitureFlag = false
+            }
+            else if((layouts[i].Id_Layout === "UHF-REC-SEAFURN" || layouts[i].Id_Layout === "UHF-SEF-SLEESOFA" || layouts[i].Id_Layout === "UHF-SEF-SLEECHAI") && seatingFurnitureFlag === true)
+            {
+                seatingFurnitureFlag = false
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: 'Seating Furniture', fillColor: '#546ce4', style: 'indexbackground'},
+                            ],
+                        ]
+                    }
+                })
+    
+                index2.push(
+                    {
+                        toc: {
+                            id: 'seatingFurniture',
+                            title: { text: "", style: "indexText"}
+                        }
+                    }
+                )
+
+                seatingFurnitureFlag = false
+            }
+            else if((layouts[i].Id_Layout === "UHF-OVT-OBTAOC" || layouts[i].Id_Layout === "UHF-BSC-BEDSPRE" || layouts[i].Id_Layout === "UHF-OVT-P0094XX") && healthcareFurnitureFlag === true)
+            {
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: 'Healthcare Furniture', fillColor: '#546ce4', style: 'indexbackground'},
+                            ],
+                        ]
+                    }
+                })
+            
+                index2.push(
+                    {
+                        toc: {
+                            id: 'overbedTablesArtOfCare',
+                            title: { text: "", style: "indexText"}
+                        }
+                    }
+                )
+
+                index2.push(
+                    {
+                        toc: {
+                            id: 'bedsideCabinets',
+                            title: { text: "", style: "indexText"}
+                        }
+                    }
+                )
+
+                index2.push(
+                    {
+                        toc: {
+                            id: 'overbedTables2',
+                            title: { text: "", style: "indexText"}
+                        }
+                    }
+                )
+                healthcareFurnitureFlag = false
+            }
+            else if(layouts[i].Id_Layout === "OTR-TRANBO-TRANBO")
+            {
+                index2.push({
+                    columns: [
+                        [
+                            { text: 'OTHERS', style: 'headerindex', alignment: 'left'}
+                        ],
+                        [
+                            { text: 'Page', style: 'headerindex', alignment: 'right'}
+                        ]
+                    ]
+                })
+                index2.push(
+                    {
+                        toc: {
+                            id: 'transferBoard',
+                        }
+                    }
+                )
+            }
+        }
+
+        index2.push({text: '', pageBreak: 'after'  })
+
+        /*if(layouts.find(isProgressa) !== undefined)
         {
             index2.push({
                 table: {
@@ -129,9 +587,9 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
             toc: {
                 id: 'progressa',
             }
-        })
+        })*/
 
-        if(layouts.find(isCompella) !== undefined)
+        /*if(layouts.find(isCompella) !== undefined)
         {
             index2.push(
                 {
@@ -150,9 +608,9 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
             toc: {
                 id: 'compella',
             }
-        })
+        })*/
 
-        if(layouts.find(isCentrella) !== undefined || layouts.find(isHillrom9000) !== undefined || layouts.find(isAccella) !== undefined ||
+        /*if(layouts.find(isCentrella) !== undefined || layouts.find(isHillrom9000) !== undefined || layouts.find(isAccella) !== undefined ||
         layouts.find(isCenturisPro) !== undefined || layouts.find(isCenturis) !== undefined || layouts.find(isManualBed) !== undefined
         || layouts.find(isMedSurg) !== undefined || layouts.find(isReconditionated) !== undefined )
         {
@@ -166,8 +624,8 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     ]
                 }
             })
-        }
-        index2.push({
+        }*/
+        /*index2.push({
             toc: {
                 id: 'centrella',
             }
@@ -206,9 +664,9 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
             toc: {
                 id: 'reconditionatedVersaCare',
             }
-        })
+        })*/
 
-        if(layouts.find(isHillrom100) !== undefined || layouts.find(isHillromResident) !== undefined)
+        /*if(layouts.find(isHillrom100) !== undefined || layouts.find(isHillromResident) !== undefined)
         {
             index2.push(
                 {
@@ -233,9 +691,9 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
             toc: {
                 id: 'hillromResident',
             }
-        })
+        })*/
 
-        if(layouts.find(isAffinity) !== undefined)
+        /*if(layouts.find(isAffinity) !== undefined)
         {
             index2.push(
                 {
@@ -256,9 +714,9 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     id: 'affinity4BirthingBed',
                 }
             }
-        )
+        )*/
 
-        index2.push(
+        /*index2.push(
             {
                 columns: [
                     [
@@ -269,9 +727,9 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     ]
                 ]
             }
-        )
+        )*/
         
-        if(layouts.find(isTherapy) !== undefined || layouts.find(isAccumax))
+        /*if(layouts.find(isTherapy) !== undefined || layouts.find(isAccumax))
         {
             index2.push(
                 {
@@ -304,9 +762,9 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     id: 'accumax',
                 }
             }
-        )
+        )*/
 
-        if(layouts.find(isPoweredSurfaces) !== undefined)
+        /*if(layouts.find(isPoweredSurfaces) !== undefined)
         {
             index2.push({
                 table: {
@@ -325,9 +783,9 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     id: 'poweredSurfaces',
                 }
             }
-        )
+        )*/
 
-        if(layouts.find(isStretchers) !== undefined)
+        /*if(layouts.find(isStretchers) !== undefined)
         {
             index2.push({
                 columns: [
@@ -344,9 +802,9 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
             toc: {
                 id: 'stretchers',
             }
-        })
+        })*/
     
-        if(layouts.find(isCatoniClassic) !== undefined || layouts.find(isCatoniBedside) !== undefined || layouts.find(isCatoniStyle) !== undefined)
+        /*if(layouts.find(isCatoniClassic) !== undefined || layouts.find(isCatoniBedside) !== undefined || layouts.find(isCatoniStyle) !== undefined)
         {
             index2.push({
                 columns: [
@@ -363,9 +821,9 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
             toc: {
                 id: 'catoni',
             }
-        })
+        })*/
 
-        if(layouts.find(isOverbedTable) !== undefined)
+        /*if(layouts.find(isOverbedTable) !== undefined)
         {
             index2.push({
                 table: {
@@ -382,9 +840,9 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
             toc: {
                 id: 'overbedTables',
             }
-        })
+        })*/
 
-        if(layouts.find(isTransportChairs) !== undefined)
+        /*if(layouts.find(isTransportChairs) !== undefined)
         {
             index2.push({
                 table: {
@@ -403,11 +861,11 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     id: 'transportChairs',
                 }
             }
-        )
+        )*/
 
         //AQUI VAN LOS COLOURS Y FABRICS
 
-        if(layouts.find(isHillromColours) !== undefined)
+        /*if(layouts.find(isHillromColours) !== undefined)
         {
             index2.push({
                 table: {
@@ -434,9 +892,9 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                 id: 'coatedFabricColours',
                 title: { text: "", style: "indexText"}
             }
-        })
+        })*/
 
-        index2.push(
+        /*index2.push(
             {
                 columns: [
                     [
@@ -447,10 +905,10 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     ]
                 ]
             }
-        )
+        )*/
 
         //AQUI VA EL SEATING FURNITURE
-        if(layouts.find(isSeatingFurniture ) !== undefined)
+        /*if(layouts.find(isSeatingFurniture ) !== undefined)
         {
             index2.push({
                 table: {
@@ -471,9 +929,9 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     title: { text: "", style: "indexText"}
                 }
             }
-        )
+        )*/
 
-        if(layouts.find(isOverbedTableArt) !== undefined || layouts.find(isOverbedTable2) !== undefined || layouts.find(isBedside) !== undefined)
+        /*if(layouts.find(isOverbedTableArt) !== undefined || layouts.find(isOverbedTable2) !== undefined || layouts.find(isBedside) !== undefined)
         {
             index2.push({
                 table: {
@@ -501,9 +959,9 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     title: { text: "", style: "indexText"}
                 }
             }
-        )
+        )*/
 
-        if(layouts.find(isTransferBoard) !== undefined)
+        /*if(layouts.find(isTransferBoard) !== undefined)
         {
             index2.push({
                 columns: [
@@ -522,15 +980,148 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     id: 'transferBoard',
                 }
             }
-        )
-        index2.push({text: '', pageBreak: 'after'  })
+        )*/
 
         //Para armar el contenido de forma dinámica
         var contenido = []
         contenido.push(coverPage)
         contenido.push(index2)
+        
+        console.log(layouts)
 
-        if(layouts.find(isProgressa) !== undefined)
+        for(var i=0; i<layouts.length; i++)
+        {
+            if(layouts[i].Id_Layout === "HOB-CCI-PRP7500")
+            {
+                contenido.push(progressaLayout)
+            }
+            else if(layouts[i].Id_Layout === "HOB-BAR-CP7800A")
+            {
+                contenido.push(compellaLayout)
+            }
+            else if(layouts[i].Id_Layout === "HOB-MES-CENTMB")
+            {
+                contenido.push(centrellaLayout)
+            }
+            else if(layouts[i].Id_Layout === "HOB-MES-HIRO900")
+            {
+                contenido.push(hillroom900Layout)
+            }
+            else if(layouts[i].Id_Layout === "HOB-MES-ACCELLA")
+            {
+                contenido.push(hillroom900AccellaLayout)
+            }
+            else if(layouts[i].Id_Layout === "HOB-MES-CENTURI")
+            {
+                contenido.push(centurisProBedLayout)
+            }
+            else if(layouts[i].Id_Layout === "HOB-MES-CENP750")
+            {
+                contenido.push(theCenturisBedLayout)
+            }
+            else if(layouts[i].Id_Layout === "HOB-MES-305MABE")
+            {
+                contenido.push(t305ManualBedLayout)
+            }
+            else if(layouts[i].Id_Layout === "ACCE-MES")
+            {
+                contenido.push(medSurgAccesoriesLayout)
+            }
+            else if(layouts[i].Id_Layout === "HOB-MES-RVP3200")
+            {
+                contenido.push(reconditionatedVersaCareLayout)
+            }
+            else if(layouts[i].Id_Layout === "HOB-LTC-HR100LB")
+            {
+                contenido.push(hillrom100LowBedLayout)
+            }
+            else if(layouts[i].Id_Layout === "HOB-LTC-HRRP870")
+            {
+                contenido.push(hillromResidentLongTermLayout)
+            }
+            else if(layouts[i].Id_Layout === "HOB-MAT-AFF4P37")
+            {
+                contenido.push(affinity4BirthingBedLayout)
+            }
+            else if(layouts[i].Id_Layout === "SURFACES-THESUR")
+            {
+                contenido.push(therapySurfacesLayout)
+            }
+            else if(layouts[i].Id_Layout === "SURFACES-ACCUMAX")
+            {
+                contenido.push(accumaxLayout)
+            }
+            else if(layouts[i].Id_Layout === "SURFACES-POWERED")
+            {
+                contenido.push(poweredSurfacesLayout)
+            }
+            else if(layouts[i].Id_Layout === "STR-STR-STP80XX")
+            {
+                contenido.push(stretchersLayout)
+            }
+            else if(layouts[i].Id_Layout === "FRH-MES-CH700B4")
+            {
+                contenido.push(catoniClassicLayout)
+            }
+            else if(layouts[i].Id_Layout === "FRH-MES-CH700B3")
+            {
+                contenido.push(catoniStyleLayout)
+            }
+            else if(layouts[i].Id_Layout === "FRH-MES-SCH770A")
+            {
+                contenido.push(catoniBedSideLayout)
+            }
+            else if(layouts[i].Id_Layout === "FRH-MES-OTTA270")
+            {
+                contenido.push(overbedTablesLayout)
+            }
+            else if(layouts[i].Id_Layout === "FRH-TRC-TRCHANA")
+            {
+                contenido.push(transportChairsLayout)
+            }
+            else if(layouts[i].Id_Layout === "FRH-MES-HILLRCOL")
+            {
+                contenido.push(hillromColoursCollectionLayout)
+            }
+            else if(layouts[i].Id_Layout === "COAFABRCOLO")
+            {
+                contenido.push(coatedFabricColoursLayout)
+            }
+            else if(layouts[i].Id_Layout === "UHF-REC-SEAFURN")
+            {
+                contenido.push(seatingFurnitureLayout)
+            }
+            else if(layouts[i].Id_Layout === "UHF-SEF-SLEESOFA")
+            {
+                contenido.push(sleeperSofaLayout)
+            }
+            else if(layouts[i].Id_Layout === "UHF-SEF-SLEECHAI")
+            {
+                contenido.push(sleeperChairLayout)
+            }
+            else if(layouts[i].Id_Layout === "UHF-OVT-OBTAOC")
+            {
+                contenido.push(overbedTables2Layout)
+            }
+            else if(layouts[i].Id_Layout === "UHF-BSC-BEDSPRE")
+            {
+                contenido.push(bedsideCabinetsLayout)
+            }
+            else if(layouts[i].Id_Layout === "UHF-OVT-P0094XX")
+            {
+                contenido.push(overbedTables3Layout)
+            }
+            else if(layouts[i].Id_Layout === "FRH-MES-THERMOFOIL")
+            {
+                contenido.push(thermofoilOptionsLayout)
+            }
+            else if(layouts[i].Id_Layout === "OTR-TRANBO-TRANBO")
+            {
+                contenido.push(transferBoardLayout)
+            }
+        }
+
+        /*if(layouts.find(isProgressa) !== undefined)
         {
             contenido.push(progressaLayout)
         }
@@ -657,7 +1248,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
         if(layouts.find(isTransferBoard) !== undefined)
         {
             contenido.push(transferBoardLayout)
-        }
+        }*/
         
         var docDefinition = {
             pageMargins: [ 30, 6, 30, 30 ],
@@ -704,12 +1295,17 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     bold: true,
                     color: '#1c3384',
                 },
+                headerindex: {
+                    fontSize: 10.5,
+                    bold: true,
+                    color: '#1c3384',
+                },
                 index: {
-                    fontSize: 11,
+                    fontSize: 10,
                     color: '#1c3384',
                 },
                 indexbackground: {
-                    fontSize: 11,
+                    fontSize: 8,
                     color: '#ffffff',
                     bold: true,
                     background: '#546ce4'
