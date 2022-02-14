@@ -18,14 +18,6 @@ async function getOverbedTables()
     ]
     pSItems++
 
-    options[pSItems] = [
-        {text: "Top Style", style: 'textotablaboldlarge', border: [false, false, false, false]},
-        {text: "", border: [false, false, false, false]},
-        {text: "", border: [false, false, false, false]}, 
-        {text: "", border: [false, false, false, false]},
-    ]
-    pSItems++
-
     /*EMPIEZA CICLO*/
     /*var i=0;
     var topStyleFlag = false
@@ -122,42 +114,45 @@ async function getOverbedTables()
         i++
     }  */ 
 
-    options[pSItems] = [
-        {text: topStyleData[0].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(topStyleData[0].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+    if(topStyleData !== 0 || !topStyleData)
+    {
+        options[pSItems] = [
+            {text: "Top Style", style: 'textotablaboldlarge', border: [false, false, false, false]},
+            {text: "", border: [false, false, false, false]},
+            {text: "", border: [false, false, false, false]}, 
+            {text: "", border: [false, false, false, false]},
+        ]
+        pSItems++
 
-    pSItems++
-
-    options[pSItems] = [
-        {text: topStyleData[1].Item_Long_Desc, style: 'textotabla'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(topStyleData[1].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: topStyleData[2].Item_Long_Desc, style: 'textotabla'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(topStyleData[2].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-    /*TERMINA CICLO*/
+        options[pSItems] = [
+            {text: topStyleData[0].Item_Long_Desc, style: 'textotabla'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(topStyleData[0].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+        ]
     
-    options[pSItems] = [
-        {text: "Mirror / Storage", style: 'textotablaboldlarge', border: [false, false, false, false]},
-        {text: "", border: [false, false, false, false]},
-        {text: "", border: [false, false, false, false]}, 
-        {text: "", border: [false, false, false, false]},
-    ]
-    pSItems++
-
+        pSItems++
+    
+        options[pSItems] = [
+            {text: topStyleData[1].Item_Long_Desc, style: 'textotabla'},
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(topStyleData[1].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+    
+        options[pSItems] = [
+            {text: topStyleData[2].Item_Long_Desc, style: 'textotabla'},
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(topStyleData[2].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+        /*TERMINA CICLO*/
+    }
+    
     /*EMPIEZA CICLO*/
     /*var i=0;
     var mirrorStorageFlag = false
@@ -254,41 +249,52 @@ async function getOverbedTables()
         i++
     }  */
 
-    options[pSItems] = [
-        {text: mirrorStorageData[0].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(mirrorStorageData[0].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(mirrorStorageData[1].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+    if(mirrorStorageData !== 0 || !mirrorStorageData)
+    {
+        options[pSItems] = [
+            {text: "Mirror / Storage", style: 'textotablaboldlarge', border: [false, false, false, false]},
+            {text: "", border: [false, false, false, false]},
+            {text: "", border: [false, false, false, false]}, 
+            {text: "", border: [false, false, false, false]},
+        ]
+        pSItems++
 
-    pSItems++
-
-    options[pSItems] = [
-        {text: mirrorStorageData[2].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(mirrorStorageData[2].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: mirrorStorageData[3].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(mirrorStorageData[3].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(mirrorStorageData[4].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: mirrorStorageData[5].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(mirrorStorageData[5].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
+        options[pSItems] = [
+            {text: mirrorStorageData[0].Item_Long_Desc, style: 'textotabla'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(mirrorStorageData[0].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(mirrorStorageData[1].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+    
+        options[pSItems] = [
+            {text: mirrorStorageData[2].Item_Long_Desc, style: 'textotabla'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(mirrorStorageData[2].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+    
+        options[pSItems] = [
+            {text: mirrorStorageData[3].Item_Long_Desc, style: 'textotabla'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(mirrorStorageData[3].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(mirrorStorageData[4].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+    
+        options[pSItems] = [
+            {text: mirrorStorageData[5].Item_Long_Desc, style: 'textotabla'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(mirrorStorageData[5].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+    }
     
     /*TERMINA CICLO*/
 
@@ -300,111 +306,114 @@ async function getOverbedTables()
     ]
     pSItems++
 
-    options[pSItems] = [
-        {text: "ACCESSORIES (FURNITUREACC)", style: 'textotablaboldlarge', border: [false, false, false, false]},
-        {text: "", border: [false, false, false, false]},
-        {text: "", border: [false, false, false, false]}, 
-        {text: "", border: [false, false, false, false]},
-    ]
-    pSItems++
-
     /*EMPIEZA CICLO*/
-    var i=0;
-    var accesoriesFlag = false
-    while(accesoriesFlag === false)
+    if(accesoriesData.length !== 0 || !accesoriesData)
     {
-        var j;
-        if(i===0)
-        {
-            j=0
-        }
-        else {
-            j = i*3
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< accesoriesData.length && countC<3)
-        {
-           precios[preciosCount] = accesoriesData[j].Price
-           printCaracter[preciosCount] = accesoriesData[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: accesoriesData[j-1].Id_Item,
-            Item_Long_Desc: accesoriesData[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-        var precio3;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
-            {
-                precio1 = "●"
-            }
-            else {
-                precio1 = "-"
-            }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
-            {
-                precio2 = "●"
-            }
-            else {
-                precio2 = "-"
-            }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-
-        if(data.Print_Character[2] !== null)
-        {
-            if(data.Print_Character[2] === "*")
-            {
-                precio3 = "●"
-            }
-            else {
-                precio3 = "-"
-            }
-        }
-        else {
-            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
-        }
-        
         options[pSItems] = [
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'}, 
-            {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            {text: "ACCESSORIES (FURNITUREACC)", style: 'textotablaboldlarge', border: [false, false, false, false]},
+            {text: "", border: [false, false, false, false]},
+            {text: "", border: [false, false, false, false]}, 
+            {text: "", border: [false, false, false, false]},
         ]
-
         pSItems++
 
-        //console.log(data)
-
-        if(j >= accesoriesData.length)
+        var i=0;
+        var accesoriesFlag = false
+        while(accesoriesFlag === false)
         {
-            accesoriesFlag = true
-        }
-        i++
-    }   
-    /*TERMINA CICLO*/
-
+            var j;
+            if(i===0)
+            {
+                j=0
+            }
+            else {
+                j = i*3
+            }
+            var precios = []
+            var preciosCount = 0
+            var countC=0
+            var printCaracter = []
+            while(j< accesoriesData.length && countC<3)
+            {
+               precios[preciosCount] = accesoriesData[j].Price
+               printCaracter[preciosCount] = accesoriesData[j].Print_Character
+               preciosCount++
+               j++
+               countC++
+            }
+            var data = {
+                Id_Item: accesoriesData[j-1].Id_Item,
+                Item_Long_Desc: accesoriesData[j-1].Item_Long_Desc,
+                Prices: precios,
+                Print_Character: printCaracter
+            }
+    
+            var precio1;
+            var precio2;
+            var precio3;
+    
+            if(data.Print_Character[0] !== null)
+            {
+                if(data.Print_Character[0] === "*")
+                {
+                    precio1 = "●"
+                }
+                else {
+                    precio1 = "-"
+                }
+            }
+            else {
+                precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+            }
+    
+            if(data.Print_Character[1] !== null)
+            {
+                if(data.Print_Character[1] === "*")
+                {
+                    precio2 = "●"
+                }
+                else {
+                    precio2 = "-"
+                }
+            }
+            else {
+                precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+            }
+    
+            if(data.Print_Character[2] !== null)
+            {
+                if(data.Print_Character[2] === "*")
+                {
+                    precio3 = "●"
+                }
+                else {
+                    precio3 = "-"
+                }
+            }
+            else {
+                precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+            }
+            
+            options[pSItems] = [
+                {text: data.Item_Long_Desc, style: 'textotabla'},
+                {text: precio1, style: 'textotabla', alignment: 'center'}, 
+                {text: precio2, style: 'textotabla', alignment: 'center'}, 
+                {text: precio3, style: 'textotabla', alignment: 'center'}, 
+            ]
+    
+            pSItems++
+    
+            //console.log(data)
+    
+            if(j >= accesoriesData.length)
+            {
+                accesoriesFlag = true
+            }
+            i++
+        }   
+        /*TERMINA CICLO*/
+    }
+   
     const fecha = new Date();
     fecha.toLocaleDateString()
 
