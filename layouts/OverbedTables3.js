@@ -100,7 +100,8 @@ async function getOverbedTables()
         "\n",
         "\n",
         "\n",
-        { text: 'Overbed Tables', style: 'header', tocItem: "overbedTables2"},
+        { text: 'HEALTHCARE FURNITURE\n', style: 'header'},
+        { text: 'Overbed Table', style: 'subheader', tocItem: "overbedTables2"},
         { text: 'Country of origin: Canada\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
         {
@@ -131,38 +132,23 @@ async function getOverbedTables()
                     ],
                     [
                         {border: [false, false, false, false], text: ''},
-                        {image: "images/OverbedTable3.png", width: 100, height: 100, alignment: "center"},
                         {image: "images/OverbedTable4.png", width: 100, height: 100, alignment: "center"},
+                        {image: "images/OverbedTable3.png", width: 100, height: 100, alignment: "center"},
                     ],
                     [
-                        {text: 'Dual Top - Food Service Tray', style: 'textotabla'},
+                        {text: 'Single Top Overbed Table', style: 'textotabla'},
                         {text: '●', style: 'textotabla', alignment: 'center'},
-                        {text: '-', style: 'textotabla', alignment: 'center'}, 
+                        {text: '$762', style: 'textotabla', alignment: 'center'}, 
                     ],
                     [
-                        {text: 'Single Top (Top Style 1)', style: 'textotabla'},
-                        {text: '-', style: 'textotabla', alignment: 'center'},
-                        {text: '-', style: 'textotabla', alignment: 'center'}, 
-                    ],
-                    [
-                        {text: 'Single Top w/cutout for left sitting mirror (Top Style 1)', style: 'textotabla'},
-                        {text: '-', style: 'textotabla', alignment: 'center'},
-                        {text: '●', style: 'textotabla', alignment: 'center'}, 
-                    ],
-                    [
-                        {text: '"C" Base', style: 'textotabla'},
-                        {text: '-', style: 'textotabla', alignment: 'center'},
-                        {text: '-', style: 'textotabla', alignment: 'center'}, 
-                    ],
-                    [
-                        {text: 'Tuning Fork Base', style: 'textotabla'},
-                        {text: '●', style: 'textotabla', alignment: 'center'},
+                        {text: 'Dual Top Overbed Table', style: 'textotabla'},
+                        {text: '$1 195', style: 'textotabla', alignment: 'center'},
                         {text: '●', style: 'textotabla', alignment: 'center'}, 
                     ],
                     [
                         {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
                         {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
                     ],
                 ]
             },
@@ -222,7 +208,7 @@ async function getOverbedTables()
             ]
         },
         '\n',
-        { image: "images/OverbedTable5.png", width: 500, height: 250, alignment: 'center'},
+        { image: "images/OverbedTable5.png", width: 500, height: 240, alignment: 'center'},
         {text: '', pageBreak: 'after'  },
     ]
 
