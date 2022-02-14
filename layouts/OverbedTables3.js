@@ -137,18 +137,18 @@ async function getOverbedTables()
                     ],
                     [
                         {text: 'Single Top Overbed Table', style: 'textotabla'},
-                        {text: '●', style: 'textotabla', alignment: 'center'},
-                        {text: '$762', style: 'textotabla', alignment: 'center'}, 
-                    ],
-                    [
-                        {text: 'Dual Top Overbed Table', style: 'textotabla'},
-                        {text: '$1 195', style: 'textotabla', alignment: 'center'},
+                        {text: '$762', style: 'textotabla', alignment: 'center'},
                         {text: '●', style: 'textotabla', alignment: 'center'}, 
                     ],
                     [
+                        {text: 'Dual Top Overbed Table', style: 'textotabla'},
+                        {text: '●', style: 'textotabla', alignment: 'center'},
+                        {text: '$1 195', style: 'textotabla', alignment: 'center'}, 
+                    ],
+                    [
                         {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
                         {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
                     ],
                 ]
             },
