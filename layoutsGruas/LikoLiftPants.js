@@ -184,239 +184,265 @@ async function getLikoLiftPants()
     ]
 
     pSItems++*/
+
+    var s1 = []
+    if(salida15.length>0)
+    {
+        s1 = [
+            "\n",
+            "\n",
+            "\n",
+            {
+                table: {
+                    widths: [190, "*", 130],
+                    body: [
+                        [
+                            {text: [
+                                {text: 'LIKO LIFTPANTS™, MOD 92', style: 'textotablacolorlarge'},
+                                {text: "Liko Liftpants™, Mod 92", style: {fontSize: 0}, tocItem: "likoliftpants92"}
+                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            {},
+                            {}
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 60],
+                    body: [
+                        [
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            },
+        ]
+    }
+
+    var s2 = []
+    if(salida16.length>0)
+    {
+        s2 = [
+            "\n",
+            {
+                table: {
+                    widths: [190, "*", 130],
+                    body: [
+                        [
+                            {text: [
+                                {text: 'ULTRA LIFTPANTS™, MOD 920', style: 'textotablacolorlarge'},
+                                {text: "Ultra Liftpants™, Mod 920", style: {fontSize: 0}, tocItem: "ultraliftpants920"}
+                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            {},
+                            {}
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 60],
+                    body: [
+                        [
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories2
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            },
+        ]
+    }
+
+    var s3 = []
+    if(salida17.length>0)
+    {
+        s3 = [
+            "\n",
+            {
+                table: {
+                    widths: [190, "*", 130],
+                    body: [
+                        [
+                            {text: [
+                                {text: 'SOLO HIGHBACK SLING™, MOD 25', style: 'textotablacolorlarge'},
+                                {text: "Solo Highback Sling™, Mod 25", style: {fontSize: 0}, tocItem: "solohighback25"}
+                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            {},
+                            {}
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 60],
+                    body: [
+                        [
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories3
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            },
+        ]
+    }
     
     const fecha = new Date();
     fecha.toLocaleDateString()
     
     var likoLiftPants = [
-        "\n",
-        "\n",
-        "\n",
-        {
-            table: {
-                widths: [190, "*", 130],
-                body: [
-                    [
-                        {text: [
-                            {text: 'LIKO LIFTPANTS™, MOD 92', style: 'textotablacolorlarge'},
-                            {text: "Liko Liftpants™, Mod 92", style: {fontSize: 0}, tocItem: "likoliftpants92"}
-                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
-                        {},
-                        {}
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 60],
-                body: [
-                    [
-                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
-        {
-            table: {
-                widths: [190, "*", 130],
-                body: [
-                    [
-                        {text: [
-                            {text: 'ULTRA LIFTPANTS™, MOD 920', style: 'textotablacolorlarge'},
-                            {text: "Ultra Liftpants™, Mod 920", style: {fontSize: 0}, tocItem: "ultraliftpants920"}
-                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
-                        {},
-                        {}
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 60],
-                body: [
-                    [
-                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories2
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
-        {
-            table: {
-                widths: [190, "*", 130],
-                body: [
-                    [
-                        {text: [
-                            {text: 'SOLO HIGHBACK SLING™, MOD 25', style: 'textotablacolorlarge'},
-                            {text: "Solo Highback Sling™, Mod 25", style: {fontSize: 0}, tocItem: "solohighback25"}
-                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
-                        {},
-                        {}
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 60],
-                body: [
-                    [
-                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories3
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        s1,
+        s2,
+        s3,
         {text: '', pageBreak: 'after'  },
     ]
 

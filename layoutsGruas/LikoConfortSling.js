@@ -277,385 +277,429 @@ async function getLikoConfortsling()
     const fecha = new Date();
     fecha.toLocaleDateString()
 
+    var s1 = []
+    if(salida6.length>0)
+    {
+        s1 = [
+            "\n",
+            "\n",
+            "\n",
+            {
+                table: {
+                    widths: [190, "*", 130],
+                    body: [
+                        [
+                            {text: [
+                                {text: 'LIKO COMFORTSLING PLUS™, MOD 300', style: 'textotablacolorlarge'},
+                                {text: "Liko Comfortsling Plus™, Mod 300", style: {fontSize: 0}, tocItem: "likocomfortsling300"}
+                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            {},
+                            {}
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 60],
+                    body: [
+                        [
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            },
+        ]
+    }
+
+    var s2 = []
+    if(salida7.length>0)
+    {
+        s2 = [
+            "\n",
+            {
+                table: {
+                    widths: [190, "*", 130],
+                    body: [
+                        [
+                            {text: [
+                                {text: 'LIKO COMFORTSLING PLUS HIGH™, MOD 350', style: 'textotablacolorlarge'},
+                                {text: "Liko Comfortsling Plus High™, Mod 350", style: {fontSize: 0}, tocItem: "likocomfortsling350"}
+                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            {},
+                            {}
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 60],
+                    body: [
+                        [
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories2
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            },
+        ]
+    }
+
+    var s3 = []
+    if(salida8.length>0)
+    {
+        s3 = [
+            "\n",
+            {
+                table: {
+                    widths: [190, "*", 130],
+                    body: [
+                        [
+                            {text: [
+                                {text: 'LIKO HYGIENESLING WITH BELT™, MOD 41', style: 'textotablacolorlarge'},
+                                {text: "Liko Hygienesling With Belt™, Mod 41", style: {fontSize: 0}, tocItem: "likohygienesling41"}
+                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            {},
+                            {}
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 60],
+                    body: [
+                        [
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories3
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            },
+        ]
+    }
+
+    var s4 = []
+    if(salida9.length>0)
+    {
+        s4 = [
+            "\n",
+            {
+                table: {
+                    widths: [190, "*", 130],
+                    body: [
+                        [
+                            {text: [
+                                {text: 'LIKO HYGIENESLING WITH SAFETYBELT™, MOD 45', style: 'textotablacolorlarge'},
+                                {text: "Liko Hygienesling With Safetybelt™, Mod 45", style: {fontSize: 0}, tocItem: "likohygienesling45"}
+                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            {},
+                            {}
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 60],
+                    body: [
+                        [
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories4
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            },
+        ]
+    }
+
+    var s5 = []
+    if(salida10.length>0)
+    {
+        s5 = [
+            "\n",
+            {
+                table: {
+                    widths: [190, "*", 130],
+                    body: [
+                        [
+                            {text: [
+                                {text:'LIKO HYGIENEVEST HIGHBACK™, MOD 55', style: 'textotablacolorlarge' },
+                                {text:"Liko Hygienevest Highback™, Mod 55", style: {fontSize: 0}, tocItem: "likohygienevest55"}
+                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            {},
+                            {}
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 60],
+                    body: [
+                        [
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories5
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            },
+        ]
+    }
+
     var likoConfortsling = [
-        "\n",
-        "\n",
-        "\n",
-        {
-            table: {
-                widths: [190, "*", 130],
-                body: [
-                    [
-                        {text: [
-                            {text: 'LIKO COMFORTSLING PLUS™, MOD 300', style: 'textotablacolorlarge'},
-                            {text: "Liko Comfortsling Plus™, Mod 300", style: {fontSize: 0}, tocItem: "likocomfortsling300"}
-                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
-                        {},
-                        {}
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 60],
-                body: [
-                    [
-                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
-        {
-            table: {
-                widths: [190, "*", 130],
-                body: [
-                    [
-                        {text: [
-                            {text: 'LIKO COMFORTSLING PLUS HIGH™, MOD 350', style: 'textotablacolorlarge'},
-                            {text: "Liko Comfortsling Plus High™, Mod 350", style: {fontSize: 0}, tocItem: "likocomfortsling350"}
-                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
-                        {},
-                        {}
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 60],
-                body: [
-                    [
-                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories2
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
-        {
-            table: {
-                widths: [190, "*", 130],
-                body: [
-                    [
-                        {text: [
-                            {text: 'LIKO HYGIENESLING WITH BELT™, MOD 41', style: 'textotablacolorlarge'},
-                            {text: "Liko Hygienesling With Belt™, Mod 41", style: {fontSize: 0}, tocItem: "likohygienesling41"}
-                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
-                        {},
-                        {}
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 60],
-                body: [
-                    [
-                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories3
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
-        {
-            table: {
-                widths: [190, "*", 130],
-                body: [
-                    [
-                        {text: [
-                            {text: 'LIKO HYGIENESLING WITH SAFETYBELT™, MOD 45', style: 'textotablacolorlarge'},
-                            {text: "Liko Hygienesling With Safetybelt™, Mod 45", style: {fontSize: 0}, tocItem: "likohygienesling45"}
-                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
-                        {},
-                        {}
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 60],
-                body: [
-                    [
-                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories4
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
-        {
-            table: {
-                widths: [190, "*", 130],
-                body: [
-                    [
-                        {text: [
-                            {text:'LIKO HYGIENEVEST HIGHBACK™, MOD 55', style: 'textotablacolorlarge' },
-                            {text:"Liko Hygienevest Highback™, Mod 55", style: {fontSize: 0}, tocItem: "likohygienevest55"}
-                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
-                        {},
-                        {}
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 60],
-                body: [
-                    [
-                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories5
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        s1,
+        s2,
+        s3,
+        s4,
+        s5,
         {text: '', pageBreak: 'after'  },
     ]
 

@@ -139,10 +139,10 @@ async function getReposheet()
     pSItems++
 
     accesories3[pSItems] =[
-        {border: [true, false, true, false], text: salida3[2].Part, style: 'textotabla'},
-        {border: [true, false, true, false], text: salida3[2].Item_Long_Desc, style: 'textotablaboldblack'},
-        {border: [true, false, true, false], image: "images/Reposheet5.png", width: 80, height: 40, alignment: 'center'},
-        {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[2].Price), style: 'textotabla', alignment: 'center'},
+        {border: [true, false, true, true], text: salida3[2].Part, style: 'textotabla'},
+        {border: [true, false, true, true], text: salida3[2].Item_Long_Desc, style: 'textotablaboldblack'},
+        {border: [true, false, true, true], image: "images/Reposheet5.png", width: 80, height: 40, alignment: 'center'},
+        {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[2].Price), style: 'textotabla', alignment: 'center'},
     ]
 
     pSItems++
@@ -255,312 +255,347 @@ async function getReposheet()
     const fecha = new Date();
     fecha.toLocaleDateString()
 
+    var s1 = []
+    if(salida1.length>0)
+    {
+        s1 = [
+            "\n",
+            {
+                table: {
+                    widths: [190, "*", 130],
+                    body: [
+                        [
+                            {text: [
+                                {text: 'REPOSHEET ORIGINAL', style: 'textotablacolorlarge'},
+                                {text: "Reposheet Original", style: {fontSize: 0}, tocItem: "reposheetoriginal"}
+                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            {},
+                            {}
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 60],
+                    body: [
+                        [
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            },
+        ]
+    }
+
+    var s2 = []
+    if(salida2.length>0)
+    {
+        s2 = [
+            "\n",
+            {
+                table: {
+                    widths: [190, "*", 130],
+                    body: [
+                        [
+                            {text: [
+                                {text: 'SOLO REPOSHEET™ ORIGINAL', style: 'textotablacolorlarge'},
+                                {text: "Solo Reposheet™ Original", style: {fontSize: 0}, tocItem: "soloreposheetoriginal"}
+                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            {},
+                            {}
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 60],
+                    body: [
+                        [
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories2
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            },
+        ]
+    }
+
+    var s3 = []
+    if(salida3.length>0)
+    {
+        s3 = [
+            "\n",
+            {
+                table: {
+                    widths: [190, "*", 130],
+                    body: [
+                        [
+                            {text: [
+                                {text: 'MULTISTRAP™', style: 'textotablacolorlarge'},
+                                {text: "Multistrap™", style: {fontSize: 0}, tocItem: "multistrap"}
+                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            {},
+                            {}
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 60],
+                    body: [
+                        [
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories3
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            },
+        ]
+    }
+
+    var s4 = []
+    if(salida4.length>0)
+    {
+        s4 = [
+            "\n",
+            {
+                table: {
+                    widths: [190, "*", 130],
+                    body: [
+                        [
+                            {text: [
+                                {text: 'SOLO MULTISTRAP™', style: 'textotablacolorlarge'},
+                                {text: "Solo Multistrap™", style: {fontSize: 0}, tocItem: "solomultistrap"}
+                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            {},
+                            {}
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 60],
+                    body: [
+                        [
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories4
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            },
+        ]
+    }
+
     var reposheet = [
         "\n",
         "\n",
         "\n",
         { text: 'REPOSHEET - MULTISTRAP', style: 'header' },
-        "\n",
-        {
-            table: {
-                widths: [190, "*", 130],
-                body: [
-                    [
-                        {text: [
-                            {text: 'REPOSHEET ORIGINAL', style: 'textotablacolorlarge'},
-                            {text: "Reposheet Original", style: {fontSize: 0}, tocItem: "reposheetoriginal"}
-                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
-                        {},
-                        {}
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 60],
-                body: [
-                    [
-                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
-        {
-            table: {
-                widths: [190, "*", 130],
-                body: [
-                    [
-                        {text: [
-                            {text: 'SOLO REPOSHEET™ ORIGINAL', style: 'textotablacolorlarge'},
-                            {text: "Solo Reposheet™ Original", style: {fontSize: 0}, tocItem: "soloreposheetoriginal"}
-                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
-                        {},
-                        {}
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 60],
-                body: [
-                    [
-                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories2
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
-        {
-            table: {
-                widths: [190, "*", 130],
-                body: [
-                    [
-                        {text: [
-                            {text: 'MULTISTRAP™', style: 'textotablacolorlarge'},
-                            {text: "Multistrap™", style: {fontSize: 0}, tocItem: "multistrap"}
-                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
-                        {},
-                        {}
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 60],
-                body: [
-                    [
-                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories3
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
-        {
-            table: {
-                widths: [190, "*", 130],
-                body: [
-                    [
-                        {text: [
-                            {text: 'SOLO MULTISTRAP™', style: 'textotablacolorlarge'},
-                            {text: "Solo Multistrap™", style: {fontSize: 0}, tocItem: "solomultistrap"}
-                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
-                        {},
-                        {}
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 60],
-                body: [
-                    [
-                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories4
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        s1,
+        s2,
+        s3,
+        s4,
         {text: '', pageBreak: 'after'  },
     ]
 

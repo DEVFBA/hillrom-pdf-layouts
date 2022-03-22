@@ -20,6 +20,8 @@ var overheadLifts = require("./layoutsGruas/OverheadLifts.js")
 var railSystemH70 = require("./layoutsGruas/RailSystemH70.js")
 var railSystemH100 = require("./layoutsGruas/RailSystemH100.js")
 var railSystemH140 = require("./layoutsGruas/RailSystemH140.js")
+var railSystemH160 = require("./layoutsGruas/RailSystemH160.js")
+var railSystemEndCovers = require("./layoutsGruas/RailSystemEndCovers.js")
 var assemblyParts = require("./layoutsGruas/AssemblyParts.js")
 var railSwitchSystem = require("./layoutsGruas/RailSwitchSystem.js")
 var freespanStraightRail = require("./layoutsGruas/FreespanStraightRail.js")
@@ -52,6 +54,8 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
         var railSystemH70Layout = await railSystemH70.getRailSystemH70()
         var railSystemH100Layout = await railSystemH100.getRailSystemH100()
         var railSystemH140Layout = await railSystemH140.getRailSystemH140()
+        var railSystemH160Layout = await railSystemH160.getRailSystemH160()
+        var railSystemEndCoversLayout = await railSystemEndCovers.getRailSystemEndCovers()
         var assemblyPartsLayout = await assemblyParts.getAssemblyParts()
         var railSwitchSystemLayout = await railSwitchSystem.getRailSwitchSystem()
         var freespanStraightRailLayout = await freespanStraightRail.getFreespanStraightRail()
@@ -700,6 +704,8 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                 contenido.push(railSystemH70Layout)
                 contenido.push(railSystemH100Layout)
                 contenido.push(railSystemH140Layout)
+                contenido.push(railSystemH160Layout)
+                contenido.push(railSystemEndCoversLayout)
                 contenido.push(assemblyPartsLayout)
                 contenido.push(railSwitchSystemLayout)
             }
@@ -996,6 +1002,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
             }
         } 
     }catch(error){
+        console.log(error)
         return response = {
             data: {
                 status: 0,

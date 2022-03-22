@@ -417,6 +417,180 @@ async function getLikoStretchers()
     }
     /*TERMINA CICLO*/
 
+    var s1 = []
+    if(salida1.length>0)
+    {
+        s1 = [
+            "\n",
+            {
+                table: {
+                    widths: [190, "*"],
+                    body: [
+                        [
+                            {text: [
+                                {text: 'LIKO OCTOSTRETCH™', style: 'textotablacolorlarge'},
+                                {text: "Liko Octostretch™", style: {fontSize: 0}, tocItem: "likooctostretch"}
+                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 2},
+                            {},
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 60],
+                    body: [
+                        [
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            },
+        ]
+    }
+
+    var s2 = []
+    if(salida5.length)
+    {
+        s2 = [
+            {
+                table: {
+                    widths: [250, "*"],
+                    body: [
+                        [
+                            {text: [
+                                {text: 'LIKOSTRETCH MOD 600 IC™', style: 'textotablacolorlarge'},
+                                {text: "Likostretch Mod 600 IC™", style: {fontSize: 0}, tocItem: "likostretch"}
+                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 2},
+                            {}
+                        ],
+                        [
+                            {border: [true, true, false, true], text: [
+                                {text: 'Product specification for a complete product:\n', style: 'textotablaboldblack',  alignment: 'left'},
+                                {text: '* LikoStretch Mod 600 IC\n', style: 'textotabla',  alignment: 'left'},
+                                {text: '(Prod. No. 3156065 or 3156065B)\n', style: 'textotabla',  alignment: 'left'},
+                                {text: '* SideRails 600 (Prod. No. 3166506)\n', style: 'textotabla',  alignment: 'left'},
+                                {text: '* Straps Mod 600 IC (Prod. No. 3684001)\n', style: 'textotabla',  alignment: 'left'},
+                                {text: '* Spatula Mod 600 IC (Prod. No. 3684002).', style: 'textotabla',  alignment: 'left'},
+                            ]},
+                            {border: [false, true, true, true], image: "images/LikoStretchers5.png", width: 80, height: 60, alignment: 'center'},
+                        ]
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 60],
+                    body: [
+                        [
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories2
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            },
+        ]
+    }
+
     const fecha = new Date();
     fecha.toLocaleDateString()
 
@@ -425,166 +599,8 @@ async function getLikoStretchers()
         "\n",
         "\n",
         { text: 'LIKO STRETCHERS', style: 'header' },
-        "\n",
-        {
-            table: {
-                widths: [190, "*"],
-                body: [
-                    [
-                        {text: [
-                            {text: 'LIKO OCTOSTRETCH™', style: 'textotablacolorlarge'},
-                            {text: "Liko Octostretch™", style: {fontSize: 0}, tocItem: "likooctostretch"}
-                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 2},
-                        {},
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 60],
-                body: [
-                    [
-                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
-        {
-            table: {
-                widths: [250, "*"],
-                body: [
-                    [
-                        {text: [
-                            {text: 'LIKOSTRETCH MOD 600 IC™', style: 'textotablacolorlarge'},
-                            {text: "Likostretch Mod 600 IC™", style: {fontSize: 0}, tocItem: "likostretch"}
-                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 2},
-                        {}
-                    ],
-                    [
-                        {border: [true, true, false, true], text: [
-                            {text: 'Product specification for a complete product:\n', style: 'textotablaboldblack',  alignment: 'left'},
-                            {text: '* LikoStretch Mod 600 IC\n', style: 'textotabla',  alignment: 'left'},
-                            {text: '(Prod. No. 3156065 or 3156065B)\n', style: 'textotabla',  alignment: 'left'},
-                            {text: '* SideRails 600 (Prod. No. 3166506)\n', style: 'textotabla',  alignment: 'left'},
-                            {text: '* Straps Mod 600 IC (Prod. No. 3684001)\n', style: 'textotabla',  alignment: 'left'},
-                            {text: '* Spatula Mod 600 IC (Prod. No. 3684002).', style: 'textotabla',  alignment: 'left'},
-                        ]},
-                        {border: [false, true, true, true], image: "images/LikoStretchers5.png", width: 80, height: 60, alignment: 'center'},
-                    ]
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 60],
-                body: [
-                    [
-                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories2
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        s1,
+        s2,
         {text: '', pageBreak: 'after'  },
     ]
 

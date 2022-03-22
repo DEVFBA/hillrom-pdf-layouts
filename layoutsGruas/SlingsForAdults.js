@@ -112,6 +112,172 @@ async function getSlingsForAdults()
     }
     /*TERMINA CICLO*/
 
+    var s1 = []
+    if(salida1.length > 0)
+    {
+        s1 = [
+            "\n",
+            {
+                table: {
+                    widths: [190, "*", 130],
+                    body: [
+                        [
+                            {text: [
+                                {text: 'LIKO UNIVERSALSLING™, MOD 000', style: 'textotablacolorlarge'},
+                                {text: "Liko Universalsling™, Mod 000", style: {fontSize: 0}, tocItem: "likouniversalsling"}
+                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            {},
+                            {}
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 60],
+                    body: [
+                        [
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            },
+        ]
+    }
+
+    var s2 = []
+    if(salida2.length > 0)
+    {
+        s2 = [
+            "\n",
+            {
+                table: {
+                    widths: [190, "*", 130],
+                    body: [
+                        [
+                            {text: [
+                                {text: 'LIKO ULTRASLING™, MOD 06', style: 'textotablacolorlarge'},
+                                {text: "Liko Ultrasling™, Mod 06", style: {fontSize: 0}, tocItem: "likoultrasling"}
+                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            {},
+                            {}
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 60],
+                    body: [
+                        [
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            },
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories2
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            },
+        ]
+    }
+
     const fecha = new Date();
     fecha.toLocaleDateString()
 
@@ -120,157 +286,8 @@ async function getSlingsForAdults()
         "\n",
         "\n",
         { text: 'SLINGS FOR ADULTS', style: 'header' },
-        "\n",
-        {
-            table: {
-                widths: [190, "*", 130],
-                body: [
-                    [
-                        {text: [
-                            {text: 'LIKO UNIVERSALSLING™, MOD 000', style: 'textotablacolorlarge'},
-                            {text: "Liko Universalsling™, Mod 000", style: {fontSize: 0}, tocItem: "likouniversalsling"}
-                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
-                        {},
-                        {}
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 60],
-                body: [
-                    [
-                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
-        {
-            table: {
-                widths: [190, "*", 130],
-                body: [
-                    [
-                        {text: [
-                            {text: 'LIKO ULTRASLING™, MOD 06', style: 'textotablacolorlarge'},
-                            {text: "Liko Ultrasling™, Mod 06", style: {fontSize: 0}, tocItem: "likoultrasling"}
-                        ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
-                        {},
-                        {}
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 60],
-                body: [
-                    [
-                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories2
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        s1,
+        s2,
         {text: '', pageBreak: 'after'  },
     ]
 
