@@ -1,8 +1,8 @@
 const dbSlings = require('../controllers/slingsforadults')
 
-async function getLikoMastervest()
+async function getLikoMastervest(pdfZone)
 {
-    const res = await dbSlings.getSlingsForAdults()
+    const res = await dbSlings.getSlingsForAdults(pdfZone)
     const salida11  = res[10]
     const salida12 = res[11]
     const salida13 = res[12]

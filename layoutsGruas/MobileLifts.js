@@ -1,8 +1,8 @@
 const dbGolvo = require('../controllers/golvo')
 
-async function getMobileLifts()
+async function getMobileLifts(pdfZone)
 {
-    const res = await dbGolvo.getGolvo()
+    const res = await dbGolvo.getGolvo(pdfZone)
     const generalData = res[0]
     const optionsData = res[1]
     const accesories1Data  = res[2]

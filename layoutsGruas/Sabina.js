@@ -2,9 +2,9 @@ const dbSabina = require('../controllers/sabina')
 
 var ruta = "/Users/alexishernandezolvera/Desktop/GTC/PROYECTOS/hillrom-pdf-layouts/"
 
-async function getSabina()
+async function getSabina(pdfZone)
 {
-    const res = await dbSabina.getSabina()
+    const res = await dbSabina.getSabina(pdfZone)
     const salida1 = res[0]
     const salida2 = res[1]
     const salida3  = res[2]

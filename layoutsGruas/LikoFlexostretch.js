@@ -1,8 +1,8 @@
 const dbLiko = require('../controllers/likostretchers')
 
-async function getLikoFlexostretch()
+async function getLikoFlexostretch(pdfZone)
 {
-    const res = await dbLiko.getLiko()
+    const res = await dbLiko.getLiko(pdfZone)
     const salida9  = res[8]
     const salida10 = res[9]
     const salida11 = res[10]

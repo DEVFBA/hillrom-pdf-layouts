@@ -1,8 +1,8 @@
 const dbCurtainSystem = require('../controllers/curtainsystem')
 
-async function getFreeSpirit()
+async function getFreeSpirit(pdfZone)
 {
-    const res = await dbCurtainSystem.getCurtainSystem()
+    const res = await dbCurtainSystem.getCurtainSystem(pdfZone)
     const salida1 = res[0]
     const salida2 = res[1]
     const salida3 = res[2]

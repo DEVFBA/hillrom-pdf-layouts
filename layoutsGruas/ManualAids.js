@@ -1,8 +1,8 @@
 const dbManualAids = require('../controllers/manualaids')
 
-async function getManualAIDS()
+async function getManualAIDS(pdfZone)
 {
-    const res = await dbManualAids.getManualAIDS()
+    const res = await dbManualAids.getManualAIDS(pdfZone)
     const salida1  = res[0]
     const salida2 = res[1]
     const salida3 = res[2]

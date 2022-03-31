@@ -1,8 +1,8 @@
 const dbRailSystem = require('../controllers/railsystem')
 
-async function getAssemblyParts()
+async function getAssemblyParts(pdfZone)
 {
-    const res = await dbRailSystem.getRailSystem()
+    const res = await dbRailSystem.getRailSystem(pdfZone)
     const salida21 = res[20]
     const salida22 = res[21]
     const salida23  = res[22]

@@ -1,8 +1,8 @@
 const dbLifting = require('../controllers/liftingaccesories')
 
-async function getLiftingAccesories()
+async function getLiftingAccesories(pdfZone)
 {
-    const res = await dbLifting.getLifting()
+    const res = await dbLifting.getLifting(pdfZone)
     const salida1 = res[0]
     const salida2 = res[1]
     const salida3  = res[2]

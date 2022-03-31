@@ -1,8 +1,8 @@
 const dbMobileLiftAccesories = require('../controllers/mobileliftaccesories')
 
-async function getMobileLiftAccesories()
+async function getMobileLiftAccesories(pdfZone)
 {
-    const res = await dbMobileLiftAccesories.getMobileLiftAccesories()
+    const res = await dbMobileLiftAccesories.getMobileLiftAccesories(pdfZone)
     const salida1 = res[0]
     const salida2 = res[1]
     const salida3  = res[2]

@@ -127,7 +127,7 @@ async function createPdf(params){
                             var nombreArchivo = zone[0][0].Short_Desc + "-" + priceList + "-" + "V" + pdfVersion + "_" + anio + mes + dia + hora + minutos + segundos
                             var zonaNombre = zone[0][0].Short_Desc
                             //console.log(listPrice.recordsets[0])
-                            return await gruas.createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zonaNombre, pdfVersion, listPrice.recordsets[0])
+                            return await gruas.createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zonaNombre, pdfVersion, listPrice.recordsets[0], params.pdfZone)
                             //console.log("Voy a crear documento de gruas")
                         }
                     }

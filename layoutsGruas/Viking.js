@@ -1,8 +1,8 @@
 const dbViking = require('../controllers/viking')
 
-async function getViking()
+async function getViking(pdfZone)
 {
-    const res = await dbViking.getViking()
+    const res = await dbViking.getViking(pdfZone)
     const salida1 = res[0]
     const salida2 = res[1]
     const salida3  = res[2]

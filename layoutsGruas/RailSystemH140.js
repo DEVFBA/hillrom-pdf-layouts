@@ -1,8 +1,8 @@
 const dbRailSystem = require('../controllers/railsystem')
 
-async function getRailSystemH140()
+async function getRailSystemH140(pdfZone)
 {
-    const res = await dbRailSystem.getRailSystem()
+    const res = await dbRailSystem.getRailSystem(pdfZone)
     const salida10 = res[9]
     const salida11 = res[10]
 

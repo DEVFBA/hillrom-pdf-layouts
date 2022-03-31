@@ -1,8 +1,8 @@
 const dbSlings = require('../controllers/slingsforchildren')
 
-async function getSlingsForChildren()
+async function getSlingsForChildren(pdfZone)
 {
-    const res = await dbSlings.getSlingsForChildren()
+    const res = await dbSlings.getSlingsForChildren(pdfZone)
     const salida1 = res[0]
     const salida2 = res[1]
     const salida3  = res[2]

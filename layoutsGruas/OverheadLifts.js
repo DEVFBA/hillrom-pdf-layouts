@@ -1,8 +1,8 @@
 const dbOverheadLifts = require('../controllers/overheadlifts')
 
-async function getOverheadLifts()
+async function getOverheadLifts(pdfZone)
 {
-    const res = await dbOverheadLifts.getOverheadLifts()
+    const res = await dbOverheadLifts.getOverheadLifts(pdfZone)
     const salida1 = res[0]
     const salida2 = res[1]
     const salida3  = res[2]

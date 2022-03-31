@@ -1,8 +1,8 @@
 const dbReposheet = require('../controllers/reposheet')
 
-async function getReposheet()
+async function getReposheet(pdfZone)
 {
-    const res = await dbReposheet.getReposheet()
+    const res = await dbReposheet.getReposheet(pdfZone)
     const salida1  = res[0]
     const salida2 = res[1]
     const salida3 = res[2]

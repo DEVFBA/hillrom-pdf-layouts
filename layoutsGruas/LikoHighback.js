@@ -1,8 +1,8 @@
 const dbSlings = require('../controllers/slingsforadults')
 
-async function getLikoOriginalHighback()
+async function getLikoOriginalHighback(pdfZone)
 {
-    const res = await dbSlings.getSlingsForAdults()
+    const res = await dbSlings.getSlingsForAdults(pdfZone)
     const salida3  = res[2]
     const salida4 = res[3]
     const salida5 = res[4]

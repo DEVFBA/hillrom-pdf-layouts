@@ -1,8 +1,8 @@
 const dbFreeStand = require('../controllers/freestandingliftsystem')
 
-async function getFreespanUltraTwin()
+async function getFreespanUltraTwin(pdfZone)
 {
-    const res = await dbFreeStand.getFreestanding()
+    const res = await dbFreeStand.getFreestanding(pdfZone)
     const salida8 = res[7]
     const salida9 = res[8]
     const salida10 = res[9]

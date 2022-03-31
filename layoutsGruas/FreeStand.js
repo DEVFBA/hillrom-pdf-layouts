@@ -1,8 +1,8 @@
 const dbFreeStand = require('../controllers/freestandingliftsystem')
 
-async function getFreeStand()
+async function getFreeStand(pdfZone)
 {
-    const res = await dbFreeStand.getFreestanding()
+    const res = await dbFreeStand.getFreestanding(pdfZone)
     const salida12 = res[11]
     const salida13 = res[12]
 

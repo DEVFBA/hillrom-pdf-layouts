@@ -1,8 +1,8 @@
 const dbFreeStand = require('../controllers/freestandingliftsystem')
 
-async function getFreespanStraightRail()
+async function getFreespanStraightRail(pdfZone)
 {
-    const res = await dbFreeStand.getFreestanding()
+    const res = await dbFreeStand.getFreestanding(pdfZone)
     const salida1 = res[0]
     const salida2 = res[1]
     const salida3 = res[2]

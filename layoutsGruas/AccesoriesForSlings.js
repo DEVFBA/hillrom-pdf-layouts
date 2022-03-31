@@ -1,8 +1,8 @@
 const dbAccesoriesSlings = require('../controllers/accesoriesforslings')
 
-async function getAccesoriesForSlings()
+async function getAccesoriesForSlings(pdfZone)
 {
-    const res = await dbAccesoriesSlings.getAccesories()
+    const res = await dbAccesoriesSlings.getAccesories(pdfZone)
     const salida1  = res[0]
     const salida2 = res[1]
     const salida3 = res[2]
