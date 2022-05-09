@@ -9,106 +9,138 @@ async function getRailSystemH100(pdfZone)
     var accesories = []
     var pSItems = 0
     
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida8.length; i++)
+    if(salida8.length > 0)
     {
-        if(i === 0 && salida8.length === 1)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida8.length; i++)
         {
-            accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida8[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida8[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, true, true, true], image: "images/RailSystemH100.png", width: 80, height: 25, alignment: 'center', rowSpan: salida8.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida8.length === 1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, true], text: salida8[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida8[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, true, true, true], image: "images/RailSystemH100.png", width: 80, height: 25, alignment: 'center', rowSpan: salida8.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, false], text: salida8[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida8[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, true, true, true], image: "images/RailSystemH100.png", width: 80, height: 25, alignment: 'center', rowSpan: salida8.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida8.length-1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: salida8[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida8[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: salida8[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida8[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories[pSItems] =[
-                {border: [true, true, true, false], text: salida8[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida8[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, true, true, true], image: "images/RailSystemH100.png", width: 80, height: 25, alignment: 'center', rowSpan: salida8.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida8.length-1)
-        {
-            accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida8[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida8[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories[pSItems] =[
-                {border: [true, false, true, false], text: salida8[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida8[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
-
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida9.length; i++)
+    
+    if(salida9.length > 0)
+    {   
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida9.length; i++)
+        {
+            if(i === 0 && salida9.length === 1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, true], text: salida9[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida9[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, false], text: salida9[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida9[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, true, true, false], text: ""},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida9.length-1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: salida9[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida9[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: salida9[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida9[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
+        }
+        /*TERMINA CICLO*/
+    }
+    
+    var table1 = [];
+    if(salida8.length > 0)
     {
-        if(i === 0 && salida9.length === 1)
-        {
-            accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida9[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida9[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === 0)
-        {
-            accesories[pSItems] =[
-                {border: [true, true, true, false], text: salida9[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida9[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, true, true, false], text: ""},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida9.length-1)
-        {
-            accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida9[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida9[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories[pSItems] =[
-                {border: [true, false, true, false], text: salida9[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida9[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        table1 = [
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
     }
-    /*TERMINA CICLO*/
-
     const fecha = new Date();
     fecha.toLocaleDateString()
 
@@ -166,26 +198,7 @@ async function getRailSystemH100(pdfZone)
                 },
             }		
         },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table1,
         {text: '', pageBreak: 'after'  },
     ]
 

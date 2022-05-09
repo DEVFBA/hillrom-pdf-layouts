@@ -29,101 +29,105 @@ async function getHillromResidentLongTerm()
 
     /*ESTO VA EN UN CICLO*/
 
-    options[pSItems] = [
-        {text: optionsData[0].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'}, 
-    ]
-    pSItems++
-
-    options[pSItems] = [
-        {text: optionsData[7].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla',alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla', alignment: 'center'}, 
-    ]
-    pSItems++
-
-    options[pSItems] = [
-        {text: optionsData[14].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla',alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla', alignment: 'center'}, 
-    ]
-    pSItems++
-
-    options[pSItems] = [
-        {text: optionsData[21].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla',alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla', alignment: 'center'}, 
-    ]
-    pSItems++
-
-    options[pSItems] = [
-        {text: optionsData[28].Item_Long_Desc, style: 'textotabla'},
-        {text: "$0", style: 'textotabla',alignment: 'center'},
-        {text: "$0", style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[28].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[29].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-    ]
-    pSItems++
-
-    options[pSItems] = [
-        {text: optionsData[30].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla',alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla', alignment: 'center'}, 
-    ]
-    pSItems++
-
-    options[pSItems] = [
-        {text: optionsData[37].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla',alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla', alignment: 'center'}, 
-    ]
-    pSItems++
-
-    options[pSItems] = [
-        {text: optionsData[44].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[44].Price), style: 'textotabla',alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[44].Price), style: 'textotabla', alignment: 'center'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[44].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[44].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'},
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-        {text: "$0", style: 'textotabla', alignment: 'center'}, 
-    ]
-    pSItems++
+    if(optionsData.length > 0)
+    {
+        options[pSItems] = [
+            {text: optionsData[0].Item_Long_Desc, style: 'textotabla'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+        pSItems++
+    
+        options[pSItems] = [
+            {text: optionsData[7].Item_Long_Desc, style: 'textotabla'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla',alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+        pSItems++
+    
+        options[pSItems] = [
+            {text: optionsData[14].Item_Long_Desc, style: 'textotabla'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla',alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+        pSItems++
+    
+        options[pSItems] = [
+            {text: optionsData[21].Item_Long_Desc, style: 'textotabla'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla',alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+        pSItems++
+    
+        options[pSItems] = [
+            {text: optionsData[28].Item_Long_Desc, style: 'textotabla'},
+            {text: "$0", style: 'textotabla',alignment: 'center'},
+            {text: "$0", style: 'textotabla', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[28].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[29].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$0", style: 'textotabla', alignment: 'center'},
+            {text: "$0", style: 'textotabla', alignment: 'center'}, 
+            {text: "$0", style: 'textotabla', alignment: 'center'}, 
+        ]
+        pSItems++
+    
+        options[pSItems] = [
+            {text: optionsData[30].Item_Long_Desc, style: 'textotabla'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla',alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+        pSItems++
+    
+        options[pSItems] = [
+            {text: optionsData[37].Item_Long_Desc, style: 'textotabla'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla',alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+        pSItems++
+    
+        options[pSItems] = [
+            {text: optionsData[44].Item_Long_Desc, style: 'textotabla'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[44].Price), style: 'textotabla',alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[44].Price), style: 'textotabla', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[44].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[44].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$0", style: 'textotabla', alignment: 'center'},
+            {text: "$0", style: 'textotabla', alignment: 'center'}, 
+            {text: "$0", style: 'textotabla', alignment: 'center'}, 
+        ]
+        pSItems++
+    }
+    
     
      /*TERMINA CICLO*/
 
@@ -168,21 +172,24 @@ async function getHillromResidentLongTerm()
 
     pSItems++
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i< miscAccesoriesData.length; i++)
+    if(miscAccesoriesData.length > 0)
     {
-        accesories[pSItems] = [
-            {text: miscAccesoriesData[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: miscAccesoriesData[i].Item_Long_Desc, style: 'textotabla'},
-            {text: miscAccesoriesData[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(miscAccesoriesData[i].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i< miscAccesoriesData.length; i++)
+        {
+            accesories[pSItems] = [
+                {text: miscAccesoriesData[i].KitName, style: 'textotabla', alignment: 'center'},
+                {text: miscAccesoriesData[i].Item_Long_Desc, style: 'textotabla'},
+                {text: miscAccesoriesData[i].Part, style: 'textotabla', alignment: 'center'}, 
+                {text: "$" + Intl.NumberFormat("en-IN").format(miscAccesoriesData[i].Price), style: 'textotabla', alignment: 'center'}, 
+            ]
+        
+            pSItems++
+        }
+        /*TERMINA CICLO*/
     }
-     /*TERMINA CICLO*/
-
-     accesories[pSItems] = [
+    
+    accesories[pSItems] = [
         {border: [false, false, false, false], text: "RESIDENTACC", style: 'textotablaboldlarge', colSpan: 4,},
         {},
         {}, 
@@ -191,21 +198,370 @@ async function getHillromResidentLongTerm()
 
     pSItems++
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i< residentAccData.length; i++)
+    if(residentAccData.length > 0)
     {
-        accesories[pSItems] = [
-            {text: residentAccData[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: residentAccData[i].Item_Long_Desc, style: 'textotabla'},
-            {text: residentAccData[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(residentAccData[i].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i< residentAccData.length; i++)
+        {
+            accesories[pSItems] = [
+                {text: residentAccData[i].KitName, style: 'textotabla', alignment: 'center'},
+                {text: residentAccData[i].Item_Long_Desc, style: 'textotabla'},
+                {text: residentAccData[i].Part, style: 'textotabla', alignment: 'center'}, 
+                {text: "$" + Intl.NumberFormat("en-IN").format(residentAccData[i].Price), style: 'textotabla', alignment: 'center'}, 
+            ]
+        
+            pSItems++
+        }
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
-   
 
+    var table1 = []
+    if(pricesData.length > 0)
+    {
+        table1 = [
+            {
+                table: {
+                    widths: ["*", 35, 35, 35, 35, 35, 35, 35],
+                    body: [
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'RESIDENTLTCBED', style: 'textotablacolor', colSpan: 7, fillColor: '#546ce4',  alignment: 'center'},
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'P870', style: 'textotablaboldblack', colSpan: 7, alignment: 'center'},
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: 'Special Features', style: 'textotablabold'},
+                            {text: 'LTC-320', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'LTC-310', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LTC-300', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LTC-250', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'LTC-205', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LTC-105', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LTC-100', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: '1/2 Head Rails with Controls', style: 'textotabla'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'},
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: '1/2 Head Rails No Controls', style: 'textotabla'},
+                            {text: '', style: 'textotabla', alignment: 'center'},
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'},
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: '1/2 Foot Rails No Controls', style: 'textotabla'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'},
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'},
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: 'Sleep Deck Options. Must Choose One', style: 'textotabla'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: 'Pendant', style: 'textotabla'},
+                            {text: '', style: 'textotabla', alignment: 'center'},
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: '2 Floor Brake', style: 'textotabla'},
+                            {text: '', style: 'textotabla', alignment: 'center'},
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'},
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: '4 Floor Brake', style: 'textotabla'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: 'No Head/Foot Rails', style: 'textotabla'},
+                            {text: '', style: 'textotabla', alignment: 'center'},
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[2].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[3].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[4].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[5].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[6].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            }
+        ]
+    }
+    else {
+        table1 = [
+            {
+                table: {
+                    widths: ["*", 35, 35, 35, 35, 35, 35, 35],
+                    body: [
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'RESIDENTLTCBED', style: 'textotablacolor', colSpan: 7, fillColor: '#546ce4',  alignment: 'center'},
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'P870', style: 'textotablaboldblack', colSpan: 7, alignment: 'center'},
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: 'Special Features', style: 'textotablabold'},
+                            {text: 'LTC-320', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'LTC-310', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LTC-300', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LTC-250', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'LTC-205', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LTC-105', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LTC-100', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: '1/2 Head Rails with Controls', style: 'textotabla'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'},
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: '1/2 Head Rails No Controls', style: 'textotabla'},
+                            {text: '', style: 'textotabla', alignment: 'center'},
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'},
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: '1/2 Foot Rails No Controls', style: 'textotabla'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'},
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'},
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: 'Sleep Deck Options. Must Choose One', style: 'textotabla'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: 'Pendant', style: 'textotabla'},
+                            {text: '', style: 'textotabla', alignment: 'center'},
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: '2 Floor Brake', style: 'textotabla'},
+                            {text: '', style: 'textotabla', alignment: 'center'},
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'},
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: '4 Floor Brake', style: 'textotabla'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: 'No Head/Foot Rails', style: 'textotabla'},
+                            {text: '', style: 'textotabla', alignment: 'center'},
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'},
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: 'X', style: 'textotabla', alignment: 'center'}, 
+                            {text: '', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            }
+        ]
+    }
+
+    var table2 = []
+    if(optionsData.length > 0)
+    {
+        table2 = [
+            {
+                table: {
+                    widths: ["*", 35, 35, 35, 35, 35, 35, 35],
+                    body: options
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+
+    var table3 = []
+    if(miscAccesoriesData.length > 0 || residentAccData.length > 0)
+    {
+        table3 = [
+            {
+                table: {
+                    widths: [50, "*", 50, 50],
+                    body: accesories
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+    
     const fecha = new Date();
     fecha.toLocaleDateString()
 
@@ -251,168 +607,9 @@ async function getHillromResidentLongTerm()
             ]
         },
         "\n",
-        {
-            table: {
-                widths: ["*", 35, 35, 35, 35, 35, 35, 35],
-                body: [
-                    [
-                        {border: [false, false, false, false], text: ''},
-                        {text: 'RESIDENTLTCBED', style: 'textotablacolor', colSpan: 7, fillColor: '#546ce4',  alignment: 'center'},
-                        {},
-                        {},
-                        {},
-                        {},
-                        {},
-                        {},
-                    ],
-                    [
-                        {border: [false, false, false, false], text: ''},
-                        {text: 'P870', style: 'textotablaboldblack', colSpan: 7, alignment: 'center'},
-                        {},
-                        {},
-                        {},
-                        {},
-                        {},
-                        {},
-                    ],
-                    [
-                        {border: [false, false, false, false], text: 'Special Features', style: 'textotablabold'},
-                        {text: 'LTC-320', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                        {text: 'LTC-310', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: 'LTC-300', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: 'LTC-250', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                        {text: 'LTC-205', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: 'LTC-105', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: 'LTC-100', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                    ],
-                    [
-                        {text: '1/2 Head Rails with Controls', style: 'textotabla'},
-                        {text: 'X', style: 'textotabla', alignment: 'center'},
-                        {text: 'X', style: 'textotabla', alignment: 'center'}, 
-                        {text: 'X', style: 'textotabla', alignment: 'center'}, 
-                        {text: '', style: 'textotabla', alignment: 'center'},
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                    ],
-                    [
-                        {text: '1/2 Head Rails No Controls', style: 'textotabla'},
-                        {text: '', style: 'textotabla', alignment: 'center'},
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                        {text: 'X', style: 'textotabla', alignment: 'center'},
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                    ],
-                    [
-                        {text: '1/2 Foot Rails No Controls', style: 'textotabla'},
-                        {text: 'X', style: 'textotabla', alignment: 'center'},
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                        {text: '', style: 'textotabla', alignment: 'center'},
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                    ],
-                    [
-                        {text: 'Sleep Deck Options. Must Choose One', style: 'textotabla'},
-                        {text: 'X', style: 'textotabla', alignment: 'center'},
-                        {text: 'X', style: 'textotabla', alignment: 'center'}, 
-                        {text: 'X', style: 'textotabla', alignment: 'center'}, 
-                        {text: 'X', style: 'textotabla', alignment: 'center'},
-                        {text: 'X', style: 'textotabla', alignment: 'center'}, 
-                        {text: 'X', style: 'textotabla', alignment: 'center'}, 
-                        {text: 'X', style: 'textotabla', alignment: 'center'}, 
-                    ],
-                    [
-                        {text: 'Pendant', style: 'textotabla'},
-                        {text: '', style: 'textotabla', alignment: 'center'},
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                        {text: 'X', style: 'textotabla', alignment: 'center'},
-                        {text: 'X', style: 'textotabla', alignment: 'center'}, 
-                        {text: 'X', style: 'textotabla', alignment: 'center'}, 
-                        {text: 'X', style: 'textotabla', alignment: 'center'}, 
-                    ],
-                    [
-                        {text: '2 Floor Brake', style: 'textotabla'},
-                        {text: '', style: 'textotabla', alignment: 'center'},
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                        {text: '', style: 'textotabla', alignment: 'center'},
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                        {text: 'X', style: 'textotabla', alignment: 'center'}, 
-                        {text: 'X', style: 'textotabla', alignment: 'center'}, 
-                    ],
-                    [
-                        {text: '4 Floor Brake', style: 'textotabla'},
-                        {text: 'X', style: 'textotabla', alignment: 'center'},
-                        {text: 'X', style: 'textotabla', alignment: 'center'}, 
-                        {text: 'X', style: 'textotabla', alignment: 'center'}, 
-                        {text: 'X', style: 'textotabla', alignment: 'center'},
-                        {text: 'X', style: 'textotabla', alignment: 'center'}, 
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                    ],
-                    [
-                        {text: 'No Head/Foot Rails', style: 'textotabla'},
-                        {text: '', style: 'textotabla', alignment: 'center'},
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                        {text: '', style: 'textotabla', alignment: 'center'},
-                        {text: 'X', style: 'textotabla', alignment: 'center'}, 
-                        {text: 'X', style: 'textotabla', alignment: 'center'}, 
-                        {text: '', style: 'textotabla', alignment: 'center'}, 
-                    ],
-                    [
-                        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[2].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[3].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[4].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[5].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[6].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }		
-        },
+        table1,
         "\n",
-        {
-            table: {
-                widths: ["*", 35, 35, 35, 35, 35, 35, 35],
-                body: options
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table2,
         "\n",
         { text: "Hearthside Laminate Options Available", style: 'parrafo' },
         {
@@ -435,26 +632,7 @@ async function getHillromResidentLongTerm()
                 ],
             ]
         },
-        {
-            table: {
-                widths: [50, "*", 50, 50],
-                body: accesories
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table3,
         {text: '', pageBreak: 'after'  },
     ]
 

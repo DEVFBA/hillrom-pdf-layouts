@@ -15,19 +15,49 @@ async function getTransferBoard()
     ]
     pSItems++
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<optionsData.length; i++)
+    if(optionsData.length > 0)
     {
-        options[pSItems] = [
-            {text: optionsData[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: optionsData[i].Item_Long_Desc, style: 'textotabla'},
-            {text: optionsData[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[i].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<optionsData.length; i++)
+        {
+            options[pSItems] = [
+                {text: optionsData[i].KitName, style: 'textotabla', alignment: 'center'},
+                {text: optionsData[i].Item_Long_Desc, style: 'textotabla'},
+                {text: optionsData[i].Part, style: 'textotabla', alignment: 'center'}, 
+                {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[i].Price), style: 'textotabla', alignment: 'center'}, 
+            ]
+        
+            pSItems++
+        }
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
+    
+    var table1 = []
+    if(optionsData.length > 0)
+    {
+        table1 = [
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: options
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
 
     const fecha = new Date();
     fecha.toLocaleDateString()
@@ -39,26 +69,7 @@ async function getTransferBoard()
         { text: 'Transfer Board', style: 'header', tocItem: 'transferBoard'},
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         "\n",
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: options
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table1,
         "\n",
         "\n",
         { image: "images/TransferBoard1.png", width: 230, height: 180, alignment: 'center'},

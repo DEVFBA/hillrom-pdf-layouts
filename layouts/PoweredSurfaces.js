@@ -32,20 +32,24 @@ async function getPoweredSurfaces()
 
     pSItems++
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<overlay2Data.length; i++)
+    if(overlay2Data.length > 0)
     {
-        p290[pSItems] = [
-            {text: overlay2Data[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: overlay2Data[i].Model, style: 'textotabla', alignment: 'center'},
-            {text: overlay2Data[i].Item_Long_Desc, style: 'textotabla'},
-            {text: overlay2Data[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(overlay2Data[i].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<overlay2Data.length; i++)
+        {
+            p290[pSItems] = [
+                {text: overlay2Data[i].KitName, style: 'textotabla', alignment: 'center'},
+                {text: overlay2Data[i].Model, style: 'textotabla', alignment: 'center'},
+                {text: overlay2Data[i].Item_Long_Desc, style: 'textotabla'},
+                {text: overlay2Data[i].Part, style: 'textotabla', alignment: 'center'}, 
+                {text: "$" + Intl.NumberFormat("en-IN").format(overlay2Data[i].Price), style: 'textotabla', alignment: 'center'}, 
+            ]
+        
+            pSItems++
+        }
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
+    
     
     p290[pSItems] = [
         {text: 'Replacement with foam base', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 5},
@@ -57,20 +61,23 @@ async function getPoweredSurfaces()
 
     pSItems ++
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<foamBase2Data.length; i++)
+    if(foamBase2Data.length > 0 )
     {
-        p290[pSItems] = [
-            {text: foamBase2Data[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: foamBase2Data[i].Model, style: 'textotabla', alignment: 'center'},
-            {text: foamBase2Data[i].Item_Long_Desc, style: 'textotabla'},
-            {text: foamBase2Data[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(foamBase2Data[i].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<foamBase2Data.length; i++)
+        {
+            p290[pSItems] = [
+                {text: foamBase2Data[i].KitName, style: 'textotabla', alignment: 'center'},
+                {text: foamBase2Data[i].Model, style: 'textotabla', alignment: 'center'},
+                {text: foamBase2Data[i].Item_Long_Desc, style: 'textotabla'},
+                {text: foamBase2Data[i].Part, style: 'textotabla', alignment: 'center'}, 
+                {text: "$" + Intl.NumberFormat("en-IN").format(foamBase2Data[i].Price), style: 'textotabla', alignment: 'center'}, 
+            ]
+        
+            pSItems++
+        }
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
 
     p290[pSItems] = [
         {text: 'Replacement with full air', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 5},
@@ -82,21 +89,24 @@ async function getPoweredSurfaces()
 
     pSItems++
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<fullAir2Data.length; i++)
+    if(fullAir2Data.length > 0)
     {
-        p290[pSItems] = [
-            {text: fullAir2Data[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: fullAir2Data[i].Model, style: 'textotabla', alignment: 'center'},
-            {text: fullAir2Data[i].Item_Long_Desc, style: 'textotabla'},
-            {text: fullAir2Data[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(fullAir2Data[i].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<fullAir2Data.length; i++)
+        {
+            p290[pSItems] = [
+                {text: fullAir2Data[i].KitName, style: 'textotabla', alignment: 'center'},
+                {text: fullAir2Data[i].Model, style: 'textotabla', alignment: 'center'},
+                {text: fullAir2Data[i].Item_Long_Desc, style: 'textotabla'},
+                {text: fullAir2Data[i].Part, style: 'textotabla', alignment: 'center'}, 
+                {text: "$" + Intl.NumberFormat("en-IN").format(fullAir2Data[i].Price), style: 'textotabla', alignment: 'center'}, 
+            ]
+        
+            pSItems++
+        }
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
-
+    
     var accellaTherapy =[]
     var pSItems = 0;
 
@@ -109,20 +119,23 @@ async function getPoweredSurfaces()
     ]
     pSItems++
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<accellaTherapyData.length; i++)
+    if(accellaTherapyData.length > 0)
     {
-        accellaTherapy[pSItems] = [
-            {text: accellaTherapyData[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: accellaTherapyData[i].Model, style: 'textotabla', alignment: 'center'},
-            {text: accellaTherapyData[i].Item_Long_Desc, style: 'textotabla'},
-            {text: accellaTherapyData[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(accellaTherapyData[i].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<accellaTherapyData.length; i++)
+        {
+            accellaTherapy[pSItems] = [
+                {text: accellaTherapyData[i].KitName, style: 'textotabla', alignment: 'center'},
+                {text: accellaTherapyData[i].Model, style: 'textotabla', alignment: 'center'},
+                {text: accellaTherapyData[i].Item_Long_Desc, style: 'textotabla'},
+                {text: accellaTherapyData[i].Part, style: 'textotabla', alignment: 'center'}, 
+                {text: "$" + Intl.NumberFormat("en-IN").format(accellaTherapyData[i].Price), style: 'textotabla', alignment: 'center'}, 
+            ]
+        
+            pSItems++
+        }
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
 
     var talleyFusion =[]
     var pSItems = 0;
@@ -136,21 +149,106 @@ async function getPoweredSurfaces()
     ]
     pSItems++
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<talleyFusionData.length; i++)
+    if(talleyFusionData.length > 0)
     {
-        talleyFusion[pSItems] = [
-            {text: talleyFusionData[i].KitName, style: 'textotabla', alignment: 'center'},
-            {text: talleyFusionData[i].Model, style: 'textotabla', alignment: 'center'},
-            {text: talleyFusionData[i].Item_Long_Desc, style: 'textotabla'},
-            {text: talleyFusionData[i].Part, style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(talleyFusionData[i].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<talleyFusionData.length; i++)
+        {
+            talleyFusion[pSItems] = [
+                {text: talleyFusionData[i].KitName, style: 'textotabla', alignment: 'center'},
+                {text: talleyFusionData[i].Model, style: 'textotabla', alignment: 'center'},
+                {text: talleyFusionData[i].Item_Long_Desc, style: 'textotabla'},
+                {text: talleyFusionData[i].Part, style: 'textotabla', alignment: 'center'}, 
+                {text: "$" + Intl.NumberFormat("en-IN").format(talleyFusionData[i].Price), style: 'textotabla', alignment: 'center'}, 
+            ]
+        
+            pSItems++
+        }
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
 
+    var table1 =[]
+
+    if(overlay2Data.length > 0 || foamBase2Data.length > 0 || fullAir2Data.length > 0)
+    {
+        table1 = [
+            {
+                table: {
+                    widths: [50, 40, "*", 60, 50],
+                    body: p290
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+
+    var table2 = []
+    if(accellaTherapyData.length > 0)
+    {
+        table2 = [
+            {
+                table: {
+                    widths: [50, 40, "*", 60, 50],
+                    body: accellaTherapy
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+
+    var table3 = []
+    if(talleyFusionData.length > 0)
+    {
+        table3 = [
+            {
+                table: {
+                    widths: [50, 40, "*", 60, 50],
+                    body: talleyFusion
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+    
     const fecha = new Date();
     fecha.toLocaleDateString()
 
@@ -180,26 +278,7 @@ async function getPoweredSurfaces()
             ]
             
         },
-        {
-            table: {
-                widths: [50, 40, "*", 60, 50],
-                body: p290
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table1,
         "\n",
         {
             columns: [
@@ -219,26 +298,7 @@ async function getPoweredSurfaces()
             ]
             
         },
-        {
-            table: {
-                widths: [50, 40, "*", 60, 50],
-                body: accellaTherapy
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table2,
         "\n",
         {text: "*Only compatible with Hill-Rom 900 Accella. Beds with a reference starting with CS900B41XXXXX", style: "textotabla"},
         "\n",
@@ -260,26 +320,7 @@ async function getPoweredSurfaces()
             ]
             
         },
-        {
-            table: {
-                widths: [50, 40, "*", 60, 50],
-                body: talleyFusion
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table3,
         {text: '', pageBreak: 'after'  },
     ]
 

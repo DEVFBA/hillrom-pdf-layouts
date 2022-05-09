@@ -11,206 +11,245 @@ async function getFreespanTraverse(pdfZone)
     var accesories = []
     var pSItems = 0
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida4.length; i++)
+    if(salida4.length > 0)
     {
-        if(i === 0 && salida4.length === 1)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida4.length; i++)
         {
-            accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida4[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/FreespanTraverse3.png", width: 80, height: 40, alignment: 'center', rowSpan: salida4.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida4.length === 1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, true], text: salida4[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreespanTraverse3.png", width: 80, height: 40, alignment: 'center', rowSpan: salida4.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreespanTraverse3.png", width: 80, height: 40, alignment: 'center', rowSpan: salida4.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida4.length-1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: salida4[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: salida4[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories[pSItems] =[
-                {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/FreespanTraverse3.png", width: 80, height: 40, alignment: 'center', rowSpan: salida4.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida4.length-1)
-        {
-            accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida4[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories[pSItems] =[
-                {border: [true, false, true, false], text: salida4[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
-
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida5.length; i++)
+    
+    if(salida5.length > 0)
     {
-        if(i === 0 && salida5.length === 1)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida5.length; i++)
         {
-            accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida5[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/FreespanTraverse4.png", width: 80, height: 40, alignment: 'center', rowSpan: salida5.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida5.length === 1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, true], text: salida5[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreespanTraverse4.png", width: 80, height: 40, alignment: 'center', rowSpan: salida5.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, false], text: salida5[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreespanTraverse4.png", width: 80, height: 40, alignment: 'center', rowSpan: salida5.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida5.length-1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: salida5[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: salida5[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories[pSItems] =[
-                {border: [true, true, true, false], text: salida5[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/FreespanTraverse4.png", width: 80, height: 40, alignment: 'center', rowSpan: salida5.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida5.length-1)
-        {
-            accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida5[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories[pSItems] =[
-                {border: [true, false, true, false], text: salida5[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
+    
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida6.length; i++)
+    if(salida6.length > 0)
     {
-        if(i === 0 && salida6.length === 1)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida6.length; i++)
         {
-            accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida6[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/FreespanTraverse5.png", width: 80, height: 40, alignment: 'center', rowSpan: salida6.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida6.length === 1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, true], text: salida6[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreespanTraverse5.png", width: 80, height: 40, alignment: 'center', rowSpan: salida6.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreespanTraverse5.png", width: 80, height: 40, alignment: 'center', rowSpan: salida6.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida6.length-1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: salida6[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: salida6[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories[pSItems] =[
-                {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/FreespanTraverse5.png", width: 80, height: 40, alignment: 'center', rowSpan: salida6.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida6.length-1)
-        {
-            accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida6[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories[pSItems] =[
-                {border: [true, false, true, false], text: salida6[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
-
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida7.length; i++)
+    
+    if(salida7.length > 0)
     {
-        if(i === 0 && salida7.length === 1)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida7.length; i++)
         {
-            accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida7[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/FreespanTraverse6.png", width: 60, height: 40, alignment: 'center', rowSpan: salida7.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida7.length === 1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, true], text: salida7[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreespanTraverse6.png", width: 60, height: 40, alignment: 'center', rowSpan: salida7.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, false], text: salida7[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreespanTraverse6.png", width: 60, height: 40, alignment: 'center', rowSpan: salida7.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida7.length-1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: salida7[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: salida7[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
         }
-        else if(i === 0)
-        {
-            accesories[pSItems] =[
-                {border: [true, true, true, false], text: salida7[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/FreespanTraverse6.png", width: 60, height: 40, alignment: 'center', rowSpan: salida7.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida7.length-1)
-        {
-            accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida7[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories[pSItems] =[
-                {border: [true, false, true, false], text: salida7[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
 
+    var table1 = [];
+    if(salida4.length > 0 || salida5.length > 0 || salida6.length > 0 || salida7.length > 0)
+    {
+        table1 = [
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+    
     const fecha = new Date();
     fecha.toLocaleDateString()
     
@@ -288,26 +327,7 @@ async function getFreespanTraverse(pdfZone)
                 },
             }		
         },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table1,
         {text: '', pageBreak: 'after'  },
     ]
 

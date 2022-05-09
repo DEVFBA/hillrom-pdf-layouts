@@ -12,267 +12,282 @@ async function getLikoConfortsling(pdfZone)
     var accesories = []
     var pSItems = 0
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida6.length; i++)
+    if(salida6.length > 0)
     {
-        if(i === 0 && salida6.length === 1)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida6.length; i++)
         {
-            accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida6[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/LikoConfortsling1.png", width: 80, height: 80, alignment: 'center', rowSpan: salida6.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida6.length === 1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, true], text: salida6[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/LikoConfortsling1.png", width: 80, height: 80, alignment: 'center', rowSpan: salida6.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/LikoConfortsling1.png", width: 80, height: 80, alignment: 'center', rowSpan: salida6.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida6.length-1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: salida6[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: salida6[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories[pSItems] =[
-                {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/LikoConfortsling1.png", width: 80, height: 80, alignment: 'center', rowSpan: salida6.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida6.length-1)
-        {
-            accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida6[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories[pSItems] =[
-                {border: [true, false, true, false], text: salida6[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
 
     var accesories2 = []
     var pSItems = 0
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida7.length; i++)
+    if(salida7.length > 0)
     {
-        if(i === 0 && salida7.length === 1)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida7.length; i++)
         {
-            accesories2[pSItems] =[
-                {border: [true, true, true, true], text: salida7[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/LikoConfortsling2.png", width: 80, height: 80, alignment: 'center', rowSpan: salida7.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida7.length === 1)
+            {
+                accesories2[pSItems] =[
+                    {border: [true, true, true, true], text: salida7[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/LikoConfortsling2.png", width: 80, height: 80, alignment: 'center', rowSpan: salida7.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories2[pSItems] =[
+                    {border: [true, true, true, false], text: salida7[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/LikoConfortsling2.png", width: 80, height: 80, alignment: 'center', rowSpan: salida7.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida7.length-1)
+            {
+                accesories2[pSItems] =[
+                    {border: [true, false, true, true], text: salida7[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: salida7[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories2[pSItems] =[
-                {border: [true, true, true, false], text: salida7[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/LikoConfortsling2.png", width: 80, height: 80, alignment: 'center', rowSpan: salida7.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida7.length-1)
-        {
-            accesories2[pSItems] =[
-                {border: [true, false, true, true], text: salida7[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories2[pSItems] =[
-                {border: [true, false, true, false], text: salida7[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
 
     var accesories3 = []
     var pSItems = 0
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida8.length; i++)
+    if(salida8.length > 0)
     {
-        if(i === 0 && salida8.length === 1)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida8.length; i++)
         {
-            accesories3[pSItems] =[
-                {border: [true, true, true, true], text: salida8[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/LikoConfortsling3.png", width: 80, height: 80, alignment: 'center', rowSpan: salida8.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida8.length === 1)
+            {
+                accesories3[pSItems] =[
+                    {border: [true, true, true, true], text: salida8[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/LikoConfortsling3.png", width: 80, height: 80, alignment: 'center', rowSpan: salida8.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories3[pSItems] =[
+                    {border: [true, true, true, false], text: salida8[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/LikoConfortsling3.png", width: 80, height: 80, alignment: 'center', rowSpan: salida8.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida8.length-1)
+            {
+                accesories3[pSItems] =[
+                    {border: [true, false, true, true], text: salida8[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories3[pSItems] =[
+                    {border: [true, false, true, false], text: salida8[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories3[pSItems] =[
-                {border: [true, true, true, false], text: salida8[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/LikoConfortsling3.png", width: 80, height: 80, alignment: 'center', rowSpan: salida8.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida8.length-1)
-        {
-            accesories3[pSItems] =[
-                {border: [true, false, true, true], text: salida8[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories3[pSItems] =[
-                {border: [true, false, true, false], text: salida8[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
-    }
-    /*TERMINA CICLO*/
+        /*TERMINA CICLO*/
+    }   
 
     var accesories4 = []
     var pSItems = 0
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida9.length; i++)
+    if(salida9.length > 0)
     {
-        if(i === 0 && salida9.length === 1)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida9.length; i++)
         {
-            accesories4[pSItems] =[
-                {border: [true, true, true, true], text: salida9[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/LikoConfortsling4.png", width: 80, height: 80, alignment: 'center', rowSpan: salida9.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida9.length === 1)
+            {
+                accesories4[pSItems] =[
+                    {border: [true, true, true, true], text: salida9[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/LikoConfortsling4.png", width: 80, height: 80, alignment: 'center', rowSpan: salida9.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories4[pSItems] =[
+                    {border: [true, true, true, false], text: salida9[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/LikoConfortsling4.png", width: 80, height: 80, alignment: 'center', rowSpan: salida9.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida9.length-1)
+            {
+                accesories4[pSItems] =[
+                    {border: [true, false, true, true], text: salida9[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories4[pSItems] =[
+                    {border: [true, false, true, false], text: salida9[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories4[pSItems] =[
-                {border: [true, true, true, false], text: salida9[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/LikoConfortsling4.png", width: 80, height: 80, alignment: 'center', rowSpan: salida9.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida9.length-1)
-        {
-            accesories4[pSItems] =[
-                {border: [true, false, true, true], text: salida9[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories4[pSItems] =[
-                {border: [true, false, true, false], text: salida9[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
 
     var accesories5 = []
     var pSItems = 0
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida10.length; i++)
+    if(salida10.length > 0)
     {
-        if(i === 0 && salida10.length === 1)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida10.length; i++)
         {
-            accesories5[pSItems] =[
-                {border: [true, true, true, true], text: salida10[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/LikoConfortsling5.png", width: 80, height: 100, alignment: 'center', rowSpan: salida10.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida10.length === 1)
+            {
+                accesories5[pSItems] =[
+                    {border: [true, true, true, true], text: salida10[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/LikoConfortsling5.png", width: 80, height: 100, alignment: 'center', rowSpan: salida10.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories5[pSItems] =[
+                    {border: [true, true, true, false], text: salida10[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/LikoConfortsling5.png", width: 80, height: 100, alignment: 'center', rowSpan: salida10.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida10.length-1)
+            {
+                accesories5[pSItems] =[
+                    {border: [true, false, true, true], text: salida10[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories5[pSItems] =[
+                    {border: [true, false, true, false], text: salida10[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories5[pSItems] =[
-                {border: [true, true, true, false], text: salida10[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/LikoConfortsling5.png", width: 80, height: 100, alignment: 'center', rowSpan: salida10.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida10.length-1)
-        {
-            accesories5[pSItems] =[
-                {border: [true, false, true, true], text: salida10[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories5[pSItems] =[
-                {border: [true, false, true, false], text: salida10[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
 
     const fecha = new Date();
     fecha.toLocaleDateString()

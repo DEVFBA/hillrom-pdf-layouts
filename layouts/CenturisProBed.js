@@ -17,95 +17,374 @@ async function getCenturisProBed()
     ]
     pSItems++
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<steeringCastor.length; i++)
+    if(steeringCastor.length > 0)
     {
-        var price = ""
-        if(steeringCastor[i].Print_Character !== null)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<steeringCastor.length; i++)
         {
-            if(steeringCastor[i].Print_Character === "*")
+            var price = ""
+            if(steeringCastor[i].Print_Character !== null)
             {
-                price = "●"
+                if(steeringCastor[i].Print_Character === "*")
+                {
+                    price = "●"
+                }
+                else {
+                    price = "-"
+                }
             }
             else {
-                price = "-"
+                price = "$" + Intl.NumberFormat("en-IN").format(steeringCastor[i].Price)
             }
-        }
-        else {
-            price = "$" + Intl.NumberFormat("en-IN").format(steeringCastor[i].Price)
-        }
 
-        options[pSItems] = [
-            {text: steeringCastor[i].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: steeringCastor[i].Item_Long_Desc, style: 'textotabla'},
-            {text: price, style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
+            options[pSItems] = [
+                {text: steeringCastor[i].Id_Item, style: 'textotabla', alignment: 'center'},
+                {text: steeringCastor[i].Item_Long_Desc, style: 'textotabla'},
+                {text: price, style: 'textotabla', alignment: 'center'}, 
+            ]
+        
+            pSItems++
+        }
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
     
     var badExtensions = []
     pSItems = 0
 
-     /*ESTO VA EN UN CICLO*/
-     for(var i=0; i<bedExtension.length; i++)
-     {
-         var price = ""
-         if(bedExtension[i].Print_Character !== null)
-         {
-             if(bedExtension[i].Print_Character === "*")
-             {
-                 price = "●"
-             }
-             else {
-                 price = "-"
-             }
-         }
-         else {
-             price = "$" + Intl.NumberFormat("en-IN").format(bedExtension[i].Price)
-         }
- 
-         badExtensions[pSItems] = [
-             {text: bedExtension[i].Id_Item, style: 'textotabla', alignment: 'center'},
-             {text: bedExtension[i].Item_Long_Desc, style: 'textotabla'},
-             {text: price, style: 'textotabla', alignment: 'center'}, 
-         ]
+    if(bedExtension.length > 0)
+    {
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<bedExtension.length; i++)
+        {
+            var price = ""
+            if(bedExtension[i].Print_Character !== null)
+            {
+                if(bedExtension[i].Print_Character === "*")
+                {
+                    price = "●"
+                }
+                else {
+                    price = "-"
+                }
+            }
+            else {
+                price = "$" + Intl.NumberFormat("en-IN").format(bedExtension[i].Price)
+            }
+    
+            badExtensions[pSItems] = [
+                {text: bedExtension[i].Id_Item, style: 'textotabla', alignment: 'center'},
+                {text: bedExtension[i].Item_Long_Desc, style: 'textotabla'},
+                {text: price, style: 'textotabla', alignment: 'center'}, 
+            ]
+        
+            pSItems++
+        }
+        /*TERMINA CICLO*/
+    }
      
-         pSItems++
-     }
-    /*TERMINA CICLO*/
-
     var plug = []
     pSItems = 0
 
-     /*ESTO VA EN UN CICLO*/
-     for(var i=0; i<plugVoltagesData.length; i++)
-     {
-         var price = ""
-         if(plugVoltagesData[i].Print_Character !== null)
-         {
-             if(plugVoltagesData[i].Print_Character === "*")
-             {
-                 price = "●"
-             }
-             else {
-                 price = "-"
-             }
-         }
-         else {
-             price = "$" + Intl.NumberFormat("en-IN").format(plugVoltagesData[i].Price)
-         }
- 
-         plug[pSItems] = [
-             {text: plugVoltagesData[i].Id_Item, style: 'textotabla', alignment: 'center'},
-             {text: plugVoltagesData[i].Item_Long_Desc, style: 'textotabla'},
-             {text: price, style: 'textotabla', alignment: 'center'}, 
-         ]
-     
-         pSItems++
-     }
-    /*TERMINA CICLO*/
+    if(plugVoltagesData.length > 0)
+    {
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<plugVoltagesData.length; i++)
+        {
+            var price = ""
+            if(plugVoltagesData[i].Print_Character !== null)
+            {
+                if(plugVoltagesData[i].Print_Character === "*")
+                {
+                    price = "●"
+                }
+                else {
+                    price = "-"
+                }
+            }
+            else {
+                price = "$" + Intl.NumberFormat("en-IN").format(plugVoltagesData[i].Price)
+            }
+    
+            plug[pSItems] = [
+                {text: plugVoltagesData[i].Id_Item, style: 'textotabla', alignment: 'center'},
+                {text: plugVoltagesData[i].Item_Long_Desc, style: 'textotabla'},
+                {text: price, style: 'textotabla', alignment: 'center'}, 
+            ]
+        
+            pSItems++
+        }
+        /*TERMINA CICLO*/
+    }
+
+    var table1 = []
+    if(prices.length > 0)
+    {
+        table1 = [
+            {
+                columns: [
+                    {
+                        width: 40,
+                        text: ''
+                    },
+                    {
+                        width: "*",
+                        columns: [
+                            {
+                                width: 70,
+                                text: ''
+                            },
+                            {
+                                width: "*",
+                                table: {
+                                    widths: ["*", 130],
+                                    body: [
+                                        [
+                                            {border: [false, false, false, false], text: '', style: 'textotablabold'},
+                                            {border: [false, false, false, false], text: 'CENTURISPRO', style: 'textotablabold', alignment: 'center'},
+                                        ],
+                                        [
+                                            {border: [false, false, false, false], text: '', style: 'textotablabold'},
+                                            {text: 'X3', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                        ],
+                                        [
+                                            {border: [false, false, false, false], text: '', style: 'textotablabold'},
+                                            { image: "images/CenturyProBed.png", width: 150, height: 210, alignment: 'center'},
+                                        ],
+                                        [
+                                            {text: "Sleep Deck Surface", style: 'textotabla'},
+                                            {text: "Metal / HPL", style: 'textotabla', alignment: 'center'},
+                                        ],
+                                        [
+                                            {text: "Selective lockout", style: 'textotabla'},
+                                            {text: "●", style: 'textotabla', alignment: 'center'},
+                                        ],
+                                        [
+                                            {text: "Split Siderails with integrated controls", style: 'textotabla'},
+                                            {text: "●", style: 'textotabla', alignment: 'center'},
+                                        ],
+                                        [
+                                            {text: "Bilateral Caregiver Integrated Control Panels", style: 'textotabla'},
+                                            {text: "●", style: 'textotabla', alignment: 'center'},
+                                        ],
+                                        [
+                                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
+                                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                        ],
+                                    ]
+                                }	,
+                                layout: {
+                                    hLineWidth: function () {
+                                        return  0.7;
+                                    },
+                                    vLineWidth: function () {
+                                        return 0.7;
+                                    },
+                                    hLineColor: function () {
+                                        return 'gray';
+                                    },
+                                    vLineColor: function () {
+                                        return 'gray';
+                                    },
+                                }	
+                            },
+                        ]
+                    },
+                    {
+                        width: 70,
+                        text: ''
+                    },
+                ],
+            }
+        ]
+    }
+    else {
+        table1 = [
+            {
+                columns: [
+                    {
+                        width: 40,
+                        text: ''
+                    },
+                    {
+                        width: "*",
+                        columns: [
+                            {
+                                width: 70,
+                                text: ''
+                            },
+                            {
+                                width: "*",
+                                table: {
+                                    widths: ["*", 130],
+                                    body: [
+                                        [
+                                            {border: [false, false, false, false], text: '', style: 'textotablabold'},
+                                            {border: [false, false, false, false], text: 'CENTURISPRO', style: 'textotablabold', alignment: 'center'},
+                                        ],
+                                        [
+                                            {border: [false, false, false, false], text: '', style: 'textotablabold'},
+                                            {text: 'X3', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                        ],
+                                        [
+                                            {border: [false, false, false, false], text: '', style: 'textotablabold'},
+                                            { image: "images/CenturyProBed.png", width: 150, height: 210, alignment: 'center'},
+                                        ],
+                                        [
+                                            {text: "Sleep Deck Surface", style: 'textotabla'},
+                                            {text: "Metal / HPL", style: 'textotabla', alignment: 'center'},
+                                        ],
+                                        [
+                                            {text: "Selective lockout", style: 'textotabla'},
+                                            {text: "●", style: 'textotabla', alignment: 'center'},
+                                        ],
+                                        [
+                                            {text: "Split Siderails with integrated controls", style: 'textotabla'},
+                                            {text: "●", style: 'textotabla', alignment: 'center'},
+                                        ],
+                                        [
+                                            {text: "Bilateral Caregiver Integrated Control Panels", style: 'textotabla'},
+                                            {text: "●", style: 'textotabla', alignment: 'center'},
+                                        ],
+                                        [
+                                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
+                                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                        ],
+                                    ]
+                                }	,
+                                layout: {
+                                    hLineWidth: function () {
+                                        return  0.7;
+                                    },
+                                    vLineWidth: function () {
+                                        return 0.7;
+                                    },
+                                    hLineColor: function () {
+                                        return 'gray';
+                                    },
+                                    vLineColor: function () {
+                                        return 'gray';
+                                    },
+                                }	
+                            },
+                        ]
+                    },
+                    {
+                        width: 70,
+                        text: ''
+                    },
+                ],
+            }
+        ]
+    }
+
+    var table2 = [];
+    if(steeringCastor.length > 0)
+    {
+        table2 = [
+            {
+                columns: [
+                    {
+                        width: "*",
+                        table: {
+                            widths: [70, "*", 130],
+                            body: options
+                        },
+                        layout: {
+                            hLineWidth: function () {
+                                return  0.7;
+                            },
+                            vLineWidth: function () {
+                                return 0.7;
+                            },
+                            hLineColor: function () {
+                                return 'gray';
+                            },
+                            vLineColor: function () {
+                                return 'gray';
+                            },
+                        }
+                    },
+                    {
+                        width: 70,
+                        text: ''
+                    }
+                ]
+                
+            }
+        ]
+    }
+
+    var table3 = []
+    if(bedExtension.length > 0)
+    {
+        table3 = [
+            {
+                columns: [
+                    {
+                        width: "*",
+                        table: {
+                            widths: [70, "*", 130],
+                            body: badExtensions
+                        },
+                        layout: {
+                            hLineWidth: function () {
+                                return  0.7;
+                            },
+                            vLineWidth: function () {
+                                return 0.7;
+                            },
+                            hLineColor: function () {
+                                return 'gray';
+                            },
+                            vLineColor: function () {
+                                return 'gray';
+                            },
+                        }
+                    },
+                    {
+                        width: 70,
+                        text: ''
+                    }
+                ]
+            }
+        ]
+    }
+
+    var table4 = []
+    if(plugVoltagesData.length > 0)
+    {
+        table4 = [
+            {
+                columns: [
+                    {
+                        width: "*",
+                        table: {
+                            widths: [70, "*", 130],
+                            body: plug
+                        },
+                        layout: {
+                            hLineWidth: function () {
+                                return  0.7;
+                            },
+                            vLineWidth: function () {
+                                return 0.7;
+                            },
+                            hLineColor: function () {
+                                return 'gray';
+                            },
+                            vLineColor: function () {
+                                return 'gray';
+                            },
+                        }
+                    },
+                    {
+                        width: 70,
+                        text: ''
+                    }
+                ]
+            }
+        ]
+    }
 
     const fecha = new Date();
     fecha.toLocaleDateString()
@@ -153,172 +432,13 @@ async function getCenturisProBed()
                 },
             ]
         },
-        {
-            columns: [
-                {
-                    width: 40,
-                    text: ''
-                },
-                {
-                    width: "*",
-                    columns: [
-                        {
-                            width: 70,
-                            text: ''
-                        },
-                        {
-                            width: "*",
-                            table: {
-                                widths: ["*", 130],
-                                body: [
-                                    [
-                                        {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                        {border: [false, false, false, false], text: 'CENTURISPRO', style: 'textotablabold', alignment: 'center'},
-                                    ],
-                                    [
-                                        {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                        {text: 'X3', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    ],
-                                    [
-                                        {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                        { image: "images/CenturyProBed.png", width: 150, height: 210, alignment: 'center'},
-                                    ],
-                                    [
-                                        {text: "Sleep Deck Surface", style: 'textotabla'},
-                                        {text: "Metal / HPL", style: 'textotabla', alignment: 'center'},
-                                    ],
-                                    [
-                                        {text: "Selective lockout", style: 'textotabla'},
-                                        {text: "●", style: 'textotabla', alignment: 'center'},
-                                    ],
-                                    [
-                                        {text: "Split Siderails with integrated controls", style: 'textotabla'},
-                                        {text: "●", style: 'textotabla', alignment: 'center'},
-                                    ],
-                                    [
-                                        {text: "Bilateral Caregiver Integrated Control Panels", style: 'textotabla'},
-                                        {text: "●", style: 'textotabla', alignment: 'center'},
-                                    ],
-                                    [
-                                        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    ],
-                                ]
-                            }	,
-                            layout: {
-                                hLineWidth: function () {
-                                    return  0.7;
-                                },
-                                vLineWidth: function () {
-                                    return 0.7;
-                                },
-                                hLineColor: function () {
-                                    return 'gray';
-                                },
-                                vLineColor: function () {
-                                    return 'gray';
-                                },
-                            }	
-                        },
-                    ]
-                },
-                {
-                    width: 70,
-                    text: ''
-                },
-            ],
-        },
+        table1,
         "\n",
-        {
-            columns: [
-                {
-                    width: "*",
-                    table: {
-                        widths: [70, "*", 130],
-                        body: options
-                    },
-                    layout: {
-                        hLineWidth: function () {
-                            return  0.7;
-                        },
-                        vLineWidth: function () {
-                            return 0.7;
-                        },
-                        hLineColor: function () {
-                            return 'gray';
-                        },
-                        vLineColor: function () {
-                            return 'gray';
-                        },
-                    }
-                },
-                {
-                    width: 70,
-                    text: ''
-                }
-            ]
-            
-        },
+        table2,
         { text: ' Bed Extension', style: 'textotablaboldlarge' },
-        {
-            columns: [
-                {
-                    width: "*",
-                    table: {
-                        widths: [70, "*", 130],
-                        body: badExtensions
-                    },
-                    layout: {
-                        hLineWidth: function () {
-                            return  0.7;
-                        },
-                        vLineWidth: function () {
-                            return 0.7;
-                        },
-                        hLineColor: function () {
-                            return 'gray';
-                        },
-                        vLineColor: function () {
-                            return 'gray';
-                        },
-                    }
-                },
-                {
-                    width: 70,
-                    text: ''
-                }
-            ]
-        },
+        table3,
         { text: ' Plug and Voltage', style: 'textotablaboldlarge' },
-        {
-            columns: [
-                {
-                    width: "*",
-                    table: {
-                        widths: [70, "*", 130],
-                        body: plug
-                    },
-                    layout: {
-                        hLineWidth: function () {
-                            return  0.7;
-                        },
-                        vLineWidth: function () {
-                            return 0.7;
-                        },
-                        hLineColor: function () {
-                            return 'gray';
-                        },
-                        vLineColor: function () {
-                            return 'gray';
-                        },
-                    }
-                },
-                {
-                    width: 70,
-                    text: ''
-                }
-            ]
-        },
+        table4,
         "\n",
         { text: '● = standard', style: 'parrafo' },
         { text: '= - not available', style: 'parrafo' },

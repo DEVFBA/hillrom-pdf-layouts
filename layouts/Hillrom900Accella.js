@@ -20,157 +20,402 @@ async function getHillrom900Accella()
     ]
     pSItems++
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<optionsData.length; i++)
+    if(optionsData.length > 0)
     {
-        var price = ""
-        if(optionsData[i].Print_Character !== null)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<optionsData.length; i++)
         {
-            if(optionsData[i].Print_Character === "*")
+            var price = ""
+            if(optionsData[i].Print_Character !== null)
             {
-                price = "●"
+                if(optionsData[i].Print_Character === "*")
+                {
+                    price = "●"
+                }
+                else {
+                    price = "-"
+                }
             }
             else {
-                price = "-"
+                price = "$" + Intl.NumberFormat("en-IN").format(optionsData[i].Price)
             }
-        }
-        else {
-            price = "$" + Intl.NumberFormat("en-IN").format(optionsData[i].Price)
-        }
 
-        options[pSItems] = [
-            {text: optionsData[i].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: optionsData[i].Item_Long_Desc, style: 'textotabla'},
-            {text: price, style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
+            options[pSItems] = [
+                {text: optionsData[i].Id_Item, style: 'textotabla', alignment: 'center'},
+                {text: optionsData[i].Item_Long_Desc, style: 'textotabla'},
+                {text: price, style: 'textotabla', alignment: 'center'}, 
+            ]
+        
+            pSItems++
+        }
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
-
+    
     var castors = []
     pSItems = 0
 
-     /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<castorsData.length; i++)
+    if(castorsData.length > 0)
     {
-        var price = ""
-        if(castorsData[i].Print_Character !== null)
+         /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<castorsData.length; i++)
         {
-            if(castorsData[i].Print_Character === "*")
+            var price = ""
+            if(castorsData[i].Print_Character !== null)
             {
-                price = "●"
+                if(castorsData[i].Print_Character === "*")
+                {
+                    price = "●"
+                }
+                else {
+                    price = "-"
+                }
             }
             else {
-                price = "-"
+                price = "$" + Intl.NumberFormat("en-IN").format(castorsData[i].Price)
             }
-        }
-        else {
-            price = "$" + Intl.NumberFormat("en-IN").format(castorsData[i].Price)
-        }
 
-        castors[pSItems] = [
-            {text: castorsData[i].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: castorsData[i].Item_Long_Desc, style: 'textotabla'},
-            {text: price, style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
+            castors[pSItems] = [
+                {text: castorsData[i].Id_Item, style: 'textotabla', alignment: 'center'},
+                {text: castorsData[i].Item_Long_Desc, style: 'textotabla'},
+                {text: price, style: 'textotabla', alignment: 'center'}, 
+            ]
+        
+            pSItems++
+        }
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
 
     var graphical = []
     pSItems = 0
 
-     /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<graphicalInterface.length; i++)
-    {
-        var price = ""
-        if(graphicalInterface[i].Print_Character !== null)
+    if(graphicalInterface.length > 0)
+    {   
+         /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<graphicalInterface.length; i++)
         {
-            if(graphicalInterface[i].Print_Character === "*")
+            var price = ""
+            if(graphicalInterface[i].Print_Character !== null)
             {
-                price = "●"
+                if(graphicalInterface[i].Print_Character === "*")
+                {
+                    price = "●"
+                }
+                else {
+                    price = "-"
+                }
             }
             else {
-                price = "-"
+                price = "$" + Intl.NumberFormat("en-IN").format(graphicalInterface[i].Price)
             }
-        }
-        else {
-            price = "$" + Intl.NumberFormat("en-IN").format(graphicalInterface[i].Price)
-        }
 
-        graphical[pSItems] = [
-            {text: graphicalInterface[i].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: graphicalInterface[i].Item_Long_Desc, style: 'textotabla'},
-            {text: price, style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
+            graphical[pSItems] = [
+                {text: graphicalInterface[i].Id_Item, style: 'textotabla', alignment: 'center'},
+                {text: graphicalInterface[i].Item_Long_Desc, style: 'textotabla'},
+                {text: price, style: 'textotabla', alignment: 'center'}, 
+            ]
+        
+            pSItems++
+        }
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
 
     var steering = []
     pSItems = 0
 
-     /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<steeringCastor.length; i++)
+    if(steeringCastor.length > 0)
     {
-        var price = ""
-        if(steeringCastor[i].Print_Character !== null)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<steeringCastor.length; i++)
         {
-            if(steeringCastor[i].Print_Character === "*")
+            var price = ""
+            if(steeringCastor[i].Print_Character !== null)
             {
-                price = "●"
+                if(steeringCastor[i].Print_Character === "*")
+                {
+                    price = "●"
+                }
+                else {
+                    price = "-"
+                }
             }
             else {
-                price = "-"
+                price = "$" + Intl.NumberFormat("en-IN").format(steeringCastor[i].Price)
             }
-        }
-        else {
-            price = "$" + Intl.NumberFormat("en-IN").format(steeringCastor[i].Price)
-        }
 
-        steering[pSItems] = [
-            {text: steeringCastor[i].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: steeringCastor[i].Item_Long_Desc, style: 'textotabla'},
-            {text: price, style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
+            steering[pSItems] = [
+                {text: steeringCastor[i].Id_Item, style: 'textotabla', alignment: 'center'},
+                {text: steeringCastor[i].Item_Long_Desc, style: 'textotabla'},
+                {text: price, style: 'textotabla', alignment: 'center'}, 
+            ]
+        
+            pSItems++
+        }
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
-
+     
     var plug = []
     pSItems = 0
 
-     /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<plugsVoltages.length; i++)
+    if(plugsVoltages.length > 0)
     {
-        var price = ""
-        if(plugsVoltages[i].Print_Character !== null)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<plugsVoltages.length; i++)
         {
-            if(plugsVoltages[i].Print_Character === "*")
+            var price = ""
+            if(plugsVoltages[i].Print_Character !== null)
             {
-                price = "●"
+                if(plugsVoltages[i].Print_Character === "*")
+                {
+                    price = "●"
+                }
+                else {
+                    price = "-"
+                }
             }
             else {
-                price = "-"
+                price = "$" + Intl.NumberFormat("en-IN").format(plugsVoltages[i].Price)
             }
-        }
-        else {
-            price = "$" + Intl.NumberFormat("en-IN").format(plugsVoltages[i].Price)
-        }
 
-        plug[pSItems] = [
-            {text: plugsVoltages[i].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: plugsVoltages[i].Item_Long_Desc, style: 'textotabla'},
-            {text: price, style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
+            plug[pSItems] = [
+                {text: plugsVoltages[i].Id_Item, style: 'textotabla', alignment: 'center'},
+                {text: plugsVoltages[i].Item_Long_Desc, style: 'textotabla'},
+                {text: price, style: 'textotabla', alignment: 'center'}, 
+            ]
+        
+            pSItems++
+        }
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
+
+    var table1 = []
+    if(prices.length > 0)
+    {
+        table1 = [
+            {
+                columns: [
+                    {
+                        width: 70,
+                        text: ''
+                    },
+                    {
+                        width: "*",
+                        table: {
+                            widths: ["*", 130],
+                            body: [
+                                [
+                                    {border: [false, false, false, false], text: '', style: 'textotablabold'},
+                                    {text: 'ACCELLA', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                ],
+                                [
+                                    {border: [false, false, false, false], text: '', style: 'textotablabold'},
+                                    { image: "images/Hillrom900Acella.png", width: 95, height: 75, alignment: 'center'},
+                                ],
+                                [
+                                    {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                ],
+                            ]
+                        }	,
+                        layout: {
+                            hLineWidth: function () {
+                                return  0.7;
+                            },
+                            vLineWidth: function () {
+                                return 0.7;
+                            },
+                            hLineColor: function () {
+                                return 'gray';
+                            },
+                            vLineColor: function () {
+                                return 'gray';
+                            },
+                        }	
+                    },
+                ]
+            }
+        ]
+    }
+    else {
+        table1 = [
+            {
+                columns: [
+                    {
+                        width: 70,
+                        text: ''
+                    },
+                    {
+                        width: "*",
+                        table: {
+                            widths: ["*", 130],
+                            body: [
+                                [
+                                    {border: [false, false, false, false], text: '', style: 'textotablabold'},
+                                    {text: 'ACCELLA', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                ],
+                                [
+                                    {border: [false, false, false, false], text: '', style: 'textotablabold'},
+                                    { image: "images/Hillrom900Acella.png", width: 95, height: 75, alignment: 'center'},
+                                ],
+                                [
+                                    {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
+                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                ],
+                            ]
+                        }	,
+                        layout: {
+                            hLineWidth: function () {
+                                return  0.7;
+                            },
+                            vLineWidth: function () {
+                                return 0.7;
+                            },
+                            hLineColor: function () {
+                                return 'gray';
+                            },
+                            vLineColor: function () {
+                                return 'gray';
+                            },
+                        }	
+                    },
+                ]
+            }
+        ]
+    }
+
+    var table2 = []
+    if(optionsData.length > 0)
+    {
+        table2 = [
+            {
+                table: {
+                    widths: [70, "*", 130],
+                    body: options
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+
+    var table3 = []
+    if(castorsData.length > 0)
+    {
+        table3 = [
+            {
+                table: {
+                    widths: [70, "*", 130],
+                    body: castors
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+
+    var table4 = []
+    if(graphicalInterface.length > 0)
+    {
+        table4 = [
+            {
+                table: {
+                    widths: [70, "*", 130],
+                    body: graphical
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+
+    var table5 = [];
+    if(steeringCastor.length > 0)
+    {
+        table5 = [
+            {
+                table: {
+                    widths: [70, "*", 130],
+                    body: steering
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+
+    var table6 = []
+    if(plugsVoltages.length > 0)
+    {
+        table6 = [
+            {
+                table: {
+                    widths: [70, "*", 130],
+                    body: plug
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
 
     const fecha = new Date();
     fecha.toLocaleDateString()
@@ -233,153 +478,17 @@ async function getHillrom900Accella()
                 },
             ]
         },
-        {
-            columns: [
-                {
-                    width: 70,
-                    text: ''
-                },
-                {
-                    width: "*",
-                    table: {
-                        widths: ["*", 130],
-                        body: [
-                            [
-                                {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                {text: 'ACCELLA', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            ],
-                            [
-                                {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                { image: "images/Hillrom900Acella.png", width: 95, height: 75, alignment: 'center'},
-                            ],
-                            [
-                                {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            ],
-                        ]
-                    }	,
-                    layout: {
-                        hLineWidth: function () {
-                            return  0.7;
-                        },
-                        vLineWidth: function () {
-                            return 0.7;
-                        },
-                        hLineColor: function () {
-                            return 'gray';
-                        },
-                        vLineColor: function () {
-                            return 'gray';
-                        },
-                    }	
-                },
-            ]
-        },
+        table1,
         "\n",
-        {
-            table: {
-                widths: [70, "*", 130],
-                body: options
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table2,
         { text: 'Castors', style: 'textotablaboldlarge' },
-        {
-            table: {
-                widths: [70, "*", 130],
-                body: castors
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table3,
         { text: 'Graphical Interface', style: 'textotablaboldlarge' },
-        {
-            table: {
-                widths: [70, "*", 130],
-                body: graphical
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table4,
         { text: 'Steering Castor', style: 'textotablaboldlarge' },
-        {
-            table: {
-                widths: [70, "*", 130],
-                body: steering
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table5,
         { text: 'Plug & Voltage', style: 'textotablaboldlarge' },
-        {
-            table: {
-                widths: [70, "*", 130],
-                body: plug
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table6,
         {text: '', pageBreak: 'after'  },
     ]
 

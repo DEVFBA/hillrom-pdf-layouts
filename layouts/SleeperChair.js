@@ -44,86 +44,89 @@ async function getSleeperChair()
     ]
     pSItems++
 
-    /*ESTO VA EN UN CICLO*/
-    var i=0;
-    var mainTableFlag = false
-    while(mainTableFlag === false)
+    if(mainTableData.length > 0)
     {
-        var j;
-        if(i===0)
+        /*ESTO VA EN UN CICLO*/
+        var i=0;
+        var mainTableFlag = false
+        while(mainTableFlag === false)
         {
-            j=0
-        }
-        else {
-            j = i*2
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< mainTableData.length && countC<2)
-        {
-           precios[preciosCount] = mainTableData[j].Price
-           printCaracter[preciosCount] = mainTableData[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: mainTableData[j-1].Id_Item,
-            Item_Long_Desc: mainTableData[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
+            var j;
+            if(i===0)
             {
-                precio1 = "●"
+                j=0
             }
             else {
-                precio1 = "-"
+                j = i*2
             }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
+            var precios = []
+            var preciosCount = 0
+            var countC=0
+            var printCaracter = []
+            while(j< mainTableData.length && countC<2)
             {
-                precio2 = "●"
+            precios[preciosCount] = mainTableData[j].Price
+            printCaracter[preciosCount] = mainTableData[j].Print_Character
+            preciosCount++
+            j++
+            countC++
+            }
+            var data = {
+                Id_Item: mainTableData[j-1].Id_Item,
+                Item_Long_Desc: mainTableData[j-1].Item_Long_Desc,
+                Prices: precios,
+                Print_Character: printCaracter
+            }
+
+            var precio1;
+            var precio2;
+
+            if(data.Print_Character[0] !== null)
+            {
+                if(data.Print_Character[0] === "*")
+                {
+                    precio1 = "●"
+                }
+                else {
+                    precio1 = "-"
+                }
             }
             else {
-                precio2 = "-"
+                precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
             }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-        
-        mainTable[pSItems] = [
-            {text: data.Item_Long_Desc, style: 'textotablacolornormal', fillColor: '#546ce4'},
-            {text: precio1, style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-            {text: precio2, style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-        ]
 
-        pSItems++
+            if(data.Print_Character[1] !== null)
+            {
+                if(data.Print_Character[1] === "*")
+                {
+                    precio2 = "●"
+                }
+                else {
+                    precio2 = "-"
+                }
+            }
+            else {
+                precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+            }
+            
+            mainTable[pSItems] = [
+                {text: data.Item_Long_Desc, style: 'textotablacolornormal', fillColor: '#546ce4'},
+                {text: precio1, style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+                {text: precio2, style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+            ]
 
-        //console.log(data)
+            pSItems++
 
-        if(j >= mainTableData.length)
-        {
-            mainTableFlag = true
-        }
-        i++
-    }   
-    /*TERMINA CICLO*/
+            //console.log(data)
+
+            if(j >= mainTableData.length)
+            {
+                mainTableFlag = true
+            }
+            i++
+        }   
+        /*TERMINA CICLO*/
+    }
 
     var options =[]
     var pSItems = 0;
@@ -134,88 +137,163 @@ async function getSleeperChair()
     ]
     pSItems++
 
-    /*EMPIEZA CICLO*/
-   /*EMPIEZA CICLO*/
-   var i=0;
-   var optionsFlag = false
-   while(optionsFlag === false)
-   {
-       var j;
-       if(i===0)
-       {
-           j=0
-       }
-       else {
-           j = i*2
-       }
-       var precios = []
-       var preciosCount = 0
-       var countC=0
-       var printCaracter = []
-       while(j< optionsData.length && countC<2)
-       {
-          precios[preciosCount] = optionsData[j].Price
-          printCaracter[preciosCount] = optionsData[j].Print_Character
-          preciosCount++
-          j++
-          countC++
-       }
-       var data = {
-           Id_Item: optionsData[j-1].Id_Item,
-           Item_Long_Desc: optionsData[j-1].Item_Long_Desc,
-           Prices: precios,
-           Print_Character: printCaracter
-       }
+   
+    if(optionsData.length > 0)
+    {
+         /*EMPIEZA CICLO*/
+        var i=0;
+        var optionsFlag = false
+        while(optionsFlag === false)
+        {
+            var j;
+            if(i===0)
+            {
+                j=0
+            }
+            else {
+                j = i*2
+            }
+            var precios = []
+            var preciosCount = 0
+            var countC=0
+            var printCaracter = []
+            while(j< optionsData.length && countC<2)
+            {
+                precios[preciosCount] = optionsData[j].Price
+                printCaracter[preciosCount] = optionsData[j].Print_Character
+                preciosCount++
+                j++
+                countC++
+            }
+            var data = {
+                Id_Item: optionsData[j-1].Id_Item,
+                Item_Long_Desc: optionsData[j-1].Item_Long_Desc,
+                Prices: precios,
+                Print_Character: printCaracter
+            }
 
-       var precio1;
-       var precio2;
+            var precio1;
+            var precio2;
 
-       if(data.Print_Character[0] !== null)
-       {
-           if(data.Print_Character[0] === "*")
-           {
-               precio1 = "●"
-           }
-           else {
-               precio1 = "-"
-           }
-       }
-       else {
-           precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-       }
+            if(data.Print_Character[0] !== null)
+            {
+                if(data.Print_Character[0] === "*")
+                {
+                    precio1 = "●"
+                }
+                else {
+                    precio1 = "-"
+                }
+            }
+            else {
+                precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+            }
 
-       if(data.Print_Character[1] !== null)
-       {
-           if(data.Print_Character[1] === "*")
-           {
-               precio2 = "●"
-           }
-           else {
-               precio2 = "-"
-           }
-       }
-       else {
-           precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-       }
-       
-       options[pSItems] = [
-           {text: data.Item_Long_Desc, style: 'textotabla'},
-           {text: precio1, style: 'textotabla', alignment: 'center'}, 
-           {text: precio2, style: 'textotabla', alignment: 'center'}, 
-       ]
+            if(data.Print_Character[1] !== null)
+            {
+                if(data.Print_Character[1] === "*")
+                {
+                    precio2 = "●"
+                }
+                else {
+                    precio2 = "-"
+                }
+            }
+            else {
+                precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+            }
+            
+            options[pSItems] = [
+                {text: data.Item_Long_Desc, style: 'textotabla'},
+                {text: precio1, style: 'textotabla', alignment: 'center'}, 
+                {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            ]
 
-       pSItems++
+            pSItems++
 
-       //console.log(data)
+            //console.log(data)
 
-       if(j >= optionsData.length)
-       {
-           optionsFlag = true
-       }
-       i++
-    }   
-    /*TERMINA CICLO*/
+            if(j >= optionsData.length)
+            {
+                optionsFlag = true
+            }
+            i++
+            }   
+            /*TERMINA CICLO*/
+    }
 
+    var table1 = []
+    if(mainTableData.length > 0)
+    {
+        table1 = [
+            {
+                columns: [
+                    {
+                        width: 350,
+                        table: {
+                            widths: [140, 80, 80],
+                            body: mainTable
+                        },
+                        layout: {
+                            hLineWidth: function () {
+                                return  0.7;
+                            },
+                            vLineWidth: function () {
+                                return 0.7;
+                            },
+                            hLineColor: function () {
+                                return 'gray';
+                            },
+                            vLineColor: function () {
+                                return 'gray';
+                            },
+                        }		
+                    },
+                    {
+                        width: "*",
+                        text: [
+                            {text: '\n\n\n\n\n\n\n\n', style: 'textotablaboldblack', fillColor: '#546ce4'},
+                            {text: 'Arm Cap Color\n', style: 'textotablaboldblack', fillColor: '#546ce4'},
+                            {text: 'Black\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'White\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'Dark Grey\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'Light Grey\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'Toffee\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'Sand\n', style: 'textotabla', fillColor: '#546ce4'},
+                        ]
+                    },
+                ]
+            }
+        ]
+    }
+    
+    var table2 = []
+    if(optionsData.length > 0)
+    {
+        table2 = [
+            {
+                table: {
+                    widths: [140, 80, 80],
+                    body: options
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+    
     const fecha = new Date();
     fecha.toLocaleDateString()
 
@@ -248,65 +326,9 @@ async function getSleeperChair()
             ]
         },
         "\n",
-        {
-            columns: [
-                {
-                    width: 350,
-                    table: {
-                        widths: [140, 80, 80],
-                        body: mainTable
-                    },
-                    layout: {
-                        hLineWidth: function () {
-                            return  0.7;
-                        },
-                        vLineWidth: function () {
-                            return 0.7;
-                        },
-                        hLineColor: function () {
-                            return 'gray';
-                        },
-                        vLineColor: function () {
-                            return 'gray';
-                        },
-                    }		
-                },
-                {
-                    width: "*",
-                    text: [
-                        {text: '\n\n\n\n\n\n\n\n', style: 'textotablaboldblack', fillColor: '#546ce4'},
-                        {text: 'Arm Cap Color\n', style: 'textotablaboldblack', fillColor: '#546ce4'},
-                        {text: 'Black\n', style: 'textotabla', fillColor: '#546ce4'},
-                        {text: 'White\n', style: 'textotabla', fillColor: '#546ce4'},
-                        {text: 'Dark Grey\n', style: 'textotabla', fillColor: '#546ce4'},
-                        {text: 'Light Grey\n', style: 'textotabla', fillColor: '#546ce4'},
-                        {text: 'Toffee\n', style: 'textotabla', fillColor: '#546ce4'},
-                        {text: 'Sand\n', style: 'textotabla', fillColor: '#546ce4'},
-                    ]
-                },
-            ]
-        },
+        table1,
         "\n",
-        {
-            table: {
-                widths: [140, 80, 80],
-                body: options
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table2,
         { text: '\n', style: 'parrafo' },
         { text: '● = standard', style: 'parrafo' },
         { text: '= - not available', style: 'parrafo' },

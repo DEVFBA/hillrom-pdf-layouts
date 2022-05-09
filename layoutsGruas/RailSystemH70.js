@@ -20,357 +20,434 @@ async function getRailSystemH70(pdfZone)
     var pSItems = 0
 
     /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida1.length; i++)
+
+    if(salida1.length > 0)
     {
-        if(i === 0 && salida1.length === 1)
+        for(var i=0; i<salida1.length; i++)
         {
-            accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida1[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida1[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, true, true, true], image: "images/RailSystemH701.png", width: 70, height: 25, alignment: 'center', rowSpan: salida1.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida1.length === 1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, true], text: salida1[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida1[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, true, true, true], image: "images/RailSystemH701.png", width: 70, height: 25, alignment: 'center', rowSpan: salida1.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, false], text: salida1[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida1[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, true, true, true], image: "images/RailSystemH701.png", width: 70, height: 25, alignment: 'center', rowSpan: salida1.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida1.length-1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: salida1[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida1[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: salida1[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida1[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories[pSItems] =[
-                {border: [true, true, true, false], text: salida1[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida1[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, true, true, true], image: "images/RailSystemH701.png", width: 70, height: 25, alignment: 'center', rowSpan: salida1.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida1.length-1)
-        {
-            accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida1[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida1[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories[pSItems] =[
-                {border: [true, false, true, false], text: salida1[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida1[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
-
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida2.length; i++)
+    
+    if(salida2.length > 0)
     {
-        if(i === 0 && salida2.length === 1)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida2.length; i++)
         {
-            accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida2[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida2[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, true, true, true], text: ""},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida2.length === 1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, true], text: salida2[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida2[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, true, true, true], text: ""},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, false], text: salida2[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida2[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida2.length-1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: salida2[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida2[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: salida2[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida2[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories[pSItems] =[
-                {border: [true, true, true, false], text: salida2[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida2[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida2.length-1)
-        {
-            accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida2[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida2[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories[pSItems] =[
-                {border: [true, false, true, false], text: salida2[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida2[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
-
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida3.length; i++)
+    
+    if(salida3.length > 0)
     {
-        if(i === 0 && salida3.length === 1)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida3.length; i++)
         {
-            accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida3[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida3[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, true, true, true], image: "images/RailSystemH702.png", width: 80, height: 35, alignment: 'center', rowSpan: salida3.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida3.length === 1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, true], text: salida3[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida3[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, true, true, true], image: "images/RailSystemH702.png", width: 80, height: 35, alignment: 'center', rowSpan: salida3.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, false], text: salida3[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida3[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, true, true, true], image: "images/RailSystemH702.png", width: 80, height: 35, alignment: 'center', rowSpan: salida3.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida3.length-1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: salida3[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida3[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: salida3[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida3[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories[pSItems] =[
-                {border: [true, true, true, false], text: salida3[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida3[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, true, true, true], image: "images/RailSystemH702.png", width: 80, height: 35, alignment: 'center', rowSpan: salida3.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida3.length-1)
-        {
-            accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida3[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida3[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories[pSItems] =[
-                {border: [true, false, true, false], text: salida3[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida3[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
-
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida4.length; i++)
+    
+    if(salida4.length > 0)
     {
-        if(i === 0 && salida4.length === 1)
+         /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida4.length; i++)
         {
-            accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida4[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida4[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, true, true, true], image: "images/RailSystemH703.png", width: 80, height: 35, alignment: 'center', rowSpan: salida4.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida4.length === 1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, true], text: salida4[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida4[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, true, true, true], image: "images/RailSystemH703.png", width: 80, height: 35, alignment: 'center', rowSpan: salida4.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, true, true, true], image: "images/RailSystemH703.png", width: 80, height: 35, alignment: 'center', rowSpan: salida4.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida4.length-1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: salida4[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida4[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: salida4[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida4[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories[pSItems] =[
-                {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, true, true, true], image: "images/RailSystemH703.png", width: 80, height: 35, alignment: 'center', rowSpan: salida4.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida4.length-1)
-        {
-            accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida4[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida4[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories[pSItems] =[
-                {border: [true, false, true, false], text: salida4[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida4[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
+   
 
-     /*ESTO VA EN UN CICLO*/
-     for(var i=0; i<salida5.length; i++)
-     {
-         if(i === 0 && salida5.length === 1)
-         {
-             accesories[pSItems] =[
-                 {border: [true, true, true, true], text: salida5[i].Part, style: 'textotabla'},
-                 {border: [true, true, true, true], text: salida5[i].Item_Long_Desc, style: 'textotabla'},
-                 {border: [true, true, true, true], image: "images/RailSystemH704.png", width: 80, height: 20, alignment: 'center', rowSpan: salida5.length},
-                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
-             ]
-         
-             pSItems++
-         }
-         else if(i === 0)
-         {
-             accesories[pSItems] =[
-                 {border: [true, true, true, false], text: salida5[i].Part, style: 'textotabla'},
-                 {border: [true, true, true, false], text: salida5[i].Item_Long_Desc, style: 'textotabla'},
-                 {border: [true, true, true, true], image: "images/RailSystemH704.png", width: 80, height: 20, alignment: 'center', rowSpan: salida5.length},
-                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
-             ]
-         
-             pSItems++
-         }
-         else if(i === salida5.length-1)
-         {
-             accesories[pSItems] =[
-                 {border: [true, false, true, true], text: salida5[i].Part, style: 'textotabla'},
-                 {border: [true, false, true, true], text: salida5[i].Item_Long_Desc, style: 'textotabla'},
-                 {border: [true, false, true, true], text: ""},
-                 {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
-             ]
-         
-             pSItems++
-         }
-         else {
-             accesories[pSItems] =[
-                 {border: [true, false, true, false], text: salida5[i].Part, style: 'textotabla'},
-                 {border: [true, false, true, false], text: salida5[i].Item_Long_Desc, style: 'textotabla'},
-                 {border: [true, false, true, false], text: ""},
-                 {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
-             ]
-         
-             pSItems++
-         }
-         
-     }
-    /*TERMINA CICLO*/
-
+    if(salida5.length > 0)
+    {
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida5.length; i++)
+        {
+            if(i === 0 && salida5.length === 1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, true], text: salida5[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida5[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, true, true, true], image: "images/RailSystemH704.png", width: 80, height: 20, alignment: 'center', rowSpan: salida5.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, false], text: salida5[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida5[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, true, true, true], image: "images/RailSystemH704.png", width: 80, height: 20, alignment: 'center', rowSpan: salida5.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida5.length-1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: salida5[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida5[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: salida5[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida5[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
+        }
+        /*TERMINA CICLO*/
+    }
+     
     var accesories2 = []
     pSItems = 0
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida6.length; i++)
-     {
-         if(i === 0 && salida6.length === 1)
-         {
-            accesories2[pSItems] =[
-                 {border: [true, true, true, true], text: salida6[i].Part, style: 'textotabla'},
-                 {border: [true, true, true, true], text: salida6[i].Item_Long_Desc, style: 'textotabla'},
-                 {border: [true, true, true, true], image: "images/RailSystemH705.png", width: 40, height: 25, alignment: 'center', rowSpan: salida6.length},
-                 {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
-             ]
-         
-             pSItems++
-         }
-         else if(i === 0)
-         {
-            accesories2[pSItems] =[
-                 {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
-                 {border: [true, true, true, false], text: salida6[i].Item_Long_Desc, style: 'textotabla'},
-                 {border: [true, true, true, true], image: "images/RailSystemH705.png", width: 40, height: 25, alignment: 'center', rowSpan: salida6.length},
-                 {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
-             ]
-         
-             pSItems++
-         }
-         else if(i === salida6.length-1)
-         {
-            accesories2[pSItems] =[
-                 {border: [true, false, true, true], text: salida6[i].Part, style: 'textotabla'},
-                 {border: [true, false, true, true], text: salida6[i].Item_Long_Desc, style: 'textotabla'},
-                 {border: [true, false, true, true], text: ""},
-                 {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
-             ]
-         
-             pSItems++
-         }
-         else {
-            accesories2[pSItems] =[
-                 {border: [true, false, true, false], text: salida6[i].Part, style: 'textotabla'},
-                 {border: [true, false, true, false], text: salida6[i].Item_Long_Desc, style: 'textotabla'},
-                 {border: [true, false, true, false], text: ""},
-                 {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
-             ]
-         
-             pSItems++
-         }
-         
-     }
-    /*TERMINA CICLO*/
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida7.length; i++)
+    if(salida6.length > 0)
     {
-        if(i === 0 && salida7.length === 1)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida6.length; i++)
         {
+            if(i === 0 && salida6.length === 1)
+            {
             accesories2[pSItems] =[
-                {border: [true, true, true, true], text: salida7[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida7[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, true, true, true], image: "images/RailSystemH706.png", width: 40, height: 25, alignment: 'center', rowSpan: salida7.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === 0)
-        {
+                    {border: [true, true, true, true], text: salida6[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida6[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, true, true, true], image: "images/RailSystemH705.png", width: 40, height: 25, alignment: 'center', rowSpan: salida6.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
             accesories2[pSItems] =[
-                {border: [true, true, true, false], text: salida7[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida7[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, true, true, true], image: "images/RailSystemH706.png", width: 40, height: 25, alignment: 'center', rowSpan: salida7.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida7.length-1)
-        {
+                    {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida6[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, true, true, true], image: "images/RailSystemH705.png", width: 40, height: 25, alignment: 'center', rowSpan: salida6.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida6.length-1)
+            {
             accesories2[pSItems] =[
-                {border: [true, false, true, true], text: salida7[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida7[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
+                    {border: [true, false, true, true], text: salida6[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida6[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
             accesories2[pSItems] =[
-                {border: [true, false, true, false], text: salida7[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida7[i].Item_Long_Desc, style: 'textotabla'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+                    {border: [true, false, true, false], text: salida6[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida6[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        
-    }
     /*TERMINA CICLO*/
+    }
+
+    if(salida7.length > 0)
+    {
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida7.length; i++)
+        {
+            if(i === 0 && salida7.length === 1)
+            {
+                accesories2[pSItems] =[
+                    {border: [true, true, true, true], text: salida7[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida7[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, true, true, true], image: "images/RailSystemH706.png", width: 40, height: 25, alignment: 'center', rowSpan: salida7.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories2[pSItems] =[
+                    {border: [true, true, true, false], text: salida7[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida7[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, true, true, true], image: "images/RailSystemH706.png", width: 40, height: 25, alignment: 'center', rowSpan: salida7.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida7.length-1)
+            {
+                accesories2[pSItems] =[
+                    {border: [true, false, true, true], text: salida7[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida7[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: salida7[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida7[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
+        }
+        /*TERMINA CICLO*/
+    }
     
+    var table1 = [];
+    if(salida1.length > 0 || salida2.length > 0 || salida3.length > 0 || salida4.length > 0 || salida5.length > 0)
+    {
+        table1 = [
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+
+    var table2 = [];
+    if(salida6.length > 0 || salida7.length > 0)
+    {
+        table2 = [
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories2
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
     const fecha = new Date();
     fecha.toLocaleDateString()
 
@@ -431,26 +508,7 @@ async function getRailSystemH70(pdfZone)
                 },
             }		
         },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table1,
         {text: '', pageBreak: 'after'  },
         "\n",
         "\n",
@@ -481,26 +539,7 @@ async function getRailSystemH70(pdfZone)
                 },
             }		
         },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories2
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table2,
         {text: '', pageBreak: 'after'  },
     ]
 

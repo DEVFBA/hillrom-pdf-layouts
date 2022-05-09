@@ -322,6 +322,141 @@ async function getTherapySurfaces()
     }
     /*TERMINA CICLO*/
 
+    var table1 = []
+    if(foamSurfaceData.length > 0)
+    {
+        table1 = [
+            {
+                table: {
+                    widths: [70, 40, "*", 60, 80, 50, 50],
+                    body: foamSurface
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+
+    var table2 = []
+    if(monodensityData.length > 0 || bidensityData.length > 0 || viscoelasticData.length > 0)
+    {
+        table2 = [
+            {
+                table: {
+                    widths: [70, 40, "*", 60, 80, 50, 50],
+                    body: foamSurfaces
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+
+    var table3 = []
+    if(extensionsData.length > 0)
+    {
+        table3 = [
+            {
+                table: {
+                    widths: [70, 40, "*", 60, 80, 50, 50],
+                    body: extensions
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+
+    var table4 = []
+    if(monodensity2Data.length > 0 || bidensity2Data.length > 0 || viscoelastic2Data.length > 0)
+    {
+        table4 = [
+            {
+                table: {
+                    widths: [70, 40, "*", 60, 80, 50, 50],
+                    body: surfaceCovers
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                } 
+            }
+        ]
+    }
+
+    var table5 = []
+    if(usSurfacesData.length > 0 || usSurfacesData2.length > 0)
+    {
+        table5 = [
+            {
+                table: {
+                    widths: [70, '*', 70, 70],
+                    body: usSurfaces
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                } 
+            }
+        ]
+    }
+
     const fecha = new Date();
     fecha.toLocaleDateString()
 
@@ -334,49 +469,11 @@ async function getTherapySurfaces()
         { text: 'Country of origin: China\n', style: 'parrafo' },
         "\n",
         { text: 'FOAM SURFACE', style: 'textotablaboldlarge'},
-        {
-            table: {
-                widths: [70, 40, "*", 60, 80, 50, 50],
-                body: foamSurface
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table1,
         "\n",
         { text: 'FOAM SURFACES', style: 'textotablaboldlarge'},
         { text: 'Country of origin: France\n', style: 'parrafo' },
-        {
-            table: {
-                widths: [70, 40, "*", 60, 80, 50, 50],
-                body: foamSurfaces
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table2,
         '\n',
         { image: "images/TherapySurfaces.png", width: 500, height: 120, alignment: 'center'},
         {text: '', pageBreak: 'after'  },
@@ -385,70 +482,13 @@ async function getTherapySurfaces()
         "\n",
         { text: 'Extension / Covers / US surfaces', style: { fontSize: 0}, tocItem: 'therapySurfaces2'},
         { text: 'EXTENSIONS', style: 'textotablaboldlarge' },
-        {
-            table: {
-                widths: [70, 40, "*", 60, 80, 50, 50],
-                body: extensions
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table3,
         '\n',
         { text: 'SURFACE COVERS', style: 'textotablaboldlarge' },
-        {
-            table: {
-                widths: [70, 40, "*", 60, 80, 50, 50],
-                body: surfaceCovers
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            } 
-        },
+        table4,
         '\n',
         { text: 'US SURFACES', style: 'textotablaboldlarge' },
-        {
-            table: {
-                widths: [70, '*', 70, 70],
-                body: usSurfaces
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            } 
-        },
+        table5,
         {text: '', pageBreak: 'after'  },
     ]
 

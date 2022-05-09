@@ -9,106 +9,139 @@ async function getFreeStand(pdfZone)
     var accesories = []
     var pSItems = 0
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida12.length; i++)
-    {
-        if(i === 0 && salida12.length === 1)
+    if(salida12.length > 0)
+    {   
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida12.length; i++)
         {
-            accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida12[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida12[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/FreeStand2.png", width: 80, height: 100, alignment: 'center', rowSpan: salida12.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida12.length === 1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, true], text: salida12[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida12[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreeStand2.png", width: 80, height: 100, alignment: 'center', rowSpan: salida12.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, false], text: salida12[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida12[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreeStand2.png", width: 80, height: 100, alignment: 'center', rowSpan: salida12.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida12.length-1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: salida12[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida12[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: salida12[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida12[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories[pSItems] =[
-                {border: [true, true, true, false], text: salida12[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida12[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/FreeStand2.png", width: 80, height: 100, alignment: 'center', rowSpan: salida12.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida12.length-1)
-        {
-            accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida12[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida12[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories[pSItems] =[
-                {border: [true, false, true, false], text: salida12[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida12[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
-
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida13.length; i++)
+    
+    if(salida13.length > 0)
     {
-        if(i === 0 && salida13.length === 1)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida13.length; i++)
         {
-            accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida13[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida13[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/FreeStand3.png", width: 40, height: 60, alignment: 'center', rowSpan: salida13.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida13.length === 1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, true], text: salida13[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida13[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreeStand3.png", width: 40, height: 60, alignment: 'center', rowSpan: salida13.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, false], text: salida13[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida13[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreeStand3.png", width: 40, height: 60, alignment: 'center', rowSpan: salida13.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida8.length-1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: salida13[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida13[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: salida13[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida13[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories[pSItems] =[
-                {border: [true, true, true, false], text: salida13[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida13[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/FreeStand3.png", width: 40, height: 60, alignment: 'center', rowSpan: salida13.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida8.length-1)
-        {
-            accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida13[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida13[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories[pSItems] =[
-                {border: [true, false, true, false], text: salida13[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida13[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
 
+    var table1 = []
+    if(salida12.length > 0 || salida13.length > 0)
+    {
+        table1 = [
+            {
+                table: {
+                    widths: [80, "*", 80, 60],
+                    body: accesories
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+    
     const fecha = new Date();
     fecha.toLocaleDateString()
 
@@ -176,26 +209,7 @@ async function getFreeStand(pdfZone)
                 },
             }		
         },
-        {
-            table: {
-                widths: [80, "*", 80, 60],
-                body: accesories
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table1,
         {text: '', pageBreak: 'after'  },
     ]
 

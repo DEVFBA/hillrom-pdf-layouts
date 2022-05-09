@@ -14,366 +14,388 @@ async function getManualAIDS(pdfZone)
     var accesories = []
     var pSItems = 0
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida1.length; i++)
+    if(salida1.length > 0)
     {
-        if(i === 0 && salida1.length === 1)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida1.length; i++)
         {
-            accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida1[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/ManualAIDS1.png", width: 60, height: 30, alignment: 'center', rowSpan: salida1.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida1.length === 1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, true], text: salida1[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/ManualAIDS1.png", width: 60, height: 30, alignment: 'center', rowSpan: salida1.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, false], text: salida1[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/ManualAIDS1.png", width: 80, height: 30, alignment: 'center', rowSpan: salida1.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida1.length-1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: salida1[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: salida1[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories[pSItems] =[
-                {border: [true, true, true, false], text: salida1[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/ManualAIDS1.png", width: 80, height: 30, alignment: 'center', rowSpan: salida1.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida1.length-1)
-        {
-            accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida1[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories[pSItems] =[
-                {border: [true, false, true, false], text: salida1[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
-    }
-    /*TERMINA CICLO*/
+        /*TERMINA CICLO*/
+    }   
+    
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida2.length; i++)
+    if(salida2.length > 0)
     {
-        if(i === 0 && salida2.length === 1)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida2.length; i++)
         {
-            accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida2[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/ManualAIDS2.png", width: 80, height: 30, alignment: 'center', rowSpan: salida2.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida2.length === 1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, true], text: salida2[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/ManualAIDS2.png", width: 80, height: 30, alignment: 'center', rowSpan: salida2.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, false], text: salida2[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/ManualAIDS2.png", width: 80, height: 30, alignment: 'center', rowSpan: salida2.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida2.length-1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: salida2[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: salida2[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories[pSItems] =[
-                {border: [true, true, true, false], text: salida2[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/ManualAIDS2.png", width: 80, height: 30, alignment: 'center', rowSpan: salida2.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida2.length-1)
-        {
-            accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida2[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories[pSItems] =[
-                {border: [true, false, true, false], text: salida2[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
-    }
-
-    /*TERMINA CICLO*/
-
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida3.length; i++)
-    {
-        if(i === 0 && salida3.length === 1)
-        {
-            accesories[pSItems] =[
-                {border: [true, true, true, true], text: salida3[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/ManualAIDS3.png", width: 50, height: 30, alignment: 'center', rowSpan: salida3.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === 0)
-        {
-            accesories[pSItems] =[
-                {border: [true, true, true, false], text: salida3[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/ManualAIDS3.png", width: 50, height: 30, alignment: 'center', rowSpan: salida3.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida3.length-1)
-        {
-            accesories[pSItems] =[
-                {border: [true, false, true, true], text: salida3[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories[pSItems] =[
-                {border: [true, false, true, false], text: salida3[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        /*TERMINA CICLO*/
     }
 
-    /*TERMINA CICLO*/
+    if(salida3.length > 0)
+    {
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida3.length; i++)
+        {
+            if(i === 0 && salida3.length === 1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, true], text: salida3[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/ManualAIDS3.png", width: 50, height: 30, alignment: 'center', rowSpan: salida3.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories[pSItems] =[
+                    {border: [true, true, true, false], text: salida3[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/ManualAIDS3.png", width: 50, height: 30, alignment: 'center', rowSpan: salida3.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida3.length-1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: salida3[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: salida3[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
+        }
+
+        /*TERMINA CICLO*/
+    }
 
     var accesories2 = []
     var pSItems = 0
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida4.length; i++)
+    if(salida4.length > 0)
     {
-        if(i === 0 && salida4.length === 1)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida4.length; i++)
         {
-            accesories2[pSItems] =[
-                {border: [true, true, true, true], text: salida4[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/ManualAIDS4.png", width: 60, height: 60, alignment: 'center', rowSpan: salida4.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida4.length === 1)
+            {
+                accesories2[pSItems] =[
+                    {border: [true, true, true, true], text: salida4[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/ManualAIDS4.png", width: 60, height: 60, alignment: 'center', rowSpan: salida4.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories2[pSItems] =[
+                    {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/ManualAIDS4.png", width: 60, height: 60, alignment: 'center', rowSpan: salida4.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida4.length-1)
+            {
+                accesories2[pSItems] =[
+                    {border: [true, false, true, true], text: salida4[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: salida4[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories2[pSItems] =[
-                {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/ManualAIDS4.png", width: 60, height: 60, alignment: 'center', rowSpan: salida4.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida4.length-1)
-        {
-            accesories2[pSItems] =[
-                {border: [true, false, true, true], text: salida4[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories2[pSItems] =[
-                {border: [true, false, true, false], text: salida4[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida5.length; i++)
+    if(salida5.length > 0)
     {
-        if(i === 0 && salida5.length === 1)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida5.length; i++)
         {
-            accesories2[pSItems] =[
-                {border: [true, true, true, true], text: salida5[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/ManualAIDS5.png", width: 80, height: 60, alignment: 'center', rowSpan: salida5.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida5.length === 1)
+            {
+                accesories2[pSItems] =[
+                    {border: [true, true, true, true], text: salida5[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/ManualAIDS5.png", width: 80, height: 60, alignment: 'center', rowSpan: salida5.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories2[pSItems] =[
+                    {border: [true, true, true, false], text: salida5[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/ManualAIDS5.png", width: 80, height: 60, alignment: 'center', rowSpan: salida5.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida5.length-1)
+            {
+                accesories2[pSItems] =[
+                    {border: [true, false, true, true], text: salida5[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: salida5[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories2[pSItems] =[
-                {border: [true, true, true, false], text: salida5[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/ManualAIDS5.png", width: 80, height: 60, alignment: 'center', rowSpan: salida5.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida5.length-1)
-        {
-            accesories2[pSItems] =[
-                {border: [true, false, true, true], text: salida5[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories2[pSItems] =[
-                {border: [true, false, true, false], text: salida5[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida6.length; i++)
+    if(salida6.length > 0)
     {
-        if(i === 0 && salida6.length === 1)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida6.length; i++)
         {
-            accesories2[pSItems] =[
-                {border: [true, true, true, true], text: salida6[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/ManualAIDS6.png", width: 80, height: 20, alignment: 'center', rowSpan: salida6.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida6.length === 1)
+            {
+                accesories2[pSItems] =[
+                    {border: [true, true, true, true], text: salida6[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/ManualAIDS6.png", width: 80, height: 20, alignment: 'center', rowSpan: salida6.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories2[pSItems] =[
+                    {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/ManualAIDS6.png", width: 80, height: 20, alignment: 'center', rowSpan: salida6.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida6.length-1)
+            {
+                accesories2[pSItems] =[
+                    {border: [true, false, true, true], text: salida6[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: salida6[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories2[pSItems] =[
-                {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/ManualAIDS6.png", width: 80, height: 20, alignment: 'center', rowSpan: salida6.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida6.length-1)
-        {
-            accesories2[pSItems] =[
-                {border: [true, false, true, true], text: salida6[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories2[pSItems] =[
-                {border: [true, false, true, false], text: salida6[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
+    
 
     var accesories3 = []
     var pSItems = 0
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<salida7.length; i++)
+    if(salida7.length > 0)
     {
-        if(i === 0 && salida7.length === 1)
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<salida7.length; i++)
         {
-            accesories3[pSItems] =[
-                {border: [true, true, true, true], text: salida7[i].Part, style: 'textotabla'},
-                {border: [true, true, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/ManualAIDS7.png", width: 80, height: 60, alignment: 'center', rowSpan: salida7.length},
-                {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
+            if(i === 0 && salida7.length === 1)
+            {
+                accesories3[pSItems] =[
+                    {border: [true, true, true, true], text: salida7[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/ManualAIDS7.png", width: 80, height: 60, alignment: 'center', rowSpan: salida7.length},
+                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 0)
+            {
+                accesories3[pSItems] =[
+                    {border: [true, true, true, false], text: salida7[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/ManualAIDS7.png", width: 80, height: 60, alignment: 'center', rowSpan: salida7.length},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida7.length-1)
+            {
+                accesories3[pSItems] =[
+                    {border: [true, false, true, true], text: salida7[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else {
+                accesories3[pSItems] =[
+                    {border: [true, false, true, false], text: salida7[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            
         }
-        else if(i === 0)
-        {
-            accesories3[pSItems] =[
-                {border: [true, true, true, false], text: salida7[i].Part, style: 'textotabla'},
-                {border: [true, true, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, true, true, true], image: "images/ManualAIDS7.png", width: 80, height: 60, alignment: 'center', rowSpan: salida7.length},
-                {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else if(i === salida7.length-1)
-        {
-            accesories3[pSItems] =[
-                {border: [true, false, true, true], text: salida7[i].Part, style: 'textotabla'},
-                {border: [true, false, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, true], text: ""},
-                {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        else {
-            accesories3[pSItems] =[
-                {border: [true, false, true, false], text: salida7[i].Part, style: 'textotabla'},
-                {border: [true, false, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                {border: [true, false, true, false], text: ""},
-                {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
-            ]
-        
-            pSItems++
-        }
-        
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
 
     var s1 = []
-    if(salida1.length>0)
+    if(salida1.length > 0 || salida2.length > 0 || salida3.length > 0)
     {
         s1 = [
             "\n",
@@ -456,7 +478,7 @@ async function getManualAIDS(pdfZone)
     }
 
     var s2 = []
-    if(salida4.length>0)
+    if(salida4.length>0 || salida5.length > 0 || salida6.length > 0) 
     {
         s2 = [
             "\n",

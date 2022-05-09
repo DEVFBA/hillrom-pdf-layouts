@@ -95,38 +95,208 @@ async function getBedsideCabinets()
         i++
     } */
     
-    options[pSItems] = [
-        {text: optionsData[0].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
+    if(optionsData.length > 0)
+    {
+        options[pSItems] = [
+            {text: optionsData[0].Item_Long_Desc, style: 'textotabla'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+    
+        options[pSItems] = [
+            {text: optionsData[1].Item_Long_Desc, style: 'textotabla'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[1].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+    
+        options[pSItems] = [
+            {text: optionsData[2].Item_Long_Desc, style: 'textotabla'},
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[2].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+    
+        options[pSItems] = [
+            {text: optionsData[3].Item_Long_Desc, style: 'textotabla'},
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[3].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+        /*TERMINA CICLO*/
+    }
 
-    pSItems++
-
-    options[pSItems] = [
-        {text: optionsData[1].Item_Long_Desc, style: 'textotabla'},
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[1].Price), style: 'textotabla', alignment: 'center'}, 
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: optionsData[2].Item_Long_Desc, style: 'textotabla'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[2].Price), style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-
-    options[pSItems] = [
-        {text: optionsData[3].Item_Long_Desc, style: 'textotabla'},
-        {text: "-", style: 'textotabla', alignment: 'center'}, 
-        {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[3].Price), style: 'textotabla', alignment: 'center'}, 
-    ]
-
-    pSItems++
-    /*TERMINA CICLO*/
+    var table1 = []
+    if(prices.length > 0)
+    {
+        table1 = [
+            {
+                columns: [
+                    {
+                        width: 400,
+                        table: {
+                            widths: [140, 80, 80],
+                            body: [
+                                [
+                                    {border: [false, false, false, false], text: ''},
+                                    {text: 'PREMIUMBEDSIDECABINET', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
+                                    {},
+                                ],
+                                [
+                                    {border: [false, false, false, false], text: ''},
+                                    {text: 'BSCM', style: 'textotablabold', alignment: 'center'},
+                                    {text: 'BSCR', style: 'textotablabold', alignment: 'center'},
+                                ],
+                                [
+                                    {border: [false, false, false, false], text: ''},
+                                    {text: 'Metropolitan™', style: 'textotablacolornormal', fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'Areo™', style: 'textotablacolornormal', fillColor: '#546ce4',  alignment: 'center'},
+                                ],
+                                [
+                                    {border: [false, false, false, false], text: ''},
+                                    { image: "images/BedsideCabinets1.png", width: 70, height: 70, alignment: 'center'},
+                                    { image: "images/BedsideCabinets2.png", width: 70, height: 70, alignment: 'center'},
+                                ],
+                                [
+                                    {text: '3 Drawers', style: 'textotabla'},
+                                    {text: '●', style: 'textotabla', alignment: 'center'},
+                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                ],
+                                [
+                                    {text: 'Castors', style: 'textotabla'},
+                                    {text: '●', style: 'textotabla', alignment: 'center'},
+                                    {text: '●', style: 'textotabla', alignment: 'center'},  
+                                ],
+                                [
+                                    {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+                                ],
+                            ]
+                        },
+                        layout: {
+                            hLineWidth: function () {
+                                return  0.7;
+                            },
+                            vLineWidth: function () {
+                                return 0.7;
+                            },
+                            hLineColor: function () {
+                                return 'gray';
+                            },
+                            vLineColor: function () {
+                                return 'gray';
+                            },
+                        }		
+                    },
+                    {
+                        width: "*",
+                        text: ''
+                    },
+                ]
+            }
+        ]
+    }
+    else {
+        table1 = [
+            {
+                columns: [
+                    {
+                        width: 400,
+                        table: {
+                            widths: [140, 80, 80],
+                            body: [
+                                [
+                                    {border: [false, false, false, false], text: ''},
+                                    {text: 'PREMIUMBEDSIDECABINET', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
+                                    {},
+                                ],
+                                [
+                                    {border: [false, false, false, false], text: ''},
+                                    {text: 'BSCM', style: 'textotablabold', alignment: 'center'},
+                                    {text: 'BSCR', style: 'textotablabold', alignment: 'center'},
+                                ],
+                                [
+                                    {border: [false, false, false, false], text: ''},
+                                    {text: 'Metropolitan™', style: 'textotablacolornormal', fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'Areo™', style: 'textotablacolornormal', fillColor: '#546ce4',  alignment: 'center'},
+                                ],
+                                [
+                                    {border: [false, false, false, false], text: ''},
+                                    { image: "images/BedsideCabinets1.png", width: 70, height: 70, alignment: 'center'},
+                                    { image: "images/BedsideCabinets2.png", width: 70, height: 70, alignment: 'center'},
+                                ],
+                                [
+                                    {text: '3 Drawers', style: 'textotabla'},
+                                    {text: '●', style: 'textotabla', alignment: 'center'},
+                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                ],
+                                [
+                                    {text: 'Castors', style: 'textotabla'},
+                                    {text: '●', style: 'textotabla', alignment: 'center'},
+                                    {text: '●', style: 'textotabla', alignment: 'center'},  
+                                ],
+                                [
+                                    {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
+                                    {text: "NO-DATA", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+                                    {text: "NO-DATA", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+                                ],
+                            ]
+                        },
+                        layout: {
+                            hLineWidth: function () {
+                                return  0.7;
+                            },
+                            vLineWidth: function () {
+                                return 0.7;
+                            },
+                            hLineColor: function () {
+                                return 'gray';
+                            },
+                            vLineColor: function () {
+                                return 'gray';
+                            },
+                        }		
+                    },
+                    {
+                        width: "*",
+                        text: ''
+                    },
+                ]
+            }
+        ]
+    }
+    var table2 = []
+    if(optionsData.length > 0)
+    {
+        table2 = [
+            {
+                table: {
+                    widths: [140, 80, 80, 80],
+                    body: options
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
 
     const fecha = new Date();
     fecha.toLocaleDateString()
@@ -151,92 +321,9 @@ async function getBedsideCabinets()
                 ]		
         },
         "\n",
-        {
-            columns: [
-                {
-                    width: 400,
-                    table: {
-                        widths: [140, 80, 80],
-                        body: [
-                            [
-                                {border: [false, false, false, false], text: ''},
-                                {text: 'PREMIUMBEDSIDECABINET', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
-                                {},
-                            ],
-                            [
-                                {border: [false, false, false, false], text: ''},
-                                {text: 'BSCM', style: 'textotablabold', alignment: 'center'},
-                                {text: 'BSCR', style: 'textotablabold', alignment: 'center'},
-                            ],
-                            [
-                                {border: [false, false, false, false], text: ''},
-                                {text: 'Metropolitan™', style: 'textotablacolornormal', fillColor: '#546ce4',  alignment: 'center'},
-                                {text: 'Areo™', style: 'textotablacolornormal', fillColor: '#546ce4',  alignment: 'center'},
-                            ],
-                            [
-                                {border: [false, false, false, false], text: ''},
-                                { image: "images/BedsideCabinets1.png", width: 70, height: 70, alignment: 'center'},
-                                { image: "images/BedsideCabinets2.png", width: 70, height: 70, alignment: 'center'},
-                            ],
-                            [
-                                {text: '3 Drawers', style: 'textotabla'},
-                                {text: '●', style: 'textotabla', alignment: 'center'},
-                                {text: '●', style: 'textotabla', alignment: 'center'}, 
-                            ],
-                            [
-                                {text: 'Castors', style: 'textotabla'},
-                                {text: '●', style: 'textotabla', alignment: 'center'},
-                                {text: '●', style: 'textotabla', alignment: 'center'},  
-                            ],
-                            [
-                                {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                            ],
-                        ]
-                    },
-                    layout: {
-                        hLineWidth: function () {
-                            return  0.7;
-                        },
-                        vLineWidth: function () {
-                            return 0.7;
-                        },
-                        hLineColor: function () {
-                            return 'gray';
-                        },
-                        vLineColor: function () {
-                            return 'gray';
-                        },
-                    }		
-                },
-                {
-                    width: "*",
-                    text: ''
-                },
-            ]
-        },
+        table1,
         "\n",
-        {
-            table: {
-                widths: [140, 80, 80, 80],
-                body: options
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table2,
         { text: '\n', style: 'parrafo' },
         { text: '● = standard', style: 'parrafo' },
         { text: '= - not available', style: 'parrafo' },

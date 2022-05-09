@@ -114,7 +114,7 @@ async function getOverbedTables()
         i++
     }  */ 
 
-    if(topStyleData !== 0 || !topStyleData)
+    if(topStyleData.length > 0 || !topStyleData)
     {
         options[pSItems] = [
             {text: "Top Style", style: 'textotablaboldlarge', border: [false, false, false, false]},
@@ -249,7 +249,7 @@ async function getOverbedTables()
         i++
     }  */
 
-    if(mirrorStorageData !== 0 || !mirrorStorageData)
+    if(mirrorStorageData.length > 0 || !mirrorStorageData)
     {
         options[pSItems] = [
             {text: "Mirror / Storage", style: 'textotablaboldlarge', border: [false, false, false, false]},
@@ -307,7 +307,7 @@ async function getOverbedTables()
     pSItems++
 
     /*EMPIEZA CICLO*/
-    if(accesoriesData.length !== 0 || !accesoriesData)
+    if(accesoriesData.length > 0 || !accesoriesData)
     {
         options[pSItems] = [
             {text: "ACCESSORIES (FURNITUREACC)", style: 'textotablaboldlarge', border: [false, false, false, false]},
@@ -413,6 +413,216 @@ async function getOverbedTables()
         }   
         /*TERMINA CICLO*/
     }
+
+    var table1 = []
+    if(prices.length > 0)
+    {
+        table1 = [
+            {
+                columns: [
+                    {
+                        width: 370,
+                        table: {
+                            widths: [140, 50, 50, 50],
+                            body: [
+                                [
+                                    {border: [false, false, false, false], text: ''},
+                                    {text: 'PREMIUMOVERBEDTABLE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center', colSpan: 3},
+                                    {},
+                                    {},
+                                ],
+                                [
+                                    {border: [false, false, false, false], text: ''},
+                                    {text: 'P636', style: 'textotablabold', alignment: 'center'},
+                                    {text: 'P635', style: 'textotablabold', alignment: 'center'},
+                                    {text: 'P634', style: 'textotablabold', alignment: 'center'},
+                                ],
+                                [
+                                    {border: [false, false, false, false], text: ''},
+                                    {text: 'OBT-636', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'OBT-635', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'OBT-634', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                                ],
+                                [
+                                    {text: 'Dual Top - Food Service Tray', style: 'textotabla'},
+                                    {text: '●', style: 'textotabla', alignment: 'center'},
+                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
+                                ],
+                                [
+                                    {text: 'Single Top (Top Style 1)', style: 'textotabla'},
+                                    {text: '-', style: 'textotabla', alignment: 'center'},
+                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                ],
+                                [
+                                    {text: 'Single Top w/cutout for left sitting mirror (Top Style 1)', style: 'textotabla'},
+                                    {text: '-', style: 'textotabla', alignment: 'center'},
+                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
+                                ],
+                                [
+                                    {text: '"C" Base', style: 'textotabla'},
+                                    {text: '-', style: 'textotabla', alignment: 'center'},
+                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                ],
+                                [
+                                    {text: 'Tuning Fork Base', style: 'textotabla'},
+                                    {text: '●', style: 'textotabla', alignment: 'center'},
+                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
+                                ],
+                                [
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},  
+                                ],
+                            ]
+                        },
+                        layout: {
+                            hLineWidth: function () {
+                                return  0.7;
+                            },
+                            vLineWidth: function () {
+                                return 0.7;
+                            },
+                            hLineColor: function () {
+                                return 'gray';
+                            },
+                            vLineColor: function () {
+                                return 'gray';
+                            },
+                        }		
+                    },
+                    {
+                        width: "*",
+                        columns : [
+                            { image: "images/ArtOfCare.png", width: 120, height: 120, alignment: 'center'},
+                        ]
+                    },
+                ]
+            }
+        ]
+    }
+    else {
+        table1 = [
+            {
+                columns: [
+                    {
+                        width: 370,
+                        table: {
+                            widths: [140, 50, 50, 50],
+                            body: [
+                                [
+                                    {border: [false, false, false, false], text: ''},
+                                    {text: 'PREMIUMOVERBEDTABLE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center', colSpan: 3},
+                                    {},
+                                    {},
+                                ],
+                                [
+                                    {border: [false, false, false, false], text: ''},
+                                    {text: 'P636', style: 'textotablabold', alignment: 'center'},
+                                    {text: 'P635', style: 'textotablabold', alignment: 'center'},
+                                    {text: 'P634', style: 'textotablabold', alignment: 'center'},
+                                ],
+                                [
+                                    {border: [false, false, false, false], text: ''},
+                                    {text: 'OBT-636', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'OBT-635', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'OBT-634', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                                ],
+                                [
+                                    {text: 'Dual Top - Food Service Tray', style: 'textotabla'},
+                                    {text: '●', style: 'textotabla', alignment: 'center'},
+                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
+                                ],
+                                [
+                                    {text: 'Single Top (Top Style 1)', style: 'textotabla'},
+                                    {text: '-', style: 'textotabla', alignment: 'center'},
+                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                ],
+                                [
+                                    {text: 'Single Top w/cutout for left sitting mirror (Top Style 1)', style: 'textotabla'},
+                                    {text: '-', style: 'textotabla', alignment: 'center'},
+                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
+                                ],
+                                [
+                                    {text: '"C" Base', style: 'textotabla'},
+                                    {text: '-', style: 'textotabla', alignment: 'center'},
+                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                ],
+                                [
+                                    {text: 'Tuning Fork Base', style: 'textotabla'},
+                                    {text: '●', style: 'textotabla', alignment: 'center'},
+                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
+                                ],
+                                [
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                                    {text: "NO-DATA", style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+                                    {text: "NO-DATA", style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+                                    {text: "NO-DATA", style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},  
+                                ],
+                            ]
+                        },
+                        layout: {
+                            hLineWidth: function () {
+                                return  0.7;
+                            },
+                            vLineWidth: function () {
+                                return 0.7;
+                            },
+                            hLineColor: function () {
+                                return 'gray';
+                            },
+                            vLineColor: function () {
+                                return 'gray';
+                            },
+                        }		
+                    },
+                    {
+                        width: "*",
+                        columns : [
+                            { image: "images/ArtOfCare.png", width: 120, height: 120, alignment: 'center'},
+                        ]
+                    },
+                ]
+            }
+        ]
+    }
+
+    var table2 = []
+    if(topStyleData.length > 0 || mirrorStorageData.length > 0 || accesoriesData.length > 0)
+    {
+        table2 = [
+            {
+                table: {
+                    widths: [140, 50, 50, 50],
+                    body: options
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    } 
    
     const fecha = new Date();
     fecha.toLocaleDateString()
@@ -438,92 +648,7 @@ async function getOverbedTables()
                 ]		
         },
         { text: '\n', style: 'parrafo' },
-        {
-            columns: [
-                {
-                    width: 370,
-                    table: {
-                        widths: [140, 50, 50, 50],
-                        body: [
-                            [
-                                {border: [false, false, false, false], text: ''},
-                                {text: 'PREMIUMOVERBEDTABLE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center', colSpan: 3},
-                                {},
-                                {},
-                            ],
-                            [
-                                {border: [false, false, false, false], text: ''},
-                                {text: 'P636', style: 'textotablabold', alignment: 'center'},
-                                {text: 'P635', style: 'textotablabold', alignment: 'center'},
-                                {text: 'P634', style: 'textotablabold', alignment: 'center'},
-                            ],
-                            [
-                                {border: [false, false, false, false], text: ''},
-                                {text: 'OBT-636', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-                                {text: 'OBT-635', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-                                {text: 'OBT-634', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-                            ],
-                            [
-                                {text: 'Dual Top - Food Service Tray', style: 'textotabla'},
-                                {text: '●', style: 'textotabla', alignment: 'center'},
-                                {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                {text: '-', style: 'textotabla', alignment: 'center'}, 
-                            ],
-                            [
-                                {text: 'Single Top (Top Style 1)', style: 'textotabla'},
-                                {text: '-', style: 'textotabla', alignment: 'center'},
-                                {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                {text: '●', style: 'textotabla', alignment: 'center'}, 
-                            ],
-                            [
-                                {text: 'Single Top w/cutout for left sitting mirror (Top Style 1)', style: 'textotabla'},
-                                {text: '-', style: 'textotabla', alignment: 'center'},
-                                {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                {text: '-', style: 'textotabla', alignment: 'center'}, 
-                            ],
-                            [
-                                {text: '"C" Base', style: 'textotabla'},
-                                {text: '-', style: 'textotabla', alignment: 'center'},
-                                {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                {text: '●', style: 'textotabla', alignment: 'center'}, 
-                            ],
-                            [
-                                {text: 'Tuning Fork Base', style: 'textotabla'},
-                                {text: '●', style: 'textotabla', alignment: 'center'},
-                                {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                {text: '-', style: 'textotabla', alignment: 'center'}, 
-                            ],
-                            [
-                                {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
-                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
-                                {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},  
-                            ],
-                        ]
-                    },
-                    layout: {
-                        hLineWidth: function () {
-                            return  0.7;
-                        },
-                        vLineWidth: function () {
-                            return 0.7;
-                        },
-                        hLineColor: function () {
-                            return 'gray';
-                        },
-                        vLineColor: function () {
-                            return 'gray';
-                        },
-                    }		
-                },
-                {
-                    width: "*",
-                    columns : [
-                        { image: "images/ArtOfCare.png", width: 120, height: 120, alignment: 'center'},
-                    ]
-                },
-            ]
-        },
+        table1,
         "\n",
         {
             columns: [
@@ -531,26 +656,7 @@ async function getOverbedTables()
                     width: 370,
                     columns : [
                         [
-                            {
-                                table: {
-                                    widths: [140, 50, 50, 50],
-                                    body: options
-                                },
-                                layout: {
-                                    hLineWidth: function () {
-                                        return  0.7;
-                                    },
-                                    vLineWidth: function () {
-                                        return 0.7;
-                                    },
-                                    hLineColor: function () {
-                                        return 'gray';
-                                    },
-                                    vLineColor: function () {
-                                        return 'gray';
-                                    },
-                                }
-                            },
+                            table2,
                             [
                                 { text: '\n'},
                                 { text: 'Thermo Foils', style: 'textotablaboldlarge' },
