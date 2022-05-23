@@ -16,11 +16,24 @@ async function getFreespanTraverse(pdfZone)
         /*ESTO VA EN UN CICLO*/
         for(var i=0; i<salida4.length; i++)
         {
+            var descripciones = []
+            if(salida4[i].Item_Long_Desc.includes(","))
+            {
+                descripciones = salida4[i].Item_Long_Desc.split(",");
+            }
+            else{
+                descripciones[0] = salida4[i].Item_Long_Desc;
+                descripciones[1] = "";
+            }
+            
             if(i === 0 && salida4.length === 1)
             {
                 accesories[pSItems] =[
                     {border: [true, true, true, true], text: salida4[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], text: [
+                        {text: descripciones[0] + "\n", style: 'textotablaboldblack'},
+                        {text: descripciones[1], style: 'textotabla'},
+                    ]},
                     {border: [true, true, true, true], image: "images/FreespanTraverse3.png", width: 80, height: 40, alignment: 'center', rowSpan: salida4.length},
                     {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
