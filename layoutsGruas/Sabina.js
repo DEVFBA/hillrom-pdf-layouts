@@ -342,7 +342,7 @@ async function getSabina(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida8[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: [
-                        {text: cadena1 + "\n", style: "textotablaboldblack"},
+                        {text: cadena1 + "\n", style: "textotabla"},
                         {text: cadena2, style: "textotabla"}
                     ]},
                     {border: [true, true, true, false], image: "images/Sabina6.png", width: 50, height: 30, alignment: 'center', rowSpan: salida8.length*2},
@@ -419,6 +419,15 @@ async function getSabina(pdfZone)
 
                 accesories[pSItems] =[
                     {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida9[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: ""},
@@ -436,6 +445,15 @@ async function getSabina(pdfZone)
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida9[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                ]
+            
                 pSItems++
 
                 accesories[pSItems] =[
@@ -472,6 +490,15 @@ async function getSabina(pdfZone)
 
                 accesories[pSItems] =[
                     {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida10[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: ""},
@@ -489,6 +516,15 @@ async function getSabina(pdfZone)
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida10[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                ]
+            
                 pSItems++
 
                 accesories[pSItems] =[
@@ -606,8 +642,17 @@ async function getSabina(pdfZone)
                     {border: [true, true, true, false], text: [
                         {text: salida12[i].Item_Long_Desc, style: "textotabla"},
                     ]},
-                    {border: [true, true, true, true], image: "images/Sabina10.png", width: 60, height: 50, alignment: 'center', rowSpan: salida12.length*2},
+                    {border: [true, true, true, true], image: "images/Sabina10.png", width: 60, height: 50, alignment: 'center', rowSpan: salida12.length*3},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida12[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -634,6 +679,15 @@ async function getSabina(pdfZone)
                 pSItems++
 
                 accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida12[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
                     {border: [true, false, true, true], text: ""},
                     {border: [true, false, true, true], text: ""},
                     {border: [true, false, true, true], text: ""},
@@ -651,6 +705,15 @@ async function getSabina(pdfZone)
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida12[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida12[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                ]
+            
                 pSItems++
 
                 accesories2[pSItems] =[
@@ -690,8 +753,17 @@ async function getSabina(pdfZone)
                     {border: [true, true, true, false], text: [
                         {text: salida13[i].Item_Long_Desc, style: "textotabla"},
                     ]},
-                    {border: [true, true, true, true], image: "images/Sabina11.png", width: 60, height: 50, alignment: 'center', rowSpan: salida13.length*2},
+                    {border: [true, true, true, true], image: "images/Sabina11.png", width: 60, height: 50, alignment: 'center', rowSpan: salida13.length*3},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida13[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -718,6 +790,15 @@ async function getSabina(pdfZone)
                 pSItems++
 
                 accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida13[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
                     {border: [true, false, true, true], text: ""},
                     {border: [true, false, true, true], text: ""},
                     {border: [true, false, true, true], text: ""},
@@ -735,6 +816,15 @@ async function getSabina(pdfZone)
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida13[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida13[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                ]
+            
                 pSItems++
 
                 accesories2[pSItems] =[
@@ -773,8 +863,17 @@ async function getSabina(pdfZone)
                     {border: [true, true, true, false], text: [
                         {text: salida14[i].Item_Long_Desc, style: "textotabla"},
                     ]},
-                    {border: [true, true, true, true], image: "images/Sabina12.png", width: 60, height: 60, alignment: 'center', rowSpan: salida14.length*2},
+                    {border: [true, true, true, true], image: "images/Sabina12.png", width: 60, height: 60, alignment: 'center', rowSpan: salida14.length*3},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida14[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida14[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -801,6 +900,15 @@ async function getSabina(pdfZone)
                 pSItems++
 
                 accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida14[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
                     {border: [true, false, true, true], text: ""},
                     {border: [true, false, true, true], text: ""},
                     {border: [true, false, true, true], text: ""},
@@ -818,6 +926,15 @@ async function getSabina(pdfZone)
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida14[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida14[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                ]
+            
                 pSItems++
 
                 accesories2[pSItems] =[

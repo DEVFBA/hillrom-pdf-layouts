@@ -202,7 +202,7 @@ async function getSlingsForChildren(pdfZone)
                 accesories4[pSItems] =[
                     {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/SlingsForChildren4.png", width: 60, height: 50, alignment: 'center', rowSpan: salida4.length},
+                    {border: [true, true, true, true], image: "images/SlingsForChildren4.png", width: 60, height: 50, alignment: 'center', rowSpan: salida4.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -211,10 +211,19 @@ async function getSlingsForChildren(pdfZone)
             else if(i === salida4.length-1)
             {
                 accesories4[pSItems] =[
-                    {border: [true, false, true, true], text: salida4[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida4[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories4[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida4[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -245,10 +254,19 @@ async function getSlingsForChildren(pdfZone)
             if(i === 0 && salida5.length === 1)
             {
                 accesories5[pSItems] =[
-                    {border: [true, true, true, true], text: salida5[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/SlingsForChildren5.png", width: 60, height: 60, alignment: 'center', rowSpan: salida5.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida5[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/SlingsForChildren5.png", width: 60, height: 60, alignment: 'center', rowSpan: salida5.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories5[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida5[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++

@@ -523,10 +523,19 @@ async function getAssemblyParts(pdfZone)
             if(i === 0 && salida30.length === 1)
             {
                 accesories[pSItems] =[
-                    {border: [true, true, true, true], text: salida30[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida30[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/AssemblyParts11.png", width: 30, height: 20, alignment: 'center', rowSpan: salida30.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida30[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida30[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida30[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/AssemblyParts11.png", width: 30, height: 20, alignment: 'center', rowSpan: salida30.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida30[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida30[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -536,8 +545,17 @@ async function getAssemblyParts(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida30[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida30[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/AssemblyParts11.png", width: 30, height: 20, alignment: 'center', rowSpan: salida30.length},
+                    {border: [true, true, true, true], image: "images/AssemblyParts11.png", width: 30, height: 20, alignment: 'center', rowSpan: salida30.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida30[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida30[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -545,10 +563,19 @@ async function getAssemblyParts(pdfZone)
             else if(i === salida30.length-1)
             {
                 accesories[pSItems] =[
-                    {border: [true, false, true, true], text: salida30[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida30[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida30[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida30[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida30[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida30[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida30[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -559,6 +586,15 @@ async function getAssemblyParts(pdfZone)
                     {border: [true, false, true, false], text: salida30[i].Item_Long_Desc, style: 'textotablaboldblack'},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida30[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida30[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -919,10 +955,19 @@ async function getAssemblyParts(pdfZone)
             if(i === 0 && salida37.length === 1)
             {
                 accesories2[pSItems] =[
-                    {border: [true, true, true, true], text: salida37[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida37[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/AssemblyParts18.png", width: 40, height: 30, alignment: 'center', rowSpan: salida37.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida37[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida37[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida37[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/AssemblyParts18.png", width: 40, height: 30, alignment: 'center', rowSpan: salida37.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida37[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida37[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -932,8 +977,17 @@ async function getAssemblyParts(pdfZone)
                 accesories2[pSItems] =[
                     {border: [true, true, true, false], text: salida37[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida37[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/AssemblyParts18.png", width: 40, height: 30, alignment: 'center', rowSpan: salida37.length},
+                    {border: [true, true, true, true], image: "images/AssemblyParts18.png", width: 40, height: 30, alignment: 'center', rowSpan: salida37.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida37[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida37[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -941,10 +995,19 @@ async function getAssemblyParts(pdfZone)
             else if(i === salida37.length-1)
             {
                 accesories2[pSItems] =[
-                    {border: [true, false, true, true], text: salida37[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida37[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida37[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida37[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida37[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida37[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida37[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -958,11 +1021,23 @@ async function getAssemblyParts(pdfZone)
                 ]
             
                 pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida37[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
+                ]
+            
+                pSItems++
             }
             
         }
         /*TERMINA CICLO*/
     }
+
+    var accesories3 = []
+    var pSItems = 0
     
     if(salida38.length > 0)
     {
@@ -971,43 +1046,79 @@ async function getAssemblyParts(pdfZone)
         {
             if(i === 0 && salida38.length === 1)
             {
-                accesories2[pSItems] =[
-                    {border: [true, true, true, true], text: salida38[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida38[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/AssemblyParts19.png", width: 40, height: 30, alignment: 'center', rowSpan: salida38.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida38[i].Price), style: 'textotabla', alignment: 'center'},
+                accesories3[pSItems] =[
+                    {border: [true, true, true, false], text: salida38[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida38[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/AssemblyParts19.png", width: 40, height: 30, alignment: 'center', rowSpan: salida38.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida38[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida38[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
             }
             else if(i === 0)
             {
-                accesories2[pSItems] =[
+                accesories3[pSItems] =[
                     {border: [true, true, true, false], text: salida38[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida38[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/AssemblyParts19.png", width: 40, height: 30, alignment: 'center', rowSpan: salida38.length},
+                    {border: [true, true, true, true], image: "images/AssemblyParts19.png", width: 40, height: 30, alignment: 'center', rowSpan: salida38.length*2},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida38[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida38[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
             }
             else if(i === salida38.length-1)
             {
-                accesories2[pSItems] =[
-                    {border: [true, false, true, true], text: salida38[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida38[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                accesories3[pSItems] =[
+                    {border: [true, false, true, false], text: salida38[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida38[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida38[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida38[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida38[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
             }
             else {
-                accesories2[pSItems] =[
+                accesories3[pSItems] =[
                     {border: [true, false, true, false], text: salida38[i].Part, style: 'textotabla'},
                     {border: [true, false, true, false], text: salida38[i].Item_Long_Desc, style: 'textotablaboldblack'},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida38[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida38[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -1016,9 +1127,6 @@ async function getAssemblyParts(pdfZone)
         }
         /*TERMINA CICLO*/
     }
-    
-    var accesories3 = []
-    var pSItems = 0
 
     if(salida39.length > 0)
     {
@@ -1081,10 +1189,19 @@ async function getAssemblyParts(pdfZone)
             if(i === 0 && salida40.length === 1)
             {
                 accesories3[pSItems] =[
-                    {border: [true, true, true, true], text: salida40[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida40[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/AssemblyParts21.png", width: 40, height: 30, alignment: 'center', rowSpan: salida40.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida40[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida40[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida40[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/AssemblyParts21.png", width: 40, height: 30, alignment: 'center', rowSpan: salida40.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida40[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida40[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -1094,8 +1211,17 @@ async function getAssemblyParts(pdfZone)
                 accesories3[pSItems] =[
                     {border: [true, true, true, false], text: salida40[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida40[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/AssemblyParts21.png", width: 40, height: 30, alignment: 'center', rowSpan: salida40.length},
+                    {border: [true, true, true, true], image: "images/AssemblyParts21.png", width: 40, height: 30, alignment: 'center', rowSpan: salida40.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida40[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida40[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -1103,10 +1229,19 @@ async function getAssemblyParts(pdfZone)
             else if(i === salida40.length-1)
             {
                 accesories3[pSItems] =[
-                    {border: [true, false, true, true], text: salida40[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida40[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida40[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida40[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida40[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida40[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida40[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -1117,6 +1252,15 @@ async function getAssemblyParts(pdfZone)
                     {border: [true, false, true, false], text: salida40[i].Item_Long_Desc, style: 'textotablaboldblack'},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida40[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida40[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -1187,10 +1331,19 @@ async function getAssemblyParts(pdfZone)
             if(i === 0 && salida42.length === 1)
             {
                 accesories3[pSItems] =[
-                    {border: [true, true, true, true], text: salida42[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida42[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/AssemblyParts25.png", width: 30, height: 60, alignment: 'center', rowSpan: salida42.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida42[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida42[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida42[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/AssemblyParts25.png", width: 30, height: 60, alignment: 'center', rowSpan: salida42.length*2},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida42[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida42[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -1200,8 +1353,17 @@ async function getAssemblyParts(pdfZone)
                 accesories3[pSItems] =[
                     {border: [true, true, true, false], text: salida42[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida42[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/AssemblyParts25.png", width: 30, height: 60, alignment: 'center', rowSpan: salida42.length},
+                    {border: [true, true, true, true], image: "images/AssemblyParts25.png", width: 30, height: 60, alignment: 'center', rowSpan: salida42.length*2},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida42[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida42[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -1209,10 +1371,19 @@ async function getAssemblyParts(pdfZone)
             else if(i === salida42.length-1)
             {
                 accesories3[pSItems] =[
-                    {border: [true, false, true, true], text: salida42[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida42[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida42[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida42[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida42[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida42[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida42[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -1223,6 +1394,15 @@ async function getAssemblyParts(pdfZone)
                     {border: [true, false, true, false], text: salida42[i].Item_Long_Desc, style: 'textotablaboldblack'},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida42[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida42[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -1506,7 +1686,7 @@ async function getAssemblyParts(pdfZone)
             {
                 accesories3[pSItems] =[
                     {border: [true, true, true, true], text: salida48[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida48[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], text: salida48[i].Item_Long_Desc, style: 'textotabla'},
                     {border: [true, true, true, true], image: "images/AssemblyParts28.png", width: 40, height: 25, alignment: 'center', rowSpan: salida48.length},
                     {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida48[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
@@ -1517,7 +1697,7 @@ async function getAssemblyParts(pdfZone)
             {
                 accesories3[pSItems] =[
                     {border: [true, true, true, false], text: salida48[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, false], text: salida48[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, false], text: salida48[i].Item_Long_Desc, style: 'textotabla'},
                     {border: [true, true, true, true], image: "images/AssemblyParts28.png", width: 40, height: 25, alignment: 'center', rowSpan: salida48.length},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida48[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
@@ -1528,7 +1708,7 @@ async function getAssemblyParts(pdfZone)
             {
                 accesories3[pSItems] =[
                     {border: [true, false, true, true], text: salida48[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida48[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: salida48[i].Item_Long_Desc, style: 'textotabla'},
                     {border: [true, false, true, true], text: ""},
                     {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida48[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
@@ -1538,7 +1718,7 @@ async function getAssemblyParts(pdfZone)
             else {
                 accesories3[pSItems] =[
                     {border: [true, false, true, false], text: salida48[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, false], text: salida48[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida48[i].Item_Long_Desc, style: 'textotabla'},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida48[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
@@ -1559,7 +1739,7 @@ async function getAssemblyParts(pdfZone)
             {
                 accesories3[pSItems] =[
                     {border: [true, true, true, true], text: salida49[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida49[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], text: salida49[i].Item_Long_Desc, style: 'textotabla'},
                     {border: [true, true, true, true], image: "images/AssemblyParts29.png", width: 70, height: 50, alignment: 'center', rowSpan: salida49.length},
                     {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida49[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
@@ -1570,7 +1750,7 @@ async function getAssemblyParts(pdfZone)
             {
                 accesories3[pSItems] =[
                     {border: [true, true, true, false], text: salida49[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, false], text: salida49[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, false], text: salida49[i].Item_Long_Desc, style: 'textotabla'},
                     {border: [true, true, true, true], image: "images/AssemblyParts29.png", width: 70, height: 50, alignment: 'center', rowSpan: salida49.length},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida49[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
@@ -1581,7 +1761,7 @@ async function getAssemblyParts(pdfZone)
             {
                 accesories3[pSItems] =[
                     {border: [true, false, true, true], text: salida49[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida49[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: salida49[i].Item_Long_Desc, style: 'textotabla'},
                     {border: [true, false, true, true], text: ""},
                     {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida49[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
@@ -1591,7 +1771,7 @@ async function getAssemblyParts(pdfZone)
             else {
                 accesories3[pSItems] =[
                     {border: [true, false, true, false], text: salida49[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, false], text: salida49[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida49[i].Item_Long_Desc, style: 'textotabla'},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida49[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
@@ -1612,7 +1792,7 @@ async function getAssemblyParts(pdfZone)
             {
                 accesories3[pSItems] =[
                     {border: [true, true, true, true], text: salida50[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida50[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], text: salida50[i].Item_Long_Desc, style: 'textotabla'},
                     {border: [true, true, true, true], text: ""},
                     {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida50[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
@@ -1623,7 +1803,7 @@ async function getAssemblyParts(pdfZone)
             {
                 accesories3[pSItems] =[
                     {border: [true, true, true, false], text: salida50[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, false], text: salida50[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, false], text: salida50[i].Item_Long_Desc, style: 'textotabla'},
                     {border: [true, true, true, false], text: ""},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida50[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
@@ -1634,7 +1814,7 @@ async function getAssemblyParts(pdfZone)
             {
                 accesories3[pSItems] =[
                     {border: [true, false, true, true], text: salida50[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida50[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, true], text: salida50[i].Item_Long_Desc, style: 'textotabla'},
                     {border: [true, false, true, true], text: ""},
                     {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida50[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
@@ -1644,7 +1824,7 @@ async function getAssemblyParts(pdfZone)
             else {
                 accesories3[pSItems] =[
                     {border: [true, false, true, false], text: salida50[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, false], text: salida50[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida50[i].Item_Long_Desc, style: 'textotabla'},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida50[i].Price), style: 'textotabla', alignment: 'center'},
                 ]

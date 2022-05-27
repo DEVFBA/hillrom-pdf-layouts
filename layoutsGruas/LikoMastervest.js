@@ -33,7 +33,7 @@ async function getLikoMastervest(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida11[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/LikoMastervest1.png", width: 80, height: 80, alignment: 'center', rowSpan: salida11.length},
+                    {border: [true, true, true, true], image: "images/LikoMastervest1.png", width: 80, height: 80, alignment: 'center', rowSpan: salida11.length+2},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -42,10 +42,39 @@ async function getLikoMastervest(pdfZone)
             else if(i === salida11.length-1)
             {
                 accesories[pSItems] =[
-                    {border: [true, false, true, true], text: salida11[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida11[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida11[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida11.length-2)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: salida11[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida11[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -201,7 +230,7 @@ async function getLikoMastervest(pdfZone)
                 accesories4[pSItems] =[
                     {border: [true, true, true, false], text: salida14[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida14[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/LikoMastervest4.png", width: 80, height: 80, alignment: 'center', rowSpan: salida14.length},
+                    {border: [true, true, true, true], image: "images/LikoMastervest4.png", width: 80, height: 80, alignment: 'center', rowSpan: salida14.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida14[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -214,6 +243,26 @@ async function getLikoMastervest(pdfZone)
                     {border: [true, false, true, true], text: salida14[i].Item_Long_Desc, style: 'textotablaboldblack'},
                     {border: [true, false, true, true], text: ""},
                     {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida14[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida14.length-2)
+            {
+                accesories4[pSItems] =[
+                    {border: [true, false, true, false], text: salida14[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida14[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida14[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories4[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida14[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++

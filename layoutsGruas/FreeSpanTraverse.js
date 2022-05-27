@@ -16,26 +16,25 @@ async function getFreespanTraverse(pdfZone)
         /*ESTO VA EN UN CICLO*/
         for(var i=0; i<salida4.length; i++)
         {
-            var descripciones = []
-            if(salida4[i].Item_Long_Desc.includes(","))
-            {
-                descripciones = salida4[i].Item_Long_Desc.split(",");
-            }
-            else{
-                descripciones[0] = salida4[i].Item_Long_Desc;
-                descripciones[1] = "";
-            }
             
             if(i === 0 && salida4.length === 1)
             {
                 accesories[pSItems] =[
-                    {border: [true, true, true, true], text: salida4[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: [
-                        {text: descripciones[0] + "\n", style: 'textotablaboldblack'},
-                        {text: descripciones[1], style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: [
+                        {text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
                     ]},
-                    {border: [true, true, true, true], image: "images/FreespanTraverse3.png", width: 80, height: 40, alignment: 'center', rowSpan: salida4.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, true], image: "images/FreespanTraverse3.png", width: 80, height: 40, alignment: 'center', rowSpan: salida4.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida4[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -45,7 +44,7 @@ async function getFreespanTraverse(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/FreespanTraverse3.png", width: 80, height: 40, alignment: 'center', rowSpan: salida4.length},
+                    {border: [true, true, true, true], image: "images/FreespanTraverse3.png", width: 80, height: 40, alignment: 'center', rowSpan: salida4.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -54,10 +53,19 @@ async function getFreespanTraverse(pdfZone)
             else if(i === salida4.length-1)
             {
                 accesories[pSItems] =[
-                    {border: [true, false, true, true], text: salida4[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida4[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida4[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -139,10 +147,19 @@ async function getFreespanTraverse(pdfZone)
             if(i === 0 && salida6.length === 1)
             {
                 accesories[pSItems] =[
-                    {border: [true, true, true, true], text: salida6[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/FreespanTraverse5.png", width: 80, height: 40, alignment: 'center', rowSpan: salida6.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreespanTraverse5.png", width: 80, height: 40, alignment: 'center', rowSpan: salida6.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida6[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -152,7 +169,7 @@ async function getFreespanTraverse(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/FreespanTraverse5.png", width: 80, height: 40, alignment: 'center', rowSpan: salida6.length},
+                    {border: [true, true, true, true], image: "images/FreespanTraverse5.png", width: 80, height: 40, alignment: 'center', rowSpan: salida6.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -192,10 +209,19 @@ async function getFreespanTraverse(pdfZone)
             if(i === 0 && salida7.length === 1)
             {
                 accesories[pSItems] =[
-                    {border: [true, true, true, true], text: salida7[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/FreespanTraverse6.png", width: 60, height: 40, alignment: 'center', rowSpan: salida7.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida7[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreespanTraverse6.png", width: 60, height: 40, alignment: 'center', rowSpan: salida7.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida7[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -205,7 +231,7 @@ async function getFreespanTraverse(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida7[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/FreespanTraverse6.png", width: 60, height: 40, alignment: 'center', rowSpan: salida7.length},
+                    {border: [true, true, true, true], image: "images/FreespanTraverse6.png", width: 60, height: 40, alignment: 'center', rowSpan: salida7.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -214,10 +240,19 @@ async function getFreespanTraverse(pdfZone)
             else if(i === salida7.length-1)
             {
                 accesories[pSItems] =[
-                    {border: [true, false, true, true], text: salida7[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida7[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida7[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++

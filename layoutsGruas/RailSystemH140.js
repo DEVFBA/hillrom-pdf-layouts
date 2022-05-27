@@ -72,10 +72,10 @@ async function getRailSystemH140(pdfZone)
             if(i === 0 && salida11.length === 1)
             {
                 accesories[pSItems] =[
-                    {border: [true, true, true, true], text: salida11[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida11[i].Item_Long_Desc, style: 'textotabla'},
-                    {border: [true, true, true, false],  text: ""},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida11[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, true], text: salida11[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, false],  text: ""},
+                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
                 pSItems++
@@ -83,10 +83,10 @@ async function getRailSystemH140(pdfZone)
             else if(i === 0)
             {
                 accesories[pSItems] =[
-                    {border: [true, true, true, false], text: salida11[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, false], text: salida11[i].Item_Long_Desc, style: 'textotabla'},
-                    {border: [true, true, true, false], text: ""},
-                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, false], text: salida11[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida11[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
                 pSItems++

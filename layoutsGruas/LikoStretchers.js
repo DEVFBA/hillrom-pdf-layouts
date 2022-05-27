@@ -76,10 +76,19 @@ async function getLikoStretchers(pdfZone)
             if(i === 0 && salida2.length === 1)
             {
                 accesories[pSItems] =[
-                    {border: [true, true, true, true], text: salida2[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, false], text: salida2[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
                     {border: [true, true, true, true], image: "images/LikoStretchers2.png", width: 60, height: 40, alignment: 'center', rowSpan: salida2.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida2[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -89,8 +98,17 @@ async function getLikoStretchers(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida2[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/LikoStretchers2.png", width: 60, height: 40, alignment: 'center', rowSpan: salida2.length},
+                    {border: [true, true, true, true], image: "images/LikoStretchers2.png", width: 60, height: 40, alignment: 'center', rowSpan: salida2.length*2},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida2[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -98,10 +116,19 @@ async function getLikoStretchers(pdfZone)
             else if(i === salida2.length-1)
             {
                 accesories[pSItems] =[
-                    {border: [true, false, true, true], text: salida2[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida2[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida2[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -112,6 +139,15 @@ async function getLikoStretchers(pdfZone)
                     {border: [true, false, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida2[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -141,7 +177,7 @@ async function getLikoStretchers(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida3[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/LikoStretchers3.png", width: 60, height: 40, alignment: 'center', rowSpan: salida3.length},
+                    {border: [true, true, true, true], image: "images/LikoStretchers3.png", width: 60, height: 40, alignment: 'center', rowSpan: salida3.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -150,10 +186,19 @@ async function getLikoStretchers(pdfZone)
             else if(i === salida3.length-1)
             {
                 accesories[pSItems] =[
-                    {border: [true, false, true, true], text: salida3[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida3[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida3[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -181,10 +226,19 @@ async function getLikoStretchers(pdfZone)
             if(i === 0 && salida4.length === 1)
             {
                 accesories[pSItems] =[
-                    {border: [true, true, true, true], text: salida4[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/LikoStretchers4.png", width: 80, height: 30, alignment: 'center', rowSpan: salida4.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/LikoStretchers4.png", width: 80, height: 30, alignment: 'center', rowSpan: salida4.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida4[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -194,7 +248,7 @@ async function getLikoStretchers(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/LikoStretchers4.png", width: 80, height: 30, alignment: 'center', rowSpan: salida4.length},
+                    {border: [true, true, true, true], image: "images/LikoStretchers4.png", width: 80, height: 30, alignment: 'center', rowSpan: salida4.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -237,10 +291,19 @@ async function getLikoStretchers(pdfZone)
             if(i === 0 && salida5.length === 1)
             {
                 accesories2[pSItems] =[
-                    {border: [true, true, true, true], text: salida5[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/LikoStretchers6.png", width: 80, height: 50, alignment: 'center', rowSpan: salida5.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida5[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/LikoStretchers6.png", width: 80, height: 50, alignment: 'center', rowSpan: salida5.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida5[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -290,10 +353,19 @@ async function getLikoStretchers(pdfZone)
             if(i === 0 && salida6.length === 1)
             {
                 accesories2[pSItems] =[
-                    {border: [true, true, true, true], text: salida6[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/LikoStretchers7.png", width: 80, height: 40, alignment: 'center', rowSpan: salida6.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/LikoStretchers7.png", width: 80, height: 40, alignment: 'center', rowSpan: salida6.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida6[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -396,10 +468,19 @@ async function getLikoStretchers(pdfZone)
             if(i === 0 && salida8.length === 1)
             {
                 accesories2[pSItems] =[
-                    {border: [true, true, true, true], text: salida8[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/LikoStretchers9.png", width: 80, height: 20, alignment: 'center', rowSpan: salida8.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida8[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/LikoStretchers9.png", width: 80, height: 20, alignment: 'center', rowSpan: salida8.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida8[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++

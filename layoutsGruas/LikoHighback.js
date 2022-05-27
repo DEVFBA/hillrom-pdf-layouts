@@ -13,7 +13,7 @@ async function getLikoOriginalHighback(pdfZone)
     accesories[pSItems] =[
         {border: [true, true, true, false], text: "35200105", style: 'textotabla'},
         {border: [true, true, true, false], text: "polyester, M", style: 'textotablaboldblack'},
-        {border: [true, true, true, true], image: "images/LikoHighback9.png", width: 70, height: 120, alignment: 'center', rowSpan: 28},
+        {border: [true, true, true, true], image: "images/LikoHighback9.png", width: 70, height: 120, alignment: 'center', rowSpan: 34},
         {border: [true, true, true, false], text: "$272", style: 'textotabla', alignment: 'center'},
     ]
 
@@ -30,9 +30,18 @@ async function getLikoOriginalHighback(pdfZone)
 
     accesories[pSItems] =[
         {border: [true, false, true, false], text: "35200107", style: 'textotabla'},
-        {border: [true, false, true, false], text: "polyester, XL max 300 kg (660 lbs) (No shortening position)", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: "polyester, XL", style: 'textotablaboldblack'},
         {border: [true, false, true, false], text: ""},
         {border: [true, false, true, false], text: "$365", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "max 300 kg (660 lbs) (No shortening position)", style: 'textotabla'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: ""},
     ]
 
     pSItems++
@@ -84,9 +93,18 @@ async function getLikoOriginalHighback(pdfZone)
 
     accesories[pSItems] =[
         {border: [true, false, true, false], text: "35200117", style: 'textotabla'},
-        {border: [true, false, true, false], text: "polyester, reinforced leg supp, XL max 500 kg (1100 lbs)(No shortening position)", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: "polyester, reinforced leg supp, XL", style: 'textotablaboldblack'},
         {border: [true, false, true, false], text: ""},
         {border: [true, false, true, false], text: "$376", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "max 500 kg (1100 lbs)(No shortening position)", style: 'textotabla'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: ""},
     ]
 
     pSItems++
@@ -138,9 +156,18 @@ async function getLikoOriginalHighback(pdfZone)
 
     accesories[pSItems] =[
         {border: [true, false, true, false], text: "35200307", style: 'textotabla'},
-        {border: [true, false, true, false], text: "net polyester, XL max 500 kg (1100 lbs)(No shortening position)", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: "net polyester, XL", style: 'textotablaboldblack'},
         {border: [true, false, true, false], text: ""},
         {border: [true, false, true, false], text: "$369", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "max 500 kg (1100 lbs)(No shortening position)", style: 'textotabla'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: ""},
     ]
 
     pSItems++
@@ -192,9 +219,18 @@ async function getLikoOriginalHighback(pdfZone)
 
     accesories[pSItems] =[
         {border: [true, false, true, false], text: "35200317", style: 'textotabla'},
-        {border: [true, false, true, false], text: "net polyester, reinforced leg supp, XL max 500 kg (1100 lbs)(No shortening position)", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: "net polyester, reinforced leg supp XL", style: 'textotablaboldblack'},
         {border: [true, false, true, false], text: ""},
         {border: [true, false, true, false], text: "$388", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "max 500 kg (1100 lbs)(No shortening position)", style: 'textotabla'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: ""},
     ]
 
     pSItems++
@@ -246,7 +282,7 @@ async function getLikoOriginalHighback(pdfZone)
 
     accesories[pSItems] =[
         {border: [true, false, true, false], text: "35200407", style: 'textotabla'},
-        {border: [true, false, true, false], text: "plastic coated net (bath), XL (No shortening position) max 500 kg (1100 lbs)", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: "plastic coated net (bath), XL", style: 'textotablaboldblack'},
         {border: [true, false, true, false], text: ""},
         {border: [true, false, true, false], text: "$342", style: 'textotabla', alignment: 'center'},
     ]
@@ -254,10 +290,28 @@ async function getLikoOriginalHighback(pdfZone)
     pSItems++
 
     accesories[pSItems] =[
-        {border: [true, false, true, true], text: "35200418", style: 'textotabla'},
-        {border: [true, false, true, true], text: "plastic coated net (bath), reinforced leg supports, XXL max 500 kg (1100 lbs) (No shortening position)", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "(No shortening position) max 500 kg (1100 lbs)", style: 'textotabla'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: ""},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
+        {border: [true, false, true, false], text: "35200418", style: 'textotabla'},
+        {border: [true, false, true, false], text: "plastic coated net (bath), reinforced leg supports, XXL", style: 'textotablaboldblack'},
+        {border: [true, false, true, false], text: ""},
+        {border: [true, false, true, false], text: "$888", style: 'textotabla', alignment: 'center'},
+    ]
+
+    pSItems++
+
+    accesories[pSItems] =[
         {border: [true, false, true, true], text: ""},
-        {border: [true, false, true, true], text: "$888", style: 'textotabla', alignment: 'center'},
+        {border: [true, false, true, true], text: "max 500 kg (1100 lbs) (No shortening position)", style: 'textotabla'},
+        {border: [true, false, true, true], text: ""},
+        {border: [true, false, true, true], text: ""},
     ]
 
     pSItems++
@@ -629,7 +683,7 @@ async function getLikoOriginalHighback(pdfZone)
                 accesories3[pSItems] =[
                     {border: [true, true, true, false], text: salida5[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/LikoHighback7.png", width: 70, height: 50, alignment: 'center', rowSpan: salida5.length},
+                    {border: [true, true, true, true], image: "images/LikoHighback7.png", width: 70, height: 50, alignment: 'center', rowSpan: salida5.length+2},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -638,10 +692,38 @@ async function getLikoOriginalHighback(pdfZone)
             else if(i === salida5.length-1)
             {
                 accesories3[pSItems] =[
-                    {border: [true, false, true, true], text: salida5[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida5[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida5[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
+                ]
+            
+                pSItems++
+            }
+            else if(i === salida5.length-2){
+                accesories3[pSItems] =[
+                    {border: [true, false, true, false], text: salida5[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida5[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++

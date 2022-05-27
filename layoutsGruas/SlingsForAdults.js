@@ -30,7 +30,7 @@ async function getSlingsForAdults(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida1[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/SlingsForAdults1.png", width: 60, height: 120, alignment: 'center', rowSpan: salida1.length},
+                    {border: [true, true, true, true], image: "images/SlingsForAdults1.png", width: 60, height: 120, alignment: 'center', rowSpan: salida1.length+6},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -39,10 +39,19 @@ async function getSlingsForAdults(pdfZone)
             else if(i === salida1.length-1)
             {
                 accesories[pSItems] =[
-                    {border: [true, false, true, true], text: salida1[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida1[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida1[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -57,7 +66,30 @@ async function getSlingsForAdults(pdfZone)
             
                 pSItems++
             }
+
+            if(i===4 || i===7 || i===12)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                ]
             
+                pSItems++
+            }
+
+            if(i===4 || i===12)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida1[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                ]
+            
+                pSItems++
+            }
         }
         /*TERMINA CICLO*/
     }
@@ -73,10 +105,19 @@ async function getSlingsForAdults(pdfZone)
             if(i === 0 && salida2.length === 1)
             {
                 accesories2[pSItems] =[
-                    {border: [true, true, true, true], text: salida2[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/SlingsForAdults2.png", width: 70, height: 100, alignment: 'center', rowSpan: salida2.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida2[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/SlingsForAdults2.png", width: 70, height: 100, alignment: 'center', rowSpan: salida2.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida2[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++

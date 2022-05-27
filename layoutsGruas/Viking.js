@@ -21,9 +21,18 @@ async function getViking(pdfZone)
             {
                 accesories[pSItems] =[
                     {border: [true, false, true, false], text: salida3[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, false], text: salida3[i].Item_Long_Desc, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
                     {border: [true, false, true, false], image: "images/Viking5.png", width: 70, height: 30, alignment: 'center', rowSpan: salida3.length},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida3[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -38,6 +47,15 @@ async function getViking(pdfZone)
                 ]
             
                 pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida3[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
+                ]
+            
+                pSItems++
             }
             else {
                 accesories[pSItems] =[
@@ -45,6 +63,15 @@ async function getViking(pdfZone)
                     {border: [true, false, true, false], text: salida3[i].Item_Long_Desc, style: 'textotabla'},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida3[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++

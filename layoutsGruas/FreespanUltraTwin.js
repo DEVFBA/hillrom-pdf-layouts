@@ -19,10 +19,19 @@ async function getFreespanUltraTwin(pdfZone)
             if(i === 0 && salida8.length === 1)
             {
                 accesories[pSItems] =[
-                    {border: [true, true, true, true], text: salida8[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/FreespanUltraTwin2.png", width: 50, height: 50, alignment: 'center', rowSpan: salida8.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida8[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreespanUltraTwin2.png", width: 50, height: 50, alignment: 'center', rowSpan: salida8.length*2},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida8[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -32,8 +41,17 @@ async function getFreespanUltraTwin(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida8[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/FreespanUltraTwin2.png", width: 50, height: 50, alignment: 'center', rowSpan: salida8.length},
+                    {border: [true, true, true, true], image: "images/FreespanUltraTwin2.png", width: 50, height: 50, alignment: 'center', rowSpan: salida8.length*2},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida8[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -41,10 +59,19 @@ async function getFreespanUltraTwin(pdfZone)
             else if(i === salida8.length-1)
             {
                 accesories[pSItems] =[
-                    {border: [true, false, true, true], text: salida8[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida8[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida8[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -55,6 +82,15 @@ async function getFreespanUltraTwin(pdfZone)
                     {border: [true, false, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida8[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -73,10 +109,19 @@ async function getFreespanUltraTwin(pdfZone)
             if(i === 0 && salida9.length === 1)
             {
                 accesories[pSItems] =[
-                    {border: [true, true, true, true], text: salida9[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/FreespanUltraTwin3.png", width: 60, height: 60, alignment: 'center', rowSpan: salida9.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida9[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreespanUltraTwin3.png", width: 60, height: 60, alignment: 'center', rowSpan: salida9.length*2},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida8[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -91,14 +136,32 @@ async function getFreespanUltraTwin(pdfZone)
                 ]
             
                 pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida8[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
+                ]
+            
+                pSItems++
             }
             else if(i === salida9.length-1)
             {
                 accesories[pSItems] =[
-                    {border: [true, false, true, true], text: salida9[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida9[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida8[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -109,6 +172,15 @@ async function getFreespanUltraTwin(pdfZone)
                     {border: [true, false, true, false], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida8[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -129,10 +201,19 @@ async function getFreespanUltraTwin(pdfZone)
             if(i === 0 && salida10.length === 1)
             {
                 accesories2[pSItems] =[
-                    {border: [true, true, true, true], text: salida10[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/FreespanUltraTwin5.png", width: 60, height: 60, alignment: 'center', rowSpan: salida10.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida10[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreespanUltraTwin5.png", width: 60, height: 60, alignment: 'center', rowSpan: salida10.length*2},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida10[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -142,8 +223,17 @@ async function getFreespanUltraTwin(pdfZone)
                 accesories2[pSItems] =[
                     {border: [true, true, true, false], text: salida10[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/FreespanUltraTwin5.png", width: 60, height: 60, alignment: 'center', rowSpan: salida10.length},
+                    {border: [true, true, true, true], image: "images/FreespanUltraTwin5.png", width: 60, height: 60, alignment: 'center', rowSpan: salida10.length*2},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida10[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -151,10 +241,19 @@ async function getFreespanUltraTwin(pdfZone)
             else if(i === salida10.length-1)
             {
                 accesories2[pSItems] =[
-                    {border: [true, false, true, true], text: salida10[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida10[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida10[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -165,6 +264,15 @@ async function getFreespanUltraTwin(pdfZone)
                     {border: [true, false, true, false], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida10[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -179,26 +287,22 @@ async function getFreespanUltraTwin(pdfZone)
          /*ESTO VA EN UN CICLO*/
         for(var i=0; i<salida11.length; i++)
         {
-            var descripciones = []
-            if(salida11[i].Item_Long_Desc.includes(","))
-            {
-                descripciones = salida11[i].Item_Long_Desc.split(",");
-            }
-            else{
-                descripciones[0] = salida11[i].Item_Long_Desc;
-                descripciones[1] = "";
-            }
-
             if(i === 0 && salida11.length === 1)
             {
                 accesories2[pSItems] =[
-                    {border: [true, true, true, true], text: salida11[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: [
-                        {text: descripciones[0] + "\n", style: 'textotablaboldblack'},
-                        {text: descripciones[1], style: 'textotabla'},
-                    ]},
-                    {border: [true, true, true, true], image: "images/FreespanUltraTwin6.png", width: 60, height: 80, alignment: 'center', rowSpan: salida11.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida11[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreespanUltraTwin6.png", width: 60, height: 80, alignment: 'center', rowSpan: salida11.length*2},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida11[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -207,12 +311,27 @@ async function getFreespanUltraTwin(pdfZone)
             {
                 accesories2[pSItems] =[
                     {border: [true, true, true, false], text: salida11[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, false],text: [
-                        {text: descripciones[0] + "\n", style: 'textotablaboldblack'},
-                        {text: descripciones[1], style: 'textotabla'},
-                    ]},
-                    {border: [true, true, true, true], image: "images/FreespanUltraTwin6.png", width: 60, height: 80, alignment: 'center', rowSpan: salida11.length},
+                    {border: [true, true, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreespanUltraTwin6.png", width: 60, height: 80, alignment: 'center', rowSpan: salida11.length*3},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida11[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -220,13 +339,28 @@ async function getFreespanUltraTwin(pdfZone)
             else if(i === salida11.length-1)
             {
                 accesories2[pSItems] =[
-                    {border: [true, false, true, true], text: salida11[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: [
-                        {text: descripciones[0] + "\n", style: 'textotablaboldblack'},
-                        {text: descripciones[1], style: 'textotabla'},
-                    ]},
+                    {border: [true, false, true, false], text: salida11[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida11[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -234,12 +368,27 @@ async function getFreespanUltraTwin(pdfZone)
             else {
                 accesories2[pSItems] =[
                     {border: [true, false, true, false], text: salida11[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, false], text: [
-                        {text: descripciones[0] + "\n", style: 'textotablaboldblack'},
-                        {text: descripciones[1], style: 'textotabla'},
-                    ]},
+                    {border: [true, false, true, false], text: salida11[i].Item_Long_Desc, style: 'textotablaboldblack'},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida11[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida11[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++

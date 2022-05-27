@@ -18,10 +18,19 @@ async function getFreespanStraightRail(pdfZone)
             if(i === 0 && salida1.length === 1)
             {
                 accesories[pSItems] =[
-                    {border: [true, true, true, true], text: salida1[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/FreespanStraight2.png", width: 80, height: 20, alignment: 'center', rowSpan: salida1.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida1[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreespanStraight2.png", width: 80, height: 20, alignment: 'center', rowSpan: salida1.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida1[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -31,7 +40,7 @@ async function getFreespanStraightRail(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida1[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/FreespanStraight2.png", width: 80, height: 20, alignment: 'center', rowSpan: salida1.length},
+                    {border: [true, true, true, true], image: "images/FreespanStraight2.png", width: 80, height: 20, alignment: 'center', rowSpan: salida1.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -40,10 +49,19 @@ async function getFreespanStraightRail(pdfZone)
             else if(i === salida1.length-1)
             {
                 accesories[pSItems] =[
-                    {border: [true, false, true, true], text: salida1[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida1[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida1[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -71,10 +89,19 @@ async function getFreespanStraightRail(pdfZone)
             if(i === 0 && salida2.length === 1)
             {
                 accesories[pSItems] =[
-                    {border: [true, true, true, true], text: salida2[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/FreespanStraight3.png", width: 80, height: 20, alignment: 'center', rowSpan: salida2.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida2[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreespanStraight3.png", width: 80, height: 20, alignment: 'center', rowSpan: salida2.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida2[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -84,7 +111,7 @@ async function getFreespanStraightRail(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida2[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/FreespanStraight3.png", width: 80, height: 20, alignment: 'center', rowSpan: salida2.length},
+                    {border: [true, true, true, true], image: "images/FreespanStraight3.png", width: 80, height: 20, alignment: 'center', rowSpan: salida2.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -93,10 +120,19 @@ async function getFreespanStraightRail(pdfZone)
             else if(i === salida2.length-1)
             {
                 accesories[pSItems] =[
-                    {border: [true, false, true, true], text: salida2[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida2[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida2[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -124,10 +160,19 @@ async function getFreespanStraightRail(pdfZone)
             if(i === 0 && salida3.length === 1)
             {
                 accesories[pSItems] =[
-                    {border: [true, true, true, true], text: salida3[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/FreespanStraight4.png", width: 80, height: 80, alignment: 'center', rowSpan: salida3.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida3[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/FreespanStraight4.png", width: 80, height: 80, alignment: 'center', rowSpan: salida3.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida3[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -137,7 +182,7 @@ async function getFreespanStraightRail(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida3[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/FreespanStraight4.png", width: 80, height: 80, alignment: 'center', rowSpan: salida3.length},
+                    {border: [true, true, true, true], image: "images/FreespanStraight4.png", width: 80, height: 80, alignment: 'center', rowSpan: salida3.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -146,10 +191,19 @@ async function getFreespanStraightRail(pdfZone)
             else if(i === salida3.length-1)
             {
                 accesories[pSItems] =[
-                    {border: [true, false, true, true], text: salida3[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida3[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida3[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++

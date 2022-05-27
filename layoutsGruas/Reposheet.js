@@ -33,8 +33,28 @@ async function getReposheet(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida1[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/Reposheet1.png", width: 80, height: 80, alignment: 'center', rowSpan: salida1.length},
+                    {border: [true, true, true, true], image: "images/Reposheet1.png", width: 80, height: 80, alignment: 'center', rowSpan: salida1.length+2},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+            }
+            else if(i === 1)
+            {
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: salida1[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false],  text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida1[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -42,10 +62,19 @@ async function getReposheet(pdfZone)
             else if(i === salida1.length-1)
             {
                 accesories[pSItems] =[
-                    {border: [true, false, true, true], text: salida1[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida1[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida1[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida1[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida1[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -77,10 +106,19 @@ async function getReposheet(pdfZone)
             if(i === 0 && salida2.length === 1)
             {
                 accesories2[pSItems] =[
-                    {border: [true, true, true, true], text: salida2[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/Reposheet2.png", width: 80, height: 60, alignment: 'center', rowSpan: salida2.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida2[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/Reposheet2.png", width: 80, height: 60, alignment: 'center', rowSpan: salida2.length*2},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida2[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -90,8 +128,17 @@ async function getReposheet(pdfZone)
                 accesories2[pSItems] =[
                     {border: [true, true, true, false], text: salida2[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/Reposheet2.png", width: 80, height: 80, alignment: 'center', rowSpan: salida2.length},
+                    {border: [true, true, true, true], image: "images/Reposheet2.png", width: 80, height: 80, alignment: 'center', rowSpan: salida2.length*2},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida2[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -99,10 +146,19 @@ async function getReposheet(pdfZone)
             else if(i === salida2.length-1)
             {
                 accesories2[pSItems] =[
-                    {border: [true, false, true, true], text: salida2[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida2[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida2[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -113,6 +169,15 @@ async function getReposheet(pdfZone)
                     {border: [true, false, true, false], text: salida2[i].Item_Long_Desc, style: 'textotablaboldblack'},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida2[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -131,8 +196,17 @@ async function getReposheet(pdfZone)
         accesories3[pSItems] =[
             {border: [true, true, true, false], text: salida3[0].Part, style: 'textotabla'},
             {border: [true, true, true, false], text: salida3[0].Item_Long_Desc, style: 'textotablaboldblack'},
-            {border: [true, true, true, false], image: "images/Reposheet3.png", width: 80, height: 40, alignment: 'center'},
+            {border: [true, true, true, false], image: "images/Reposheet3.png", width: 80, height: 40, alignment: 'center', rowSpan: 2},
             {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[0].Price), style: 'textotabla', alignment: 'center'},
+        ]
+    
+        pSItems++
+
+        accesories3[pSItems] =[
+            {border: [true, false, true, false], text: ""},
+            {border: [true, false, true, false], text: salida3[0].Specifications, style: 'textotabla'},
+            {border: [true, false, true, false], text: ""},
+            {border: [true, false, true, false], text: ""},
         ]
     
         pSItems++
@@ -140,17 +214,35 @@ async function getReposheet(pdfZone)
         accesories3[pSItems] =[
             {border: [true, false, true, false], text: salida3[1].Part, style: 'textotabla'},
             {border: [true, false, true, false], text: salida3[1].Item_Long_Desc, style: 'textotablaboldblack'},
-            {border: [true, false, true, false], image: "images/Reposheet4.png", width: 80, height: 40, alignment: 'center'},
+            {border: [true, false, true, false], image: "images/Reposheet4.png", width: 80, height: 40, alignment: 'center' , rowSpan: 2},
             {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[1].Price), style: 'textotabla', alignment: 'center'},
+        ]
+    
+        pSItems++
+
+        accesories3[pSItems] =[
+            {border: [true, false, true, false], text: ""},
+            {border: [true, false, true, false], text: salida3[1].Specifications, style: 'textotabla'},
+            {border: [true, false, true, false], text: ""},
+            {border: [true, false, true, false], text: ""},
         ]
     
         pSItems++
     
         accesories3[pSItems] =[
-            {border: [true, false, true, true], text: salida3[2].Part, style: 'textotabla'},
-            {border: [true, false, true, true], text: salida3[2].Item_Long_Desc, style: 'textotablaboldblack'},
-            {border: [true, false, true, true], image: "images/Reposheet5.png", width: 80, height: 40, alignment: 'center'},
-            {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida3[2].Price), style: 'textotabla', alignment: 'center'},
+            {border: [true, false, true, false], text: salida3[2].Part, style: 'textotabla'},
+            {border: [true, false, true, false], text: salida3[2].Item_Long_Desc, style: 'textotablaboldblack'},
+            {border: [true, false, true, true], image: "images/Reposheet5.png", width: 80, height: 40, alignment: 'center', rowSpan: 2},
+            {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[2].Price), style: 'textotabla', alignment: 'center'},
+        ]
+    
+        pSItems++
+
+        accesories3[pSItems] =[
+            {border: [true, false, true, true], text: ""},
+            {border: [true, false, true, true], text: salida3[0].Specifications, style: 'textotabla'},
+            {border: [true, false, true, true], text: ""},
+            {border: [true, false, true, true], text: ""},
         ]
     
         pSItems++
@@ -170,10 +262,19 @@ async function getReposheet(pdfZone)
             if(i === 0 && salida4.length === 1)
             {
                 accesories4[pSItems] =[
-                    {border: [true, true, true, true], text: salida4[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/Reposheet9.png", width: 80, height: 40, alignment: 'center', rowSpan: salida4.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/Reposheet9.png", width: 80, height: 40, alignment: 'center', rowSpan: salida4.length*2},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories4[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida4[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -183,8 +284,17 @@ async function getReposheet(pdfZone)
                 accesories4[pSItems] =[
                     {border: [true, true, true, false], text: salida4[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/Reposheet9.png", width: 80, height: 40, alignment: 'center', rowSpan: salida4.length},
+                    {border: [true, true, true, true], image: "images/Reposheet9.png", width: 80, height: 40, alignment: 'center', rowSpan: salida4.length*2},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories4[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida4[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -192,10 +302,19 @@ async function getReposheet(pdfZone)
             else if(i === salida4.length-1)
             {
                 accesories4[pSItems] =[
-                    {border: [true, false, true, true], text: salida4[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida4[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories4[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida4[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -206,6 +325,15 @@ async function getReposheet(pdfZone)
                     {border: [true, false, true, false], text: salida4[i].Item_Long_Desc, style: 'textotablaboldblack'},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida4[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories4[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida4[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -223,10 +351,19 @@ async function getReposheet(pdfZone)
             if(i === 0 && salida5.length === 1)
             {
                 accesories4[pSItems] =[
-                    {border: [true, true, true, true], text: salida5[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/Reposheet8.png", width: 80, height: 30, alignment: 'center', rowSpan: salida5.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida5[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/Reposheet8.png", width: 80, height: 30, alignment: 'center', rowSpan: salida5.length*2},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories4[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida4[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -236,8 +373,17 @@ async function getReposheet(pdfZone)
                 accesories4[pSItems] =[
                     {border: [true, true, true, false], text: salida5[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/Reposheet8.png", width: 80, height: 30, alignment: 'center', rowSpan: salida5.length},
+                    {border: [true, true, true, true], image: "images/Reposheet8.png", width: 80, height: 30, alignment: 'center', rowSpan: salida5.length*2},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories4[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida4[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -245,10 +391,19 @@ async function getReposheet(pdfZone)
             else if(i === salida5.length-1)
             {
                 accesories4[pSItems] =[
-                    {border: [true, false, true, true], text: salida5[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida5[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories4[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida4[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -259,6 +414,15 @@ async function getReposheet(pdfZone)
                     {border: [true, false, true, false], text: salida5[i].Item_Long_Desc, style: 'textotablaboldblack'},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida5[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories4[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida4[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++

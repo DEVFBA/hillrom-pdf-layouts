@@ -33,7 +33,7 @@ async function getLikoConfortsling(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/LikoConfortsling1.png", width: 80, height: 80, alignment: 'center', rowSpan: salida6.length},
+                    {border: [true, true, true, true], image: "images/LikoConfortsling1.png", width: 80, height: 80, alignment: 'center', rowSpan: salida6.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -42,10 +42,19 @@ async function getLikoConfortsling(pdfZone)
             else if(i === salida6.length-1)
             {
                 accesories[pSItems] =[
-                    {border: [true, false, true, true], text: salida6[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida6[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida6[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -89,7 +98,7 @@ async function getLikoConfortsling(pdfZone)
                 accesories2[pSItems] =[
                     {border: [true, true, true, false], text: salida7[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/LikoConfortsling2.png", width: 80, height: 80, alignment: 'center', rowSpan: salida7.length},
+                    {border: [true, true, true, true], image: "images/LikoConfortsling2.png", width: 80, height: 80, alignment: 'center', rowSpan: salida7.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -98,10 +107,19 @@ async function getLikoConfortsling(pdfZone)
             else if(i === salida7.length-1)
             {
                 accesories2[pSItems] =[
-                    {border: [true, false, true, true], text: salida7[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida7[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida7[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida7[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida7[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -145,7 +163,7 @@ async function getLikoConfortsling(pdfZone)
                 accesories3[pSItems] =[
                     {border: [true, true, true, false], text: salida8[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/LikoConfortsling3.png", width: 80, height: 80, alignment: 'center', rowSpan: salida8.length},
+                    {border: [true, true, true, true], image: "images/LikoConfortsling3.png", width: 80, height: 80, alignment: 'center', rowSpan: salida8.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -154,10 +172,19 @@ async function getLikoConfortsling(pdfZone)
             else if(i === salida8.length-1)
             {
                 accesories3[pSItems] =[
-                    {border: [true, false, true, true], text: salida8[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida8[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida8[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida8[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida8[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -201,7 +228,7 @@ async function getLikoConfortsling(pdfZone)
                 accesories4[pSItems] =[
                     {border: [true, true, true, false], text: salida9[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/LikoConfortsling4.png", width: 80, height: 80, alignment: 'center', rowSpan: salida9.length},
+                    {border: [true, true, true, true], image: "images/LikoConfortsling4.png", width: 80, height: 80, alignment: 'center', rowSpan: salida9.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -210,10 +237,19 @@ async function getLikoConfortsling(pdfZone)
             else if(i === salida9.length-1)
             {
                 accesories4[pSItems] =[
-                    {border: [true, false, true, true], text: salida9[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida9[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida9[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories4[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida9[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida8[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -257,7 +293,7 @@ async function getLikoConfortsling(pdfZone)
                 accesories5[pSItems] =[
                     {border: [true, true, true, false], text: salida10[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/LikoConfortsling5.png", width: 80, height: 100, alignment: 'center', rowSpan: salida10.length},
+                    {border: [true, true, true, true], image: "images/LikoConfortsling5.png", width: 80, height: 100, alignment: 'center', rowSpan: salida10.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -266,10 +302,19 @@ async function getLikoConfortsling(pdfZone)
             else if(i === salida10.length-1)
             {
                 accesories5[pSItems] =[
-                    {border: [true, false, true, true], text: salida10[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida10[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida10[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories5[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida10[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida8[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++

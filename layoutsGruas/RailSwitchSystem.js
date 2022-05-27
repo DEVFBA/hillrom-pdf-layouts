@@ -34,10 +34,19 @@ async function getRailSwitchSystem(pdfZone)
             if(i === 0 && salida52.length === 1)
             {
                 accesories[pSItems] =[
-                    {border: [true, true, true, true], text: salida52[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida52[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/RailSwitch1.png", width: 60, height: 40, alignment: 'center', rowSpan: salida52.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida52[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida52[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida52[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/RailSwitch1.png", width: 60, height: 40, alignment: 'center', rowSpan: salida52.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida52[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida52[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -47,8 +56,17 @@ async function getRailSwitchSystem(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida52[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida52[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/RailSwitch1.png", width: 60, height: 40, alignment: 'center', rowSpan: salida52.length},
+                    {border: [true, true, true, true], image: "images/RailSwitch1.png", width: 60, height: 40, alignment: 'center', rowSpan: salida52.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida52[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida52[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -56,10 +74,19 @@ async function getRailSwitchSystem(pdfZone)
             else if(i === salida52.length-1)
             {
                 accesories[pSItems] =[
-                    {border: [true, false, true, true], text: salida52[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida52[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida52[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida52[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida52[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida52[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida52[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -70,6 +97,15 @@ async function getRailSwitchSystem(pdfZone)
                     {border: [true, false, true, false], text: salida52[i].Item_Long_Desc, style: 'textotablaboldblack'},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida52[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida52[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -87,10 +123,19 @@ async function getRailSwitchSystem(pdfZone)
             if(i === 0 && salida53.length === 1)
             {
                 accesories[pSItems] =[
-                    {border: [true, true, true, true], text: salida53[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida53[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/RailSwitch2.png", width: 60, height: 40, alignment: 'center', rowSpan: salida53.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida53[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida53[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida53[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/RailSwitch2.png", width: 60, height: 40, alignment: 'center', rowSpan: salida53.length*2},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida53[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida53[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -100,8 +145,17 @@ async function getRailSwitchSystem(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida53[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida53[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/RailSwitch2.png", width: 60, height: 40, alignment: 'center', rowSpan: salida53.length},
+                    {border: [true, true, true, true], image: "images/RailSwitch2.png", width: 60, height: 40, alignment: 'center', rowSpan: salida53.length*2},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida53[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida53[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -109,10 +163,19 @@ async function getRailSwitchSystem(pdfZone)
             else if(i === salida53.length-1)
             {
                 accesories[pSItems] =[
-                    {border: [true, false, true, true], text: salida53[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida53[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida53[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida53[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida53[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida53[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida53[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -123,6 +186,15 @@ async function getRailSwitchSystem(pdfZone)
                     {border: [true, false, true, false], text: salida53[i].Item_Long_Desc, style: 'textotablaboldblack'},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida53[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida53[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -140,10 +212,19 @@ async function getRailSwitchSystem(pdfZone)
             if(i === 0 && salida54.length === 1)
             {
                 accesories[pSItems] =[
-                    {border: [true, true, true, true], text: salida54[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida54[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/RailSwitch3.png", width: 60, height: 40, alignment: 'center', rowSpan: salida54.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida54[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida54[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida54[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/RailSwitch3.png", width: 60, height: 40, alignment: 'center', rowSpan: salida54.length*2},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida54[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida53[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -153,8 +234,17 @@ async function getRailSwitchSystem(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida54[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida54[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/RailSwitch3.png", width: 60, height: 40, alignment: 'center', rowSpan: salida54.length},
+                    {border: [true, true, true, true], image: "images/RailSwitch3.png", width: 60, height: 40, alignment: 'center', rowSpan: salida54.length*2},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida54[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida53[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -162,10 +252,19 @@ async function getRailSwitchSystem(pdfZone)
             else if(i === salida54.length-1)
             {
                 accesories[pSItems] =[
-                    {border: [true, false, true, true], text: salida54[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida54[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida54[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida54[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida54[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida54[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida53[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -176,6 +275,15 @@ async function getRailSwitchSystem(pdfZone)
                     {border: [true, false, true, false], text: salida54[i].Item_Long_Desc, style: 'textotablaboldblack'},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida54[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida53[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -300,13 +408,23 @@ async function getRailSwitchSystem(pdfZone)
             if(i === 0 && salida57.length === 1)
             {
                 accesories[pSItems] =[
-                    {border: [true, true, true, true], text: salida57[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida57[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/RailSwitch6.png", width: 60, height: 40, alignment: 'center', rowSpan: salida57.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida57[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida57[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida57[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/RailSwitch6.png", width: 60, height: 40, alignment: 'center', rowSpan: salida57.length*2},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida57[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
                 pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida57[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
+                ]
+            
+                pSItems++
+                
             }
             else if(i === 0)
             {
@@ -318,14 +436,32 @@ async function getRailSwitchSystem(pdfZone)
                 ]
             
                 pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida57[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                ]
+            
+                pSItems++
             }
             else if(i === salida57.length-1)
             {
                 accesories[pSItems] =[
-                    {border: [true, false, true, true], text: salida57[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida57[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida57[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida57[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida57[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida57[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida57[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -336,6 +472,15 @@ async function getRailSwitchSystem(pdfZone)
                     {border: [true, false, true, false], text: salida57[i].Item_Long_Desc, style: 'textotablaboldblack'},
                     {border: [true, false, true, false], text: ""},
                     {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida57[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida57[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -424,10 +569,19 @@ async function getRailSwitchSystem(pdfZone)
             else if(i === salida69.length-1)
             {
                 accesories[pSItems] =[
-                    {border: [true, false, true, true], text: salida69[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida69[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida69[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida69[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida69[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida69[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida69[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -523,7 +677,7 @@ async function getRailSwitchSystem(pdfZone)
                 accesories2[pSItems] =[
                     {border: [true, true, true, false], text: salida59[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida59[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/RailSwitch8.png", width: 80, height: 30, alignment: 'center', rowSpan: salida59.length},
+                    {border: [true, true, true, true], image: "images/RailSwitch8.png", width: 80, height: 30, alignment: 'center', rowSpan: salida59.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida59[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -532,10 +686,19 @@ async function getRailSwitchSystem(pdfZone)
             else if(i === salida59.length-1)
             {
                 accesories2[pSItems] =[
-                    {border: [true, false, true, true], text: salida59[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida59[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida59[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida59[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida59[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida59[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida59[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -564,7 +727,7 @@ async function getRailSwitchSystem(pdfZone)
                 accesories2[pSItems] =[
                     {border: [true, true, true, true], text: salida60[i].Part, style: 'textotabla'},
                     {border: [true, true, true, true], text: salida60[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/RailSwitch9.png", width: 80, height: 30, alignment: 'center', rowSpan: salida60.length},
+                    {border: [true, true, true, true], image: "images/RailSwitch9.png", width: 80, height: 30, alignment: 'center', rowSpan: salida60.length+1},
                     {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida60[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -575,7 +738,7 @@ async function getRailSwitchSystem(pdfZone)
                 accesories2[pSItems] =[
                     {border: [true, true, true, false], text: salida60[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida60[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/RailSwitch9.png", width: 80, height: 30, alignment: 'center', rowSpan: salida60.length},
+                    {border: [true, true, true, true], image: "images/RailSwitch9.png", width: 80, height: 30, alignment: 'center', rowSpan: salida60.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida60[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -584,10 +747,19 @@ async function getRailSwitchSystem(pdfZone)
             else if(i === salida60.length-1)
             {
                 accesories2[pSItems] =[
-                    {border: [true, false, true, true], text: salida60[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida60[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida60[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida60[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida60[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida60[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida60[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -616,7 +788,7 @@ async function getRailSwitchSystem(pdfZone)
                 accesories2[pSItems] =[
                     {border: [true, true, true, true], text: salida61[i].Part, style: 'textotabla'},
                     {border: [true, true, true, true], text: salida61[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/RailSwitch10.png", width: 80, height: 30, alignment: 'center', rowSpan: salida61.length},
+                    {border: [true, true, true, true], image: "images/RailSwitch10.png", width: 80, height: 30, alignment: 'center', rowSpan: salida61.length+1},
                     {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida61[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -627,7 +799,7 @@ async function getRailSwitchSystem(pdfZone)
                 accesories2[pSItems] =[
                     {border: [true, true, true, false], text: salida61[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida61[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/RailSwitch10.png", width: 80, height: 30, alignment: 'center', rowSpan: salida61.length},
+                    {border: [true, true, true, true], image: "images/RailSwitch10.png", width: 80, height: 30, alignment: 'center', rowSpan: salida61.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida61[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -636,10 +808,19 @@ async function getRailSwitchSystem(pdfZone)
             else if(i === salida61.length-1)
             {
                 accesories2[pSItems] =[
-                    {border: [true, false, true, true], text: salida61[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida61[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida61[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida61[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida61[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida61[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida61[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -665,10 +846,19 @@ async function getRailSwitchSystem(pdfZone)
             if(i === 0 && salida70.length === 1)
             {
                 accesories2[pSItems] =[
-                    {border: [true, true, true, true], text: salida70[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida70[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/RailSwitch19.png", width: 60, height: 30, alignment: 'center', rowSpan: salida70.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida70[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida70[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida70[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/RailSwitch19.png", width: 60, height: 30, alignment: 'center', rowSpan: salida70.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida70[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida70[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -678,7 +868,7 @@ async function getRailSwitchSystem(pdfZone)
                 accesories2[pSItems] =[
                     {border: [true, true, true, false], text: salida70[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida70[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/RailSwitch19.png", width: 60, height: 30, alignment: 'center', rowSpan: salida70.length},
+                    {border: [true, true, true, true], image: "images/RailSwitch19.png", width: 60, height: 30, alignment: 'center', rowSpan: salida70.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida70[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -687,10 +877,19 @@ async function getRailSwitchSystem(pdfZone)
             else if(i === salida70.length-1)
             {
                 accesories2[pSItems] =[
-                    {border: [true, false, true, true], text: salida70[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida70[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida70[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida70[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida70[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida70[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida70[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -730,7 +929,7 @@ async function getRailSwitchSystem(pdfZone)
                 accesories2[pSItems] =[
                     {border: [true, true, true, false], text: salida62[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida62[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/RailSwitch11.png", width: 80, height: 30, alignment: 'center', rowSpan: salida62.length},
+                    {border: [true, true, true, true], image: "images/RailSwitch11.png", width: 80, height: 30, alignment: 'center', rowSpan: salida62.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida62[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -739,10 +938,19 @@ async function getRailSwitchSystem(pdfZone)
             else if(i === salida62.length-1)
             {
                 accesories2[pSItems] =[
-                    {border: [true, false, true, true], text: salida62[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida62[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida62[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida62[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida62[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories2[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida62[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida62[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -773,10 +981,19 @@ async function getRailSwitchSystem(pdfZone)
             if(i === 0 && salida63.length === 1)
             {
                 accesories3[pSItems] =[
-                    {border: [true, true, true, true], text: salida63[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida63[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/RailSwitch12.png", width: 60, height: 40, alignment: 'center', rowSpan: salida63.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida63[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida63[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida63[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/RailSwitch12.png", width: 60, height: 40, alignment: 'center', rowSpan: salida63.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida63[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida63[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -795,10 +1012,19 @@ async function getRailSwitchSystem(pdfZone)
             else if(i === salida63.length-1)
             {
                 accesories3[pSItems] =[
-                    {border: [true, false, true, true], text: salida63[i].Part, style: 'textotabla'},
-                    {border: [true, false, true, true], text: salida63[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: salida63[i].Part, style: 'textotabla'},
+                    {border: [true, false, true, false], text: salida63[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida63[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
                     {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida63[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, false, true, true], text: salida63[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -824,10 +1050,19 @@ async function getRailSwitchSystem(pdfZone)
             if(i === 0 && salida64.length === 1)
             {
                 accesories3[pSItems] =[
-                    {border: [true, true, true, true], text: salida64[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida64[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/RailSwitch13.png", width: 60, height: 40, alignment: 'center', rowSpan: salida64.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida64[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida64[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida64[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/RailSwitch13.png", width: 60, height: 40, alignment: 'center', rowSpan: salida64.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida64[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida64[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -876,10 +1111,19 @@ async function getRailSwitchSystem(pdfZone)
             if(i === 0 && salida65.length === 1)
             {
                 accesories3[pSItems] =[
-                    {border: [true, true, true, true], text: salida65[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida65[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/RailSwitch14.png", width: 60, height: 40, alignment: 'center', rowSpan: salida65.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida65[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida65[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida65[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/RailSwitch14.png", width: 60, height: 40, alignment: 'center', rowSpan: salida65.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida65[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida65[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -928,10 +1172,19 @@ async function getRailSwitchSystem(pdfZone)
             if(i === 0 && salida66.length === 1)
             {
                 accesories3[pSItems] =[
-                    {border: [true, true, true, true], text: salida66[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida66[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/RailSwitch15.png", width: 60, height: 40, alignment: 'center', rowSpan: salida66.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida66[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida66[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida66[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/RailSwitch15.png", width: 60, height: 40, alignment: 'center', rowSpan: salida66.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida66[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida66[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
@@ -980,10 +1233,19 @@ async function getRailSwitchSystem(pdfZone)
             if(i === 0 && salida67.length === 1)
             {
                 accesories3[pSItems] =[
-                    {border: [true, true, true, true], text: salida67[i].Part, style: 'textotabla'},
-                    {border: [true, true, true, true], text: salida67[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/RailSwitch16.png", width: 60, height: 30, alignment: 'center', rowSpan: salida67.length},
-                    {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida67[i].Price), style: 'textotabla', alignment: 'center'},
+                    {border: [true, true, true, false], text: salida67[i].Part, style: 'textotabla'},
+                    {border: [true, true, true, false], text: salida67[i].Item_Long_Desc, style: 'textotablaboldblack'},
+                    {border: [true, true, true, true], image: "images/RailSwitch16.png", width: 60, height: 30, alignment: 'center', rowSpan: salida67.length+1},
+                    {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida67[i].Price), style: 'textotabla', alignment: 'center'},
+                ]
+            
+                pSItems++
+
+                accesories3[pSItems] =[
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida67[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++
