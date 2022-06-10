@@ -146,7 +146,7 @@ async function getAccesoriesForSlings(pdfZone)
         accesories[pSItems] =[
             {border: [true, true, true, false], text: salida3[0].Part, style: 'textotabla'},
             {border: [true, true, true, false], text: salida3[0].Item_Long_Desc, style: 'textotablaboldblack'},
-            {border: [true, true, true, false], image: "images/AccesoriesForSlings3.png", width: 60, height: 40, alignment: 'center', rowSpan: 1},
+            {border: [true, true, true, false], image: "images/AccesoriesForSlings3.png", width: 60, height: 40, alignment: 'center', rowSpan: 2},
             {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[0].Price), style: 'textotabla', alignment: 'center'},
         ]
 
