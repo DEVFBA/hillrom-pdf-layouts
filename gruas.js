@@ -46,7 +46,7 @@ const curtainsystem = require('./controllers/curtainsystem.js');
 async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersion, layouts, pdfZone)
 {
     try{
-        var mobileLiftsLayout = await mobileLifts.getMobileLifts(pdfZone)
+        /*var mobileLiftsLayout = await mobileLifts.getMobileLifts(pdfZone)
         var vikingLayout = await viking.getViking(pdfZone)
         var sabinaLayout = await sabina.getSabina(pdfZone)
         var mobileLiftsAccesoriesLayout = await mobileLiftsAccesories.getMobileLiftAccesories(pdfZone)
@@ -74,7 +74,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
         var likoStretchersLayout = await likoStretchers.getLikoStretchers(pdfZone)
         var likoFlexostretchLayout = await likoFlexostretch.getLikoFlexostretch(pdfZone)
         var reposheetLayout = await reposheet.getReposheet(pdfZone)
-        var manualAIDSLayout = await manualAIDS.getManualAIDS(pdfZone)
+        var manualAIDSLayout = await manualAIDS.getManualAIDS(pdfZone)*/
 
         const fecha = new Date();
         const anio = fecha.getFullYear()
@@ -681,26 +681,38 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
         {
             if(layouts[i].Id_Layout === "MLS-MLS-GOLVO9000")
             {
+                var mobileLiftsLayout = await mobileLifts.getMobileLifts(pdfZone)
                 contenido.push(mobileLiftsLayout)
             }
             else if(layouts[i].Id_Layout === "MLS-MLS-VIKING")
             {
+                var vikingLayout = await viking.getViking(pdfZone)
                 contenido.push(vikingLayout)
             }
             else if(layouts[i].Id_Layout === "MLS-MLS-SABINA")
             {
+                var sabinaLayout = await sabina.getSabina(pdfZone)
                 contenido.push(sabinaLayout)
             }
             else if(layouts[i].Id_Layout === "MLS-MLS-MOBLIFTACCE")
             {
+                var mobileLiftsAccesoriesLayout = await mobileLiftsAccesories.getMobileLiftAccesories(pdfZone)
                 contenido.push(mobileLiftsAccesoriesLayout)
             }
             else if(layouts[i].Id_Layout === "OLS-OLS-OLLIKORALL")
             {
+                var overheadLiftsLayout = await overheadLifts.getOverheadLifts(pdfZone)
                 contenido.push(overheadLiftsLayout)
             }
             else if(layouts[i].Id_Layout === "OLS-OLS-RAILSYSTEM")
             {
+                var railSystemH70Layout = await railSystemH70.getRailSystemH70(pdfZone)
+                var railSystemH100Layout = await railSystemH100.getRailSystemH100(pdfZone)
+                var railSystemH140Layout = await railSystemH140.getRailSystemH140(pdfZone)
+                var railSystemH160Layout = await railSystemH160.getRailSystemH160(pdfZone)
+                var railSystemEndCoversLayout = await railSystemEndCovers.getRailSystemEndCovers(pdfZone)
+                var assemblyPartsLayout = await assemblyParts.getAssemblyParts(pdfZone)
+                var railSwitchSystemLayout = await railSwitchSystem.getRailSwitchSystem(pdfZone)
                 contenido.push(railSystemH70Layout)
                 contenido.push(railSystemH100Layout)
                 contenido.push(railSystemH140Layout)
@@ -711,6 +723,10 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
             }
             else if(layouts[i].Id_Layout === "FREESTLIFT")
             {
+                var freespanStraightRailLayout = await freespanStraightRail.getFreespanStraightRail(pdfZone)
+                var freespanTraverseLayout = await freespanTraverse.getFreespanTraverse(pdfZone)
+                var freespanUltraTwinLayout = await freespanUltraTwin.getFreespanUltraTwin(pdfZone)
+                var freeStandLayout = await freeStand.getFreeStand(pdfZone)
                 contenido.push(freespanStraightRailLayout)
                 contenido.push(freespanTraverseLayout)
                 contenido.push(freespanUltraTwinLayout)
@@ -718,18 +734,26 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
             }
             else if(layouts[i].Id_Layout === "CURTAINSYST")
             {
+                var freeSpiritLayout = await freeSpirit.getFreeSpirit(pdfZone)
                 contenido.push(freeSpiritLayout)
             }
             else if(layouts[i].Id_Layout === "LIFTINGACCE")
             {
+                var liftingAccesoriesLayout = await liftingAccesories.getLiftingAccesories(pdfZone)
                 contenido.push(liftingAccesoriesLayout)
             }
             else if(layouts[i].Id_Layout === "SLINGCHILDREN")
             {
+                var slingsForChildrenLayout = await slingsForChildren.getSlingsForChildren(pdfZone)
                 contenido.push(slingsForChildrenLayout)
             }
             else if(layouts[i].Id_Layout === "SLINGADULTS")
             {
+                var slingsForAdultsLayout = await slingsForAdults.getSlingsForAdults(pdfZone)
+                var likoOriginalHighbackLayout = await likoOriginalHighback.getLikoOriginalHighback(pdfZone)
+                var likoConfortslingLayout = await likoConfortsling.getLikoConfortsling(pdfZone)
+                var likoMastervestLayout = await likoMastervest.getLikoMastervest(pdfZone)
+                var likoLiftPantsLayout = await likoLiftPants.getLikoLiftPants(pdfZone)
                 contenido.push(slingsForAdultsLayout)
                 contenido.push(likoOriginalHighbackLayout)
                 contenido.push(likoConfortslingLayout)
@@ -738,96 +762,27 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
             }
             else if(layouts[i].Id_Layout === "SLINGACCESS")
             {
+                var accesoriesForSlingsLayout = await accesoriesForSlings.getAccesoriesForSlings(pdfZone)
                 contenido.push(accesoriesForSlingsLayout)
             }
             else if(layouts[i].Id_Layout === "LIKOSTRET")
             {
+                var likoStretchersLayout = await likoStretchers.getLikoStretchers(pdfZone)
+                var likoFlexostretchLayout = await likoFlexostretch.getLikoFlexostretch(pdfZone)
                 contenido.push(likoStretchersLayout)
                 contenido.push(likoFlexostretchLayout)
             }
             else if(layouts[i].Id_Layout === "REPOMULTI")
             {
+                var reposheetLayout = await reposheet.getReposheet(pdfZone)
                 contenido.push(reposheetLayout)
             }
             else if(layouts[i].Id_Layout === "MANUALAIDS")
             {
+                var manualAIDSLayout = await manualAIDS.getManualAIDS(pdfZone)
                 contenido.push(manualAIDSLayout)
             }
         }
-
-        /*if(layouts.find(isGolvo) !== undefined)
-        {
-            contenido.push(mobileLiftsLayout)
-        }
-        if(layouts.find(isViking) !== undefined)
-        {
-            contenido.push(vikingLayout)
-        }
-        if(layouts.find(isSabina) !== undefined)
-        {
-            contenido.push(sabinaLayout)
-        }
-        if(layouts.find(isMobileLift) !== undefined)
-        {
-            contenido.push(mobileLiftsAccesoriesLayout)
-        }
-        if(layouts.find(isLikorall) !== undefined)
-        {
-            contenido.push(overheadLiftsLayout)
-        }
-        if(layouts.find(isRailSystem) !== undefined)
-        {
-            contenido.push(railSystemH70Layout)
-            contenido.push(railSystemH100Layout)
-            contenido.push(railSystemH140Layout)
-            contenido.push(assemblyPartsLayout)
-        }
-        if(layouts.find(isRailSystem) !== undefined)
-        {
-            contenido.push(railSwitchSystemLayout)
-        }
-        if(layouts.find(isFreestlift) !== undefined)
-        {
-            contenido.push(freespanStraightRailLayout)
-            contenido.push(freespanTraverseLayout)
-            contenido.push(freespanUltraTwinLayout)
-            contenido.push(freeStandLayout)
-            contenido.push(freeSpiritLayout)
-        }
-        if(layouts.find(isLiftingAccesories) !== undefined)
-        {
-            contenido.push(liftingAccesoriesLayout)
-        }
-        if(layouts.find(isSlingChildren) !== undefined)
-        {
-            contenido.push(slingsForChildrenLayout)
-        }
-        if(layouts.find(isSlingAdults) !== undefined)
-        {
-            contenido.push(slingsForAdultsLayout)
-            contenido.push(likoOriginalHighbackLayout)
-            contenido.push(likoConfortslingLayout)
-            contenido.push(likoMastervestLayout)
-            contenido.push(likoLiftPantsLayout)
-        }
-        if(layouts.find(isSlingAccesories) !== undefined)
-        {
-            contenido.push(accesoriesForSlingsLayout)
-        }
-        if(layouts.find(isLikoStretchers) !== undefined)
-        {
-            contenido.push(likoStretchersLayout)
-            contenido.push(likoFlexostretchLayout)
-        }
-        if(layouts.find(isRepomulti) !== undefined)
-        {
-            contenido.push(reposheetLayout)
-        }
-        if(layouts.find(isManualAids) !== undefined)
-        {
-            contenido.push(manualAIDSLayout)
-        }*/
-
         
         var docDefinition = {
             pageMargins: [ 30, 10, 30, 30 ],

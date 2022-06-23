@@ -755,7 +755,7 @@ async function getMedSurgAccesories()
 
     pSItems++
 
-    if(optionUpgradeData.length > 0)
+    if(optionUpgradeData[0] !== undefined)
     {
         /*ESTO VA EN UN CICLO*/
         optionUpgrade[pSItems] = [
@@ -768,7 +768,10 @@ async function getMedSurgAccesories()
             {text: "$" + Intl.NumberFormat("en-IN").format(optionUpgradeData[0].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
+    }
 
+    if(optionUpgradeData[3] !== undefined)
+    {
         optionUpgrade[pSItems] = [
             {text: optionUpgradeData[3].KitName, style: 'textotabla'},
             {text: optionUpgradeData[3].Part, style: 'textotabla'},
@@ -779,7 +782,10 @@ async function getMedSurgAccesories()
             {text: "$" + Intl.NumberFormat("en-IN").format(optionUpgradeData[3].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
+    }
 
+    if(optionUpgradeData[5] !== undefined)
+    {
         optionUpgrade[pSItems] = [
             {text: optionUpgradeData[5].KitName, style: 'textotabla'},
             {text: optionUpgradeData[5].Part, style: 'textotabla'},
@@ -790,7 +796,10 @@ async function getMedSurgAccesories()
             {text: "$" + Intl.NumberFormat("en-IN").format(optionUpgradeData[5].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
+    }
 
+    if(optionUpgradeData[6] !== undefined)
+    {
         optionUpgrade[pSItems] = [
             {text: optionUpgradeData[6].KitName, style: 'textotabla'},
             {text: optionUpgradeData[6].Part, style: 'textotabla'},
@@ -972,7 +981,7 @@ async function getMedSurgAccesories()
 
     pSItems++
 
-    if(tractionData.length > 0)
+    if(tractionData[0] !== undefined)
     {
         /*ESTO VA EN UN CICLO*/
         traction[pSItems] = [
@@ -985,7 +994,10 @@ async function getMedSurgAccesories()
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[0].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
+    }
 
+    if(tractionData[2] !== undefined)
+    {
         traction[pSItems] = [
             {text: tractionData[2].KitName, style: 'textotabla'},
             {text: tractionData[2].Part, style: 'textotabla'},
@@ -996,7 +1008,10 @@ async function getMedSurgAccesories()
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[2].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
+    }
 
+    if(tractionData[3] !== undefined)
+    {
         traction[pSItems] = [
             {text: tractionData[3].KitName, style: 'textotabla'},
             {text: tractionData[3].Part, style: 'textotabla'},
@@ -1007,7 +1022,10 @@ async function getMedSurgAccesories()
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[3].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
+    }
 
+    if(tractionData[5] !== undefined)
+    {
         traction[pSItems] = [
             {text: tractionData[5].KitName, style: 'textotabla'},
             {text: tractionData[5].Part, style: 'textotabla'},
@@ -1018,7 +1036,10 @@ async function getMedSurgAccesories()
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[5].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
+    }
 
+    if(tractionData[7] !== undefined)
+    {
         traction[pSItems] = [
             {text: tractionData[7].KitName, style: 'textotabla'},
             {text: tractionData[7].Part, style: 'textotabla'},
@@ -1029,7 +1050,10 @@ async function getMedSurgAccesories()
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[7].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
+    }
 
+    if(tractionData[9] !== undefined)
+    {
         traction[pSItems] = [
             {text: tractionData[9].KitName, style: 'textotabla'},
             {text: tractionData[9].Part, style: 'textotabla'},
@@ -1040,7 +1064,10 @@ async function getMedSurgAccesories()
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[9].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
+    }
 
+    if(tractionData[11] !== undefined)
+    {
         traction[pSItems] = [
             {text: tractionData[11].KitName, style: 'textotabla'},
             {text: tractionData[11].Part, style: 'textotabla'},
@@ -1051,7 +1078,10 @@ async function getMedSurgAccesories()
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[11].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
+    }
 
+    if(tractionData[13] !== undefined)
+    {
         traction[pSItems] = [
             {text: tractionData[13].KitName, style: 'textotabla'},
             {text: tractionData[13].Part, style: 'textotabla'},
@@ -1062,7 +1092,10 @@ async function getMedSurgAccesories()
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[13].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
+    }
 
+    if(tractionData[15] !== undefined)
+    {
         traction[pSItems] = [
             {text: tractionData[15].KitName, style: 'textotabla'},
             {text: tractionData[15].Part, style: 'textotabla'},
@@ -1073,7 +1106,10 @@ async function getMedSurgAccesories()
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[15].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
+    }
 
+    if(tractionData[17] !== undefined)
+    {
         traction[pSItems] = [
             {text: tractionData[17].KitName, style: 'textotabla'},
             {text: tractionData[17].Part, style: 'textotabla'},
@@ -1084,7 +1120,10 @@ async function getMedSurgAccesories()
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[17].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
+    }
 
+    if(tractionData[19] !== undefined)
+    {
         traction[pSItems] = [
             {text: tractionData[19].KitName, style: 'textotabla'},
             {text: tractionData[19].Part, style: 'textotabla'},
@@ -1095,7 +1134,10 @@ async function getMedSurgAccesories()
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[19].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
+    }
 
+    if(tractionData[21] !== undefined)
+    {
         traction[pSItems] = [
             {text: tractionData[21].KitName, style: 'textotabla'},
             {text: tractionData[21].Part, style: 'textotabla'},
@@ -1106,7 +1148,10 @@ async function getMedSurgAccesories()
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[21].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
+    }
 
+    if(tractionData[22] !== undefined)
+    {
         traction[pSItems] = [
             {text: tractionData[22].KitName, style: 'textotabla'},
             {text: tractionData[22].Part, style: 'textotabla'},

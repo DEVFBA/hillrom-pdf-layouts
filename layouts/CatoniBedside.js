@@ -205,7 +205,7 @@ async function getCatoniBedSide()
         i++
     }*/
     
-    if(plasticDrawerData.length > 0)
+    if(plasticDrawerData[0] !== undefined && plasticDrawerData[1] !== undefined)
     {
         options3[pSItems] = [
             {text: plasticDrawerData[0].Id_Item, style: 'textotabla', alignment: 'center'},
@@ -215,7 +215,10 @@ async function getCatoniBedSide()
         ]
     
         pSItems++
+    }
     
+    if(plasticDrawerData[2] !== undefined)
+    {
         options3[pSItems] = [
             {text: plasticDrawerData[2].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: plasticDrawerData[2].Item_Long_Desc, style: 'textotabla'},

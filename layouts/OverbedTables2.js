@@ -114,7 +114,7 @@ async function getOverbedTables()
         i++
     }  */ 
 
-    if(topStyleData.length > 0 || !topStyleData)
+    if(topStyleData[0] !== undefined)
     {
         options[pSItems] = [
             {text: "Top Style", style: 'textotablaboldlarge', border: [false, false, false, false]},
@@ -132,7 +132,11 @@ async function getOverbedTables()
         ]
     
         pSItems++
+    }
+
     
+    if(topStyleData[1] !== undefined)
+    {
         options[pSItems] = [
             {text: topStyleData[1].Item_Long_Desc, style: 'textotabla'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
@@ -249,7 +253,7 @@ async function getOverbedTables()
         i++
     }  */
 
-    if(mirrorStorageData.length > 0 || !mirrorStorageData)
+    if(mirrorStorageData[0] !== undefined  || mirrorStorageData[1] !== undefined)
     {
         options[pSItems] = [
             {text: "Mirror / Storage", style: 'textotablaboldlarge', border: [false, false, false, false]},
@@ -267,7 +271,10 @@ async function getOverbedTables()
         ]
     
         pSItems++
-    
+    }
+
+    if(mirrorStorageData[2] !== undefined)
+    {
         options[pSItems] = [
             {text: mirrorStorageData[2].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(mirrorStorageData[2].Price), style: 'textotabla', alignment: 'center'}, 
@@ -276,6 +283,10 @@ async function getOverbedTables()
         ]
     
         pSItems++
+    }
+
+    if(mirrorStorageData[3] !== undefined || mirrorStorageData[4] !== undefined)
+    {
     
         options[pSItems] = [
             {text: mirrorStorageData[3].Item_Long_Desc, style: 'textotabla'},
@@ -285,7 +296,10 @@ async function getOverbedTables()
         ]
     
         pSItems++
-    
+    }
+
+    if(mirrorStorageData[5] !== undefined)
+    {
         options[pSItems] = [
             {text: mirrorStorageData[5].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(mirrorStorageData[5].Price), style: 'textotabla', alignment: 'center'}, 

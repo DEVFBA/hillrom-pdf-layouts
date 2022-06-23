@@ -333,6 +333,10 @@ async function getSleeperChair()
         { text: '● = standard', style: 'parrafo' },
         { text: '= - not available', style: 'parrafo' },
         { image: "images/SleeperChair.png", width: 280, height: 190, alignment: 'center'},
+        {text: '', pageBreak: 'after'  },
+        "\n",
+        "\n",
+        "\n",
         {
             columns: [
                 {text: 'Solid Surface Color Options (Arm Caps & Tray Table)', style: 'textotablaboldlarge'},

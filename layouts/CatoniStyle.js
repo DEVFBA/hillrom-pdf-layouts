@@ -151,7 +151,7 @@ async function getCatoniStyle()
     }*/   
     /*TERMINA CICLO*/
 
-    if(hingeData.length > 0)
+    if(hingeData[0] !== undefined)
     {   
         options2[pSItems] = [
             {text: hingeData[0].Id_Item, style: 'textotabla', alignment: 'center'},
@@ -163,7 +163,10 @@ async function getCatoniStyle()
         ]
     
         pSItems++
+    }
     
+    if(hingeData[3] !== undefined && hingeData[4] !== undefined && hingeData[5] !== undefined)
+    {   
         options2[pSItems] = [
             {text: hingeData[3].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: hingeData[3].Item_Long_Desc, style: 'textotabla'},
@@ -174,7 +177,10 @@ async function getCatoniStyle()
         ]
     
         pSItems++
+    }
     
+    if(hingeData[6] !== undefined && hingeData[7] !== undefined && hingeData[8] !== undefined)
+    {
         options2[pSItems] = [
             {text: hingeData[6].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: hingeData[6].Item_Long_Desc, style: 'textotabla'},
@@ -312,7 +318,7 @@ async function getCatoniStyle()
         i++
     }*/
     
-    if(plasticDrawerData.length > 0)
+    if(plasticDrawerData[0] !== undefined && plasticDrawerData[1] !== undefined && plasticDrawerData[2] !== undefined)
     {
         options2[pSItems] = [
             {text: plasticDrawerData[0].Id_Item, style: 'textotabla', alignment: 'center'},
@@ -324,7 +330,10 @@ async function getCatoniStyle()
         ]
     
         pSItems++
+    }
     
+    if(plasticDrawerData[3] !== undefined)
+    {
         options2[pSItems] = [
             {text: plasticDrawerData[3].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: plasticDrawerData[3].Item_Long_Desc, style: 'textotabla'},
@@ -592,7 +601,7 @@ async function getCatoniStyle()
         i++
     }  */
     
-    if(castorsData.length > 0)
+    if(castorsData[0] !== undefined)
     {
         options2[pSItems] = [
             {text: castorsData[0].Id_Item, style: 'textotabla', alignment: 'center'},
@@ -604,7 +613,10 @@ async function getCatoniStyle()
         ]
     
         pSItems++
+    }
     
+    if(castorsData[4] !== undefined && castorsData[5] !== undefined && castorsData[6] !== undefined && castorsData[7] !== undefined)
+    {
         options2[pSItems] = [
             {text: castorsData[4].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: castorsData[4].Item_Long_Desc, style: 'textotabla'},
@@ -615,7 +627,10 @@ async function getCatoniStyle()
         ]
     
         pSItems++
-    
+    }
+
+    if(castorsData[8] !== undefined && castorsData[9] !== undefined && castorsData[10] !== undefined && castorsData[11] !== undefined)
+    {
         options2[pSItems] = [
             {text: castorsData[8].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: castorsData[8].Item_Long_Desc, style: 'textotabla'},
@@ -626,7 +641,10 @@ async function getCatoniStyle()
         ]
     
         pSItems++
+    }
     
+    if(castorsData[12] !== undefined && castorsData[13] !== undefined && castorsData[14] !== undefined)
+    {
         options2[pSItems] = [
             {text: castorsData[12].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: castorsData[12].Item_Long_Desc, style: 'textotabla'},
@@ -638,20 +656,20 @@ async function getCatoniStyle()
     
         pSItems++
         /*TERMINA CICLO*/
-    
-        options2[pSItems] = [
-            {text: 'Accessory bar holder', style: 'textotablaboldlargecatoni', border: [false, false, false, false], colSpan: 2},
-            {text: '', border: [false, false, false, false]},
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]},
-            {text: '', border: [false, false, false, false]}, 
-        ]
-    
-        pSItems++
-    
-        /*ESTO VA EN UN CICLO*/
     }
+    
+    options2[pSItems] = [
+        {text: 'Accessory bar holder', style: 'textotablaboldlargecatoni', border: [false, false, false, false], colSpan: 2},
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+    ]
+
+    pSItems++
+
+    /*ESTO VA EN UN CICLO*/
     
     if(accesoryBarData.length > 0)
     {
@@ -894,7 +912,7 @@ async function getCatoniStyle()
         i++
     } */
     
-    if(additionalOptionsData.length > 0)
+    if(additionalOptionsData[0] !== undefined && additionalOptionsData[1] !== undefined && additionalOptionsData[2] !== undefined && additionalOptionsData[3] !== undefined)
     {
         options2[pSItems] = [
             {text: additionalOptionsData[0].Id_Item, style: 'textotabla', alignment: 'center'},
@@ -906,7 +924,10 @@ async function getCatoniStyle()
         ]
     
         pSItems++
+    }
     
+    if(additionalOptionsData[4] !== undefined && additionalOptionsData[5] !== undefined)
+    {
         options2[pSItems] = [
             {text: additionalOptionsData[4].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: additionalOptionsData[4].Item_Long_Desc, style: 'textotabla'},
@@ -917,7 +938,10 @@ async function getCatoniStyle()
         ]
     
         pSItems++
-    
+    }
+
+    if(additionalOptionsData[6] !== undefined && additionalOptionsData[7] !== undefined && additionalOptionsData[8] !== undefined && additionalOptionsData[9] !== undefined)
+    {
         options2[pSItems] = [
             {text: additionalOptionsData[6].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: additionalOptionsData[6].Item_Long_Desc, style: 'textotabla'},
@@ -928,7 +952,10 @@ async function getCatoniStyle()
         ]
     
         pSItems++
-    
+    }
+
+    if(additionalOptionsData[10] !== undefined && additionalOptionsData[11] !== undefined && additionalOptionsData[12] !== undefined && additionalOptionsData[13] !== undefined)
+    {
         options2[pSItems] = [
             {text: additionalOptionsData[10].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: additionalOptionsData[10].Item_Long_Desc, style: 'textotabla'},
@@ -939,7 +966,10 @@ async function getCatoniStyle()
         ]
     
         pSItems++
+    }
     
+    if(additionalOptionsData[14] !== undefined && additionalOptionsData[15] !== undefined && additionalOptionsData[16] !== undefined && additionalOptionsData[17] !== undefined)
+    {
         options2[pSItems] = [
             {text: additionalOptionsData[14].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: additionalOptionsData[14].Item_Long_Desc, style: 'textotabla'},
@@ -950,7 +980,10 @@ async function getCatoniStyle()
         ]
     
         pSItems++
+    }
     
+    if(additionalOptionsData[18] !== undefined && additionalOptionsData[19] !== undefined)
+    {
         options2[pSItems] = [
             {text: additionalOptionsData[18].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: additionalOptionsData[18].Item_Long_Desc, style: 'textotabla'},
@@ -1089,7 +1122,7 @@ async function getCatoniStyle()
     }   */
     /*TERMINA CICLO*/
 
-    if(coloursContrastData.length > 0)
+    if(coloursContrastData[0] !== undefined && coloursContrastData[1] !== undefined && coloursContrastData[2] !== undefined)
     {
         options2[pSItems] = [
             {text: coloursContrastData[0].Id_Item, style: 'textotabla', alignment: 'center'},
@@ -1101,7 +1134,10 @@ async function getCatoniStyle()
         ]
     
         pSItems++
-    
+    }
+
+    if(coloursContrastData[3] !== undefined && coloursContrastData[4] !== undefined && coloursContrastData[5] !== undefined && coloursContrastData[6] !== undefined)
+    {
         options2[pSItems] = [
             {text: coloursContrastData[3].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: coloursContrastData[3].Item_Long_Desc, style: 'textotabla'},

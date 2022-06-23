@@ -150,7 +150,7 @@ async function getCatoni()
         i++
     }   */
 
-    if(hingeData.length > 0)
+    if(hingeData[0] !== undefined)
     {
         options[pSItems] = [
             {text: hingeData[0].Id_Item, style: 'textotablacatoni', alignment: 'center'},
@@ -162,7 +162,10 @@ async function getCatoni()
         ]
     
         pSItems++
-    
+    }
+
+    if(hingeData[3] !== undefined && hingeData[4] !== undefined && hingeData[5] !== undefined)
+    {
         options[pSItems] = [
             {text: hingeData[3].Id_Item, style: 'textotablacatoni', alignment: 'center'},
             {text: hingeData[3].Item_Long_Desc, style: 'textotablacatoni'},
@@ -173,7 +176,10 @@ async function getCatoni()
         ]
     
         pSItems++
-    
+    }
+
+    if(hingeData[6] !== undefined && hingeData[7] !== undefined && hingeData[8] !== undefined) 
+    {
         options[pSItems] = [
             {text: hingeData[6].Id_Item, style: 'textotablacatoni', alignment: 'center'},
             {text: hingeData[6].Item_Long_Desc, style: 'textotablacatoni'},
@@ -311,7 +317,7 @@ async function getCatoni()
         i++
     }  */
     
-    if(plasticDrawerData.length > 0)
+    if(plasticDrawerData[0] !== undefined && plasticDrawerData[1] !== undefined && plasticDrawerData[2] !== undefined)
     {
         options[pSItems] = [
             {text: plasticDrawerData[0].Id_Item, style: 'textotablacatoni', alignment: 'center'},
@@ -323,7 +329,10 @@ async function getCatoni()
         ]
     
         pSItems++
+    }
     
+    if(plasticDrawerData[3] !== undefined)
+    {
         options[pSItems] = [
             {text: plasticDrawerData[3].Id_Item, style: 'textotablacatoni', alignment: 'center'},
             {text: plasticDrawerData[3].Item_Long_Desc, style: 'textotablacatoni'},
@@ -461,7 +470,7 @@ async function getCatoni()
         i++
     }   */
 
-    if(lockableDrawerData.length > 0)
+    if(lockableDrawerData[0] !== undefined && lockableDrawerData[1] !== undefined && lockableDrawerData[2] !== undefined)
     {
         options[pSItems] = [
             {text: lockableDrawerData[0].Id_Item, style: 'textotablacatoni', alignment: 'center'},
@@ -473,7 +482,10 @@ async function getCatoni()
         ]
     
         pSItems++
-    
+    }
+
+    if(lockableDrawerData[3] !== undefined)
+    {
         options[pSItems] = [
             {text: lockableDrawerData[3].Id_Item, style: 'textotablacatoni', alignment: 'center'},
             {text: lockableDrawerData[3].Item_Long_Desc, style: 'textotablacatoni'},
@@ -996,7 +1008,7 @@ async function getCatoni()
         i++
     } */
     
-    if(additionalOptionsData.length > 0)
+    if(additionalOptionsData[0] !== undefined && additionalOptionsData[1] !== undefined && additionalOptionsData[2] !== undefined && additionalOptionsData[3] !== undefined)
     {
         /*ESTO VA EN UN CICLO*/
         options[pSItems] = [
@@ -1009,7 +1021,10 @@ async function getCatoni()
         ]
     
         pSItems++
-    
+    }
+
+    if(additionalOptionsData[4] !== undefined && additionalOptionsData[5] !== undefined)
+    {
         options[pSItems] = [
             {text: additionalOptionsData[4].Id_Item, style: 'textotablacatoni', alignment: 'center'},
             {text: additionalOptionsData[4].Item_Long_Desc, style: 'textotablacatoni'},
@@ -1020,7 +1035,10 @@ async function getCatoni()
         ]
     
         pSItems++
-    
+    }
+
+    if(additionalOptionsData[6] !== undefined && additionalOptionsData[7] !== undefined && additionalOptionsData[8] !== undefined && additionalOptionsData[9] !== undefined)
+    {
         options[pSItems] = [
             {text: additionalOptionsData[6].Id_Item, style: 'textotablacatoni', alignment: 'center'},
             {text: additionalOptionsData[6].Item_Long_Desc, style: 'textotablacatoni'},
@@ -1031,7 +1049,10 @@ async function getCatoni()
         ]
     
         pSItems++
-    
+    }
+
+    if(additionalOptionsData[10] !== undefined && additionalOptionsData[11] !== undefined && additionalOptionsData[12] !== undefined && additionalOptionsData[13] !== undefined)
+    {
         options[pSItems] = [
             {text: additionalOptionsData[10].Id_Item, style: 'textotablacatoni', alignment: 'center'},
             {text: additionalOptionsData[10].Item_Long_Desc, style: 'textotablacatoni'},
@@ -1042,7 +1063,10 @@ async function getCatoni()
         ]
     
         pSItems++
+    }
     
+    if(additionalOptionsData[14] !== undefined && additionalOptionsData[15] !== undefined && additionalOptionsData[16] !== undefined && additionalOptionsData[17] !== undefined)
+    {
         options[pSItems] = [
             {text: additionalOptionsData[14].Id_Item, style: 'textotablacatoni', alignment: 'center'},
             {text: additionalOptionsData[14].Item_Long_Desc, style: 'textotablacatoni'},
@@ -1053,7 +1077,10 @@ async function getCatoni()
         ]
     
         pSItems++
+    }
     
+    if(additionalOptionsData[18] !== undefined && additionalOptionsData[19] !== undefined)
+    {
         options[pSItems] = [
             {text: additionalOptionsData[18].Id_Item, style: 'textotablacatoni', alignment: 'center'},
             {text: additionalOptionsData[18].Item_Long_Desc, style: 'textotablacatoni'},
@@ -1192,7 +1219,7 @@ async function getCatoni()
         i++
     }*/
     
-    if(coloursContrastData.length > 0)
+    if(coloursContrastData[0] !== undefined && coloursContrastData[1] !== undefined && coloursContrastData[2] !== undefined)
     {
         options[pSItems] = [
             {text: coloursContrastData[0].Id_Item, style: 'textotablacatoni', alignment: 'center'},
@@ -1204,7 +1231,10 @@ async function getCatoni()
         ]
     
         pSItems++
+    }
     
+    if(coloursContrastData[3] !== undefined && coloursContrastData[4] !== undefined && coloursContrastData[5] !== undefined && coloursContrastData[6] !== undefined)
+    {
         options[pSItems] = [
             {text: coloursContrastData[3].Id_Item, style: 'textotablacatoni', alignment: 'center'},
             {text: coloursContrastData[3].Item_Long_Desc, style: 'textotablacatoni'},

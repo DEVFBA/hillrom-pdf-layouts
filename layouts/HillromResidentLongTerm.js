@@ -29,7 +29,7 @@ async function getHillromResidentLongTerm()
 
     /*ESTO VA EN UN CICLO*/
 
-    if(optionsData.length > 0)
+    if(optionsData[0] !== undefined)
     {
         options[pSItems] = [
             {text: optionsData[0].Item_Long_Desc, style: 'textotabla'},
@@ -42,7 +42,10 @@ async function getHillromResidentLongTerm()
             {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
-    
+    }
+
+    if(optionsData[7] !== undefined)
+    {
         options[pSItems] = [
             {text: optionsData[7].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla',alignment: 'center'},
@@ -54,7 +57,10 @@ async function getHillromResidentLongTerm()
             {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[7].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
+    }
     
+    if(optionsData[14] !== undefined)
+    {
         options[pSItems] = [
             {text: optionsData[14].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla',alignment: 'center'},
@@ -66,7 +72,10 @@ async function getHillromResidentLongTerm()
             {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[14].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
+    }
     
+    if(optionsData[21] !== undefined)
+    {
         options[pSItems] = [
             {text: optionsData[21].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla',alignment: 'center'},
@@ -78,7 +87,10 @@ async function getHillromResidentLongTerm()
             {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[21].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
-    
+    }
+
+    if(optionsData[28] !== undefined && optionsData[29] !== undefined)
+    {
         options[pSItems] = [
             {text: optionsData[28].Item_Long_Desc, style: 'textotabla'},
             {text: "$0", style: 'textotabla',alignment: 'center'},
@@ -90,7 +102,10 @@ async function getHillromResidentLongTerm()
             {text: "$0", style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
-    
+    }
+
+    if(optionsData[30] !== undefined)
+    {
         options[pSItems] = [
             {text: optionsData[30].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla',alignment: 'center'},
@@ -102,7 +117,10 @@ async function getHillromResidentLongTerm()
             {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[30].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
+    }
     
+    if(optionsData[37] !== undefined)
+    {
         options[pSItems] = [
             {text: optionsData[37].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla',alignment: 'center'},
@@ -114,7 +132,10 @@ async function getHillromResidentLongTerm()
             {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[37].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
-    
+    }
+
+    if(optionsData[44] !== undefined)
+    {
         options[pSItems] = [
             {text: optionsData[44].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[44].Price), style: 'textotabla',alignment: 'center'},

@@ -95,7 +95,7 @@ async function getBedsideCabinets()
         i++
     } */
     
-    if(optionsData.length > 0)
+    if(optionsData[0] !== undefined)
     {
         options[pSItems] = [
             {text: optionsData[0].Item_Long_Desc, style: 'textotabla'},
@@ -104,7 +104,10 @@ async function getBedsideCabinets()
         ]
     
         pSItems++
+    }
     
+    if(optionsData[1] !== undefined)
+    {
         options[pSItems] = [
             {text: optionsData[1].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[1].Price), style: 'textotabla', alignment: 'center'}, 
@@ -112,7 +115,10 @@ async function getBedsideCabinets()
         ]
     
         pSItems++
-    
+    }
+
+    if(optionsData[2] !== undefined)
+    {
         options[pSItems] = [
             {text: optionsData[2].Item_Long_Desc, style: 'textotabla'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
@@ -120,7 +126,10 @@ async function getBedsideCabinets()
         ]
     
         pSItems++
+    }
     
+    if(optionsData[3] !== undefined)
+    {
         options[pSItems] = [
             {text: optionsData[3].Item_Long_Desc, style: 'textotabla'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 

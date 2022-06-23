@@ -49,7 +49,7 @@ const { version } = require('os');
 async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersion, layouts)
 {
     try {
-        var progressaLayout = await progressa.getProgressa()
+        /*var progressaLayout = await progressa.getProgressa()
         var compellaLayout = await compella.getCompella()
         var centrellaLayout = await centrella.getCentrella()
         var hillroom900Layout = await hillrom900.getHillrom900()
@@ -81,7 +81,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
         var overbedTables3Layout = await overbedTables3.getOverbedTables()
         var bedsideCabinetsLayout = await bedsideCabinets.getBedsideCabinets()
         var transferBoardLayout = await transferBoard.getTransferBoard()
-        var thermofoilOptionsLayout = await thermofoilOptions.getThermofoilOptions()
+        var thermofoilOptionsLayout = await thermofoilOptions.getThermofoilOptions()*/
 
         const fecha = new Date();
         const anio = fecha.getFullYear()
@@ -569,418 +569,8 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
         }
 
         index2.push({text: '', pageBreak: 'after'  })
-
-        /*if(layouts.find(isProgressa) !== undefined)
-        {
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: 'Critical Care/ICU', fillColor: '#546ce4', style: 'indexbackground'},
-                        ],
-                    ]
-                }
-            },)
-        }
-        index2.push({
-            toc: {
-                id: 'progressa',
-            }
-        })*/
-
-        /*if(layouts.find(isCompella) !== undefined)
-        {
-            index2.push(
-                {
-                    table: {
-                        widths: [530],
-                        body: [
-                            [
-                                {border: [false, false, false, false], text: 'Bariatric', fillColor: '#546ce4', style: 'indexbackground'},
-                            ],
-                        ]
-                    }
-                }
-            )
-        }
-        index2.push({
-            toc: {
-                id: 'compella',
-            }
-        })*/
-
-        /*if(layouts.find(isCentrella) !== undefined || layouts.find(isHillrom9000) !== undefined || layouts.find(isAccella) !== undefined ||
-        layouts.find(isCenturisPro) !== undefined || layouts.find(isCenturis) !== undefined || layouts.find(isManualBed) !== undefined
-        || layouts.find(isMedSurg) !== undefined || layouts.find(isReconditionated) !== undefined )
-        {
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: 'Med-Surg', fillColor: '#546ce4', style: 'indexbackground'},
-                        ],
-                    ]
-                }
-            })
-        }*/
-        /*index2.push({
-            toc: {
-                id: 'centrella',
-            }
-        })
-        index2.push({
-            toc: {
-                id: 'hillrom900',
-            }
-        })
-        index2.push({
-            toc: {
-                id: 'hillroom900Accella',
-            }
-        })
-        index2.push({
-            toc: {
-                id: 'centurisProBed',
-            }
-        })
-        index2.push({
-            toc: {
-                id: 'theCenturisBed',
-            }
-        })
-        index2.push({
-            toc: {
-                id: '305ManualBed',
-            }
-        })
-        index2.push({
-            toc: {
-                id: 'medSurgAccesories',
-            }
-        })
-        index2.push({
-            toc: {
-                id: 'reconditionatedVersaCare',
-            }
-        })*/
-
-        /*if(layouts.find(isHillrom100) !== undefined || layouts.find(isHillromResident) !== undefined)
-        {
-            index2.push(
-                {
-                    table: {
-                        widths: [530],
-                        body: [
-                            [
-                                {border: [false, false, false, false], text: 'Long-Term Care', fillColor: '#546ce4', style: 'indexbackground'},
-                            ],
-                        ]
-                    }
-                }
-            )
-        }
-        index2.push( {
-            toc: {
-                id: 'hillrom100LowBed',
-            }
-        })
-
-        index2.push({
-            toc: {
-                id: 'hillromResident',
-            }
-        })*/
-
-        /*if(layouts.find(isAffinity) !== undefined)
-        {
-            index2.push(
-                {
-                    table: {
-                        widths: [530],
-                        body: [
-                            [
-                                {border: [false, false, false, false], text: 'Maternity', fillColor: '#546ce4', style: 'indexbackground'},
-                            ],
-                        ]
-                    }
-                }
-            )
-        }
-        index2.push(
-            {
-                toc: {
-                    id: 'affinity4BirthingBed',
-                }
-            }
-        )*/
-
-        /*index2.push(
-            {
-                columns: [
-                    [
-                        { text: 'SUPPORT SURFACES', style: 'header', alignment: 'left'}
-                    ],
-                    [
-                        { text: 'Page', style: 'header', alignment: 'right'}
-                    ]
-                ]
-            }
-        )*/
-        
-        /*if(layouts.find(isTherapy) !== undefined || layouts.find(isAccumax))
-        {
-            index2.push(
-                {
-                    table: {
-                        widths: [530],
-                        body: [
-                            [
-                                {border: [false, false, false, false], text: 'Foam', fillColor: '#546ce4', style: 'indexbackground'},
-                            ],
-                        ]
-                    }
-                }
-            )
-        }
-        index2.push({
-            toc: {
-                id: 'therapySurfaces',
-            }
-        })
-
-        index2.push({
-            toc: {
-                id: 'therapySurfaces2',
-            }
-        })
-
-        index2.push(
-            {
-                toc: {
-                    id: 'accumax',
-                }
-            }
-        )*/
-
-        /*if(layouts.find(isPoweredSurfaces) !== undefined)
-        {
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: 'Powered', fillColor: '#546ce4', style: 'indexbackground'},
-                        ],
-                    ]
-                }
-            })
-        }
-        index2.push(
-            {
-                toc: {
-                    id: 'poweredSurfaces',
-                }
-            }
-        )*/
-
-        /*if(layouts.find(isStretchers) !== undefined)
-        {
-            index2.push({
-                columns: [
-                    [
-                        { text: 'STRETCHERS', style: 'header', alignment: 'left'}
-                    ],
-                    [
-                        { text: 'Page', style: 'header', alignment: 'right'}
-                    ]
-                ]
-            })
-        }
-        index2.push({
-            toc: {
-                id: 'stretchers',
-            }
-        })*/
-    
-        /*if(layouts.find(isCatoniClassic) !== undefined || layouts.find(isCatoniBedside) !== undefined || layouts.find(isCatoniStyle) !== undefined)
-        {
-            index2.push({
-                columns: [
-                    [
-                        { text: 'FR FURNITURE', style: 'header', alignment: 'left'}
-                    ],
-                    [
-                        { text: 'Page', style: 'header', alignment: 'right'}
-                    ]
-                ]
-            })
-        }
-        index2.push({
-            toc: {
-                id: 'catoni',
-            }
-        })*/
-
-        /*if(layouts.find(isOverbedTable) !== undefined)
-        {
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: 'Tables', fillColor: '#546ce4', style: 'indexbackground'},
-                        ],
-                    ]
-                }
-            })
-        }
-        index2.push({
-            toc: {
-                id: 'overbedTables',
-            }
-        })*/
-
-        /*if(layouts.find(isTransportChairs) !== undefined)
-        {
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: 'Transport Chairs', fillColor: '#546ce4', style: 'indexbackground'},
-                        ],
-                    ]
-                }
-            })
-        }
-        index2.push(
-            {
-                toc: {
-                    id: 'transportChairs',
-                }
-            }
-        )*/
-
-        //AQUI VAN LOS COLOURS Y FABRICS
-
-        /*if(layouts.find(isHillromColours) !== undefined)
-        {
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: 'Colours & Fabrics', fillColor: '#546ce4', style: 'indexbackground'},
-                        ],
-                    ]
-                }
-            })
-        }
-
-        index2.push(
-            {
-                toc: {
-                    id: 'hillromColoursCollection',
-                }
-            }
-        )
-
-        index2.push({
-            toc: {
-                id: 'coatedFabricColours',
-                title: { text: "", style: "indexText"}
-            }
-        })*/
-
-        /*index2.push(
-            {
-                columns: [
-                    [
-                        { text: 'US FURNITURE', style: 'header', alignment: 'left'}
-                    ],
-                    [
-                        { text: 'Page', style: 'header', alignment: 'right'}
-                    ]
-                ]
-            }
-        )*/
-
-        //AQUI VA EL SEATING FURNITURE
-        /*if(layouts.find(isSeatingFurniture ) !== undefined)
-        {
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: 'Seating Furniture', fillColor: '#546ce4', style: 'indexbackground'},
-                        ],
-                    ]
-                }
-            })
-        }
-
-        index2.push(
-            {
-                toc: {
-                    id: 'seatingFurniture',
-                    title: { text: "", style: "indexText"}
-                }
-            }
-        )*/
-
-        /*if(layouts.find(isOverbedTableArt) !== undefined || layouts.find(isOverbedTable2) !== undefined || layouts.find(isBedside) !== undefined)
-        {
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: 'Healthcare Furniture', fillColor: '#546ce4', style: 'indexbackground'},
-                        ],
-                    ]
-                }
-            })
-        }
-        index2.push(
-            {
-                toc: {
-                    id: 'overbedTablesArtOfCare',
-                    title: { text: "", style: "indexText"}
-                }
-            }
-        )
-        index2.push(
-            {
-                toc: {
-                    id: 'bedsideCabinets',
-                    title: { text: "", style: "indexText"}
-                }
-            }
-        )*/
-
-        /*if(layouts.find(isTransferBoard) !== undefined)
-        {
-            index2.push({
-                columns: [
-                    [
-                        { text: 'OTHERS', style: 'header', alignment: 'left'}
-                    ],
-                    [
-                        { text: 'Page', style: 'header', alignment: 'right'}
-                    ]
-                ]
-            })
-        }
-        index2.push(
-            {
-                toc: {
-                    id: 'transferBoard',
-                }
-            }
-        )*/
+       
+        var coloursCatoniLayout = await coloursCatoni.getColoursCatoni()
 
         //Para armar el contenido de forma dinámica
         var contenido = []
@@ -993,263 +583,166 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
         {
             if(layouts[i].Id_Layout === "HOB-CCI-PRP7500")
             {
+                var progressaLayout = await progressa.getProgressa()
                 contenido.push(progressaLayout)
             }
             else if(layouts[i].Id_Layout === "HOB-BAR-CP7800A")
             {
+                var compellaLayout = await compella.getCompella()
                 contenido.push(compellaLayout)
             }
             else if(layouts[i].Id_Layout === "HOB-MES-CENTMB")
             {
+                var centrellaLayout = await centrella.getCentrella()
                 contenido.push(centrellaLayout)
             }
             else if(layouts[i].Id_Layout === "HOB-MES-HIRO900")
             {
+                var hillroom900Layout = await hillrom900.getHillrom900()
                 contenido.push(hillroom900Layout)
             }
             else if(layouts[i].Id_Layout === "HOB-MES-ACCELLA")
             {
+                var hillroom900AccellaLayout = await hillrom900Accella.getHillrom900Accella()
                 contenido.push(hillroom900AccellaLayout)
             }
             else if(layouts[i].Id_Layout === "HOB-MES-CENTURI")
             {
+                var centurisProBedLayout = await centurisProBed.getCenturisProBed()
                 contenido.push(centurisProBedLayout)
             }
             else if(layouts[i].Id_Layout === "HOB-MES-CENP750")
             {
+                var theCenturisBedLayout = await theCenturisBed.getTheCenturisBed()
                 contenido.push(theCenturisBedLayout)
             }
             else if(layouts[i].Id_Layout === "HOB-MES-305MABE")
             {
+                var t305ManualBedLayout = await t305ManualBed.get305ManualBed()
                 contenido.push(t305ManualBedLayout)
             }
             else if(layouts[i].Id_Layout === "ACCE-MES")
             {
+                var medSurgAccesoriesLayout = await medSurgAccesories.getMedSurgAccesories()
                 contenido.push(medSurgAccesoriesLayout)
             }
             else if(layouts[i].Id_Layout === "HOB-MES-RVP3200")
             {
+                var reconditionatedVersaCareLayout = await reconditionatedVersaCare.getReconditionatedVersaCare()
                 contenido.push(reconditionatedVersaCareLayout)
             }
             else if(layouts[i].Id_Layout === "HOB-LTC-HR100LB")
             {
+                var hillrom100LowBedLayout = await hillrom100LowBed.getHilrom100LowBed()
                 contenido.push(hillrom100LowBedLayout)
             }
             else if(layouts[i].Id_Layout === "HOB-LTC-HRRP870")
             {
+                var hillromResidentLongTermLayout = await hillromResidentLongTerm.getHillromResidentLongTerm()
                 contenido.push(hillromResidentLongTermLayout)
             }
             else if(layouts[i].Id_Layout === "HOB-MAT-AFF4P37")
             {
+                var affinity4BirthingBedLayout = await affinity4BirthingBed.getAffinity4BirthingBed()
                 contenido.push(affinity4BirthingBedLayout)
             }
             else if(layouts[i].Id_Layout === "SURFACES-THESUR")
             {
+                var therapySurfacesLayout = await therapySurfaces.getTherapySurfaces()
                 contenido.push(therapySurfacesLayout)
             }
             else if(layouts[i].Id_Layout === "SURFACES-ACCUMAX")
             {
+                var accumaxLayout = await accumax.getAccumax()
                 contenido.push(accumaxLayout)
             }
             else if(layouts[i].Id_Layout === "SURFACES-POWERED")
             {
+                var poweredSurfacesLayout = await poweredSurfaces.getPoweredSurfaces()
                 contenido.push(poweredSurfacesLayout)
             }
             else if(layouts[i].Id_Layout === "STR-STR-STP80XX")
             {
+                var stretchersLayout = await stretchers.getStretchers()
                 contenido.push(stretchersLayout)
             }
             else if(layouts[i].Id_Layout === "FRH-MES-CH700B4")
             {
+                var catoniClassicLayout = await catoniClassic.getCatoni()
                 contenido.push(catoniClassicLayout)
             }
             else if(layouts[i].Id_Layout === "FRH-MES-CH700B3")
             {
+                var catoniStyleLayout = await catoniStyle.getCatoniStyle()
                 contenido.push(catoniStyleLayout)
             }
             else if(layouts[i].Id_Layout === "FRH-MES-SCH770A")
             {
+                var catoniBedSideLayout = await catoniBedSide.getCatoniBedSide()
                 contenido.push(catoniBedSideLayout)
             }
             else if(layouts[i].Id_Layout === "FRH-MES-OTTA270")
             {
+                var overbedTablesLayout = await overbedTables.getOverbedTables()
                 contenido.push(overbedTablesLayout)
             }
             else if(layouts[i].Id_Layout === "FRH-TRC-TRCHANA")
             {
+                var transportChairsLayout = await transportChairs.getTransportChairs()
                 contenido.push(transportChairsLayout)
             }
             else if(layouts[i].Id_Layout === "FRH-MES-HILLRCOL")
             {
+                var hillromColoursCollectionLayout = await hillromColoursCollection.getHillromColoursCollection()
                 contenido.push(hillromColoursCollectionLayout)
             }
             else if(layouts[i].Id_Layout === "COAFABRCOLO")
             {
+                var coatedFabricColoursLayout = await coatedFabricColours.getCoatedFabricColours()
                 contenido.push(coatedFabricColoursLayout)
             }
             else if(layouts[i].Id_Layout === "UHF-REC-SEAFURN")
             {
+                var seatingFurnitureLayout = await seatingFurniture.getSeatingFurniture()
                 contenido.push(seatingFurnitureLayout)
             }
             else if(layouts[i].Id_Layout === "UHF-SEF-SLEESOFA")
             {
+                var sleeperSofaLayout = await sleeperSofa.getSleeperSofa()
                 contenido.push(sleeperSofaLayout)
             }
             else if(layouts[i].Id_Layout === "UHF-SEF-SLEECHAI")
             {
+                var sleeperChairLayout = await sleeperChair.getSleeperChair()
                 contenido.push(sleeperChairLayout)
             }
             else if(layouts[i].Id_Layout === "UHF-OVT-OBTAOC")
             {
+                var overbedTables2Layout = await overbedTables2.getOverbedTables()
                 contenido.push(overbedTables2Layout)
             }
             else if(layouts[i].Id_Layout === "UHF-BSC-BEDSPRE")
             {
+                var bedsideCabinetsLayout = await bedsideCabinets.getBedsideCabinets()
                 contenido.push(bedsideCabinetsLayout)
             }
             else if(layouts[i].Id_Layout === "UHF-OVT-P0094XX")
             {
+                var overbedTables3Layout = await overbedTables3.getOverbedTables()
                 contenido.push(overbedTables3Layout)
             }
             else if(layouts[i].Id_Layout === "FRH-MES-THERMOFOIL")
             {
+                var thermofoilOptionsLayout = await thermofoilOptions.getThermofoilOptions()
                 contenido.push(thermofoilOptionsLayout)
             }
             else if(layouts[i].Id_Layout === "OTR-TRANBO-TRANBO")
             {
+                var transferBoardLayout = await transferBoard.getTransferBoard()
                 contenido.push(transferBoardLayout)
             }
         }
 
-        /*if(layouts.find(isProgressa) !== undefined)
-        {
-            contenido.push(progressaLayout)
-        }
-        if(layouts.find(isCompella) !== undefined)
-        {
-            contenido.push(compellaLayout)
-        }
-        if(layouts.find(isCentrella) !== undefined)
-        {
-            contenido.push(centrellaLayout)
-        }
-        if(layouts.find(isHillrom9000) !== undefined)
-        {
-            contenido.push(hillroom900Layout)
-        }
-        if(layouts.find(isAccella) !== undefined)
-        {
-            contenido.push(hillroom900AccellaLayout)
-        }
-        if(layouts.find(isCenturisPro) !== undefined)
-        {
-            contenido.push(centurisProBedLayout)
-        }
-        if(layouts.find(isCenturis) !== undefined)
-        {
-            contenido.push(theCenturisBedLayout)
-        }
-        if(layouts.find(isManualBed) !== undefined)
-        {
-            contenido.push(t305ManualBedLayout)
-        }
-        if(layouts.find(isMedSurg) !== undefined)
-        {
-            contenido.push(medSurgAccesoriesLayout)
-        }
-        if(layouts.find(isReconditionated) !== undefined)
-        {
-            contenido.push(reconditionatedVersaCareLayout)
-        }
-        if(layouts.find(isHillrom100) !== undefined)
-        {
-            contenido.push(hillrom100LowBedLayout)
-        }
-        if(layouts.find(isHillromResident) !== undefined)
-        {
-            contenido.push(hillromResidentLongTermLayout)
-        }
-        if(layouts.find(isAffinity) !== undefined)
-        {
-            contenido.push(affinity4BirthingBedLayout)
-        }
-        if(layouts.find(isTherapy) !== undefined)
-        {
-            contenido.push(therapySurfacesLayout)
-        }
-        if(layouts.find(isAccumax) !== undefined)
-        {
-            contenido.push(accumaxLayout)
-        }
-        if(layouts.find(isPoweredSurfaces) !== undefined)
-        {
-            contenido.push(poweredSurfacesLayout)
-        }
-        if(layouts.find(isStretchers) !== undefined)
-        {
-            contenido.push(stretchersLayout)
-        }
-        if(layouts.find(isCatoniClassic) !== undefined)
-        {
-            contenido.push(catoniClassicLayout)
-        }
-        if(layouts.find(isCatoniBedside) !== undefined)
-        {
-            contenido.push(catoniBedSideLayout)
-        }
-        if(layouts.find(isCatoniStyle) !== undefined)
-        {
-            contenido.push(catoniStyleLayout)
-        }
-        if(layouts.find(isOverbedTable) !== undefined)
-        {
-            contenido.push(overbedTablesLayout)
-        }
-        if(layouts.find(isTransportChairs) !== undefined)
-        {
-            contenido.push(transportChairsLayout)
-        }
-        if(layouts.find(isHillromColours) !== undefined)
-        {
-            contenido.push(hillromColoursCollectionLayout)
-        }
-        if(layouts.find(isCoatedFabric) !== undefined)
-        {
-            contenido.push(coatedFabricColoursLayout)
-        }
-        if(layouts.find(isSeatingFurniture) !== undefined)
-        {
-            contenido.push(seatingFurnitureLayout)
-        }
-        if(layouts.find(isSleeperSofa) !== undefined)
-        {
-            contenido.push(sleeperSofaLayout)
-        }
-        if(layouts.find(isSleeperChair) !== undefined)
-        {
-            contenido.push(sleeperChairLayout)
-        }
-        if(layouts.find(isOverbedTable2) !== undefined)
-        {
-            contenido.push(overbedTables3Layout)
-        }
-        if(layouts.find(isOverbedTableArt) !== undefined)
-        {
-            contenido.push(overbedTables2Layout)
-        }
-        if(layouts.find(isThermofoil) !== undefined)
-        {
-            contenido.push(thermofoilOptionsLayout)
-        }
-        if(layouts.find(isBedside) !== undefined)
-        {
-            contenido.push(bedsideCabinetsLayout)
-        }
-        if(layouts.find(isTransferBoard) !== undefined)
-        {
-            contenido.push(transferBoardLayout)
-        }*/
-        
         var docDefinition = {
             pageMargins: [ 30, 6, 30, 30 ],
             header: function(currentPage) 

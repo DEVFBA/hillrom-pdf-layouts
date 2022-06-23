@@ -177,7 +177,7 @@ async function getStretchers()
     }*/   
     /*TERMINA CICLO*/
 
-    if(deckWidth.length > 0)
+    if(deckWidth[0] !== undefined)
     {
         options[pSItems] = [
             {text: deckWidth[0].Id_Item, style: 'textotabla', alignment: 'center'},
@@ -190,7 +190,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(deckWidth[4] !== undefined && deckWidth[5] !== undefined)
+    {
         options[pSItems] = [
             {text: deckWidth[4].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: deckWidth[4].Item_Long_Desc, style: 'textotabla'},
@@ -202,19 +205,19 @@ async function getStretchers()
         ]
     
         pSItems++
-        
-        options[pSItems] = [
-            {text: 'Surface', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
-            {text: '', border: [false, false, false, false]},
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]},
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]},
-        ]
-    
-        pSItems ++
     }
+        
+    options[pSItems] = [
+        {text: 'Surface', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]},
+    ]
+
+    pSItems ++
     
 
     /*ESTO VA EN UN CICLO*/
@@ -347,7 +350,7 @@ async function getStretchers()
     }   */
     /*TERMINA CICLO*/
 
-    if(surfaceData.length > 0)
+    if(surfaceData[0] !== undefined)
     {
         options[pSItems] = [
             {text: surfaceData[0].Id_Item, style: 'textotabla', alignment: 'center'},
@@ -360,7 +363,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(surfaceData[1] !== undefined)
+    {
         options[pSItems] = [
             {text: surfaceData[1].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: surfaceData[1].Item_Long_Desc, style: 'textotabla'},
@@ -372,7 +378,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(surfaceData[2] !== undefined)
+    {
         options[pSItems] = [
             {text: surfaceData[2].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: surfaceData[2].Item_Long_Desc, style: 'textotabla'},
@@ -384,7 +393,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(surfaceData[5] !== undefined)
+    {
         options[pSItems] = [
             {text: surfaceData[5].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: surfaceData[5].Item_Long_Desc, style: 'textotabla'},
@@ -396,7 +408,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(surfaceData[7] !== undefined && surfaceData[8] !== undefined && surfaceData[9] !== undefined)
+    {
         options[pSItems] = [
             {text: surfaceData[7].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: surfaceData[7].Item_Long_Desc, style: 'textotabla'},
@@ -408,7 +423,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(surfaceData[10] !== undefined && surfaceData[11] !== undefined)
+    {
         options[pSItems] = [
             {text: surfaceData[10].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: surfaceData[10].Item_Long_Desc, style: 'textotabla'},
@@ -420,7 +438,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(surfaceData[12] !== undefined && surfaceData[13] !== undefined && surfaceData[14] !== undefined)
+    {
         options[pSItems] = [
             {text: surfaceData[12].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: surfaceData[12].Item_Long_Desc, style: 'textotabla'},
@@ -432,7 +453,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(surfaceData[15] !== undefined && surfaceData[16] !== undefined)
+    {
         options[pSItems] = [
             {text: surfaceData[15].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: surfaceData[15].Item_Long_Desc, style: 'textotabla'},
@@ -444,7 +468,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(surfaceData[17] !== undefined)
+    {
         options[pSItems] = [
             {text: surfaceData[17].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: surfaceData[17].Item_Long_Desc, style: 'textotabla'},
@@ -456,7 +483,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(surfaceData[18] !== undefined && surfaceData[19] !== undefined && surfaceData[20] !== undefined && surfaceData[21] !== undefined && surfaceData[22] !== undefined)
+    {
         options[pSItems] = [
             {text: surfaceData[18].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: surfaceData[18].Item_Long_Desc, style: 'textotabla'},
@@ -468,19 +498,19 @@ async function getStretchers()
         ]
     
         pSItems++
-    
-        options[pSItems] = [
-            {text: 'Push handles (standard colour: grey/with O2 tank holder colour: blue)', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
-            {text: '', border: [false, false, false, false]},
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]},
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]}, 
-        ]
-    
-        pSItems++    
     }
+    
+    options[pSItems] = [
+        {text: 'Push handles (standard colour: grey/with O2 tank holder colour: blue)', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+    ]
+
+    pSItems++    
     
     /*ESTO VA EN UN CICLO*/
     /*i=0;
@@ -612,7 +642,7 @@ async function getStretchers()
     }*/
     /*TERMINA CICLO*/
 
-    if(pushHandlesData.length > 0)
+    if(pushHandlesData[0] !== undefined && pushHandlesData[1] !== undefined && pushHandlesData[2] !== undefined && pushHandlesData[3] !== undefined)
     {
         options[pSItems] = [
             {text: pushHandlesData[0].Id_Item, style: 'textotabla', alignment: 'center'},
@@ -625,7 +655,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(pushHandlesData[4] !== undefined && pushHandlesData[5] !== undefined && pushHandlesData[6] !== undefined)
+    {
         options[pSItems] = [
             {text: pushHandlesData[4].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: pushHandlesData[4].Item_Long_Desc, style: 'textotabla'},
@@ -637,7 +670,10 @@ async function getStretchers()
         ]
     
         pSItems++
-    
+    }
+
+    if(pushHandlesData[7] !== undefined && pushHandlesData[8] !== undefined && pushHandlesData[9] !== undefined && pushHandlesData[10] !== undefined)
+    {
         options[pSItems] = [
             {text: pushHandlesData[7].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: pushHandlesData[7].Item_Long_Desc, style: 'textotabla'},
@@ -649,7 +685,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(pushHandlesData[11] !== undefined && pushHandlesData[12] !== undefined && pushHandlesData[13] !== undefined && pushHandlesData[14] !== undefined && pushHandlesData[15] !== undefined)
+    {
         options[pSItems] = [
             {text: pushHandlesData[11].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: pushHandlesData[11].Item_Long_Desc, style: 'textotabla'},
@@ -661,19 +700,19 @@ async function getStretchers()
         ]
     
         pSItems++
-    
-        options[pSItems] = [
-            {text: 'IV pole type/location', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
-            {text: '', border: [false, false, false, false]},
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]},
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]}, 
-        ]
-    
-        pSItems++
     }
+    
+    options[pSItems] = [
+        {text: 'IV pole type/location', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+    ]
+
+    pSItems++
 
     /*ESTO VA EN UN CICLO*/
     /*i=0;
@@ -805,7 +844,7 @@ async function getStretchers()
     }*/
     /*TERMINA CICLO*/
 
-    if(ivPoleType.length > 0)
+    if(ivPoleType[0] !== undefined && ivPoleType[1] !== undefined && ivPoleType[2] !== undefined && ivPoleType[3] !== undefined)
     {
         options[pSItems] = [
             {text: ivPoleType[0].Id_Item, style: 'textotabla', alignment: 'center'},
@@ -818,7 +857,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(ivPoleType[4] !== undefined && ivPoleType[5] !== undefined && ivPoleType[6] !== undefined && ivPoleType[7] !== undefined)
+    {
         options[pSItems] = [
             {text: ivPoleType[4].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: ivPoleType[4].Item_Long_Desc, style: 'textotabla'},
@@ -830,7 +872,10 @@ async function getStretchers()
         ]
     
         pSItems++
-    
+    }
+
+    if(ivPoleType[8] !== undefined && ivPoleType[9] !== undefined && ivPoleType[10] !== undefined)
+    {
         options[pSItems] = [
             {text: ivPoleType[8].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: ivPoleType[8].Item_Long_Desc, style: 'textotabla'},
@@ -842,7 +887,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(ivPoleType[11] !== undefined && ivPoleType[12] !== undefined && ivPoleType[13] !== undefined && ivPoleType[14] !== undefined && ivPoleType[15] !== undefined)
+    {
         options[pSItems] = [
             {text: ivPoleType[11].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: ivPoleType[11].Item_Long_Desc, style: 'textotabla'},
@@ -854,19 +902,20 @@ async function getStretchers()
         ]
     
         pSItems++
-    
-        options[pSItems] = [
-            {text: 'IV pole transport push handles (not available with handbrake - HB)', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
-            {text: '', border: [false, false, false, false]},
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]},
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]}, 
-        ]
-    
-        pSItems++
     }
+    
+    options[pSItems] = [
+        {text: 'IV pole transport push handles (not available with handbrake - HB)', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+    ]
+
+    pSItems++
+    
 
     /*ESTO VA EN UN CICLO*/
     /*i=0;
@@ -998,7 +1047,7 @@ async function getStretchers()
     }*/   
     /*TERMINA CICLO*/
 
-    if(ivPoleTransport.length > 0)
+    if(ivPoleTransport[0] !== undefined && ivPoleTransport[1] !== undefined)
     {
         options[pSItems] = [
             {text: ivPoleTransport[0].Id_Item, style: 'textotabla', alignment: 'center'},
@@ -1011,7 +1060,10 @@ async function getStretchers()
         ]
     
         pSItems++
-    
+    }
+
+    if(ivPoleTransport[2] !== undefined && ivPoleTransport[3] !== undefined && ivPoleTransport[4] !== undefined)
+    {
         options[pSItems] = [
             {text: ivPoleTransport[2].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: ivPoleTransport[2].Item_Long_Desc, style: 'textotabla'},
@@ -1023,7 +1075,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(ivPoleTransport[5] !== undefined && ivPoleTransport[6] &&  ivPoleTransport[7] &&  ivPoleTransport[8])
+    {
         options[pSItems] = [
             {text: ivPoleTransport[5].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: ivPoleTransport[5].Item_Long_Desc, style: 'textotabla'},
@@ -1035,7 +1090,10 @@ async function getStretchers()
         ]
     
         pSItems++
-    
+    }
+
+    if(ivPoleTransport[9] !== undefined && ivPoleTransport[10] !== undefined)
+    {
         options[pSItems] = [
             {text: ivPoleTransport[9].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: ivPoleTransport[9].Item_Long_Desc, style: 'textotabla'},
@@ -1047,7 +1105,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(ivPoleTransport[11] !== undefined && ivPoleTransport[12] !== undefined && ivPoleTransport[13] !== undefined)
+    {
         options[pSItems] = [
             {text: ivPoleTransport[11].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: ivPoleTransport[11].Item_Long_Desc, style: 'textotabla'},
@@ -1059,7 +1120,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(ivPoleTransport[14] !== undefined && ivPoleTransport[15] !== undefined && ivPoleTransport[16] !== undefined && ivPoleTransport[17] !== undefined)
+    {
         options[pSItems] = [
             {text: ivPoleTransport[14].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: ivPoleTransport[14].Item_Long_Desc, style: 'textotabla'},
@@ -1071,7 +1135,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(ivPoleTransport[18] !== undefined && ivPoleTransport[19] !== undefined)
+    {
         options[pSItems] = [
             {text: ivPoleTransport[18].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: ivPoleTransport[18].Item_Long_Desc, style: 'textotabla'},
@@ -1083,7 +1150,10 @@ async function getStretchers()
         ]
     
         pSItems++
-    
+    }
+
+    if(ivPoleTransport[20] !== undefined && ivPoleTransport[21] !== undefined && ivPoleTransport[22] !== undefined)
+    {
         options[pSItems] = [
             {text: ivPoleTransport[20].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: ivPoleTransport[20].Item_Long_Desc, style: 'textotabla'},
@@ -1095,7 +1165,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(ivPoleTransport[23] !== undefined && ivPoleTransport[24] !== undefined && ivPoleTransport[25] !== undefined && ivPoleTransport[26] !== undefined)
+    {
         options[pSItems] = [
             {text: ivPoleTransport[23].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: ivPoleTransport[23].Item_Long_Desc, style: 'textotabla'},
@@ -1107,19 +1180,19 @@ async function getStretchers()
         ]
     
         pSItems++
-    
-        options[pSItems] = [
-            {text: 'Steering', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
-            {text: '', border: [false, false, false, false]},
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]},
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]}, 
-        ]
-    
-        pSItems++
     }
+    
+    options[pSItems] = [
+        {text: 'Steering', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+    ]
+
+    pSItems++
     
     /*ESTO VA EN UN CICLO*/
     /*i=0;
@@ -1251,7 +1324,7 @@ async function getStretchers()
     }*/   
     /*TERMINA CICLO*/
 
-    if(steering.length > 0)
+    if(steering[0] !== undefined)
     {
         options[pSItems] = [
             {text: steering[0].Id_Item, style: 'textotabla', alignment: 'center'},
@@ -1264,7 +1337,10 @@ async function getStretchers()
         ]
     
         pSItems++
-    
+    }
+
+    if(steering[1] !== undefined)
+    {
         options[pSItems] = [
             {text: steering[1].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: steering[1].Item_Long_Desc, style: 'textotabla'},
@@ -1276,19 +1352,19 @@ async function getStretchers()
         ]
     
         pSItems++
-    
-        options[pSItems] = [
-            {text: 'Brake Pedals', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
-            {text: '', border: [false, false, false, false]},
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]},
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]}, 
-        ]
-    
-        pSItems++
     }
+    
+    options[pSItems] = [
+        {text: 'Brake Pedals', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+    ]
+
+    pSItems++
 
     /*ESTO VA EN UN CICLO*/
     /*i=0;
@@ -1420,7 +1496,7 @@ async function getStretchers()
     }*/   
     /*TERMINA CICLO*/
 
-    if(brakePedals.length > 0)
+    if(brakePedals[0] !== undefined && brakePedals[1] !== undefined && brakePedals[2] !== undefined && brakePedals[3] !== undefined && brakePedals[4] !== undefined)
     {
         options[pSItems] = [
             {text: brakePedals[0].Id_Item, style: 'textotabla', alignment: 'center'},
@@ -1433,7 +1509,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(brakePedals[5] !== undefined)
+    {
         options[pSItems] = [
             {text: brakePedals[5].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: brakePedals[5].Item_Long_Desc, style: 'textotabla'},
@@ -1594,7 +1673,7 @@ async function getStretchers()
     }*/   
     /*TERMINA CICLO*/
 
-    if(surface2Data.length > 0)
+    if(surface2Data[0] !== undefined)
     {
         optionsSurface[pSItems] = [
             {text: surface2Data[0].Id_Item, style: 'textotabla', alignment: 'center'},
@@ -1607,7 +1686,10 @@ async function getStretchers()
         ]
     
         pSItems++
-    
+    }
+
+    if(surface2Data[3] !== undefined)
+    {
         optionsSurface[pSItems] = [
             {text: surface2Data[3].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: surface2Data[3].Item_Long_Desc, style: 'textotabla'},
@@ -1619,7 +1701,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(surface2Data[6] !== undefined)
+    {
         optionsSurface[pSItems] = [
             {text: surface2Data[6].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: surface2Data[6].Item_Long_Desc, style: 'textotabla'},
@@ -1631,19 +1716,19 @@ async function getStretchers()
         ]
     
         pSItems++
-    
-        optionsSurface[pSItems] = [
-            {text: 'Hydraulic control pedals', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
-            {text: '', border: [false, false, false, false]},
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]},
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]}, 
-        ]
-    
-        pSItems++
     }
+    
+    optionsSurface[pSItems] = [
+        {text: 'Hydraulic control pedals', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+    ]
+
+    pSItems++
     
 
     /*ESTO VA EN UN CICLO*/
@@ -1776,7 +1861,7 @@ async function getStretchers()
     }*/   
     /*TERMINA CICLO*/
     
-    if(hidraulicControl.length > 0)
+    if(hidraulicControl[0] !== undefined)
     {
         optionsSurface[pSItems] = [
             {text: hidraulicControl[0].Id_Item, style: 'textotabla', alignment: 'center'},
@@ -1789,7 +1874,10 @@ async function getStretchers()
         ]
     
         pSItems++
-    
+    }
+
+    if(hidraulicControl[5] !== undefined && hidraulicControl[6] !== undefined && hidraulicControl[7] !== undefined)
+    {
         optionsSurface[pSItems] = [
             {text: hidraulicControl[5].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: hidraulicControl[5].Item_Long_Desc, style: 'textotabla'},
@@ -1960,7 +2048,7 @@ async function getStretchers()
     }  */ 
     /*TERMINA CICLO*/
 
-    if(siderails.length > 0)
+    if(siderails[0] !== undefined && siderails[2] !== undefined)
     {
         options2[pSItems] = [
             {text: siderails[0].Id_Item, style: 'textotabla', alignment: 'center'},
@@ -1973,7 +2061,10 @@ async function getStretchers()
         ]
     
         pSItems++
-    
+    }
+
+    if(siderails[3] !== undefined)
+    {
         options2[pSItems] = [
             {text: siderails[3].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: siderails[3].Item_Long_Desc, style: 'textotabla'},
@@ -1985,19 +2076,20 @@ async function getStretchers()
         ]
     
         pSItems++
-    
-        options2[pSItems] = [
-            {text: 'Bumper colour (with Light Neutral Bellows)', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
-            {text: '', border: [false, false, false, false]},
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]},
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]}, 
-        ]
-    
-        pSItems ++
     }
+        
+    
+    options2[pSItems] = [
+        {text: 'Bumper colour (with Light Neutral Bellows)', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+    ]
+
+    pSItems ++
 
     /*ESTO VA EN UN CICLO*/
     /*i=0;
@@ -2128,7 +2220,7 @@ async function getStretchers()
         i++
     }*/
     
-    if(bumperColour.length > 0)
+    if(bumperColour[0] !== undefined)
     {
         options2[pSItems] = [
             {text: bumperColour[0].Id_Item, style: 'textotabla', alignment: 'center'},
@@ -2141,7 +2233,10 @@ async function getStretchers()
         ]
     
         pSItems++
-    
+    }
+
+    if(bumperColour[5] !== undefined && bumperColour[6] !== undefined && bumperColour[7] !== undefined && bumperColour[8] !== undefined)
+    {
         options2[pSItems] = [
             {text: bumperColour[5].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: bumperColour[5].Item_Long_Desc, style: 'textotabla'},
@@ -2153,7 +2248,10 @@ async function getStretchers()
         ]
     
         pSItems++
-    
+    }
+
+    if(bumperColour[9] !== undefined && bumperColour[10] !== undefined && bumperColour[11] !== undefined && bumperColour[12] !== undefined && bumperColour[13] !== undefined)
+    {
         options2[pSItems] = [
             {text: bumperColour[9].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: bumperColour[9].Item_Long_Desc, style: 'textotabla'},
@@ -2165,7 +2263,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(bumperColour[14] !== undefined && bumperColour[15] !== undefined && bumperColour[16] !== undefined && bumperColour[17] !== undefined && bumperColour[18] !== undefined)
+    {
         options2[pSItems] = [
             {text: bumperColour[14].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: bumperColour[14].Item_Long_Desc, style: 'textotabla'},
@@ -2177,7 +2278,10 @@ async function getStretchers()
         ]
     
         pSItems++
-    
+    }
+
+    if(bumperColour[19] !== undefined && bumperColour[20] !== undefined && bumperColour[21] !== undefined && bumperColour[22] !== undefined && bumperColour[23] !== undefined)
+    {
         options2[pSItems] = [
             {text: bumperColour[19].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: bumperColour[19].Item_Long_Desc, style: 'textotabla'},
@@ -2189,21 +2293,20 @@ async function getStretchers()
         ]
     
         pSItems++
-    
          /*TERMINA CICLO*/
-    
-         options2[pSItems] = [
-            {text: 'Additional options', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
-            {text: '', border: [false, false, false, false]},
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]},
-            {text: '', border: [false, false, false, false]}, 
-            {text: '', border: [false, false, false, false]}, 
-        ]
-    
-        pSItems ++
     }
+
+    options2[pSItems] = [
+        {text: 'Additional options', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+    ]
+
+    pSItems ++
 
     /*ESTO VA EN UN CICLO*/
     /*i=0;
@@ -2334,7 +2437,7 @@ async function getStretchers()
         i++
     }*/
     
-    if(additionalOptions.length > 0)
+    if(additionalOptions[0] !== undefined)
     {
         options2[pSItems] = [
             {text: additionalOptions[0].Id_Item, style: 'textotabla', alignment: 'center'},
@@ -2347,7 +2450,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(additionalOptions[1] !== undefined)
+    {
         options2[pSItems] = [
             {text: additionalOptions[1].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: additionalOptions[1].Item_Long_Desc, style: 'textotabla'},
@@ -2359,7 +2465,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(additionalOptions[2] !== undefined)
+    {
         options2[pSItems] = [
             {text: additionalOptions[2].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: additionalOptions[2].Item_Long_Desc, style: 'textotabla'},
@@ -2371,7 +2480,10 @@ async function getStretchers()
         ]
     
         pSItems++
-    
+    }
+
+    if(additionalOptions[4] !== undefined && additionalOptions[5] !== undefined)
+    {
         options2[pSItems] = [
             {text: additionalOptions[4].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: additionalOptions[4].Item_Long_Desc, style: 'textotabla'},
@@ -2383,7 +2495,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(additionalOptions[6] !== undefined && additionalOptions[7] !== undefined)
+    {
         options2[pSItems] = [
             {text: additionalOptions[6].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: additionalOptions[6].Item_Long_Desc, style: 'textotabla'},
@@ -2395,7 +2510,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(additionalOptions[8] !== undefined && additionalOptions[9] !== undefined)
+    {
         options2[pSItems] = [
             {text: additionalOptions[8].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: additionalOptions[8].Item_Long_Desc, style: 'textotabla'},
@@ -2494,7 +2612,7 @@ async function getStretchers()
         i++
     }*/
     
-    if(surfacesData.length > 0)
+    if(surfacesData[0] !== undefined && surfacesData[1] !== undefined && surfacesData[2] !== undefined)
     {
         surfaces[pSItems] = [
             {text: surfacesData[0].KitName, style: 'textotablacatoni', alignment: 'center'},
@@ -2508,7 +2626,10 @@ async function getStretchers()
         ]
     
         pSItems++
-    
+    }
+
+    if(surfacesData[3] !== undefined && surfacesData[4] !== undefined && surfacesData[5] !== undefined)
+    {        
         surfaces[pSItems] = [
             {text: surfacesData[3].KitName, style: 'textotablacatoni', alignment: 'center'},
             {text: surfacesData[3].Item_Long_Desc, style: 'textotablacatoni'},
@@ -2521,7 +2642,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(surfacesData[6] !== undefined)
+    {
         surfaces[pSItems] = [
             {text: surfacesData[6].KitName, style: 'textotablacatoni', alignment: 'center'},
             {text: surfacesData[6].Item_Long_Desc, style: 'textotablacatoni'},
@@ -2534,7 +2658,10 @@ async function getStretchers()
         ]
     
         pSItems++
-    
+    }
+
+    if(surfacesData[7] !== undefined)
+    {
         surfaces[pSItems] = [
             {text: surfacesData[7].KitName, style: 'textotablacatoni', alignment: 'center'},
             {text: surfacesData[7].Item_Long_Desc, style: 'textotablacatoni'},
@@ -2547,7 +2674,10 @@ async function getStretchers()
         ]
     
         pSItems++
-    
+    }
+
+    if(surfacesData[8] !== undefined && surfacesData[9] !== undefined)
+    {
         surfaces[pSItems] = [
             {text: surfacesData[8].KitName, style: 'textotablacatoni', alignment: 'center'},
             {text: surfacesData[8].Item_Long_Desc, style: 'textotablacatoni'},
@@ -2560,7 +2690,10 @@ async function getStretchers()
         ]
     
         pSItems++
-    
+    }
+
+    if(surfacesData[10] !== undefined)
+    {
         surfaces[pSItems] = [
             {text: surfacesData[10].KitName, style: 'textotablacatoni', alignment: 'center'},
             {text: surfacesData[10].Item_Long_Desc, style: 'textotablacatoni'},
@@ -2573,7 +2706,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(surfacesData[12] !== undefined)
+    {
         surfaces[pSItems] = [
             {text: surfacesData[12].KitName, style: 'textotablacatoni', alignment: 'center'},
             {text: surfacesData[12].Item_Long_Desc, style: 'textotablacatoni'},
@@ -2586,7 +2722,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(surfacesData[15] !== undefined && surfacesData[16] !== undefined)
+    {
         surfaces[pSItems] = [
             {text: surfacesData[15].KitName, style: 'textotablacatoni', alignment: 'center'},
             {text: surfacesData[15].Item_Long_Desc, style: 'textotablacatoni'},
@@ -2599,7 +2738,10 @@ async function getStretchers()
         ]
     
         pSItems++
+    }
     
+    if(surfacesData[17] !== undefined)
+    {
         surfaces[pSItems] = [
             {text: surfacesData[17].KitName, style: 'textotablacatoni', alignment: 'center'},
             {text: surfacesData[17].Item_Long_Desc, style: 'textotablacatoni'},
