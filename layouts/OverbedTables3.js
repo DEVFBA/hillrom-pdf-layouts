@@ -114,8 +114,8 @@ async function getOverbedTables()
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'P009497', style: 'textotablabold', alignment: 'center'},
-                            {text: 'P009498', style: 'textotablabold', alignment: 'center'},
+                            {text: 'P009497', style: 'textotablaboldlarge', alignment: 'center'},
+                            {text: 'P009498', style: 'textotablaboldlarge', alignment: 'center'},
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
@@ -169,8 +169,8 @@ async function getOverbedTables()
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'P009497', style: 'textotablabold', alignment: 'center'},
-                            {text: 'P009498', style: 'textotablabold', alignment: 'center'},
+                            {text: 'P009497', style: 'textotablaboldlarge', alignment: 'center'},
+                            {text: 'P009498', style: 'textotablaboldlarge', alignment: 'center'},
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
@@ -282,7 +282,7 @@ async function getOverbedTables()
             ]
         },
         '\n',
-        { image: "images/OverbedTable5.png", width: 500, height: 240, alignment: 'center'},
+        { image: "images/OverbedTable5.png", width: 515, height: 230, alignment: 'center'},
         {text: '', pageBreak: 'after'  },
     ]
 

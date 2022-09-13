@@ -11,15 +11,15 @@ async function getSeatingFurniture()
 
     mainTable[pSItems] = [
         {border: [false, false, false, false], text: ''},
-        {text: 'RECLINER', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'BARIATRICRECLINER', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'RECLINER', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'BARIATRICRECLINER', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
     ]
     pSItems++
 
     mainTable[pSItems] = [
-        {border: [false, false, false, false], text: 'PART #', style: 'textotablaboldblack'},
-        {text: 'P9180A', style: 'textotablaboldblack', alignment: 'center'},
-        {text: 'P9190A', style: 'textotablaboldblack', alignment: 'center'},
+        {border: [false, false, false, false], text: 'PART #', style: 'textotablaboldblacklarge'},
+        {text: 'P9180A', style: 'textotablaboldblacklarge', alignment: 'center'},
+        {text: 'P9190A', style: 'textotablaboldblacklarge', alignment: 'center'},
     ]
     pSItems++
 
@@ -110,9 +110,9 @@ async function getSeatingFurniture()
             }
             
             mainTable[pSItems] = [
-                {text: data.Item_Long_Desc, style: 'textotablacolornormal', fillColor: '#546ce4'},
-                {text: precio1, style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-                {text: precio2, style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+                {text: data.Item_Long_Desc, style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                {text: precio1, style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'}, 
+                {text: precio2, style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'}, 
             ]
 
             pSItems++
@@ -218,7 +218,7 @@ async function getSeatingFurniture()
         i++
     }   */
 
-    if(optionsData.length > 0)
+    /*if(optionsData.length > 0)
     {
         options[pSItems] = [
             {text: optionsData[0].Item_Long_Desc, style: 'textotabla'},
@@ -235,8 +235,24 @@ async function getSeatingFurniture()
         ]
     
         pSItems++
-        /*TERMINA CICLO*/    
-    }
+       
+    }*/   
+    
+    options[pSItems] = [
+        {text: "Central Brake & Steer", style: 'textotabla'},
+        {text: "$615", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: "Removable Arm-Left Side", style: 'textotabla'},
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$348", style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
 
     var table1 = []
     if(mainTableData.length > 0)
@@ -245,9 +261,9 @@ async function getSeatingFurniture()
             {
                 columns: [
                     {
-                        width: 350,
+                        width: 400,
                         table: {
-                            widths: [140, 80, 80],
+                            widths: [140, 100, 100],
                             body: mainTable
                         },
                         layout: {
@@ -270,12 +286,12 @@ async function getSeatingFurniture()
                         text: [
                             {text: '\n\n\n\n\n\n\n\n', style: 'textotablaboldblack', fillColor: '#546ce4'},
                             {text: 'Arm Cap Color\n', style: 'textotablaboldblack', fillColor: '#546ce4'},
-                            {text: 'Black\n', style: 'textotabla', fillColor: '#546ce4'},
-                            {text: 'White\n', style: 'textotabla', fillColor: '#546ce4'},
-                            {text: 'Dark Grey\n', style: 'textotabla', fillColor: '#546ce4'},
-                            {text: 'Light Grey\n', style: 'textotabla', fillColor: '#546ce4'},
-                            {text: 'Toffee\n', style: 'textotabla', fillColor: '#546ce4'},
-                            {text: 'Sand\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'B - Black\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'D - White\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'L - Dark Grey\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'S - Light Grey\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'T - Toffee\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'W -Sand\n', style: 'textotabla', fillColor: '#546ce4'},
                         ]
                     },
                 ]
@@ -289,7 +305,7 @@ async function getSeatingFurniture()
         table2 = [
             {
                 table: {
-                    widths: [140, 80, 80],
+                    widths: [140, 100, 100],
                     body: options
                 },
                 layout: {

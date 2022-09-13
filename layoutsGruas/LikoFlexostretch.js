@@ -2,14 +2,14 @@ const dbLiko = require('../controllers/likostretchers')
 
 async function getLikoFlexostretch(pdfZone)
 {
-    const res = await dbLiko.getLiko(pdfZone)
-    const salida9  = res[8]
-    const salida10 = res[9]
-    const salida11 = res[10]
-    const salida12 = res[11]
+    const res = await dbLiko.getLiko(pdfZone);
+    const salida9  = res[8];
+    const salida10 = res[9];
+    const salida11 = res[10];
+    const salida12 = res[11];
 
-    var accesories = []
-    var pSItems = 0
+    var accesories = [];
+    var pSItems = 0;
 
     if(salida9.length > 0)
     {

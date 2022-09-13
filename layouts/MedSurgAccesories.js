@@ -798,16 +798,61 @@ async function getMedSurgAccesories()
         pSItems++
     }
 
-    if(optionUpgradeData[6] !== undefined)
+    if(optionUpgradeData[7] !== undefined)
     {
         optionUpgrade[pSItems] = [
-            {text: optionUpgradeData[6].KitName, style: 'textotabla'},
-            {text: optionUpgradeData[6].Part, style: 'textotabla'},
-            {text: optionUpgradeData[6].Item_Long_Desc, style: 'textotabla'},
+            {text: optionUpgradeData[7].KitName, style: 'textotabla'},
+            {text: optionUpgradeData[7].Part, style: 'textotabla'},
+            {text: optionUpgradeData[7].Item_Long_Desc, style: 'textotabla'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "●", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(optionUpgradeData[6].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionUpgradeData[7].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+        pSItems++
+        /*TERMINA CICLO*/
+    }
+
+    if(optionUpgradeData[9] !== undefined)
+    {
+        optionUpgrade[pSItems] = [
+            {text: optionUpgradeData[9].KitName, style: 'textotabla'},
+            {text: optionUpgradeData[9].Part, style: 'textotabla'},
+            {text: optionUpgradeData[9].Item_Long_Desc, style: 'textotabla'},
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionUpgradeData[9].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+        pSItems++
+        /*TERMINA CICLO*/
+    }
+
+    if(optionUpgradeData[11] !== undefined)
+    {
+        optionUpgrade[pSItems] = [
+            {text: optionUpgradeData[11].KitName, style: 'textotabla'},
+            {text: optionUpgradeData[11].Part, style: 'textotabla'},
+            {text: optionUpgradeData[11].Item_Long_Desc, style: 'textotabla'},
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionUpgradeData[11].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+        pSItems++
+        /*TERMINA CICLO*/
+    }
+
+    if(optionUpgradeData[12] !== undefined)
+    {
+        optionUpgrade[pSItems] = [
+            {text: optionUpgradeData[12].KitName, style: 'textotabla'},
+            {text: optionUpgradeData[12].Part, style: 'textotabla'},
+            {text: optionUpgradeData[12].Item_Long_Desc, style: 'textotabla'},
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionUpgradeData[12].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
         /*TERMINA CICLO*/

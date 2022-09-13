@@ -15,13 +15,13 @@ async function getOverbedTables()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'EOVERBEDTABLE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
+                            {text: 'EOVERBEDTABLE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
                             {},
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'TA270 FT', style: 'textotablaboldblack', alignment: 'center'},
-                            {text: 'TA270 TT', style: 'textotablaboldblack', alignment: 'center'},
+                            {text: 'TA270 FT', style: 'textotablaboldblacklarge', alignment: 'center'},
+                            {text: 'TA270 TT', style: 'textotablaboldblacklarge', alignment: 'center'},
                         ],
     /*                     [
                             {border: [false, false, false, false], text: ''},
@@ -54,9 +54,9 @@ async function getOverbedTables()
                             {text: "●", style: 'textotabla', alignment: 'center'}, 
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                         ],
                     ]
                 },
@@ -85,13 +85,13 @@ async function getOverbedTables()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'EOVERBEDTABLE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
+                            {text: 'EOVERBEDTABLE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
                             {},
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'TA270 FT', style: 'textotablaboldblack', alignment: 'center'},
-                            {text: 'TA270 TT', style: 'textotablaboldblack', alignment: 'center'},
+                            {text: 'TA270 FT', style: 'textotablaboldblacklarge', alignment: 'center'},
+                            {text: 'TA270 TT', style: 'textotablaboldblacklarge', alignment: 'center'},
                         ],
     /*                     [
                             {border: [false, false, false, false], text: ''},
@@ -124,9 +124,9 @@ async function getOverbedTables()
                             {text: "●", style: 'textotabla', alignment: 'center'}, 
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                         ],
                     ]
                 },

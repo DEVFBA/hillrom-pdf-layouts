@@ -470,7 +470,7 @@ async function getFreespanUltraTwin(pdfZone)
                     ],
                     [
                         {border: [true, true, false, true], text: [
-                           {text: "Product specification for a complete product (cc 300):\n", style: "textotablaboldblack"},
+                           {text: "Product specification for a complete product (cc 300):\n", style: "textotablaboldblacklarge"},
                            {text: "FreeSpan Rail (Prod. No. 3103115-3103150) x 2 \nUltraTwin Upright Support (Prod. No. 3103520) Likorall x 2 \nHand control x 2 / Ultra Control Unit \nSling bar x 2 / Ultra SlingBar \nCharger x 2 / Charger x 1 (when using Ultra Control Unit) Sling \nCC-distance 300 mm (12 in).\n", style: "textotabla"},
                         ]},
                         {border: [false, true, false, true], image: "images/FreespanUltraTwin1.png", width: 70, height: 70, alignment: 'center'},
@@ -526,7 +526,7 @@ async function getFreespanUltraTwin(pdfZone)
                 body: [
                     [
                         {border: [true, false, false, true], text: [
-                           {text: "Product specification for a complete product (cc 800):\n", style: "textotablaboldblack"},
+                           {text: "Product specification for a complete product (cc 800):\n", style: "textotablaboldblacklarge"},
                            {text: "FreeSpan Rail (Prod. No. 3103115-3103150) x 2 \nUltraTwin Upright Support (Prod. No. 3103521) Likorall x 2 \nHand control x 2 \nUltraStretch (Prod. No. 3156058) Sling bar x 2 \nCharger x 2 \nLift sheet/lift strap/sling CC-distance 800 mm (32 in).", style: "textotabla"},
                         ]},
                         {border: [false, false, false, true], image: "images/FreespanUltraTwin4.png", width: 70, height: 70, alignment: 'center'},

@@ -10,13 +10,14 @@ async function getHillrom900()
     const castorsData = res[4]
     const steeringWheelData = res[5]
     const plugData = res[6]
+    const bedExitData = res[7]
 
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'X3', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'X3', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
     ]
     pSItems++
 
@@ -155,6 +156,79 @@ async function getHillrom900()
             if(j >= controlsData.length)
             {
                 controlsFlag = true
+            }
+            i++
+        }   
+        /*TERMINA CICLO*/
+    }
+
+    var bedExit = []
+    pSItems = 0
+
+    if(bedExitData.length > 0)
+    {
+        /*ESTO VA EN UN CICLO*/
+        i=0;
+        var bedExitFlag = false
+        while(bedExitFlag === false)
+        {
+            var j;
+            if(i===0)
+            {
+                j=0
+            }
+            else {
+                j = i*1
+            }
+            var precios = []
+            var preciosCount = 0
+            var countC=0
+            var printCaracter = []
+            while(j< bedExitData.length && countC<1)
+            {
+                precios[preciosCount] = bedExitData[j].Price
+                printCaracter[preciosCount] = bedExitData[j].Print_Character
+                preciosCount++
+                j++
+                countC++
+            }
+
+            var data = {
+                Id_Item: bedExitData[j-1].Id_Item,
+                Item_Long_Desc: bedExitData[j-1].Item_Long_Desc,
+                Prices: precios,
+                Print_Character: printCaracter
+            }
+    
+            var precio1;
+    
+            if(data.Print_Character[0] !== null)
+            {
+                if(data.Print_Character[0] === "*")
+                {
+                    precio1 = "●"
+                }
+                else {
+                    precio1 = "-"
+                }
+            }
+            else {
+                precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+            }
+            
+            bedExit[pSItems] = [
+                {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+                {text: data.Item_Long_Desc, style: 'textotabla'},
+                {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            ]
+    
+            pSItems++
+    
+            //console.log(data)
+    
+            if(j >= bedExitData.length)
+            {
+                bedExitFlag = true
             }
             i++
         }   
@@ -466,11 +540,11 @@ async function getHillrom900()
                             body: [
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {border: [false, false, false, false], text: 'HILLROM900', style: 'textotablabold',  alignment: 'center'},
+                                    {border: [false, false, false, false], text: 'HILLROM900', style: 'textotablaboldlarge',  alignment: 'center'},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                    {text: 'X3', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: 'X3', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: '', style: 'textotablabold'},
@@ -481,8 +555,8 @@ async function getHillrom900()
                                     {text: '●', style: 'textotabla', alignment: 'center'},
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                                 ],
                             ]
                         },
@@ -541,6 +615,33 @@ async function getHillrom900()
                 table: {
                     widths: [70, "*", 100],
                     body: controls
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+
+    var table8 = []
+    if(bedExitData.length > 0)
+    {
+        table8 = [
+            {
+                table: {
+                    widths: [70, "*", 100],
+                    body: bedExit
                 },
                 layout: {
                     hLineWidth: function () {
@@ -684,7 +785,7 @@ async function getHillrom900()
                     style:'textolista',
                     ul: [
                             { text: 'Electric Variable Height'},
-                            { text: 'SlideGuardTM Electric Sliding Backrest'},
+                            { text: 'SlideGuard™ Electric Sliding Backrest'},
                             { text: 'Electric Thigh Section'},
                             { text: 'Intelligent Autocontour'},
                             { text: 'One-Touch Side Egress positioning'},
@@ -698,10 +799,10 @@ async function getHillrom900()
                 {
                     style:'textolista',
                     ul: [
-                            { text: 'Electric Trendeleburg/Reverse Trendelenburg with Line-Of-SiteTM angle indicator'},
-                            { text: 'Line-Of-SiteTM Backrest indicator'},
-                            { text: 'Mobile head section'},
-                            { text: 'Battery'},
+                            { text: 'Electric Trendeleburg/Reverse Trendelenburg'},
+                            { text: 'Line-Of-Site™ Backrest indicator'},
+                            { text: '6 patient restraint strap holders'},
+                            { text: 'Removable head and foot boards'},
                             { text: '4 section sleep deck with removable panels'},
                             { text: 'Adjustable surface retainers'},
                             { text: 'Bilateral accessory holder'},
@@ -711,12 +812,16 @@ async function getHillrom900()
                 {
                     style:'textolista',
                     ul: [
+                            { text: 'Mobile head section'},
+                            { text: 'Battery'},
                             { text: 'Removable head and foot boards'},
                             { text: 'Endboard locks'},
+                            { text: 'Light Grey frame'},
+                            { text: 'Steering wheel at headend'},
                             { text: 'Central braking on 4 castors'},
                             { text: '150 mm Integral Castors'},
                             { text: 'Brake and steer at foot end'},
-                            { text: '220 kg/ 250 kg Safe Working Load'},
+                            { text: '220 kg Safe Working Load'},
                         ]				
                 },
             ]
@@ -726,6 +831,8 @@ async function getHillrom900()
         table2,
         { text: 'Controls', style: 'textotablaboldlarge' },
         table3,
+        { text: 'Bed Exit Alarm', style: 'textotablaboldlarge' },
+        table8,
         { text: 'Brake and Steer', style: 'textotablaboldlarge' },
         table4,
         { text: 'Castors', style: 'textotablaboldlarge' },

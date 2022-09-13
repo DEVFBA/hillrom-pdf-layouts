@@ -2,7 +2,7 @@ const dbLiko = require('../controllers/likostretchers')
 
 async function getLikoStretchers(pdfZone)
 {
-    const res = await dbLiko.getLiko(pdfZone)
+    const res = await dbLiko.getLiko(pdfZone);
     const salida1  = res[0]
     const salida2 = res[1]
     const salida3 = res[2]

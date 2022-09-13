@@ -873,6 +873,11 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     bold: true,
                     color: '#000000',
                 },
+                textotablaboldblacklarge: {
+                    fontSize: 9,
+                    bold: true,
+                    color: '#000000',
+                },
                 textotablacolor: {
                     fontSize: 7,
                     color: '#ffffff',

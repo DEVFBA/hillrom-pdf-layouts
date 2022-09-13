@@ -9,14 +9,14 @@ async function getReconditionatedVersaCare()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'RVC955', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'RVC965', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'RVC755', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'RVC765', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'RVC155', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'RVC165', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'RVC955', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'RVC965', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'RVC755', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'RVC765', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'RVC155', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'RVC165', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
     pSItems++
 
@@ -175,11 +175,11 @@ async function getReconditionatedVersaCare()
         table1 = [
             {
                 table: {
-                    widths: ["*", 30, 30, 30, 30, 30, 30],
+                    widths: ["*", 38, 38, 38, 38, 38, 38],
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'RECONVERSACARE', style: 'textotablacolor', colSpan: 6, fillColor: '#546ce4',  alignment: 'center'},
+                            {text: 'RECONVERSACARE', style: 'textotablacolorlarge', colSpan: 6, fillColor: '#546ce4',  alignment: 'center'},
                             {},
                             {},
                             {},
@@ -188,7 +188,7 @@ async function getReconditionatedVersaCare()
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'P3200', style: 'textotablaboldblack', colSpan: 6, alignment: 'center'},
+                            {text: 'P3200', style: 'textotablaboldblacklarge', colSpan: 6, alignment: 'center'},
                             {},
                             {},
                             {},
@@ -196,13 +196,13 @@ async function getReconditionatedVersaCare()
                             {},
                         ],
                         [
-                            {border: [false, false, false, false], text: 'Standard Features', style: 'textotablabold'},
-                            {text: 'RVC955', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'RVC965', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'RVC755', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'RVC765', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'RVC155', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'RVC165', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {border: [false, false, false, false], text: 'Standard Features', style: 'textotablaboldlarge'},
+                            {text: 'RVC955', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'RVC965', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'RVC755', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'RVC765', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'RVC155', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'RVC165', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                         ],
                         [
                             {text: 'No surface package', style: 'textotabla'},
@@ -299,11 +299,11 @@ async function getReconditionatedVersaCare()
         table1 = [
             {
                 table: {
-                    widths: ["*", 30, 30, 30, 30, 30, 30],
+                    widths: ["*", 38, 38, 38, 38, 38, 38],
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'RECONVERSACARE', style: 'textotablacolor', colSpan: 6, fillColor: '#546ce4',  alignment: 'center'},
+                            {text: 'RECONVERSACARE', style: 'textotablacolorlarge', colSpan: 6, fillColor: '#546ce4',  alignment: 'center'},
                             {},
                             {},
                             {},
@@ -312,7 +312,7 @@ async function getReconditionatedVersaCare()
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'P3200', style: 'textotablaboldblack', colSpan: 6, alignment: 'center'},
+                            {text: 'P3200', style: 'textotablaboldblacklarge', colSpan: 6, alignment: 'center'},
                             {},
                             {},
                             {},
@@ -320,13 +320,13 @@ async function getReconditionatedVersaCare()
                             {},
                         ],
                         [
-                            {border: [false, false, false, false], text: 'Standard Features', style: 'textotablabold'},
-                            {text: 'RVC955', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'RVC965', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'RVC755', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'RVC765', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'RVC155', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'RVC165', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {border: [false, false, false, false], text: 'Standard Features', style: 'textotablaboldlarge'},
+                            {text: 'RVC955', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'RVC965', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'RVC755', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'RVC765', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'RVC155', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'RVC165', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                         ],
                         [
                             {text: 'No surface package', style: 'textotabla'},
@@ -392,13 +392,13 @@ async function getReconditionatedVersaCare()
                             {text: 'STND', style: 'textotabla', alignment: 'center'}, 
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                         ],
                     ]
                 },
@@ -426,7 +426,7 @@ async function getReconditionatedVersaCare()
         table2 = [
             {
                 table: {
-                    widths: [60, "*", 30, 30, 30, 30, 30, 30],
+                    widths: [50, "*", 38, 38, 38, 38, 38, 38],
                     body: options
                 },
                 layout: {

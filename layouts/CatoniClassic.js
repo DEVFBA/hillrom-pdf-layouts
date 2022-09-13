@@ -17,12 +17,12 @@ async function getCatoni()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolorcatoni', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorcatoni', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'B01', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'B02', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'B03', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'B04', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'B01', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'B02', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'B03', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'B04', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
     pSItems++
 
@@ -1386,44 +1386,55 @@ async function getCatoni()
                     widths: ["*", 60, 60, 60, 60],
                     body: [
                         [
-                            {border: [false, false, false, false], text: ''},
-                            {text: 'FURNCAB', style: 'textotablacolorcatoni', colSpan: 4, fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [false, false, false, false], text: 'Catoni Collection', style: 'header'},
+                            {text: 'FURNCAB', style: 'textotablacolorlarge', colSpan: 4, fillColor: '#546ce4',  alignment: 'center'},
                             {},
                             {},
                             {},
                         ],
                         [
-                            {border: [false, false, false, false], text: ''},
-                            {text: 'CH700B4', style: 'textotablaboldblackcatoni', colSpan: 4,  alignment: 'center'},
+                            {border: [false, false, false, false], text: 'Med-Surg', style: 'subheader'},
+                            {text: 'CH700B4', style: 'textotablaboldblacklarge', colSpan: 4,  alignment: 'center'},
                             {},
                             {},
                             {},
                         ],
                         [
-                            {border: [false, false, false, false], text: 'Catoni Classic Bedside Cabinet - High', style: 'textotablaboldlargecatoni'},
-                            {text: 'B01', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B02', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B03', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B04', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
+                            {border: [false, false, false, false],  text: 'Country of origin: France', style: 'parrafo' },
+                            {text: 'B01', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B02', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B03', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B04', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                         ],
                         [
-                            {border: [false, false, false, false], ul: [
-                                { text: 'Height 885 mm - Width 401 mm - Depth 401 mm'},
-                                { text: 'Material Body: Melamine - Top Plate: High Pressure Laminate (HPL)'},
-                                { text: 'For additional technical specifications see separate tech specs'},
-                                { text: 'For colour and handles see separate tech specs'},
-                            ],  style:'textolista',},
-                            { image: "images/Catoni1.png", width: 40, height: 70, alignment: 'center'},
-                            { image: "images/Catoni2.png", width: 40, height: 70, alignment: 'center'},
-                            { image: "images/Catoni3.png", width: 40, height: 70, alignment: 'center'},
-                            { image: "images/Catoni4.png", width: 40, height: 70, alignment: 'center'},
+                            {border: [false, false, false, false], text: [
+                                    {text: "\n", style: 'textotabla'},
+                                    {text: 'Catoni Classic Bedside Cabinet - High', style: 'textotablaboldlarge'}
+                                ]
+                            },
+                            { image: "images/Catoni1.png", width: 40, height: 70, alignment: 'center', rowSpan: 2},
+                            { image: "images/Catoni2.png", width: 40, height: 70, alignment: 'center', rowSpan: 2},
+                            { image: "images/Catoni3.png", width: 40, height: 70, alignment: 'center', rowSpan: 2},
+                            { image: "images/Catoni4.png", width: 40, height: 70, alignment: 'center', rowSpan: 2},
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolorcatoni', fillColor: '#546ce4'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'}, 
+                            {border: [false, false, false, false],   ul: [
+                                { text: 'Height 885 mm - Width 401 mm - Depth 401 mm', style:'textolista'},
+                                { text: 'Material Body and Top : Melamine', style:'textolista'},
+                                { text: 'For additional technical specifications see separate tech specs', style:'textolista'},
+                                { text: 'For colour and handles see separate tech specs', style:'textolista'},
+                            ], style:'textolista'},
+                            {},
+                            {},
+                            {},
+                            {},
+                        ],
+                        [
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                         ],
                     ]
                 },
@@ -1451,25 +1462,25 @@ async function getCatoni()
                     widths: ["*", 60, 60, 60, 60],
                     body: [
                         [
-                            {border: [false, false, false, false], text: ''},
-                            {text: 'FURNCAB', style: 'textotablacolorcatoni', colSpan: 4, fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [false, false, false, false], text: 'Catoni Collection', style: 'header'},
+                            {text: 'FURNCAB', style: 'textotablacolorlarge', colSpan: 4, fillColor: '#546ce4',  alignment: 'center'},
                             {},
                             {},
                             {},
                         ],
                         [
-                            {border: [false, false, false, false], text: ''},
-                            {text: 'CH700B4', style: 'textotablaboldblackcatoni', colSpan: 4,  alignment: 'center'},
+                            {border: [false, false, false, false], text: 'Med-Surg', style: 'subheader'},
+                            {text: 'CH700B4', style: 'textotablaboldblacklarge', colSpan: 4,  alignment: 'center'},
                             {},
                             {},
                             {},
                         ],
                         [
-                            {border: [false, false, false, false], text: 'Catoni Classic Bedside Cabinet - High', style: 'textotablaboldlargecatoni'},
-                            {text: 'B01', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B02', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B03', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B04', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
+                            {border: [false, false, false, false], text: 'Country of origin: France', style: 'parrafo' },
+                            {text: 'B01', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B02', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B03', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B04', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                         ],
                         [
                             {border: [false, false, false, false], ul: [
@@ -1484,11 +1495,11 @@ async function getCatoni()
                             { image: "images/Catoni4.png", width: 40, height: 70, alignment: 'center'},
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolorcatoni', fillColor: '#546ce4'},
-                            {text: "NO-DATA", style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "NO-DATA", style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "NO-DATA", style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "NO-DATA", style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                         ],
                     ]
                 },
@@ -1518,7 +1529,7 @@ async function getCatoni()
         table2 = [
             {
                 table: {
-                    widths: [50, "*", 60, 60, 60, 60],
+                    widths: [70, "*", 60, 60, 60, 60],
                     body: options
                 },
                 layout: {
@@ -1546,10 +1557,7 @@ async function getCatoni()
         "\n",
         "\n",
         "\n",
-        { text: 'Catoni Collection', style: 'header'},
         { text: 'Catoni Collection - Bedside Cabinets', style: { fontSize: 0}, tocItem: 'catoni'},
-        { text: 'Med-Surg', style: 'subheader'},
-        { text: 'Country of origin: France', style: 'parrafo' },
         table1,
         { text: '\n', style: 'textotablacatoni' },
         table2,

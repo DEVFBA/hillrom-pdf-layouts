@@ -810,7 +810,7 @@ async function getProgressa()
     pSItems = 0
 
     surfaces[pSItems] = [
-        {text: "SURFACES", style: 'textotablabold', border: [false, false, false, false], colSpan: 2},
+        {text: "SURFACES", style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
@@ -819,10 +819,10 @@ async function getProgressa()
     pSItems++
 
     surfaces[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -919,10 +919,10 @@ async function getProgressa()
     pSItems++
 
     accesories[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -960,7 +960,7 @@ async function getProgressa()
                             body: [
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'PROGRESSA', style: 'textotablacolor', colSpan: 8, fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'PROGRESSA', style: 'textotablacolorlarge', colSpan: 8, fillColor: '#546ce4',  alignment: 'center'},
                                     {},
                                     {},
                                     {},
@@ -971,7 +971,7 @@ async function getProgressa()
                                 ],
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'P7500', style: 'textotablaboldblack', colSpan: 8, alignment: 'center'},
+                                    {text: 'P7500', style: 'textotablaboldblacklarge', colSpan: 8, alignment: 'center'},
                                     {},
                                     {},
                                     {},
@@ -1125,7 +1125,7 @@ async function getProgressa()
                             body: [
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'PROGRESSA', style: 'textotablacolor', colSpan: 8, fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'PROGRESSA', style: 'textotablacolorlarge', colSpan: 8, fillColor: '#546ce4',  alignment: 'center'},
                                     {},
                                     {},
                                     {},
@@ -1136,7 +1136,7 @@ async function getProgressa()
                                 ],
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'P7500', style: 'textotablaboldblack', colSpan: 8, alignment: 'center'},
+                                    {text: 'P7500', style: 'textotablaboldblacklarge', colSpan: 8, alignment: 'center'},
                                     {},
                                     {},
                                     {},
@@ -1348,35 +1348,40 @@ async function getProgressa()
                 {
                     style:'textolista',
                     ul: [
-                        { text: 'FlexAfoot™ Retractable Foot Control'},
-                        { text: '30/45 Degree Head of Bed Alarm'},
-                        { text: 'In-Bed Scale'},
-                        { text: 'Three Mode Bed Exit Alarm (PPM)'},
-                        { text: 'Standard Head and Foot Panel'},
-                        { text: 'Night Light'},
-                        { text: 'Hands Free Emergency CPR, Trendelenburg'}
+                            { text: 'SlideGuard™ Frame Technology'},
+                            { text: 'FlexAfoot™ Retractable Foot Control'},
+                            { text: '30/45 Degree Head of Bed Alarm'},
+                            { text: 'In-Bed Scale'},
+                            { text: 'Three Mode Bed Exit Alarm (PPM)'},
+                            { text: 'Standard Head and Foot Panel'},
+                            { text: 'Night Light'},
+                            { text: 'Bed Controls'}
                         ]
                 },
                 {
                     style:'textolista',
                     ul: [
-                        { text: 'Caregiver Pendant'},
-                        { text: 'Obstacle Detect System at Both Sides of the Bed'},
-                        { text: 'Drainage Bag Holders'},
-                        { text: 'Four IV Sockets'},
-                        { text: 'Patient Controls Backlighting'},
-                        { text: 'Bed Controls'},
+                            { text: 'Caregiver Pendant'},
+                            { text: 'Point of Care™ Siderails Control'},
+                            { text: 'Obstacle Detect System at Both Sides of the Bed'},
+                            { text: 'Drainage Bag Holders'},
+                            { text: 'Four IV Sockets'},
+                            { text: 'Patient Controls Backlighting'},
+                            { text: 'Advanced MicoClimate Technology (permanently installed)'},
+                            { text: 'Hands Free Emergency CPR, Trendelenburg'},
                         ]				
                 },
                 {
                     style:'textolista',
                     ul: [
-                        { text: 'Line Managers'},
-                        { text: 'Oxygen Tank Holder Module'},
-                        { text: 'Both Siderails with Point-of-Care Touch Screen'},
-                        { text: '6" Urethane Central Locking Caster System'},
-                        { text: 'Maximum Patient Weight: 500 lbs'},
-                        { text: 'Safe Working Load: 650 lbs'},
+                            { text: 'Line Managers'},
+                            { text: 'Foot Controls Module'},
+                            { text: 'Oxygen Tank Holder Module'},
+                            { text: 'Both Siderails with Point-of-Care Touch Screen'},
+                            { text: '6" Urethane Central Locking Caster System'},
+                            { text: 'Maximum Patient Weight: 500 lbs'},
+                            { text: 'Overall Weight: 800 lbs'},
+                            { text: 'Safe Working Load: 650 lbs'},
                         ]				
                 },
             ]
@@ -1391,16 +1396,16 @@ async function getProgressa()
         {
             columns: [
                 [
-                    { image: "images/1.png", width: 120, height: 120, alignment: 'center'},
-                    { text: 'Hands Free Emergency CPR', style: 'textolista', alignment: 'center'}
+                    { image: "images/1.jpg", width: 140, height: 120, alignment: 'center'},
+                    { text: 'Pulmonary Surface', style: 'textolista', alignment: 'center'}
                 ],
                 [
-                    { image: "images/2.png", width: 120, height: 120, alignment: 'center'},
-                    { text: 'Hands Free Emergency CPR', style: 'textolista', alignment: 'center'}
+                    { image: "images/2.jpg", width: 140, height: 120, alignment: 'center'},
+                    { text: 'Therapy Surface', style: 'textolista', alignment: 'center'}
                 ],
                 [
-                    { image: "images/3.png", width: 120, height: 120, alignment: 'center'},
-                    { text: 'Hands Free Emergency CPR', style: 'textolista', alignment: 'center'}
+                    { image: "images/3.jpg", width: 140, height: 120, alignment: 'center'},
+                    { text: 'Prevention Surface', style: 'textolista', alignment: 'center'}
                 ],
             ]
         },

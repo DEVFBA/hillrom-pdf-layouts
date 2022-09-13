@@ -18,20 +18,18 @@ async function getCompella()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'FOAM', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'TURN', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'CLRT', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'FOAM', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'TURN', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
-    pSItems++
+    pSItems++;
 
     options[pSItems] = [
         {text: "Mobility", style: 'textotablabold', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}
     ]
 
     pSItems++
@@ -57,11 +55,11 @@ async function getCompella()
             var printCaracter = []
             while(j< mobility.length && countC<3)
             {
-            precios[preciosCount] = mobility[j].Price
-            printCaracter[preciosCount] = mobility[j].Print_Character
-            preciosCount++
-            j++
-            countC++
+                precios[preciosCount] = mobility[j].Price
+                printCaracter[preciosCount] = mobility[j].Print_Character
+                preciosCount++
+                j++
+                countC++
             }
             var data = {
                 Id_Item: mobility[j-1].Id_Item,
@@ -120,8 +118,7 @@ async function getCompella()
                 {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
                 {text: data.Item_Long_Desc, style: 'textotabla'},
                 {text: precio1, style: 'textotabla', alignment: 'center'}, 
-                {text: precio2, style: 'textotabla', alignment: 'center'}, 
-                {text: precio3, style: 'textotabla', alignment: 'center'}, 
+                {text: precio2, style: 'textotabla', alignment: 'center'}
             ]
 
             pSItems++
@@ -141,8 +138,7 @@ async function getCompella()
         {text: 'Patient Siderail Com', style: 'textotablabold', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}
     ]
 
     pSItems ++
@@ -168,11 +164,11 @@ async function getCompella()
             var printCaracter = []
             while(j< patientSiderailData.length && countC<3)
             {
-            precios[preciosCount] = patientSiderailData[j].Price
-            printCaracter[preciosCount] = patientSiderailData[j].Print_Character
-            preciosCount++
-            j++
-            countC++
+                precios[preciosCount] = patientSiderailData[j].Price
+                printCaracter[preciosCount] = patientSiderailData[j].Print_Character
+                preciosCount++
+                j++
+                countC++
             }
             var data = {
                 Id_Item: patientSiderailData[j-1].Id_Item,
@@ -231,8 +227,7 @@ async function getCompella()
                 {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
                 {text: data.Item_Long_Desc, style: 'textotabla'},
                 {text: precio1, style: 'textotabla', alignment: 'center'}, 
-                {text: precio2, style: 'textotabla', alignment: 'center'}, 
-                {text: precio3, style: 'textotabla', alignment: 'center'}, 
+                {text: precio2, style: 'textotabla', alignment: 'center'}
             ]
 
             pSItems++
@@ -252,8 +247,7 @@ async function getCompella()
         {text: 'IV Pole', style: 'textotablabold', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}
     ]
 
     pSItems++
@@ -279,11 +273,11 @@ async function getCompella()
             var printCaracter = []
             while(j< ivpoleData.length && countC<3)
             {
-            precios[preciosCount] = ivpoleData[j].Price
-            printCaracter[preciosCount] = ivpoleData[j].Print_Character
-            preciosCount++
-            j++
-            countC++
+                precios[preciosCount] = ivpoleData[j].Price
+                printCaracter[preciosCount] = ivpoleData[j].Print_Character
+                preciosCount++
+                j++
+                countC++
             }
             var data = {
                 Id_Item: ivpoleData[j-1].Id_Item,
@@ -342,8 +336,7 @@ async function getCompella()
                 {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
                 {text: data.Item_Long_Desc, style: 'textotabla'},
                 {text: precio1, style: 'textotabla', alignment: 'center'}, 
-                {text: precio2, style: 'textotabla', alignment: 'center'}, 
-                {text: precio3, style: 'textotabla', alignment: 'center'}, 
+                {text: precio2, style: 'textotabla', alignment: 'center'}
             ]
 
             pSItems++
@@ -364,8 +357,7 @@ async function getCompella()
         {text: 'Additional Options', style: 'textotablabold', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}
     ]
 
     pSItems++
@@ -391,11 +383,11 @@ async function getCompella()
             var printCaracter = []
             while(j< additionalOptions.length && countC<3)
             {
-            precios[preciosCount] = additionalOptions[j].Price
-            printCaracter[preciosCount] = additionalOptions[j].Print_Character
-            preciosCount++
-            j++
-            countC++
+                precios[preciosCount] = additionalOptions[j].Price
+                printCaracter[preciosCount] = additionalOptions[j].Print_Character
+                preciosCount++
+                j++
+                countC++
             }
             var data = {
                 Id_Item: additionalOptions[j-1].Id_Item,
@@ -454,8 +446,7 @@ async function getCompella()
                 {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
                 {text: data.Item_Long_Desc, style: 'textotabla'},
                 {text: precio1, style: 'textotabla', alignment: 'center'}, 
-                {text: precio2, style: 'textotabla', alignment: 'center'}, 
-                {text: precio3, style: 'textotabla', alignment: 'center'}, 
+                {text: precio2, style: 'textotabla', alignment: 'center'}
             ]
 
             pSItems++
@@ -484,10 +475,10 @@ async function getCompella()
     pSItems++
 
     surfaces[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -540,10 +531,10 @@ async function getCompella()
     pSItems++
 
     accesories[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -553,7 +544,7 @@ async function getCompella()
         /*ESTO VA EN UN CICLO*/
         for(var i=0; i<surfacesAccesories.length; i++)
         {
-        accesories[pSItems] = [
+            accesories[pSItems] = [
                 {text: surfacesAccesories[i].KitName, style: 'textotabla', alignment: 'center'},
                 {text: surfacesAccesories[i].Item_Long_Desc, style: 'textotabla'},
                 {text: surfacesAccesories[i].Part, style: 'textotabla', alignment: 'center'}, 
@@ -598,79 +589,77 @@ async function getCompella()
                     {
                         width: "*",
                         table: {
-                            widths: ["*", 50, 50, 50],
+                            widths: ["*", 50, 50],
                             body: [
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'COMPELLA', style: 'textotablacolor', colSpan: 3, fillColor: '#546ce4',  alignment: 'center'},
-                                    {},
+                                    {text: 'COMPELLA', style: 'textotablacolorlarge', colSpan: 2, fillColor: '#546ce4',  alignment: 'center'},
                                     {},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'P7800A', style: 'textotablaboldblack', colSpan: 3, alignment: 'center'},
-                                    {},
+                                    {text: 'P7800A', style: 'textotablaboldblacklarge', colSpan: 2, alignment: 'center'},
                                     {},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: 'Standard Features', style: 'textotablabold'},
-                                    {text: 'FOAM', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'TURN', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: 'CLRT', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                                    {text: 'FOAM', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: 'TURN', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Powered Width Expansions', style: 'textotabla'},
                                     {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
                                     {text: '●', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'FlexAFoot', style: 'textotabla'},
                                     {text: '●', style: 'textotabla', alignment: 'center'},
                                     {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Scale', style: 'textotabla'},
                                     {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
                                     {text: '●', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Bed Exit (Single Mode)', style: 'textotabla'},
                                     {text: '●', style: 'textotabla', alignment: 'center'},
                                     {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Digital HOB Angle Indicator and Alarm', style: 'textotabla'},
                                     {text: '●', style: 'textotabla', alignment: 'center'},
                                     {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                ],
+                                [
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                                ],
+                                [
+                                    {border: [false, false, false, false], text: 'Surface Options', style: 'textotablabold', colSpan:3},
+                                    {},
+                                    {},
                                 ],
                                 [
                                     {text: 'Foam Surface (with air supply unit)', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
+                                    {text: "$15,665.80", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Low Air Loss Surface (with air supply unit)', style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: "$24,710.32", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                                 ],
                                 [
-                                    {text: 'Low Air Loss Surface (with air supply unit) & Continuous Lateral Rotation Therapy', style: 'textotabla'},
+                                    {border: [false, false, false, false], text: 'Surface Add-Ons', style: 'textotablabold', colSpan:3},
+                                    {},
+                                    {},
+                                ],
+                                [
+                                    {text: 'Continuous Lateral Rotation Therapy (CLRT)', style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                ],
-                                [
-                                    {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                                    {text: "$5,025.12", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                                 ],
                             ]
                         },
@@ -708,7 +697,7 @@ async function getCompella()
                             body: [
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'COMPELLA', style: 'textotablacolor', colSpan: 3, fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'COMPELLA', style: 'textotablacolorlarge', colSpan: 3, fillColor: '#546ce4',  alignment: 'center'},
                                     {},
                                     {},
                                 ],
@@ -720,9 +709,9 @@ async function getCompella()
                                 ],
                                 [
                                     {border: [false, false, false, false], text: 'Standard Features', style: 'textotablabold'},
-                                    {text: 'FOAM', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'TURN', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: 'CLRT', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                                    {text: 'FOAM', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: 'TURN', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                                    {text: 'CLRT', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Powered Width Expansions', style: 'textotabla'},
@@ -773,10 +762,10 @@ async function getCompella()
                                     {text: '●', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                                    {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                                    {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                                 ],
                             ]
                         },
@@ -806,7 +795,7 @@ async function getCompella()
         table2 = [
             {
                 table: {
-                    widths: [80, "*", 50, 50, 50],
+                    widths: [80, "*", 50, 50],
                     body: options
                 },
                 layout: {
@@ -924,9 +913,9 @@ async function getCompella()
                     ul: [
                             { text: 'Powered Width Expansion 40" or 50" (101 or 127cm)'},
                             { text: 'Powered Length Adjustment 80" - 88" (203 cm - 224 cm)'},
+                            { text: 'OIML Scale'},
                             { text: 'Battery Backup'},
                             { text: 'SlideGuard Technology'},
-                            { text: 'Line Manager'},
                         ]
                 },
                 {
@@ -936,6 +925,7 @@ async function getCompella()
                             { text: 'Digital HOB Angle Indicator and Alarm'},
                             { text: 'Integrated siderail patient controls'},
                             { text: 'Drainage Bag Holder'},
+                            { text: 'Line Manager'},
                         ]				
                 },
                 {
@@ -944,6 +934,7 @@ async function getCompella()
                             { text: '454 kg Patient Weight Capacity'},
                             { text: 'Nightlight'},
                             { text: 'Four Corner Brake & Steer and Brake Alarm'},
+                            { text: 'Point of Care Siderail Controls'},
                             { text: 'FlexAFoot'},
                         ]				
                 },

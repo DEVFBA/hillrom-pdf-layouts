@@ -11,9 +11,9 @@ async function getCenturisProBed()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'X3', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'X3', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
     ]
     pSItems++
 
@@ -140,15 +140,15 @@ async function getCenturisProBed()
                                     body: [
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                            {border: [false, false, false, false], text: 'CENTURISPRO', style: 'textotablabold', alignment: 'center'},
+                                            {border: [false, false, false, false], text: 'CENTURISPRO', style: 'textotablaboldlarge', alignment: 'center'},
                                         ],
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                            {text: 'X3', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                            {text: 'X3', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                                         ],
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                            { image: "images/CenturyProBed.png", width: 150, height: 210, alignment: 'center'},
+                                            { image: "images/CenturyProBed.png", width: 150, height: 100, alignment: 'center'},
                                         ],
                                         [
                                             {text: "Sleep Deck Surface", style: 'textotabla'},
@@ -167,8 +167,8 @@ async function getCenturisProBed()
                                             {text: "●", style: 'textotabla', alignment: 'center'},
                                         ],
                                         [
-                                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                                         ],
                                     ]
                                 }	,
@@ -223,11 +223,11 @@ async function getCenturisProBed()
                                         ],
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                            {text: 'X3', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                            {text: 'X3', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                                         ],
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                            { image: "images/CenturyProBed.png", width: 150, height: 210, alignment: 'center'},
+                                            { image: "images/CenturyProBed.png", width: 150, height: 100, alignment: 'center'},
                                         ],
                                         [
                                             {text: "Sleep Deck Surface", style: 'textotabla'},
@@ -246,8 +246,8 @@ async function getCenturisProBed()
                                             {text: "●", style: 'textotabla', alignment: 'center'},
                                         ],
                                         [
-                                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                                         ],
                                     ]
                                 }	,
@@ -403,27 +403,29 @@ async function getCenturisProBed()
                     style:'textolista',
                     ul: [
                             { text: 'Electric Sliding Backrest (SlideGuard™)'},
+                            { text: 'Electric knee break'},
                             { text: 'Manually adjustable foot section'},
                             { text: 'Intelligent AutoContour™'},
                             { text: 'Electric Trend/Rev. Trend with Line-Of-Site™ angle indicator'},
-                            { text: 'Mobile head section'},
-                            { text: 'HOB angle indication'},
+                            { text: 'Light grey frame (RAL7035)'},
                         ]
                 },
                 {
                     style:'textolista',
                     ul: [
+                            { text: 'Mobile head section'},
+                            { text: 'HOB angle indication'},
                             { text: 'Removable head & foot boards'},
                             { text: 'Steering castor at headend'},
                             { text: '150 mm Integral Castors'},
                             { text: 'Brake and steer at foot end'},
-                            { text: 'Bilateral emergency CPR'},
-                            { text: 'Central braking on 4 castors'},
                         ]				
                 },
                 {
                     style:'textolista',
                     ul: [
+                            { text: 'Bilateral emergency CPR'},
+                            { text: 'Central braking on 4 castors'},
                             { text: 'Four Lifting/IV Poles holders'},
                             { text: 'Battery back-up'},
                             { text: '4 bumpers'},

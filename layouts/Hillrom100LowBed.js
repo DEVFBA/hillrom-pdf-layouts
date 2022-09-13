@@ -53,21 +53,21 @@ async function getHilrom100LowBed()
                 body: [
                     [
                         {border: [false, false, false, false], text: ''},
-                        {text: 'LOWBED', style: 'textotablacolor', colSpan: 3, fillColor: '#546ce4',  alignment: 'center'},
+                        {text: 'LOWBED', style: 'textotablacolorlarge', colSpan: 3, fillColor: '#546ce4',  alignment: 'center'},
                         {},
                         {},
                     ],
                     [
                         {border: [false, false, false, false], text: ''},
-                        {text: 'P3930A2', style: 'textotablaboldblack', colSpan: 3, alignment: 'center'},
+                        {text: 'P3930A2', style: 'textotablaboldblacklarge', colSpan: 3, alignment: 'center'},
                         {},
                         {},
                     ],
                     [
-                        {border: [false, false, false, false], text: 'Special Features', style: 'textotablabold'},
-                        {text: 'LB-NONE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                        {text: 'LB-HALFF', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: 'LB-HALFC', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        {border: [false, false, false, false], text: 'Special Features', style: 'textotablaboldlarge'},
+                        {text: 'LB-NONE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                        {text: 'LB-HALFF', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                        {text: 'LB-HALFC', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                     ],
                     [
                         {text: 'Stone Frame Color', style: 'textotabla'},
@@ -118,10 +118,10 @@ async function getHilrom100LowBed()
                         {text: 'OPT', style: 'textotabla', alignment: 'center'}, 
                     ],
                     [
-                        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                     ],
                 ]
             },

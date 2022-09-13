@@ -11,22 +11,22 @@ async function getSleeperSofa()
 
     mainTable[pSItems] = [
         {border: [false, false, false, false], text: ''},
-        {text: 'SLEEPERSOFA', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
+        {text: 'SLEEPERSOFA', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
         {},
     ],
     pSItems++
 
     mainTable[pSItems] = [
-        {border: [false, false, false, false], text: 'PART #', style: 'textotablaboldblack'},
+        {border: [false, false, false, false], text: '', style: 'textotablaboldblack'},
         {text: '76" Sleeper Sofa', style: 'textotabla', alignment: 'center'},
         {text: '86" Sleeper Sofa', style: 'textotabla', alignment: 'center'},
     ]
     pSItems++
 
     mainTable[pSItems] = [
-        {border: [false, false, false, false], text: 'PART #', style: 'textotablaboldblack'},
-        {text: 'P9176A', style: 'textotablaboldblack', alignment: 'center'},
-        {text: 'P9186A', style: 'textotablaboldblack', alignment: 'center'},
+        {border: [false, false, false, false], text: 'PART #', style: 'textotablaboldblacklarge'},
+        {text: 'P9176A', style: 'textotablaboldblacklarge', alignment: 'center'},
+        {text: 'P9186A', style: 'textotablaboldblacklarge', alignment: 'center'},
     ]
     pSItems++
 
@@ -110,9 +110,9 @@ async function getSleeperSofa()
             }
             
             mainTable[pSItems] = [
-                {text: data.Item_Long_Desc, style: 'textotablacolornormal', fillColor: '#546ce4'},
-                {text: precio1, style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-                {text: precio2, style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+                {text: data.Item_Long_Desc, style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                {text: precio1, style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'}, 
+                {text: precio2, style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'}, 
             ]
 
             pSItems++
@@ -228,9 +228,9 @@ async function getSleeperSofa()
             {
                 columns: [
                     {
-                        width: 350,
+                        width: 400,
                         table: {
-                            widths: [140, 80, 80],
+                            widths: [140, 100, 100],
                             body: mainTable
                         },
                         layout: {
@@ -253,12 +253,12 @@ async function getSleeperSofa()
                         text: [
                             {text: '\n\n\n\n\n\n\n\n', style: 'textotablaboldblack', fillColor: '#546ce4'},
                             {text: 'Arm Cap Color\n', style: 'textotablaboldblack', fillColor: '#546ce4'},
-                            {text: 'Black\n', style: 'textotabla', fillColor: '#546ce4'},
-                            {text: 'White\n', style: 'textotabla', fillColor: '#546ce4'},
-                            {text: 'Dark Grey\n', style: 'textotabla', fillColor: '#546ce4'},
-                            {text: 'Light Grey\n', style: 'textotabla', fillColor: '#546ce4'},
-                            {text: 'Toffee\n', style: 'textotabla', fillColor: '#546ce4'},
-                            {text: 'Sand\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'B - Black\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'D - White\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'L - Dark Grey\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'S - Light Grey\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'T - Toffee\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'W - Sand\n', style: 'textotabla', fillColor: '#546ce4'},
                         ]
                     },
                 ]
@@ -272,7 +272,7 @@ async function getSleeperSofa()
         table2 = [
             {
                 table: {
-                    widths: [140, 80, 80],
+                    widths: [140, 100, 100],
                     body: options
                 },
                 layout: {

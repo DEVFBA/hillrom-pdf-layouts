@@ -188,12 +188,14 @@ async function getMobileLifts(pdfZone)
 
     if(generalData[0] !== undefined)
     {
+        var specifications = dividirCadena(generalData[0].Specifications, "Note");
         generalDataBody[pSItems] = [
-            {text: '\n\n\n\n\n\n\n\n\n\n\n' + generalData[0].KitName, style: 'textotablaboldblack', alignment: 'center', rowSpan: 5},
+            {text: '\n\n\n\n\n\n\n\n\n\n' + generalData[0].KitName, style: 'textotablaboldblacklarge', alignment: 'center', rowSpan: 5},
             {text: generalData[0].Id_Item, style: 'textotabla'},
             {text: [
                 {text: generalData[0].Item_Long_Desc + "\n", style: "textotablaboldblack"},
-                {text: generalData[0].Specifications, style: "textotabla"},
+                {text: specifications[0], style: "textotabla"},
+                {text: "\n\nNote" + specifications[1], style: "textotabla"}
             ]},
             { image: "images/Golvo1.png", width: 70, height: 80, alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(generalData[0].Price), style: 'textotabla', alignment: 'center'},
@@ -218,12 +220,14 @@ async function getMobileLifts(pdfZone)
 
     if(generalData[1] !== undefined)
     {
+        var specifications = dividirCadena(generalData[0].Specifications, "Note");
         generalDataBody[pSItems] = [
             {},
             {text: generalData[1].Id_Item, style: 'textotabla'},
             {text: [
                 {text: generalData[1].Item_Long_Desc + "\n", style: "textotablaboldblack"},
-                {text: generalData[1].Specifications, style: "textotabla"},
+                {text: specifications[0], style: "textotabla"},
+                {text: "\n\nNote" + specifications[1], style: "textotabla"}
             ], style: 'textotabla'},
             { image: "images/Golvo2.png", width: 70, height: 80, alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(generalData[1].Price), style: 'textotabla', alignment: 'center'},
@@ -248,7 +252,7 @@ async function getMobileLifts(pdfZone)
 
     generalDataBody[pSItems] = [
         {},
-        {text: 'Option', style: 'textotablaboldblack', fillColor: '#dbdbdb', colSpan: 4},
+        {text: 'Option', style: 'textotablaboldblacklarge', fillColor: '#dbdbdb', colSpan: 4},
         {}, 
         {}, 
         {}, 
@@ -443,6 +447,11 @@ async function getMobileLifts(pdfZone)
     ]
 
     return mobileLifts;
+}
+
+function dividirCadena(cadenaADividir, separador) {
+    var arrayDeCadenas = cadenaADividir.split(separador);
+    return arrayDeCadenas;
 }
 
 module.exports = {

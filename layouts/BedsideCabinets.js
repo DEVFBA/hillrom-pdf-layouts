@@ -9,9 +9,9 @@ async function getBedsideCabinets()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'Options', style: 'textotablabold', border: [false, false, false, false]},
-        {text: 'BSCM', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-        {text: 'BSCR', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+        {text: 'Options', style: 'textotablaboldlarge', border: [false, false, false, false]},
+        {text: 'BSCM', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+        {text: 'BSCR', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
     ]
     pSItems++
 
@@ -153,18 +153,18 @@ async function getBedsideCabinets()
                             body: [
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'PREMIUMBEDSIDECABINET', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
+                                    {text: 'PREMIUMBEDSIDECABINET', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
                                     {},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'BSCM', style: 'textotablabold', alignment: 'center'},
-                                    {text: 'BSCR', style: 'textotablabold', alignment: 'center'},
+                                    {text: 'BSCM', style: 'textotablaboldblacklarge', alignment: 'center'},
+                                    {text: 'BSCR', style: 'textotablaboldblacklarge', alignment: 'center'},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'Metropolitan™', style: 'textotablacolornormal', fillColor: '#546ce4',  alignment: 'center'},
-                                    {text: 'Areo™', style: 'textotablacolornormal', fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'Metropolitan™', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'Areo™', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: ''},
@@ -182,9 +182,9 @@ async function getBedsideCabinets()
                                     {text: '●', style: 'textotabla', alignment: 'center'},  
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
                                 ],
                             ]
                         },
@@ -222,18 +222,18 @@ async function getBedsideCabinets()
                             body: [
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'PREMIUMBEDSIDECABINET', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
+                                    {text: 'PREMIUMBEDSIDECABINET', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
                                     {},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'BSCM', style: 'textotablabold', alignment: 'center'},
-                                    {text: 'BSCR', style: 'textotablabold', alignment: 'center'},
+                                    {text: 'BSCM', style: 'textotablaboldblacklarge', alignment: 'center'},
+                                    {text: 'BSCR', style: 'textotablaboldblacklarge', alignment: 'center'},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'Metropolitan™', style: 'textotablacolornormal', fillColor: '#546ce4',  alignment: 'center'},
-                                    {text: 'Areo™', style: 'textotablacolornormal', fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'Metropolitan™', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'Areo™', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: ''},
@@ -251,9 +251,9 @@ async function getBedsideCabinets()
                                     {text: '●', style: 'textotabla', alignment: 'center'},  
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                    {text: "NO-DATA", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                    {text: "NO-DATA", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                                    {text: "NO-DATA", style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+                                    {text: "NO-DATA", style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
                                 ],
                             ]
                         },

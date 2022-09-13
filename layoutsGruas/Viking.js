@@ -222,12 +222,14 @@ async function getViking(pdfZone)
 
     if(salida1[0] !== undefined)
     {
+        var specifications = dividirCadena(salida1[0].Specifications, "Note");
         generalDataBody[pSItems] = [
-            {text: '\n\n\n\n\n\n\n\n\n\n\n' + salida1[0].KitName, style: 'textotablaboldblack', alignment: 'center', rowSpan: 7},
+            {text: '\n\n\n\n\n\n\n\n\n\n\n' + salida1[0].KitName, style: 'textotablaboldblacklarge', alignment: 'center', rowSpan: 7},
             {text: salida1[0].Id_Item, style: 'textotabla'},
             {text: [
                 {text: salida1[0].Item_Long_Desc + "\n", style: "textotablaboldblack"},
-                {text: salida1[0].Specifications, style: "textotabla"},
+                {text: specifications[0], style: "textotabla"},
+                {text: "\n\nNote" + specifications[1], style: "textotabla"}
             ]},
             { image: "images/Viking1.png", width: 70, height: 80, alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(salida1[0].Price), style: 'textotabla', alignment: 'center'},
@@ -252,12 +254,14 @@ async function getViking(pdfZone)
 
     if(salida1[1] !== undefined)
     {
+        var specifications = dividirCadena(salida1[1].Specifications, "Note");
         generalDataBody[pSItems] = [
             {},
             {text: salida1[1].Id_Item, style: 'textotabla'},
             {text: [
                 {text: salida1[1].Item_Long_Desc + "\n", style: "textotablaboldblack"},
-                {text: salida1[1].Specifications, style: "textotabla"},
+                {text: specifications[0], style: "textotabla"},
+                {text: "\n\nNote" + specifications[1], style: "textotabla"}
             ]},
             { image: "images/Viking2.png", width: 70, height: 80, alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(salida1[1].Price), style: 'textotabla', alignment: 'center'},
@@ -282,12 +286,14 @@ async function getViking(pdfZone)
 
     if(salida1[2] !== undefined)
     {
+        var specifications = dividirCadena(salida1[2].Specifications, "Note");
         generalDataBody[pSItems] = [
             {},
             {text: salida1[2].Id_Item, style: 'textotabla'},
             {text: [
                 {text: salida1[2].Item_Long_Desc + "\n", style: "textotablaboldblack"},
-                {text: salida1[2].Specifications, style: "textotabla"},
+                {text: specifications[0], style: "textotabla"},
+                {text: "\n\nNote" + specifications[1], style: "textotabla"}
             ]},
             { image: "images/Viking3.png", width: 70, height: 80, alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(salida1[2].Price), style: 'textotabla', alignment: 'center'},
@@ -312,7 +318,7 @@ async function getViking(pdfZone)
 
     generalDataBody[pSItems] = [
         {},
-        {text: 'Option', style: 'textotablaboldblack', fillColor: '#dbdbdb', colSpan: 4},
+        {text: 'Option', style: 'textotablaboldblacklarge', fillColor: '#dbdbdb', colSpan: 4},
         {}, 
         {}, 
         {}, 
@@ -531,6 +537,11 @@ async function getViking(pdfZone)
     ]
 
     return viking;
+}
+
+function dividirCadena(cadenaADividir, separador) {
+    var arrayDeCadenas = cadenaADividir.split(separador);
+    return arrayDeCadenas;
 }
 
 module.exports = {

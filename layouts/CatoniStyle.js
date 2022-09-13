@@ -17,12 +17,12 @@ async function getCatoniStyle()
     var options2 =[]
     var pSItems = 0;
     options2[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolorcatoni', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorcatoni', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'B01', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'B02', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'B03', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'B04', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'B01', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'B02', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'B03', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'B04', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
     pSItems++
 
@@ -154,12 +154,12 @@ async function getCatoniStyle()
     if(hingeData[0] !== undefined)
     {   
         options2[pSItems] = [
-            {text: hingeData[0].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: hingeData[0].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'},
-            {text: "-", style: 'textotabla', alignment: 'center'},  
+            {text: hingeData[0].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+            {text: hingeData[0].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: "●", style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "●", style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "●", style: 'textotablacatoni', alignment: 'center'},
+            {text: "-", style: 'textotablacatoni', alignment: 'center'},  
         ]
     
         pSItems++
@@ -168,12 +168,12 @@ async function getCatoniStyle()
     if(hingeData[3] !== undefined && hingeData[4] !== undefined && hingeData[5] !== undefined)
     {   
         options2[pSItems] = [
-            {text: hingeData[3].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: hingeData[3].Item_Long_Desc, style: 'textotabla'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[3].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[4].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[5].Price), style: 'textotabla', alignment: 'center'},
-            {text: "-", style: 'textotabla', alignment: 'center'},  
+            {text: hingeData[3].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+            {text: hingeData[3].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[3].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[4].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[5].Price), style: 'textotablacatoni', alignment: 'center'},
+            {text: "-", style: 'textotablacatoni', alignment: 'center'},  
         ]
     
         pSItems++
@@ -182,12 +182,12 @@ async function getCatoniStyle()
     if(hingeData[6] !== undefined && hingeData[7] !== undefined && hingeData[8] !== undefined)
     {
         options2[pSItems] = [
-            {text: hingeData[6].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: hingeData[6].Item_Long_Desc, style: 'textotabla'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[6].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[7].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[8].Price), style: 'textotabla', alignment: 'center'},
-            {text: "-", style: 'textotabla', alignment: 'center'},  
+            {text: hingeData[6].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+            {text: hingeData[6].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[6].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[7].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(hingeData[8].Price), style: 'textotablacatoni', alignment: 'center'},
+            {text: "-", style: 'textotablacatoni', alignment: 'center'},  
         ]
     
         pSItems++
@@ -321,12 +321,12 @@ async function getCatoniStyle()
     if(plasticDrawerData[0] !== undefined && plasticDrawerData[1] !== undefined && plasticDrawerData[2] !== undefined)
     {
         options2[pSItems] = [
-            {text: plasticDrawerData[0].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: plasticDrawerData[0].Item_Long_Desc, style: 'textotabla'},
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[0].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[1].Price), style: 'textotabla', alignment: 'center'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[2].Price), style: 'textotabla', alignment: 'center'},  
+            {text: plasticDrawerData[0].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+            {text: plasticDrawerData[0].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[0].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[1].Price), style: 'textotablacatoni', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[2].Price), style: 'textotablacatoni', alignment: 'center'},  
         ]
     
         pSItems++
@@ -335,12 +335,12 @@ async function getCatoniStyle()
     if(plasticDrawerData[3] !== undefined)
     {
         options2[pSItems] = [
-            {text: plasticDrawerData[3].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: plasticDrawerData[3].Item_Long_Desc, style: 'textotabla'},
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[3].Price), style: 'textotabla', alignment: 'center'},  
+            {text: plasticDrawerData[3].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+            {text: plasticDrawerData[3].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "-", style: 'textotablacatoni', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[3].Price), style: 'textotablacatoni', alignment: 'center'},  
         ]
     
         pSItems++
@@ -456,12 +456,12 @@ async function getCatoniStyle()
             }
             
             options2[pSItems] = [
-                {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-                {text: data.Item_Long_Desc, style: 'textotabla'},
-                {text: precio1, style: 'textotabla', alignment: 'center'}, 
-                {text: precio2, style: 'textotabla', alignment: 'center'}, 
-                {text: precio3, style: 'textotabla', alignment: 'center'},
-                {text: precio4, style: 'textotabla', alignment: 'center'},  
+                {text: data.Id_Item, style: 'textotablacatoni', alignment: 'center'},
+                {text: data.Item_Long_Desc, style: 'textotablacatoni'},
+                {text: precio1, style: 'textotablacatoni', alignment: 'center'}, 
+                {text: precio2, style: 'textotablacatoni', alignment: 'center'}, 
+                {text: precio3, style: 'textotablacatoni', alignment: 'center'},
+                {text: precio4, style: 'textotablacatoni', alignment: 'center'},  
             ]
 
             pSItems++
@@ -476,6 +476,17 @@ async function getCatoniStyle()
         }
         /*TERMINA CICLO*/
     }
+
+    options2[pSItems] = [
+        {text: 'Lockable drawer - not available with Sliding Tray (SLP)', style: 'textotablaboldlargecatoni', border: [false, false, false, false], colSpan: 2},
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+    ]
+
+    pSItems++
 
     options2[pSItems] = [
         {text: 'Castors', style: 'textotablaboldlargecatoni', border: [false, false, false, false], colSpan: 2},
@@ -604,12 +615,12 @@ async function getCatoniStyle()
     if(castorsData[0] !== undefined)
     {
         options2[pSItems] = [
-            {text: castorsData[0].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: castorsData[0].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'},
-            {text: "●", style: 'textotabla', alignment: 'center'},  
+            {text: castorsData[0].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+            {text: castorsData[0].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: "●", style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "●", style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "●", style: 'textotablacatoni', alignment: 'center'},
+            {text: "●", style: 'textotablacatoni', alignment: 'center'},  
         ]
     
         pSItems++
@@ -618,12 +629,12 @@ async function getCatoniStyle()
     if(castorsData[4] !== undefined && castorsData[5] !== undefined && castorsData[6] !== undefined && castorsData[7] !== undefined)
     {
         options2[pSItems] = [
-            {text: castorsData[4].Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: castorsData[4].Id_Item, style: 'textotablacatoni', alignment: 'center'},
             {text: castorsData[4].Item_Long_Desc, style: 'textotabla'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[4].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[5].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[6].Price), style: 'textotabla', alignment: 'center'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[7].Price), style: 'textotabla', alignment: 'center'},  
+            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[4].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[5].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[6].Price), style: 'textotablacatoni', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[7].Price), style: 'textotablacatoni', alignment: 'center'},  
         ]
     
         pSItems++
@@ -632,12 +643,12 @@ async function getCatoniStyle()
     if(castorsData[8] !== undefined && castorsData[9] !== undefined && castorsData[10] !== undefined && castorsData[11] !== undefined)
     {
         options2[pSItems] = [
-            {text: castorsData[8].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: castorsData[8].Item_Long_Desc, style: 'textotabla'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[8].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[9].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[10].Price), style: 'textotabla', alignment: 'center'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[11].Price), style: 'textotabla', alignment: 'center'},  
+            {text: castorsData[8].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+            {text: castorsData[8].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[8].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[9].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[10].Price), style: 'textotablacatoni', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[11].Price), style: 'textotablacatoni', alignment: 'center'},  
         ]
     
         pSItems++
@@ -646,12 +657,12 @@ async function getCatoniStyle()
     if(castorsData[12] !== undefined && castorsData[13] !== undefined && castorsData[14] !== undefined)
     {
         options2[pSItems] = [
-            {text: castorsData[12].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: castorsData[12].Item_Long_Desc, style: 'textotabla'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[12].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[13].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[14].Price), style: 'textotabla', alignment: 'center'},
-            {text: "-", style: 'textotabla', alignment: 'center'},  
+            {text: castorsData[12].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+            {text: castorsData[12].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[12].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[13].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(castorsData[14].Price), style: 'textotablacatoni', alignment: 'center'},
+            {text: "-", style: 'textotablacatoni', alignment: 'center'},  
         ]
     
         pSItems++
@@ -766,12 +777,12 @@ async function getCatoniStyle()
             }
             
             options2[pSItems] = [
-                {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-                {text: data.Item_Long_Desc, style: 'textotabla'},
-                {text: precio1, style: 'textotabla', alignment: 'center'}, 
-                {text: precio2, style: 'textotabla', alignment: 'center'}, 
-                {text: precio3, style: 'textotabla', alignment: 'center'},
-                {text: precio4, style: 'textotabla', alignment: 'center'},  
+                {text: data.Id_Item, style: 'textotablacatoni', alignment: 'center'},
+                {text: data.Item_Long_Desc, style: 'textotablacatoni'},
+                {text: precio1, style: 'textotablacatoni', alignment: 'center'}, 
+                {text: precio2, style: 'textotablacatoni', alignment: 'center'}, 
+                {text: precio3, style: 'textotablacatoni', alignment: 'center'},
+                {text: precio4, style: 'textotablacatoni', alignment: 'center'},  
             ]
 
             pSItems++
@@ -915,12 +926,12 @@ async function getCatoniStyle()
     if(additionalOptionsData[0] !== undefined && additionalOptionsData[1] !== undefined && additionalOptionsData[2] !== undefined && additionalOptionsData[3] !== undefined)
     {
         options2[pSItems] = [
-            {text: additionalOptionsData[0].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: additionalOptionsData[0].Item_Long_Desc, style: 'textotabla'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[0].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[1].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[2].Price), style: 'textotabla', alignment: 'center'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[3].Price), style: 'textotabla', alignment: 'center'},  
+            {text: additionalOptionsData[0].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+            {text: additionalOptionsData[0].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[0].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[1].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[2].Price), style: 'textotablacatoni', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[3].Price), style: 'textotablacatoni', alignment: 'center'},  
         ]
     
         pSItems++
@@ -929,12 +940,12 @@ async function getCatoniStyle()
     if(additionalOptionsData[4] !== undefined && additionalOptionsData[5] !== undefined)
     {
         options2[pSItems] = [
-            {text: additionalOptionsData[4].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: additionalOptionsData[4].Item_Long_Desc, style: 'textotabla'},
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[4].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[5].Price), style: 'textotabla', alignment: 'center'},  
+            {text: additionalOptionsData[4].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+            {text: additionalOptionsData[4].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[4].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "-", style: 'textotablacatoni', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[5].Price), style: 'textotablacatoni', alignment: 'center'},  
         ]
     
         pSItems++
@@ -943,12 +954,12 @@ async function getCatoniStyle()
     if(additionalOptionsData[6] !== undefined && additionalOptionsData[7] !== undefined && additionalOptionsData[8] !== undefined && additionalOptionsData[9] !== undefined)
     {
         options2[pSItems] = [
-            {text: additionalOptionsData[6].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: additionalOptionsData[6].Item_Long_Desc, style: 'textotabla'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[6].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[7].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[8].Price), style: 'textotabla', alignment: 'center'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[9].Price), style: 'textotabla', alignment: 'center'},  
+            {text: additionalOptionsData[6].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+            {text: additionalOptionsData[6].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[6].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[7].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[8].Price), style: 'textotablacatoni', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[9].Price), style: 'textotablacatoni', alignment: 'center'},  
         ]
     
         pSItems++
@@ -957,12 +968,12 @@ async function getCatoniStyle()
     if(additionalOptionsData[10] !== undefined && additionalOptionsData[11] !== undefined && additionalOptionsData[12] !== undefined && additionalOptionsData[13] !== undefined)
     {
         options2[pSItems] = [
-            {text: additionalOptionsData[10].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: additionalOptionsData[10].Item_Long_Desc, style: 'textotabla'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[10].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[11].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[12].Price), style: 'textotabla', alignment: 'center'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[13].Price), style: 'textotabla', alignment: 'center'},  
+            {text: additionalOptionsData[10].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+            {text: additionalOptionsData[10].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[10].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[11].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[12].Price), style: 'textotablacatoni', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[13].Price), style: 'textotablacatoni', alignment: 'center'},  
         ]
     
         pSItems++
@@ -971,12 +982,12 @@ async function getCatoniStyle()
     if(additionalOptionsData[14] !== undefined && additionalOptionsData[15] !== undefined && additionalOptionsData[16] !== undefined && additionalOptionsData[17] !== undefined)
     {
         options2[pSItems] = [
-            {text: additionalOptionsData[14].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: additionalOptionsData[14].Item_Long_Desc, style: 'textotabla'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[14].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[15].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[16].Price), style: 'textotabla', alignment: 'center'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[17].Price), style: 'textotabla', alignment: 'center'},  
+            {text: additionalOptionsData[14].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+            {text: additionalOptionsData[14].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[14].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[15].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[16].Price), style: 'textotablacatoni', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[17].Price), style: 'textotablacatoni', alignment: 'center'},  
         ]
     
         pSItems++
@@ -985,12 +996,12 @@ async function getCatoniStyle()
     if(additionalOptionsData[18] !== undefined && additionalOptionsData[19] !== undefined)
     {
         options2[pSItems] = [
-            {text: additionalOptionsData[18].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: additionalOptionsData[18].Item_Long_Desc, style: 'textotabla'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[18].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[19].Price), style: 'textotabla', alignment: 'center'},
-            {text: "-", style: 'textotabla', alignment: 'center'},  
+            {text: additionalOptionsData[18].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+            {text: additionalOptionsData[18].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[18].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptionsData[19].Price), style: 'textotablacatoni', alignment: 'center'},
+            {text: "-", style: 'textotablacatoni', alignment: 'center'},  
         ]
     
         pSItems++
@@ -1125,12 +1136,12 @@ async function getCatoniStyle()
     if(coloursContrastData[0] !== undefined && coloursContrastData[1] !== undefined && coloursContrastData[2] !== undefined)
     {
         options2[pSItems] = [
-            {text: coloursContrastData[0].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: coloursContrastData[0].Item_Long_Desc, style: 'textotabla'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[0].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[1].Price), style: 'textotabla', alignment: 'center'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[2].Price), style: 'textotabla', alignment: 'center'},  
+            {text: coloursContrastData[0].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+            {text: coloursContrastData[0].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[0].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[1].Price), style: 'textotablacatoni', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[2].Price), style: 'textotablacatoni', alignment: 'center'},  
         ]
     
         pSItems++
@@ -1139,12 +1150,12 @@ async function getCatoniStyle()
     if(coloursContrastData[3] !== undefined && coloursContrastData[4] !== undefined && coloursContrastData[5] !== undefined && coloursContrastData[6] !== undefined)
     {
         options2[pSItems] = [
-            {text: coloursContrastData[3].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: coloursContrastData[3].Item_Long_Desc, style: 'textotabla'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[3].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[4].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[5].Price), style: 'textotabla', alignment: 'center'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[6].Price), style: 'textotabla', alignment: 'center'},  
+            {text: coloursContrastData[3].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+            {text: coloursContrastData[3].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[3].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[4].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[5].Price), style: 'textotablacatoni', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(coloursContrastData[6].Price), style: 'textotablacatoni', alignment: 'center'},  
         ]
     
         pSItems++
@@ -1257,12 +1268,12 @@ async function getCatoniStyle()
             }
             
             options2[pSItems] = [
-                {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-                {text: data.Item_Long_Desc, style: 'textotabla'},
-                {text: precio1, style: 'textotabla', alignment: 'center'}, 
-                {text: precio2, style: 'textotabla', alignment: 'center'}, 
-                {text: precio3, style: 'textotabla', alignment: 'center'},
-                {text: precio4, style: 'textotabla', alignment: 'center'},  
+                {text: data.Id_Item, style: 'textotablacatoni', alignment: 'center'},
+                {text: data.Item_Long_Desc, style: 'textotablacatoni'},
+                {text: precio1, style: 'textotablacatoni', alignment: 'center'}, 
+                {text: precio2, style: 'textotablacatoni', alignment: 'center'}, 
+                {text: precio3, style: 'textotablacatoni', alignment: 'center'},
+                {text: precio4, style: 'textotablacatoni', alignment: 'center'},  
             ]
 
             pSItems++
@@ -1288,24 +1299,24 @@ async function getCatoniStyle()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'FURNCAB', style: 'textotablacolorcatoni', colSpan: 4, fillColor: '#546ce4',  alignment: 'center'},
+                            {text: 'FURNCAB', style: 'textotablacolorlarge', colSpan: 4, fillColor: '#546ce4',  alignment: 'center'},
                             {},
                             {},
                             {},
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'CH700B3', style: 'textotablaboldblackcatoni', colSpan: 4,  alignment: 'center'},
+                            {text: 'CH700B3', style: 'textotablaboldblacklarge', colSpan: 4,  alignment: 'center'},
                             {},
                             {},
                             {},
                         ],
                         [
-                            {border: [false, false, false, false], text: 'Catoni Style Bedside Cabinet - High', style: 'textotablaboldlargecatoni'},
-                            {text: 'B01', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B02', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B03', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B04', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
+                            {border: [false, false, false, false], text: 'Catoni Style Bedside Cabinet - High', style: 'textotablaboldlarge'},
+                            {text: 'B01', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B02', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B03', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B04', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                         ],
                         [
                             {border: [false, false, false, false], ul: [
@@ -1320,11 +1331,11 @@ async function getCatoniStyle()
                             { image: "images/Catoni14.png", width: 40, height: 70, alignment: 'center'},
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolorcatoni', fillColor: '#546ce4'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                         ],
                     ]
                 },
@@ -1353,29 +1364,29 @@ async function getCatoniStyle()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'FURNCAB', style: 'textotablacolorcatoni', colSpan: 4, fillColor: '#546ce4',  alignment: 'center'},
+                            {text: 'FURNCAB', style: 'textotablacolorlarge', colSpan: 4, fillColor: '#546ce4',  alignment: 'center'},
                             {},
                             {},
                             {},
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'CH700B3', style: 'textotablaboldblackcatoni', colSpan: 4,  alignment: 'center'},
+                            {text: 'CH700B3', style: 'textotablaboldblacklarge', colSpan: 4,  alignment: 'center'},
                             {},
                             {},
                             {},
                         ],
                         [
-                            {border: [false, false, false, false], text: 'Catoni Style Bedside Cabinet - High', style: 'textotablaboldlargecatoni'},
-                            {text: 'B01', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B02', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B03', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B04', style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
+                            {border: [false, false, false, false], text: 'Catoni Style Bedside Cabinet - High', style: 'textotablaboldlarge'},
+                            {text: 'B01', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B02', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B03', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B04', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                         ],
                         [
                             {border: [false, false, false, false], ul: [
                                 { text: 'Height 885 mm - Width 401 mm - Depth 401 mm'},
-                                { text: 'Material Body: Melamine - Top Plate: High Pressure Laminate (HPL) - Edges: Aluminium'},
+                                { text: 'Material Body and top : Melamine  Edges: Aluminium'},
                                 { text: 'For additional technical specifications see separate tech specs'},
                                 { text: 'For colour and handles see separate tech specs'},
                             ],  style:'textolista',},
@@ -1385,11 +1396,11 @@ async function getCatoniStyle()
                             { image: "images/Catoni14.png", width: 40, height: 70, alignment: 'center'},
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolorcatoni', fillColor: '#546ce4'},
-                            {text: "NO-DATA", style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "NO-DATA", style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "NO-DATA", style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "NO-DATA", style: 'textotablacolorcatoni', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                         ],
                     ]
                 },
@@ -1418,7 +1429,7 @@ async function getCatoniStyle()
         table2 = [
             {
                 table: {
-                    widths: [50, "*", 60, 60, 60, 60],
+                    widths: [70, "*", 60, 60, 60, 60],
                     body: options2
                 },
                 layout: {

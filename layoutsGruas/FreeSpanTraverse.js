@@ -316,7 +316,7 @@ async function getFreespanTraverse(pdfZone)
                     ],
                     [
                         {border: [true, true, false, true], text: [
-                           {text: "FREESPAN TRAVERSE\n", style: "textotablaboldblack"},
+                           {text: "FREESPAN TRAVERSE\n", style: "textotablaboldblacklarge"},
                            {text: "Product specification for a complete product:\n", style: "textotabla"},
                            {text: "FreeSpan Rail (Prod. No. 3103115-50 / 3103215-50) x 2 \nFreeSpan Upright Support (Prod. No. 3103515) \nFreeSpan Cross-beam (Prod. No. 3103020-3103040) \nStraight Rail H70, H100 or H140, \ndepending on cc-distance between the FreeSpan rails. \nEnd-stop (Prod. No. 3101060) \nTraverse Rail Carrier (3102531-3102532) \nParking Bracket FS Traverse (Prod. No. 3103502) \n(fits charger Prod. No. 3126101-3126104) \nLikorall/Multirall \nHand control \nSling bar / stretcher \nCharger \nSling\n", style: "textotabla"},
                         ]},
@@ -325,7 +325,7 @@ async function getFreespanTraverse(pdfZone)
                     ],
                     [
                         {border: [true, true, false, true], text: [
-                           {text: "FREESPAN ULTRATWIN TRAVERSE\n", style: "textotablaboldblack"},
+                           {text: "FREESPAN ULTRATWIN TRAVERSE\n", style: "textotablaboldblacklarge"},
                            {text: "Product specification for a complete product:\n", style: "textotabla"},
                            {text: "FreeSpan Rail (Prod. No. 3103115-3103135) x 2 \nFreeSpan Upright Support (Prod. No. 3103515) \nFreeSpan Cross-beam (Prod. No. 3103020-3103040) \nStraight Rail H70, H100 or H140, \ndepending on cc-distance between the \nFreeSpan rails End-stop (Prod. No. 3101060) x 2 \nTraverse Rail Carrier (3102531-3102532) x 2 \nUltra Traverse Damper (Prod. No. 3103604) \nParking Bracket FS Traverse (Prod. No. 3103502) x 2 \n(fits charger Prod. No. 3126101-3126104) \nLikorall x 2 \nHand control x 2 \nSling bar x 2 / stretcher \nCharger x 2 \nSling", style: "textotabla"},
                         ]},

@@ -11,13 +11,13 @@ async function getSleeperChair()
 
     mainTable[pSItems] = [
         {border: [false, false, false, false], text: ''},
-        {text: 'SLEEPERCHAIR', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
+        {text: 'SLEEPERCHAIR', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
         {},
     ],
     pSItems++
 
     mainTable[pSItems] = [
-        {border: [false, false, false, false], text: 'PART #', style: 'textotablaboldblack'},
+        {border: [false, false, false, false], text: '', style: 'textotablaboldblack'},
         {text: '35" Sleeper Chair', style: 'textotabla', alignment: 'center'},
         {text: '45" Sleeper Chair', style: 'textotabla', alignment: 'center'},
     ]
@@ -25,8 +25,8 @@ async function getSleeperChair()
 
     mainTable[pSItems] = [
         {border: [false, false, false, false], text: 'PART #', style: 'textotablaboldblack'},
-        {text: 'P9135A', style: 'textotablaboldblack', alignment: 'center'},
-        {text: 'P9145A', style: 'textotablaboldblack', alignment: 'center'},
+        {text: 'P9135A', style: 'textotablaboldblacklarge', alignment: 'center'},
+        {text: 'P9145A', style: 'textotablaboldblacklarge', alignment: 'center'},
     ]
     pSItems++
 
@@ -39,8 +39,8 @@ async function getSleeperChair()
 
     mainTable[pSItems] = [
         {text: 'Overall weight', style: 'textotabla'},
-        {text: '175 lbs', style: 'textotabla', alignment: 'center'},
-        {text: '182 lbs', style: 'textotabla', alignment: 'center'}, 
+        {text: '170 lbs', style: 'textotabla', alignment: 'center'},
+        {text: '220 lbs', style: 'textotabla', alignment: 'center'}, 
     ]
     pSItems++
 
@@ -110,9 +110,9 @@ async function getSleeperChair()
             }
             
             mainTable[pSItems] = [
-                {text: data.Item_Long_Desc, style: 'textotablacolornormal', fillColor: '#546ce4'},
-                {text: precio1, style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-                {text: precio2, style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+                {text: data.Item_Long_Desc, style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                {text: precio1, style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'}, 
+                {text: precio2, style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'}, 
             ]
 
             pSItems++
@@ -254,12 +254,12 @@ async function getSleeperChair()
                         text: [
                             {text: '\n\n\n\n\n\n\n\n', style: 'textotablaboldblack', fillColor: '#546ce4'},
                             {text: 'Arm Cap Color\n', style: 'textotablaboldblack', fillColor: '#546ce4'},
-                            {text: 'Black\n', style: 'textotabla', fillColor: '#546ce4'},
-                            {text: 'White\n', style: 'textotabla', fillColor: '#546ce4'},
-                            {text: 'Dark Grey\n', style: 'textotabla', fillColor: '#546ce4'},
-                            {text: 'Light Grey\n', style: 'textotabla', fillColor: '#546ce4'},
-                            {text: 'Toffee\n', style: 'textotabla', fillColor: '#546ce4'},
-                            {text: 'Sand\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'B - Black\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'D - White\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'L - Dark Grey\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'S - Light Grey\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'T - Toffee\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: 'W - Sand\n', style: 'textotabla', fillColor: '#546ce4'},
                         ]
                     },
                 ]
@@ -312,15 +312,12 @@ async function getSleeperChair()
                 {
                     style:'textolista',
                     ul: [
-                            { text: 'Available in 76” or 86” width'},
-                            { text: 'Easy fold down sleep pad'},
+                            { text: 'Available in 35” or 45” width'},
+                            { text: 'Easy pull-out mechanism for chaise or sleep surface'},
                             { text: 'Interior cubby for personal storage while sleeping (24”W x 6”H x 4.625”D)'},
-                            { text: 'Moisture barrier on sleep surface'},
-                            { text: 'Open bottom frame with 5 aluminum legs and non-marring glides'},
+                            { text: 'Open bottom frame with 4 casters (2 front locking)'},
                             { text: 'Solid surface arm caps available in multiple colors'},
-                            { text: 'Optional 5 casters with 2 front locking'},
-                            { text: 'Optional 2 soft close drawers for storage of pillows & blankets (24" W x 6" H x 22" D)'},
-                            { text: 'Optional swivel, solid surface tray table (right side sitting)'},
+                            { text: 'Optional swivel, solid surface tray table (right side sitting)'}
                         ]
                 },
             ]
@@ -337,18 +334,13 @@ async function getSleeperChair()
         "\n",
         "\n",
         "\n",
-        {
-            columns: [
-                {text: 'Solid Surface Color Options (Arm Caps & Tray Table)', style: 'textotablaboldlarge'},
-                {text: 'Powder Coat Options', style: 'textotablaboldlarge'},
-            ]
-        },
-        {
-            columns: [
-                { image: "images/SleeperChair2.png", width: 230, height: 130, alignment: 'center'},
-                { image: "images/SleeperChair3.png", width: 290, height: 70, alignment: 'center'},
-            ]
-        },
+        {text: 'Solid Surface Color Options (Arm Caps & Tray Table)', style: 'textotablaboldlarge'},
+        "\n",
+        { image: "images/SleeperChair2.png", width: 260, height: 150, alignment: 'center'},
+        "\n",
+        {text: 'Powder Coat Options', style: 'textotablaboldlarge'},
+        "\n",
+        { image: "images/SleeperChair3.png", width: 320, height: 90, alignment: 'center'},
         {text: '', pageBreak: 'after'  },
     ]
 

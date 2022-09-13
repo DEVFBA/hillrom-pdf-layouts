@@ -232,7 +232,7 @@ async function getFreeStand(pdfZone)
                     ],
                     [
                         {border: [true, true, false, true], text: [
-                           {text: "Product specification for a complete product:\n", style: "textotablaboldblack"},
+                           {text: "Product specification for a complete product:\n", style: "textotablaboldblacklarge"},
                            {text: "Rail H100, max 3.2 m (126 in) \n FreeStand Upright Support, Prod. No. 3104001. \nFreeStand Parking Set (Prod. No. 3104002) \nCarriage\n Likorall/Multirall \n Charger \nHand control \nSling bar/stretcher \nSling", style: "textotabla"},
                         ]},
                         {border: [false, true, false, true], image: "images/FreeStand1.png", width: 120, height: 90, alignment: 'center'},

@@ -349,7 +349,7 @@ async function getOverheadLifts(pdfZone)
 
     accesories2[pSItems] =[
         {border: [true, true, false, true], text: '', style: 'textotabla'},
-        {border: [false, true, true, true], text: 'Quick Reference Guide Likorall 200', style: 'textotablaboldblack', colSpan: 3},
+        {border: [false, true, true, true], text: 'Quick Reference Guide Likorall 200', style: 'textotablaboldblacklarge', colSpan: 3},
         {},
         {},
     ]
@@ -430,7 +430,7 @@ async function getOverheadLifts(pdfZone)
 
     accesories2[pSItems] =[
         {border: [true, true, false, true], text: '', style: 'textotabla'},
-        {border: [false, true, true, true], text: 'Quick Reference Guide Likorall 242 / 250', style: 'textotablaboldblack', colSpan: 3},
+        {border: [false, true, true, true], text: 'Quick Reference Guide Likorall 242 / 250', style: 'textotablaboldblacklarge', colSpan: 3},
         {},
         {},
     ]

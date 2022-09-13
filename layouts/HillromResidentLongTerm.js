@@ -16,13 +16,13 @@ async function getHillromResidentLongTerm()
 
     options[pSItems] = [
         {border: [false, false, false, false], text: "Options", style: 'textotablabold'},
-        {text: "LTC-320", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: "LTC-310", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: "LTC-300", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: "LTC-250", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: "LTC-205", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: "LTC-105", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: "LTC-100", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+        {text: "LTC-320", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: "LTC-310", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: "LTC-300", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: "LTC-250", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: "LTC-205", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: "LTC-105", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: "LTC-100", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
     ]
 
     pSItems++
@@ -176,10 +176,10 @@ async function getHillromResidentLongTerm()
     pSItems++
 
     accesories[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -246,7 +246,7 @@ async function getHillromResidentLongTerm()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'RESIDENTLTCBED', style: 'textotablacolor', colSpan: 7, fillColor: '#546ce4',  alignment: 'center'},
+                            {text: 'RESIDENTLTCBED', style: 'textotablacolorlarge', colSpan: 7, fillColor: '#546ce4',  alignment: 'center'},
                             {},
                             {},
                             {},
@@ -256,7 +256,7 @@ async function getHillromResidentLongTerm()
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'P870', style: 'textotablaboldblack', colSpan: 7, alignment: 'center'},
+                            {text: 'P870', style: 'textotablaboldblacklarge', colSpan: 7, alignment: 'center'},
                             {},
                             {},
                             {},
@@ -266,13 +266,13 @@ async function getHillromResidentLongTerm()
                         ],
                         [
                             {border: [false, false, false, false], text: 'Special Features', style: 'textotablabold'},
-                            {text: 'LTC-320', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'LTC-310', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'LTC-300', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'LTC-250', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'LTC-205', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'LTC-105', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'LTC-100', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LTC-320', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'LTC-310', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LTC-300', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LTC-250', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'LTC-205', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LTC-105', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LTC-100', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                         ],
                         [
                             {text: '1/2 Head Rails with Controls', style: 'textotabla'},
@@ -391,7 +391,7 @@ async function getHillromResidentLongTerm()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'RESIDENTLTCBED', style: 'textotablacolor', colSpan: 7, fillColor: '#546ce4',  alignment: 'center'},
+                            {text: 'RESIDENTLTCBED', style: 'textotablacolorlarge', colSpan: 7, fillColor: '#546ce4',  alignment: 'center'},
                             {},
                             {},
                             {},
@@ -401,7 +401,7 @@ async function getHillromResidentLongTerm()
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'P870', style: 'textotablaboldblack', colSpan: 7, alignment: 'center'},
+                            {text: 'P870', style: 'textotablaboldblacklarge', colSpan: 7, alignment: 'center'},
                             {},
                             {},
                             {},

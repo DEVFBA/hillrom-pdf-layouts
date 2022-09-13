@@ -487,7 +487,8 @@ async function getTherapySurfaces()
         { text: 'SURFACE COVERS', style: 'textotablaboldlarge' },
         table4,
         '\n',
-        { text: 'US SURFACES', style: 'textotablaboldlarge' },
+        { text: 'OTHER FOAM SURFACES', style: 'textotablaboldlarge' },
+        { text: 'Country of origin: México\n', style: 'parrafo' },
         table5,
         {text: '', pageBreak: 'after'  },
     ]

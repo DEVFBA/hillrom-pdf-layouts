@@ -15,15 +15,15 @@ async function getTheCenturisBed()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'C', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'C', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
         //{text: 'D', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
     ]
     pSItems++
 
     options[pSItems] = [
-        {text: "Brake", style: 'textotablabold', border: [false, false, false, false], colSpan: 2},
+        {text: "Brake", style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         //{text: '', border: [false, false, false, false]}, 
@@ -122,7 +122,7 @@ async function getTheCenturisBed()
     ]
 
     options[pSItems] = [
-        {text: 'Country Of Origin', style: 'textotablabold', border: [false, false, false, false], colSpan: 2},
+        {text: 'Country Of Origin', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         //{text: '', border: [false, false, false, false]}, 
@@ -224,7 +224,7 @@ async function getTheCenturisBed()
     ]
 
     options[pSItems] = [
-        {text: 'Voltaje', style: 'textotablabold', border: [false, false, false, false], colSpan: 2},
+        {text: 'Voltaje', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         //{text: '', border: [false, false, false, false]}, 
@@ -268,12 +268,12 @@ async function getTheCenturisBed()
     pSItems = 0
 
     surfaces[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'MODEL', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'SURFACE COVER', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'SIZE CODE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'SURFACE COVER', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'SIZE CODE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -323,10 +323,10 @@ async function getTheCenturisBed()
     pSItems = 0
 
     surfaces2[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -352,10 +352,10 @@ async function getTheCenturisBed()
     pSItems = 0
 
     surfaces3E[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -385,10 +385,10 @@ async function getTheCenturisBed()
     pSItems = 0
 
     accesories[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -427,12 +427,12 @@ async function getTheCenturisBed()
                             body: [
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'CENTURIS', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'CENTURIS', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
                                     //{}
                                 ],
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'C', style: 'textotablaboldblack', alignment: 'center'},
+                                    {text: 'C', style: 'textotablaboldblacklarge', alignment: 'center'},
                                     //{text: 'D', style: 'textotablaboldblack', alignment: 'center'},
                                 ],
                                 [
@@ -466,9 +466,9 @@ async function getTheCenturisBed()
                                     //{text: '●', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    //{text: /*"$" + Intl.NumberFormat("en-IN").format(prices[1].Price)*/ "NO DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                    //{text: /*"$" + Intl.NumberFormat("en-IN").format(prices[1].Price)*/ "NO DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                                 ],
                             ]
                         },
@@ -506,7 +506,7 @@ async function getTheCenturisBed()
                             body: [
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'CENTURIS', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'CENTURIS', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
                                     //{}
                                 ],
                                 [
@@ -545,9 +545,9 @@ async function getTheCenturisBed()
                                     //{text: '●', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    //{text: /*"$" + Intl.NumberFormat("en-IN").format(prices[1].Price)*/ "NO DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                                    {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                    //{text: /*"$" + Intl.NumberFormat("en-IN").format(prices[1].Price)*/ "NO DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                                 ],
                             ]
                         },
@@ -736,6 +736,7 @@ async function getTheCenturisBed()
                             { text: 'Four IV poles/accessory sockets'},
                             { text: 'Bilateral accessory holder'},
                             { text: '4 corner bumpers'},
+                            { text: 'Patient helper holder'},
                         ]				
                 },
                 {
@@ -759,7 +760,7 @@ async function getTheCenturisBed()
         {
             columns: [
                 [
-                    { image: "images/TheCenturisBed.png", width: 320, height: 260, alignment: 'center'},
+                    { image: "images/TheCenturisBed.png", width: 300, height: 210, alignment: 'center'},
                 ],
             ]
         },

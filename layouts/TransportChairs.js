@@ -15,9 +15,9 @@ async function getTransportChairs()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'SM647B', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'SM647B', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
     ]
     pSItems++
 
@@ -101,10 +101,10 @@ async function getTransportChairs()
     var accesories =[]
     var pSItems = 0;
     accesories[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
     ]
     pSItems++
 
@@ -131,27 +131,27 @@ async function getTransportChairs()
         table1 = [
             {
                 table: {
-                    widths: ["*", 80, 80,50],
+                    widths: [310, 80, 80],
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'METALARMCHAIR', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {text: 'METALARMCHAIR', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'}
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'SM647B', style: 'textotablaboldblack', alignment: 'center'},
+                            {text: 'SM647B', style: 'textotablaboldblack', alignment: 'center'}
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
-                            { image: "images/TransportChairs.png", width: 50, height: 80, alignment: 'center'},
+                            { image: "images/TransportChairs.png", width: 65, height: 80, alignment: 'center'}
                         ],
                         [
                             {text: '4 x 125 mm single-band with central brake (R2B)', style: 'textotabla', },
-                            {text: "●", style: 'textotabla', alignment: 'center'},
+                            {text: "●", style: 'textotabla', alignment: 'center'}
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                         ],
                     ]
                 },
@@ -176,27 +176,27 @@ async function getTransportChairs()
         table1 = [
             {
                 table: {
-                    widths: ["*", 80, 80,50],
+                    widths: [310, 80, 80],
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'METALARMCHAIR', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {text: 'METALARMCHAIR', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'}
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'SM647B', style: 'textotablaboldblack', alignment: 'center'},
+                            {text: 'SM647B', style: 'textotablaboldblack', alignment: 'center'}
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
-                            { image: "images/TransportChairs.png", width: 50, height: 80, alignment: 'center'},
+                            { image: "images/TransportChairs.png", width: 65, height: 80, alignment: 'center'}
                         ],
                         [
                             {text: '4 x 125 mm single-band with central brake (R2B)', style: 'textotabla', },
-                            {text: "●", style: 'textotabla', alignment: 'center'},
+                            {text: "●", style: 'textotabla', alignment: 'center'}
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}
                         ],
                     ]
                 },
@@ -224,7 +224,7 @@ async function getTransportChairs()
         table2 = [
             {
                 table: {
-                    widths: [50, 231, 80, 50],
+                    widths: [70, 231, 80, 50],
                     body: options
                 },
                 layout: {
@@ -251,7 +251,7 @@ async function getTransportChairs()
         table3 = [
             {
                 table: {
-                    widths: [50, 80, 142, 80, 50],
+                    widths: [70, 80, 142, 80, 50],
                     body: accesories
                 },
                 layout: {
@@ -304,8 +304,7 @@ async function getTransportChairs()
         { text: '\n', style: 'textotabla' },
         { text: '● = standard', style: 'textotabla' },
         { text: '\n', style: 'textotabla' },
-        { image: "images/TransportChairs2.png", width: 240, height: 60, alignment: 'center'},
-        { text: 'Head support Overchair table Comfort seating pad Telescopic IV pole (4 hooks)', style: 'parrafo', alignment: 'center' },
+        { image: "images/TransportChairs2.png", width: 420, height: 215, alignment: 'center'},
         {text: '', pageBreak: 'after'  },
     ]
 

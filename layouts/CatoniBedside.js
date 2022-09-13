@@ -14,10 +14,10 @@ async function getCatoniBedSide()
     var options3 =[]
     var pSItems = 0;
     options3[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'B03', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'B04', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'B03', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'B04', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
     pSItems++
 
@@ -616,35 +616,35 @@ async function getCatoniBedSide()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'FURNACUSELECT', style: 'textotablacolor', colSpan: 2, fillColor: '#546ce4',  alignment: 'center'},
+                            {text: 'FURNACUSELECT', style: 'textotablacolorlarge', colSpan: 2, fillColor: '#546ce4',  alignment: 'center'},
                             {},
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'SER-CH770A', style: 'textotablaboldblack', colSpan: 2,  alignment: 'center'},
+                            {text: 'SER-CH770A', style: 'textotablaboldblacklarge', colSpan: 2,  alignment: 'center'},
                             {},
                         ],
                         [
                             {border: [false, false, false, false], text: 'Catoni Bedside Cabinet with overbed table - bilateral functionality', style: 'textotablaboldlarge'},
-                            {text: 'B03', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B04', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B03', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B04', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                         ],
                         [
                             {border: [false, false, false, false], ul: [
                                 { text: 'Height 870 mm - Width 605 mm - Depth 450 mm'},
-                                { text: 'Material: Body - Top Plate: High Pressure Laminate (HPL) - Edges: Aluminium'},
-                                { text: 'Castors : 5 x 50 mm with 2 brakes'},
+                                { text: 'Material: sides: Melamine, Top Plate/drawers/ doors : High Pressure Laminate (HPL)'},
+                                { text: 'Castors: 5 x 50 mm with 2 brakes'},
                                 { text: 'Bumpers-grey'},
                                 { text: 'For additional technical specifications see separate tech specs'},
                                 { text: 'For colour and handles see separate tech specs'},
                             ],  style:'textolista',},
-                            { image: "images/Catoni21.png", width: 60, height: 70, alignment: 'center'},
-                            { image: "images/Catoni22.png", width: 60, height: 70, alignment: 'center'},
+                            { image: "images/Catoni21.png", width: 80, height: 70, alignment: 'center'},
+                            { image: "images/Catoni22.png", width: 80, height: 70, alignment: 'center'},
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                         ],
                     ]
                 },
@@ -673,35 +673,35 @@ async function getCatoniBedSide()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'FURNACUSELECT', style: 'textotablacolor', colSpan: 2, fillColor: '#546ce4',  alignment: 'center'},
+                            {text: 'FURNACUSELECT', style: 'textotablacolorlarge', colSpan: 2, fillColor: '#546ce4',  alignment: 'center'},
                             {},
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'SER-CH770A', style: 'textotablaboldblack', colSpan: 2,  alignment: 'center'},
+                            {text: 'SER-CH770A', style: 'textotablaboldblacklarge', colSpan: 2,  alignment: 'center'},
                             {},
                         ],
                         [
                             {border: [false, false, false, false], text: 'Catoni Bedside Cabinet with overbed table - bilateral functionality', style: 'textotablaboldlarge'},
-                            {text: 'B03', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B04', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B03', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B04', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                         ],
                         [
                             {border: [false, false, false, false], ul: [
                                 { text: 'Height 870 mm - Width 605 mm - Depth 450 mm'},
-                                { text: 'Material: Body - Top Plate: High Pressure Laminate (HPL) - Edges: Aluminium'},
-                                { text: 'Castors : 5 x 50 mm with 2 brakes'},
+                                { text: 'Material: sides: Melamine, Top Plate/drawers/ doors: High Pressure Laminate (HPL)'},
+                                { text: 'Castors: 5 x 50 mm with 2 brakes'},
                                 { text: 'Bumpers-grey'},
                                 { text: 'For additional technical specifications see separate tech specs'},
                                 { text: 'For colour and handles see separate tech specs'},
                             ],  style:'textolista',},
-                            { image: "images/Catoni21.png", width: 60, height: 70, alignment: 'center'},
-                            { image: "images/Catoni22.png", width: 60, height: 70, alignment: 'center'},
+                            { image: "images/Catoni21.png", width: 80, height: 70, alignment: 'center'},
+                            { image: "images/Catoni22.png", width: 80, height: 70, alignment: 'center'},
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                         ],
                     ]
                 },
@@ -730,7 +730,7 @@ async function getCatoniBedSide()
         table2 = [
             {
                 table: {
-                    widths: [70, "*", 60, 60],
+                    widths: [70, "*", 80, 80],
                     body: options3
                 },
                 layout: {
@@ -771,16 +771,16 @@ async function getCatoniBedSide()
                 widths: [67, 67, 67, 67],
                 body: [
                     [
-                        {text: 'B03 Plastic drawer insert (1BS) in top drawer', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'B03 with 2 x single bottle holder (BOH)', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'B04 with 2 x single bottle holder (BOH)', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'B03 Towel holder (TH)', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        {text: 'B03 Plastic drawer insert (1BS) in top drawer', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                        {text: 'B03 with 2 x single bottle holder (BOH)', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                        {text: 'B04 with 2 x single bottle holder (BOH)', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                        {text: 'B03 Towel holder (TH)', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
                     ],
                     [
-                        { image: "images/Catoni23.png", width: 50, height: 70, alignment: 'center'},
-                        { image: "images/Catoni24.png", width: 50, height: 70, alignment: 'center'},
-                        { image: "images/Catoni25.png", width: 50, height: 70, alignment: 'center'},
-                        { image: "images/Catoni26.png", width: 50, height: 70, alignment: 'center'},
+                        { image: "images/Catoni23.png", width: 60, height: 70, alignment: 'center'},
+                        { image: "images/Catoni24.png", width: 60, height: 70, alignment: 'center'},
+                        { image: "images/Catoni25.png", width: 60, height: 70, alignment: 'center'},
+                        { image: "images/Catoni26.png", width: 60, height: 70, alignment: 'center'},
                     ],
                 ]
             },
@@ -805,14 +805,14 @@ async function getCatoniBedSide()
                 widths: [67, 67, 67],
                 body: [
                     [
-                        {text: 'B03 Contrasting colours front (drawers and doors)', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'B03 Contrasting colours front and overbed table', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'B03 Contrasting colours front (drawers and doors)', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        {text: 'B03 Contrasting colours front (drawers and doors)', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                        {text: 'B03 Contrasting colours front and overbed table', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                        {text: 'B03 Contrasting colours front (drawers and doors)', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
                     ],
                     [
-                        { image: "images/Catoni27.png", width: 60, height: 60, alignment: 'center'},
-                        { image: "images/Catoni28.png", width: 60, height: 60, alignment: 'center'},
-                        { image: "images/Catoni29.png", width: 60, height: 60, alignment: 'center'},
+                        { image: "images/Catoni27.png", width: 75, height: 70, alignment: 'center'},
+                        { image: "images/Catoni28.png", width: 75, height: 70, alignment: 'center'},
+                        { image: "images/Catoni29.png", width: 75, height: 70, alignment: 'center'},
                     ],
                 ]
             },

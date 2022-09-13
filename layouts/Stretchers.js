@@ -24,13 +24,13 @@ async function getStretchers()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'P8000', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'P8005', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'P8010', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'P8040', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'P8050', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'P8000', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'P8005', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'P8010', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'P8040', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'P8050', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
     ]
     pSItems++
 
@@ -208,7 +208,7 @@ async function getStretchers()
     }
         
     options[pSItems] = [
-        {text: 'Surface', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
+        {text: 'Mattress', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
@@ -1895,13 +1895,13 @@ async function getStretchers()
     pSItems = 0
 
     options2[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'P8000', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'P8005', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'P8010', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'P8040', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'P8050', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'P8000', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'P8005', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'P8010', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'P8040', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'P8050', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -2532,14 +2532,14 @@ async function getStretchers()
     pSItems = 0
 
     surfaces[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'P8000', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'P8005', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'P8010', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'P8040', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'P8050', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'P8000', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'P8005', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'P8010', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'P8040', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'P8050', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -2761,10 +2761,10 @@ async function getStretchers()
     pSItems = 0
 
     accesories[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -2838,203 +2838,210 @@ async function getStretchers()
         /*TERMINA CICLO*/
     }
 
+
     var table1 = []
     if(prices.length > 0)
     {
         table1 = [
             {
-                columns: [
-                    {
-                        width: 80,
-                        text: ''
+                table: {
+                    widths: [80, "*", 50, 40, 40, 40, 40],
+                    body: [
+                        [
+                            {border: [false, false, false, false], text: 'Stretchers', style: 'header', colSpan: 2},
+                            {},
+                            {text: 'STRETCHER', style: 'textotablacolorlarge', colSpan: 5, fillColor: '#546ce4',  alignment: 'center'},
+                            {},
+                            {},
+                            {},
+                            {},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: 'Country of origin: México\n', style: 'parrafo', colSpan: 2},
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'P8000', style: 'textotablaboldblacklarge', alignment: 'center'},
+                            {text: 'P8005', style: 'textotablaboldblacklarge', alignment: 'center'},
+                            {text: 'P8010', style: 'textotablaboldblacklarge', alignment: 'center'},
+                            {text: 'P8040', style: 'textotablaboldblacklarge', alignment: 'center'},
+                            {text: 'P8050', style: 'textotablaboldblacklarge', alignment: 'center'},
+                        ],
+                        [
+                            {border: [false, false, false, false],
+                                ul: [
+                                        { text: 'Safe Working Load 317,5 kg'},
+                                    ], style:'textolista'
+                            , colSpan: 2},
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'Procedural', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'Transport', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'Surgical', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'Trauma', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'OB/GYN', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'PS', style: 'textotablaboldblack',  alignment: 'center'},
+                            {text: 'TN', style: 'textotablaboldblack',  alignment: 'center'},
+                            {text: 'SS', style: 'textotablaboldblack',  alignment: 'center'},
+                            {text: 'TS', style: 'textotablaboldblack',  alignment: 'center'},
+                            {text: 'OS', style: 'textotablaboldblack',  alignment: 'center'},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'Trendelenburg / Reverse Trendelenburg', style: 'textotabla'},
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'OneStep TuckAway siderails for zero-gap transfers', style: 'textotabla'},
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'Fold-down siderails', style: 'textotabla'},
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[4].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
                     },
-                    {
-                        width: "*",
-                        table: {
-                            widths: ["*", 40, 40, 40, 40, 40],
-                            body: [
-                                [
-                                    {border: [false, false, false, false], text: ''},
-                                    {text: 'STRETCHER', style: 'textotablacolor', colSpan: 5, fillColor: '#546ce4',  alignment: 'center'},
-                                    {},
-                                    {},
-                                    {},
-                                    {},
-                                ],
-                                [
-                                    {border: [false, false, false, false], text: ''},
-                                    {text: 'P8000', style: 'textotablaboldblack', alignment: 'center'},
-                                    {text: 'P8005', style: 'textotablaboldblack', alignment: 'center'},
-                                    {text: 'P8010', style: 'textotablaboldblack', alignment: 'center'},
-                                    {text: 'P8040', style: 'textotablaboldblack', alignment: 'center'},
-                                    {text: 'P8050', style: 'textotablaboldblack', alignment: 'center'},
-                                ],
-                                [
-                                    {border: [false, false, false, false], text: ''},
-                                    {text: 'Procedural', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'Transport', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'Surgical', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'Trauma', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'OB/GYN', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    
-                                ],
-                                [
-                                    {border: [false, false, false, false], text: ''},
-                                    {text: 'PS', style: 'textotablaboldblack',  alignment: 'center'},
-                                    {text: 'TN', style: 'textotablaboldblack',  alignment: 'center'},
-                                    {text: 'SS', style: 'textotablaboldblack',  alignment: 'center'},
-                                    {text: 'TS', style: 'textotablaboldblack',  alignment: 'center'},
-                                    {text: 'OS', style: 'textotablaboldblack',  alignment: 'center'},
-                                ],
-                                [
-                                    {text: 'Trendelenburg / Reverse Trendelenburg', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                ],
-                                [
-                                    {text: 'OneStep TuckAway siderails for zero-gap transfers', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                ],
-                                [
-                                    {text: 'Fold-down siderails', style: 'textotabla'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                ],
-                                [
-                                    {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[4].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                ],
-                            ]
-                        },
-                        layout: {
-                            hLineWidth: function () {
-                                return  0.7;
-                            },
-                            vLineWidth: function () {
-                                return 0.7;
-                            },
-                            hLineColor: function () {
-                                return 'gray';
-                            },
-                            vLineColor: function () {
-                                return 'gray';
-                            },
-                        }		
+                    vLineWidth: function () {
+                        return 0.7;
                     },
-                ]
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
             }
         ]
     }
     else {
         table1 = [
             {
-                columns: [
-                    {
-                        width: 80,
-                        text: ''
+                table: {
+                    widths: [80, "*", 50, 40, 40, 40, 40],
+                    body: [
+                        [
+                            {border: [false, false, false, false], text: 'Stretchers', style: 'header', colSpan: 2},
+                            {},
+                            {text: 'STRETCHER', style: 'textotablacolorlarge', colSpan: 5, fillColor: '#546ce4',  alignment: 'center'},
+                            {},
+                            {},
+                            {},
+                            {},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: 'Country of origin: México\n', style: 'parrafo', colSpan: 2},
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'P8000', style: 'textotablaboldblacklarge', alignment: 'center'},
+                            {text: 'P8005', style: 'textotablaboldblacklarge', alignment: 'center'},
+                            {text: 'P8010', style: 'textotablaboldblacklarge', alignment: 'center'},
+                            {text: 'P8040', style: 'textotablaboldblacklarge', alignment: 'center'},
+                            {text: 'P8050', style: 'textotablaboldblacklarge', alignment: 'center'},
+                        ],
+                        [
+                            {border: [false, false, false, false],
+                                ul: [
+                                        { text: 'Safe Working Load 317,5 kg'},
+                                    ], style:'textolista'
+                            , colSpan: 2},
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'Procedural', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'Transport', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'Surgical', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'Trauma', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'OB/GYN', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'PS', style: 'textotablaboldblack',  alignment: 'center'},
+                            {text: 'TN', style: 'textotablaboldblack',  alignment: 'center'},
+                            {text: 'SS', style: 'textotablaboldblack',  alignment: 'center'},
+                            {text: 'TS', style: 'textotablaboldblack',  alignment: 'center'},
+                            {text: 'OS', style: 'textotablaboldblack',  alignment: 'center'},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'Trendelenburg / Reverse Trendelenburg', style: 'textotabla'},
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'OneStep TuckAway siderails for zero-gap transfers', style: 'textotabla'},
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'Fold-down siderails', style: 'textotabla'},
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
                     },
-                    {
-                        width: "*",
-                        table: {
-                            widths: ["*", 40, 40, 40, 40, 40],
-                            body: [
-                                [
-                                    {border: [false, false, false, false], text: ''},
-                                    {text: 'STRETCHER', style: 'textotablacolor', colSpan: 5, fillColor: '#546ce4',  alignment: 'center'},
-                                    {},
-                                    {},
-                                    {},
-                                    {},
-                                ],
-                                [
-                                    {border: [false, false, false, false], text: ''},
-                                    {text: 'P8000', style: 'textotablaboldblack', alignment: 'center'},
-                                    {text: 'P8005', style: 'textotablaboldblack', alignment: 'center'},
-                                    {text: 'P8010', style: 'textotablaboldblack', alignment: 'center'},
-                                    {text: 'P8040', style: 'textotablaboldblack', alignment: 'center'},
-                                    {text: 'P8050', style: 'textotablaboldblack', alignment: 'center'},
-                                ],
-                                [
-                                    {border: [false, false, false, false], text: ''},
-                                    {text: 'Procedural', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'Transport', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'Surgical', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'Trauma', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'OB/GYN', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    
-                                ],
-                                [
-                                    {border: [false, false, false, false], text: ''},
-                                    {text: 'PS', style: 'textotablaboldblack',  alignment: 'center'},
-                                    {text: 'TN', style: 'textotablaboldblack',  alignment: 'center'},
-                                    {text: 'SS', style: 'textotablaboldblack',  alignment: 'center'},
-                                    {text: 'TS', style: 'textotablaboldblack',  alignment: 'center'},
-                                    {text: 'OS', style: 'textotablaboldblack',  alignment: 'center'},
-                                ],
-                                [
-                                    {text: 'Trendelenburg / Reverse Trendelenburg', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                ],
-                                [
-                                    {text: 'OneStep TuckAway siderails for zero-gap transfers', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                ],
-                                [
-                                    {text: 'Fold-down siderails', style: 'textotabla'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                ],
-                                [
-                                    {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                ],
-                            ]
-                        },
-                        layout: {
-                            hLineWidth: function () {
-                                return  0.7;
-                            },
-                            vLineWidth: function () {
-                                return 0.7;
-                            },
-                            hLineColor: function () {
-                                return 'gray';
-                            },
-                            vLineColor: function () {
-                                return 'gray';
-                            },
-                        }		
+                    vLineWidth: function () {
+                        return 0.7;
                     },
-                ]
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
             }
         ]
     }
@@ -3046,7 +3053,7 @@ async function getStretchers()
         table2 = [
             {
                 table: {
-                    widths: [50, "*", 40, 40, 40, 40, 40],
+                    widths: [50, "*", 50, 40, 40, 40, 40],
                     body: options
                 },
                 layout: {
@@ -3073,7 +3080,7 @@ async function getStretchers()
         table3 = [
             {
                 table: {
-                    widths: [50, "*", 40, 40, 40, 40, 40],
+                    widths: [50, "*", 50, 40, 40, 40, 40],
                     body: optionsSurface
                 },
                 layout: {
@@ -3100,7 +3107,7 @@ async function getStretchers()
         table4 = [
             {
                 table: {
-                    widths: [50, "*", 40, 40, 40, 40, 40],
+                    widths: [50, "*", 50, 40, 40, 40, 40],
                     body: options2
                 },
                 layout: {
@@ -3182,21 +3189,7 @@ async function getStretchers()
         "\n",
         "\n",
         "\n",
-        { text: 'Stretchers', style: 'header'},
         { text: 'Procedural / Transport / Surgical / Trauma / OB-GYN', style: { fontSize: 0}, tocItem: 'stretchers'},
-        { text: 'Country of origin: México\n', style: 'parrafo' },
-        { text: '\n', style: 'parrafo' },
-        {
-            columns: [
-                {
-                    style:'textolista',
-                    ul: [
-                            { text: 'Safe Working Load 317,5 kg'},
-                        ]
-                },
-                
-            ]
-        },
         table1,
         "\n",
         table2,

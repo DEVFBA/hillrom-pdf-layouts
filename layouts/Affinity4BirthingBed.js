@@ -15,16 +15,16 @@ async function getAffinity4BirthingBed()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'AF400', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'AF450', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'AF500', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'AF550', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'AF600', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'AF650', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'AF700', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'AF750', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'AF400', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'AF450', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'AF500', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'AF550', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'AF600', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'AF650', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'AF700', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'AF750', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
     pSItems++
 
@@ -621,10 +621,10 @@ async function getAffinity4BirthingBed()
     pSItems = 0
 
     surfaces[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -711,10 +711,10 @@ async function getAffinity4BirthingBed()
     pSItems = 0
 
     accesories[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -741,288 +741,270 @@ async function getAffinity4BirthingBed()
     {
         table1 = [
             {
-                columns: [
-                    {
-                        width: 80,
-                        text: ''
+                table: {
+                    widths: ["*", 38, 38, 38, 38, 38, 38, 38, 38],
+                    body: [
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'AFFINITY4', style: 'textotablacolorlarge', colSpan: 8, fillColor: '#546ce4',  alignment: 'center'},
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'P3700', style: 'textotablaboldblacklarge', colSpan: 8,  alignment: 'center'},
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'AF400', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'AF450', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'AF500', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'AF550', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'AF600', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'AF650', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'AF700', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'AF750', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                        ],
+                        [
+                            {text: 'Prevention (Foam) Surface', style: 'textotabla'},
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: 'Air Package (Lumbar & Seat)', style: 'textotabla'},
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: 'Nurse Call, lighting, Entertainment & UTV', style: 'textotabla'},
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: 'Lift-Off Foot Section', style: 'textotabla'},
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'},  
+                        ],
+                        [
+                            {text: 'Stow and Go Foot Section', style: 'textotabla'},
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: 'Plastic Blow Molded Head Panel* - (STD)', style: 'textotabla'},
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[4].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[5].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[6].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[7].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
                     },
-                    {
-                        width: "*",
-                        table: {
-                            widths: ["*", 30, 30, 30, 30, 30, 30, 30, 30,],
-                            body: [
-                                [
-                                    {border: [false, false, false, false], text: ''},
-                                    {text: 'AFFINITY4', style: 'textotablacolor', colSpan: 8, fillColor: '#546ce4',  alignment: 'center'},
-                                    {},
-                                    {},
-                                    {},
-                                    {},
-                                    {},
-                                    {},
-                                    {},
-                                ],
-                                [
-                                    {border: [false, false, false, false], text: ''},
-                                    {text: 'P3700', style: 'textotablaboldblack', colSpan: 8,  alignment: 'center'},
-                                    {},
-                                    {},
-                                    {},
-                                    {},
-                                    {},
-                                    {},
-                                    {},
-                                ],
-                                [
-                                    {border: [false, false, false, false], text: ''},
-                                    {text: 'AF400', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'AF450', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'AF500', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'AF550', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'AF600', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'AF650', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'AF700', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'AF750', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                ],
-                                [
-                                    {text: 'Prevention (Foam) Surface', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                ],
-                                [
-                                    {text: 'Air Package (Lumbar & Seat)', style: 'textotabla'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                ],
-                                [
-                                    {text: 'Nurse Call, lighting, Entertainment &', style: 'textotabla'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                ],
-                                [
-                                    {text: 'Lift-Off Foot Section', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'},  
-                                ],
-                                [
-                                    {text: 'Stow and Go Foot Section', style: 'textotabla'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                ],
-                                [
-                                    {text: 'Plastic Blow Molded Head Panel* - (', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                ],
-                                [
-                                    {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[4].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[5].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[6].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[7].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                ],
-                            ]
-                        },
-                        layout: {
-                            hLineWidth: function () {
-                                return  0.7;
-                            },
-                            vLineWidth: function () {
-                                return 0.7;
-                            },
-                            hLineColor: function () {
-                                return 'gray';
-                            },
-                            vLineColor: function () {
-                                return 'gray';
-                            },
-                        }		
+                    vLineWidth: function () {
+                        return 0.7;
                     },
-                ]
-            }
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
+            }        
         ]   
     }
     else {
         table1 = [
             {
-                columns: [
-                    {
-                        width: 80,
-                        text: ''
+                table: {
+                    widths: ["*", 38, 38, 38, 38, 38, 38, 38, 38],
+                    body: [
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'AFFINITY4', style: 'textotablacolorlarge', colSpan: 8, fillColor: '#546ce4',  alignment: 'center'},
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'P3700', style: 'textotablaboldblacklarge', colSpan: 8,  alignment: 'center'},
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'AF400', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'AF450', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'AF500', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'AF550', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'AF600', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'AF650', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'AF700', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'AF750', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                        ],
+                        [
+                            {text: 'Prevention (Foam) Surface', style: 'textotabla'},
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: 'Air Package (Lumbar & Seat)', style: 'textotabla'},
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: 'Nurse Call, lighting, Entertainment &', style: 'textotabla'},
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: 'Lift-Off Foot Section', style: 'textotabla'},
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'},  
+                        ],
+                        [
+                            {text: 'Stow and Go Foot Section', style: 'textotabla'},
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: 'Plastic Blow Molded Head Panel* - (', style: 'textotabla'},
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                        ],
+                        [
+                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
                     },
-                    {
-                        width: "*",
-                        table: {
-                            widths: ["*", 30, 30, 30, 30, 30, 30, 30, 30,],
-                            body: [
-                                [
-                                    {border: [false, false, false, false], text: ''},
-                                    {text: 'AFFINITY4', style: 'textotablacolor', colSpan: 8, fillColor: '#546ce4',  alignment: 'center'},
-                                    {},
-                                    {},
-                                    {},
-                                    {},
-                                    {},
-                                    {},
-                                    {},
-                                ],
-                                [
-                                    {border: [false, false, false, false], text: ''},
-                                    {text: 'P3700', style: 'textotablaboldblack', colSpan: 8,  alignment: 'center'},
-                                    {},
-                                    {},
-                                    {},
-                                    {},
-                                    {},
-                                    {},
-                                    {},
-                                ],
-                                [
-                                    {border: [false, false, false, false], text: ''},
-                                    {text: 'AF400', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'AF450', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'AF500', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'AF550', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'AF600', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'AF650', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'AF700', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'AF750', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                ],
-                                [
-                                    {text: 'Prevention (Foam) Surface', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                ],
-                                [
-                                    {text: 'Air Package (Lumbar & Seat)', style: 'textotabla'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                ],
-                                [
-                                    {text: 'Nurse Call, lighting, Entertainment &', style: 'textotabla'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                ],
-                                [
-                                    {text: 'Lift-Off Foot Section', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'},  
-                                ],
-                                [
-                                    {text: 'Stow and Go Foot Section', style: 'textotabla'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                ],
-                                [
-                                    {text: 'Plastic Blow Molded Head Panel* - (', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                ],
-                                [
-                                    {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                ],
-                            ]
-                        },
-                        layout: {
-                            hLineWidth: function () {
-                                return  0.7;
-                            },
-                            vLineWidth: function () {
-                                return 0.7;
-                            },
-                            hLineColor: function () {
-                                return 'gray';
-                            },
-                            vLineColor: function () {
-                                return 'gray';
-                            },
-                        }		
+                    vLineWidth: function () {
+                        return 0.7;
                     },
-                ]
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }		
             }
         ]
     }
@@ -1033,7 +1015,7 @@ async function getAffinity4BirthingBed()
         table2 = [
             {
                 table: {
-                    widths: [50, "*", 30, 30, 30, 30, 30, 30, 30, 30],
+                    widths: [70, "*", 38, 38, 38, 38, 38, 38, 38, 38],
                     body: options
                 },
                 layout: {
@@ -1141,6 +1123,7 @@ async function getAffinity4BirthingBed()
                             { text: 'Manual Trend-like positioning'},
                             { text: 'Instant CPR'},
                             { text: 'Instant Labor Grips'},
+                            { text: '3 Funnel Drapes'},
                         ]				
                 },
                 {
@@ -1150,7 +1133,7 @@ async function getAffinity4BirthingBed()
                             { text: 'IV Pole'},
                             { text: 'Hinged Foot Section Surface'},
                             { text: 'Central Brake and Steer'},
-                            { text: 'Instant Labor Grips'},
+                            { text: 'Fluid Basin'},
                         ]				
                 },
                 {

@@ -11,11 +11,11 @@ async function get305ManualBed()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'SIZE (L x W x H)', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'SIZE (L x W x H)', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
     ]
     pSItems++
 
@@ -41,11 +41,11 @@ async function get305ManualBed()
     pSItems = 0
 
     options2[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'SIZE (L x W x H)', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'SIZE (L x W x H)', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
     ]
     pSItems++
 
@@ -71,10 +71,10 @@ async function get305ManualBed()
     pSItems = 0
 
     accesories[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
     ]
     pSItems++
 
@@ -119,7 +119,7 @@ async function get305ManualBed()
                                     body: [
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                            {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                            {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                                         ],
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
@@ -130,8 +130,8 @@ async function get305ManualBed()
                                             {text: "●", style: 'textotabla', alignment: 'center'},
                                         ],
                                         [
-                                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                                         ],
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
@@ -146,7 +146,7 @@ async function get305ManualBed()
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
                                         ],
                                         [
-                                            {border: [false, false, false, false], colspan: 2, image: "images/305ManualBed.png", width: 210, height: 150, alignment: 'center'},
+                                            {border: [false, false, false, false], colspan: 2, image: "images/305ManualBed.png", width: 240, height: 150, alignment: 'center'},
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
                                         ],
                                     ]
@@ -198,7 +198,7 @@ async function get305ManualBed()
                                     body: [
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                            {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                            {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                                         ],
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
@@ -209,8 +209,8 @@ async function get305ManualBed()
                                             {text: "●", style: 'textotabla', alignment: 'center'},
                                         ],
                                         [
-                                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                                         ],
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
@@ -225,7 +225,7 @@ async function get305ManualBed()
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
                                         ],
                                         [
-                                            {border: [false, false, false, false], colspan: 2, image: "images/305ManualBed.png", width: 210, height: 150, alignment: 'center'},
+                                            {border: [false, false, false, false], colspan: 2, image: "images/305ManualBed.png", width: 240, height: 150, alignment: 'center'},
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
                                         ],
                                     ]
@@ -388,11 +388,12 @@ async function get305ManualBed()
             ]
         },
         "\n",
+        { text: 'Mattress sold separately but shipped from same location.', style: 'parrafo' },
+        "\n",
         table1,
         "\n",
-        { text: 'Country of origin: USA\n', style: 'parrafo' },
-        table2,
-        "\n",
+        { text: 'SURFACES', style: 'textotablaboldlarge' },
+        //table2,
         { text: 'Country of origin: CHINA\n', style: 'parrafo' },
         table3,
         "\n",

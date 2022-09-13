@@ -94,8 +94,6 @@ async function getSabina(pdfZone)
             {
                 cadena2 = cadena2 + (salida5[i].Item_Long_Desc).charAt(k)
             }
-            //console.log(cadena1)
-            //console.log(cadena2)
 
             if(i === 0)
             {
@@ -390,7 +388,7 @@ async function getSabina(pdfZone)
 
     accesories[pSItems] =[
         {text: [
-            {text: 'SUPPORT VEST MOD 91', style: "textotablaboldblack"},
+            {text: 'SUPPORT VEST MOD 91', style: "textotablaboldblacklarge"},
             {text: 'Support Vest Mod 91', style: {fontSize: 0}, tocItem: "safetyvestmod91"},
         ], fillColor: '#dbdbdb', colSpan: 4},
         {},
@@ -620,7 +618,7 @@ async function getSabina(pdfZone)
 
     accesories2[pSItems] =[
         {text: [
-            {text: 'SAFETY VEST MOD 93', style: "textotablaboldblack"},
+            {text: 'SAFETY VEST MOD 93', style: "textotablaboldblacklarge"},
             {text: 'Support Vest Mod 93', style: {fontSize: 0}, tocItem: "safetyvestmod93"},
         ], fillColor: '#dbdbdb', colSpan: 4,},
         {},
@@ -732,7 +730,7 @@ async function getSabina(pdfZone)
     
     accesories2[pSItems] =[
         {text: [
-            {text: 'COMFORT VEST MOD 95', style: "textotablaboldblack", },
+            {text: 'COMFORT VEST MOD 95', style: "textotablaboldblacklarge", },
             {text: 'Comfort Vest Mod 95', style: {fontSize: 0}, tocItem: "confortvestmod95"},
         ], fillColor: '#dbdbdb', colSpan: 4},
         {},
@@ -843,7 +841,7 @@ async function getSabina(pdfZone)
 
     accesories2[pSItems] =[
         {text: [
-            {text: 'SOLO SUPPORT VEST', style: "textotablaboldblack"},
+            {text: 'SOLO SUPPORT VEST', style: "textotablaboldblacklarge"},
             {text: 'Solo Support Vest', style: {fontSize: 0}, tocItem: "safetyvestmod911"},
         ], fillColor: '#dbdbdb', colSpan: 4},
         {},
@@ -956,8 +954,8 @@ async function getSabina(pdfZone)
     if(salida1[0] !== undefined)
     {
         generalDataBody[pSItems] = [
-            {text: '\n\n\n\n\n\n\n\n' + salida1[0].KitName, style: 'textotablaboldblack', alignment: 'center', rowSpan: 5},
-            {text: salida1[0].Id_Item, style: 'textotablacatoni'},
+            {text: '\n\n\n\n\n\n\n\n' + salida1[0].KitName, style: 'textotablaboldblacklarge', alignment: 'center', rowSpan: 5},
+            {text: salida1[0].Id_Item, style: 'textotabla'},
             {text: [
                 {text: salida1[0].Item_Long_Desc + "\n", style: "textotablaboldblack"},
                 {text: salida1[0].Specifications, style: "textotabla"},
@@ -970,8 +968,8 @@ async function getSabina(pdfZone)
     }
     else {
         generalDataBody[pSItems] = [
-            {text: '\n\n\n\n\n\n\n\n' + "NO-DATA", style: 'textotablaboldblack', alignment: 'center', rowSpan: 5},
-            {text: "NO-DATA", style: 'textotablacatoni'},
+            {text: '\n\n\n\n\n\n\n\n' + "NO-DATA", style: 'textotablaboldblacklarge', alignment: 'center', rowSpan: 5},
+            {text: "NO-DATA", style: 'textotabla'},
             {text: [
                 {text: "NO-DATA" + "\n", style: "textotablaboldblack"},
                 {text: "NO-DATA", style: "textotabla"},
@@ -985,7 +983,7 @@ async function getSabina(pdfZone)
 
     generalDataBody[pSItems] = [
         {},
-        {text: 'Option', style: 'textotablaboldblack', fillColor: '#dbdbdb', colSpan: 4},
+        {text: 'Option', style: 'textotablaboldblacklarge', fillColor: '#dbdbdb', colSpan: 4},
         {}, 
         {}, 
         {}, 

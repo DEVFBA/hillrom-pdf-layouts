@@ -270,7 +270,7 @@ async function getFreespanStraightRail(pdfZone)
                     ],
                     [
                         {border: [true, true, false, true], text: [
-                           {text: "\n\nProduct specification for a complete product:\n", style: "textotablaboldblack"},
+                           {text: "\n\nProduct specification for a complete product:\n", style: "textotablaboldblacklarge"},
                            {text: "FreeSpan Rail (Prod. No. 3103115 - 50 / 3103215 - 50)\n", style: "textotabla"},
                            {text: "FreeSpan Side Support (Prod. No. 3103512)\n", style: "textotabla"},
                            {text: "Likorall / Multirall\n", style: "textotabla"},
