@@ -2,7 +2,6 @@ var config = require("../dbconfig"); //instanciamos el archivo dbconfig
 const sql = require("mssql"); //necesitamos el paquete sql
 var jwt = require('jsonwebtoken');
 var config2 = require('../configs/config');
-
 var fs = require('fs');
 
 //Iniciar sesión
@@ -13,12 +12,9 @@ async function iniciarSesion(req) {
             .input('pvuser', sql.VarChar, req.user)
             .input('pvpassword', sql.VarChar, req.password)
             .execute('spSecurity_Get_ValidateUser')
-        //console.log(JSON.stringify(userLogin.recordsets[0][0]));
 
-        var expiration = await config2.getExpiration()
-        var secret = await config2.getSecret()
-        console.log(expiration)
-        console.log(secret)
+        var expiration = await config2.getExpiration();
+        var secret = await config2.getSecret();
 
         const today = new Date();
         const exp = new Date(today);
@@ -30,7 +26,7 @@ async function iniciarSesion(req) {
             exp: parseInt(exp.getTime() / 1000),
         }, secret);
 
-        var response = {}
+        var response = {};
         if(userLogin.recordsets[0][0].Successfully==="1")
         {
             response = {
@@ -50,18 +46,10 @@ async function iniciarSesion(req) {
                 }
             }
         }
-        /*var response = {
-            data: {
-                status: userLogin.recordsets[0][0]
-            }
-        }*/
-        //console.log(token)
-        //userLogin.recordsets[0][1] = {token: token}
-        //return userLogin.recordsets
-        console.log(response)
-        return response
+        console.log(response);
+        return response;
     }catch(error){
-        console.log(error)
+        console.log(error);
     }
 }
 

@@ -122,88 +122,7 @@ async function getCatoniBedSide()
         {text: '', border: [false, false, false, false]}, 
     ]
 
-    pSItems ++
-
-    /*ESTO VA EN UN CICLO*/
-    /*var i=0;
-    var plasticDrawerFlag = false
-    while(plasticDrawerFlag === false)
-    {
-        var j;
-        if(i===0)
-        {
-            j=0
-        }
-        else {
-            j = i*2
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< plasticDrawerData.length && countC<2)
-        {
-           precios[preciosCount] = plasticDrawerData[j].Price
-           printCaracter[preciosCount] = plasticDrawerData[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: plasticDrawerData[j-1].Id_Item,
-            Item_Long_Desc: plasticDrawerData[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
-            {
-                precio1 = "●"
-            }
-            else {
-                precio1 = "-"
-            }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
-            {
-                precio2 = "●"
-            }
-            else {
-                precio2 = "-"
-            }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-        
-        options3[pSItems] = [
-            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'}, 
-        ]
-
-        pSItems++
-
-        //console.log(data)
-
-        if(j >= plasticDrawerData.length)
-        {
-            plasticDrawerFlag = true
-        }
-        i++
-    }*/
+    pSItems++;
     
     if(plasticDrawerData[0] !== undefined && plasticDrawerData[1] !== undefined)
     {
@@ -229,6 +148,16 @@ async function getCatoniBedSide()
         pSItems++
         /*TERMINA CICLO*/
     }
+
+
+    options3[pSItems] = [
+        {text: 'Castors', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+    ]
+
+    pSItems++;
 
     options3[pSItems] = [
         {text: 'Towel Holder', style: 'textotablaboldlarge', border: [false, false, false, false]},
@@ -325,8 +254,8 @@ async function getCatoniBedSide()
     }
 
     options3[pSItems] = [
-        {text: '2 x single bottle hold', style: 'textotablaboldlargecatoni', border: [false, false, false, false], colSpan: 2},
-        {text: '* Note: will be discontinued last order March 2021', style: 'textotablaboldblackcatoni', border: [false, false, false, false]},
+        {text: '2 x single bottle hold', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 3},
+        {border: [false, false, false, false], text: ""},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
     ]
@@ -418,7 +347,7 @@ async function getCatoniBedSide()
         /*TERMINA CICLO*/
     }
 
-    options3[pSItems] = [
+    /*options3[pSItems] = [
         {text: 'Colour contrast (only one additional colour choice is possible)', style: 'textotablaboldlargecatoni', border: [false, false, false, false], colSpan: 4},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
@@ -429,7 +358,6 @@ async function getCatoniBedSide()
 
     if(coloursContrast.length > 0)
     {
-        /*ESTO VA EN UN CICLO*/
         var i=0;
         var coloursContrastFlag = false
         while(coloursContrastFlag === false)
@@ -509,8 +437,7 @@ async function getCatoniBedSide()
             }
             i++
         }   
-        /*TERMINA CICLO*/
-    }
+    }*/
 
     options3[pSItems] = [
         {text: 'Handles', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},

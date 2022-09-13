@@ -25,7 +25,7 @@ auth.use(async (req, res, next) => {
             .input('pvpassword', sql.VarChar, decoded.pass)
             .execute('spSecurity_Get_ValidateUser');
           
-            console.log(validUser.recordset.length)
+            //console.log(validUser.recordset.length)
           if( validUser.recordset.length === 0 || validUser.recordset[0].Successfully === "0" ){
             return res.status(401).json( { 
               data: {

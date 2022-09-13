@@ -13,6 +13,7 @@ async function getCatoniStyle()
     const additionalOptionsData = res[6]
     const coloursContrastData = res[7]
     const handlesData = res[8]
+    const lockableDrawerData = res[9]
 
     var options2 =[]
     var pSItems = 0;
@@ -26,7 +27,7 @@ async function getCatoniStyle()
     ]
     pSItems++
 
-    options2[pSItems] = [
+    /*options2[pSItems] = [
         {text: "Hinge", style: 'textotablaboldlargecatoni', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
@@ -35,7 +36,7 @@ async function getCatoniStyle()
         {text: '', border: [false, false, false, false]}, 
     ]
 
-    pSItems++
+    pSItems++*/
 
     /*ESTO VA EN UN CICLO*/
     /*var i=0;
@@ -165,7 +166,7 @@ async function getCatoniStyle()
         pSItems++
     }
     
-    if(hingeData[3] !== undefined && hingeData[4] !== undefined && hingeData[5] !== undefined)
+    /*if(hingeData[3] !== undefined && hingeData[4] !== undefined && hingeData[5] !== undefined)
     {   
         options2[pSItems] = [
             {text: hingeData[3].Id_Item, style: 'textotablacatoni', alignment: 'center'},
@@ -191,11 +192,10 @@ async function getCatoniStyle()
         ]
     
         pSItems++
-    }
-    
+    }*/
     
     options2[pSItems] = [
-        {text: 'Plastic drawer insert', style: 'textotablaboldlargecatoni', border: [false, false, false, false], colSpan: 2},
+        {text: 'Plastic drawer insert', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
@@ -349,7 +349,7 @@ async function getCatoniStyle()
     
 
     options2[pSItems] = [
-        {text: 'Fixed strip or sliding tray', style: 'textotablaboldlargecatoni', border: [false, false, false, false], colSpan: 2},
+        {text: 'Fixed strip or sliding tray', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
@@ -478,7 +478,7 @@ async function getCatoniStyle()
     }
 
     options2[pSItems] = [
-        {text: 'Lockable drawer - not available with Sliding Tray (SLP)', style: 'textotablaboldlargecatoni', border: [false, false, false, false], colSpan: 2},
+        {text: 'Lockable drawer - not available with Sliding Tray (SLP)', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
@@ -488,8 +488,38 @@ async function getCatoniStyle()
 
     pSItems++
 
+     /*ESTO VA EN UN CICLO*/
+    
+    if(lockableDrawerData[0] !== undefined || lockableDrawerData[1] !== undefined || lockableDrawerData[2] !== undefined)
+    {
+        options2[pSItems] = [
+            {text: lockableDrawerData[0].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+            {text: lockableDrawerData[0].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(lockableDrawerData[0].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(lockableDrawerData[1].Price), style: 'textotablacatoni', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(lockableDrawerData[2].Price), style: 'textotablacatoni', alignment: 'center'},  
+        ]
+    
+        pSItems++
+    }
+
+    if(lockableDrawerData[3] !== undefined)
+    {
+        options2[pSItems] = [
+            {text: lockableDrawerData[3].Id_Item, style: 'textotablacatoni', alignment: 'center'},
+            {text: lockableDrawerData[3].Item_Long_Desc, style: 'textotablacatoni'},
+            {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "-", style: 'textotablacatoni', alignment: 'center'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(lockableDrawerData[3].Price), style: 'textotablacatoni', alignment: 'center'},  
+        ]
+    
+        pSItems++
+    }
+
     options2[pSItems] = [
-        {text: 'Castors', style: 'textotablaboldlargecatoni', border: [false, false, false, false], colSpan: 2},
+        {text: 'Castors', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
@@ -670,7 +700,7 @@ async function getCatoniStyle()
     }
     
     options2[pSItems] = [
-        {text: 'Accessory bar holder', style: 'textotablaboldlargecatoni', border: [false, false, false, false], colSpan: 2},
+        {text: 'Accessory bar holder', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
@@ -800,7 +830,7 @@ async function getCatoniStyle()
     }
 
     options2[pSItems] = [
-        {text: 'Additional options', style: 'textotablaboldlargecatoni', border: [false, false, false, false], colSpan: 2},
+        {text: 'Additional options', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
@@ -1008,8 +1038,8 @@ async function getCatoniStyle()
         /*TERMINA CICLO*/
     }
 
-    options2[pSItems] = [
-        {text: 'Colour contrast (only one additional colour choice is possible)', style: 'textotablaboldlargecatoni', border: [false, false, false, false], colSpan: 6},
+    /*options2[pSItems] = [
+        {text: 'Colour contrast (only one additional colour choice is possible)', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 6},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
@@ -1017,7 +1047,7 @@ async function getCatoniStyle()
         {text: '', border: [false, false, false, false]}, 
     ]
 
-    pSItems++
+    pSItems++*/
 
     /*ESTO VA EN UN CICLO*/
     /*var i=0;
@@ -1133,7 +1163,7 @@ async function getCatoniStyle()
     }   */
     /*TERMINA CICLO*/
 
-    if(coloursContrastData[0] !== undefined && coloursContrastData[1] !== undefined && coloursContrastData[2] !== undefined)
+    /*if(coloursContrastData[0] !== undefined && coloursContrastData[1] !== undefined && coloursContrastData[2] !== undefined)
     {
         options2[pSItems] = [
             {text: coloursContrastData[0].Id_Item, style: 'textotablacatoni', alignment: 'center'},
@@ -1159,10 +1189,10 @@ async function getCatoniStyle()
         ]
     
         pSItems++
-    }
+    }*/
     
     options2[pSItems] = [
-        {text: 'Handles', style: 'textotablaboldlargecatoni', border: [false, false, false, false], colSpan: 2},
+        {text: 'Handles', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
@@ -1464,7 +1494,7 @@ async function getCatoniStyle()
         { text: '● = standard', style: 'textotablacatoni' },
         { text: '= - not available', style: 'textotablacatoni' },
         { text: '\n', style: 'parrafo' },
-        { text: 'Configurations samples', style: 'textotablaboldlargecatoni' },
+        { text: 'Configurations samples', style: 'textotablaboldlarge' },
         {
             table: {
                 widths: [80, 80, 80, 80, 80, "*"],

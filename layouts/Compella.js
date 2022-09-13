@@ -23,7 +23,7 @@ async function getCompella()
         {text: 'FOAM', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
         {text: 'TURN', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
     ]
-    pSItems++;
+    pSItems++;      
 
     options[pSItems] = [
         {text: "Mobility", style: 'textotablabold', border: [false, false, false, false], colSpan: 2},

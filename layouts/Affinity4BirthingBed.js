@@ -217,7 +217,7 @@ async function getAffinity4BirthingBed()
 
             if(j >= straight.length)
             {
-                straightLayout = true
+                straightLayout = true;
             }
             i++
         }   
@@ -226,7 +226,7 @@ async function getAffinity4BirthingBed()
     
  
     options[pSItems] = [
-        {text: 'Surface Foot Section', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
+        {text: 'Mattress Foot Section', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 

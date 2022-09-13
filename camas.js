@@ -577,7 +577,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
         contenido.push(coverPage)
         contenido.push(index2)
         
-        console.log(layouts)
+        //console.log(layouts)
 
         for(var i=0; i<layouts.length; i++)
         {

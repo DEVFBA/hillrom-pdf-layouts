@@ -905,7 +905,7 @@ async function getStretchers()
     }
     
     options[pSItems] = [
-        {text: 'IV pole transport push handles (not available with handbrake - HB)', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
+        {text: 'IV pole transport push handles (Requires Push Handles & O2 for P8005 - requires Push Handles for other models)', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
@@ -2882,11 +2882,11 @@ async function getStretchers()
                         [
                             {border: [false, false, false, false], text: ''},
                             {border: [false, false, false, false], text: ''},
-                            {text: 'PS', style: 'textotablaboldblack',  alignment: 'center'},
-                            {text: 'TN', style: 'textotablaboldblack',  alignment: 'center'},
-                            {text: 'SS', style: 'textotablaboldblack',  alignment: 'center'},
-                            {text: 'TS', style: 'textotablaboldblack',  alignment: 'center'},
-                            {text: 'OS', style: 'textotablaboldblack',  alignment: 'center'},
+                            {text: 'PS', style: 'textotablaboldblacklarge',  alignment: 'center'},
+                            {text: 'TN', style: 'textotablaboldblacklarge',  alignment: 'center'},
+                            {text: 'SS', style: 'textotablaboldblacklarge',  alignment: 'center'},
+                            {text: 'TS', style: 'textotablaboldblacklarge',  alignment: 'center'},
+                            {text: 'OS', style: 'textotablaboldblacklarge',  alignment: 'center'},
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
@@ -2917,12 +2917,12 @@ async function getStretchers()
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[4].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[4].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                         ],
                     ]
                 },
@@ -2984,11 +2984,11 @@ async function getStretchers()
                         [
                             {border: [false, false, false, false], text: ''},
                             {border: [false, false, false, false], text: ''},
-                            {text: 'PS', style: 'textotablaboldblack',  alignment: 'center'},
-                            {text: 'TN', style: 'textotablaboldblack',  alignment: 'center'},
-                            {text: 'SS', style: 'textotablaboldblack',  alignment: 'center'},
-                            {text: 'TS', style: 'textotablaboldblack',  alignment: 'center'},
-                            {text: 'OS', style: 'textotablaboldblack',  alignment: 'center'},
+                            {text: 'PS', style: 'textotablaboldblacklarge',  alignment: 'center'},
+                            {text: 'TN', style: 'textotablaboldblacklarge',  alignment: 'center'},
+                            {text: 'SS', style: 'textotablaboldblacklarge',  alignment: 'center'},
+                            {text: 'TS', style: 'textotablaboldblacklarge',  alignment: 'center'},
+                            {text: 'OS', style: 'textotablaboldblacklarge',  alignment: 'center'},
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
@@ -3019,12 +3019,12 @@ async function getStretchers()
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                         ],
                     ]
                 },

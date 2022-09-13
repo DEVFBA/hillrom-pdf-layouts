@@ -17,6 +17,7 @@ async function getMedSurgAccesories()
     const sidelaicData = res[8]
     const traysData = res[9]
     const tractionData = res[10]
+    const furnitureSupportsData = res[11]
 
     var options =[]
     var pSItems = 0;
@@ -338,40 +339,6 @@ async function getMedSurgAccesories()
             {text: "$" + Intl.NumberFormat("en-IN").format(supportsData[3].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
-
-        supports[pSItems] = [
-            {text: supportsData[6].KitName, style: 'textotabla'},
-            {text: supportsData[6].Part, style: 'textotabla'},
-            {text: supportsData[6].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(supportsData[6].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-        pSItems++
-
-        supports[pSItems] = [
-            {text: supportsData[8].KitName, style: 'textotabla'},
-            {text: supportsData[8].Part, style: 'textotabla'},
-            {text: supportsData[8].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(supportsData[8].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-        pSItems++
-
-        supports[pSItems] = [
-            {text: supportsData[10].KitName, style: 'textotabla'},
-            {text: supportsData[10].Part, style: 'textotabla'},
-            {text: supportsData[10].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(supportsData[10].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-        pSItems++
-        /*TERMINA CICLO*/
     }
     
 
@@ -483,6 +450,35 @@ async function getMedSurgAccesories()
             i++
         } 
         /*TERMINA CICLO*/
+    }
+
+    var furnitureSupports = []
+    pSItems = 0
+
+    if(furnitureSupportsData.length > 0)
+    {
+        /*ESTO VA EN UN CICLO*/
+        furnitureSupports[pSItems] = [
+            {text: furnitureSupportsData[0].KitName, style: 'textotabla'},
+            {text: furnitureSupportsData[0].Part, style: 'textotabla'},
+            {text: furnitureSupportsData[0].Item_Long_Desc, style: 'textotabla'},
+            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(furnitureSupportsData[0].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+        pSItems++
+
+        furnitureSupports[pSItems] = [
+            {text: furnitureSupportsData[3].KitName, style: 'textotabla'},
+            {text: furnitureSupportsData[3].Part, style: 'textotabla'},
+            {text: furnitureSupportsData[3].Item_Long_Desc, style: 'textotabla'},
+            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(furnitureSupportsData[3].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+        pSItems++
     }
     
     var liftpole = []
@@ -1318,6 +1314,33 @@ async function getMedSurgAccesories()
         ]
     }
 
+    var table11 = []
+    if(furnitureSupportsData.length > 0)
+    {
+        table11 = [
+            {
+                table: {
+                    widths: [70, 50, "*", 50, 50, 50, 50],
+                    body: furnitureSupports
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                } 
+            }
+        ]
+    }
+
     var table5 = []
     if(liftPoleData.length > 0)
     {
@@ -1503,6 +1526,9 @@ async function getMedSurgAccesories()
         { text: 'TANKHOLDER', style: 'textotablaboldlarge' },
         table4,
         { text: 'The above tank holders are not available for the Hill-Rom 900 bed with 125 mm casters', style: ['quote', "small"] },
+        { text: '\n', style: 'parrafo' },
+        { text: 'FURNITURE & SUPPORT ACCESSORIES', style: 'textotablaboldlarge' },
+        table11,
         {text: '', pageBreak: 'after'  },
         "\n",
         "\n",
