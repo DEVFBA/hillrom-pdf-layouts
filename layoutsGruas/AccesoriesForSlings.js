@@ -348,7 +348,7 @@ async function getAccesoriesForSlings(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, true], text: salida6[i].Part, style: 'textotabla'},
                     {border: [true, true, true, true], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/AccesoriesForSlings7.png", width: 80, height: 15, alignment: 'center', rowSpan: salida6.length},
+                    {border: [true, true, true, true], image: "images/AccesoriesForSlings10.png", width: 60, height: 30, alignment: 'center', rowSpan: salida6.length},
                     {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -359,7 +359,7 @@ async function getAccesoriesForSlings(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida6[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida6[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/AccesoriesForSlings7.png", width: 80, height: 15, alignment: 'center', rowSpan: salida6.length},
+                    {border: [true, true, true, true], image: "images/AccesoriesForSlings10.png", width: 60, height: 30, alignment: 'center', rowSpan: salida6.length},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida6[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             

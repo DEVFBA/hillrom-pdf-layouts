@@ -43,10 +43,10 @@ async function getOverheadLifts(pdfZone)
     const salida38 = res[37]
     const salida39 = res[38]
     const salida40 = res[39]
+    const salida41 = res[40]
 
     var accesories = []
     var pSItems = 0
-
 
     if(salida1.length > 0)
     {
@@ -3163,6 +3163,28 @@ async function getOverheadLifts(pdfZone)
             
         }
         /*TERMINA CICLO*/
+    }
+
+    if(salida41.length > 0)
+    {
+        
+        accesories5[pSItems] =[
+            {border: [true, true, true, false], text: salida41[0].Part, style: 'textotabla'},
+            {border: [true, true, true, false], text: salida41[0].Item_Long_Desc, style: 'textotabla'},
+            {border: [true, true, true, true], image: "images/LiftingAccesories1.png", width: 80, height: 28, alignment: 'center', rowSpan: 2},
+            {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida41[0].Price), style: 'textotabla', alignment: 'center'},
+        ]
+    
+        pSItems++
+
+        accesories5[pSItems] =[
+            {border: [true, false, true, true], text: ""},
+            {border: [true, false, true, true], text: salida41[0].Specifications, style: 'textotabla'},
+            {border: [true, false, true, true], text: ""},
+            {border: [true, false, true, true], text: ""},
+        ]
+    
+        pSItems++
     }
 
     var table1 = [];
