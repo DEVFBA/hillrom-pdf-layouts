@@ -23,7 +23,7 @@ async function getHillrom900Accella()
     pSItems++
 
     options[pSItems] = [
-        {border: [false, false, false, false], text: 'Mattress', style: 'textotablaboldlarge', colSpan: 3},
+        {border: [false, false, false, false], text: 'Surfaces', style: 'textotablaboldlarge', colSpan: 3},
         {},
         {},
     ]

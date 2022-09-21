@@ -333,7 +333,7 @@ async function getSeatingFurniture()
         "\n",
         "\n",
         "\n",
-        { text: 'Seating Furniture', style: 'header' },
+        { text: 'Healthcare Furniture', style: 'header' },
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         { text: 'RECLINERS\n', style: 'subheader'},
         { text: 'Recliners, Sleeper Sofa and Sleeper Chair', style: { fontSize: 0}, tocItem: 'seatingFurniture'},

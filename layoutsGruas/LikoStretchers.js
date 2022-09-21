@@ -177,7 +177,7 @@ async function getLikoStretchers(pdfZone)
                 accesories[pSItems] =[
                     {border: [true, true, true, false], text: salida3[i].Part, style: 'textotabla'},
                     {border: [true, true, true, false], text: salida3[i].Item_Long_Desc, style: 'textotablaboldblack'},
-                    {border: [true, true, true, true], image: "images/LikoStretchers3.png", width: 60, height: 40, alignment: 'center', rowSpan: salida3.length+1},
+                    {border: [true, true, true, false], image: "images/LikoStretchers3.png", width: 60, height: 40, alignment: 'center', rowSpan: salida3.length+1},
                     {border: [true, true, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida3[i].Price), style: 'textotabla', alignment: 'center'},
                 ]
             
@@ -195,10 +195,10 @@ async function getLikoStretchers(pdfZone)
                 pSItems++
 
                 accesories[pSItems] =[
-                    {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: salida3[i].Specifications, style: 'textotabla'},
-                    {border: [true, false, true, true], text: ""},
-                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: salida3[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, false], text: ""},
                 ]
             
                 pSItems++
@@ -477,10 +477,10 @@ async function getLikoStretchers(pdfZone)
                 pSItems++
 
                 accesories2[pSItems] =[
-                    {border: [true, false, true, false], text: ""},
-                    {border: [true, false, true, false], text: salida8[i].Specifications, style: 'textotabla'},
-                    {border: [true, false, true, false], text: ""},
-                    {border: [true, false, true, false], text: ""},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: salida8[i].Specifications, style: 'textotabla'},
+                    {border: [true, false, true, true], text: ""},
+                    {border: [true, false, true, true], text: ""},
                 ]
             
                 pSItems++

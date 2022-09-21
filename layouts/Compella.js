@@ -643,13 +643,13 @@ async function getCompella()
                                 ],
                                 [
                                     {text: 'Foam Surface (with air supply unit)', style: 'textotabla'},
-                                    {text: "$15,665.80", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: "$15,064", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Low Air Loss Surface (with air supply unit)', style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: "$24,710.32", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: "$23,760", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: 'Surface Add-Ons', style: 'textotablabold', colSpan:3},
@@ -659,7 +659,7 @@ async function getCompella()
                                 [
                                     {text: 'Continuous Lateral Rotation Therapy (CLRT)', style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: "$5,025.12", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                                    {text: "$4,831", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                                 ],
                             ]
                         },

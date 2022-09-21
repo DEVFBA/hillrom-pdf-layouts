@@ -1351,7 +1351,7 @@ async function getCatoniStyle()
                         [
                             {border: [false, false, false, false], ul: [
                                 { text: 'Height 885 mm - Width 401 mm - Depth 401 mm'},
-                                { text: 'Material Body: Melamine - Top Plate: High Pressure Laminate (HPL) - Edges: Aluminium'},
+                                { text: 'Material Body and Top : Melamine  Edges: Aluminium'},
                                 { text: 'For additional technical specifications see separate tech specs'},
                                 { text: 'For colour and handles see separate tech specs'},
                             ],  style:'textolista',},
@@ -1416,7 +1416,7 @@ async function getCatoniStyle()
                         [
                             {border: [false, false, false, false], ul: [
                                 { text: 'Height 885 mm - Width 401 mm - Depth 401 mm'},
-                                { text: 'Material Body and top : Melamine  Edges: Aluminium'},
+                                { text: 'Material Body and Top : Melamine  Edges: Aluminium'},
                                 { text: 'For additional technical specifications see separate tech specs'},
                                 { text: 'For colour and handles see separate tech specs'},
                             ],  style:'textolista',},

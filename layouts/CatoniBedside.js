@@ -161,7 +161,7 @@ async function getCatoniBedSide()
 
     options3[pSItems] = [
         {text: 'Towel Holder', style: 'textotablaboldlarge', border: [false, false, false, false]},
-        {text: '* Note: will be discontinued last order March 2021', style: 'textotablaboldblack', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
     ]

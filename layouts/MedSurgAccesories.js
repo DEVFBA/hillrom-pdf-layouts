@@ -339,6 +339,17 @@ async function getMedSurgAccesories()
             {text: "$" + Intl.NumberFormat("en-IN").format(supportsData[3].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
+
+        supports[pSItems] = [
+            {text: supportsData[6].KitName, style: 'textotabla'},
+            {text: supportsData[6].Part, style: 'textotabla'},
+            {text: supportsData[6].Item_Long_Desc, style: 'textotabla'},
+            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(supportsData[6].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+        pSItems++
     }
     
 

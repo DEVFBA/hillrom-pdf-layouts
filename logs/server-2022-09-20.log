@@ -1,0 +1,23 @@
+2022-09-20T16:48:04.008Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2022-09-20T16:48:24.276Z [32minfo[39m: 	{"user":"ANGUTIERRE","password":"94fa6c0e5731de75e691188462562d0bf333a6eac4ddcbc23b1397bd0136f76b"}/login - POST -
+2022-09-20T16:48:37.852Z [32minfo[39m: 	{"priceList":"IPL","pdfZone":"IPLALL","pdfVersion":"2.0"}/generate-pdf - POST -
+2022-09-20T16:54:10.237Z [32minfo[39m: 	{"priceList":"IPL","pdfZone":"IPLALL","pdfVersion":"2.0"}/generate-pdf - POST -
+2022-09-20T16:58:37.799Z [32minfo[39m: 	{"priceList":"IPL","pdfZone":"IPLALL","pdfVersion":"2.0"}/generate-pdf - POST -
+2022-09-20T20:29:55.127Z [32minfo[39m: 	{"priceList":"IPL","pdfZone":"IPLALL","pdfVersion":"2.0"}/generate-pdf - POST -
+2022-09-20T20:30:36.960Z [32minfo[39m: 	{"priceList":"LIKO","pdfZone":"LIKALL","pdfVersion":"2.0"}/generate-pdf - POST -
+2022-09-20T22:03:37.005Z [32minfo[39m: 	{"priceList":"LIKO","pdfZone":"LIKALL","pdfVersion":"2.0"}/generate-pdf - POST -
+2022-09-20T22:10:53.866Z [32minfo[39m: 	{"priceList":"LIKO","pdfZone":"LIKALL","pdfVersion":"2.0"}/generate-pdf - POST -
+2022-09-20T22:13:04.719Z [32minfo[39m: 	{"priceList":"IPL","pdfZone":"IPLALL","pdfVersion":"2.0"}/generate-pdf - POST -
+2022-09-20T22:21:08.936Z [32minfo[39m: 	{"priceList":"IPL","pdfZone":"IPLALL","pdfVersion":"2.0"}/generate-pdf - POST -
+2022-09-20T22:23:27.097Z [32minfo[39m: 	{"priceList":"IPL","pdfZone":"IPLALL","pdfVersion":"2.0"}/generate-pdf - POST -
+2022-09-20T22:44:52.194Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2022-09-20T22:45:03.095Z [32minfo[39m: 	{"priceList":"IPL","pdfZone":"IPLALL","pdfVersion":"2.0"}/generate-pdf - POST -
+2022-09-20T22:49:29.091Z [32minfo[39m: 	{"priceList":"LIKO","pdfZone":"LIKOALL","pdfVersion":"2.0"}/generate-pdf - POST -
+2022-09-20T22:49:34.680Z [32minfo[39m: 	{"priceList":"LIKO","pdfZone":"LIKALL","pdfVersion":"2.0"}/generate-pdf - POST -
+2022-09-20T22:51:47.477Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2022-09-20T22:53:14.371Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2022-09-20T22:53:25.740Z [32minfo[39m: 	{"priceList":"LIKO","pdfZone":"LIKALL","pdfVersion":"2.0"}/generate-pdf - POST -
+2022-09-20T23:12:48.875Z [32minfo[39m: 	{"priceList":"LIKO","pdfZone":"LIKALL","pdfVersion":"2.0"}/generate-pdf - POST -
+2022-09-20T23:13:27.394Z [32minfo[39m: 	{"priceList":"IPL","pdfZone":"IPLALL","pdfVersion":"2.0"}/generate-pdf - POST -
+2022-09-20T23:15:35.558Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2022-09-20T23:15:50.071Z [32minfo[39m: 	{"priceList":"IPL","pdfZone":"IPLALL","pdfVersion":"2.0"}/generate-pdf - POST -

@@ -10,7 +10,7 @@ async function getOverbedTables()
     var pSItems = 0;
 
     options[pSItems] = [
-        {text: "Accessories", style: 'textotablaboldlarge', border: [false, false, false, false]},
+        {text: "Accesories", style: 'textotablaboldlarge', border: [false, false, false, false]},
         {text: "", border: [false, false, false, false]},
         {text: "", border: [false, false, false, false]}, 
     ]
@@ -263,24 +263,6 @@ async function getOverbedTables()
         table1,
         "\n",
         table2,            
-        { text: '\n'},
-        { text: 'Thermo Foil Options', style: 'textotablaboldlarge' },
-        {
-            columns: [
-                [
-                    {text: 'CC Choco Cherry', style: 'textotabla'},
-                    {text: 'HC Hayward Cherry', style: 'textotabla'},
-                    {text: 'DB Dunbar', style: 'textotabla'},
-                    {text: 'DV Dolce Vita', style: 'textotabla'},
-                ],
-                [
-                    {text: 'FW Frosty White', style: 'textotabla'},
-                    {text: 'CP Chocolate Pear', style: 'textotabla'},
-                    {text: 'CL Candlelight', style: 'textotabla'},
-                    {text: 'HM Hard Rock Maple', style: 'textotabla'},
-                ],
-            ]
-        },
         '\n',
         { image: "images/OverbedTable5.png", width: 515, height: 230, alignment: 'center'},
         {text: '', pageBreak: 'after'  },
