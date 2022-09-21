@@ -1,0 +1,7 @@
+2022-09-21T20:38:37.914Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2022-09-21T20:38:55.154Z [32minfo[39m: 	{"user":"ANGUTIERRE","password":"94fa6c0e5731de75e691188462562d0bf333a6eac4ddcbc23b1397bd0136f76b"}/login - POST -
+2022-09-21T20:39:07.654Z [32minfo[39m: 	{"priceList":"IPL","pdfZone":"IPLALL","pdfVersion":"2.0"}/generate-pdf - POST -
+2022-09-21T21:41:14.541Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2022-09-21T21:41:40.421Z [32minfo[39m: 	{"priceList":"IPL","pdfZone":"IPLALL","pdfVersion":"2.0"}/generate-pdf - POST -
+2022-09-21T21:44:06.491Z [32minfo[39m: 	{"priceList":"IPL","pdfZone":"IPLALL","pdfVersion":"2.0"}/generate-pdf - POST -
+2022-09-21T21:46:52.927Z [32minfo[39m: 	{"priceList":"IPL","pdfZone":"IPLALL","pdfVersion":"2.0"}/generate-pdf - POST -
