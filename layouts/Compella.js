@@ -14,6 +14,11 @@ async function getCompella()
     const surfacesData = res[5]
     const surfacesAccesories = res[6]
     const surfacesAccesories2 = res[7]
+    const surfacesOptions = res[8]
+    const surfacesAddons = res[9]
+
+    console.log(surfacesOptions)
+    console.log(surfacesAddons)
 
     var options =[]
     var pSItems = 0;
@@ -642,12 +647,12 @@ async function getCompella()
                                     {},
                                 ],
                                 [
-                                    {text: 'Foam Surface (with air supply unit)', style: 'textotabla'},
+                                    {text: surfacesOptions[0].Item_Long_Desc, style: 'textotabla'},
                                     {text: "$15,064", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
-                                    {text: 'Low Air Loss Surface (with air supply unit)', style: 'textotabla'},
+                                    {text: surfacesOptions[1].Item_Long_Desc, style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
                                     {text: "$23,760", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
                                 ],
@@ -657,7 +662,7 @@ async function getCompella()
                                     {},
                                 ],
                                 [
-                                    {text: 'Continuous Lateral Rotation Therapy (CLRT)', style: 'textotabla'},
+                                    {text: surfacesAddons[0].Item_Long_Desc, style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
                                     {text: "$4,831", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
                                 ],
