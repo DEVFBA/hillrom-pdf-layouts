@@ -7,7 +7,7 @@ async function getHillromColoursCollection()
         "\n",
         "\n",
         "\n",
-        { text: 'Hillrom Colours Collection', style: 'header'},
+        { text: 'Colours Collection', style: 'header'},
         { text: 'Colours', style: { fontSize: 0}, tocItem: 'hillromColoursCollection'},
         { text: 'Country of origin: France', style: 'parrafo' },
         "\n",

@@ -2890,15 +2890,6 @@ async function getStretchers()
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'Trendelenburg / Reverse Trendelenburg', style: 'textotabla'},
-                            {text: '●', style: 'textotabla', alignment: 'center'},
-                            {text: '●', style: 'textotabla', alignment: 'center'}, 
-                            {text: '●', style: 'textotabla', alignment: 'center'},
-                            {text: '●', style: 'textotabla', alignment: 'center'}, 
-                            {text: '●', style: 'textotabla', alignment: 'center'},
-                        ],
-                        [
-                            {border: [false, false, false, false], text: ''},
                             {text: 'OneStep TuckAway siderails for zero-gap transfers', style: 'textotabla'},
                             {text: '●', style: 'textotabla', alignment: 'center'},
                             {text: '-', style: 'textotabla', alignment: 'center'}, 

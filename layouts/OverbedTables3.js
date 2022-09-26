@@ -10,7 +10,7 @@ async function getOverbedTables()
     var pSItems = 0;
 
     options[pSItems] = [
-        {text: "Accesories", style: 'textotablaboldlarge', border: [false, false, false, false]},
+        {text: "Additional Options", style: 'textotablaboldlarge', border: [false, false, false, false]},
         {text: "", border: [false, false, false, false]},
         {text: "", border: [false, false, false, false]}, 
     ]
