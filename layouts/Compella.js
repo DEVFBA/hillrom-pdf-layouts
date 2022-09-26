@@ -5,20 +5,17 @@ fecha.toLocaleDateString()
 
 async function getCompella()
 {
-    const res = await dbCompella.getDataCompella()
-    const prices = res[0]
-    const mobility = res[1]
-    const patientSiderailData  = res[2]
-    const ivpoleData = res[3]
-    const additionalOptions = res[4]
-    const surfacesData = res[5]
-    const surfacesAccesories = res[6]
-    const surfacesAccesories2 = res[7]
-    const surfacesOptions = res[8]
-    const surfacesAddons = res[9]
-
-    console.log(surfacesOptions)
-    console.log(surfacesAddons)
+    const res = await dbCompella.getDataCompella();
+    const prices = res[0];
+    const mobility = res[1];
+    const patientSiderailData  = res[2];
+    const ivpoleData = res[3];
+    const additionalOptions = res[4];
+    const surfacesData = res[5];
+    const surfacesAccesories = res[6];
+    const surfacesAccesories2 = res[7];
+    const surfacesOptions = res[8];
+    const surfacesAddons = res[9];
 
     var options =[]
     var pSItems = 0;

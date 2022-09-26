@@ -14,6 +14,7 @@ async function getOverbedTables()
         {text: "", border: [false, false, false, false]},
         {text: "", border: [false, false, false, false]}, 
     ]
+    
     pSItems++
 
     if(accesoriesData.length > 0)

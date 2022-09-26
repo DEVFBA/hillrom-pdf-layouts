@@ -10,6 +10,7 @@ async function getCatoniBedSide()
     const singleBottleData = res[4]
     const coloursContrast = res[5]
     const handlesData = res[6]
+    const castorsData = res[7]
 
     var options3 =[]
     var pSItems = 0;
@@ -158,6 +159,94 @@ async function getCatoniBedSide()
     ]
 
     pSItems++;
+
+    if(castorsData.length > 0)
+    {
+        /*ESTO VA EN UN CICLO*/
+        var i=0;
+        var castorsFlag = false
+        while(castorsFlag === false)
+        {
+            var j;
+            if(i===0)
+            {
+                j=0
+            }
+            else {
+                j = i*2
+            }
+
+            var precios = [];
+            var preciosCount = 0;
+            var countC=0;
+            var printCaracter = [];
+
+            while(j< castorsData.length && countC<2)
+            {
+                precios[preciosCount] = castorsData[j].Price;
+                printCaracter[preciosCount] = castorsData[j].Print_Character;
+                preciosCount++;
+                j++;
+                countC++;
+            }
+
+            var data = {
+                Id_Item: castorsData[j-1].Id_Item,
+                Item_Long_Desc: castorsData[j-1].Item_Long_Desc,
+                Prices: precios,
+                Print_Character: printCaracter
+            }
+
+            var precio1;
+            var precio2;
+
+            if(data.Print_Character[0] !== null)
+            {
+                if(data.Print_Character[0] === "*")
+                {
+                    precio1 = "●"
+                }
+                else {
+                    precio1 = "-"
+                }
+            }
+            else {
+                precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+            }
+
+            if(data.Print_Character[1] !== null)
+            {
+                if(data.Print_Character[1] === "*")
+                {
+                    precio2 = "●"
+                }
+                else {
+                    precio2 = "-"
+                }
+            }
+            else {
+                precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+            }
+            
+            options3[pSItems] = [
+                {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+                {text: data.Item_Long_Desc, style: 'textotabla'},
+                {text: precio1, style: 'textotabla', alignment: 'center'}, 
+                {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            ]
+
+            pSItems++
+
+            //console.log(data)
+
+            if(j >= castorsData.length)
+            {
+                castorsFlag = true
+            }
+            i++
+        }   
+        /*TERMINA CICLO*/
+    }
 
     options3[pSItems] = [
         {text: 'Towel Holder', style: 'textotablaboldlarge', border: [false, false, false, false]},
