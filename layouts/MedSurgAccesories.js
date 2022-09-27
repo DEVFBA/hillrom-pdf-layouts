@@ -1048,7 +1048,7 @@ async function getMedSurgAccesories()
         pSItems++
     }
 
-    if(tractionData[2] !== undefined)
+    /*if(tractionData[2] !== undefined)
     {
         traction[pSItems] = [
             {text: tractionData[2].KitName, style: 'textotabla'},
@@ -1060,7 +1060,7 @@ async function getMedSurgAccesories()
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[2].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
-    }
+    }*/
 
     if(tractionData[3] !== undefined)
     {
