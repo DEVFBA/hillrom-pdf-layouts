@@ -22,18 +22,18 @@ async function getPoweredSurfaces()
     ]
     pSItems++
 
-    p290[pSItems] = [
-        {text: "Overlay", style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 5},
-        {text: '', border: [false, false, false, false]},
-        {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]},
-    ]
-
-    pSItems++
-
     if(overlay2Data.length > 0)
     {
+        p290[pSItems] = [
+            {text: "Overlay", style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 5},
+            {text: '', border: [false, false, false, false]},
+            {text: '', border: [false, false, false, false]}, 
+            {text: '', border: [false, false, false, false]}, 
+            {text: '', border: [false, false, false, false]},
+        ]
+    
+        pSItems++
+
         /*ESTO VA EN UN CICLO*/
         for(var i=0; i<overlay2Data.length; i++)
         {
@@ -49,20 +49,19 @@ async function getPoweredSurfaces()
         }
         /*TERMINA CICLO*/
     }
-    
-    
-    p290[pSItems] = [
-        {text: 'Replacement with foam base', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 5},
-        {text: '', border: [false, false, false, false]},
-        {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]},
-    ]
-
-    pSItems ++
 
     if(foamBase2Data.length > 0 )
     {
+        p290[pSItems] = [
+            {text: 'Replacement with foam base', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 5},
+            {text: '', border: [false, false, false, false]},
+            {text: '', border: [false, false, false, false]}, 
+            {text: '', border: [false, false, false, false]}, 
+            {text: '', border: [false, false, false, false]},
+        ]
+    
+        pSItems ++
+
         /*ESTO VA EN UN CICLO*/
         for(var i=0; i<foamBase2Data.length; i++)
         {
@@ -79,18 +78,18 @@ async function getPoweredSurfaces()
         /*TERMINA CICLO*/
     }
 
-    p290[pSItems] = [
-        {text: 'Replacement with full air', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 5},
-        {text: '', border: [false, false, false, false]},
-        {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]},
-    ]
-
-    pSItems++
-
     if(fullAir2Data.length > 0)
     {
+        p290[pSItems] = [
+            {text: 'Replacement with full air', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 5},
+            {text: '', border: [false, false, false, false]},
+            {text: '', border: [false, false, false, false]}, 
+            {text: '', border: [false, false, false, false]}, 
+            {text: '', border: [false, false, false, false]},
+        ]
+    
+        pSItems++
+
         /*ESTO VA EN UN CICLO*/
         for(var i=0; i<fullAir2Data.length; i++)
         {
@@ -110,17 +109,17 @@ async function getPoweredSurfaces()
     var accellaTherapy =[]
     var pSItems = 0;
 
-    accellaTherapy[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-    ]
-    pSItems++
-
     if(accellaTherapyData.length > 0)
     {
+        accellaTherapy[pSItems] = [
+            {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+            {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+            {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+            {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        ]
+        pSItems++
+
         /*ESTO VA EN UN CICLO*/
         for(var i=0; i<accellaTherapyData.length; i++)
         {
@@ -139,18 +138,18 @@ async function getPoweredSurfaces()
 
     var talleyFusion =[]
     var pSItems = 0;
-    
-    talleyFusion[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-    ]
-    pSItems++
 
     if(talleyFusionData.length > 0)
     {
+        talleyFusion[pSItems] = [
+            {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+            {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+            {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+            {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        ]
+        pSItems++
+
         /*ESTO VA EN UN CICLO*/
         for(var i=0; i<talleyFusionData.length; i++)
         {
@@ -252,6 +251,52 @@ async function getPoweredSurfaces()
     const fecha = new Date();
     fecha.toLocaleDateString()
 
+    var accellaTherapyTitle = {}
+    if(accellaTherapyData.length > 0)
+    {
+        accellaTherapyTitle = {
+            columns: [
+                [
+                    { text: 'Accella Therapy\n', style: 'subheader' },
+                    {
+                        style:'parrafo',
+                        ul: [
+                            { text: 'Maximum Patient Weight 250 kg'},
+                            { text: 'For additional technical specifications see separate tech specs'},
+                        ]
+                    },
+                ],
+                [
+                    { image: "images/PoweredSurfaces3.png", width: 60, height: 60, alignment: 'center'},
+                ]
+            ]
+            
+        }
+    }
+
+    var talleyFusionTitle = {}
+    if(talleyFusionData.length > 0)
+    {
+        talleyFusionTitle = {
+            columns: [
+                [
+                    { text: 'TALLEY FUSION HYBRID\n', style: 'subheader' },
+                    {
+                        style:'parrafo',
+                        ul: [
+                            { text: 'Maximum Patient Weight 250 kg'},
+                            { text: 'For additional technical specifications see separate tech specs'},
+                        ]
+                    },
+                ],
+                [
+                    { image: "images/PoweredSurfaces4.png", width: 100, height: 60, alignment: 'center'},
+                ]
+            ]
+            
+        }
+    }
+
     var poweredSurfaces = [
         "\n",
         "\n",
@@ -280,46 +325,12 @@ async function getPoweredSurfaces()
         },
         table1,
         "\n",
-        {
-            columns: [
-                [
-                    { text: 'Accella Therapy\n', style: 'subheader' },
-                    {
-                        style:'parrafo',
-                        ul: [
-                            { text: 'Maximum Patient Weight 250 kg'},
-                            { text: 'For additional technical specifications see separate tech specs'},
-                        ]
-                    },
-                ],
-                [
-                    { image: "images/PoweredSurfaces3.png", width: 60, height: 60, alignment: 'center'},
-                ]
-            ]
-            
-        },
+        accellaTherapyTitle,
         table2,
         "\n",
         {text: "*Only compatible with Hill-Rom 900 Accella. Beds with a reference starting with CS900B41XXXXX", style: "textotabla"},
         "\n",
-        {
-            columns: [
-                [
-                    { text: 'TALLEY FUSION HYBRID\n', style: 'subheader' },
-                    {
-                        style:'parrafo',
-                        ul: [
-                            { text: 'Maximum Patient Weight 250 kg'},
-                            { text: 'For additional technical specifications see separate tech specs'},
-                        ]
-                    },
-                ],
-                [
-                    { image: "images/PoweredSurfaces4.png", width: 100, height: 60, alignment: 'center'},
-                ]
-            ]
-            
-        },
+        talleyFusionTitle,
         table3,
         {text: '', pageBreak: 'after'  },
     ]
