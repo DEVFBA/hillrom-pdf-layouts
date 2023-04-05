@@ -760,7 +760,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
             }
         }
 
-        var docDefinition = {
+        var docDefinition = { 
             pageMargins: [ 30, 6, 30, 30 ],
             header: function(currentPage) 
             {
