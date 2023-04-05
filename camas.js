@@ -44,6 +44,7 @@ var overbedTables3 = require("./layouts/OverbedTables3.js")
 var bedsideCabinets = require("./layouts/BedsideCabinets.js")
 var transferBoard = require("./layouts/TransferBoard.js")
 var thermofoilOptions = require("./layouts/ThermofoilOptions.js");
+var t1048BariatricBed = require("./layouts/1048BariatricBed.js");
 const { version } = require('os');
 
 async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersion, layouts)
@@ -92,7 +93,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
             { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
             '\n\n\n\n\n\n\n\n\n\n\n',
             { image: "images/Hillroom.png", width: 120, height: 47, alignment: 'center'},
-            { text: 'LATAM PRICEBOOK 2022', style: 'header', alignment: "center" },
+            { text: 'LATAM PRICEBOOK ' + anio, style: 'header', alignment: "center" },
             { text: 'USD - ' + zona, style: 'header', alignment: "center" },
             { image: "images/Cover.png", width: 400, height: 250, alignment: 'center'},
             { text: 'www.hillrom.com', style: 'header', alignment: "center" },
@@ -121,6 +122,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
         var usFurnitureFlag = true
         var seatingFurnitureFlag = true
         var healthcareFurnitureFlag = true
+
         for(var i=0; i< layouts.length; i++)
         {
             if(layouts[i].Id_Layout === "HOB-CCI-PRP7500")
@@ -566,6 +568,16 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     }
                 )
             }
+            else if(layouts[i].Id_Layout === "HOB-1048")
+            {
+                index2.push(
+                    {
+                        toc: {
+                            id: '1048BariatricBed',
+                        }
+                    }
+                )
+            }
         }
 
         index2.push({text: '', pageBreak: 'after'  })
@@ -738,8 +750,13 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
             }
             else if(layouts[i].Id_Layout === "OTR-TRANBO-TRANBO")
             {
-                var transferBoardLayout = await transferBoard.getTransferBoard()
-                contenido.push(transferBoardLayout)
+                var transferBoardLayout = await transferBoard.getTransferBoard();
+                contenido.push(transferBoardLayout);
+            }
+            else if(layouts[i].Id_Layout === "HOB-1048")
+            {
+                var t1048BariatricBedLayout = await t1048BariatricBed.get1048BariatricBed();
+                contenido.push(t1048BariatricBedLayout);
             }
         }
 

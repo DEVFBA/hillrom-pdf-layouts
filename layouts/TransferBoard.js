@@ -73,6 +73,7 @@ async function getTransferBoard()
         "\n",
         "\n",
         { image: "images/TransferBoard1.png", width: 230, height: 180, alignment: 'center'},
+        {text: '', pageBreak: 'after'  },
     ]
 
     return accumax;
