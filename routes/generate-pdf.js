@@ -23,7 +23,7 @@ router.route('/v2/').post(auth, (request, response)=>{
     })
 })
 
-router.route('/physician/').post((request, response)=>{
+router.route('/physician-2/').post((request, response)=>{
     console.log("SI ENTRE")
     let generatePdf = {...request.body}
     logger.info(JSON.stringify({...request.body}) + "/generate-pdf/physician/ - POST -")
@@ -36,7 +36,7 @@ router.route('/physician/').post((request, response)=>{
     })
 })
 
-router.route('/physician-2/').post((request, response)=>{
+router.route('/physician/').post((request, response)=>{
     let generatePdf = {...request.body}
     logger.info(JSON.stringify({...request.body}) + "/generate-pdf/physician/ - POST -")
 
