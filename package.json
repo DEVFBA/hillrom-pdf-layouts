@@ -10,8 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "archiver": "^6.0.1",
     "axios": "^0.24.0",
+    "bee-queue": "^1.7.1",
     "body-parser": "^1.19.1",
+    "bull": "^4.11.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-jwt": "^6.1.0",

@@ -6,84 +6,34 @@
     "auditLog": "logs/.566a90401063653403d955a21339caaa087791f3-audit.json",
     "files": [
         {
-            "date": 1662582416278,
-            "name": "logs/server-2022-09-07.log",
-            "hash": "e9e65155975064b90dabeb6fb157ffd82e2376321bc6e041389f441e3f45a2ad"
-        },
-        {
-            "date": 1662647193209,
-            "name": "logs/server-2022-09-08.log",
-            "hash": "a25a1018db1b5bbcd51bf18db050f1ae4ea983ee1b33f38776abe43463133901"
-        },
-        {
-            "date": 1662737132306,
-            "name": "logs/server-2022-09-09.log",
-            "hash": "5daef5fdf6e91d295b834d1476c5140ae77ba84bd738dcdfb401f43ebb6c5201"
-        },
-        {
-            "date": 1662993749535,
-            "name": "logs/server-2022-09-12.log",
-            "hash": "0051ca0cfce6d99224fb595d6a66208d3808d950ec8a958c3708571450d6d10b"
-        },
-        {
-            "date": 1663090380539,
-            "name": "logs/server-2022-09-13.log",
-            "hash": "8c591cb05682fbcb34c859f6fb2fc7ec6bf7f04955b260d8714dd0a98f7da78e"
-        },
-        {
-            "date": 1663191690000,
-            "name": "logs/server-2022-09-14.log",
-            "hash": "1ddbe2643ec3d9aebe09e82c3deffdcf324c26192250ee8b66591ed8f00b6f1f"
-        },
-        {
-            "date": 1663251471081,
-            "name": "logs/server-2022-09-15.log",
-            "hash": "30582db6fb1d8be945d74084aa98397fcab3fad9daf0dd0fa3cc77506828bfe6"
-        },
-        {
-            "date": 1663600358228,
-            "name": "logs/server-2022-09-19.log",
-            "hash": "731459612a289264c3fa2a70b727d523510e56cf949275f525b955e6a0340a90"
-        },
-        {
-            "date": 1663692483472,
-            "name": "logs/server-2022-09-20.log",
-            "hash": "12d52ab172ad0426c5be1a4dc3b6011eaaf5eb0ac4d795c9a690fd1a35565c92"
-        },
-        {
-            "date": 1663792717398,
-            "name": "logs/server-2022-09-21.log",
-            "hash": "910370797ddbe5a5c251ce17368993393f3980f133b72bb7c8b55e52befb9ef5"
-        },
-        {
-            "date": 1663863419454,
-            "name": "logs/server-2022-09-22.log",
-            "hash": "f06f88cc0a4277a8912734978a7b7a89ea9adb98c05fd87d6479d6edabcbc5aa"
-        },
-        {
-            "date": 1663947486157,
-            "name": "logs/server-2022-09-23.log",
-            "hash": "90835ac65bd7db786f373a57a0c498dbb26e6e2778c273e0c9bdfb04d94d1c7c"
-        },
-        {
-            "date": 1664213259817,
-            "name": "logs/server-2022-09-26.log",
-            "hash": "cbaec760bff9e403696d06fdc6f9ffc41ee8b6740911d2acc3a2c614d49864a4"
-        },
-        {
-            "date": 1664299842181,
-            "name": "logs/server-2022-09-27.log",
-            "hash": "5b1acadab90ef793180c96bb5a3c39273077a242dad927c17af6a83ffebf5a5d"
-        },
-        {
-            "date": 1664404999321,
-            "name": "logs/server-2022-09-28.log",
-            "hash": "4afdcb9e338e55f4dd3d00d8496c03ad18b514e41c37a74d1c19e58a71453718"
-        },
-        {
             "date": 1680709129933,
             "name": "logs/server-2023-04-05.log",
             "hash": "84cdedf5aa9bf5c0d6d0e64e34f107157dcc626260ddf60b0ac12555cb943895"
+        },
+        {
+            "date": 1699909818994,
+            "name": "logs/server-2023-11-13.log",
+            "hash": "66c7c3116487dd8ede201de1e39e6bb41fcdab9b29fbb1a5646c0e63855a50c9"
+        },
+        {
+            "date": 1699974941101,
+            "name": "logs/server-2023-11-14.log",
+            "hash": "3b5a42ab4413488a8cdf2d0e207413a768ad7669403265af4d9d1ae81cca0520"
+        },
+        {
+            "date": 1700172860975,
+            "name": "logs/server-2023-11-16.log",
+            "hash": "c90e2eebe42de34c97fb0308445b68947ccbb803d40d74286584bac17c359c36"
+        },
+        {
+            "date": 1700601928811,
+            "name": "logs/server-2023-11-21.log",
+            "hash": "7e1c2acad111e83867d15e20eafb96772893d0fda40d5ef56bd8729fbcaf320e"
+        },
+        {
+            "date": 1700661377999,
+            "name": "logs/server-2023-11-22.log",
+            "hash": "5a3775c16427ee4d61c97e98cdc8c078578cd5ec6e7e0b35aa498da1308a8d97"
         }
     ],
     "hashType": "sha256"
