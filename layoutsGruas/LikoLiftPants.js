@@ -153,14 +153,14 @@ async function getLikoLiftPants(pdfZone)
             
         }
 
-        accesories2[pSItems] =[
+        /*accesories2[pSItems] =[
             {border: [true, true, true, true], text: salida16[i].Part, style: 'textotabla'},
             {border: [true, true, true, true], text: salida16[i].Item_Long_Desc, style: 'textotablaboldblack'},
             {border: [true, true, true, true], image: "images/LikoLiftPants3.png", width: 60, height: 70, alignment: 'center'},
             {border: [true, true, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida16[i].Price), style: 'textotabla', alignment: 'center'},
         ]
 
-        pSItems++
+        pSItems++*/
         
         /*TERMINA CICLO*/
     }
@@ -255,7 +255,7 @@ async function getLikoLiftPants(pdfZone)
                             {text: [
                                 {text: 'LIKO LIFTPANTS™, MOD 92', style: 'textotablacolorlarge'},
                                 {text: "Liko Liftpants™, Mod 92", style: {fontSize: 0}, tocItem: "likoliftpants92"}
-                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            ], fillColor: '#03857d',  alignment: 'center', colSpan: 3},
                             {},
                             {}
                         ],
@@ -281,9 +281,9 @@ async function getLikoLiftPants(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ],
                     ]
                 },
@@ -338,7 +338,7 @@ async function getLikoLiftPants(pdfZone)
                             {text: [
                                 {text: 'ULTRA LIFTPANTS™, MOD 920', style: 'textotablacolorlarge'},
                                 {text: "Ultra Liftpants™, Mod 920", style: {fontSize: 0}, tocItem: "ultraliftpants920"}
-                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            ], fillColor: '#03857d',  alignment: 'center', colSpan: 3},
                             {},
                             {}
                         ],
@@ -364,9 +364,9 @@ async function getLikoLiftPants(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ],
                     ]
                 },
@@ -421,7 +421,7 @@ async function getLikoLiftPants(pdfZone)
                             {text: [
                                 {text: 'SOLO HIGHBACK SLING™, MOD 25', style: 'textotablacolorlarge'},
                                 {text: "Solo Highback Sling™, Mod 25", style: {fontSize: 0}, tocItem: "solohighback25"}
-                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            ], fillColor: '#03857d',  alignment: 'center', colSpan: 3},
                             {},
                             {}
                         ],
@@ -447,9 +447,9 @@ async function getLikoLiftPants(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ],
                     ]
                 },

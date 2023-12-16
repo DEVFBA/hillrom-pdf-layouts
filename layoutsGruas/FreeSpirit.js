@@ -380,7 +380,7 @@ async function getFreeSpirit(pdfZone)
                     widths: [190, "*", 130],
                     body: [
                         [
-                            {text: 'FreeSpirit™ E-System', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 3, tocItem: "freespirit"},
+                            {text: 'FreeSpirit™ E-System', style: 'textotablacolorlarge', fillColor: '#03857d',  alignment: 'center', colSpan: 3, tocItem: "freespirit"},
                             {},
                             {}
                         ],
@@ -406,9 +406,9 @@ async function getFreeSpirit(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ]
                     ]
                 },
@@ -460,7 +460,7 @@ async function getFreeSpirit(pdfZone)
                     widths: [190, "*", 130],
                     body: [
                         [
-                            {text: 'FreeSpirit™ T-System', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 3, tocItem: "freespirittsystem"},
+                            {text: 'FreeSpirit™ T-System', style: 'textotablacolorlarge', fillColor: '#03857d',  alignment: 'center', colSpan: 3, tocItem: "freespirittsystem"},
                             {},
                             {}
                         ],
@@ -486,9 +486,9 @@ async function getFreeSpirit(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ]
                     ]
                 },

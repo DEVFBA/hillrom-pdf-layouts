@@ -15,10 +15,10 @@ async function getCatoniBedSide()
     var options3 =[]
     var pSItems = 0;
     options3[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'B03', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'B04', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'B03', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'B04', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
     pSItems++
 
@@ -72,7 +72,7 @@ async function getCatoniBedSide()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -86,7 +86,7 @@ async function getCatoniBedSide()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -204,7 +204,7 @@ async function getCatoniBedSide()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -218,7 +218,7 @@ async function getCatoniBedSide()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -298,7 +298,7 @@ async function getCatoniBedSide()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -312,7 +312,7 @@ async function getCatoniBedSide()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -392,7 +392,7 @@ async function getCatoniBedSide()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -406,7 +406,7 @@ async function getCatoniBedSide()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -485,7 +485,7 @@ async function getCatoniBedSide()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -499,7 +499,7 @@ async function getCatoniBedSide()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -578,7 +578,7 @@ async function getCatoniBedSide()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -592,7 +592,7 @@ async function getCatoniBedSide()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -632,7 +632,7 @@ async function getCatoniBedSide()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'FURNACUSELECT', style: 'textotablacolorlarge', colSpan: 2, fillColor: '#546ce4',  alignment: 'center'},
+                            {text: 'FURNACUSELECT', style: 'textotablacolorlarge', colSpan: 2, fillColor: '#154898',  alignment: 'center'},
                             {},
                         ],
                         [
@@ -642,8 +642,8 @@ async function getCatoniBedSide()
                         ],
                         [
                             {border: [false, false, false, false], text: 'Catoni Bedside Cabinet with overbed table - bilateral functionality', style: 'textotablaboldlarge'},
-                            {text: 'B03', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B04', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B03', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: 'B04', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                         ],
                         [
                             {border: [false, false, false, false], ul: [
@@ -658,9 +658,9 @@ async function getCatoniBedSide()
                             { image: "images/Catoni22.png", width: 80, height: 70, alignment: 'center'},
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
                         ],
                     ]
                 },
@@ -689,7 +689,7 @@ async function getCatoniBedSide()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'FURNACUSELECT', style: 'textotablacolorlarge', colSpan: 2, fillColor: '#546ce4',  alignment: 'center'},
+                            {text: 'FURNACUSELECT', style: 'textotablacolorlarge', colSpan: 2, fillColor: '#154898',  alignment: 'center'},
                             {},
                         ],
                         [
@@ -699,8 +699,8 @@ async function getCatoniBedSide()
                         ],
                         [
                             {border: [false, false, false, false], text: 'Catoni Bedside Cabinet with overbed table - bilateral functionality', style: 'textotablaboldlarge'},
-                            {text: 'B03', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B04', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B03', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: 'B04', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                         ],
                         [
                             {border: [false, false, false, false], ul: [
@@ -715,9 +715,9 @@ async function getCatoniBedSide()
                             { image: "images/Catoni22.png", width: 80, height: 70, alignment: 'center'},
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
                         ],
                     ]
                 },
@@ -779,7 +779,7 @@ async function getCatoniBedSide()
         "\n",
         table2,
         { text: '\n', style: 'parrafo' },
-        { text: '● = standard', style: 'textotabla' },
+        { text: '* = standard', style: 'textotabla' },
         { text: '= - not available', style: 'textotabla' },
         { text: '\n', style: 'parrafo' },
         {
@@ -787,10 +787,10 @@ async function getCatoniBedSide()
                 widths: [67, 67, 67, 67],
                 body: [
                     [
-                        {text: 'B03 Plastic drawer insert (1BS) in top drawer', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'B03 with 2 x single bottle holder (BOH)', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'B04 with 2 x single bottle holder (BOH)', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'B03 Towel holder (TH)', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                        {text: 'B03 Plastic drawer insert (1BS) in top drawer', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+                        {text: 'B03 with 2 x single bottle holder (BOH)', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+                        {text: 'B04 with 2 x single bottle holder (BOH)', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+                        {text: 'B03 Towel holder (TH)', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
                     ],
                     [
                         { image: "images/Catoni23.png", width: 60, height: 70, alignment: 'center'},
@@ -821,9 +821,9 @@ async function getCatoniBedSide()
                 widths: [67, 67, 67],
                 body: [
                     [
-                        {text: 'B03 Contrasting colours front (drawers and doors)', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'B03 Contrasting colours front and overbed table', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'B03 Contrasting colours front (drawers and doors)', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                        {text: 'B03 Contrasting colours front (drawers and doors)', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+                        {text: 'B03 Contrasting colours front and overbed table', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+                        {text: 'B03 Contrasting colours front (drawers and doors)', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
                     ],
                     [
                         { image: "images/Catoni27.png", width: 75, height: 70, alignment: 'center'},

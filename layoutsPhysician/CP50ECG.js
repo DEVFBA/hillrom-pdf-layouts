@@ -1,162 +1,132 @@
 async function getCP50ECG(data)
 {
-    var cp50 = [];
+    var layout = [];
 
     const cp50Data = data.filter(objeto => objeto.Category === "CP50 ECG");
 
-    const isCP50A = cp50Data.some(objeto => objeto.Group === "CP50 Accessories");
-    if(isCP50A)
+    const gruposUnicosOrdenados = [...new Set(cp50Data.map(item => item.Group))]
+    .filter(Boolean) // Eliminar valores nulos o undefined
+    .sort((a, b) => {
+        // Ordenar por el atributo Order_Group
+        const orderA = cp50Data.find(item => item.Group === a)?.Order_Group || 0;
+        const orderB = cp50Data.find(item => item.Group === b)?.Order_Group || 0;
+        return orderA - orderB;
+    });
+
+    const familiasUnicasOrdenadas = [...new Set(cp50Data.map(item => item.Family))]
+    .filter(Boolean) // Eliminar valores nulos o undefined
+    .sort((a, b) => {
+        // Ordenar por el atributo Order_Group
+        const orderA = cp50Data.find(item => item.Family === a)?.Order_Family || 0;
+        const orderB = cp50Data.find(item => item.Family === b)?.Order_Family || 0;
+        return orderA - orderB;
+    });
+
+    for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
-        cp50.push({ text: 'CP50 Accessories', style: 'headerRed', alignment: "right", tocItem: "cp50" });
+        const dataGroup = cp50Data.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
-        const data1= cp50Data.filter(objeto => objeto.Family === "CP-50 ACCESSORIES");
-        if(data1.length > 0)
+        //Se sacan solo las familias de ese grupo
+        const familiasUnicasOrdenadasGroup = [...new Set(dataGroup.map(item => item.Family))]
+        .filter(Boolean) // Eliminar valores nulos o undefined
+        .sort((a, b) => {
+            // Ordenar por el atributo Order_Group
+            const orderA = dataGroup.find(item => item.Family === a)?.Order_Family || 0;
+            const orderB = dataGroup.find(item => item.Family === b)?.Order_Family || 0;
+            return orderA - orderB;
+        });
+
+        layout.push("\n");
+        layout.push({ text: "CP50 ECG", style: 'header3', alignment: "left" });
+        layout.push("\n");
+        layout.push({ text: gruposUnicosOrdenados[g], style: 'headerRed', alignment: "right", tocItem: gruposUnicosOrdenados[g].replace(/\s/g, '')});
+
+        for(var f=0; f<familiasUnicasOrdenadas.length; f++)
         {
-            var arrayDocument = []
-            arrayDocument.push("\n");
-            arrayDocument.push({ text: 'CP-50 ACCESSORIES', style: 'header4', alignment: "left" });
-            arrayDocument.push("\n");
-        
-            var options =[]
-            var pSItems = 0;
-            options[pSItems] = [
-                {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
-                {text: 'Comment', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
-            ]
-            pSItems++
-
-            for(var i=0; i<data1.length; i++)
+            if (familiasUnicasOrdenadasGroup.includes(familiasUnicasOrdenadas[f])) 
             {
-                if(data1[i].Obsolescence === true)
-                {
-                    options[pSItems] = [
-                        {text: data1[i].Material, style: 'textotablaD', alignment: 'center'},
-                        {text: data1[i].Description, style: 'textotablaD'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data1[i].Suggested_Retail_Price), style: 'textotablaD'},
-                        {
-                            text: [
-                              { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
-                              { text: data1[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
-                            ]
-                        }
-                    ]
-                }
-                else {
-                    options[pSItems] = [
-                        {text: data1[i].Material, style: 'textotabla', alignment: 'center'},
-                        {text: data1[i].Description, style: 'textotabla'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data1[i].Suggested_Retail_Price), style: 'textotabla'},
-                        {text: data1[i].Comment, style: 'textotabla'}
-                    ]
-                }
-                
+                const dataFamily = cp50Data.filter(objeto => objeto.Family === familiasUnicasOrdenadas[f]);
+
+                var data1 = [];
+
+                f !== 0 && data1.push("\n");
+
+                data1.push({ text: familiasUnicasOrdenadas[f], style: 'header4', alignment: "left" });
+                data1.push("\n");
+
+                var options =[]
+                var pSItems = 0;
+                options[pSItems] = [
+                    {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                    {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                    {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
+                    {text: 'Comment', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                ]
                 pSItems++
+
+                for(var i=0; i<dataFamily.length; i++)
+                {
+                    if(dataFamily[i].Obsolescence === true)
+                    {
+                        options[pSItems] = [
+                            {text: dataFamily[i].Material, style: 'textotablaD', alignment: 'left'},
+                            {text: dataFamily[i].Description, style: 'textotablaD'},
+                            {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotablaD'},
+                            {
+                                text: [
+                                { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
+                                { text: dataFamily[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
+                                ]
+                            }
+                        ]
+                    }
+                    else {
+                        options[pSItems] = [
+                            {text: dataFamily[i].Material, style: 'textotabla', alignment: 'left'},
+                            {text: dataFamily[i].Description, style: 'textotabla'},
+                            {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotabla'},
+                            {text: dataFamily[i].Comment, style: 'textotabla'}
+                        ]
+                    }
+                    
+                    pSItems++
+                }
+
+                data1.push({
+                    table: {
+                        widths: [80, "*", 80, 80],
+                        headerRows: 1,
+                        body: options
+                    },
+                    layout: {
+                        hLineWidth: function () {
+                            return  0.7;
+                        },
+                        vLineWidth: function () {
+                            return 0.7;
+                        },
+                        hLineColor: function () {
+                            return 'gray';
+                        },
+                        vLineColor: function () {
+                            return 'gray';
+                        },
+                    }
+                })
+            
+                layout.push(data1);
             }
 
-            arrayDocument.push({
-                table: {
-                    headerRows: 1,
-                    widths: [80, "*", 80, 80],
-                    body: options
-                },
-                layout: {
-                    hLineWidth: function () {
-                        return  0.7;
-                    },
-                    vLineWidth: function () {
-                        return 0.7;
-                    },
-                    hLineColor: function () {
-                        return 'gray';
-                    },
-                    vLineColor: function () {
-                        return 'gray';
-                    },
-                }
-            })
-        
-            cp50.push(arrayDocument);
         }
 
-        const data2= cp50Data.filter(objeto => objeto.Family === "CP-50 CARTS");
-        if(data2.length > 0)
-        {
-            var arrayDocument = []
-            arrayDocument.push("\n");
-            arrayDocument.push({ text: 'CP-50 CARTS', style: 'header4', alignment: "left" });
-            arrayDocument.push("\n");
-        
-            var options =[]
-            var pSItems = 0;
-            options[pSItems] = [
-                {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
-                {text: 'Comment', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
-            ]
-            pSItems++
-
-            for(var i=0; i<data2.length; i++)
-            {
-                if(data2[i].Obsolescence === true)
-                {
-                    options[pSItems] = [
-                        {text: data2[i].Material, style: 'textotablaD', alignment: 'center'},
-                        {text: data2[i].Description, style: 'textotablaD'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data2[i].Suggested_Retail_Price), style: 'textotablaD'},
-                        {
-                            text: [
-                              { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
-                              { text: data2[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
-                            ]
-                        }
-                    ]
-                }
-                else {
-                    options[pSItems] = [
-                        {text: data2[i].Material, style: 'textotabla', alignment: 'center'},
-                        {text: data2[i].Description, style: 'textotabla'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data2[i].Suggested_Retail_Price), style: 'textotabla'},
-                        {text: data2[i].Comment, style: 'textotabla'}
-                    ]
-                }
-                
-                pSItems++
-            }
-
-            arrayDocument.push({
-                table: {
-                    headerRows: 1,
-                    widths: [80, "*", 80, 80],
-                    body: options
-                },
-                layout: {
-                    hLineWidth: function () {
-                        return  0.7;
-                    },
-                    vLineWidth: function () {
-                        return 0.7;
-                    },
-                    hLineColor: function () {
-                        return 'gray';
-                    },
-                    vLineColor: function () {
-                        return 'gray';
-                    },
-                }
-            })
-        
-            cp50.push(arrayDocument);
-        }
+        layout.push({text: '', pageBreak: 'after'  }); 
     }
 
     var cp50ECG = [
-        "\n",
-        { text: "CP50 ECG", style: 'header3', alignment: "left" },
-        cp50,
-        {text: '', pageBreak: 'after'  }
+        { image: "v2/images/CP50.png", width: 620, height: 840, alignment: 'center'},
+        {text: '', pageBreak: 'after'  },
+        layout,
+        //{text: '', pageBreak: 'after'  }
     ]
 
     return cp50ECG;

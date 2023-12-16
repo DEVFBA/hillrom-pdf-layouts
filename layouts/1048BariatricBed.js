@@ -3,7 +3,7 @@ const db1048BariatricBed = require('../controllers/1048bariatricbed')
 async function get1048BariatricBed()
 {
     const res = await db1048BariatricBed.getData1048BariatricBed();
-    console.log(res)
+
     const prices = res[0]
     const np50 = res[1]
     const bl  = res[2]
@@ -22,7 +22,7 @@ async function get1048BariatricBed()
                                 [
                                     {border: [false, false, false, false], text: '', style: 'textotablabold'},
                                     {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                    {text: 'BARIATRICLTCBED', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: 'BARIATRICLTCBED', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: '', style: 'textotablabold'},
@@ -30,9 +30,9 @@ async function get1048BariatricBed()
                                     {text: 'P1380C02', style: 'textotabla', alignment: 'center'},
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                                    {text: prices[0].Item, style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                                    {text: prices[0].Item, style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: '', style: 'textotablabold'},
@@ -57,7 +57,7 @@ async function get1048BariatricBed()
                                 [
                                     {border: [false, false, false, false], text: 'Surface (Entered Separate Line)', style: 'textotabla'},
                                     {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                    {text: 'NP50MAT', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+                                    {text: 'NP50MAT', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},
                                 ],
                                 [
                                     {text: np50[0].Item, style: 'textotabla'},
@@ -101,7 +101,7 @@ async function get1048BariatricBed()
                                 [
                                     {border: [false, false, false, false], text: '', style: 'textotablabold'},
                                     {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                    {text: 'BARIATRICLTCBED', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: 'BARIATRICLTCBED', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: '', style: 'textotablabold'},
@@ -109,9 +109,9 @@ async function get1048BariatricBed()
                                     {text: 'P1380C02', style: 'textotabla', alignment: 'center'},
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                                    {text: 'NO-DATA', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                                    {text: 'NO-DATA', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                                    {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: '', style: 'textotablabold'},
@@ -136,7 +136,7 @@ async function get1048BariatricBed()
                                 [
                                     {border: [false, false, false, false], text: 'Surface (Entered Separate Line)', style: 'textotabla'},
                                     {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                    {text: 'NP50MAT', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+                                    {text: 'NP50MAT', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},
                                 ],
                                 [
                                     {text: 'NO-DATA', style: 'textotabla'},
@@ -288,7 +288,8 @@ async function get1048BariatricBed()
         "\n",
         { text: 'BARIATRICLTCACC', style: 'textotablaboldlarge' },
         "\n",
-        table2
+        table2,
+        {text: '', pageBreak: 'after'  },
     ]
 
     return t1048BariatricBed;

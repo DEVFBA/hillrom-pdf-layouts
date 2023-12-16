@@ -20,7 +20,7 @@
     "express-jwt": "^6.1.0",
     "jsonwebtoken": "^8.5.1",
     "mssql": "^7.3.0",
-    "pdfmake": "^0.2.4",
+    "pdfmake": "^0.2.8",
     "pm2": "^5.1.2",
     "winston": "^3.5.1",
     "winston-daily-rotate-file": "^4.7.1"

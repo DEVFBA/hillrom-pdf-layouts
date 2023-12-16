@@ -8,7 +8,6 @@ async function getDistributorDiscounts(data)
     ]
     pSItems++
 
-
     for(var i=0; i<data.length; i++)
     {
         if(i%2===0)

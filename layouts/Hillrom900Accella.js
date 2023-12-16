@@ -16,9 +16,9 @@ async function getHillrom900Accella()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'X3', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'X3', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
     ]
     pSItems++
 
@@ -31,6 +31,8 @@ async function getHillrom900Accella()
 
     if(optionsData.length > 0)
     {
+        console.log("Accella Therapy")
+        console.log(optionsData)
         /*ESTO VA EN UN CICLO*/
         for(var i=0; i<optionsData.length; i++)
         {
@@ -39,7 +41,7 @@ async function getHillrom900Accella()
             {
                 if(optionsData[i].Print_Character === "*")
                 {
-                    price = "●"
+                    price = "*"
                 }
                 else {
                     price = "-"
@@ -73,7 +75,7 @@ async function getHillrom900Accella()
             {
                 if(controlsData[i].Print_Character === "*")
                 {
-                    price = "●"
+                    price = "*"
                 }
                 else {
                     price = "-"
@@ -107,7 +109,7 @@ async function getHillrom900Accella()
             {
                 if(castorsData[i].Print_Character === "*")
                 {
-                    price = "●"
+                    price = "*"
                 }
                 else {
                     price = "-"
@@ -141,7 +143,7 @@ async function getHillrom900Accella()
             {
                 if(graphicalInterface[i].Print_Character === "*")
                 {
-                    price = "●"
+                    price = "*"
                 }
                 else {
                     price = "-"
@@ -175,7 +177,7 @@ async function getHillrom900Accella()
             {
                 if(steeringCastor[i].Print_Character === "*")
                 {
-                    price = "●"
+                    price = "*"
                 }
                 else {
                     price = "-"
@@ -209,7 +211,7 @@ async function getHillrom900Accella()
             {
                 if(additionalOptionsData[i].Print_Character === "*")
                 {
-                    price = "●"
+                    price = "*"
                 }
                 else {
                     price = "-"
@@ -244,7 +246,7 @@ async function getHillrom900Accella()
             {
                 if(plugsVoltages[i].Print_Character === "*")
                 {
-                    price = "●"
+                    price = "*"
                 }
                 else {
                     price = "-"
@@ -282,15 +284,15 @@ async function getHillrom900Accella()
                             body: [
                                 [
                                     {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                    {text: 'ACCELLA', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: 'ACCELLA', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: '', style: 'textotablabold'},
                                     { image: "images/Hillrom900Accella.png", width: 95, height: 75, alignment: 'center'},
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                                 ],
                             ]
                         }	,
@@ -328,15 +330,15 @@ async function getHillrom900Accella()
                             body: [
                                 [
                                     {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                    {text: 'ACCELLA', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: 'ACCELLA', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: '', style: 'textotablabold'},
                                     { image: "images/Hillrom900Accella.png", width: 95, height: 75, alignment: 'center'},
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                                    {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                                    {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                                 ],
                             ]
                         }	,

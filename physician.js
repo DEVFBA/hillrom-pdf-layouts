@@ -40,13 +40,16 @@ var pcBasedECG = require("./layoutsPhysician/PC-BasedECG.js");
 var spirometry = require("./layoutsPhysician/Spirometry.js");
 var abpmSystems = require("./layoutsPhysician/ABPMSystems.js");
 var holterECGSystems = require("./layoutsPhysician/HolterECGSystems.js");
+var cardiology = require("./layoutsPhysician/Cardiology.js");
+var respiratory = require("./layoutsPhysician/Respiratory.js");
+var veterinary = require("./layoutsPhysician/Veterinary.js");
+var spot4400 = require("./layoutsPhysician/SPOT4400.js");
 
-async function createDocument(discounts, data, rutaPdf, rutaPdfIp, nombreArchivo, region, para, effectiveDate)
+async function createDocument(discounts, data, rutaPdf, rutaPdfIp, nombreArchivo, region, para, effectiveDate, anio)
 {
     try {
         const fecha = new Date();
-        const anio = fecha.getFullYear()
-        fecha.toLocaleDateString()
+        fecha.toLocaleDateString();
 
         var from = ""
         if(para !== "")
@@ -57,7 +60,7 @@ async function createDocument(discounts, data, rutaPdf, rutaPdfIp, nombreArchivo
         const coverPage = [
             {
               stack: [
-                { image: "v2/images/Portada.png", width: 620, height: 450, alignment: 'center'},
+                { image: "v2/images/Portada-2.png", width: 620, height: 450, alignment: 'center'},
                 '\n\n',
                 {
                     table: {
@@ -110,734 +113,906 @@ async function createDocument(discounts, data, rutaPdf, rutaPdfIp, nombreArchivo
             ]
         })
 
-        if(data.some(objeto => objeto.Category === "EENT"))
+        for(var i=0; i< discounts.length; i++)
         {
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: 'EENT', fillColor: '#001A72', style: 'headerTitles'},
-                        ],
-                    ]
-                }
-            },)
-            index2.push(
-                {
-                    toc: {
-                        id: 'otoscopes'
+            if(discounts[i].Product_Category === "EENT")
+            {
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: 'EENT', fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
                     }
-                }
-            )
-            index2.push(
-                {
-                    toc: {
-                        id: 'ophthalmoscopes'
-                    }
-                }
-            )
-            index2.push(
-                {
-                    toc: {
-                        id: 'retinoscopes'
-                    }
-                }
-            )
-            index2.push(
-                {
-                    toc: {
-                        id: '777integrated'
-                    }
-                }
-            )
-            index2.push(
-                {
-                    toc: {
-                        id: 'powerhandles'
-                    }
-                }
-            )
-            index2.push(
-                {
-                    toc: {
-                        id: 'diagnosticsets'
-                    }
-                }
-            )
-            index2.push(
-                {
-                    toc: {
-                        id: 'pocketdiagnostic'
-                    }
-                }
-            )
-            index2.push(
-                {
-                    toc: {
-                        id: 'bio'
-                    }
-                }
-            )
-            index2.push(
-                {
-                    toc: {
-                        id: 'earwash'
-                    }
-                }
-            )
-            index2.push(
-                {
-                    toc: {
-                        id: 'microtymp'
-                    }
-                }
-            )
-            index2.push(
-                {
-                    toc: {
-                        id: 'audioscope'
-                    }
-                }
-            )
-            index2.push(
-                {
-                    toc: {
-                        id: 'audiometry'
-                    }
-                }
-            )
-            index2.push(
-                {
-                    toc: {
-                        id: 'illuminators'
-                    }
-                }
-            )
-            index2.push(
-                {
-                    toc: {
-                        id: 'fiberoptics'
-                    }
-                }
-            )
-            index2.push(
-                {
-                    toc: {
-                        id: 'standardlaryncoscopes'
-                    }
-                }
-            )
-            index2.push(
-                {
-                    toc: {
-                        id: 'cases'
-                    }
-                }
-            )
-            index2.push(
-                {
-                    toc: {
-                        id: 'batteries'
-                    }
-                }
-            )
-            index2.push(
-                {
-                    toc: {
-                        id: 'lamps'
-                    }
-                }
-            )
-        }
+                })
 
-        if(data.some(objeto => objeto.Category === "Vision Care"))
-        {
-            index2.push('\n');
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: 'Vision Care', fillColor: '#001A72', style: 'headerTitles'},
-                        ],
-                    ]
-                }
-            },)
+                const dataLayout = data.filter(objeto => objeto.Category === "EENT");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
 
-            index2.push(
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'spotvision'
-                    }
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
                 }
-            )
-        }
+                
+            }
+            if(discounts[i].Product_Category === "Vision Care")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: 'Vision Care', fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
+                    }
+                },)
 
-        if(data.some(objeto => objeto.Category === "Endoscopy"))
-        {
-            index2.push('\n');
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: 'Endoscopy', fillColor: '#001A72', style: 'headerTitles'},
-                        ],
-                    ]
-                }
-            },)
+                const dataLayout = data.filter(objeto => objeto.Category === "Vision Care");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
 
-            index2.push(
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'scopes'
-                    }
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
                 }
-            )
+            }
 
-            index2.push(
-                {
-                    toc: {
-                        id: 'endoscopy'
+            if(discounts[i].Product_Category === "Endoscopy")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: 'Endoscopy', fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
                     }
-                }
-            )
-        }
-        
-        if(data.some(objeto => objeto.Category === "Lighting"))
-        {
-            index2.push('\n');
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: 'Lighting', fillColor: '#001A72', style: 'headerTitles'},
-                        ],
-                    ]
-                }
-            },)
+                },)
 
-            index2.push(
-                {
-                    toc: {
-                        id: 'examlights'
-                    }
-                }
-            )
+                const dataLayout = data.filter(objeto => objeto.Category === "Endoscopy");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
 
-            index2.push(
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'minorprocedure'
-                    }
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
                 }
-            )
+            }
 
-            index2.push(
-                {
-                    toc: {
-                        id: 'headlights'
+            if(discounts[i].Product_Category === "Lighting")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: 'Lighting', fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
                     }
-                }
-            )
+                },)
 
-            index2.push(
-                {
-                    toc: {
-                        id: 'episcope'
-                    }
-                }
-            )            
-        }
+                const dataLayout = data.filter(objeto => objeto.Category === "Lighting");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
 
-        if(data.some(objeto => objeto.Category === "Womens Health"))
-        {
-            index2.push('\n');
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: "Women's Health", fillColor: '#001A72', style: 'headerTitles'},
-                        ],
-                    ]
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
+                {
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
                 }
-            },)
+            }
 
-            index2.push(
-                {
-                    toc: {
-                        id: 'vaginal'
+            if(discounts[i].Product_Category === "Cardiology")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: 'Cardiology', fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
                     }
-                }
-            )  
-        }
-        
-        if(data.some(objeto => objeto.Category === "Core Blood Pressure"))
-        {
-            index2.push('\n');
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: "Core Blood Pressure", fillColor: '#001A72', style: 'headerTitles'},
-                        ],
-                    ]
-                }
-            },)
+                },)
 
-            index2.push(
-                {
-                    toc: {
-                        id: '767series'
-                    }
-                }
-            )  
-            index2.push(
-                {
-                    toc: {
-                        id: 'durashock'
-                    }
-                }
-            )  
-            index2.push(
-                {
-                    toc: {
-                        id: 'inflation'
-                    }
-                }
-            )  
-            index2.push(
-                {
-                    toc: {
-                        id: 'bpcuff'
-                    }
-                }
-            )  
-        }
+                const dataLayout = data.filter(objeto => objeto.Category === "Cardiology");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
 
-        if(data.some(objeto => objeto.Category === "Stethoscopes"))
-        {
-            index2.push('\n');
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: "Stethoscopes", fillColor: '#001A72', style: 'headerTitles'},
-                        ],
-                    ]
-                }
-            },)
-
-            index2.push(
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'harvey'
-                    }
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
                 }
-            )  
-            index2.push(
-                {
-                    toc: {
-                        id: 'professional'
-                    }
-                }
-            )  
-            index2.push(
-                {
-                    toc: {
-                        id: 'lightweight'
-                    }
-                }
-            )  
-        }
+            }
 
-        if(data.some(objeto => objeto.Category === "Thermometry"))
-        {
-            index2.push('\n');
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: "Thermometry", fillColor: '#001A72', style: 'headerTitles'},
-                        ],
-                    ]
-                }
-            },)
-
-            index2.push(
-                {
-                    toc: {
-                        id: 'suretemp'
+            if(discounts[i].Product_Category === "Respiratory")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: 'Respiratory', fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
                     }
-                }
-            )  
-            index2.push(
+                },)
+
+                const dataLayout = data.filter(objeto => objeto.Category === "Respiratory");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
+
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'braun'
-                    }
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
                 }
-            )  
-        }
-        
-        if(data.some(objeto => objeto.Category === "Flexiport"))
-        {
-            index2.push('\n');
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: "Flexiport", fillColor: '#001A72', style: 'headerTitles'},
-                        ],
-                    ]
-                }
-            },)
+            }
 
-            index2.push(
+            if(discounts[i].Product_Category === "Womens Health")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: "Women's Health", fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
+                    }
+                },)
+
+                const dataLayout = data.filter(objeto => objeto.Category === "Womens Health");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
+
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'reusablecuffs'
-                    }
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
                 }
-            )  
-            index2.push(
+            }
+
+            if(discounts[i].Product_Category === "Core Blood Pressure")
+            {   
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: "Core Blood Pressure", fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
+                    }
+                },)
+
+                const dataLayout = data.filter(objeto => objeto.Category === "Core Blood Pressure");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
+
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'disposablecuffs'
-                    }
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
                 }
-            ) 
-            index2.push(
+            }
+
+            if(discounts[i].Product_Category === "Stethoscopes")
+            {  
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: "Stethoscopes", fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
+                    }
+                },)
+
+                const dataLayout = data.filter(objeto => objeto.Category === "Stethoscopes");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
+
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'neonatalcuffs'
-                    }
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
                 }
-            )  
-            index2.push(
+            }
+
+            if(discounts[i].Product_Category === "Thermometry")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: "Thermometry", fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
+                    }
+                },)
+
+                const dataLayout = data.filter(objeto => objeto.Category === "Thermometry");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
+
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'flexiport'
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
+                }
+            }
+
+            if(discounts[i].Product_Category === "Flexiport")
+            {   
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: "Flexiport", fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
                     }
-                }
-            )   
-        }
+                },)
 
-        if(data.some(objeto => objeto.Category === "Connex ProBP 3400"))
-        {
-            index2.push('\n');
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: "Connex ProBP 3400", fillColor: '#001A72', style: 'headerTitles'},
-                        ],
-                    ]
-                }
-            },)
+                const dataLayout = data.filter(objeto => objeto.Category === "Flexiport");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
 
-            index2.push(
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'probp200d'
-                    }
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
                 }
-            )  
-            index2.push(
+            }
+
+            if(discounts[i].Product_Category === "ProBP 3400")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: "ProBP 3400", fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
+                    }
+                },)
+
+                const dataLayout = data.filter(objeto => objeto.Category === "Connex ProBP 3400");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
+
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'probp200a'
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g]
+                            }
+                        }
+                    )
+                }
+            }
+
+            if(discounts[i].Product_Category === "ProBP 2000")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: "ProBP 2000", fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
                     }
-                }
-            )  
-        }
+                },)
 
-        if(data.some(objeto => objeto.Category === "Home Health"))
-        {
-            index2.push('\n');
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: "Home Health", fillColor: '#001A72', style: 'headerTitles'},
-                        ],
-                    ]
-                }
-            },)
+                const dataLayout = data.filter(objeto => objeto.Category === "ProBP 2000");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
 
-            index2.push(
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'homeblood'
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
+                }
+            }
+
+            if(discounts[i].Product_Category === "Home Health")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: "Home Health", fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
                     }
-                }
-            ) 
-        }
+                },)
 
-        if(data.some(objeto => objeto.Category === "Connex Spot Monitor"))
-        {
-            index2.push('\n');
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: "Connex Spot Monitor", fillColor: '#001A72', style: 'headerTitles'},
-                        ],
-                    ]
-                }
-            },)
+                const dataLayout = data.filter(objeto => objeto.Category === "Home Health");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
 
-            index2.push(
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'csmmain'
-                    }
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
                 }
-            )
-            index2.push(
+            }
+
+            if(discounts[i].Product_Category === "CSM")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: "CSM", fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
+                    }
+                },)
+
+                const dataLayout = data.filter(objeto => objeto.Category === "Connex Spot Monitor");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
+
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'csmaccessories'
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
+                }
+            }
+
+            if(discounts[i].Product_Category === "CVSM")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: "CVSM", fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
                     }
-                }
-            ) 
-        }
+                },)
 
-        if(data.some(objeto => objeto.Category === "CVSM"))
-        {
-            index2.push('\n');
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: "CVSM", fillColor: '#001A72', style: 'headerTitles'},
-                        ],
-                    ]
-                }
-            },)
+                const dataLayout = data.filter(objeto => objeto.Category === "CVSM");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
 
-            index2.push(
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'connexmain'
-                    }
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
                 }
-            )
-            index2.push(
+            }
+
+            if(discounts[i].Product_Category === "CIWS")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: "CIWS", fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
+                    }
+                },)
+
+                const dataLayout = data.filter(objeto => objeto.Category === "CIWS");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
+
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'connexaccessories'
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g]
+                            }
+                        }
+                    )
+                }
+            }
+
+            if(discounts[i].Product_Category === "CP50 ECG")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: "CP50 ECG", fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
                     }
-                }
-            ) 
-        }
+                },)
 
-        if(data.some(objeto => objeto.Category === "CIWS"))
-        {
-            index2.push('\n');
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: "CIWS", fillColor: '#001A72', style: 'headerTitles'},
-                        ],
-                    ]
-                }
-            },)
+                const dataLayout = data.filter(objeto => objeto.Category === "CP50 ECG");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
 
-            index2.push(
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'ciwsmain'
-                    }
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
                 }
-            )
-            index2.push(
+            }
+
+            if(discounts[i].Product_Category === "CP150 ECG")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: "CP150 ECG", fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
+                    }
+                },)
+
+                const dataLayout = data.filter(objeto => objeto.Category === "CP150 ECG");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
+
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'ciwsaccessories'
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
+                }
+            }
+
+            if(discounts[i].Product_Category === "PC-Based ECG")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: "PC-Based ECG", fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
                     }
-                }
-            ) 
-        }
+                },)
 
-        if(data.some(objeto => objeto.Category === "CP50 ECG"))
-        {
-            index2.push('\n');
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: "CP50 ECG", fillColor: '#001A72', style: 'headerTitles'},
-                        ],
-                    ]
-                }
-            },)
+                const dataLayout = data.filter(objeto => objeto.Category === "PC-Based ECG");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
 
-            index2.push(
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'cp50'
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
+                }
+            }
+
+            if(discounts[i].Product_Category === "Spirometry")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: "Spirometry", fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
                     }
-                }
-            )
-        }
+                },)
 
-        if(data.some(objeto => objeto.Category === "CP150 ECG"))
-        {
-            index2.push('\n');
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: "CP150 ECG", fillColor: '#001A72', style: 'headerTitles'},
-                        ],
-                    ]
-                }
-            },)
+                const dataLayout = data.filter(objeto => objeto.Category === "Spirometry");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
 
-            index2.push(
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'cp150'
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g]
+                            }
+                        }
+                    )
+                }
+            }
+
+            if(discounts[i].Product_Category === "Veterinary")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: "Veterinary", fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
                     }
-                }
-            )
-        }
+                },)
 
-        if(data.some(objeto => objeto.Category === "PC-Based ECG"))
-        {
-            index2.push('\n');
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: "PC-Based ECG", fillColor: '#001A72', style: 'headerTitles'},
-                        ],
-                    ]
-                }
-            },)
+                const dataLayout = data.filter(objeto => objeto.Category === "Veterinary");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
 
-            index2.push(
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'cardioperfect'
-                    }
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
                 }
-            )
+            }
 
-            index2.push(
+            if(discounts[i].Product_Category === "ABPM Systems")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: "ABPM Systems", fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
+                    }
+                },)
+
+                const dataLayout = data.filter(objeto => objeto.Category === "ABPM Systems");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
+
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'pcbased'
-                    }
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g]
+                            }
+                        }
+                    )
                 }
-            )
+            }
 
-            index2.push(
+            if(discounts[i].Product_Category === "Holter ECG Systems")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: "Holter ECG Systems", fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
+                    }
+                },)
+
+                const dataLayout = data.filter(objeto => objeto.Category === "Holter ECG Systems");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
+
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'stresstest'
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
+                }
+            }
+
+            if(discounts[i].Product_Category === "SPOT 4400")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: "SPOT 4400", fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
                     }
-                }
-            )
-        }
+                },)
 
-        if(data.some(objeto => objeto.Category === "Spirometry"))
-        {
-            index2.push('\n');
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: "Spirometry", fillColor: '#001A72', style: 'headerTitles'},
-                        ],
-                    ]
-                }
-            },)
+                const dataLayout = data.filter(objeto => objeto.Category === "SPOT 4400");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
 
-            index2.push(
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
                 {
-                    toc: {
-                        id: 'spiroperfect'
-                    }
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
                 }
-            )
-            index2.push(
-                {
-                    toc: {
-                        id: 'spirometry'
-                    }
-                }
-            )
-        }
-
-        if(data.some(objeto => objeto.Category === "ABPM Systems"))
-        {
-            index2.push('\n');
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: "ABPM Systems", fillColor: '#001A72', style: 'headerTitles'},
-                        ],
-                    ]
-                }
-            },)
-
-            index2.push(
-                {
-                    toc: {
-                        id: 'abpm'
-                    }
-                }
-            )
-            index2.push(
-                {
-                    toc: {
-                        id: 'abpma'
-                    }
-                }
-            )
-        }
-
-        if(data.some(objeto => objeto.Category === "Holter ECG Systems"))
-        {
-            index2.push('\n');
-            index2.push({
-                table: {
-                    widths: [530],
-                    body: [
-                        [
-                            {border: [false, false, false, false], text: "Holter ECG Systems", fillColor: '#001A72', style: 'headerTitles'},
-                        ],
-                    ]
-                }
-            },)
-
-            index2.push(
-                {
-                    toc: {
-                        id: 'holter'
-                    }
-                }
-            )
+            }
         }
     
         index2.push({text: '', pageBreak: 'after'  })        
@@ -855,127 +1030,158 @@ async function createDocument(discounts, data, rutaPdf, rutaPdfIp, nombreArchivo
         var thermsOfDistributionLayout = await thermsOfDistribution.getThermsOfDistribution();
         contenido.push(thermsOfDistributionLayout)
 
-        if(data.some(objeto => objeto.Category === "EENT"))
+        for(var i=0; i< discounts.length; i++)
         {
-            var eentLayout = await eent.getEent(data);
-            contenido.push(eentLayout)
-        }
+            if(discounts[i].Product_Category === "EENT")
+            {
+                var eentLayout = await eent.getEent(data);
+                contenido.push(eentLayout)
+            }
 
-        if(data.some(objeto => objeto.Category === "Vision Care"))
-        {
-            var visionCareLayout = await visionCare.getVisionCare(data);
-            contenido.push(visionCareLayout)
-        }
+            if(discounts[i].Product_Category === "Vision Care")
+            {
+                var visionCareLayout = await visionCare.getVisionCare(data);
+                contenido.push(visionCareLayout)
+            }
 
-        if(data.some(objeto => objeto.Category === "Endoscopy"))
-        {
-            var endoscopyLayout = await endoscopy.getEndoscopy(data);
-            contenido.push(endoscopyLayout)
-        }
-        
-        if(data.some(objeto => objeto.Category === "Lighting"))
-        {
-            var lightingLayout = await lighting.getLighting(data);
-            contenido.push(lightingLayout)
-        }
+            if(discounts[i].Product_Category === "Endoscopy")
+            {
+                var endoscopyLayout = await endoscopy.getEndoscopy(data);
+                contenido.push(endoscopyLayout)
+            }
 
-        if(data.some(objeto => objeto.Category === "Womens Health"))
-        {
-            var womensHealthLayout = await womensHealth.getWomensHealth(data);
-            contenido.push(womensHealthLayout)
-        }
-        
-        if(data.some(objeto => objeto.Category === "Core Blood Pressure"))
-        {
-            var coreBloodPressureLayout = await coreBloodPressure.getCoreBloodPressure(data);
-            contenido.push(coreBloodPressureLayout)
-        }
+            if(discounts[i].Product_Category === "Lighting")
+            {
+                var lightingLayout = await lighting.getLighting(data);
+                contenido.push(lightingLayout)
+            }
 
-        if(data.some(objeto => objeto.Category === "Stethoscopes"))
-        {
-            var stethoscopesLayout = await stethoscopes.getStethoscopes(data);
-            contenido.push(stethoscopesLayout)
-        }
+            if(discounts[i].Product_Category === "Womens Health")
+            {
+                var womensHealthLayout = await womensHealth.getWomensHealth(data);
+                contenido.push(womensHealthLayout)
+            }
 
-        if(data.some(objeto => objeto.Category === "Thermometry"))
-        {
-            var thermometryLayout = await thermometry.getThermometry(data);
-            contenido.push(thermometryLayout)
-        }
-        
-        if(data.some(objeto => objeto.Category === "Flexiport"))
-        {
-            var flexiportLayout = await flexiport.getFlexiport(data);
-            contenido.push(flexiportLayout)
-        }
+            if(discounts[i].Product_Category === "Core Blood Pressure")
+            {   
+                var coreBloodPressureLayout = await coreBloodPressure.getCoreBloodPressure(data);
+                contenido.push(coreBloodPressureLayout)
+            }
 
-        if(data.some(objeto => objeto.Category === "Connex ProBP 3400"))
-        {
-            var connexProBP3400Layout = await connexProBP3400.getConnexProBd3400(data);
-            contenido.push(connexProBP3400Layout)
-            
-            var proBP2000Layout = await proBP2000.getProBP2000(data);
-            contenido.push(proBP2000Layout)
-        }
+            if(discounts[i].Product_Category === "Stethoscopes")
+            {  
+                var stethoscopesLayout = await stethoscopes.getStethoscopes(data);
+                contenido.push(stethoscopesLayout)
+            }
 
-        if(data.some(objeto => objeto.Category === "Home Health"))
-        {
-            var homeHealthLayout = await homeHealth.getHomeHealth(data);
-            contenido.push(homeHealthLayout)
-        }
+            if(discounts[i].Product_Category === "Thermometry")
+            {
+                var thermometryLayout = await thermometry.getThermometry(data);
+                contenido.push(thermometryLayout)
+            }
 
-        if(data.some(objeto => objeto.Category === "Connex Spot Monitor"))
-        {
-            var connexSpotMonitorLayout = await connexSpotMonitor.getConnexSpotMonitor(data);
-            contenido.push(connexSpotMonitorLayout)
-        }
+            if(discounts[i].Product_Category === "Flexiport")
+            {   
+                var flexiportLayout = await flexiport.getFlexiport(data);
+                contenido.push(flexiportLayout)
+            }
 
-        if(data.some(objeto => objeto.Category === "CVSM"))
-        {
-            var cvsmLayout = await cvsm.getCvsm(data);
-            contenido.push(cvsmLayout)
-        }
+            if(discounts[i].Product_Category === "ProBP 2000")
+            {
+                
+                var proBP2000Layout = await proBP2000.getProBP2000(data);
+                contenido.push(proBP2000Layout)
+            }
 
-        if(data.some(objeto => objeto.Category === "CIWS"))
-        {
-            var ciwsLayout = await ciws.getCiws(data);
-            contenido.push(ciwsLayout)
-        }
+            if(discounts[i].Product_Category === "ProBP 3400")
+            {
+                var connexProBP3400Layout = await connexProBP3400.getConnexProBd3400(data);
+                contenido.push(connexProBP3400Layout)
+            }
 
-        if(data.some(objeto => objeto.Category === "CP50 ECG"))
-        {
-            var cp50ECGLayout = await cp50ECG.getCP50ECG(data);
-            contenido.push(cp50ECGLayout)
-        }
+            if(discounts[i].Product_Category === "Cardiology")
+            {
+                var cardiologyLayout = await cardiology.getCardiology(data);
+                contenido.push(cardiologyLayout)
+            }
 
-        if(data.some(objeto => objeto.Category === "CP150 ECG"))
-        {
-            var cp150ECGLayout = await cp150ECG.getCP150ECG(data);
-            contenido.push(cp150ECGLayout)
-        }
+            if(discounts[i].Product_Category === "Respiratory")
+            {
+                var respiratoryLayout = await respiratory.getRespiratory(data);
+                contenido.push(respiratoryLayout)
+            }
 
-        if(data.some(objeto => objeto.Category === "PC-Based ECG"))
-        {
-            var pcBasedECGLayout = await pcBasedECG.getPCBasedECG(data);
-            contenido.push(pcBasedECGLayout)
-        }
+            if(discounts[i].Product_Category === "Veterinary")
+            {
+                var veterinaryLayout = await veterinary.getVeterinary(data);
+                contenido.push(veterinaryLayout)
+            }
 
-        if(data.some(objeto => objeto.Category === "Spirometry"))
-        {
-            var spirometryLayout = await spirometry.getSpirometry(data);
-            contenido.push(spirometryLayout)
-        }
+            if(discounts[i].Product_Category === "Home Health")
+            {
+                var homeHealthLayout = await homeHealth.getHomeHealth(data);
+                contenido.push(homeHealthLayout)
+            }
 
-        if(data.some(objeto => objeto.Category === "ABPM Systems"))
-        {
-            var abpmSystemsLayout = await abpmSystems.getABPMSystems(data);
-            contenido.push(abpmSystemsLayout)
-        }
+            if(discounts[i].Product_Category === "CSM")
+            {
+                var connexSpotMonitorLayout = await connexSpotMonitor.getConnexSpotMonitor(data);
+                contenido.push(connexSpotMonitorLayout)
+            }
 
-        if(data.some(objeto => objeto.Category === "Holter ECG Systems"))
-        {
-            var holterECGSystemsLayout = await holterECGSystems.getHolterECGSystems(data);
-            contenido.push(holterECGSystemsLayout)
+            if(discounts[i].Product_Category === "CVSM")
+            {
+                var cvsmLayout = await cvsm.getCvsm(data);
+                contenido.push(cvsmLayout)
+            }
+
+            if(discounts[i].Product_Category === "CIWS")
+            {
+                var ciwsLayout = await ciws.getCiws(data);
+                contenido.push(ciwsLayout)
+            }
+
+            if(discounts[i].Product_Category === "CP50 ECG")
+            {
+                var cp50ECGLayout = await cp50ECG.getCP50ECG(data);
+                contenido.push(cp50ECGLayout)
+            }
+
+            if(discounts[i].Product_Category === "CP150 ECG")
+            {
+                var cp150ECGLayout = await cp150ECG.getCP150ECG(data);
+                contenido.push(cp150ECGLayout)
+            }
+
+            if(discounts[i].Product_Category === "PC-Based ECG")
+            {
+                var pcBasedECGLayout = await pcBasedECG.getPCBasedECG(data);
+                contenido.push(pcBasedECGLayout)
+            }
+
+            if(discounts[i].Product_Category === "Spirometry")
+            {
+                var spirometryLayout = await spirometry.getSpirometry(data);
+                contenido.push(spirometryLayout)
+            }
+
+            if(discounts[i].Product_Category === "ABPM Systems")
+            {
+                var abpmSystemsLayout = await abpmSystems.getABPMSystems(data);
+                contenido.push(abpmSystemsLayout)
+            }
+
+            if(discounts[i].Product_Category === "Holter ECG Systems")
+            {
+                var holterECGSystemsLayout = await holterECGSystems.getHolterECGSystems(data);
+                contenido.push(holterECGSystemsLayout)
+            }
+
+            if(discounts[i].Product_Category === "SPOT 4400")
+            {
+                var spot4400Layout = await spot4400.getSPOT4400(data);
+                contenido.push(spot4400Layout)
+            }
         }
 
         var docDefinition = { 
@@ -990,7 +1196,7 @@ async function createDocument(discounts, data, rutaPdf, rutaPdfIp, nombreArchivo
                             widths: [450,80],
                             body: [
                                 [
-                                    {border: [false, false, false, false], text: "Latin America and Caribbean Price List - Effective October 1, 2022 (Rev.I)", fillColor: '#001A72', style: 'footer'},
+                                    {border: [false, false, false, false], text: "Latin America and Caribbean Price List - Effective " + effectiveDate + " (Rev.I)", fillColor: '#001A72', style: 'footer'},
                                     {border: [false, false, false, false], text: 'Page ' + currentPage.toString() + ' of ' + pageCount, fillColor: '#001A72', style: 'footer', alignment: "right"},
                                 ],
                             ]

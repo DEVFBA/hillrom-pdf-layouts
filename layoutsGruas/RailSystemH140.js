@@ -184,7 +184,7 @@ async function getRailSystemH140(pdfZone)
                 widths: ["*"],
                 body: [
                     [
-                        {text: 'Rail System H140', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', tocItem: "railsystemh140"},
+                        {text: 'Rail System H140', style: 'textotablacolorlarge', fillColor: '#03857d',  alignment: 'center', tocItem: "railsystemh140"},
                     ]
                 ]
             },
@@ -208,9 +208,9 @@ async function getRailSystemH140(pdfZone)
                 widths: [80, "*", 60],
                 body: [
                     [
-                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     ]
                 ]
             },

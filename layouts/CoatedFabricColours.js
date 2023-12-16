@@ -30,13 +30,13 @@ async function getCoatedFabricColours()
                 widths: ["*"],
                 body: [
                     [
-                        {border: [false, false, false, false], text: 'Ginkgo', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                        {border: [false, false, false, false], text: 'Ginkgo', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
                     ],
                     [
                         {border: [false, false, false, false], image: "images/CoatedFabricColours2.png", width: 400, height: 350, alignment: 'center'},
                     ],
                     [
-                        {border: [false, false, false, false], text: 'Diabolo Club', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                        {border: [false, false, false, false], text: 'Diabolo Club', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
                     ],
                     [
                         {border: [false, false, false, false], image: "images/CoatedFabricColours3.png", width: 400, height: 170, alignment: 'center'},

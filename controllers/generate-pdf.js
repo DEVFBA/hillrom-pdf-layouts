@@ -134,6 +134,7 @@ async function createPdf(params){
                 }
             }
     }catch(error){
+        console.log(error)
         return response = {
             data: {
                 status: 0,

@@ -8,10 +8,10 @@ async function getTransferBoard()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
     ]
     pSItems++
 
@@ -72,8 +72,7 @@ async function getTransferBoard()
         table1,
         "\n",
         "\n",
-        { image: "images/TransferBoard1.png", width: 230, height: 180, alignment: 'center'},
-        {text: '', pageBreak: 'after'  },
+        { image: "images/TransferBoard1.png", width: 230, height: 180, alignment: 'center'}
     ]
 
     return accumax;

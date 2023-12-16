@@ -14,11 +14,11 @@ async function getPoweredSurfaces()
     var p290 =[]
     var pSItems = 0;
     p290[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
     ]
     pSItems++
 
@@ -112,11 +112,11 @@ async function getPoweredSurfaces()
     if(accellaTherapyData.length > 0)
     {
         accellaTherapy[pSItems] = [
-            {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-            {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-            {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-            {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+            {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+            {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+            {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+            {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
         ]
         pSItems++
 
@@ -142,11 +142,11 @@ async function getPoweredSurfaces()
     if(talleyFusionData.length > 0)
     {
         talleyFusion[pSItems] = [
-            {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-            {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-            {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-            {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+            {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+            {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+            {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+            {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
         ]
         pSItems++
 

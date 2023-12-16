@@ -1,173 +1,138 @@
 async function getVisionCare(data)
 {
-    var spotVision = [];
+    var layout = [];
 
     const visionCareData = data.filter(objeto => objeto.Category === "Vision Care");
 
-    const isSpot = visionCareData.some(objeto => objeto.Group === "Spot Vision Screener");
-    if(isSpot)
+    const gruposUnicosOrdenados = [...new Set(visionCareData.map(item => item.Group))]
+    .filter(Boolean) // Eliminar valores nulos o undefined
+    .sort((a, b) => {
+        // Ordenar por el atributo Order_Group
+        const orderA = visionCareData.find(item => item.Group === a)?.Order_Group || 0;
+        const orderB = visionCareData.find(item => item.Group === b)?.Order_Group || 0;
+        return orderA - orderB;
+    });
+
+    const familiasUnicasOrdenadas = [...new Set(visionCareData.map(item => item.Family))]
+    .filter(Boolean) // Eliminar valores nulos o undefined
+    .sort((a, b) => {
+        // Ordenar por el atributo Order_Group
+        const orderA = visionCareData.find(item => item.Family === a)?.Order_Family || 0;
+        const orderB = visionCareData.find(item => item.Family === b)?.Order_Family || 0;
+        return orderA - orderB;
+    });
+
+    for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
-        const data1= visionCareData.filter(objeto => objeto.Family === "SPOT VISION SCREENER");
-        if(data1.length > 0)
+        const dataGroup = visionCareData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
+
+        //Se sacan solo las familias de ese grupo
+        const familiasUnicasOrdenadasGroup = [...new Set(dataGroup.map(item => item.Family))]
+        .filter(Boolean) // Eliminar valores nulos o undefined
+        .sort((a, b) => {
+            // Ordenar por el atributo Order_Group
+            const orderA = dataGroup.find(item => item.Family === a)?.Order_Family || 0;
+            const orderB = dataGroup.find(item => item.Family === b)?.Order_Family || 0;
+            return orderA - orderB;
+        });
+
+        layout.push("\n");
+        layout.push({ text: "Vision Care", style: 'header3', alignment: "left" });
+        layout.push("\n");
+        layout.push({ text: gruposUnicosOrdenados[g], style: 'headerRed', alignment: "right", tocItem: gruposUnicosOrdenados[g].replace(/\s/g, '')});
+
+        for(var f=0; f<familiasUnicasOrdenadas.length; f++)
         {
-
-            spotVision.push({ text: 'Spot Vision Screener', style: 'headerRed', alignment: "right", tocItem: "spotvision" });
-
-            var arrayDocument = []
-            arrayDocument.push("\n");
-            arrayDocument.push({ text: 'SPOT VISION SCREENER', style: 'header4', alignment: "left" });
-            arrayDocument.push("\n");
-        
-            var options =[]
-            var pSItems = 0;
-            options[pSItems] = [
-                {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
-                {text: 'Comment', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
-            ]
-            pSItems++
-
-            for(var i=0; i<data1.length; i++)
+            if (familiasUnicasOrdenadasGroup.includes(familiasUnicasOrdenadas[f])) 
             {
-                if(data1[i].Obsolescence === true)
-                {
-                    options[pSItems] = [
-                        {text: data1[i].Material, style: 'textotablaD', alignment: 'center'},
-                        {text: data1[i].Description, style: 'textotablaD'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data1[i].Suggested_Retail_Price), style: 'textotablaD'},
-                        {
-                            text: [
-                              { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
-                              { text: data1[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
-                            ]
-                        }
-                    ]
-                }
-                else {
-                    options[pSItems] = [
-                        {text: data1[i].Material, style: 'textotabla', alignment: 'center'},
-                        {text: data1[i].Description, style: 'textotabla'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data1[i].Suggested_Retail_Price), style: 'textotabla'},
-                        {text: data1[i].Comment, style: 'textotabla'}
-                    ]
-                }
-                
+                const dataFamily = visionCareData.filter(objeto => objeto.Family === familiasUnicasOrdenadas[f]);
+
+                var data1 = [];
+
+                f !== 0 && data1.push("\n");
+
+                data1.push({ text: familiasUnicasOrdenadas[f], style: 'header4', alignment: "left" });
+                data1.push("\n");
+
+                var options =[]
+                var pSItems = 0;
+                options[pSItems] = [
+                    {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                    {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                    {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
+                    {text: 'Comment', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                ]
                 pSItems++
+
+                for(var i=0; i<dataFamily.length; i++)
+                {
+                    if(dataFamily[i].Obsolescence === true)
+                    {
+                        options[pSItems] = [
+                            {text: dataFamily[i].Material, style: 'textotablaD', alignment: 'left'},
+                            {text: dataFamily[i].Description, style: 'textotablaD'},
+                            {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotablaD'},
+                            {
+                                text: [
+                                { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
+                                { text: dataFamily[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
+                                ]
+                            }
+                        ]
+                    }
+                    else {
+                        options[pSItems] = [
+                            {text: dataFamily[i].Material, style: 'textotabla', alignment: 'left'},
+                            {text: dataFamily[i].Description, style: 'textotabla'},
+                            {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotabla'},
+                            {text: dataFamily[i].Comment, style: 'textotabla'}
+                        ]
+                    }
+                    
+                    pSItems++
+                }
+
+                data1.push({
+                    table: {
+                        widths: [80, "*", 80, 80],
+                        headerRows: 1,
+                        body: options
+                    },
+                    layout: {
+                        hLineWidth: function () {
+                            return  0.7;
+                        },
+                        vLineWidth: function () {
+                            return 0.7;
+                        },
+                        hLineColor: function () {
+                            return 'gray';
+                        },
+                        vLineColor: function () {
+                            return 'gray';
+                        },
+                    }
+                })
+            
+                layout.push(data1);
             }
 
-            arrayDocument.push({
-                table: {
-                    headerRows: 1,
-                    widths: [80, "*", 80, 80],
-                    body: options
-                },
-                layout: {
-                    hLineWidth: function () {
-                        return  0.7;
-                    },
-                    vLineWidth: function () {
-                        return 0.7;
-                    },
-                    hLineColor: function () {
-                        return 'gray';
-                    },
-                    vLineColor: function () {
-                        return 'gray';
-                    },
-                }
-            })
-        
-            spotVision.push(arrayDocument);
         }
 
-        const data2= visionCareData.filter(objeto => objeto.Family === "SPOT VISION SCREENER ACCESSORIES");
-        if(data2.length > 0)
-        {
-            spotVision.push("\n");
-
-            var arrayDocument = []
-            arrayDocument.push("\n");
-            arrayDocument.push({ text: 'SPOT VISION SCREENER ACCESSORIES', style: 'header4', alignment: "left" });
-            arrayDocument.push("\n");
-        
-            var options =[]
-            var pSItems = 0;
-            options[pSItems] = [
-                {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
-                {text: 'Comment', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
-            ]
-            pSItems++
-
-            for(var i=0; i<data2.length; i++)
-            {
-                if(data2[i].Obsolescence === true)
-                {
-                    options[pSItems] = [
-                        {text: data2[i].Material, style: 'textotablaD', alignment: 'center'},
-                        {text: data2[i].Description, style: 'textotablaD'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data2[i].Suggested_Retail_Price), style: 'textotablaD'},
-                        {
-                            text: [
-                              { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
-                              { text: data2[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
-                            ]
-                        }
-                    ]
-                }
-                else {
-                    options[pSItems] = [
-                        {text: data2[i].Material, style: 'textotabla', alignment: 'center'},
-                        {text: data2[i].Description, style: 'textotabla'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data2[i].Suggested_Retail_Price), style: 'textotabla'},
-                        {text: data2[i].Comment, style: 'textotabla'}
-                    ]
-                }
-                
-                pSItems++
-            }
-
-            arrayDocument.push({
-                table: {
-                    headerRows: 1,
-                    widths: [80, "*", 80, 80],
-                    body: options
-                },
-                layout: {
-                    hLineWidth: function () {
-                        return  0.7;
-                    },
-                    vLineWidth: function () {
-                        return 0.7;
-                    },
-                    hLineColor: function () {
-                        return 'gray';
-                    },
-                    vLineColor: function () {
-                        return 'gray';
-                    },
-                }
-            })
-        
-            spotVision.push(arrayDocument);
-        }
+        layout.push({text: '', pageBreak: 'after'  }); 
     }
-
+    
     var visionCare = [
-        "\n",
-        { text: 'Vision Care', style: 'header3', alignment: "left" },
-        { image: "v2/images/VisionCare.png", width: 595, height: 680, alignment: 'center'},
+        { image: "v2/images/VisionCare.png", width: 620, height: 840, alignment: 'center'},
         {text: '', pageBreak: 'after'  },
         "\n",
         { text: 'Vision Care', style: 'header3', alignment: "left" },
         { image: "v2/images/VisionCare2.png", width: 595, height: 730, alignment: 'center'},
         {text: '', pageBreak: 'after'  },
-        "\n",
-        { text: 'Vision Care', style: 'header3', alignment: "left" },
-        spotVision,
-        {text: '', pageBreak: 'after'  }
+        //"\n",
+        //{ text: 'Vision Care', style: 'header3', alignment: "left" },
+        layout,
+        //{text: '', pageBreak: 'after'  }
     ]
 
     return visionCare;

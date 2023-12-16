@@ -592,7 +592,7 @@ async function getAccesoriesForSlings(pdfZone)
                 widths: ["*"],
                 body: [
                     [
-                        {text: 'ACCESORIES FOR SLINGS', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center'},
+                        {text: 'ACCESORIES FOR SLINGS', style: 'textotablacolorlarge', fillColor: '#03857d',  alignment: 'center'},
                     ]
                 ]
             },
@@ -616,9 +616,9 @@ async function getAccesoriesForSlings(pdfZone)
                 widths: [80, "*", 60],
                 body: [
                     [
-                        {border: [true, false, true, false], text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'KITNAME', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     ]
                 ]
             },

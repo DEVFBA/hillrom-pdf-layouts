@@ -1381,7 +1381,7 @@ async function getRailSwitchSystem(pdfZone)
                 widths: ["*"],
                 body: [
                     [
-                        {text: 'Rail Switch System', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', tocItem: "railswitchsystem"},
+                        {text: 'Rail Switch System', style: 'textotablacolorlarge', fillColor: '#03857d',  alignment: 'center', tocItem: "railswitchsystem"},
                     ],
                     [
                         {text: 'Traverse Switch (Prod. No. 3124604) and Side Rail Switch (Prod. No. 3124633 or 3124634) are operated via hand control and control box or via Likorall with MultiStation. NOTE! Products described below fit only Rail System H70.', style: 'textotabla', fillColor: '#dbdbdb', alignment: "center"},
@@ -1408,9 +1408,9 @@ async function getRailSwitchSystem(pdfZone)
                 widths: [80, "*", 60],
                 body: [
                     [
-                        {border: [true, false, true, false], text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'KITNAME', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     ]
                 ]
             },
@@ -1460,9 +1460,9 @@ async function getRailSwitchSystem(pdfZone)
                 widths: [80, "*", 60],
                 body: [
                     [
-                        {border: [true, false, true, false], text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'KITNAME', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     ]
                 ]
             },
@@ -1515,9 +1515,9 @@ async function getRailSwitchSystem(pdfZone)
                 widths: [80, "*", 60],
                 body: [
                     [
-                        {border: [true, false, true, false], text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'KITNAME', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     ]
                 ]
             },

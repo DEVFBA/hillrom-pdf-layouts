@@ -2587,7 +2587,7 @@ async function getLiftingAccesories(pdfZone)
                 widths: [190, "*", 130],
                 body: [
                     [
-                        {text: 'Lifting Accessories', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center', colSpan: 3, tocItem: "liftingaccesories"},
+                        {text: 'Lifting Accessories', style: 'textotablacolorlarge', fillColor: '#03857d',  alignment: 'center', colSpan: 3, tocItem: "liftingaccesories"},
                         {},
                         {}
                     ],
@@ -2613,9 +2613,9 @@ async function getLiftingAccesories(pdfZone)
                 widths: [80, "*", 60],
                 body: [
                     [
-                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     ],
                     [
                         {border: [true, false, true, false], text: "\nAll of Liko’s accessories and slings are approved for a maximum load of 200 kg (440 lbs) if nothing else is described. \nFor advice and guidance regarding the Quick-release Hook system's compatibility with other Liko products, we refer to the latest version of the \ndocument 'Guide to Liko's Quick-release Hook System', which can be downloaded at www.liko.com.\n\n", style: 'textotabla', fillColor: '#dbdbdb',  alignment: 'center', colSpan: 3},
@@ -2649,9 +2649,9 @@ async function getLiftingAccesories(pdfZone)
                 widths: [80, "*", 60],
                 body: [
                     [
-                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     ]
                 ]
             },

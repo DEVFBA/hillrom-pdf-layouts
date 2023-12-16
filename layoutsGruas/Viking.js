@@ -330,10 +330,10 @@ async function getViking(pdfZone)
     {
         generalDataBody[pSItems] = [
             {},
-            {border: [true, false, true, false], text: salida2[0].Id_Item, style: 'textotablacatoni'},
-            {border: [true, false, true, false], text: salida2[0].Item_Long_Desc, style: 'textotablacatoni'}, 
+            {border: [true, false, true, false], text: salida2[0].Id_Item, style: 'textotabla'},
+            {border: [true, false, true, false], text: salida2[0].Item_Long_Desc, style: 'textotabla'}, 
             { image: "images/Viking4.png", width: 20, height: 30, alignment: 'center', rowSpan: 3},
-            {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[0].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[0].Price), style: 'textotabla', alignment: 'center'}, 
         ]
 
         pSItems++;
@@ -341,10 +341,10 @@ async function getViking(pdfZone)
     else {
         generalDataBody[pSItems] = [
             {},
-            {border: [true, false, true, false], text: "NO-DATA", style: 'textotablacatoni'},
-            {border: [true, false, true, false], text: "NO-DATA", style: 'textotablacatoni'}, 
+            {border: [true, false, true, false], text: "NO-DATA", style: 'textotabla'},
+            {border: [true, false, true, false], text: "NO-DATA", style: 'textotabla'}, 
             { image: "images/Viking4.png", width: 20, height: 30, alignment: 'center', rowSpan: 3},
-            {border: [true, false, true, false], text: "NO-DATA", style: 'textotablacatoni', alignment: 'center'}, 
+            {border: [true, false, true, false], text: "NO-DATA", style: 'textotabla', alignment: 'center'}, 
         ]
 
         pSItems++;
@@ -354,10 +354,10 @@ async function getViking(pdfZone)
     {
         generalDataBody[pSItems] = [
             {},
-            {border: [true, false, true, false], text: salida2[1].Id_Item, style: 'textotablacatoni'},
-            {border: [true, false, true, false], text: salida2[1].Item_Long_Desc, style: 'textotablacatoni'}, 
+            {border: [true, false, true, false], text: salida2[1].Id_Item, style: 'textotabla'},
+            {border: [true, false, true, false], text: salida2[1].Item_Long_Desc, style: 'textotabla'}, 
             {},
-            {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[1].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {border: [true, false, true, false], text: "$" + Intl.NumberFormat("en-IN").format(salida2[1].Price), style: 'textotabla', alignment: 'center'}, 
         ]
 
         pSItems++
@@ -365,10 +365,10 @@ async function getViking(pdfZone)
     else {
         generalDataBody[pSItems] = [
             {},
-            {border: [true, false, true, false], text: "NO-DATA", style: 'textotablacatoni'},
-            {border: [true, false, true, false], text: "NO-DATA", style: 'textotablacatoni'}, 
+            {border: [true, false, true, false], text: "NO-DATA", style: 'textotabla'},
+            {border: [true, false, true, false], text: "NO-DATA", style: 'textotabla'}, 
             {},
-            {border: [true, false, true, false], text: "NO-DATA", style: 'textotablacatoni', alignment: 'center'}, 
+            {border: [true, false, true, false], text: "NO-DATA", style: 'textotabla', alignment: 'center'}, 
         ]
 
         pSItems++
@@ -377,10 +377,10 @@ async function getViking(pdfZone)
     if(salida2[2] !== undefined) {
         generalDataBody[pSItems] = [
             {},
-            {border: [true, false, true, true], text: salida2[2].Id_Item, style: 'textotablacatoni'},
-            {border: [true, false, true, true], text: salida2[2].Item_Long_Desc, style: 'textotablacatoni'}, 
+            {border: [true, false, true, true], text: salida2[2].Id_Item, style: 'textotabla'},
+            {border: [true, false, true, true], text: salida2[2].Item_Long_Desc, style: 'textotabla'}, 
             {}, 
-            {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[2].Price), style: 'textotablacatoni', alignment: 'center'}, 
+            {border: [true, false, true, true], text: "$" + Intl.NumberFormat("en-IN").format(salida2[2].Price), style: 'textotabla', alignment: 'center'}, 
         ]
 
         pSItems++
@@ -388,10 +388,10 @@ async function getViking(pdfZone)
     else {
         generalDataBody[pSItems] = [
             {},
-            {border: [true, false, true, true], text: "NO-DATA", style: 'textotablacatoni'},
-            {border: [true, false, true, true], text: "NO-DATA", style: 'textotablacatoni'}, 
+            {border: [true, false, true, true], text: "NO-DATA", style: 'textotabla'},
+            {border: [true, false, true, true], text: "NO-DATA", style: 'textotabla'}, 
             {}, 
-            {border: [true, false, true, true], text: "NO-DATA", style: 'textotablacatoni', alignment: 'center'}, 
+            {border: [true, false, true, true], text: "NO-DATA", style: 'textotabla', alignment: 'center'}, 
         ]
 
         pSItems++
@@ -439,7 +439,7 @@ async function getViking(pdfZone)
                         {text: [
                             {text: 'VIKING', style: 'textotablacolorlarge'},
                             {text: "Viking", tocItem: "viking", style: {fontSize: 0}}
-                        ], fillColor: '#5bbccc',  alignment: 'center', },
+                        ], fillColor: '#03857d',  alignment: 'center', },
                     ]
                 ]
             },
@@ -463,9 +463,9 @@ async function getViking(pdfZone)
                 widths: [80, "*", 60],
                 body: [
                     [
-                        {border: [true, false, true, false], text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'KITNAME', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     ]
                 ]
             },
@@ -511,9 +511,9 @@ async function getViking(pdfZone)
                 widths: [80, "*", 60],
                 body: [
                     [
-                        {border: [true, false, true, false], text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'KITNAME', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     ]
                 ]
             },

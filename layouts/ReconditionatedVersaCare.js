@@ -9,14 +9,14 @@ async function getReconditionatedVersaCare()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'RVC955', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'RVC965', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'RVC755', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'RVC765', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'RVC155', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'RVC165', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'RVC955', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'RVC965', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'RVC755', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'RVC765', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'RVC155', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'RVC165', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
     pSItems++
 
@@ -65,7 +65,7 @@ async function getReconditionatedVersaCare()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -79,7 +79,7 @@ async function getReconditionatedVersaCare()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -93,7 +93,7 @@ async function getReconditionatedVersaCare()
             {
                 if(data.Print_Character[2] === "*")
                 {
-                    precio3 = "●"
+                    precio3 = "*"
                 }
                 else {
                     precio3 = "-"
@@ -107,7 +107,7 @@ async function getReconditionatedVersaCare()
             {
                 if(data.Print_Character[3] === "*")
                 {
-                    precio4 = "●"
+                    precio4 = "*"
                 }
                 else {
                     precio4 = "-"
@@ -121,7 +121,7 @@ async function getReconditionatedVersaCare()
             {
                 if(data.Print_Character[4] === "*")
                 {
-                    precio5 = "●"
+                    precio5 = "*"
                 }
                 else {
                     precio5 = "-"
@@ -135,7 +135,7 @@ async function getReconditionatedVersaCare()
             {
                 if(data.Print_Character[5] === "*")
                 {
-                    precio6 = "●"
+                    precio6 = "*"
                 }
                 else {
                     precio6 = "-"
@@ -179,7 +179,7 @@ async function getReconditionatedVersaCare()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'RECONVERSACARE', style: 'textotablacolorlarge', colSpan: 6, fillColor: '#546ce4',  alignment: 'center'},
+                            {text: 'RECONVERSACARE', style: 'textotablacolorlarge', colSpan: 6, fillColor: '#154898',  alignment: 'center'},
                             {},
                             {},
                             {},
@@ -197,12 +197,12 @@ async function getReconditionatedVersaCare()
                         ],
                         [
                             {border: [false, false, false, false], text: 'Standard Features', style: 'textotablaboldlarge'},
-                            {text: 'RVC955', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'RVC965', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'RVC755', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'RVC765', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'RVC155', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'RVC165', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'RVC955', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: 'RVC965', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                            {text: 'RVC755', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                            {text: 'RVC765', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: 'RVC155', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                            {text: 'RVC165', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
                         ],
                         [
                             {text: 'No surface package', style: 'textotabla'},
@@ -268,13 +268,13 @@ async function getReconditionatedVersaCare()
                             {text: 'STND', style: 'textotabla', alignment: 'center'}, 
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[5].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[4].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[5].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[4].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
                         ],
                     ]
                 },
@@ -303,7 +303,7 @@ async function getReconditionatedVersaCare()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'RECONVERSACARE', style: 'textotablacolorlarge', colSpan: 6, fillColor: '#546ce4',  alignment: 'center'},
+                            {text: 'RECONVERSACARE', style: 'textotablacolorlarge', colSpan: 6, fillColor: '#154898',  alignment: 'center'},
                             {},
                             {},
                             {},
@@ -321,12 +321,12 @@ async function getReconditionatedVersaCare()
                         ],
                         [
                             {border: [false, false, false, false], text: 'Standard Features', style: 'textotablaboldlarge'},
-                            {text: 'RVC955', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'RVC965', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'RVC755', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'RVC765', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'RVC155', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'RVC165', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'RVC955', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: 'RVC965', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                            {text: 'RVC755', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                            {text: 'RVC765', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: 'RVC155', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                            {text: 'RVC165', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
                         ],
                         [
                             {text: 'No surface package', style: 'textotabla'},
@@ -392,13 +392,13 @@ async function getReconditionatedVersaCare()
                             {text: 'STND', style: 'textotabla', alignment: 'center'}, 
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
                         ],
                     ]
                 },

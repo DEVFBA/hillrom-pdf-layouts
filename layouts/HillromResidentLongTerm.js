@@ -16,13 +16,13 @@ async function getHillromResidentLongTerm()
 
     options[pSItems] = [
         {border: [false, false, false, false], text: "Options", style: 'textotablabold'},
-        {text: "LTC-320", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: "LTC-310", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: "LTC-300", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: "LTC-250", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: "LTC-205", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: "LTC-105", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: "LTC-100", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: "LTC-320", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: "LTC-310", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: "LTC-300", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: "LTC-250", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: "LTC-205", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: "LTC-105", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: "LTC-100", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
     ]
 
     pSItems++
@@ -153,14 +153,14 @@ async function getHillromResidentLongTerm()
      /*TERMINA CICLO*/
 
     /*options[pSItems] = [
-        {text: "LIST PRICE", style: 'textotablacolor', fillColor: '#546ce4'},
-        {text: "$1,082", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-        {text: "$1,082", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-        {text: "$1,332", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-        {text: "$1,332", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-        {text: "$899", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-        {text: "$899", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-        {text: "$899", style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+        {text: "LIST PRICE", style: 'textotablacolor', fillColor: '#154898'},
+        {text: "$1,082", style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
+        {text: "$1,082", style: 'textotablacolor', alignment: 'center', fillColor: '#154898'}, 
+        {text: "$1,332", style: 'textotablacolor', alignment: 'center', fillColor: '#154898'}, 
+        {text: "$1,332", style: 'textotablacolor', alignment: 'center', fillColor: '#154898'}, 
+        {text: "$899", style: 'textotablacolor', alignment: 'center', fillColor: '#154898'}, 
+        {text: "$899", style: 'textotablacolor', alignment: 'center', fillColor: '#154898'}, 
+        {text: "$899", style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
     ]*/
 
     var accesories = []
@@ -176,10 +176,10 @@ async function getHillromResidentLongTerm()
     pSItems++
 
     accesories[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -246,7 +246,7 @@ async function getHillromResidentLongTerm()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'RESIDENTLTCBED', style: 'textotablacolorlarge', colSpan: 7, fillColor: '#546ce4',  alignment: 'center'},
+                            {text: 'RESIDENTLTCBED', style: 'textotablacolorlarge', colSpan: 7, fillColor: '#154898',  alignment: 'center'},
                             {},
                             {},
                             {},
@@ -266,13 +266,13 @@ async function getHillromResidentLongTerm()
                         ],
                         [
                             {border: [false, false, false, false], text: 'Special Features', style: 'textotablabold'},
-                            {text: 'LTC-320', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'LTC-310', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'LTC-300', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'LTC-250', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'LTC-205', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'LTC-105', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'LTC-100', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LTC-320', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: 'LTC-310', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                            {text: 'LTC-300', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                            {text: 'LTC-250', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: 'LTC-205', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                            {text: 'LTC-105', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                            {text: 'LTC-100', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
                         ],
                         [
                             {text: '1/2 Head Rails with Controls', style: 'textotabla'},
@@ -354,16 +354,16 @@ async function getHillromResidentLongTerm()
                             {text: 'X', style: 'textotabla', alignment: 'center'}, 
                             {text: '', style: 'textotabla', alignment: 'center'}, 
                         ],
-                        [
-                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[2].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[3].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[4].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[5].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[6].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        ],
+                        /*[
+                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[0].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[1].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[2].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[3].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[4].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[5].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(pricesData[6].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                        ],*/
                     ]
                 },
                 layout: {
@@ -391,7 +391,7 @@ async function getHillromResidentLongTerm()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'RESIDENTLTCBED', style: 'textotablacolorlarge', colSpan: 7, fillColor: '#546ce4',  alignment: 'center'},
+                            {text: 'RESIDENTLTCBED', style: 'textotablacolorlarge', colSpan: 7, fillColor: '#154898',  alignment: 'center'},
                             {},
                             {},
                             {},
@@ -411,13 +411,13 @@ async function getHillromResidentLongTerm()
                         ],
                         [
                             {border: [false, false, false, false], text: 'Special Features', style: 'textotablabold'},
-                            {text: 'LTC-320', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'LTC-310', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'LTC-300', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'LTC-250', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'LTC-205', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'LTC-105', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: 'LTC-100', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LTC-320', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
+                            {text: 'LTC-310', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                            {text: 'LTC-300', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                            {text: 'LTC-250', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
+                            {text: 'LTC-205', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                            {text: 'LTC-105', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                            {text: 'LTC-100', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
                         ],
                         [
                             {text: '1/2 Head Rails with Controls', style: 'textotabla'},
@@ -500,14 +500,14 @@ async function getHillromResidentLongTerm()
                             {text: '', style: 'textotabla', alignment: 'center'}, 
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898'},
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
                         ],
                     ]
                 },

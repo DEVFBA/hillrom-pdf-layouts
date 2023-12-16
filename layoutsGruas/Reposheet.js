@@ -448,7 +448,7 @@ async function getReposheet(pdfZone)
                             {text: [
                                 {text: 'REPOSHEET ORIGINAL', style: 'textotablacolorlarge'},
                                 {text: "Reposheet Original", style: {fontSize: 0}, tocItem: "reposheetoriginal"}
-                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            ], fillColor: '#03857d',  alignment: 'center', colSpan: 3},
                             {},
                             {}
                         ],
@@ -474,9 +474,9 @@ async function getReposheet(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ],
                     ]
                 },
@@ -531,7 +531,7 @@ async function getReposheet(pdfZone)
                             {text: [
                                 {text: 'SOLO REPOSHEET™ ORIGINAL', style: 'textotablacolorlarge'},
                                 {text: "Solo Reposheet™ Original", style: {fontSize: 0}, tocItem: "soloreposheetoriginal"}
-                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            ], fillColor: '#03857d',  alignment: 'center', colSpan: 3},
                             {},
                             {}
                         ],
@@ -557,9 +557,9 @@ async function getReposheet(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ],
                     ]
                 },
@@ -614,7 +614,7 @@ async function getReposheet(pdfZone)
                             {text: [
                                 {text: 'MULTISTRAP™', style: 'textotablacolorlarge'},
                                 {text: "Multistrap™", style: {fontSize: 0}, tocItem: "multistrap"}
-                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            ], fillColor: '#03857d',  alignment: 'center', colSpan: 3},
                             {},
                             {}
                         ],
@@ -640,9 +640,9 @@ async function getReposheet(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ],
                     ]
                 },
@@ -697,7 +697,7 @@ async function getReposheet(pdfZone)
                             {text: [
                                 {text: 'SOLO MULTISTRAP™', style: 'textotablacolorlarge'},
                                 {text: "Solo Multistrap™", style: {fontSize: 0}, tocItem: "solomultistrap"}
-                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            ], fillColor: '#03857d',  alignment: 'center', colSpan: 3},
                             {},
                             {}
                         ],
@@ -723,9 +723,9 @@ async function getReposheet(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ],
                     ]
                 },

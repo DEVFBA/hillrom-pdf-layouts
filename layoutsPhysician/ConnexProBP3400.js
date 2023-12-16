@@ -1,619 +1,135 @@
 async function getConnexProBd3400(data)
 {
-    var proBP3400 = []
+    var layout = []
 
     const connexProData = data.filter(objeto => objeto.Category === "Connex ProBP 3400");
 
-    const isProBP = connexProData.some(objeto => objeto.Group === "ProBP 3400 with Sure BP");
-    if(isProBP)
+    const gruposUnicosOrdenados = [...new Set(connexProData.map(item => item.Group))]
+    .filter(Boolean) // Eliminar valores nulos o undefined
+    .sort((a, b) => {
+        // Ordenar por el atributo Order_Group
+        const orderA = connexProData.find(item => item.Group === a)?.Order_Group || 0;
+        const orderB = connexProData.find(item => item.Group === b)?.Order_Group || 0;
+        return orderA - orderB;
+    });
+
+    const familiasUnicasOrdenadas = [...new Set(connexProData.map(item => item.Family))]
+    .filter(Boolean) // Eliminar valores nulos o undefined
+    .sort((a, b) => {
+        // Ordenar por el atributo Order_Group
+        const orderA = connexProData.find(item => item.Family === a)?.Order_Family || 0;
+        const orderB = connexProData.find(item => item.Family === b)?.Order_Family || 0;
+        return orderA - orderB;
+    });
+
+    for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
-        proBP3400.push({ text: 'ProBP 3400 with Sure BP', style: 'headerRed', alignment: "right" });
+        const dataGroup = connexProData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
-        const data1= connexProData.filter(objeto => objeto.Family === "PROBP WITH SUREBP - HANDHELD");
-        if(data1.length > 0)
+        //Se sacan solo las familias de ese grupo
+        const familiasUnicasOrdenadasGroup = [...new Set(dataGroup.map(item => item.Family))]
+        .filter(Boolean) // Eliminar valores nulos o undefined
+        .sort((a, b) => {
+            // Ordenar por el atributo Order_Group
+            const orderA = dataGroup.find(item => item.Family === a)?.Order_Family || 0;
+            const orderB = dataGroup.find(item => item.Family === b)?.Order_Family || 0;
+            return orderA - orderB;
+        });
+
+        layout.push("\n");
+        layout.push({ text: "ProBP 3400", style: 'header3', alignment: "left" });
+        layout.push("\n");
+        layout.push({ text: gruposUnicosOrdenados[g], style: 'headerRed', alignment: "right", tocItem: gruposUnicosOrdenados[g]});
+
+        for(var f=0; f<familiasUnicasOrdenadas.length; f++)
         {
-            var arrayDocument = []
-            arrayDocument.push("\n");
-            arrayDocument.push({ text: 'PROBP WITH SUREBP - HANDHELD', style: 'header4', alignment: "left" });
-            arrayDocument.push("\n");
-        
-            var options =[]
-            var pSItems = 0;
-            options[pSItems] = [
-                {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
-                {text: 'Comment', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
-            ]
-            pSItems++
-
-            for(var i=0; i<data1.length; i++)
+            if (familiasUnicasOrdenadasGroup.includes(familiasUnicasOrdenadas[f])) 
             {
-                if(data1[i].Obsolescence === true)
-                {
-                    options[pSItems] = [
-                        {text: data1[i].Material, style: 'textotablaD', alignment: 'center'},
-                        {text: data1[i].Description, style: 'textotablaD'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data1[i].Suggested_Retail_Price), style: 'textotablaD'},
-                        {
-                            text: [
-                              { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
-                              { text: data1[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
-                            ]
-                        }
-                    ]
-                }
-                else {
-                    options[pSItems] = [
-                        {text: data1[i].Material, style: 'textotabla', alignment: 'center'},
-                        {text: data1[i].Description, style: 'textotabla'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data1[i].Suggested_Retail_Price), style: 'textotabla'},
-                        {text: data1[i].Comment, style: 'textotabla'}
-                    ]
-                }
-                
+                const dataFamily = connexProData.filter(objeto => objeto.Family === familiasUnicasOrdenadas[f]);
+
+                var data1 = [];
+
+                f !== 0 && data1.push("\n");
+
+                data1.push({ text: familiasUnicasOrdenadas[f], style: 'header4', alignment: "left" });
+                data1.push("\n");
+
+                var options =[]
+                var pSItems = 0;
+                options[pSItems] = [
+                    {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                    {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                    {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
+                    {text: 'Comment', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                ]
                 pSItems++
+
+                for(var i=0; i<dataFamily.length; i++)
+                {
+                    if(dataFamily[i].Obsolescence === true)
+                    {
+                        options[pSItems] = [
+                            {text: dataFamily[i].Material, style: 'textotablaD', alignment: 'left'},
+                            {text: dataFamily[i].Description, style: 'textotablaD'},
+                            {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotablaD'},
+                            {
+                                text: [
+                                { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
+                                { text: dataFamily[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
+                                ]
+                            }
+                        ]
+                    }
+                    else {
+                        options[pSItems] = [
+                            {text: dataFamily[i].Material, style: 'textotabla', alignment: 'left'},
+                            {text: dataFamily[i].Description, style: 'textotabla'},
+                            {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotabla'},
+                            {text: dataFamily[i].Comment, style: 'textotabla'}
+                        ]
+                    }
+                    
+                    pSItems++
+                }
+
+                data1.push({
+                    table: {
+                        widths: [80, "*", 80, 80],
+                        headerRows: 1,
+                        body: options
+                    },
+                    layout: {
+                        hLineWidth: function () {
+                            return  0.7;
+                        },
+                        vLineWidth: function () {
+                            return 0.7;
+                        },
+                        hLineColor: function () {
+                            return 'gray';
+                        },
+                        vLineColor: function () {
+                            return 'gray';
+                        },
+                    }
+                })
+            
+                layout.push(data1);
             }
 
-            arrayDocument.push({
-                table: {
-                    headerRows: 1,
-                    widths: [80, "*", 80, 80],
-                    body: options
-                },
-                layout: {
-                    hLineWidth: function () {
-                        return  0.7;
-                    },
-                    vLineWidth: function () {
-                        return 0.7;
-                    },
-                    hLineColor: function () {
-                        return 'gray';
-                    },
-                    vLineColor: function () {
-                        return 'gray';
-                    },
-                }
-            })
-        
-            proBP3400.push(arrayDocument);
         }
 
-        const data2 = connexProData.filter(objeto => objeto.Family === "PROBP WITH SUREBP - MOBILE");
-        if(data2.length > 0)
-        {
-
-            var arrayDocument = []
-            arrayDocument.push("\n");
-            arrayDocument.push({ text: 'PROBP WITH SUREBP - MOBILE', style: 'header4', alignment: "left" });
-            arrayDocument.push("\n");
-        
-            var options =[]
-            var pSItems = 0;
-            options[pSItems] = [
-                {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
-                {text: 'Comment', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
-            ]
-            pSItems++
-
-            for(var i=0; i<data2.length; i++)
-            {
-                if(data2[i].Obsolescence === true)
-                {
-                    options[pSItems] = [
-                        {text: data2[i].Material, style: 'textotablaD', alignment: 'center'},
-                        {text: data2[i].Description, style: 'textotablaD'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data2[i].Suggested_Retail_Price), style: 'textotablaD'},
-                        {
-                            text: [
-                              { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
-                              { text: data2[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
-                            ]
-                        }
-                    ]
-                }
-                else {
-                    options[pSItems] = [
-                        {text: data2[i].Material, style: 'textotabla', alignment: 'center'},
-                        {text: data2[i].Description, style: 'textotabla'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data2[i].Suggested_Retail_Price), style: 'textotabla'},
-                        {text: data2[i].Comment, style: 'textotabla'}
-                    ]
-                }
-                
-                pSItems++
-            }
-
-            arrayDocument.push({
-                table: {
-                    headerRows: 1,
-                    widths: [80, "*", 80, 80],
-                    body: options
-                },
-                layout: {
-                    hLineWidth: function () {
-                        return  0.7;
-                    },
-                    vLineWidth: function () {
-                        return 0.7;
-                    },
-                    hLineColor: function () {
-                        return 'gray';
-                    },
-                    vLineColor: function () {
-                        return 'gray';
-                    },
-                }
-            })
-        
-            proBP3400.push(arrayDocument);
-        }
-
-        const data3 = connexProData.filter(objeto => objeto.Family === "PROBP WITH SUREBP - WALL");
-        if(data3.length > 0)
-        {
-
-            var arrayDocument = []
-            arrayDocument.push("\n");
-            arrayDocument.push({ text: 'PROBP WITH SUREBP - WALL', style: 'header4', alignment: "left" });
-            arrayDocument.push("\n");
-        
-            var options =[]
-            var pSItems = 0;
-            options[pSItems] = [
-                {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
-                {text: 'Comment', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
-            ]
-            pSItems++
-
-            for(var i=0; i<data3.length; i++)
-            {
-                if(data3[i].Obsolescence === true)
-                {
-                    options[pSItems] = [
-                        {text: data3[i].Material, style: 'textotablaD', alignment: 'center'},
-                        {text: data3[i].Description, style: 'textotablaD'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data3[i].Suggested_Retail_Price), style: 'textotablaD'},
-                        {
-                            text: [
-                              { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
-                              { text: data3[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
-                            ]
-                        }
-                    ]
-                }
-                else {
-                    options[pSItems] = [
-                        {text: data3[i].Material, style: 'textotabla', alignment: 'center'},
-                        {text: data3[i].Description, style: 'textotabla'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data3[i].Suggested_Retail_Price), style: 'textotabla'},
-                        {text: data3[i].Comment, style: 'textotabla'}
-                    ]
-                }
-                
-                pSItems++
-            }
-
-            arrayDocument.push({
-                table: {
-                    headerRows: 1,
-                    widths: [80, "*", 80, 80],
-                    body: options
-                },
-                layout: {
-                    hLineWidth: function () {
-                        return  0.7;
-                    },
-                    vLineWidth: function () {
-                        return 0.7;
-                    },
-                    hLineColor: function () {
-                        return 'gray';
-                    },
-                    vLineColor: function () {
-                        return 'gray';
-                    },
-                }
-            })
-        
-            proBP3400.push(arrayDocument);
-        }
-    }
-
-    const isProBP3400 = connexProData.some(objeto => objeto.Group === "ProBP 3400 Standard");
-    if(isProBP3400)
-    {
-        proBP3400.push({text: '', pageBreak: 'after'  });
-        proBP3400.push("\n");
-        proBP3400.push({ text: "Connex ProBP 3400", style: 'header3', alignment: "left" });
-        proBP3400.push({ text: 'ProBP 3400 Standard', style: 'headerRed', alignment: "right" });
-
-        const data1= connexProData.filter(objeto => objeto.Family === "PROBP STANDARD - HANDHELD");
-        if(data1.length > 0)
-        {
-            var arrayDocument = []
-            arrayDocument.push("\n");
-            arrayDocument.push({ text: 'PROBP STANDARD - HANDHELD', style: 'header4', alignment: "left" });
-            arrayDocument.push("\n");
-        
-            var options =[]
-            var pSItems = 0;
-            options[pSItems] = [
-                {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
-                {text: 'Comment', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
-            ]
-            pSItems++
-
-            for(var i=0; i<data1.length; i++)
-            {
-                if(data1[i].Obsolescence === true)
-                {
-                    options[pSItems] = [
-                        {text: data1[i].Material, style: 'textotablaD', alignment: 'center'},
-                        {text: data1[i].Description, style: 'textotablaD'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data1[i].Suggested_Retail_Price), style: 'textotablaD'},
-                        {
-                            text: [
-                              { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
-                              { text: data1[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
-                            ]
-                        }
-                    ]
-                }
-                else {
-                    options[pSItems] = [
-                        {text: data1[i].Material, style: 'textotabla', alignment: 'center'},
-                        {text: data1[i].Description, style: 'textotabla'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data1[i].Suggested_Retail_Price), style: 'textotabla'},
-                        {text: data1[i].Comment, style: 'textotabla'}
-                    ]
-                }
-                
-                pSItems++
-            }
-
-            arrayDocument.push({
-                table: {
-                    headerRows: 1,
-                    widths: [80, "*", 80, 80],
-                    body: options
-                },
-                layout: {
-                    hLineWidth: function () {
-                        return  0.7;
-                    },
-                    vLineWidth: function () {
-                        return 0.7;
-                    },
-                    hLineColor: function () {
-                        return 'gray';
-                    },
-                    vLineColor: function () {
-                        return 'gray';
-                    },
-                }
-            })
-        
-            proBP3400.push(arrayDocument);
-        }
-
-        const data2 = connexProData.filter(objeto => objeto.Family === "PROBP STANDARD - MOBILE");
-        if(data2.length > 0)
-        {
-
-            var arrayDocument = []
-            arrayDocument.push("\n");
-            arrayDocument.push({ text: 'PROBP STANDARD - MOBILE', style: 'header4', alignment: "left" });
-            arrayDocument.push("\n");
-        
-            var options =[]
-            var pSItems = 0;
-            options[pSItems] = [
-                {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
-                {text: 'Comment', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
-            ]
-            pSItems++
-
-            for(var i=0; i<data2.length; i++)
-            {
-                if(data2[i].Obsolescence === true)
-                {
-                    options[pSItems] = [
-                        {text: data2[i].Material, style: 'textotablaD', alignment: 'center'},
-                        {text: data2[i].Description, style: 'textotablaD'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data2[i].Suggested_Retail_Price), style: 'textotablaD'},
-                        {
-                            text: [
-                              { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
-                              { text: data2[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
-                            ]
-                        }
-                    ]
-                }
-                else {
-                    options[pSItems] = [
-                        {text: data2[i].Material, style: 'textotabla', alignment: 'center'},
-                        {text: data2[i].Description, style: 'textotabla'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data2[i].Suggested_Retail_Price), style: 'textotabla'},
-                        {text: data2[i].Comment, style: 'textotabla'}
-                    ]
-                }
-                
-                pSItems++
-            }
-
-            arrayDocument.push({
-                table: {
-                    headerRows: 1,
-                    widths: [80, "*", 80, 80],
-                    body: options
-                },
-                layout: {
-                    hLineWidth: function () {
-                        return  0.7;
-                    },
-                    vLineWidth: function () {
-                        return 0.7;
-                    },
-                    hLineColor: function () {
-                        return 'gray';
-                    },
-                    vLineColor: function () {
-                        return 'gray';
-                    },
-                }
-            })
-        
-            proBP3400.push(arrayDocument);
-        }
-
-        const data3 = connexProData.filter(objeto => objeto.Family === "PROBP STANDARD - WALL");
-        if(data3.length > 0)
-        {
-
-            var arrayDocument = []
-            arrayDocument.push("\n");
-            arrayDocument.push({ text: 'PROBP STANDARD - WALL', style: 'header4', alignment: "left" });
-            arrayDocument.push("\n");
-        
-            var options =[]
-            var pSItems = 0;
-            options[pSItems] = [
-                {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
-                {text: 'Comment', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
-            ]
-            pSItems++
-
-            for(var i=0; i<data3.length; i++)
-            {
-                if(data3[i].Obsolescence === true)
-                {
-                    options[pSItems] = [
-                        {text: data3[i].Material, style: 'textotablaD', alignment: 'center'},
-                        {text: data3[i].Description, style: 'textotablaD'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data3[i].Suggested_Retail_Price), style: 'textotablaD'},
-                        {
-                            text: [
-                              { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
-                              { text: data3[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
-                            ]
-                        }
-                    ]
-                }
-                else {
-                    options[pSItems] = [
-                        {text: data3[i].Material, style: 'textotabla', alignment: 'center'},
-                        {text: data3[i].Description, style: 'textotabla'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data3[i].Suggested_Retail_Price), style: 'textotabla'},
-                        {text: data3[i].Comment, style: 'textotabla'}
-                    ]
-                }
-                
-                pSItems++
-            }
-
-            arrayDocument.push({
-                table: {
-                    headerRows: 1,
-                    widths: [80, "*", 80, 80],
-                    body: options
-                },
-                layout: {
-                    hLineWidth: function () {
-                        return  0.7;
-                    },
-                    vLineWidth: function () {
-                        return 0.7;
-                    },
-                    hLineColor: function () {
-                        return 'gray';
-                    },
-                    vLineColor: function () {
-                        return 'gray';
-                    },
-                }
-            })
-        
-            proBP3400.push(arrayDocument);
-        }
-    }
-
-    const isProBP3400A = connexProData.some(objeto => objeto.Group === "ProBP 3400 Accessories");
-    if(isProBP3400A)
-    {
-        proBP3400.push({text: '', pageBreak: 'after'  });
-        proBP3400.push("\n");
-        proBP3400.push({ text: "Connex ProBP 3400", style: 'header3', alignment: "left" });
-        proBP3400.push({ text: 'ProBP 3400 Accessories', style: 'headerRed', alignment: "right" });
-
-        const data1= connexProData.filter(objeto => objeto.Family === "PROBP MOUNTING ACCESSORIES");
-        if(data1.length > 0)
-        {
-            var arrayDocument = []
-            arrayDocument.push("\n");
-            arrayDocument.push({ text: 'PROBP MOUNTING ACCESSORIES', style: 'header4', alignment: "left" });
-            arrayDocument.push("\n");
-        
-            var options =[]
-            var pSItems = 0;
-            options[pSItems] = [
-                {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
-                {text: 'Comment', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
-            ]
-            pSItems++
-
-            for(var i=0; i<data1.length; i++)
-            {
-                if(data1[i].Obsolescence === true)
-                {
-                    options[pSItems] = [
-                        {text: data1[i].Material, style: 'textotablaD', alignment: 'center'},
-                        {text: data1[i].Description, style: 'textotablaD'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data1[i].Suggested_Retail_Price), style: 'textotablaD'},
-                        {
-                            text: [
-                              { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
-                              { text: data1[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
-                            ]
-                        }
-                    ]
-                }
-                else {
-                    options[pSItems] = [
-                        {text: data1[i].Material, style: 'textotabla', alignment: 'center'},
-                        {text: data1[i].Description, style: 'textotabla'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data1[i].Suggested_Retail_Price), style: 'textotabla'},
-                        {text: data1[i].Comment, style: 'textotabla'}
-                    ]
-                }
-                
-                pSItems++
-            }
-
-            arrayDocument.push({
-                table: {
-                    headerRows: 1,
-                    widths: [80, "*", 80, 80],
-                    body: options
-                },
-                layout: {
-                    hLineWidth: function () {
-                        return  0.7;
-                    },
-                    vLineWidth: function () {
-                        return 0.7;
-                    },
-                    hLineColor: function () {
-                        return 'gray';
-                    },
-                    vLineColor: function () {
-                        return 'gray';
-                    },
-                }
-            })
-        
-            proBP3400.push(arrayDocument);
-        }
-
-        const data2 = connexProData.filter(objeto => objeto.Family === "PROBP OTHER ACCESSORIES");
-        if(data2.length > 0)
-        {
-
-            var arrayDocument = []
-            arrayDocument.push("\n");
-            arrayDocument.push({ text: 'PROBP OTHER ACCESSORIES', style: 'header4', alignment: "left" });
-            arrayDocument.push("\n");
-        
-            var options =[]
-            var pSItems = 0;
-            options[pSItems] = [
-                {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
-                {text: 'Comment', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
-            ]
-            pSItems++
-
-            for(var i=0; i<data2.length; i++)
-            {
-                if(data2[i].Obsolescence === true)
-                {
-                    options[pSItems] = [
-                        {text: data2[i].Material, style: 'textotablaD', alignment: 'center'},
-                        {text: data2[i].Description, style: 'textotablaD'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data2[i].Suggested_Retail_Price), style: 'textotablaD'},
-                        {
-                            text: [
-                              { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
-                              { text: data2[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
-                            ]
-                        }
-                    ]
-                }
-                else {
-                    options[pSItems] = [
-                        {text: data2[i].Material, style: 'textotabla', alignment: 'center'},
-                        {text: data2[i].Description, style: 'textotabla'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data2[i].Suggested_Retail_Price), style: 'textotabla'},
-                        {text: data2[i].Comment, style: 'textotabla'}
-                    ]
-                }
-                
-                pSItems++
-            }
-
-            arrayDocument.push({
-                table: {
-                    headerRows: 1,
-                    widths: [80, "*", 80, 80],
-                    body: options
-                },
-                layout: {
-                    hLineWidth: function () {
-                        return  0.7;
-                    },
-                    vLineWidth: function () {
-                        return 0.7;
-                    },
-                    hLineColor: function () {
-                        return 'gray';
-                    },
-                    vLineColor: function () {
-                        return 'gray';
-                    },
-                }
-            })
-        
-            proBP3400.push(arrayDocument);
-        }
+        layout.push({text: '', pageBreak: 'after'  }); 
     }
 
     var connexProBd3400 = [
-        "\n",
-        { text: "Connex ProBP 3400", style: 'header3', alignment: "left" },
-        { image: "v2/images/ConnexProBP3400.png", width: 550, height: 650, alignment: 'center'},
+        { image: "v2/images/Connex-ProBP.png", width: 620, height: 840, alignment: 'center'},
         {text: '', pageBreak: 'after'  },
         "\n",
-        { text: "Connex ProBP 3400", style: 'header3', alignment: "left" },
+        { text: "ProBP 3400", style: 'header3', alignment: "left" },
         { image: "v2/images/ConnexProBP34002.png", width: 550, height: 480, alignment: 'center'},
         {text: '', pageBreak: 'after'  },
-        "\n",
-        { text: "Connex ProBP 3400", style: 'header3', alignment: "left" },
-        proBP3400,
-        {text: '', pageBreak: 'after'  }
+        layout,
     ]
 
     return connexProBd3400;

@@ -15,9 +15,9 @@ async function getHillrom900()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'X3', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'X3', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
     ]
     pSItems++
 
@@ -61,7 +61,7 @@ async function getHillrom900()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -133,7 +133,7 @@ async function getHillrom900()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -206,7 +206,7 @@ async function getHillrom900()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -278,7 +278,7 @@ async function getHillrom900()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -350,7 +350,7 @@ async function getHillrom900()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -422,7 +422,7 @@ async function getHillrom900()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -456,6 +456,8 @@ async function getHillrom900()
 
     if(plugData.length > 0)
     {
+        console.log("PLUG DATA")
+        console.log(plugData)
         /*ESTO VA EN UN CICLO*/
         i=0;
         var plugFlag = false
@@ -494,7 +496,7 @@ async function getHillrom900()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -544,7 +546,7 @@ async function getHillrom900()
                                 ],
                                 [
                                     {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                    {text: 'X3', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: 'X3', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: '', style: 'textotablabold'},
@@ -552,11 +554,11 @@ async function getHillrom900()
                                 ],
                                 [
                                     {text: 'Split siderails with integrated controls', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                                 ],
                             ]
                         },
@@ -841,7 +843,7 @@ async function getHillrom900()
         table6,
         { text: 'Plug & Voltage', style: 'textotablaboldlarge' },
         table7,
-        { text: '● = standard', style: 'parrafo' },
+        { text: '* = standard', style: 'parrafo' },
         { text: '= - not available', style: 'parrafo' },
         {text: '', pageBreak: 'after'  },
     ]

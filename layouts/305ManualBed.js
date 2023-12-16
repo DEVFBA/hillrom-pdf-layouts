@@ -11,11 +11,11 @@ async function get305ManualBed()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'SIZE (L x W x H)', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'SIZE (L x W x H)', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
     ]
     pSItems++
 
@@ -41,11 +41,11 @@ async function get305ManualBed()
     pSItems = 0
 
     options2[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'SIZE (L x W x H)', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'SIZE (L x W x H)', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
     ]
     pSItems++
 
@@ -71,10 +71,10 @@ async function get305ManualBed()
     pSItems = 0
 
     accesories[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
     ]
     pSItems++
 
@@ -119,7 +119,7 @@ async function get305ManualBed()
                                     body: [
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                            {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                            {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                                         ],
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
@@ -127,11 +127,11 @@ async function get305ManualBed()
                                         ],
                                         [
                                             {text: "4 Corner Central Brake and Steer", style: 'textotabla'},
-                                            {text: "●", style: 'textotabla', alignment: 'center'},
+                                            {text: "*", style: 'textotabla', alignment: 'center'},
                                         ],
                                         [
-                                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                                         ],
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
@@ -198,7 +198,7 @@ async function get305ManualBed()
                                     body: [
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                            {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                            {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                                         ],
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
@@ -206,11 +206,11 @@ async function get305ManualBed()
                                         ],
                                         [
                                             {text: "4 Corner Central Brake and Steer", style: 'textotabla'},
-                                            {text: "●", style: 'textotabla', alignment: 'center'},
+                                            {text: "*", style: 'textotabla', alignment: 'center'},
                                         ],
                                         [
-                                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                                         ],
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},

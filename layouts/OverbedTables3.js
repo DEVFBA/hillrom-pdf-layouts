@@ -58,7 +58,7 @@ async function getOverbedTables()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -72,7 +72,7 @@ async function getOverbedTables()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -110,7 +110,7 @@ async function getOverbedTables()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'OVERBEDTABLES', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
+                            {text: 'OVERBEDTABLES', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center', colSpan: 2},
                             {},
                         ],
                         [
@@ -126,17 +126,17 @@ async function getOverbedTables()
                         [
                             {text: 'Single Top Overbed Table', style: 'textotabla'},
                             {text: '$762', style: 'textotabla', alignment: 'center'},
-                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '*', style: 'textotabla', alignment: 'center'}, 
                         ],
                         [
                             {text: 'Dual Top Overbed Table', style: 'textotabla'},
-                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '*', style: 'textotabla', alignment: 'center'},
                             {text: '$1 195', style: 'textotabla', alignment: 'center'}, 
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},
                         ],
                     ]
                 },
@@ -165,7 +165,7 @@ async function getOverbedTables()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'OVERBEDTABLES', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
+                            {text: 'OVERBEDTABLES', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center', colSpan: 2},
                             {},
                         ],
                         [
@@ -181,17 +181,17 @@ async function getOverbedTables()
                         [
                             {text: 'Single Top Overbed Table', style: 'textotabla'},
                             {text: '$762', style: 'textotabla', alignment: 'center'},
-                            {text: '●', style: 'textotabla', alignment: 'center'}, 
+                            {text: '*', style: 'textotabla', alignment: 'center'}, 
                         ],
                         [
                             {text: 'Dual Top Overbed Table', style: 'textotabla'},
-                            {text: '●', style: 'textotabla', alignment: 'center'},
+                            {text: '*', style: 'textotabla', alignment: 'center'},
                             {text: '$1 195', style: 'textotabla', alignment: 'center'}, 
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                            {text: "NO-DATA", style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
-                            {text: "NO-DATA", style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},
                         ],
                     ]
                 },

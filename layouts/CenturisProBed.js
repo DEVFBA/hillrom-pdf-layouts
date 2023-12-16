@@ -11,9 +11,9 @@ async function getCenturisProBed()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'X3', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'X3', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
     ]
     pSItems++
 
@@ -27,7 +27,7 @@ async function getCenturisProBed()
             {
                 if(steeringCastor[i].Print_Character === "*")
                 {
-                    price = "●"
+                    price = "*"
                 }
                 else {
                     price = "-"
@@ -61,7 +61,7 @@ async function getCenturisProBed()
             {
                 if(bedExtension[i].Print_Character === "*")
                 {
-                    price = "●"
+                    price = "*"
                 }
                 else {
                     price = "-"
@@ -87,6 +87,8 @@ async function getCenturisProBed()
 
     if(plugVoltagesData.length > 0)
     {
+        console.log("CENTURIS PRO")
+        console.log(plugVoltagesData)
         /*ESTO VA EN UN CICLO*/
         for(var i=0; i<plugVoltagesData.length; i++)
         {
@@ -95,7 +97,7 @@ async function getCenturisProBed()
             {
                 if(plugVoltagesData[i].Print_Character === "*")
                 {
-                    price = "●"
+                    price = "*"
                 }
                 else {
                     price = "-"
@@ -144,7 +146,7 @@ async function getCenturisProBed()
                                         ],
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                            {text: 'X3', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                            {text: 'X3', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                                         ],
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
@@ -156,19 +158,19 @@ async function getCenturisProBed()
                                         ],
                                         [
                                             {text: "Selective lockout", style: 'textotabla'},
-                                            {text: "●", style: 'textotabla', alignment: 'center'},
+                                            {text: "*", style: 'textotabla', alignment: 'center'},
                                         ],
                                         [
                                             {text: "Split Siderails with integrated controls", style: 'textotabla'},
-                                            {text: "●", style: 'textotabla', alignment: 'center'},
+                                            {text: "*", style: 'textotabla', alignment: 'center'},
                                         ],
                                         [
                                             {text: "Bilateral Caregiver Integrated Control Panels", style: 'textotabla'},
-                                            {text: "●", style: 'textotabla', alignment: 'center'},
+                                            {text: "*", style: 'textotabla', alignment: 'center'},
                                         ],
                                         [
-                                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                                         ],
                                     ]
                                 }	,
@@ -223,7 +225,7 @@ async function getCenturisProBed()
                                         ],
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
-                                            {text: 'X3', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                            {text: 'X3', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                                         ],
                                         [
                                             {border: [false, false, false, false], text: '', style: 'textotablabold'},
@@ -235,19 +237,19 @@ async function getCenturisProBed()
                                         ],
                                         [
                                             {text: "Selective lockout", style: 'textotabla'},
-                                            {text: "●", style: 'textotabla', alignment: 'center'},
+                                            {text: "*", style: 'textotabla', alignment: 'center'},
                                         ],
                                         [
                                             {text: "Split Siderails with integrated controls", style: 'textotabla'},
-                                            {text: "●", style: 'textotabla', alignment: 'center'},
+                                            {text: "*", style: 'textotabla', alignment: 'center'},
                                         ],
                                         [
                                             {text: "Bilateral Caregiver Integrated Control Panels", style: 'textotabla'},
-                                            {text: "●", style: 'textotabla', alignment: 'center'},
+                                            {text: "*", style: 'textotabla', alignment: 'center'},
                                         ],
                                         [
-                                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                                         ],
                                     ]
                                 }	,
@@ -442,7 +444,7 @@ async function getCenturisProBed()
         { text: ' Plug and Voltage', style: 'textotablaboldlarge' },
         table4,
         "\n",
-        { text: '● = standard', style: 'parrafo' },
+        { text: '* = standard', style: 'parrafo' },
         { text: '= - not available', style: 'parrafo' },
         {text: '', pageBreak: 'after'  },
     ]

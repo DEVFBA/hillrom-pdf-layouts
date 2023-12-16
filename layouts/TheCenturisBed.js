@@ -15,10 +15,10 @@ async function getTheCenturisBed()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'C', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        //{text: 'D', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'C', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        //{text: 'D', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
     ]
     pSItems++
 
@@ -71,7 +71,7 @@ async function getTheCenturisBed()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -85,7 +85,7 @@ async function getTheCenturisBed()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -171,7 +171,7 @@ async function getTheCenturisBed()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -185,7 +185,7 @@ async function getTheCenturisBed()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -242,7 +242,7 @@ async function getTheCenturisBed()
         {
             if(voltaje[i].Print_Character === "*")
             {
-                price = "●"
+                price = "*"
             }
             else {
                 price = "-"
@@ -268,12 +268,12 @@ async function getTheCenturisBed()
     pSItems = 0
 
     surfaces[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'SURFACE COVER', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'SIZE CODE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'SURFACE COVER', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'SIZE CODE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -323,10 +323,10 @@ async function getTheCenturisBed()
     pSItems = 0
 
     surfaces2[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -352,10 +352,10 @@ async function getTheCenturisBed()
     pSItems = 0
 
     surfaces3E[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -385,10 +385,10 @@ async function getTheCenturisBed()
     pSItems = 0
 
     accesories[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -427,7 +427,7 @@ async function getTheCenturisBed()
                             body: [
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'CENTURIS', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'CENTURIS', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
                                     //{}
                                 ],
                                 [
@@ -442,8 +442,8 @@ async function getTheCenturisBed()
                                 ],
                                 [
                                     {text: 'Bed Controls - intergrated in siderails', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    //{text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    //{text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Function Lockouts', style: 'textotabla'},
@@ -452,23 +452,23 @@ async function getTheCenturisBed()
                                 ],
                                 [
                                     {text: 'Electric Trend/Rev. Trendelenburg', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    //{text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    //{text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Battery', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    //{text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    //{text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Bed Extension', style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
-                                    //{text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    //{text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                                    //{text: /*"$" + Intl.NumberFormat("en-IN").format(prices[1].Price)*/ "NO DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                                    //{text: /*"$" + Intl.NumberFormat("en-IN").format(prices[1].Price)*/ "NO DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
                                 ],
                             ]
                         },
@@ -506,7 +506,7 @@ async function getTheCenturisBed()
                             body: [
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'CENTURIS', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'CENTURIS', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
                                     //{}
                                 ],
                                 [
@@ -521,8 +521,8 @@ async function getTheCenturisBed()
                                 ],
                                 [
                                     {text: 'Bed Controls - intergrated in siderails', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    //{text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    //{text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Function Lockouts', style: 'textotabla'},
@@ -531,23 +531,23 @@ async function getTheCenturisBed()
                                 ],
                                 [
                                     {text: 'Electric Trend/Rev. Trendelenburg', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    //{text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    //{text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Battery', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    //{text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    //{text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Bed Extension', style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
-                                    //{text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    //{text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                                    {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                                    //{text: /*"$" + Intl.NumberFormat("en-IN").format(prices[1].Price)*/ "NO DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                                    {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                                    //{text: /*"$" + Intl.NumberFormat("en-IN").format(prices[1].Price)*/ "NO DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
                                 ],
                             ]
                         },
@@ -755,7 +755,7 @@ async function getTheCenturisBed()
         "\n",
         table2,
         { text: '\n', style: 'parrafo' },
-        { text: '● = standard', style: 'parrafo' },
+        { text: '* = standard', style: 'parrafo' },
         { text: '= - not available', style: 'parrafo' },
         {
             columns: [

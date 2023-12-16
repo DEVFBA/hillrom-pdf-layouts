@@ -11,10 +11,10 @@ async function getOverbedTables()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTIONS', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
-        {text: 'OBT-636', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
-        {text: 'OBT-635', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
-        {text: 'OBT-634', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+        {text: 'OPTIONS', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},
+        {text: 'OBT-636', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},
+        {text: 'OBT-635', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},
+        {text: 'OBT-634', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},
     ]
     pSItems++
 
@@ -58,7 +58,7 @@ async function getOverbedTables()
         {
             if(data.Print_Character[0] === "*")
             {
-                precio1 = "●"
+                precio1 = "*"
             }
             else {
                 precio1 = "-"
@@ -72,7 +72,7 @@ async function getOverbedTables()
         {
             if(data.Print_Character[1] === "*")
             {
-                precio2 = "●"
+                precio2 = "*"
             }
             else {
                 precio2 = "-"
@@ -86,7 +86,7 @@ async function getOverbedTables()
         {
             if(data.Print_Character[2] === "*")
             {
-                precio3 = "●"
+                precio3 = "*"
             }
             else {
                 precio3 = "-"
@@ -197,7 +197,7 @@ async function getOverbedTables()
         {
             if(data.Print_Character[0] === "*")
             {
-                precio1 = "●"
+                precio1 = "*"
             }
             else {
                 precio1 = "-"
@@ -211,7 +211,7 @@ async function getOverbedTables()
         {
             if(data.Print_Character[1] === "*")
             {
-                precio2 = "●"
+                precio2 = "*"
             }
             else {
                 precio2 = "-"
@@ -225,7 +225,7 @@ async function getOverbedTables()
         {
             if(data.Print_Character[2] === "*")
             {
-                precio3 = "●"
+                precio3 = "*"
             }
             else {
                 precio3 = "-"
@@ -370,7 +370,7 @@ async function getOverbedTables()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -384,7 +384,7 @@ async function getOverbedTables()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -398,7 +398,7 @@ async function getOverbedTables()
             {
                 if(data.Print_Character[2] === "*")
                 {
-                    precio3 = "●"
+                    precio3 = "*"
                 }
                 else {
                     precio3 = "-"
@@ -441,7 +441,7 @@ async function getOverbedTables()
                             body: [
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'PREMIUMOVERBEDTABLE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center', colSpan: 3},
+                                    {text: 'PREMIUMOVERBEDTABLE', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center', colSpan: 3},
                                     {},
                                     {},
                                 ],
@@ -453,13 +453,13 @@ async function getOverbedTables()
                                 ],
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'OBT-636', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-                                    {text: 'OBT-635', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-                                    {text: 'OBT-634', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'OBT-636', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+                                    {text: 'OBT-635', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+                                    {text: 'OBT-634', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
                                 ],
                                 [
                                     {text: 'Dual Top - Food Service Tray', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                 ],
@@ -467,31 +467,31 @@ async function getOverbedTables()
                                     {text: 'Single Top (Top Style 1)', style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Single Top w/cutout for left sitting mirror (Top Style 1)', style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: '"C" Base', style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Tuning Fork Base', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},  
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},  
                                 ],
                             ]
                         },
@@ -531,7 +531,7 @@ async function getOverbedTables()
                             body: [
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'PREMIUMOVERBEDTABLE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center', colSpan: 3},
+                                    {text: 'PREMIUMOVERBEDTABLE', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center', colSpan: 3},
                                     {},
                                     {},
                                 ],
@@ -543,13 +543,13 @@ async function getOverbedTables()
                                 ],
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'OBT-636', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-                                    {text: 'OBT-635', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-                                    {text: 'OBT-634', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'OBT-636', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+                                    {text: 'OBT-635', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+                                    {text: 'OBT-634', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
                                 ],
                                 [
                                     {text: 'Dual Top - Food Service Tray', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                 ],
@@ -557,31 +557,31 @@ async function getOverbedTables()
                                     {text: 'Single Top (Top Style 1)', style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Single Top w/cutout for left sitting mirror (Top Style 1)', style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: '"C" Base', style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Tuning Fork Base', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                                    {text: "NO-DATA", style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
-                                    {text: "NO-DATA", style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
-                                    {text: "NO-DATA", style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},  
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                                    {text: "NO-DATA", style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},
+                                    {text: "NO-DATA", style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},
+                                    {text: "NO-DATA", style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},  
                                 ],
                             ]
                         },
@@ -705,7 +705,7 @@ async function getOverbedTables()
             
         },
         '\n',
-        { text: '● = standard', style: 'parrafo' },
+        { text: '* = standard', style: 'parrafo' },
         { text: '= - not available', style: 'parrafo' },
         '\n',
         { image: "images/ArtOfCare0.png", width: 430, height: 130, alignment: 'center'},

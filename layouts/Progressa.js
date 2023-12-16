@@ -16,16 +16,16 @@ async function getProgressa()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PROGRESSA', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PRO-885', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'PRO-875', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'PRO-800', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'PRO-585', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'PRO-555', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'PRO-285', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'PRO-255', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'PRO-205', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'OPTION CODE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+        {text: 'PROGRESSA', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+        {text: 'PRO-885', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
+        {text: 'PRO-875', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'PRO-800', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'PRO-585', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'PRO-555', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'PRO-285', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'PRO-255', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'PRO-205', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
     ]
     pSItems++
 
@@ -90,7 +90,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -104,7 +104,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -118,7 +118,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[2] === "*")
                 {
-                    precio3 = "●"
+                    precio3 = "*"
                 }
                 else {
                     precio3 = "-"
@@ -132,7 +132,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[3] === "*")
                 {
-                    precio4 = "●"
+                    precio4 = "*"
                 }
                 else {
                     precio4 = "-"
@@ -146,7 +146,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[4] === "*")
                 {
-                    precio5 = "●"
+                    precio5 = "*"
                 }
                 else {
                     precio5 = "-"
@@ -160,7 +160,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[5] === "*")
                 {
-                    precio6 = "●"
+                    precio6 = "*"
                 }
                 else {
                     precio6 = "-"
@@ -174,7 +174,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[6] === "*")
                 {
-                    precio7 = "●"
+                    precio7 = "*"
                 }
                 else {
                     precio7 = "-"
@@ -188,7 +188,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[7] === "*")
                 {
-                    precio8 = "●"
+                    precio8 = "*"
                 }
                 else {
                     precio8 = "-"
@@ -285,7 +285,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -299,7 +299,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -313,7 +313,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[2] === "*")
                 {
-                    precio3 = "●"
+                    precio3 = "*"
                 }
                 else {
                     precio3 = "-"
@@ -327,7 +327,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[3] === "*")
                 {
-                    precio4 = "●"
+                    precio4 = "*"
                 }
                 else {
                     precio4 = "-"
@@ -341,7 +341,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[4] === "*")
                 {
-                    precio5 = "●"
+                    precio5 = "*"
                 }
                 else {
                     precio5 = "-"
@@ -355,7 +355,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[5] === "*")
                 {
-                    precio6 = "●"
+                    precio6 = "*"
                 }
                 else {
                     precio6 = "-"
@@ -369,7 +369,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[6] === "*")
                 {
-                    precio7 = "●"
+                    precio7 = "*"
                 }
                 else {
                     precio7 = "-"
@@ -383,7 +383,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[7] === "*")
                 {
-                    precio8 = "●"
+                    precio8 = "*"
                 }
                 else {
                     precio8 = "-"
@@ -479,7 +479,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -493,7 +493,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -507,7 +507,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[2] === "*")
                 {
-                    precio3 = "●"
+                    precio3 = "*"
                 }
                 else {
                     precio3 = "-"
@@ -521,7 +521,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[3] === "*")
                 {
-                    precio4 = "●"
+                    precio4 = "*"
                 }
                 else {
                     precio4 = "-"
@@ -535,7 +535,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[4] === "*")
                 {
-                    precio5 = "●"
+                    precio5 = "*"
                 }
                 else {
                     precio5 = "-"
@@ -549,7 +549,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[5] === "*")
                 {
-                    precio6 = "●"
+                    precio6 = "*"
                 }
                 else {
                     precio6 = "-"
@@ -563,7 +563,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[6] === "*")
                 {
-                    precio7 = "●"
+                    precio7 = "*"
                 }
                 else {
                     precio7 = "-"
@@ -577,7 +577,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[7] === "*")
                 {
-                    precio8 = "●"
+                    precio8 = "*"
                 }
                 else {
                     precio8 = "-"
@@ -673,7 +673,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -687,7 +687,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -701,7 +701,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[2] === "*")
                 {
-                    precio3 = "●"
+                    precio3 = "*"
                 }
                 else {
                     precio3 = "-"
@@ -715,7 +715,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[3] === "*")
                 {
-                    precio4 = "●"
+                    precio4 = "*"
                 }
                 else {
                     precio4 = "-"
@@ -729,7 +729,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[4] === "*")
                 {
-                    precio5 = "●"
+                    precio5 = "*"
                 }
                 else {
                     precio5 = "-"
@@ -743,7 +743,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[5] === "*")
                 {
-                    precio6 = "●"
+                    precio6 = "*"
                 }
                 else {
                     precio6 = "-"
@@ -757,7 +757,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[6] === "*")
                 {
-                    precio7 = "●"
+                    precio7 = "*"
                 }
                 else {
                     precio7 = "-"
@@ -771,7 +771,7 @@ async function getProgressa()
             {
                 if(data.Print_Character[7] === "*")
                 {
-                    precio8 = "●"
+                    precio8 = "*"
                 }
                 else {
                     precio8 = "-"
@@ -819,10 +819,10 @@ async function getProgressa()
     pSItems++
 
     surfaces[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -919,10 +919,10 @@ async function getProgressa()
     pSItems++
 
     accesories[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -960,7 +960,7 @@ async function getProgressa()
                             body: [
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'PROGRESSA', style: 'textotablacolorlarge', colSpan: 8, fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'PROGRESSA', style: 'textotablacolorlarge', colSpan: 8, fillColor: '#154898',  alignment: 'center'},
                                     {},
                                     {},
                                     {},
@@ -982,20 +982,20 @@ async function getProgressa()
                                 ],
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'PRO-885', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'PRO-875', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: 'PRO-800', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: 'PRO-585', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: 'PRO-555', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: 'PRO-285', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: 'PRO-255', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: 'PRO-205', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: 'PRO-885', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
+                                    {text: 'PRO-875', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: 'PRO-800', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: 'PRO-585', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: 'PRO-555', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: 'PRO-285', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: 'PRO-255', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: 'PRO-205', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
                                 ],
                                 [
                                     {text: 'Pulmonary Surface (Powered Air)', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: "*", style: 'textotabla', alignment: 'center'},
+                                    {text: "*", style: 'textotabla', alignment: 'center'}, 
+                                    {text: "*", style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
@@ -1007,8 +1007,8 @@ async function getProgressa()
                                     {text: '-', style: 'textotabla', alignment: 'center'},
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: "*", style: 'textotabla', alignment: 'center'}, 
+                                    {text: "*", style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'},
@@ -1020,48 +1020,48 @@ async function getProgressa()
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
+                                    {text: "*", style: 'textotabla', alignment: 'center'}, 
+                                    {text: "*", style: 'textotabla', alignment: 'center'}, 
+                                    {text: "*", style: 'textotabla', alignment: 'center'},
                                 ],
                                 [
                                     {text: 'Chair Egress Frame Design', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: "*", style: 'textotabla', alignment: 'center'},
+                                    {text: "*", style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: "*", style: 'textotabla', alignment: 'center'}, 
+                                    {text: "*", style: 'textotabla', alignment: 'center'}, 
+                                    {text: "*", style: 'textotabla', alignment: 'center'}, 
+                                    {text: "*", style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'},
                                 ],
                                 [
                                     {text: 'Dining Chair Frame Design', style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: "*", style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
+                                    {text: "*", style: 'textotabla', alignment: 'center'},
                                 ],
                                 [
                                     {text: 'StayInPlace Patient Migration Management System', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'},
                                 ],
                                 [
                                     {text: 'Rotation (permanently installed)', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
@@ -1070,8 +1070,8 @@ async function getProgressa()
                                 ],
                                 [
                                     {text: 'Percussion/Vibration (permanently installed)', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
@@ -1080,15 +1080,15 @@ async function getProgressa()
                                     {text: '-', style: 'textotabla', alignment: 'center'},
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[4].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[5].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[6].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[7].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[4].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[5].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[6].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[7].Price), style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
                                 ],
                             ]
                         },
@@ -1125,7 +1125,7 @@ async function getProgressa()
                             body: [
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'PROGRESSA', style: 'textotablacolorlarge', colSpan: 8, fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'PROGRESSA', style: 'textotablacolorlarge', colSpan: 8, fillColor: '#154898',  alignment: 'center'},
                                     {},
                                     {},
                                     {},
@@ -1147,20 +1147,20 @@ async function getProgressa()
                                 ],
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'PRO-885', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'PRO-875', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: 'PRO-800', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: 'PRO-585', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: 'PRO-555', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: 'PRO-285', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: 'PRO-255', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: 'PRO-205', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: 'PRO-885', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
+                                    {text: 'PRO-875', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: 'PRO-800', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: 'PRO-585', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: 'PRO-555', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: 'PRO-285', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: 'PRO-255', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: 'PRO-205', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
                                 ],
                                 [
                                     {text: 'Pulmonary Surface (Powered Air)', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
@@ -1172,8 +1172,8 @@ async function getProgressa()
                                     {text: '-', style: 'textotabla', alignment: 'center'},
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'},
@@ -1185,48 +1185,48 @@ async function getProgressa()
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
                                 ],
                                 [
                                     {text: 'Chair Egress Frame Design', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'},
                                 ],
                                 [
                                     {text: 'Dining Chair Frame Design', style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
                                 ],
                                 [
                                     {text: 'StayInPlace Patient Migration Management System', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'},
                                 ],
                                 [
                                     {text: 'Rotation (permanently installed)', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
@@ -1235,8 +1235,8 @@ async function getProgressa()
                                 ],
                                 [
                                     {text: 'Percussion/Vibration (permanently installed)', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
@@ -1245,15 +1245,15 @@ async function getProgressa()
                                     {text: '-', style: 'textotabla', alignment: 'center'},
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898'},
+                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
+                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: "NO-DATA", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
                                 ],
                             ]
                         },
@@ -1391,7 +1391,7 @@ async function getProgressa()
         "\n",
         table2,
         { text: '\n', style: 'parrafo' },
-        { text: '● = standard', style: 'parrafo' },
+        { text: '* = standard', style: 'parrafo' },
         { text: '= - not available', style: 'parrafo' },
         {
             columns: [

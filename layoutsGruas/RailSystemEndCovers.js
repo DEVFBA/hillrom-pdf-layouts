@@ -321,7 +321,7 @@ async function getRailSystemEndCovers(pdfZone)
                         {text: [
                             {text: 'Rail System - End Covers', style: 'textotablacolorlarge'},
                             {text: 'End Covers', style: {fontSize: 0}, tocItem: "endcovers"}
-                        ], fillColor: '#5bbccc',  alignment: 'center'},
+                        ], fillColor: '#03857d',  alignment: 'center'},
                     ]
                 ]
             },
@@ -345,9 +345,9 @@ async function getRailSystemEndCovers(pdfZone)
                 widths: [80, "*", 60],
                 body: [
                     [
-                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     ]
                 ]
             },

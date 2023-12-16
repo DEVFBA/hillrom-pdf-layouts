@@ -15,7 +15,7 @@ async function getOverbedTables()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'EOVERBEDTABLE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
+                            {text: 'EOVERBEDTABLE', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center', colSpan: 2},
                             {},
                         ],
                         [
@@ -25,8 +25,8 @@ async function getOverbedTables()
                         ],
     /*                     [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'B01', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B02', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B01', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
+                            {text: 'B02', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
                         ], */
                         [
                             {border: [false, false, false, false], text: ''},
@@ -35,28 +35,28 @@ async function getOverbedTables()
                         ],
                         [
                             {text: 'HPL Tray', style: 'textotabla', },
-                            {text: "●", style: 'textotabla', alignment: 'center'},
-                            {text: "●", style: 'textotabla', alignment: 'center'}, 
+                            {text: "*", style: 'textotabla', alignment: 'center'},
+                            {text: "*", style: 'textotabla', alignment: 'center'}, 
                         ],
                         [
                             {text: 'Fixed table', style: 'textotabla', },
-                            {text: "●", style: 'textotabla', alignment: 'center'},
+                            {text: "*", style: 'textotabla', alignment: 'center'},
                             {text: "-", style: 'textotabla', alignment: 'center'}, 
                         ],
                         [
                             {text: 'Tilting table', style: 'textotabla', },
                             {text: "-", style: 'textotabla', alignment: 'center'},
-                            {text: "●", style: 'textotabla', alignment: 'center'}, 
+                            {text: "*", style: 'textotabla', alignment: 'center'}, 
                         ],
                         [
                             {text: 'H-Shaped Base', style: 'textotabla', },
-                            {text: "●", style: 'textotabla', alignment: 'center'},
-                            {text: "●", style: 'textotabla', alignment: 'center'}, 
+                            {text: "*", style: 'textotabla', alignment: 'center'},
+                            {text: "*", style: 'textotabla', alignment: 'center'}, 
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
                         ],
                     ]
                 },
@@ -85,7 +85,7 @@ async function getOverbedTables()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'EOVERBEDTABLE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
+                            {text: 'EOVERBEDTABLE', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center', colSpan: 2},
                             {},
                         ],
                         [
@@ -95,8 +95,8 @@ async function getOverbedTables()
                         ],
     /*                     [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'B01', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B02', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B01', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
+                            {text: 'B02', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
                         ], */
                         [
                             {border: [false, false, false, false], text: ''},
@@ -105,28 +105,28 @@ async function getOverbedTables()
                         ],
                         [
                             {text: 'HPL Tray', style: 'textotabla', },
-                            {text: "●", style: 'textotabla', alignment: 'center'},
-                            {text: "●", style: 'textotabla', alignment: 'center'}, 
+                            {text: "*", style: 'textotabla', alignment: 'center'},
+                            {text: "*", style: 'textotabla', alignment: 'center'}, 
                         ],
                         [
                             {text: 'Fixed table', style: 'textotabla', },
-                            {text: "●", style: 'textotabla', alignment: 'center'},
+                            {text: "*", style: 'textotabla', alignment: 'center'},
                             {text: "-", style: 'textotabla', alignment: 'center'}, 
                         ],
                         [
                             {text: 'Tilting table', style: 'textotabla', },
                             {text: "-", style: 'textotabla', alignment: 'center'},
-                            {text: "●", style: 'textotabla', alignment: 'center'}, 
+                            {text: "*", style: 'textotabla', alignment: 'center'}, 
                         ],
                         [
                             {text: 'H-Shaped Base', style: 'textotabla', },
-                            {text: "●", style: 'textotabla', alignment: 'center'},
-                            {text: "●", style: 'textotabla', alignment: 'center'}, 
+                            {text: "*", style: 'textotabla', alignment: 'center'},
+                            {text: "*", style: 'textotabla', alignment: 'center'}, 
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
                         ],
                     ]
                 },

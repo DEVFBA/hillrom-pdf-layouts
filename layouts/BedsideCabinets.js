@@ -10,8 +10,8 @@ async function getBedsideCabinets()
     var pSItems = 0;
     options[pSItems] = [
         {text: 'Options', style: 'textotablaboldlarge', border: [false, false, false, false]},
-        {text: 'BSCM', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
-        {text: 'BSCR', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+        {text: 'BSCM', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},
+        {text: 'BSCR', style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},
     ]
     pSItems++
     
@@ -73,7 +73,7 @@ async function getBedsideCabinets()
                             body: [
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'PREMIUMBEDSIDECABINET', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
+                                    {text: 'PREMIUMBEDSIDECABINET', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center', colSpan: 2},
                                     {},
                                 ],
                                 [
@@ -83,8 +83,8 @@ async function getBedsideCabinets()
                                 ],
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'Metropolitan™', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-                                    {text: 'Areo™', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'Metropolitan™', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+                                    {text: 'Areo™', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: ''},
@@ -93,18 +93,18 @@ async function getBedsideCabinets()
                                 ],
                                 [
                                     {text: '3 Drawers', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Castors', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},  
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'},  
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},
                                 ],
                             ]
                         },
@@ -142,7 +142,7 @@ async function getBedsideCabinets()
                             body: [
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'PREMIUMBEDSIDECABINET', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
+                                    {text: 'PREMIUMBEDSIDECABINET', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center', colSpan: 2},
                                     {},
                                 ],
                                 [
@@ -152,8 +152,8 @@ async function getBedsideCabinets()
                                 ],
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'Metropolitan™', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-                                    {text: 'Areo™', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'Metropolitan™', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+                                    {text: 'Areo™', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: ''},
@@ -162,18 +162,18 @@ async function getBedsideCabinets()
                                 ],
                                 [
                                     {text: '3 Drawers', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Castors', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},  
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'},  
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                                    {text: "NO-DATA", style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
-                                    {text: "NO-DATA", style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'},
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                                    {text: "NO-DATA", style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},
+                                    {text: "NO-DATA", style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'},
                                 ],
                             ]
                         },
@@ -254,7 +254,7 @@ async function getBedsideCabinets()
         "\n",
         table2,
         { text: '\n', style: 'parrafo' },
-        { text: '● = standard', style: 'parrafo' },
+        { text: '* = standard', style: 'parrafo' },
         { text: '= - not available', style: 'parrafo' },
         '\n',
         {

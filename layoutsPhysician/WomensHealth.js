@@ -1,245 +1,136 @@
 async function getWomensHealth(data)
 {
-    var vaginalSpecula = []
+    var layout = []
     
     const womensData = data.filter(objeto => objeto.Category === "Womens Health");
 
-    const isVaginal = womensData.some(objeto => objeto.Group === "Vaginal Specula Systems");
-    if(isVaginal)
+    const gruposUnicosOrdenados = [...new Set(womensData.map(item => item.Group))]
+    .filter(Boolean) // Eliminar valores nulos o undefined
+    .sort((a, b) => {
+        // Ordenar por el atributo Order_Group
+        const orderA = womensData.find(item => item.Group === a)?.Order_Group || 0;
+        const orderB = womensData.find(item => item.Group === b)?.Order_Group || 0;
+        return orderA - orderB;
+    });
+
+    const familiasUnicasOrdenadas = [...new Set(womensData.map(item => item.Family))]
+    .filter(Boolean) // Eliminar valores nulos o undefined
+    .sort((a, b) => {
+        // Ordenar por el atributo Order_Group
+        const orderA = womensData.find(item => item.Family === a)?.Order_Family || 0;
+        const orderB = womensData.find(item => item.Family === b)?.Order_Family || 0;
+        return orderA - orderB;
+    });
+
+    for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
-        vaginalSpecula.push({ text: 'Vaginal Specula Systems', style: 'headerRed', alignment: "right" });
+        const dataGroup = womensData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
-        const data1= womensData.filter(objeto => objeto.Family === "CORDLESS ILLUMINATION SYSTEM");
-        if(data1.length > 0)
-        {
-            var arrayDocument = []
-            arrayDocument.push("\n");
-            arrayDocument.push({ text: 'CORDLESS ILLUMINATION SYSTEM', style: 'header4', alignment: "left" });
-            arrayDocument.push("\n");
+        //Se sacan solo las familias de ese grupo
+        const familiasUnicasOrdenadasGroup = [...new Set(dataGroup.map(item => item.Family))]
+        .filter(Boolean) // Eliminar valores nulos o undefined
+        .sort((a, b) => {
+            // Ordenar por el atributo Order_Group
+            const orderA = dataGroup.find(item => item.Family === a)?.Order_Family || 0;
+            const orderB = dataGroup.find(item => item.Family === b)?.Order_Family || 0;
+            return orderA - orderB;
+        });
         
-            var options =[]
-            var pSItems = 0;
-            options[pSItems] = [
-                {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
-                {text: 'Comment', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
-            ]
-            pSItems++
 
-            for(var i=0; i<data1.length; i++)
+        layout.push("\n");
+        layout.push({ text: "Women's Health", style: 'header3', alignment: "left" });
+        layout.push("\n");
+        layout.push({ text: gruposUnicosOrdenados[g], style: 'headerRed', alignment: "right", tocItem: gruposUnicosOrdenados[g].replace(/\s/g, '')});
+
+        for(var f=0; f<familiasUnicasOrdenadas.length; f++)
+        {
+            if (familiasUnicasOrdenadasGroup.includes(familiasUnicasOrdenadas[f])) 
             {
-                if(data1[i].Obsolescence === true)
-                {
-                    options[pSItems] = [
-                        {text: data1[i].Material, style: 'textotablaD', alignment: 'center'},
-                        {text: data1[i].Description, style: 'textotablaD'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data1[i].Suggested_Retail_Price), style: 'textotablaD'},
-                        {
-                            text: [
-                              { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
-                              { text: data1[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
-                            ]
-                        }
-                    ]
-                }
-                else {
-                    options[pSItems] = [
-                        {text: data1[i].Material, style: 'textotabla', alignment: 'center'},
-                        {text: data1[i].Description, style: 'textotabla'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data1[i].Suggested_Retail_Price), style: 'textotabla'},
-                        {text: data1[i].Comment, style: 'textotabla'}
-                    ]
-                }
-                
+                const dataFamily = womensData.filter(objeto => objeto.Family === familiasUnicasOrdenadas[f]);
+
+                var data1 = [];
+
+                f !== 0 && data1.push("\n");
+
+                data1.push({ text: familiasUnicasOrdenadas[f], style: 'header4', alignment: "left" });
+                data1.push("\n");
+
+                var options =[]
+                var pSItems = 0;
+                options[pSItems] = [
+                    {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                    {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                    {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
+                    {text: 'Comment', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                ]
                 pSItems++
+
+                for(var i=0; i<dataFamily.length; i++)
+                {
+                    if(dataFamily[i].Obsolescence === true)
+                    {
+                        options[pSItems] = [
+                            {text: dataFamily[i].Material, style: 'textotablaD', alignment: 'left'},
+                            {text: dataFamily[i].Description, style: 'textotablaD'},
+                            {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotablaD'},
+                            {
+                                text: [
+                                { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
+                                { text: dataFamily[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
+                                ]
+                            }
+                        ]
+                    }
+                    else {
+                        options[pSItems] = [
+                            {text: dataFamily[i].Material, style: 'textotabla', alignment: 'left'},
+                            {text: dataFamily[i].Description, style: 'textotabla'},
+                            {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotabla'},
+                            {text: dataFamily[i].Comment, style: 'textotabla'}
+                        ]
+                    }
+                    
+                    pSItems++
+                }
+
+                data1.push({
+                    table: {
+                        widths: [80, "*", 80, 80],
+                        headerRows: 1,
+                        body: options
+                    },
+                    layout: {
+                        hLineWidth: function () {
+                            return  0.7;
+                        },
+                        vLineWidth: function () {
+                            return 0.7;
+                        },
+                        hLineColor: function () {
+                            return 'gray';
+                        },
+                        vLineColor: function () {
+                            return 'gray';
+                        },
+                    }
+                })
+            
+                layout.push(data1);
             }
 
-            arrayDocument.push({
-                table: {
-                    headerRows: 1,
-                    widths: [80, "*", 80, 80],
-                    body: options
-                },
-                layout: {
-                    hLineWidth: function () {
-                        return  0.7;
-                    },
-                    vLineWidth: function () {
-                        return 0.7;
-                    },
-                    hLineColor: function () {
-                        return 'gray';
-                    },
-                    vLineColor: function () {
-                        return 'gray';
-                    },
-                }
-            })
-        
-            vaginalSpecula.push(arrayDocument);
         }
 
-        const data2 = womensData.filter(objeto => objeto.Family === "VAGINAL SPECULAS");
-        if(data2.length > 0)
-        {
-
-            vaginalSpecula.push("\n");
-
-            var arrayDocument = []
-            arrayDocument.push("\n");
-            arrayDocument.push({ text: 'VAGINAL SPECULAS', style: 'header4', alignment: "left" });
-            arrayDocument.push("\n");
-        
-            var options =[]
-            var pSItems = 0;
-            options[pSItems] = [
-                {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
-                {text: 'Comment', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
-            ]
-            pSItems++
-
-            for(var i=0; i<data2.length; i++)
-            {
-                if(data2[i].Obsolescence === true)
-                {
-                    options[pSItems] = [
-                        {text: data2[i].Material, style: 'textotablaD', alignment: 'center'},
-                        {text: data2[i].Description, style: 'textotablaD'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data2[i].Suggested_Retail_Price), style: 'textotablaD'},
-                        {
-                            text: [
-                              { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
-                              { text: data1[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
-                            ]
-                        }
-                    ]
-                }
-                else {
-                    options[pSItems] = [
-                        {text: data2[i].Material, style: 'textotabla', alignment: 'center'},
-                        {text: data2[i].Description, style: 'textotabla'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data2[i].Suggested_Retail_Price), style: 'textotabla'},
-                        {text: data2[i].Comment, style: 'textotabla'}
-                    ]
-                }
-                
-                pSItems++
-            }
-
-            arrayDocument.push({
-                table: {
-                    headerRows: 1,
-                    widths: [80, "*", 80, 80],
-                    body: options
-                },
-                layout: {
-                    hLineWidth: function () {
-                        return  0.7;
-                    },
-                    vLineWidth: function () {
-                        return 0.7;
-                    },
-                    hLineColor: function () {
-                        return 'gray';
-                    },
-                    vLineColor: function () {
-                        return 'gray';
-                    },
-                }
-            })
-        
-            vaginalSpecula.push(arrayDocument);
-        }
-
-        const data3 = womensData.filter(objeto => objeto.Family === "WOMENS HEALTH ACCESSORIES");
-        if(data3.length > 0)
-        {
-            vaginalSpecula.push({text: '', pageBreak: 'after'  });
-            vaginalSpecula.push("\n");
-            vaginalSpecula.push({ text: "Women's Health", style: 'header3', alignment: "left" });
-            vaginalSpecula.push({ text: 'Vaginal Specula Systems', style: 'headerRed', alignment: "right", tocItem: "vaginal" });
-
-            var arrayDocument = []
-            arrayDocument.push("\n");
-            arrayDocument.push({ text: "WOMEN'S HEALTH ACCESSORIES", style: 'header4', alignment: "left" });
-            arrayDocument.push("\n");
-        
-            var options =[]
-            var pSItems = 0;
-            options[pSItems] = [
-                {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
-                {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
-                {text: 'Comment', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
-            ]
-            pSItems++
-
-            for(var i=0; i<data3.length; i++)
-            {
-                if(data3[i].Obsolescence === true)
-                {
-                    options[pSItems] = [
-                        {text: data3[i].Material, style: 'textotablaD', alignment: 'center'},
-                        {text: data3[i].Description, style: 'textotablaD'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data3[i].Suggested_Retail_Price), style: 'textotablaD'},
-                        {
-                            text: [
-                              { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
-                              { text: data3[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
-                            ]
-                        }
-                    ]
-                }
-                else {
-                    options[pSItems] = [
-                        {text: data3[i].Material, style: 'textotabla', alignment: 'center'},
-                        {text: data3[i].Description, style: 'textotabla'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(data3[i].Suggested_Retail_Price), style: 'textotabla'},
-                        {text: data3[i].Comment, style: 'textotabla'}
-                    ]
-                }
-                
-                pSItems++
-            }
-
-            arrayDocument.push({
-                table: {
-                    headerRows: 1,
-                    widths: [80, "*", 80, 80],
-                    body: options
-                },
-                layout: {
-                    hLineWidth: function () {
-                        return  0.7;
-                    },
-                    vLineWidth: function () {
-                        return 0.7;
-                    },
-                    hLineColor: function () {
-                        return 'gray';
-                    },
-                    vLineColor: function () {
-                        return 'gray';
-                    },
-                }
-            })
-        
-            vaginalSpecula.push(arrayDocument);
-        }
+        layout.push({text: '', pageBreak: 'after'  }); 
     }
 
     var womensHealth = [
+        { image: "v2/images/Womens.png", width: 620, height: 840, alignment: 'center'},
+        {text: '', pageBreak: 'after'  },
         "\n",
         { text: "Women's Health", style: 'header3', alignment: "left" },
         { image: "v2/images/WomensHealth.png", width: 595, height: 600, alignment: 'center'},
         {text: '', pageBreak: 'after'  },
-        "\n",
-        { text: "Women's Health", style: 'header3', alignment: "left" },
-        vaginalSpecula,
-        {text: '', pageBreak: 'after'  }
+        layout,
     ]
 
     return womensHealth;

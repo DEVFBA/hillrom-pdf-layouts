@@ -1915,7 +1915,7 @@ async function getAssemblyParts(pdfZone)
                     widths: ["*"],
                     body: [
                         [
-                            {text: 'Assembly Parts', style: 'textotablacolorlarge', fillColor: '#5bbccc',  alignment: 'center'},
+                            {text: 'Assembly Parts', style: 'textotablacolorlarge', fillColor: '#03857d',  alignment: 'center'},
                         ],
                         [
                             {text: [
@@ -1945,9 +1945,9 @@ async function getAssemblyParts(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'KITNAME', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ]
                     ]
                 },
@@ -2026,9 +2026,9 @@ async function getAssemblyParts(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'KITNAME', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ]
                     ]
                 },
@@ -2110,9 +2110,9 @@ async function getAssemblyParts(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'KITNAME', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ]
                     ]
                 },

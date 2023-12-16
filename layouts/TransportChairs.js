@@ -15,9 +15,9 @@ async function getTransportChairs()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'SM647B', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'SM647B', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
     ]
     pSItems++
 
@@ -69,7 +69,7 @@ async function getTransportChairs()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -101,10 +101,10 @@ async function getTransportChairs()
     var accesories =[]
     var pSItems = 0;
     accesories[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
     ]
     pSItems++
 
@@ -135,7 +135,7 @@ async function getTransportChairs()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'METALARMCHAIR', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'}
+                            {text: 'METALARMCHAIR', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'}
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
@@ -147,11 +147,11 @@ async function getTransportChairs()
                         ],
                         [
                             {text: '4 x 125 mm single-band with central brake (R2B)', style: 'textotabla', },
-                            {text: "●", style: 'textotabla', alignment: 'center'}
+                            {text: "*", style: 'textotabla', alignment: 'center'}
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                         ],
                     ]
                 },
@@ -180,7 +180,7 @@ async function getTransportChairs()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'METALARMCHAIR', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'}
+                            {text: 'METALARMCHAIR', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'}
                         ],
                         [
                             {border: [false, false, false, false], text: ''},
@@ -192,11 +192,11 @@ async function getTransportChairs()
                         ],
                         [
                             {text: '4 x 125 mm single-band with central brake (R2B)', style: 'textotabla', },
-                            {text: "●", style: 'textotabla', alignment: 'center'}
+                            {text: "*", style: 'textotabla', alignment: 'center'}
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}
                         ],
                     ]
                 },
@@ -302,7 +302,7 @@ async function getTransportChairs()
         { text: '\n', style: 'textotabla' },
         table3,
         { text: '\n', style: 'textotabla' },
-        { text: '● = standard', style: 'textotabla' },
+        { text: '* = standard', style: 'textotabla' },
         { text: '\n', style: 'textotabla' },
         { image: "images/TransportChairs2.png", width: 420, height: 215, alignment: 'center'},
         {text: '', pageBreak: 'after'  },

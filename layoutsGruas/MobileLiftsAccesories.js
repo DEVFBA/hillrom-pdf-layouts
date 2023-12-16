@@ -988,7 +988,7 @@ async function getMobileLiftAccesories(pdfZone)
                         {text:[
                             {text: 'Mobile Lifts Accessories', style: 'textotablacolorlarge'},
                             {text: "Accesories for Mobile Lifts", tocItem: "accesoriesmobilelifts", style: {fontSize: 0}}
-                        ] , fillColor: '#5bbccc',  alignment: 'center'},
+                        ] , fillColor: '#03857d',  alignment: 'center'},
                     ]
                 ]
             },
@@ -1012,9 +1012,9 @@ async function getMobileLiftAccesories(pdfZone)
                 widths: [80, "*", 60],
                 body: [
                     [
-                        {border: [true, false, true, false], text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'KITNAME', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                        {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     ]
                 ]
             },

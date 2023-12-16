@@ -352,7 +352,7 @@ async function getLikoConfortsling(pdfZone)
                             {text: [
                                 {text: 'LIKO COMFORTSLING PLUS™, MOD 300', style: 'textotablacolorlarge'},
                                 {text: "Liko Comfortsling Plus™, Mod 300", style: {fontSize: 0}, tocItem: "likocomfortsling300"}
-                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            ], fillColor: '#03857d',  alignment: 'center', colSpan: 3},
                             {},
                             {}
                         ],
@@ -378,9 +378,9 @@ async function getLikoConfortsling(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ],
                     ]
                 },
@@ -435,7 +435,7 @@ async function getLikoConfortsling(pdfZone)
                             {text: [
                                 {text: 'LIKO COMFORTSLING PLUS HIGH™, MOD 350', style: 'textotablacolorlarge'},
                                 {text: "Liko Comfortsling Plus High™, Mod 350", style: {fontSize: 0}, tocItem: "likocomfortsling350"}
-                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            ], fillColor: '#03857d',  alignment: 'center', colSpan: 3},
                             {},
                             {}
                         ],
@@ -461,9 +461,9 @@ async function getLikoConfortsling(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ],
                     ]
                 },
@@ -518,7 +518,7 @@ async function getLikoConfortsling(pdfZone)
                             {text: [
                                 {text: 'LIKO HYGIENESLING WITH BELT™, MOD 41', style: 'textotablacolorlarge'},
                                 {text: "Liko Hygienesling With Belt™, Mod 41", style: {fontSize: 0}, tocItem: "likohygienesling41"}
-                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            ], fillColor: '#03857d',  alignment: 'center', colSpan: 3},
                             {},
                             {}
                         ],
@@ -544,9 +544,9 @@ async function getLikoConfortsling(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ],
                     ]
                 },
@@ -601,7 +601,7 @@ async function getLikoConfortsling(pdfZone)
                             {text: [
                                 {text: 'LIKO HYGIENESLING WITH SAFETYBELT™, MOD 45', style: 'textotablacolorlarge'},
                                 {text: "Liko Hygienesling With Safetybelt™, Mod 45", style: {fontSize: 0}, tocItem: "likohygienesling45"}
-                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            ], fillColor: '#03857d',  alignment: 'center', colSpan: 3},
                             {},
                             {}
                         ],
@@ -627,9 +627,9 @@ async function getLikoConfortsling(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ],
                     ]
                 },
@@ -684,7 +684,7 @@ async function getLikoConfortsling(pdfZone)
                             {text: [
                                 {text:'LIKO HYGIENEVEST HIGHBACK™, MOD 55', style: 'textotablacolorlarge' },
                                 {text:"Liko Hygienevest Highback™, Mod 55", style: {fontSize: 0}, tocItem: "likohygienevest55"}
-                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            ], fillColor: '#03857d',  alignment: 'center', colSpan: 3},
                             {},
                             {}
                         ],
@@ -710,9 +710,9 @@ async function getLikoConfortsling(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ],
                     ]
                 },

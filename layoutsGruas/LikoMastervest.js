@@ -300,7 +300,7 @@ async function getLikoMastervest(pdfZone)
                             {text: [
                                 {text: 'LIKO MASTERVEST™, MOD 60', style: 'textotablacolorlarge'},
                                 {text: "Liko Mastervest™, Mod 60", style: {fontSize: 0}, tocItem: "likomastervest60"}
-                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            ], fillColor: '#03857d',  alignment: 'center', colSpan: 3},
                             {},
                             {}
                         ],
@@ -326,9 +326,9 @@ async function getLikoMastervest(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ],
                     ]
                 },
@@ -383,7 +383,7 @@ async function getLikoMastervest(pdfZone)
                             {text: [
                                 {text: 'LIKO MASTERVEST™ FRONT CLOSURE, MOD 64', style: 'textotablacolorlarge'},
                                 {text: "Liko Mastervest™ Front Closure, Mod 64", style: {fontSize: 0}, tocItem: "likomastervest64"}
-                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            ], fillColor: '#03857d',  alignment: 'center', colSpan: 3},
                             {},
                             {}
                         ],
@@ -409,9 +409,9 @@ async function getLikoMastervest(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ],
                     ]
                 },
@@ -466,7 +466,7 @@ async function getLikoMastervest(pdfZone)
                             {text: [
                                 {text: 'LEG HARNESS MASTERVEST, MOD 66', style: 'textotablacolorlarge'},
                                 {text: "Liko Harness Mastervest, Mod 66", style: {fontSize: 0}, tocItem: "likomastervest66"}
-                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            ], fillColor: '#03857d',  alignment: 'center', colSpan: 3},
                             {},
                             {}
                         ],
@@ -492,9 +492,9 @@ async function getLikoMastervest(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ],
                     ]
                 },
@@ -549,7 +549,7 @@ async function getLikoMastervest(pdfZone)
                             {text: [
                                 {text: 'LIKO AMPUTEE HIGHBACK SLING™, MOD 75', style: 'textotablacolorlarge'},
                                 {text: "Liko Amputee Highback Sling™, Mod 75", style: {fontSize: 0}, tocItem: "likoamputee75"}
-                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            ], fillColor: '#03857d',  alignment: 'center', colSpan: 3},
                             {},
                             {}
                         ],
@@ -575,9 +575,9 @@ async function getLikoMastervest(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ],
                     ]
                 },

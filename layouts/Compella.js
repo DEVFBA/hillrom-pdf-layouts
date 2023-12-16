@@ -20,10 +20,10 @@ async function getCompella()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'FOAM', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'TURN', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'FOAM', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'TURN', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
     pSItems++;      
 
@@ -78,7 +78,7 @@ async function getCompella()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -92,7 +92,7 @@ async function getCompella()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -106,7 +106,7 @@ async function getCompella()
             {
                 if(data.Print_Character[2] === "*")
                 {
-                    precio3 = "●"
+                    precio3 = "*"
                 }
                 else {
                     precio3 = "-"
@@ -187,7 +187,7 @@ async function getCompella()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -201,7 +201,7 @@ async function getCompella()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -215,7 +215,7 @@ async function getCompella()
             {
                 if(data.Print_Character[2] === "*")
                 {
-                    precio3 = "●"
+                    precio3 = "*"
                 }
                 else {
                     precio3 = "-"
@@ -296,7 +296,7 @@ async function getCompella()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -310,7 +310,7 @@ async function getCompella()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -324,7 +324,7 @@ async function getCompella()
             {
                 if(data.Print_Character[2] === "*")
                 {
-                    precio3 = "●"
+                    precio3 = "*"
                 }
                 else {
                     precio3 = "-"
@@ -406,7 +406,7 @@ async function getCompella()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -420,7 +420,7 @@ async function getCompella()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -434,7 +434,7 @@ async function getCompella()
             {
                 if(data.Print_Character[2] === "*")
                 {
-                    precio3 = "●"
+                    precio3 = "*"
                 }
                 else {
                     precio3 = "-"
@@ -477,10 +477,10 @@ async function getCompella()
     pSItems++
 
     surfaces[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -533,10 +533,10 @@ async function getCompella()
     pSItems++
 
     accesories[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -595,7 +595,7 @@ async function getCompella()
                             body: [
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'COMPELLA', style: 'textotablacolorlarge', colSpan: 2, fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'COMPELLA', style: 'textotablacolorlarge', colSpan: 2, fillColor: '#154898',  alignment: 'center'},
                                     {},
                                 ],
                                 [
@@ -605,38 +605,38 @@ async function getCompella()
                                 ],
                                 [
                                     {border: [false, false, false, false], text: 'Standard Features', style: 'textotablabold'},
-                                    {text: 'FOAM', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'TURN', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                                    {text: 'FOAM', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                                    {text: 'TURN', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Powered Width Expansions', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'FlexAFoot', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Scale', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Bed Exit (Single Mode)', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Digital HOB Angle Indicator and Alarm', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                                    {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
                                 ],
                                 [
                                     {border: [false, false, false, false], text: 'Surface Options', style: 'textotablabold', colSpan:3},
@@ -645,13 +645,13 @@ async function getCompella()
                                 ],
                                 [
                                     {text: surfacesOptions[0].Item_Long_Desc, style: 'textotabla'},
-                                    {text: "$15,064", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: "$16,606", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: surfacesOptions[1].Item_Long_Desc, style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: "$23,760", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                                    {text: "$26,193", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                                 ],
                                 [
                                     {border: [false, false, false, false], text: 'Surface Add-Ons', style: 'textotablabold', colSpan:3},
@@ -661,7 +661,7 @@ async function getCompella()
                                 [
                                     {text: surfacesAddons[0].Item_Long_Desc, style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: "$4,831", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                                    {text: "$5,327", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
                                 ],
                             ]
                         },
@@ -699,7 +699,7 @@ async function getCompella()
                             body: [
                                 [
                                     {border: [false, false, false, false], text: ''},
-                                    {text: 'COMPELLA', style: 'textotablacolorlarge', colSpan: 3, fillColor: '#546ce4',  alignment: 'center'},
+                                    {text: 'COMPELLA', style: 'textotablacolorlarge', colSpan: 3, fillColor: '#154898',  alignment: 'center'},
                                     {},
                                     {},
                                 ],
@@ -711,63 +711,63 @@ async function getCompella()
                                 ],
                                 [
                                     {border: [false, false, false, false], text: 'Standard Features', style: 'textotablabold'},
-                                    {text: 'FOAM', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: 'TURN', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: 'CLRT', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                                    {text: 'FOAM', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                                    {text: 'TURN', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: 'CLRT', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Powered Width Expansions', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'FlexAFoot', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Scale', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Bed Exit (Single Mode)', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Digital HOB Angle Indicator and Alarm', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Foam Surface (with air supply unit)', style: 'textotabla'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'},
+                                    {text: '*', style: 'textotabla', alignment: 'center'},
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Low Air Loss Surface (with air supply unit)', style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
                                     {text: 'Low Air Loss Surface (with air supply unit) & Continuous Lateral Rotation Therapy', style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                    {text: '*', style: 'textotabla', alignment: 'center'}, 
                                 ],
                                 [
-                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                                    {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                                    {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-                                    {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                                    {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                                    {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                                    {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
                                 ],
                             ]
                         },
@@ -947,7 +947,7 @@ async function getCompella()
         "\n",
         table2,
         { text: '\n', style: 'parrafo' },
-        { text: '● = standard', style: 'parrafo' },
+        { text: '* = standard', style: 'parrafo' },
         { text: '= - not available', style: 'parrafo' },
         {
             columns: [

@@ -1,9 +1,24 @@
-var fonts = {
+/*var fonts = {
     Roboto: {
       normal: './fonts/CenturyGothic.ttf',
       bold: './fonts/CenturyGothicBold.ttf',
       italics: './fonts/CenturyGothicBoldItalic.ttf',
       bolditalics: './fonts/CenturyGothicBoldItalic.ttf'
+    }
+};*/
+
+var fonts = {
+    Roboto: {
+      normal: './fonts/Geogrotesque-Regular.ttf',
+      bold: './fonts/Geogrotesque-SemiBold.ttf',
+      italics: './fonts/Geogrotesque-Italic.ttf',
+      bolditalics: './fonts/Geogrotesque-BoldItalic.ttf',
+      
+    },
+    DIN: {
+        normal: './fonts/DIN.ttf',
+        medium: './fonts/DIN-Medium.ttf',
+        bold: './fonts/DIN-Bold.ttf',
     }
 };
 
@@ -12,6 +27,7 @@ var printer = new PdfPrinter(fonts);
 var fs = require('fs');
 
 var progressa = require("./layouts/Progressa.js")
+var progressaPlus = require("./layouts/ProgressaPlus.js")
 var compella = require("./layouts/Compella.js")
 var centrella = require("./layouts/Centrella.js")
 var hillrom900 = require("./layouts/Hillrom900.js")
@@ -25,6 +41,7 @@ var hillrom100LowBed = require("./layouts/Hillrom100LowBed.js")
 var hillromResidentLongTerm = require("./layouts/HillromResidentLongTerm.js")
 var affinity4BirthingBed = require("./layouts/Affinity4BirthingBed.js")
 var therapySurfaces = require("./layouts/TherapySurfaces.js")
+var synthetoSurfaces = require("./layouts/SynthetoSurfaces.js")
 var accumax = require("./layouts/Accumax.js")
 var poweredSurfaces = require("./layouts/PoweredSurfaces.js")
 var stretchers = require("./layouts/Stretchers.js")
@@ -89,14 +106,15 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
         fecha.toLocaleDateString()
 
         var coverPage = [
-            '\n\n',
-            { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-            '\n\n\n\n\n\n\n\n\n\n\n',
-            { image: "images/Hillroom.png", width: 120, height: 47, alignment: 'center'},
-            { text: 'LATAM PRICEBOOK ' + anio, style: 'header', alignment: "center" },
-            { text: 'USD - ' + zona, style: 'header', alignment: "center" },
-            { image: "images/Cover.png", width: 400, height: 250, alignment: 'center'},
-            { text: 'www.hillrom.com', style: 'header', alignment: "center" },
+            //'\n\n',
+            { image: "images/Portada-Camas.png", width: 620, height: 700, alignment: 'center'},
+            //'\n\n\n\n\n\n\n\n\n\n\n',
+            //{ image: "images/Hillroom.png", width: 120, height: 47, alignment: 'center'},
+            '\n\n\n',
+            { text: 'LATAM PRICEBOOK ' + /*anio*/ "2024", style: 'headerCover', alignment: "center" },
+            { text: 'USD - ' + zona, style: 'header2', alignment: "center" },
+            //{ image: "images/Cover.png", width: 400, height: 250, alignment: 'center'},
+            //{ text: 'www.hillrom.com', style: 'header', alignment: "center" },
             {text: '', pageBreak: 'after'  },
         ]
 
@@ -132,7 +150,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                         widths: [530],
                         body: [
                             [
-                                {border: [false, false, false, false], text: 'Critical Care/ICU', fillColor: '#546ce4', style: 'indexbackground'},
+                                {border: [false, false, false, false], text: 'Critical Care/ICU', fillColor: '#154898', style: 'indexbackground'},
                             ],
                         ]
                     }
@@ -142,6 +160,19 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     {
                         toc: {
                             id: 'progressa',
+                            style: { fontSize: 14 }
+                        }
+                    }
+                )
+
+            }
+            if(layouts[i].Id_Layout === "HOB-CCI-PRP7501")
+            {
+
+                index2.push(
+                    {
+                        toc: {
+                            id: 'progressaplus',
                         }
                     }
                 )
@@ -155,7 +186,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                             widths: [530],
                             body: [
                                 [
-                                    {border: [false, false, false, false], text: 'Bariatric', fillColor: '#546ce4', style: 'indexbackground'},
+                                    {border: [false, false, false, false], text: 'Bariatric', fillColor: '#154898', style: 'indexbackground'},
                                 ],
                             ]
                         }
@@ -169,6 +200,25 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                         }
                     }
                 )
+
+                index2.push(
+                    {
+                        toc: {
+                            id: '1048BariatricBed',
+                        }
+                    }
+                )
+
+                /*else if(layouts[i].Id_Layout === "HOB-1048")
+                {
+                    index2.push(
+                        {
+                            toc: {
+                                id: '1048BariatricBed',
+                            }
+                        }
+                    )
+                }*/
             }
             else if((layouts[i].Id_Layout === "HOB-MES-CENTMB" || layouts[i].Id_Layout === "HOB-MES-HIRO900" || layouts[i].Id_Layout === "HOB-MES-ACCELLA"
             || layouts[i].Id_Layout === "HOB-MES-CENTURI" || layouts[i].Id_Layout === "HOB-MES-CENP750" || layouts[i].Id_Layout === "HOB-MES-305MABE"
@@ -179,7 +229,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                         widths: [530],
                         body: [
                             [
-                                {border: [false, false, false, false], text: 'Med-Surg', fillColor: '#546ce4', style: 'indexbackground'},
+                                {border: [false, false, false, false], text: 'Med-Surg', fillColor: '#154898', style: 'indexbackground'},
                             ],
                         ]
                     }
@@ -236,7 +286,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                             widths: [530],
                             body: [
                                 [
-                                    {border: [false, false, false, false], text: 'Long-Term Care', fillColor: '#546ce4', style: 'indexbackground'},
+                                    {border: [false, false, false, false], text: 'Long-Term Care', fillColor: '#154898', style: 'indexbackground'},
                                 ],
                             ]
                         }
@@ -265,7 +315,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                             widths: [530],
                             body: [
                                 [
-                                    {border: [false, false, false, false], text: 'Maternity', fillColor: '#546ce4', style: 'indexbackground'},
+                                    {border: [false, false, false, false], text: 'Maternity', fillColor: '#154898', style: 'indexbackground'},
                                 ],
                             ]
                         }
@@ -306,7 +356,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                             widths: [530],
                             body: [
                                 [
-                                    {border: [false, false, false, false], text: 'Foam', fillColor: '#546ce4', style: 'indexbackground'},
+                                    {border: [false, false, false, false], text: 'Foam', fillColor: '#154898', style: 'indexbackground'},
                                 ],
                             ]
                         }
@@ -322,6 +372,12 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                 index2.push({
                     toc: {
                         id: 'therapySurfaces2',
+                    }
+                })
+
+                index2.push({
+                    toc: {
+                        id: 'synthetosurfaces',
                     }
                 })
         
@@ -342,7 +398,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                         widths: [530],
                         body: [
                             [
-                                {border: [false, false, false, false], text: 'Powered', fillColor: '#546ce4', style: 'indexbackground'},
+                                {border: [false, false, false, false], text: 'Powered', fillColor: '#154898', style: 'indexbackground'},
                             ],
                         ]
                     }
@@ -402,7 +458,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                         widths: [530],
                         body: [
                             [
-                                {border: [false, false, false, false], text: 'Tables', fillColor: '#546ce4', style: 'indexbackground'},
+                                {border: [false, false, false, false], text: 'Tables', fillColor: '#154898', style: 'indexbackground'},
                             ],
                         ]
                     }
@@ -421,7 +477,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                         widths: [530],
                         body: [
                             [
-                                {border: [false, false, false, false], text: 'Transport Chairs', fillColor: '#546ce4', style: 'indexbackground'},
+                                {border: [false, false, false, false], text: 'Transport Chairs', fillColor: '#154898', style: 'indexbackground'},
                             ],
                         ]
                     }
@@ -442,7 +498,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                         widths: [530],
                         body: [
                             [
-                                {border: [false, false, false, false], text: 'Colours & Fabrics', fillColor: '#546ce4', style: 'indexbackground'},
+                                {border: [false, false, false, false], text: 'Colours & Fabrics', fillColor: '#154898', style: 'indexbackground'},
                             ],
                         ]
                     }
@@ -490,7 +546,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                         widths: [530],
                         body: [
                             [
-                                {border: [false, false, false, false], text: 'Seating Furniture', fillColor: '#546ce4', style: 'indexbackground'},
+                                {border: [false, false, false, false], text: 'Seating Furniture', fillColor: '#154898', style: 'indexbackground'},
                             ],
                         ]
                     }
@@ -514,7 +570,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                         widths: [530],
                         body: [
                             [
-                                {border: [false, false, false, false], text: 'Healthcare Furniture', fillColor: '#546ce4', style: 'indexbackground'},
+                                {border: [false, false, false, false], text: 'Healthcare Furniture', fillColor: '#154898', style: 'indexbackground'},
                             ],
                         ]
                     }
@@ -568,16 +624,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     }
                 )
             }
-            else if(layouts[i].Id_Layout === "HOB-1048")
-            {
-                index2.push(
-                    {
-                        toc: {
-                            id: '1048BariatricBed',
-                        }
-                    }
-                )
-            }
+            
         }
 
         index2.push({text: '', pageBreak: 'after'  })
@@ -597,6 +644,11 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
             {
                 var progressaLayout = await progressa.getProgressa()
                 contenido.push(progressaLayout)
+            }
+            if(layouts[i].Id_Layout === "HOB-CCI-PRP7501")
+            {
+                var progressaPlusLayout = await progressaPlus.getProgressaPlus()
+                contenido.push(progressaPlusLayout)
             }
             else if(layouts[i].Id_Layout === "HOB-BAR-CP7800A")
             {
@@ -662,6 +714,11 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
             {
                 var therapySurfacesLayout = await therapySurfaces.getTherapySurfaces()
                 contenido.push(therapySurfacesLayout)
+            }
+            else if(layouts[i].Id_Layout === "SURFACES-THE2SYNT")
+            {
+                var synthetoSurfacesLayout = await synthetoSurfaces.getSynthetoSurfaces()
+                contenido.push(synthetoSurfacesLayout)
             }
             else if(layouts[i].Id_Layout === "SURFACES-ACCUMAX")
             {
@@ -768,7 +825,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     return {
                         margin: [30, 10],
                         columns: [
-                            {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
+                            {image: "images/BaxterEncabezado2.png", width: 537, height: 30, alignment: "center"},
                         ]
                     }
                 }
@@ -786,7 +843,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                                 text: 'Page ' + currentPage.toString() + ' of ' + pageCount, style: 'footer', alignment: 'center'
                             },
                             {
-                                text: '00 - ' + zona + " - " + anio + " Capital - IPL-USD V" + pdfVersion + " (" + anio + ")", style: 'footer', alignment: 'right'
+                                text: '00 - ' + zona + " - " + /*anio*/ "2024" + " Capital - IPL-USD V" + pdfVersion + " (" + anio + ")", style: 'footer', alignment: 'right'
                             },
                         ]
                     }
@@ -803,27 +860,40 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                 header: {
                     fontSize: 15,
                     bold: true,
-                    color: '#1c3384',
+                    color: '#001A72',
+                    font: "DIN",
+                },
+                headerCover: {
+                    fontSize: 22,
+                    bold: true,
+                    color: '#001A72',
+                    font: "DIN",
+                },
+                header2: {
+                    fontSize: 22,
+                    color: '#001A72',
+                    font: "DIN",
                 },
                 headerindex: {
-                    fontSize: 10.5,
+                    fontSize: 13,
                     bold: true,
-                    color: '#1c3384',
+                    color: '#001A72',
                 },
                 index: {
                     fontSize: 10,
-                    color: '#1c3384',
+                    color: '#001A72',
+                    font: "DIN",
                 },
                 indexbackground: {
-                    fontSize: 8,
+                    fontSize: 11,
                     color: '#ffffff',
                     bold: true,
-                    background: '#546ce4'
+                    background: '#154898'
                 },
                 subheader: {
                     fontSize: 13,
                     bold: true,
-                    color: '#1c3384',
+                    color: '#001A72',
                 },
                 subheader2: {
                     fontSize: 13,
@@ -836,104 +906,125 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                 },
                 textolista: {
                     fontSize: 7,
+                    font: "DIN",
                 },
                 textolista2: {
                     fontSize: 8,
                 },
                 textotabla: {
-                    fontSize: 7,
+                    fontSize: 7.5,
+                    font: "DIN",
                 },
                 textotablabold: {
                     fontSize: 7,
                     bold: true,
-                    color: '#1c3384',
+                    color: '#001A72',
                 },
                 textotablaboldlarge: {
                     fontSize: 9,
                     bold: true,
-                    color: '#1c3384',
+                    color: '#001A72',
+                    font: "DIN",
                 },
                 textotablatitle: {
                     fontSize: 9,
                     bold: true,
-                    color: '#546ce4',
+                    color: '#154898',
+                    font: "DIN",
                 },
                 textotablaboldblack: {
                     fontSize: 7,
                     bold: true,
                     color: '#000000',
+                    font: "DIN",
                 },
                 textotablaboldblacklarge: {
                     fontSize: 9,
                     bold: true,
                     color: '#000000',
+                    font: "DIN",
                 },
                 textotablacolor: {
-                    fontSize: 7,
+                    fontSize: 7.5,
                     color: '#ffffff',
                     bold: true,
+                    font: "DIN",
                 },
                 textotablacolornormal: {
                     fontSize: 7,
                     color: '#ffffff',
+                    font: "DIN",
                 },
                 textotablacolorlarge: {
                     fontSize: 9,
                     color: '#ffffff',
                     bold: true,
+                    font: "DIN",
                 },
                 textotablacatoni: {
                     fontSize: 6.2,
+                    font: "DIN",
                 },
                 textotablaboldcatoni: {
                     fontSize: 5.5,
                     bold: true,
-                    color: '#1c3384',
+                    color: '#001A72',
+                    font: "DIN",
                 },
                 textotablaboldlargecatoni: {
                     fontSize: 7,
                     bold: true,
-                    color: '#1c3384',
+                    color: '#001A72',
+                    font: "DIN",
                 },
                 textotablaboldblackcatoni: {
                     fontSize: 5.5,
                     bold: true,
                     color: '#000000',
+                    font: "DIN",
                 },
                 textotablacolorcatoni: {
                     fontSize: 5.5,
                     color: '#ffffff',
                     bold: true,
+                    font: "DIN",
                 },
                 textotablacentrella: {
                     fontSize: 5,
+                    font: "DIN",
                 },
                 textotablaboldcentrella: {
                     fontSize: 5,
                     bold: true,
-                    color: '#1c3384',
+                    color: '#001A72',
+                    font: "DIN",
                 },
                 textotablaboldlargecentrella: {
                     fontSize: 6,
                     bold: true,
-                    color: '#1c3384',
+                    color: '#001A72',
+                    font: "DIN",
                 },
                 textotablaboldblackcentrella: {
                     fontSize: 5,
                     bold: true,
                     color: '#000000',
+                    font: "DIN",
                 },
                 textotablacolorcentrella: {
                     fontSize: 5,
                     color: '#ffffff',
                     bold: true,
+                    font: "DIN",
                 },
                 parrafo: {
                     fontSize: 8,
+                    font: "DIN",
                 },
                 parrafoBold: {
                     fontSize: 8,
                     bold: true,
+                    font: "DIN",
                 },
                 parrafoItalic: {
                     fontSize: 8,
@@ -941,6 +1032,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                 },
                 footer: {
                     fontSize: 6,
+                    font: "DIN",
                 },
                 quote: {
                     italics: true
@@ -951,7 +1043,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                 minispace: {
                     fontSize: 3
                 }
-            }   
+            },
         };
 
         var pdfDoc = printer.createPdfKitDocument(docDefinition);

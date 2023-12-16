@@ -18,12 +18,12 @@ async function getCatoniStyle()
     var options2 =[]
     var pSItems = 0;
     options2[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'B01', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'B02', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'B03', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'B04', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'B01', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'B02', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'B03', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'B04', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
     pSItems++
 
@@ -79,7 +79,7 @@ async function getCatoniStyle()
         {
             if(data.Print_Character[0] === "*")
             {
-                precio1 = "●"
+                precio1 = "*"
             }
             else {
                 precio1 = "-"
@@ -93,7 +93,7 @@ async function getCatoniStyle()
         {
             if(data.Print_Character[1] === "*")
             {
-                precio2 = "●"
+                precio2 = "*"
             }
             else {
                 precio2 = "-"
@@ -107,7 +107,7 @@ async function getCatoniStyle()
         {
             if(data.Print_Character[2] === "*")
             {
-                precio3 = "●"
+                precio3 = "*"
             }
             else {
                 precio3 = "-"
@@ -121,7 +121,7 @@ async function getCatoniStyle()
         {
             if(data.Print_Character[3] === "*")
             {
-                precio4 = "●"
+                precio4 = "*"
             }
             else {
                 precio4 = "-"
@@ -157,9 +157,9 @@ async function getCatoniStyle()
         options2[pSItems] = [
             {text: hingeData[0].Id_Item, style: 'textotablacatoni', alignment: 'center'},
             {text: hingeData[0].Item_Long_Desc, style: 'textotablacatoni'},
-            {text: "●", style: 'textotablacatoni', alignment: 'center'}, 
-            {text: "●", style: 'textotablacatoni', alignment: 'center'}, 
-            {text: "●", style: 'textotablacatoni', alignment: 'center'},
+            {text: "*", style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "*", style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "*", style: 'textotablacatoni', alignment: 'center'},
             {text: "-", style: 'textotablacatoni', alignment: 'center'},  
         ]
     
@@ -246,7 +246,7 @@ async function getCatoniStyle()
         {
             if(data.Print_Character[0] === "*")
             {
-                precio1 = "●"
+                precio1 = "*"
             }
             else {
                 precio1 = "-"
@@ -260,7 +260,7 @@ async function getCatoniStyle()
         {
             if(data.Print_Character[1] === "*")
             {
-                precio2 = "●"
+                precio2 = "*"
             }
             else {
                 precio2 = "-"
@@ -274,7 +274,7 @@ async function getCatoniStyle()
         {
             if(data.Print_Character[2] === "*")
             {
-                precio3 = "●"
+                precio3 = "*"
             }
             else {
                 precio3 = "-"
@@ -288,7 +288,7 @@ async function getCatoniStyle()
         {
             if(data.Print_Character[3] === "*")
             {
-                precio4 = "●"
+                precio4 = "*"
             }
             else {
                 precio4 = "-"
@@ -403,7 +403,7 @@ async function getCatoniStyle()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -417,7 +417,7 @@ async function getCatoniStyle()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -431,7 +431,7 @@ async function getCatoniStyle()
             {
                 if(data.Print_Character[2] === "*")
                 {
-                    precio3 = "●"
+                    precio3 = "*"
                 }
                 else {
                     precio3 = "-"
@@ -445,7 +445,7 @@ async function getCatoniStyle()
             {
                 if(data.Print_Character[3] === "*")
                 {
-                    precio4 = "●"
+                    precio4 = "*"
                 }
                 else {
                     precio4 = "-"
@@ -570,7 +570,7 @@ async function getCatoniStyle()
         {
             if(data.Print_Character[0] === "*")
             {
-                precio1 = "●"
+                precio1 = "*"
             }
             else {
                 precio1 = "-"
@@ -584,7 +584,7 @@ async function getCatoniStyle()
         {
             if(data.Print_Character[1] === "*")
             {
-                precio2 = "●"
+                precio2 = "*"
             }
             else {
                 precio2 = "-"
@@ -598,7 +598,7 @@ async function getCatoniStyle()
         {
             if(data.Print_Character[2] === "*")
             {
-                precio3 = "●"
+                precio3 = "*"
             }
             else {
                 precio3 = "-"
@@ -612,7 +612,7 @@ async function getCatoniStyle()
         {
             if(data.Print_Character[3] === "*")
             {
-                precio4 = "●"
+                precio4 = "*"
             }
             else {
                 precio4 = "-"
@@ -647,10 +647,10 @@ async function getCatoniStyle()
         options2[pSItems] = [
             {text: castorsData[0].Id_Item, style: 'textotablacatoni', alignment: 'center'},
             {text: castorsData[0].Item_Long_Desc, style: 'textotablacatoni'},
-            {text: "●", style: 'textotablacatoni', alignment: 'center'}, 
-            {text: "●", style: 'textotablacatoni', alignment: 'center'}, 
-            {text: "●", style: 'textotablacatoni', alignment: 'center'},
-            {text: "●", style: 'textotablacatoni', alignment: 'center'},  
+            {text: "*", style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "*", style: 'textotablacatoni', alignment: 'center'}, 
+            {text: "*", style: 'textotablacatoni', alignment: 'center'},
+            {text: "*", style: 'textotablacatoni', alignment: 'center'},  
         ]
     
         pSItems++
@@ -754,7 +754,7 @@ async function getCatoniStyle()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -768,7 +768,7 @@ async function getCatoniStyle()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -782,7 +782,7 @@ async function getCatoniStyle()
             {
                 if(data.Print_Character[2] === "*")
                 {
-                    precio3 = "●"
+                    precio3 = "*"
                 }
                 else {
                     precio3 = "-"
@@ -796,7 +796,7 @@ async function getCatoniStyle()
             {
                 if(data.Print_Character[3] === "*")
                 {
-                    precio4 = "●"
+                    precio4 = "*"
                 }
                 else {
                     precio4 = "-"
@@ -881,7 +881,7 @@ async function getCatoniStyle()
         {
             if(data.Print_Character[0] === "*")
             {
-                precio1 = "●"
+                precio1 = "*"
             }
             else {
                 precio1 = "-"
@@ -895,7 +895,7 @@ async function getCatoniStyle()
         {
             if(data.Print_Character[1] === "*")
             {
-                precio2 = "●"
+                precio2 = "*"
             }
             else {
                 precio2 = "-"
@@ -909,7 +909,7 @@ async function getCatoniStyle()
         {
             if(data.Print_Character[2] === "*")
             {
-                precio3 = "●"
+                precio3 = "*"
             }
             else {
                 precio3 = "-"
@@ -923,7 +923,7 @@ async function getCatoniStyle()
         {
             if(data.Print_Character[3] === "*")
             {
-                precio4 = "●"
+                precio4 = "*"
             }
             else {
                 precio4 = "-"
@@ -1090,7 +1090,7 @@ async function getCatoniStyle()
         {
             if(data.Print_Character[0] === "*")
             {
-                precio1 = "●"
+                precio1 = "*"
             }
             else {
                 precio1 = "-"
@@ -1104,7 +1104,7 @@ async function getCatoniStyle()
         {
             if(data.Print_Character[1] === "*")
             {
-                precio2 = "●"
+                precio2 = "*"
             }
             else {
                 precio2 = "-"
@@ -1118,7 +1118,7 @@ async function getCatoniStyle()
         {
             if(data.Print_Character[2] === "*")
             {
-                precio3 = "●"
+                precio3 = "*"
             }
             else {
                 precio3 = "-"
@@ -1132,7 +1132,7 @@ async function getCatoniStyle()
         {
             if(data.Print_Character[3] === "*")
             {
-                precio4 = "●"
+                precio4 = "*"
             }
             else {
                 precio4 = "-"
@@ -1245,7 +1245,7 @@ async function getCatoniStyle()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -1259,7 +1259,7 @@ async function getCatoniStyle()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -1273,7 +1273,7 @@ async function getCatoniStyle()
             {
                 if(data.Print_Character[2] === "*")
                 {
-                    precio3 = "●"
+                    precio3 = "*"
                 }
                 else {
                     precio3 = "-"
@@ -1287,7 +1287,7 @@ async function getCatoniStyle()
             {
                 if(data.Print_Character[3] === "*")
                 {
-                    precio4 = "●"
+                    precio4 = "*"
                 }
                 else {
                     precio4 = "-"
@@ -1329,7 +1329,7 @@ async function getCatoniStyle()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'FURNCAB', style: 'textotablacolorlarge', colSpan: 4, fillColor: '#546ce4',  alignment: 'center'},
+                            {text: 'FURNCAB', style: 'textotablacolorlarge', colSpan: 4, fillColor: '#154898',  alignment: 'center'},
                             {},
                             {},
                             {},
@@ -1343,10 +1343,10 @@ async function getCatoniStyle()
                         ],
                         [
                             {border: [false, false, false, false], text: 'Catoni Style Bedside Cabinet - High', style: 'textotablaboldlarge'},
-                            {text: 'B01', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B02', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B03', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B04', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B01', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: 'B02', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: 'B03', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: 'B04', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                         ],
                         [
                             {border: [false, false, false, false], ul: [
@@ -1361,11 +1361,11 @@ async function getCatoniStyle()
                             { image: "images/Catoni14.png", width: 40, height: 70, alignment: 'center'},
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
                         ],
                     ]
                 },
@@ -1394,7 +1394,7 @@ async function getCatoniStyle()
                     body: [
                         [
                             {border: [false, false, false, false], text: ''},
-                            {text: 'FURNCAB', style: 'textotablacolorlarge', colSpan: 4, fillColor: '#546ce4',  alignment: 'center'},
+                            {text: 'FURNCAB', style: 'textotablacolorlarge', colSpan: 4, fillColor: '#154898',  alignment: 'center'},
                             {},
                             {},
                             {},
@@ -1408,10 +1408,10 @@ async function getCatoniStyle()
                         ],
                         [
                             {border: [false, false, false, false], text: 'Catoni Style Bedside Cabinet - High', style: 'textotablaboldlarge'},
-                            {text: 'B01', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B02', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B03', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: 'B04', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+                            {text: 'B01', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: 'B02', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: 'B03', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: 'B04', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                         ],
                         [
                             {border: [false, false, false, false], ul: [
@@ -1426,11 +1426,11 @@ async function getCatoniStyle()
                             { image: "images/Catoni14.png", width: 40, height: 70, alignment: 'center'},
                         ],
                         [
-                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
                         ],
                     ]
                 },
@@ -1491,7 +1491,7 @@ async function getCatoniStyle()
         "\n",
         table2,
         { text: '\n', style: 'parrafo' },
-        { text: '● = standard', style: 'textotablacatoni' },
+        { text: '* = standard', style: 'textotablacatoni' },
         { text: '= - not available', style: 'textotablacatoni' },
         { text: '\n', style: 'parrafo' },
         { text: 'Configurations samples', style: 'textotablaboldlarge' },
@@ -1500,12 +1500,12 @@ async function getCatoniStyle()
                 widths: [80, 80, 80, 80, 80, "*"],
                 body: [
                     [
-                        {text: 'B01 with sliding tray (SLP), accessory bar holder (PAD) & simple base (L3)', style: 'textotablacolorcatoni', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'B01 with fixed strip (BAN) & simple base (L3)', style: 'textotablacolorcatoni', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'B01 with two half doors (A6) & simple base (L3)', style: 'textotablacolorcatoni', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'B01 with colour contrast for fixed shelf', style: 'textotablacolorcatoni', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'B02 with plastic cover (CAP)', style: 'textotablacolorcatoni', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'B02 with colour contrast', style: 'textotablacolorcatoni', fillColor: '#546ce4',  alignment: 'center'},
+                        {text: 'B01 with sliding tray (SLP), accessory bar holder (PAD) & simple base (L3)', style: 'textotablacolorcatoni', fillColor: '#154898',  alignment: 'center'},
+                        {text: 'B01 with fixed strip (BAN) & simple base (L3)', style: 'textotablacolorcatoni', fillColor: '#154898',  alignment: 'center'},
+                        {text: 'B01 with two half doors (A6) & simple base (L3)', style: 'textotablacolorcatoni', fillColor: '#154898',  alignment: 'center'},
+                        {text: 'B01 with colour contrast for fixed shelf', style: 'textotablacolorcatoni', fillColor: '#154898',  alignment: 'center'},
+                        {text: 'B02 with plastic cover (CAP)', style: 'textotablacolorcatoni', fillColor: '#154898',  alignment: 'center'},
+                        {text: 'B02 with colour contrast', style: 'textotablacolorcatoni', fillColor: '#154898',  alignment: 'center'},
                     ],
                     [
                         { image: "images/Catoni15.png", width: 40, height: 70, alignment: 'center'},

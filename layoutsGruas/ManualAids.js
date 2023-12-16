@@ -623,7 +623,7 @@ async function getManualAIDS(pdfZone)
                             {text: [
                                 {text: 'HANDYTUBE', style: 'textotablacolorlarge'},
                                 {text: "Handytube", style: {fontSize: 0}, tocItem: "handytube"}
-                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            ], fillColor: '#03857d',  alignment: 'center', colSpan: 3},
                             {},
                             {}
                         ],
@@ -649,9 +649,9 @@ async function getManualAIDS(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ],
                     ]
                 },
@@ -706,7 +706,7 @@ async function getManualAIDS(pdfZone)
                             {text: [
                                 {text: 'HANDYSHEET™', style: 'textotablacolorlarge'},
                                 {text: "Handysheet™", style: {fontSize: 0}, tocItem: "handysheet"}
-                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            ], fillColor: '#03857d',  alignment: 'center', colSpan: 3},
                             {},
                             {}
                         ],
@@ -732,9 +732,9 @@ async function getManualAIDS(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ],
                     ]
                 },
@@ -789,7 +789,7 @@ async function getManualAIDS(pdfZone)
                             {text: [
                                 {text: 'HANDYBELT™', style: 'textotablacolorlarge'},
                                 {text: "Handybelt™", style: {fontSize: 0}, tocItem: "handybelt"}
-                            ], fillColor: '#5bbccc',  alignment: 'center', colSpan: 3},
+                            ], fillColor: '#03857d',  alignment: 'center', colSpan: 3},
                             {},
                             {}
                         ],
@@ -815,9 +815,9 @@ async function getManualAIDS(pdfZone)
                     widths: [80, "*", 60],
                     body: [
                         [
-                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'PART #', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                            {border: [true, false, true, false], text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                         ],
                     ]
                 },

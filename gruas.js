@@ -1,9 +1,24 @@
-var fonts = {
+/*var fonts = {
     Roboto: {
       normal: './fonts/CenturyGothic.ttf',
       bold: './fonts/CenturyGothicBold.ttf',
       italics: './fonts/CenturyGothic.ttf',
       bolditalics: './fonts/CenturyGothic.ttf'
+    }
+};*/
+
+var fonts = {
+    Roboto: {
+      normal: './fonts/Geogrotesque-Regular.ttf',
+      bold: './fonts/Geogrotesque-SemiBold.ttf',
+      italics: './fonts/Geogrotesque-Italic.ttf',
+      bolditalics: './fonts/Geogrotesque-BoldItalic.ttf',
+      
+    },
+    DIN: {
+        normal: './fonts/DIN.ttf',
+        medium: './fonts/DIN-Medium.ttf',
+        bold: './fonts/DIN-Bold.ttf',
     }
 };
 
@@ -46,51 +61,15 @@ const curtainsystem = require('./controllers/curtainsystem.js');
 async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersion, layouts, pdfZone)
 {
     try{
-        /*var mobileLiftsLayout = await mobileLifts.getMobileLifts(pdfZone)
-        var vikingLayout = await viking.getViking(pdfZone)
-        var sabinaLayout = await sabina.getSabina(pdfZone)
-        var mobileLiftsAccesoriesLayout = await mobileLiftsAccesories.getMobileLiftAccesories(pdfZone)
-        var overheadLiftsLayout = await overheadLifts.getOverheadLifts(pdfZone)
-        var railSystemH70Layout = await railSystemH70.getRailSystemH70(pdfZone)
-        var railSystemH100Layout = await railSystemH100.getRailSystemH100(pdfZone)
-        var railSystemH140Layout = await railSystemH140.getRailSystemH140(pdfZone)
-        var railSystemH160Layout = await railSystemH160.getRailSystemH160(pdfZone)
-        var railSystemEndCoversLayout = await railSystemEndCovers.getRailSystemEndCovers(pdfZone)
-        var assemblyPartsLayout = await assemblyParts.getAssemblyParts(pdfZone)
-        var railSwitchSystemLayout = await railSwitchSystem.getRailSwitchSystem(pdfZone)
-        var freespanStraightRailLayout = await freespanStraightRail.getFreespanStraightRail(pdfZone)
-        var freespanTraverseLayout = await freespanTraverse.getFreespanTraverse(pdfZone)
-        var freespanUltraTwinLayout = await freespanUltraTwin.getFreespanUltraTwin(pdfZone)
-        var freeStandLayout = await freeStand.getFreeStand(pdfZone)
-        var freeSpiritLayout = await freeSpirit.getFreeSpirit(pdfZone)
-        var liftingAccesoriesLayout = await liftingAccesories.getLiftingAccesories(pdfZone)
-        var slingsForChildrenLayout = await slingsForChildren.getSlingsForChildren(pdfZone)
-        var slingsForAdultsLayout = await slingsForAdults.getSlingsForAdults(pdfZone)
-        var accesoriesForSlingsLayout = await accesoriesForSlings.getAccesoriesForSlings(pdfZone)
-        var likoOriginalHighbackLayout = await likoOriginalHighback.getLikoOriginalHighback(pdfZone)
-        var likoConfortslingLayout = await likoConfortsling.getLikoConfortsling(pdfZone)
-        var likoMastervestLayout = await likoMastervest.getLikoMastervest(pdfZone)
-        var likoLiftPantsLayout = await likoLiftPants.getLikoLiftPants(pdfZone)
-        var likoStretchersLayout = await likoStretchers.getLikoStretchers(pdfZone)
-        var likoFlexostretchLayout = await likoFlexostretch.getLikoFlexostretch(pdfZone)
-        var reposheetLayout = await reposheet.getReposheet(pdfZone)
-        var manualAIDSLayout = await manualAIDS.getManualAIDS(pdfZone)*/
-
         const fecha = new Date();
-        const anio = fecha.getFullYear()
-        fecha.toLocaleDateString()
-
-        console.log(layouts)
+        const anio = fecha.getFullYear();
+        fecha.toLocaleDateString();
 
         var coverPage = [
-            '\n\n',
-            { image: "images/BaxterEncabezado.png", width: 570, height: 30, alignment: 'center'},
-            '\n\n\n\n\n\n\n\n\n\n\n',
-            { image: "images/Hillroom.png", width: 120, height: 47, alignment: 'center'},
-            { text: 'LIKO PRICEBOOK 2022', style: 'header', alignment: "center" },
-            { text: 'USD - ' + zona, style: 'header', alignment: "center" },
-            { image: "images/Cover2.png", width: 400, height: 250, alignment: 'center'},
-            { text: 'www.hillrom.com', style: 'header', alignment: "center" },
+            { image: "images/Portada-Gruas.png", width: 620, height: 700, alignment: 'center'},
+            '\n\n\n',
+            { text: 'LIKO PRICEBOOK ' + /*anio*/ "2024", style: 'headerCover', alignment: "center" },
+            { text: 'USD - ' + zona, style: 'header2', alignment: "center" },
             {text: '', pageBreak: 'after'  },
         ]
 
@@ -115,8 +94,8 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     widths: [490, 30],
                     body: [
                         [
-                            {border: [false, false, false, false], text: 'Mobile Lifts', fillColor: '#546ce4', style: 'indexbackground'},
-                            {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Mobile Lifts', fillColor: '#154898', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Page', fillColor: '#154898', style: 'indexbackground'},
                         ],
                     ]
                 }
@@ -171,8 +150,8 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     widths: [490, 30],
                     body: [
                         [
-                            {border: [false, false, false, false], text: 'Accessories for Mobile Lifts', fillColor: '#546ce4', style: 'indexbackground'},
-                            {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Accessories for Mobile Lifts', fillColor: '#154898', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Page', fillColor: '#154898', style: 'indexbackground'},
                         ],
                     ]
                 }
@@ -204,8 +183,8 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     widths: [490, 30],
                     body: [
                         [
-                            {border: [false, false, false, false], text: 'Overhead Lifts', fillColor: '#546ce4', style: 'indexbackground'},
-                            {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Overhead Lifts', fillColor: '#154898', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Page', fillColor: '#154898', style: 'indexbackground'},
                         ],
                     ]
                 }
@@ -230,8 +209,8 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     widths: [490, 30],
                     body: [
                         [
-                            {border: [false, false, false, false], text: 'Rail System', fillColor: '#546ce4', style: 'indexbackground'},
-                            {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Rail System', fillColor: '#154898', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Page', fillColor: '#154898', style: 'indexbackground'},
                         ],
                     ]
                 }
@@ -295,8 +274,8 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     widths: [490, 30],
                     body: [
                         [
-                            {border: [false, false, false, false], text: 'Freestanding Lift System', fillColor: '#546ce4', style: 'indexbackground'},
-                            {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Freestanding Lift System', fillColor: '#154898', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Page', fillColor: '#154898', style: 'indexbackground'},
                         ],
                     ]
                 }
@@ -330,8 +309,8 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     widths: [490, 30],
                     body: [
                         [
-                            {border: [false, false, false, false], text: 'Curtain System', fillColor: '#546ce4', style: 'indexbackground'},
-                            {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Curtain System', fillColor: '#154898', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Page', fillColor: '#154898', style: 'indexbackground'},
                         ],
                     ]
                 }
@@ -355,8 +334,8 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     widths: [490, 30],
                     body: [
                         [
-                            {border: [false, false, false, false], text: 'Accessories', fillColor: '#546ce4', style: 'indexbackground'},
-                            {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Accessories', fillColor: '#154898', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Page', fillColor: '#154898', style: 'indexbackground'},
                         ],
                     ]
                 }
@@ -387,8 +366,8 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     widths: [490, 30],
                     body: [
                         [
-                            {border: [false, false, false, false], text: 'Slings for Children', fillColor: '#546ce4', style: 'indexbackground'},
-                            {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Slings for Children', fillColor: '#154898', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Page', fillColor: '#154898', style: 'indexbackground'},
                         ],
                     ]
                 }
@@ -434,8 +413,8 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     widths: [490, 30],
                     body: [
                         [
-                            {border: [false, false, false, false], text: 'Slings for Adults', fillColor: '#546ce4', style: 'indexbackground'},
-                            {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Slings for Adults', fillColor: '#154898', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Page', fillColor: '#154898', style: 'indexbackground'},
                         ],
                     ]
                 }
@@ -534,8 +513,8 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     widths: [490, 30],
                     body: [
                         [
-                            {border: [false, false, false, false], text: 'Accessories', fillColor: '#546ce4', style: 'indexbackground'},
-                            {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Accessories', fillColor: '#154898', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Page', fillColor: '#154898', style: 'indexbackground'},
                         ],
                     ]
                 }
@@ -566,8 +545,8 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     widths: [490, 30],
                     body: [
                         [
-                            {border: [false, false, false, false], text: 'Liko Stretchers', fillColor: '#546ce4', style: 'indexbackground'},
-                            {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Liko Stretchers', fillColor: '#154898', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Page', fillColor: '#154898', style: 'indexbackground'},
                         ],
                     ]
                 }
@@ -601,8 +580,8 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     widths: [490, 30],
                     body: [
                         [
-                            {border: [false, false, false, false], text: 'RepoSheet', fillColor: '#546ce4', style: 'indexbackground'},
-                            {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'RepoSheet', fillColor: '#154898', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Page', fillColor: '#154898', style: 'indexbackground'},
                         ],
                     ]
                 }
@@ -623,8 +602,8 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                 widths: [490, 30],
                 body: [
                     [
-                        {border: [false, false, false, false], text: 'MultiStrap', fillColor: '#546ce4', style: 'indexbackground'},
-                        {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                        {border: [false, false, false, false], text: 'MultiStrap', fillColor: '#154898', style: 'indexbackground'},
+                        {border: [false, false, false, false], text: 'Page', fillColor: '#154898', style: 'indexbackground'},
                     ],
                 ]
             }
@@ -647,8 +626,8 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     widths: [490, 30],
                     body: [
                         [
-                            {border: [false, false, false, false], text: 'Manual Aids', fillColor: '#546ce4', style: 'indexbackground'},
-                            {border: [false, false, false, false], text: 'Page', fillColor: '#546ce4', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Manual Aids', fillColor: '#154898', style: 'indexbackground'},
+                            {border: [false, false, false, false], text: 'Page', fillColor: '#154898', style: 'indexbackground'},
                         ],
                     ]
                 }
@@ -793,7 +772,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     return {
                         margin: [30, 20],
                         columns: [
-                            {image: "images/BaxterEncabezado.png", width: 537, height: 30, alignment: "center"},
+                            {image: "images/BaxterEncabezado2.png", width: 537, height: 30, alignment: "center"},
                         ]
                     }
                 }
@@ -811,7 +790,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                                 text: 'Page ' + currentPage.toString() + ' of ' + pageCount, style: 'footer', alignment: 'center'
                             },
                             {
-                                text: '00 - ' + zona + " - " + anio + 'Liko Capital Price Book ' + pdfVersion, style: 'footer', alignment: 'right'
+                                text: '00 - ' + zona + " - " + /*anio*/ "2024" + 'Liko Capital Price Book ' + pdfVersion, style: 'footer', alignment: 'right'
                             },
                         ]
                     }
@@ -825,69 +804,91 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                 header: {
                     fontSize: 15,
                     bold: true,
-                    color: '#1c3384',
+                    color: '#001A72',
+                },
+                headerCover: {
+                    fontSize: 22,
+                    bold: true,
+                    color: '#001A72',
+                    font: "DIN",
+                },
+                header2: {
+                    fontSize: 22,
+                    color: '#001A72',
+                    font: "DIN",
                 },
                 index: {
                     fontSize: 11,
-                    color: '#1c3384',
+                    color: '#001A72',
+                    font: "DIN",
                 },
                 indexbackground: {
                     fontSize: 11,
                     color: '#ffffff',
                     bold: true,
-                    background: '#546ce4'
+                    background: '#154898'
                 },
                 subheader: {
                     fontSize: 13,
                     bold: true,
-                    color: '#1c3384',
+                    color: '#001A72',
                 },
                 textosubrayado: {
                     fontSize: 9,
                 },
                 textolista: {
                     fontSize: 7,
+                    font: "DIN",
                 },
                 textolista2: {
                     fontSize: 8,
+                    font: "DIN",
                 },
                 textotabla: {
                     fontSize: 7,
+                    font: "DIN",
                 },
                 textotablabold: {
                     fontSize: 7,
                     bold: true,
-                    color: '#1c3384',
+                    color: '#001A72',
+                    font: "DIN",
                 },
                 textotablaboldlarge: {
                     fontSize: 9,
                     bold: true,
-                    color: '#1c3384',
+                    color: '#001A72',
+                    font: "DIN",
                 },
                 textotablatitle: {
                     fontSize: 9,
                     bold: true,
-                    color: '#546ce4',
+                    color: '#154898',
+                    font: "DIN",
                 },
                 textotablaboldblack: {
                     fontSize: 7,
                     bold: true,
                     color: '#000000',
+                    font: "DIN",
                 },
                 textotablaboldblacklarge: {
                     fontSize: 9,
                     bold: true,
                     color: '#000000',
+                    font: "DIN",
                 },
                 textotablacolor: {
                     fontSize: 7,
                     color: '#ffffff',
                     bold: true,
+                    font: "DIN",
                 },
                 textotablacolor: {
                     fontSize: 9,
                     color: '#ffffff',
                     bold: true,
+                    font: "DIN",
                 },
                 textotablacolornormal: {
                     fontSize: 7,
@@ -897,48 +898,59 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                     fontSize: 13,
                     color: '#ffffff',
                     bold: true,
+                    font: "DIN",
                 },
                 textotablacolorlargecatoni: {
                     fontSize: 10,
                     color: '#ffffff',
                     bold: true,
+                    font: "DIN",
                 },
                 textotablacatoni: {
                     fontSize: 5.5,
+                    font: "DIN",
                 },
                 textotablaboldcatoni: {
                     fontSize: 5.5,
                     bold: true,
-                    color: '#1c3384',
+                    color: '#001A72',
+                    font: "DIN",
                 },
                 textotablaboldlargecatoni: {
                     fontSize: 7,
                     bold: true,
-                    color: '#1c3384',
+                    color: '#001A72',
+                    font: "DIN",
                 },
                 textotablaboldblackcatoni: {
                     fontSize: 5.5,
                     bold: true,
                     color: '#000000',
+                    font: "DIN",
                 },
                 textotablacolorcatoni: {
                     fontSize: 5.5,
                     color: '#ffffff',
                     bold: true,
+                    font: "DIN",
                 },
                 parrafo: {
                     fontSize: 8,
+                    font: "DIN",
                 },
                 parrafoBold: {
                     fontSize: 8,
                     bold: true,
+                    font: "DIN",
                 },
                 parrafoItalic: {
                     fontSize: 8,
                     italics: true,
+                    font: "DIN",
                 },
                 footer: {
                     fontSize: 6,
+                    font: "DIN",
                 },
                 quote: {
                     italics: true

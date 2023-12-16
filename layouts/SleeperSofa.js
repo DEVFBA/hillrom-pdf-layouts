@@ -11,7 +11,7 @@ async function getSleeperSofa()
 
     mainTable[pSItems] = [
         {border: [false, false, false, false], text: ''},
-        {text: 'SLEEPERSOFA', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center', colSpan: 2},
+        {text: 'SLEEPERSOFA', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center', colSpan: 2},
         {},
     ],
     pSItems++
@@ -85,7 +85,7 @@ async function getSleeperSofa()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -99,7 +99,7 @@ async function getSleeperSofa()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -110,9 +110,9 @@ async function getSleeperSofa()
             }
             
             mainTable[pSItems] = [
-                {text: data.Item_Long_Desc, style: 'textotablacolorlarge', fillColor: '#546ce4'},
-                {text: precio1, style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'}, 
-                {text: precio2, style: 'textotablacolorlarge', alignment: 'center', fillColor: '#546ce4'}, 
+                {text: data.Item_Long_Desc, style: 'textotablacolorlarge', fillColor: '#154898'},
+                {text: precio1, style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'}, 
+                {text: precio2, style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'}, 
             ]
 
             pSItems++
@@ -178,7 +178,7 @@ async function getSleeperSofa()
             {
                 if(data.Print_Character[0] === "*")
                 {
-                    precio1 = "●"
+                    precio1 = "*"
                 }
                 else {
                     precio1 = "-"
@@ -192,7 +192,7 @@ async function getSleeperSofa()
             {
                 if(data.Print_Character[1] === "*")
                 {
-                    precio2 = "●"
+                    precio2 = "*"
                 }
                 else {
                     precio2 = "-"
@@ -251,14 +251,14 @@ async function getSleeperSofa()
                     {
                         width: "*",
                         text: [
-                            {text: '\n\n\n\n\n\n\n\n', style: 'textotablaboldblack', fillColor: '#546ce4'},
-                            {text: 'Arm Cap Color\n', style: 'textotablaboldblack', fillColor: '#546ce4'},
-                            {text: 'B - Black\n', style: 'textotabla', fillColor: '#546ce4'},
-                            {text: 'D - White\n', style: 'textotabla', fillColor: '#546ce4'},
-                            {text: 'L - Dark Grey\n', style: 'textotabla', fillColor: '#546ce4'},
-                            {text: 'S - Light Grey\n', style: 'textotabla', fillColor: '#546ce4'},
-                            {text: 'T - Toffee\n', style: 'textotabla', fillColor: '#546ce4'},
-                            {text: 'W - Sand\n', style: 'textotabla', fillColor: '#546ce4'},
+                            {text: '\n\n\n\n\n\n\n\n', style: 'textotablaboldblack', fillColor: '#154898'},
+                            {text: 'Arm Cap Color\n', style: 'textotablaboldblack', fillColor: '#154898'},
+                            {text: 'B - Black\n', style: 'textotabla', fillColor: '#154898'},
+                            {text: 'D - White\n', style: 'textotabla', fillColor: '#154898'},
+                            {text: 'L - Dark Grey\n', style: 'textotabla', fillColor: '#154898'},
+                            {text: 'S - Light Grey\n', style: 'textotabla', fillColor: '#154898'},
+                            {text: 'T - Toffee\n', style: 'textotabla', fillColor: '#154898'},
+                            {text: 'W - Sand\n', style: 'textotabla', fillColor: '#154898'},
                         ]
                     },
                 ]
@@ -329,7 +329,7 @@ async function getSleeperSofa()
         "\n",
         table2,
         { text: '\n', style: 'parrafo' },
-        { text: '● = standard', style: 'parrafo' },
+        { text: '* = standard', style: 'parrafo' },
         { text: '= - not available', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
         { image: "images/SleeperSofa.png", width: 280, height: 190, alignment: 'center'},

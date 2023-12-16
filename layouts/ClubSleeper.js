@@ -86,7 +86,7 @@ async function getClubSleeper()
                             ],
                             [
                                 {border: [false, false, false, false], text: ''},
-                                {text: 'PREMIUMCLUBSLEEPER', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                                {text: 'PREMIUMCLUBSLEEPER', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                             ],
                             [
                                 {border: [false, false, false, false], text: ''},
@@ -98,7 +98,7 @@ async function getClubSleeper()
                             ],
                             [
                                 {border: [false, false, false, false], text: ''},
-                                {text: 'CLPA', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                                {text: 'CLPA', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                             ],
                             [
                                 {text: 'Overall Width', style: 'textotabla'},
@@ -110,47 +110,47 @@ async function getClubSleeper()
                             ],
                             [
                                 {text: 'Twin Surface', style: 'textotabla'},
-                                {text: '●"', style: 'textotabla', alignment: 'center'},
+                                {text: '*"', style: 'textotabla', alignment: 'center'},
                             ],
                             [
                                 {text: 'Two Person Chair', style: 'textotabla'},
-                                {text: '●', style: 'textotabla', alignment: 'center'},
+                                {text: '*', style: 'textotabla', alignment: 'center'},
                             ],
                             [
                                 {text: 'Front Locking Castor', style: 'textotablacolor'},
-                                {text: '●', style: 'textotablacolor', alignment: 'center'},
+                                {text: '*', style: 'textotablacolor', alignment: 'center'},
                             ],
                             [
-                                {text: 'Grade 1 Upholstery', style: 'textotablacolor', fillColor: '#546ce4'},
-                                {text: '$2,949', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+                                {text: 'Grade 1 Upholstery', style: 'textotablacolor', fillColor: '#154898'},
+                                {text: '$2,949', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
                             ],
                             [
-                                {text: 'Grade 2 Upholstery', style: 'textotablacolor', fillColor: '#546ce4'},
-                                {text: '$2,949', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+                                {text: 'Grade 2 Upholstery', style: 'textotablacolor', fillColor: '#154898'},
+                                {text: '$2,949', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
                             ],
                             [
-                                {text: 'Grade 3 Upholstery', style: 'textotablacolor', fillColor: '#546ce4'},
-                                {text: '$2,949', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+                                {text: 'Grade 3 Upholstery', style: 'textotablacolor', fillColor: '#154898'},
+                                {text: '$2,949', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
                             ],
                             [
-                                {text: 'Grade 4 Upholstery', style: 'textotablacolor', fillColor: '#546ce4'},
-                                {text: '$2,949', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+                                {text: 'Grade 4 Upholstery', style: 'textotablacolor', fillColor: '#154898'},
+                                {text: '$2,949', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
                             ],
                             [
-                                {text: 'Grade 5 Upholstery', style: 'textotablacolor', fillColor: '#546ce4'},
-                                {text: '$2,949', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+                                {text: 'Grade 5 Upholstery', style: 'textotablacolor', fillColor: '#154898'},
+                                {text: '$2,949', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
                             ],
                             [
-                                {text: 'Grade 6 Upholstery', style: 'textotablacolor', fillColor: '#546ce4'},
-                                {text: '$2,949', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+                                {text: 'Grade 6 Upholstery', style: 'textotablacolor', fillColor: '#154898'},
+                                {text: '$2,949', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
                             ],
                             [
-                                {text: 'Grade 7 Upholstery', style: 'textotablacolor', fillColor: '#546ce4'},
-                                {text: '$2,949', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+                                {text: 'Grade 7 Upholstery', style: 'textotablacolor', fillColor: '#154898'},
+                                {text: '$2,949', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
                             ],
                             [
-                                {text: 'Grade 8 Upholstery', style: 'textotablacolor', fillColor: '#546ce4'},
-                                {text: '$2,949', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+                                {text: 'Grade 8 Upholstery', style: 'textotablacolor', fillColor: '#154898'},
+                                {text: '$2,949', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
                             ],
                         ]
                     },
@@ -220,7 +220,7 @@ async function getClubSleeper()
             ]
         },
         { text: '\n', style: 'parrafo' },
-        { text: '● = standard', style: 'parrafo' },
+        { text: '* = standard', style: 'parrafo' },
         { text: '= - not available', style: 'parrafo' },
         '\n',
         {image: "images/ClubSleeper2.png", width: 200, height: 120, alignment: 'center'},

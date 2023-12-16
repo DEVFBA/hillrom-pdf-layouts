@@ -22,13 +22,13 @@ async function getMedSurgAccesories()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'HR900', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'HR900 Accella', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'Centuris Pro', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'HR900', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'HR900 Accella', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'Centuris Pro', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
     pSItems++
 
@@ -98,7 +98,7 @@ async function getMedSurgAccesories()
 
             if(data.Print_Character_HR900X3 !== false)
             {
-                precio1 = "●"
+                precio1 = "*"
             }
             else {
                 precio1 = "-"
@@ -106,7 +106,7 @@ async function getMedSurgAccesories()
 
             if(data.Print_Character_ACCELLA !== false)
             {
-                precio2 = "●"
+                precio2 = "*"
             }
             else {
                 precio2 = "-"
@@ -114,7 +114,7 @@ async function getMedSurgAccesories()
 
             if(data.Print_Character_CENTURISX3 !== false)
             {
-                precio3 = "●"
+                precio3 = "*"
             }
             else {
                 precio3 = "-"
@@ -217,7 +217,7 @@ async function getMedSurgAccesories()
 
             if(data.Print_Character_HR900X3 !== false)
             {
-                precio1 = "●"
+                precio1 = "*"
             }
             else {
                 precio1 = "-"
@@ -225,7 +225,7 @@ async function getMedSurgAccesories()
 
             if(data.Print_Character_ACCELLA !== false)
             {
-                precio2 = "●"
+                precio2 = "*"
             }
             else {
                 precio2 = "-"
@@ -233,7 +233,7 @@ async function getMedSurgAccesories()
 
             if(data.Print_Character_CENTURISX3 !== false)
             {
-                precio3 = "●"
+                precio3 = "*"
             }
             else {
                 precio3 = "-"
@@ -288,8 +288,8 @@ async function getMedSurgAccesories()
                     {text: controlsData[i].KitName, style: 'textotabla'},
                     {text: controlsData[i].Part, style: 'textotabla'},
                     {text: controlsData[i].Item_Long_Desc, style: 'textotabla'},
-                    {text: "●", style: 'textotabla', alignment: 'center'}, 
-                    {text: "●", style: 'textotabla', alignment: 'center'}, 
+                    {text: "*", style: 'textotabla', alignment: 'center'}, 
+                    {text: "*", style: 'textotabla', alignment: 'center'}, 
                     {text: "-", style: 'textotabla', alignment: 'center'}, 
                     {text: "$" + Intl.NumberFormat("en-IN").format(controlsData[i].Price), style: 'textotabla', alignment: 'center'}, 
                 ]
@@ -300,7 +300,7 @@ async function getMedSurgAccesories()
                     {text: controlsData[i].KitName, style: 'textotabla'},
                     {text: controlsData[i].Part, style: 'textotabla'},
                     {text: controlsData[i].Item_Long_Desc, style: 'textotabla'},
-                    {text: "●", style: 'textotabla', alignment: 'center'}, 
+                    {text: "*", style: 'textotabla', alignment: 'center'}, 
                     {text: "-", style: 'textotabla', alignment: 'center'}, 
                     {text: "-", style: 'textotabla', alignment: 'center'}, 
                     {text: "$" + Intl.NumberFormat("en-IN").format(controlsData[i].Price), style: 'textotabla', alignment: 'center'}, 
@@ -322,9 +322,9 @@ async function getMedSurgAccesories()
             {text: supportsData[0].KitName, style: 'textotabla'},
             {text: supportsData[0].Part, style: 'textotabla'},
             {text: supportsData[0].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(supportsData[0].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
@@ -333,9 +333,9 @@ async function getMedSurgAccesories()
             {text: supportsData[3].KitName, style: 'textotabla'},
             {text: supportsData[3].Part, style: 'textotabla'},
             {text: supportsData[3].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(supportsData[3].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
@@ -344,9 +344,9 @@ async function getMedSurgAccesories()
             {text: supportsData[6].KitName, style: 'textotabla'},
             {text: supportsData[6].Part, style: 'textotabla'},
             {text: supportsData[6].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(supportsData[6].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
@@ -418,7 +418,7 @@ async function getMedSurgAccesories()
 
             if(data.Print_Character_HR900X3 !== false)
             {
-                precio1 = "●"
+                precio1 = "*"
             }
             else {
                 precio1 = "-"
@@ -426,7 +426,7 @@ async function getMedSurgAccesories()
 
             if(data.Print_Character_ACCELLA !== false)
             {
-                precio2 = "●"
+                precio2 = "*"
             }
             else {
                 precio2 = "-"
@@ -434,7 +434,7 @@ async function getMedSurgAccesories()
 
             if(data.Print_Character_CENTURISX3 !== false)
             {
-                precio3 = "●"
+                precio3 = "*"
             }
             else {
                 precio3 = "-"
@@ -473,9 +473,9 @@ async function getMedSurgAccesories()
             {text: furnitureSupportsData[0].KitName, style: 'textotabla'},
             {text: furnitureSupportsData[0].Part, style: 'textotabla'},
             {text: furnitureSupportsData[0].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(furnitureSupportsData[0].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
@@ -484,9 +484,9 @@ async function getMedSurgAccesories()
             {text: furnitureSupportsData[3].KitName, style: 'textotabla'},
             {text: furnitureSupportsData[3].Part, style: 'textotabla'},
             {text: furnitureSupportsData[3].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(furnitureSupportsData[3].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
@@ -496,13 +496,13 @@ async function getMedSurgAccesories()
     pSItems = 0
 
     liftpole[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'HR900', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'HR900 Accella', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'Centuris Pro', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'HR900', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'HR900 Accella', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'Centuris Pro', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
     pSItems++
 
@@ -580,7 +580,7 @@ async function getMedSurgAccesories()
 
             if(data.Print_Character_HR900X3 !== false)
             {
-                precio1 = "●"
+                precio1 = "*"
             }
             else {
                 precio1 = "-"
@@ -588,7 +588,7 @@ async function getMedSurgAccesories()
 
             if(data.Print_Character_ACCELLA !== false)
             {
-                precio2 = "●"
+                precio2 = "*"
             }
             else {
                 precio2 = "-"
@@ -596,7 +596,7 @@ async function getMedSurgAccesories()
 
             if(data.Print_Character_CENTURISX3 !== false)
             {
-                precio3 = "●"
+                precio3 = "*"
             }
             else {
                 precio3 = "-"
@@ -702,7 +702,7 @@ async function getMedSurgAccesories()
 
             if(data.Print_Character_HR900X3 !== false)
             {
-                precio1 = "●"
+                precio1 = "*"
             }
             else {
                 precio1 = "-"
@@ -710,7 +710,7 @@ async function getMedSurgAccesories()
 
             if(data.Print_Character_ACCELLA !== false)
             {
-                precio2 = "●"
+                precio2 = "*"
             }
             else {
                 precio2 = "-"
@@ -718,7 +718,7 @@ async function getMedSurgAccesories()
 
             if(data.Print_Character_CENTURISX3 !== false)
             {
-                precio3 = "●"
+                precio3 = "*"
             }
             else {
                 precio3 = "-"
@@ -769,9 +769,9 @@ async function getMedSurgAccesories()
             {text: optionUpgradeData[0].KitName, style: 'textotabla'},
             {text: optionUpgradeData[0].Part, style: 'textotabla'},
             {text: optionUpgradeData[0].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(optionUpgradeData[0].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
@@ -783,9 +783,9 @@ async function getMedSurgAccesories()
             {text: optionUpgradeData[3].KitName, style: 'textotabla'},
             {text: optionUpgradeData[3].Part, style: 'textotabla'},
             {text: optionUpgradeData[3].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(optionUpgradeData[3].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
@@ -798,7 +798,7 @@ async function getMedSurgAccesories()
             {text: optionUpgradeData[5].Part, style: 'textotabla'},
             {text: optionUpgradeData[5].Item_Long_Desc, style: 'textotabla'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(optionUpgradeData[5].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -812,7 +812,7 @@ async function getMedSurgAccesories()
             {text: optionUpgradeData[7].Part, style: 'textotabla'},
             {text: optionUpgradeData[7].Item_Long_Desc, style: 'textotabla'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(optionUpgradeData[7].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -827,7 +827,7 @@ async function getMedSurgAccesories()
             {text: optionUpgradeData[9].Part, style: 'textotabla'},
             {text: optionUpgradeData[9].Item_Long_Desc, style: 'textotabla'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(optionUpgradeData[9].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -842,7 +842,7 @@ async function getMedSurgAccesories()
             {text: optionUpgradeData[11].Part, style: 'textotabla'},
             {text: optionUpgradeData[11].Item_Long_Desc, style: 'textotabla'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(optionUpgradeData[11].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -857,7 +857,7 @@ async function getMedSurgAccesories()
             {text: optionUpgradeData[12].Part, style: 'textotabla'},
             {text: optionUpgradeData[12].Item_Long_Desc, style: 'textotabla'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(optionUpgradeData[12].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -887,9 +887,9 @@ async function getMedSurgAccesories()
             {text: sidelaicData[0].KitName, style: 'textotabla'},
             {text: sidelaicData[0].Part, style: 'textotabla'},
             {text: sidelaicData[0].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(sidelaicData[0].Price), style: 'textotabla', alignment: 'center'}, 
         ]
         pSItems++
@@ -973,7 +973,7 @@ async function getMedSurgAccesories()
     
             if(data.Print_Character_HR900X3 !== false)
             {
-                precio1 = "●"
+                precio1 = "*"
             }
             else {
                 precio1 = "-"
@@ -981,7 +981,7 @@ async function getMedSurgAccesories()
     
             if(data.Print_Character_ACCELLA !== false)
             {
-                precio2 = "●"
+                precio2 = "*"
             }
             else {
                 precio2 = "-"
@@ -989,7 +989,7 @@ async function getMedSurgAccesories()
     
             if(data.Print_Character_CENTURISX3 !== false)
             {
-                precio3 = "●"
+                precio3 = "*"
             }
             else {
                 precio3 = "-"
@@ -1040,8 +1040,8 @@ async function getMedSurgAccesories()
             {text: tractionData[0].KitName, style: 'textotabla'},
             {text: tractionData[0].Part, style: 'textotabla'},
             {text: tractionData[0].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[0].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1055,7 +1055,7 @@ async function getMedSurgAccesories()
             {text: tractionData[2].Part, style: 'textotabla'},
             {text: tractionData[2].Item_Long_Desc, style: 'textotabla'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[2].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1068,8 +1068,8 @@ async function getMedSurgAccesories()
             {text: tractionData[3].KitName, style: 'textotabla'},
             {text: tractionData[3].Part, style: 'textotabla'},
             {text: tractionData[3].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[3].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1082,8 +1082,8 @@ async function getMedSurgAccesories()
             {text: tractionData[5].KitName, style: 'textotabla'},
             {text: tractionData[5].Part, style: 'textotabla'},
             {text: tractionData[5].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[5].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1096,8 +1096,8 @@ async function getMedSurgAccesories()
             {text: tractionData[7].KitName, style: 'textotabla'},
             {text: tractionData[7].Part, style: 'textotabla'},
             {text: tractionData[7].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[7].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1110,8 +1110,8 @@ async function getMedSurgAccesories()
             {text: tractionData[9].KitName, style: 'textotabla'},
             {text: tractionData[9].Part, style: 'textotabla'},
             {text: tractionData[9].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[9].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1124,8 +1124,8 @@ async function getMedSurgAccesories()
             {text: tractionData[11].KitName, style: 'textotabla'},
             {text: tractionData[11].Part, style: 'textotabla'},
             {text: tractionData[11].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[11].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1138,8 +1138,8 @@ async function getMedSurgAccesories()
             {text: tractionData[13].KitName, style: 'textotabla'},
             {text: tractionData[13].Part, style: 'textotabla'},
             {text: tractionData[13].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[13].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1152,8 +1152,8 @@ async function getMedSurgAccesories()
             {text: tractionData[15].KitName, style: 'textotabla'},
             {text: tractionData[15].Part, style: 'textotabla'},
             {text: tractionData[15].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[15].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1166,8 +1166,8 @@ async function getMedSurgAccesories()
             {text: tractionData[17].KitName, style: 'textotabla'},
             {text: tractionData[17].Part, style: 'textotabla'},
             {text: tractionData[17].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[17].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1180,8 +1180,8 @@ async function getMedSurgAccesories()
             {text: tractionData[19].KitName, style: 'textotabla'},
             {text: tractionData[19].Part, style: 'textotabla'},
             {text: tractionData[19].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[19].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1194,8 +1194,8 @@ async function getMedSurgAccesories()
             {text: tractionData[21].KitName, style: 'textotabla'},
             {text: tractionData[21].Part, style: 'textotabla'},
             {text: tractionData[21].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[21].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1208,8 +1208,8 @@ async function getMedSurgAccesories()
             {text: tractionData[22].KitName, style: 'textotabla'},
             {text: tractionData[22].Part, style: 'textotabla'},
             {text: tractionData[22].Item_Long_Desc, style: 'textotabla'},
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
-            {text: "●", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
+            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(tractionData[22].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1551,7 +1551,7 @@ async function getMedSurgAccesories()
         table9,
         table10,
         { text: '\n', style: 'parrafo' },
-        { text: '● = standard = \t \t = - not available', style: 'parrafo' },
+        { text: '* = standard = \t \t = - not available', style: 'parrafo' },
         { text: 'All accessories can be ordered as a spare part.', style: 'parrafoBold', alignment: 'center' },
         { text: '\n', style: 'parrafo' },
         { text: 'NOTE : A version refers to Hill-Rom 900 bed with a reference number beginning with CS900A \n B version refers to Hill-Rom 900 bed with split siderails or with a reference number beginning with CS900B', style: 'parrafoItalic', alignment: 'center' },
