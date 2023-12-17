@@ -37,7 +37,7 @@ async function getConnexSpotMonitor(data)
         });
 
         layout.push("\n");
-        layout.push({ text: "Connex ProBP 3400", style: 'header3', alignment: "left" });
+        layout.push({ text: "Connex Spot Monitor", style: 'header3', alignment: "left" }); /** Name correction from Connex ProBP 3400 to Connex Spot Monitor -- AEGH 23-12-16 **/
         layout.push("\n");
         layout.push({ text: gruposUnicosOrdenados[g], style: 'headerRed', alignment: "right", tocItem: gruposUnicosOrdenados[g].replace(/\s/g, '')});
 
