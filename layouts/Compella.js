@@ -645,13 +645,13 @@ async function getCompella()
                                 ],
                                 [
                                     {text: surfacesOptions[0].Item_Long_Desc, style: 'textotabla'},
-                                    {text: "$16,606", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
-                                    {text: '-', style: 'textotabla', alignment: 'center'}, 
+                                    {text: "$15,968", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                                    {text: '-', style: 'textotabla', alignment: 'center'}, //Modif AEGH 18/12/23
                                 ],
                                 [
                                     {text: surfacesOptions[1].Item_Long_Desc, style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: "$26,193", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                                    {text: "$25,186", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, // Modif AEGH 18/12/23
                                 ],
                                 [
                                     {border: [false, false, false, false], text: 'Surface Add-Ons', style: 'textotablabold', colSpan:3},
@@ -661,7 +661,7 @@ async function getCompella()
                                 [
                                     {text: surfacesAddons[0].Item_Long_Desc, style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: "$5,327", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: "$5,121", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, // Modif AEGH 18/12/23
                                 ],
                             ]
                         },
