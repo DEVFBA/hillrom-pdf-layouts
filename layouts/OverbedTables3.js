@@ -125,13 +125,13 @@ async function getOverbedTables()
                         ],
                         [
                             {text: 'Single Top Overbed Table', style: 'textotabla'},
-                            {text: '$762', style: 'textotabla', alignment: 'center'},
-                            {text: '*', style: 'textotabla', alignment: 'center'}, 
+                            {text: '*', style: 'textotabla', alignment: 'center'},
+                            {text: '-', style: 'textotabla', alignment: 'center'}, 
                         ],
                         [
                             {text: 'Dual Top Overbed Table', style: 'textotabla'},
-                            {text: '*', style: 'textotabla', alignment: 'center'},
-                            {text: '$1 195', style: 'textotabla', alignment: 'center'}, 
+                            {text: '-', style: 'textotabla', alignment: 'center'},
+                            {text: '*', style: 'textotabla', alignment: 'center'}, 
                         ],
                         [
                             {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},

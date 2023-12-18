@@ -23,19 +23,6 @@ router.route('/v2/').post(auth, (request, response)=>{
     })
 })
 
-router.route('/physician-2/').post((request, response)=>{
-    console.log("SI ENTRE")
-    let generatePdf = {...request.body}
-    logger.info(JSON.stringify({...request.body}) + "/generate-pdf/physician/ - POST -")
-    dbGenerate.createPdfPhysician(generatePdf).then(result => {
-        if(result.data.status === 0)
-        {
-            response.status(400);
-        }
-        response.json(result);
-    })
-})
-
 router.route('/physician/').post((request, response)=>{
     let generatePdf = {...request.body}
     logger.info(JSON.stringify({...request.body}) + "/generate-pdf/physician/ - POST -")

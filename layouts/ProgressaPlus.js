@@ -739,21 +739,21 @@ async function getProgressaPlus()
                                 ],
                                 [
                                     {text: 'Progressa + Base Frame', style: 'textotabla'},
-                                    {text: "$34,517.00", style: 'textotabla', alignment: 'center'},
-                                    {text: "$34,517.00", style: 'textotabla', alignment: 'center'}, 
-                                    {text: "$34,517.00", style: 'textotabla', alignment: 'center'}
+                                    {text: "$34,517", style: 'textotabla', alignment: 'center'},
+                                    {text: "$34,517", style: 'textotabla', alignment: 'center'}, 
+                                    {text: "$34,517", style: 'textotabla', alignment: 'center'}
                                 ],
                                 [
                                     {text: 'Essential Surface (Non-Powered Air) (P7525A1)', style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
-                                    {text: "$1,584.00", style: 'textotabla', alignment: 'center'}, 
+                                    {text: "$1,584", style: 'textotabla', alignment: 'center'}, 
                                     {text: '-', style: 'textotabla', alignment: 'center'}
                                 ],
                                 [
                                     {text: 'Microclimate Surface (Powered Air) (P7540)', style: 'textotabla'},
                                     {text: '-', style: 'textotabla', alignment: 'center'},
                                     {text: '-', style: 'textotabla', alignment: 'center'}, 
-                                    {text: "$12,532.00", style: 'textotabla', alignment: 'center'}
+                                    {text: "$12,532", style: 'textotabla', alignment: 'center'}
                                 ],
                                 [
                                     {text: 'Dining Chair Frame Design', style: 'textotabla'},
@@ -763,9 +763,9 @@ async function getProgressaPlus()
                                 ],
                                 [
                                     {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#154898'},
-                                    {text: "$34,517.00", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
-                                    {text: "$36,101.00", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
-                                    {text: "$47,049.00", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}
+                                    {text: "$34,517", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
+                                    {text: "$36,101", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}, 
+                                    {text: "$47,049", style: 'textotablacolor', fillColor: '#154898', alignment: 'center'}
                                 ],
                             ]
                         },

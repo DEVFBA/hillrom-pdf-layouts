@@ -87,8 +87,7 @@ async function getCenturisProBed()
 
     if(plugVoltagesData.length > 0)
     {
-        console.log("CENTURIS PRO")
-        console.log(plugVoltagesData)
+    
         /*ESTO VA EN UN CICLO*/
         for(var i=0; i<plugVoltagesData.length; i++)
         {

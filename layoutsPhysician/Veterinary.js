@@ -24,7 +24,7 @@ async function getVeterinary(data)
 
     for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
-        console.log(gruposUnicosOrdenados[g])
+        //console.log(gruposUnicosOrdenados[g])
         const dataGroup = veterinaryData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
         //Se sacan solo las familias de ese grupo
@@ -37,7 +37,7 @@ async function getVeterinary(data)
             return orderA - orderB;
         });
 
-        console.log(familiasUnicasOrdenadasGroup)
+        //console.log(familiasUnicasOrdenadasGroup)
 
         layout.push("\n");
         layout.push({ text: "Veterinary", style: 'header3', alignment: "left" });
