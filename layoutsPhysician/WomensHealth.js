@@ -24,6 +24,8 @@ async function getWomensHealth(data)
 
     for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
+        layout.push({text: '', pageBreak: 'after'  }); 
+        
         const dataGroup = womensData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
         //Se sacan solo las familias de ese grupo
@@ -119,8 +121,6 @@ async function getWomensHealth(data)
             }
 
         }
-
-        layout.push({text: '', pageBreak: 'after'  }); 
     }
 
     var womensHealth = [
@@ -129,7 +129,6 @@ async function getWomensHealth(data)
         "\n",
         { text: "Women's Health", style: 'header3', alignment: "left" },
         { image: "v2/images/WomensHealth.png", width: 595, height: 600, alignment: 'center'},
-        {text: '', pageBreak: 'after'  },
         layout,
     ]
 

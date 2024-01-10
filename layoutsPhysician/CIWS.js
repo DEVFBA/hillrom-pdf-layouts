@@ -23,6 +23,8 @@ async function getCiws(data)
 
     for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
+        layout.push({text: '', pageBreak: 'after'  }); 
+        
         const dataGroup = ciwsData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
         //Se sacan solo las familias de ese grupo
@@ -116,21 +118,15 @@ async function getCiws(data)
             }
 
         }
-
-        layout.push({text: '', pageBreak: 'after'  }); 
     }   
 
     var ciws = [
-        { image: "v2/images/CIWS.png", width: 620, height: 840, alignment: 'center'},
+        { image: "v2/images/CIWSP.png", width: 620, height: 840, alignment: 'center'},
         {text: '', pageBreak: 'after'  },
         "\n",
         { text: "CIWS", style: 'header3', alignment: "left" },
         { image: "v2/images/CIWS2.png", width: 560, height: 340, alignment: 'center'},
-        {text: '', pageBreak: 'after'  },
-        "\n",
-        //{ text: "CIWS", style: 'header3', alignment: "left" },
-        layout,
-        //{text: '', pageBreak: 'after'  }
+        layout
     ]
 
     return ciws;

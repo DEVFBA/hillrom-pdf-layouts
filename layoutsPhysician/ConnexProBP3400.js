@@ -24,6 +24,8 @@ async function getConnexProBd3400(data)
 
     for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
+        layout.push({text: '', pageBreak: 'after'  }); 
+        
         const dataGroup = connexProData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
         //Se sacan solo las familias de ese grupo
@@ -118,8 +120,6 @@ async function getConnexProBd3400(data)
             }
 
         }
-
-        layout.push({text: '', pageBreak: 'after'  }); 
     }
 
     var connexProBd3400 = [
@@ -128,7 +128,6 @@ async function getConnexProBd3400(data)
         "\n",
         { text: "ProBP 3400", style: 'header3', alignment: "left" },
         { image: "v2/images/ConnexProBP34002.png", width: 550, height: 480, alignment: 'center'},
-        {text: '', pageBreak: 'after'  },
         layout,
     ]
 

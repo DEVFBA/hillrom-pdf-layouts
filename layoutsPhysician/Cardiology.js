@@ -24,6 +24,8 @@ async function getCardiology(data)
 
     for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
+        layout.push({text: '', pageBreak: 'after'  }); 
+        
         const dataGroup = cardiologyData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
         //Se sacan solo las familias de ese grupo
@@ -118,13 +120,10 @@ async function getCardiology(data)
             }
 
         }
-
-        layout.push({text: '', pageBreak: 'after'  }); 
     }
 
     var cardiology = [
         { image: "v2/images/Cardiology.png", width: 620, height: 840, alignment: 'center'},
-        {text: '', pageBreak: 'after'  },
         layout,
     ]
 

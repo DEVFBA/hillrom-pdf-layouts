@@ -44,6 +44,7 @@ var cardiology = require("./layoutsPhysician/Cardiology.js");
 var respiratory = require("./layoutsPhysician/Respiratory.js");
 var veterinary = require("./layoutsPhysician/Veterinary.js");
 var spot4400 = require("./layoutsPhysician/SPOT4400.js");
+var cardiologyWelchAllyn = require("./layoutsPhysician/CardiologyWelchAllyn.js");
 
 async function createDocument(discounts, data, rutaPdf, rutaPdfIp, nombreArchivo, region, para, effectiveDate, anio)
 {
@@ -1013,6 +1014,42 @@ async function createDocument(discounts, data, rutaPdf, rutaPdfIp, nombreArchivo
                     )
                 }
             }
+
+            if(discounts[i].Product_Category === "Cardiology Welch Allyn")
+            {
+                index2.push('\n');
+                index2.push({
+                    table: {
+                        widths: [530],
+                        body: [
+                            [
+                                {border: [false, false, false, false], text: "Cardiology Welch Allyn", fillColor: '#001A72', style: 'headerTitles'},
+                            ],
+                        ]
+                    }
+                },)
+
+                const dataLayout = data.filter(objeto => objeto.Category === "Cardiology Welch Allyn");
+                const gruposUnicosOrdenados = [...new Set(dataLayout.map(item => item.Group))]
+                .filter(Boolean) // Eliminar valores nulos o undefined
+                .sort((a, b) => {
+                    // Ordenar por el atributo Order_Group
+                    const orderA = dataLayout.find(item => item.Group === a)?.Order_Group || 0;
+                    const orderB = dataLayout.find(item => item.Group === b)?.Order_Group || 0;
+                    return orderA - orderB;
+                });
+
+                for(var g=0; g<gruposUnicosOrdenados.length; g++)
+                {
+                    index2.push(
+                        {
+                            toc: {
+                                id: gruposUnicosOrdenados[g].replace(/\s/g, '')
+                            }
+                        }
+                    )
+                }
+            }
         }
     
         index2.push({text: '', pageBreak: 'after'  })        
@@ -1182,10 +1219,16 @@ async function createDocument(discounts, data, rutaPdf, rutaPdfIp, nombreArchivo
                 var spot4400Layout = await spot4400.getSPOT4400(data);
                 contenido.push(spot4400Layout)
             }
+
+            if(discounts[i].Product_Category === "Cardiology Welch Allyn")
+            {
+                var cardiologyWelchAllynLayout = await cardiologyWelchAllyn.getCardiologyWelch(data);
+                contenido.push(cardiologyWelchAllynLayout)
+            }
         }
 
         var docDefinition = { 
-            pageMargins: [ 30, 6, 30, 30 ],
+            pageMargins: [ 30, 12, 30, 30 ],
             footer: function(currentPage, pageCount) {
 
                 if(currentPage > 2)

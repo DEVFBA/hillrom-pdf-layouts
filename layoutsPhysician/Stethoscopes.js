@@ -24,6 +24,8 @@ async function getStethoscopes(data)
 
     for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
+        layout.push({text: '', pageBreak: 'after'  }); 
+        
         const dataGroup = stethoscopesData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
         //Se sacan solo las familias de ese grupo
@@ -118,8 +120,6 @@ async function getStethoscopes(data)
             }
 
         }
-
-        layout.push({text: '', pageBreak: 'after'  }); 
     }
 
     var stethoscopes = [
@@ -128,11 +128,7 @@ async function getStethoscopes(data)
         "\n",
         { text: "Stethoscopes", style: 'header3', alignment: "left" },
         { image: "v2/images/Sthetoscopes.png", width: 595, height: 680, alignment: 'center'},
-        {text: '', pageBreak: 'after'  },
-        //"\n",
-        //{ text: "Stethoscopes", style: 'header3', alignment: "left" },
-        layout,
-        //{text: '', pageBreak: 'after'  }
+        layout
     ]
 
     return stethoscopes;

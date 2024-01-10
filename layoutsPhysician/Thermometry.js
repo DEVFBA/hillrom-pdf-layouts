@@ -24,6 +24,8 @@ async function getThermometry(data)
 
     for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
+        layout.push({text: '', pageBreak: 'after'  }); 
+        
         const dataGroup = thermometryData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
         //Se sacan solo las familias de ese grupo
@@ -117,9 +119,7 @@ async function getThermometry(data)
                 layout.push(data1);
             }
 
-        }
-
-        layout.push({text: '', pageBreak: 'after'  }); 
+        } 
     }
 
     var thermometry = [
@@ -128,11 +128,7 @@ async function getThermometry(data)
         "\n",
         { text: "Thermometry", style: 'header3', alignment: "left" },
         { image: "v2/images/Thermometry2.png", width: 595, height: 580, alignment: 'center'},
-        {text: '', pageBreak: 'after'  },
-        //"\n",
-        //{ text: "Thermometry", style: 'header3', alignment: "left" },
         layout,
-        //{text: '', pageBreak: 'after'  }
     ]
 
     return thermometry;

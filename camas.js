@@ -843,7 +843,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                                 text: 'Page ' + currentPage.toString() + ' of ' + pageCount, style: 'footer', alignment: 'center'
                             },
                             {
-                                text: '00 - ' + zona + " - " + /*anio*/ "2024" + " Capital - IPL-USD V" + pdfVersion + " (" + anio + ")", style: 'footer', alignment: 'right'
+                                text: '00 - ' + zona + " - " + /*anio*/ "2024" + " Capital - IPL-USD V" + pdfVersion + " (" + /*anio*/ "2024" + ")", style: 'footer', alignment: 'right'
                             },
                         ]
                     }

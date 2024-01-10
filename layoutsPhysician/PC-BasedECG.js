@@ -25,6 +25,8 @@ async function getPCBasedECG(data)
 
     for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
+        layout.push({text: '', pageBreak: 'after'  }); 
+        
         const dataGroup = pcBasedData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
         //Se sacan solo las familias de ese grupo
@@ -119,15 +121,11 @@ async function getPCBasedECG(data)
             }
 
         }
-
-        layout.push({text: '', pageBreak: 'after'  }); 
     }
 
     var pcBasedECG = [
         { image: "v2/images/PCBASED.png", width: 620, height: 840, alignment: 'center'},
-        {text: '', pageBreak: 'after'  },
         layout,
-        //{text: '', pageBreak: 'after'  }
     ]
 
     return pcBasedECG;

@@ -24,6 +24,8 @@ async function getSPOT4400(data)
 
     for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
+        layout.push({text: '', pageBreak: 'after'  }); 
+        
         const dataGroup = spot4400Data.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
         //Se sacan solo las familias de ese grupo
@@ -118,13 +120,10 @@ async function getSPOT4400(data)
             }
 
         }
-
-        layout.push({text: '', pageBreak: 'after'  }); 
     }
 
     var spot = [
-        //{ image: "v2/images/ABPM.png", width: 620, height: 840, alignment: 'center'},
-        //{text: '', pageBreak: 'after'  },
+        { image: "v2/images/Spot4400.png", width: 620, height: 840, alignment: 'center'},
         layout
     ]
 

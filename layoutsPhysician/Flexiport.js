@@ -26,6 +26,8 @@ async function getFlexiport(data)
 
     for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
+        layout.push({text: '', pageBreak: 'after'  }); 
+        
         const dataGroup = flexiportData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
         //Se sacan solo las familias de ese grupo
@@ -120,8 +122,6 @@ async function getFlexiport(data)
             }
 
         }
-
-        layout.push({text: '', pageBreak: 'after'  }); 
     }
 
     var flexiport = [
@@ -130,11 +130,7 @@ async function getFlexiport(data)
         "\n",
         { text: "Flexiport", style: 'header3', alignment: "left" },
         { image: "v2/images/Flexiport2.png", width: 550, height: 530, alignment: 'center'},
-        {text: '', pageBreak: 'after'  },
-        //"\n",
-        //{ text: "Flexiport", style: 'header3', alignment: "left" },
         layout,
-        //{text: '', pageBreak: 'after'  }
     ]
 
     return flexiport;

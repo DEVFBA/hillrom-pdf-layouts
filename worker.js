@@ -187,8 +187,10 @@ async function createPdfPhysician(){
                   var nombreArchivo = params.modality + "_" + cluster + "_" + distributor;
                   nombreArchivo = nombreArchivo.replace(/[\/\\]/g, '');
                   console.log("Nombre archivo: " + nombreArchivo);
-                  const region = data[0].Cluster;
-                  const para = data[0].Distributor_Name;
+                  const region = "Latin America and Caribbean";
+                  const para = "";
+                  //const region = data[0].Cluster;
+                  //const para = data[0].Distributor_Name;
                   const effectiveDate = formatearFecha(params.effectiveDate);
                   const anio = obtenerAnio(params.effectiveDate);
 
@@ -242,7 +244,7 @@ async function createPdfPhysician(){
                   .input('pvoptioncrud', sql.VarChar, "U")
                   .input('pvidlanguageuser', sql.VarChar, params.language)
                   .input('pifolio', sql.Int, params.idRequest)
-                  .input('pvpath', sql.VarChar, carpetaAComprimir + nombreArchivoZip)
+                  .input('pvpath', sql.VarChar, rutaPdfIp + nombreArchivoZip)
                   .input('pbstatus', sql.Int, 1)
                   .input('pvuser', sql.VarChar, params.user)
                   .input('pvip', sql.VarChar, params.ip)
@@ -336,8 +338,10 @@ async function createPdfPhysician(){
                 var distributor = pdf.recordsets[0][0].Distributor_Name.replace(/ /g, '_').normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
                 const nombreArchivo = params.modality + "_" + cluster + "_" + distributor;
-                const region = pdf.recordsets[0][0].Cluster;
-                const para = pdf.recordsets[0][0].Distributor_Name;
+                //const region = pdf.recordsets[0][0].Cluster;
+                //const para = pdf.recordsets[0][0].Distributor_Name;
+                const region = "Latin America and Caribbean";
+                const para = "";
                 const effectiveDate = formatearFecha(params.effectiveDate);
                 const anio = obtenerAnio(params.effectiveDate);
 

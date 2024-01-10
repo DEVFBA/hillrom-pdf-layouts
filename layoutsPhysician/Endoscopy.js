@@ -24,6 +24,8 @@ async function getEndoscopy(data)
 
     for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
+        layout.push({text: '', pageBreak: 'after'  }); 
+        
         const dataGroup = endoscopyData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
         //Se sacan solo las familias de ese grupo
@@ -118,21 +120,11 @@ async function getEndoscopy(data)
             }
 
         }
-
-        layout.push({text: '', pageBreak: 'after'  }); 
     }
 
     var endoscopy = [
         { image: "v2/images/Endoscopy-Cover.png", width: 620, height: 840, alignment: 'center'},
-        {text: '', pageBreak: 'after'  },
-        "\n",
-        { text: 'Endoscopy', style: 'header3', alignment: "left" },
-        { image: "v2/images/Endoscopy.png", width: 595, height: 680, alignment: 'center'},
-        {text: '', pageBreak: 'after'  },
-        //"\n",
-        //{ text: 'Endoscopy', style: 'header3', alignment: "left" },
         layout,
-        //{text: '', pageBreak: 'after'  }
     ]
 
     return endoscopy;

@@ -25,6 +25,8 @@ async function getCP150ECG(data)
 
     for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
+        layout.push({text: '', pageBreak: 'after'  }); 
+        
         const dataGroup = cp150Data.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
         //Se sacan solo las familias de ese grupo
@@ -119,8 +121,6 @@ async function getCP150ECG(data)
             }
 
         }
-
-        layout.push({text: '', pageBreak: 'after'  }); 
     }
 
     var cp150ECG = [
@@ -129,11 +129,7 @@ async function getCP150ECG(data)
         "\n",
         { text: "CP150 ECG", style: 'header3', alignment: "left" },
         { image: "v2/images/CP150ECG2.png", width: 560, height: 390, alignment: 'center'},
-        {text: '', pageBreak: 'after'  },
-        //"\n",
-        //{ text: "CP150 ECG", style: 'header3', alignment: "left" },
-        layout,
-        //{text: '', pageBreak: 'after'  }
+        layout
     ]
 
     return cp150ECG;

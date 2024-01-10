@@ -1,93 +1,96 @@
 async function getThermsOfDistribution()
 {
     var thermsOfDistribution = [
-        "\n",
-        { text: 'TERMS OF DISTRIBUTION FOR WELCH ALLYN PRODUCTS IN LATIN AMERICA', style: 'headerColor', alignment: "center" },
+        {
+            table: {
+                widths: [20,"*",20],
+                body: [
+                    [
+                        {border: [false, false, false, false], text: ""},
+                        {border: [false, false, false, false], text: 'TERMS OF DISTRIBUTION FOR WELCH ALLYN PRODUCTS IN LATIN AMERICA', fillColor: '#001A72', style: 'headerColor', alignment: "center"},
+                        {border: [false, false, false, false], text: ""},
+                    ],
+                ]
+            }
+        },
         "\n",
         { text: '1. DISCOUNTS, SHIPPING AND PAYMENT TERMS', style: 'header2', alignment: "left" },
         { text: '1.1 The discounts granted by Welch Allyn to distributors apply only to products that are purchased on orders with a total net price of at least USD $2,000.00 (the Minimum Order Requirement). In addition, for any orders accepted by Welch Allyn below such amount the distributor will be charged a $150.00 service fee as well as shipping charges.', style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: '1.2 Replacement parts for products (other than disposables, lamps, and batteries covered by section) are eligible for a maximum discount of 25% off the published Repair Parts Price List as determined by Welch Allyn.', style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: '1.3 Welch Allyn will pay standard shipping costs for orders that meet the Minumum Order Requirement when Welch Allyn selects the means of shipment and carrier and delivery is to distributor’s U.S. freight forwarder. The distributor will pay shipping costs: a) for orders with a total net price of less than $2,000.00, and b) for all orders in which the distributor requests expedited shipment or selects a means of shipment and carrier different from the standard shipping furnished by Welch Allyn. Title and risk of loss to the products shall pass to the distributor upon shipment by Welch Allyn.', style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: '1.4 Welch Allyn may offer in its sole and absolute discretion additional discounts on products and product support programs sold under approved promotional programs (including volume discounts for service programs), and the maximum amount of the total of these additional discounts shall be subject to limitations set by Welch Allyn.', style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: '1.5 Unless otherwise determined by Welch Allyn, shipment and transfer prices are in US Dollars. Unless otherwise determined by Welch Allyn, shipments must be paid for in full prior to shipment, or by confirmed irrevocable letter of credit in a form acceptable to Welch Allyn. For Welch Allyn to determine whether a credit line may be established distributor must supply normal trade and bank references and such current financial statements as may be deemed necessary by Welch Allyn. This determination and any credit limit are subject to change by Welch Allyn. If Welch Allyn establishes a credit line, then Welch Allyn will invoice distributor upon shipment of products. The full amount of each invoice must be paid within 30 calendar days of the invoice date. Past due accounts will be charged interest at the highest rate allowable by law. Payment of interest shall not foreclose any other right that Welch Allyn may have as a consequence of late payment.', style: 'textoTherms', alignment: "justify" },
-        "\n",
         { text: '1.6 Shipping Terms: Unless otherwise agreed in an accepted purchase order or otherwise in writing, all sales of Welch Allyn Inc.  Products shall be CPT Distributor’s warehouse in the Territory (Incoterms 2010), and all other sales shall be Ex-Works Hill-Rom Affiliate’s manufacturing plants', style: 'textoTherms', alignment: "justify" },
         "\n", /** Add new term asked by Dinerda 23-12-16 **/
         { text: '2. PRODUCT RETURN POLICY', style: 'header2', alignment: "left" },
         { text: '2.1 No-Return Products. The following products cannot be returned for credit except as a result of errors committed by Welch Allyn in order fulfillment or shipping: ', style: 'textoTherms', alignment: "justify" },
         { text: '- Single-use products, including blood pressure cuffs, thermometer probe covers and stethoscopes', style: 'textoTherms', alignment: "justify" },
         { text: '- Consumables, including lamps, batteries and paper.', style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: '2.2 Returnable Products. Products other than no-return products can be returned for credit only if the products are: a) in current production (i.e. not obsolete, b) unused and in the original packaging, and c) returned within 12 months of the date on which they were invoiced.', style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: '2.3 Authorization and a material return authorization (RMA) reference number must be obtained before returning any product to Welch Allyn, and the product must be returned to the Welch Allyn facility identified in the authorization.', style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: '2.4 Returns of product will be subject to a restocking fee in the amount of 25% of the price of the product. No restocking fees are imposed if the return was a result of errors committed by Welch Allyn personnel in order fulfillment or shipping.', style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: '2.5 Welch Allyn will pay shipping charges for products returned as a result of errors committed by Welch Allyn personnel in order fulfillment or shipping. In all other cases, the distributor returning the product must pre-pay all return shipping charges.', style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: '2.6 Welch Allyn will issue credit (net of any applicable restocking fee) to the distributor’s account, after inspection and verification of the condition of the returned products.', style: 'textoTherms', alignment: "justify" },
         "\n",
         { text: '3. RESALE BY DISTRIBUTOR', style: 'header2', alignment: "left" },
         { text: '3.1 Distributor is authorized to promote, sell, and deliver products supplied by Welch Allyn pursuant to an accepted purchase order on a non-exclusive basis only to customers in the territory designated by Welch Allyn. The term “non-exclusive” should be interpreted to the fullest extent of the word which includes, but is not limited to, Welch Allyn’s right to appoint other distributors in the territory, Welch Allyn’s sales to third parties outside the territory which in turn sell into the territory, direct sales by Welch Allyn into the territory and Welch Allyn’s right to maintain representatives to resell and service products in the territory.', style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: '3.2 Distributor shall not sell any products outside of, or to any party located outside of, the assigned territory or to any party that distributor knows or should reasonably be expected to know will sell or use the products outside the assigned territory. Distributor shall purchase products only from Welch Allyn and not from any other party. WA reserves the right to discontinue the manufacture or sale of any products upon notice to distributor to become effective on a date specified in the notice. Distributor shall not be entitled to any remuneration of any nature for promotion, sale, and delivery of the products, other than the profit, if any, that the distributor may realize on the resale of products.', style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: "3.3 The prices for products will be as specified in Welch Allyn's published distributor price lists and bulletins for the territory. Welch Allyn may revise these publications from time to time. New publications will go into effect immediately or as determined by Welch Allyn. Welch Allyn will provide its distributors with price lists, which reflect suggested prices for end-users of Welch Allyn products; however, the distributor has the sole right to determine the prices at which it resells products.", style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: '3.4 Purchase orders must be submitted electronically, by mail or facsimile, or by other means specified by Welch Allyn. Purchase orders shall be submitted in a format approved by Welch Allyn and shall describe the products, requested quantity, requested delivery date, shipping instructions and any special instructions, and contain a signature or another form of authentication by the distributor. In no event will Welch Allyn be bound to accept an order and no order shall be binding upon Welch Allyn unless and until it shall have been accepted by Welch Allyn. The obligation of Welch Allyn to sell any product to distributor is subject to the availability of the product. Welch Allyn shall not be liable for damages caused by failure to ship or delay in shipment resulting from the unavailability of products.', style: 'textoTherms', alignment: "justify" },
         "\n",
         { text: '4. CERTAIN OF WELCH ALLYN’S RESPONSIBILITIES AND RIGHTS', style: 'header2', alignment: "left" },
         { text: '4.1 Welch Allyn will repair or replace products that Welch Allyn determines to be defective through causes other than misuse, neglect, and damage in shipment, in accordance with and for the period described in the limited warranty packaged with each product. Welch Allyn’s repair or replacement of the products is distributor’s sole remedy for breach of warranty. EXCEPT AS SET FORTH IN THE LIMITED WARRANTY FOR EACH PRODUCT, THERE ARE NO WARRANTIES, EXPRESS OR IMPLIED, WITH REGARD TO THE PRODUCTS, INCLUDING WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.', style: 'textoTherms', alignment: "justify" },
-        {text: '', pageBreak: 'after'  },
-        "\n",
         { text: '4.2 Welch Allyn has the right to terminate the distribution relationship of any distributor for failure to comply with any of the terms set forth in these terms by sending notice of termination that will become effective on the date specified in the notice. Welch Allyn also may terminate the distribution relationship of any distributor without cause by notifying the distributor of such termination and, in such case, termination will become effective on the date of such notification or on such later date as may be determined by Welch Allyn and notified to distributor.', style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: "4.3 Upon termination of the distribution relationship, Welch Allyn shall not be liable to distributor for damages or indemnity or any other form of compensation directly or indirectly caused by such termination, including, without limitation, lost revenues or profits or loss of customer base or market share. Distributor acknowledges that the prices charged by Welch Allyn for the products are designed to compensate distributor on an on-going basis for any development of goodwill and/or a customer base in the territory. Distributor will not be entitled to any additional compensation or indemnity for any type of market development or goodwill indemnity upon or as a result of termination.", style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: "4.4 Welch Allyn shall not be liable for indirect or consequential damages, including, without limitation, loss of revenue or loss of profit. In no event shall Welch Allyn’s liability to distributor under these terms or relating to the sale or distribution of products exceed the amount paid by distributor for the products that are the subject of the distributor claim.", style: 'textoTherms', alignment: "justify" },
         "\n",
         { text: '5. CERTAIN OF DISTRIBUTOR’S RESPONSIBILITIES AND RIGHTS', style: 'header2', alignment: "left" },
         { text: '5.1 Distributor must pay invoices according to the terms set out under section 1, and submit a financial statement when requested.', style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: '5.2 Distributor will use commercially reasonable best efforts to purchase during each calendar year products with aggregate price in the minimum amount of $25,000.00 (the Minimum Purchase Target). Distributor acknowledges that satisfaction of the Minimum Purchase Target is a material obligation necessary to justify Welch Allyn’s ongoing administrative support of the distribution relationship. Failure to satisfy the Minimum Purchase Target will be a basis for Welch Allyn to cancel or terminate the distribution relationship.', style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: "5.3 Distributor Purchase Orders must contain final shipping instructions. Welch Allyn will ship upon order completion without any additional communication until after the shipment at which time we will provide you with proof of delivery or shipment.", style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: '5.4 Distributor shall send appropriate personnel to attend any scheduled Welch Allyn sales meetings.', style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: '5.5 Distributor will notify Welch Allyn immediately whenever it becomes aware of an adverse experience that occurred in connection with use of the products on a patient, including the contact information for the person who reported the complaint or adverse experience. Distributor shall cooperate fully with Welch Allyn in dealing with customer complaints concerning the products and shall take such action to resolve such complaints as may be reasonably requested by Welch Allyn. Distributor will cooperate with Welch Allyn in any mandatory or voluntary recall of the products by assisting in the notification of all affected customers, using materials and documentation prepared by Welch Allyn. In the event of a recall of products, Welch Allyn will repair or replace recalled products within a reasonable time at its expense.', style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: "5.6 Welch Allyn will perform all after sale repairs of the products unless distributor and Welch Allyn enter into a separate agreement authorizing distributor to repair the products in conformity with applicable regulations. Repairs not covered by warranty shall be subject to Welch Allyn’s standard charges for labor, parts and shipment charges. All returned products shall be accompanied by the return authorization form required by Welch Allyn, containing information about the problem with the product and return shipping instructions. Welch Allyn and distributor will determine whether: a) Welch Allyn will enter into repair service transactions directly with end-user customers, or b) distributor will act as an intermediary in the repair service transactions.", style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: '5.7 Distributor shall maintain a reasonable inventory of Welch Allyn products at all times.', style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: '5.8 Distributor will use all commercially reasonable efforts to enhance the goodwill associated with Welch Allyn products. In circumstances where an end user customer orders or requests a quote for a Welch Allyn product, distributor will not sell or quote a substitute product made by another manufacturer (whether generic or branded).', style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: "5.9 Before distributor sells any products, distributor must obtain all necessary governmental approvals, registrations, licenses, and qualifications required to be obtained by distributor. To the extent allowed by local regulations, WA will be the sole owner of all necessary governmental approvals, registrations, licenses, qualifications and product registrations for sale and distribution of the products in the territory that Welch Allyn desires to own. For those not owned by Welch Allyn, distributor must obtain all such necessary items before distributor sells any products in the territory and, to the extent allowed by local regulations, the distributor will register products on behalf of Welch Allyn or, upon Welch Allyn’s request, the manufacturer, in accordance with local regulations. Distributors owing a registration will allow the addition of other importers as per Welch Allyn’s request. Welch Allyn does not promote the duplication of product registrations in one country. Duplications can be done only with Welch Allyn approval, and the distributor will be responsible for all the costs related to the creation and legalization of the documentation for the same.", style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: '5.10 Where distributor is the importer, distributor shall import products and warehouse and label products in accordance with local regulations and as indicated by Welch Allyn’s local regulatory representative. Distributor shall only use Welch Allyn registrations to import Products sold to them by Welch Allyn and will not export any products back into the US market or any other market unless agreed upon by Welch Allyn in advance. Welch Allyn shall have the right from time to time (and at least on an annual basis) to conduct a regulatory and quality audit of distributor and its facilities by one or more Welch Allyn representatives or agents. Distributor agrees to implement any and all corrections resulting from each audit within the timeframe reasonably determined by Welch Allyn.', style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: '5.11 Distributor will comply with all laws, rules and regulations regarding the marketing, sale, distribution, import and export of products (including, without limitation, the U.S. Foreign Corrupt Practices Act).', style: 'textoTherms', alignment: "justify" },
         "\n",
         { text: '6. MISCELLANEOUS', style: 'header2', alignment: "left" },
         { text: '6.1 These terms, any distribution relationship between Welch Allyn and distributor and the supply, purchase and sale of products pursuant to these terms shall be solely governed by and interpreted in accordance with the laws of the State of New York without regard to principles of conflicts of laws, whether designated by federal or state laws, and in all instances without regard to the United Nations Convention on Contracts for the International Sale of Goods. Any controversy or claim arising out of or relating to these terms, the breach thereof, or the distribution relationship between Welch Allyn and distributor shall be determined by arbitration administered by the American Arbitration Association in accordance with its International Arbitration Rules. The number of arbitrators shall be three, the place of arbitration shall be New York, New York, and the language(s) of the arbitration shall be English.', style: 'textoTherms', alignment: "justify" },
-        "\n",
         { text: '6.2. Distributor cannot assign, in whole or part, any of its rights or obligations under these terms to any other party without the prior written consent of Welch Allyn. These terms constitute the entire understanding between the parties and supersede any prior written or oral agreements or understandings between the parties. These terms have been prepared in the English language. In the event of any conflict between the terms of this English language version of these terms and any translated version, this English language version shall control. No provision of or right under these terms shall be deemed to have been waived by any act or acquiescence on the part of either party, its agents or employees, but only by an instrument in writing signed by an authorized officer of each party. No waiver by either party of any breach of these terms by the other party shall be effective as to any other breach, whether of the same or any other term or condition and whether occurring before or after the date of such waiver. All provisions of these terms shall be considered as separate terms and conditions and in the event any one shall be held illegal, invalid, or unenforceable, all the other provisions hereof shall remain in full force and', style: 'textoTherms', alignment: "justify" },
-        {text: '', pageBreak: 'after'  },
-        "\n",
         { text: 'affect as if the illegal, invalid, or unenforceable provisions were not a part of these terms. The headings of Sections in these terms are provided for convenience only and will not affect the construction or interpretation thereof.', style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: "6.3 Welch Allyn may prospectively amend, modify or revise these terms at any point in Welch Allyn’s sole and absolute discretion.", style: 'textoTherms', alignment: "justify" },
-        { text: "\n", style: 'textoTherms', alignment: "left" },
+        
         { text: "6.4 These terms will apply to all orders submitted by distributor on or after March 1st, 2013. By submitting an order, distributor agrees to each of these terms as set forth herein.", style: 'textoTherms', alignment: "justify" },
         "\n",
         { text: 'For questions please contact your local sales representative.', style: 'header2', alignment: "left" },
-        {text: '', pageBreak: 'after'  },
         {text: '', pageBreak: 'after'  },
     ]
 

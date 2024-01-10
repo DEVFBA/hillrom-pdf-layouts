@@ -28,7 +28,6 @@ async function getDistributorDiscounts(data)
     }
 
     var distributorDiscounts = [
-        {text: '', pageBreak: 'after'  },
         "\n",
         "\n",
         "\n",

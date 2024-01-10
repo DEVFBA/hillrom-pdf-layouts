@@ -24,6 +24,8 @@ async function getABPMSystems(data)
 
     for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
+        layout.push({text: '', pageBreak: 'after'  }); 
+        
         const dataGroup = abpmSystemsData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
         //Se sacan solo las familias de ese grupo
@@ -117,8 +119,6 @@ async function getABPMSystems(data)
             }
 
         }
-
-        layout.push({text: '', pageBreak: 'after'  }); 
     }
 
     var abpm = [
@@ -127,10 +127,7 @@ async function getABPMSystems(data)
         "\n",
         { text: "ABPM Systems", style: 'header3', alignment: "left" },
         { image: "v2/images/ABPMSystems2.png", width: 580, height: 600, alignment: 'center'},
-        {text: '', pageBreak: 'after'  },
-        //{ text: "ABPM Systems", style: 'header3', alignment: "left" },
-        layout,
-        //{text: '', pageBreak: 'after'  },
+        layout
     ]
 
     return abpm;

@@ -24,6 +24,8 @@ async function getProBP2000(data)
 
     for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
+        layout.push({text: '', pageBreak: 'after'  }); 
+        
         const dataGroup = proBPData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
         //Se sacan solo las familias de ese grupo
@@ -118,8 +120,6 @@ async function getProBP2000(data)
             }
 
         }
-
-        layout.push({text: '', pageBreak: 'after'  }); 
     }
 
     var proBP2000Layout = [
@@ -128,11 +128,7 @@ async function getProBP2000(data)
         "\n",
         { text: "ProBP 2000", style: 'header3', alignment: "left" },
         { image: "v2/images/ProBP20002.png", width: 560, height: 500, alignment: 'center'},
-        {text: '', pageBreak: 'after'  },
-        //"\n",
-        //{ text: "ProBP 2000", style: 'header3', alignment: "left" },
-        layout,
-        //{text: '', pageBreak: 'after'  }
+        layout
     ]
 
     return proBP2000Layout;

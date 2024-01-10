@@ -24,6 +24,8 @@ async function getConnexSpotMonitor(data)
 
     for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
+        layout.push({text: '', pageBreak: 'after'  }); 
+        
         const dataGroup = connexData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
         //Se sacan solo las familias de ese grupo
@@ -118,8 +120,6 @@ async function getConnexSpotMonitor(data)
             }
 
         }
-
-        layout.push({text: '', pageBreak: 'after'  }); 
     }
 
     var connexSpotMonitor = [
@@ -128,11 +128,7 @@ async function getConnexSpotMonitor(data)
         "\n",
         { text: "Connex Spot Monitor", style: 'header3', alignment: "left" },
         { image: "v2/images/ConnexSpotMonitor2.png", width: 560, height: 430, alignment: 'center'},
-        {text: '', pageBreak: 'after'  },
-        //"\n",
-        //{ text: "Connex Spot Monitor", style: 'header3', alignment: "left" },
-        layout,
-        //{text: '', pageBreak: 'after'  }
+        layout
     ]
 
     return connexSpotMonitor;

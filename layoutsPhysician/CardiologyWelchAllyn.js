@@ -1,24 +1,24 @@
-async function getCP50ECG(data)
+async function getCardiologyWelch(data)
 {
-    var layout = [];
+    var layout = []
 
-    const cp50Data = data.filter(objeto => objeto.Category === "CP50 ECG");
+    const cardiologyData = data.filter(objeto => objeto.Category === "Cardiology Welch Allyn");
 
-    const gruposUnicosOrdenados = [...new Set(cp50Data.map(item => item.Group))]
+    const gruposUnicosOrdenados = [...new Set(cardiologyData.map(item => item.Group))]
     .filter(Boolean) // Eliminar valores nulos o undefined
     .sort((a, b) => {
         // Ordenar por el atributo Order_Group
-        const orderA = cp50Data.find(item => item.Group === a)?.Order_Group || 0;
-        const orderB = cp50Data.find(item => item.Group === b)?.Order_Group || 0;
+        const orderA = cardiologyData.find(item => item.Group === a)?.Order_Group || 0;
+        const orderB = cardiologyData.find(item => item.Group === b)?.Order_Group || 0;
         return orderA - orderB;
     });
 
-    const familiasUnicasOrdenadas = [...new Set(cp50Data.map(item => item.Family))]
+    const familiasUnicasOrdenadas = [...new Set(cardiologyData.map(item => item.Family))]
     .filter(Boolean) // Eliminar valores nulos o undefined
     .sort((a, b) => {
         // Ordenar por el atributo Order_Group
-        const orderA = cp50Data.find(item => item.Family === a)?.Order_Family || 0;
-        const orderB = cp50Data.find(item => item.Family === b)?.Order_Family || 0;
+        const orderA = cardiologyData.find(item => item.Family === a)?.Order_Family || 0;
+        const orderB = cardiologyData.find(item => item.Family === b)?.Order_Family || 0;
         return orderA - orderB;
     });
 
@@ -26,7 +26,7 @@ async function getCP50ECG(data)
     {
         layout.push({text: '', pageBreak: 'after'  }); 
         
-        const dataGroup = cp50Data.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
+        const dataGroup = cardiologyData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
         //Se sacan solo las familias de ese grupo
         const familiasUnicasOrdenadasGroup = [...new Set(dataGroup.map(item => item.Family))]
@@ -39,7 +39,7 @@ async function getCP50ECG(data)
         });
 
         layout.push("\n");
-        layout.push({ text: "CP50 ECG", style: 'header3', alignment: "left" });
+        layout.push({ text: "Cardiology Welch Allyn", style: 'header3', alignment: "left" });
         layout.push("\n");
         layout.push({ text: gruposUnicosOrdenados[g], style: 'headerRed', alignment: "right", tocItem: gruposUnicosOrdenados[g].replace(/\s/g, '')});
 
@@ -47,7 +47,7 @@ async function getCP50ECG(data)
         {
             if (familiasUnicasOrdenadasGroup.includes(familiasUnicasOrdenadas[f])) 
             {
-                const dataFamily = cp50Data.filter(objeto => objeto.Family === familiasUnicasOrdenadas[f]);
+                const dataFamily = cardiologyData.filter(objeto => objeto.Family === familiasUnicasOrdenadas[f]);
 
                 var data1 = [];
 
@@ -122,14 +122,14 @@ async function getCP50ECG(data)
         }
     }
 
-    var cp50ECG = [
-        { image: "v2/images/CP50.png", width: 620, height: 840, alignment: 'center'},
-        layout
+    var cardiology = [
+        { image: "v2/images/CardiologyWelch.png", width: 620, height: 840, alignment: 'center'},
+        layout,
     ]
 
-    return cp50ECG;
+    return cardiology;
 }
 
 module.exports = {
-    getCP50ECG: getCP50ECG,
+    getCardiologyWelch: getCardiologyWelch,
 }

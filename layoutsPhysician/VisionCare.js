@@ -24,6 +24,8 @@ async function getVisionCare(data)
 
     for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
+        layout.push({text: '', pageBreak: 'after'  }); 
+        
         const dataGroup = visionCareData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
         //Se sacan solo las familias de ese grupo
@@ -118,8 +120,6 @@ async function getVisionCare(data)
             }
 
         }
-
-        layout.push({text: '', pageBreak: 'after'  }); 
     }
     
     var visionCare = [
@@ -128,11 +128,7 @@ async function getVisionCare(data)
         "\n",
         { text: 'Vision Care', style: 'header3', alignment: "left" },
         { image: "v2/images/VisionCare2.png", width: 595, height: 730, alignment: 'center'},
-        {text: '', pageBreak: 'after'  },
-        //"\n",
-        //{ text: 'Vision Care', style: 'header3', alignment: "left" },
         layout,
-        //{text: '', pageBreak: 'after'  }
     ]
 
     return visionCare;

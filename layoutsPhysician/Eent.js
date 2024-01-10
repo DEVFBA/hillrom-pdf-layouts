@@ -25,6 +25,8 @@ async function getEent(data)
 
     for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
+        layout.push({text: '', pageBreak: 'after'  }); 
+        
         const dataGroup = eentData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
         //Se sacan solo las familias de ese grupo
@@ -119,21 +121,15 @@ async function getEent(data)
             }
 
         }
-
-        layout.push({text: '', pageBreak: 'after'  }); 
     }
 
     var eent = [
         { image: "v2/images/EENT-2.png", width: 620, height: 840, alignment: 'center'},
         {text: '', pageBreak: 'after'  },
-        "\n",
-        { text: 'EENT', style: 'header3', alignment: "left" },
-        { image: "v2/images/EENT.png", width: 595, height: 730, alignment: 'center'},
+        { image: "v2/images/EENT2.png", width: 620, height: 840, alignment: 'center'},
         {text: '', pageBreak: 'after'  },
-        //"\n",
-        //{ text: 'EENT', style: 'header3', alignment: "left" },
-        layout,
-        //{text: '', pageBreak: 'after'  }
+        { image: "v2/images/EENT3.png", width: 620, height: 840, alignment: 'center'},
+        layout
     ]
 
     return eent;

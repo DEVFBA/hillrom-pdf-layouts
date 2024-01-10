@@ -24,6 +24,8 @@ async function getVeterinary(data)
 
     for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
+        layout.push({text: '', pageBreak: 'after'  }); 
+        
         //console.log(gruposUnicosOrdenados[g])
         const dataGroup = veterinaryData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
@@ -121,13 +123,9 @@ async function getVeterinary(data)
             }
 
         }
-
-        layout.push({text: '', pageBreak: 'after'  }); 
     }
 
     var veterinary = [
-        //"\n",
-        //{ text: "Cardiology", style: 'header3', alignment: "left" },
         layout,
     ]
 

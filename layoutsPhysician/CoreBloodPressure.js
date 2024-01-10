@@ -25,6 +25,8 @@ async function getCoreBloodPressure(data)
 
     for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
+        layout.push({text: '', pageBreak: 'after'  }); 
+        
         const dataGroup = coreBloodData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
         //Se sacan solo las familias de ese grupo
@@ -119,8 +121,6 @@ async function getCoreBloodPressure(data)
             }
 
         }
-
-        layout.push({text: '', pageBreak: 'after'  }); 
     }
 
     var coreBloodPressure = [
@@ -129,11 +129,7 @@ async function getCoreBloodPressure(data)
         "\n",
         { text: "Core Blood Pressure", style: 'header3', alignment: "left" },
         { image: "v2/images/CoreBloodPressure.png", width: 595, height: 680, alignment: 'center'},
-        {text: '', pageBreak: 'after'  },
-        //"\n",
-        //{ text: "Core Blood Pressure", style: 'header3', alignment: "left" },
-        layout,
-        //{text: '', pageBreak: 'after'  }
+        layout
     ]
 
     return coreBloodPressure;

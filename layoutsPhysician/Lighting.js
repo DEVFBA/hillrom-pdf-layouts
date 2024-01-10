@@ -24,6 +24,8 @@ async function getLighting(data)
 
     for(var g=0; g<gruposUnicosOrdenados.length; g++)
     {
+        layout.push({text: '', pageBreak: 'after'  }); 
+        
         const dataGroup = lightingData.filter(objeto => objeto.Group === gruposUnicosOrdenados[g]);
 
         //Se sacan solo las familias de ese grupo
@@ -118,8 +120,6 @@ async function getLighting(data)
             }
 
         }
-
-        layout.push({text: '', pageBreak: 'after'  }); 
     }
 
     var lighting = [
@@ -128,7 +128,6 @@ async function getLighting(data)
         "\n",
         { text: 'Lighting', style: 'header3', alignment: "left" },
         { image: "v2/images/Lighting2.png", width: 595, height: 680, alignment: 'center'},
-        {text: '', pageBreak: 'after'  },
         layout
     ]
 
