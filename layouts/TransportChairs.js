@@ -15,9 +15,9 @@ async function getTransportChairs()
     var options =[]
     var pSItems = 0;
     options[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'SM647B', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'SM647B', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
     ]
     pSItems++
 
@@ -29,101 +29,260 @@ async function getTransportChairs()
 
     pSItems++
 
-    /*ESTO VA EN UN CICLO*/
-    var i=0;
-    var castorsFlag = false
-    while(castorsFlag === false)
+    if(castorsData.length > 0)
     {
-        var j;
-        if(i===0)
+        /*ESTO VA EN UN CICLO*/
+        var i=0;
+        var castorsFlag = false
+        while(castorsFlag === false)
         {
-            j=0
-        }
-        else {
-            j = i*1
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< castorsData.length && countC<1)
-        {
-           precios[preciosCount] = castorsData[j].Price
-           printCaracter[preciosCount] = castorsData[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: castorsData[j-1].Id_Item,
-            Item_Long_Desc: castorsData[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
+            var j;
+            if(i===0)
             {
-                precio1 = "●"
+                j=0
             }
             else {
-                precio1 = "-"
+                j = i*1
             }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-        
-        options[pSItems] = [
-            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-        ]
+            var precios = []
+            var preciosCount = 0
+            var countC=0
+            var printCaracter = []
+            while(j< castorsData.length && countC<1)
+            {
+            precios[preciosCount] = castorsData[j].Price
+            printCaracter[preciosCount] = castorsData[j].Print_Character
+            preciosCount++
+            j++
+            countC++
+            }
+            var data = {
+                Id_Item: castorsData[j-1].Id_Item,
+                Item_Long_Desc: castorsData[j-1].Item_Long_Desc,
+                Prices: precios,
+                Print_Character: printCaracter
+            }
 
-        pSItems++
+            var precio1;
 
-        //console.log(data)
+            if(data.Print_Character[0] !== null)
+            {
+                if(data.Print_Character[0] === "*")
+                {
+                    precio1 = "*"
+                }
+                else {
+                    precio1 = "-"
+                }
+            }
+            else {
+                precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+            }
+            
+            options[pSItems] = [
+                {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+                {text: data.Item_Long_Desc, style: 'textotabla'},
+                {text: precio1, style: 'textotabla', alignment: 'center'}, 
+            ]
 
-        if(j >= castorsData.length)
-        {
-            castorsFlag = true
-        }
-        i++
-    }   
-    /*TERMINA CICLO*/
+            pSItems++
+
+            //console.log(data)
+
+            if(j >= castorsData.length)
+            {
+                castorsFlag = true
+            }
+            i++
+        }   
+        /*TERMINA CICLO*/
+    }
 
     var accesories =[]
     var pSItems = 0;
     accesories[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
     ]
     pSItems++
 
-    /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<accesoriesData.length; i++)
+    if(accesoriesData.length > 0)
     {
-        accesories[pSItems] = [
-            {text: accesoriesData[i].KitName, style: 'textotabla'},
-            {text: accesoriesData[i].Part, style: 'textotabla', alignment: 'center'},
-            {text: accesoriesData[i].Item_Long_Desc, style: 'textotabla'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData[i].Price), style: 'textotabla', alignment: 'center'}, 
-        ]
-    
-        pSItems++
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<accesoriesData.length; i++)
+        {
+            accesories[pSItems] = [
+                {text: accesoriesData[i].KitName, style: 'textotabla'},
+                {text: accesoriesData[i].Part, style: 'textotabla', alignment: 'center'},
+                {text: accesoriesData[i].Item_Long_Desc, style: 'textotabla'}, 
+                {text: "$" + Intl.NumberFormat("en-IN").format(accesoriesData[i].Price), style: 'textotabla', alignment: 'center'}, 
+            ]
+        
+            pSItems++
+        }
+        /*TERMINA CICLO*/
     }
-    /*TERMINA CICLO*/
+
+    var table1 = []
+    if(prices.length > 0)
+    {
+        table1 = [
+            {
+                table: {
+                    widths: [310, 80, 80],
+                    body: [
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'METALARMCHAIR', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'}
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'SM647B', style: 'textotablaboldblack', alignment: 'center'}
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            { image: "images/TransportChairs.png", width: 65, height: 80, alignment: 'center'}
+                        ],
+                        [
+                            {text: '4 x 125 mm single-band with central brake (R2B)', style: 'textotabla', },
+                            {text: "*", style: 'textotabla', alignment: 'center'}
+                        ],
+                        [
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+    else {
+        table1 = [
+            {
+                table: {
+                    widths: [310, 80, 80],
+                    body: [
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'METALARMCHAIR', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'}
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'SM647B', style: 'textotablaboldblack', alignment: 'center'}
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            { image: "images/TransportChairs.png", width: 65, height: 80, alignment: 'center'}
+                        ],
+                        [
+                            {text: '4 x 125 mm single-band with central brake (R2B)', style: 'textotabla', },
+                            {text: "*", style: 'textotabla', alignment: 'center'}
+                        ],
+                        [
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+
+    var table2 = []
+    if(castorsData.length > 0)
+    {
+        table2 = [
+            {
+                table: {
+                    widths: [70, 231, 80, 50],
+                    body: options
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+
+    var table3 = []
+    if(accesoriesData.length > 0)
+    {
+        table3 = [
+            {
+                table: {
+                    widths: [70, 80, 142, 80, 50],
+                    body: accesories
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+
+    const fecha = new Date();
+    fecha.toLocaleDateString()
 
     var transportChairs = [
-        '\n',
-        { text: 'Transport Chairs', style: 'header', tocItem: 'transportChairs'},
+        "\n",
+        "\n",
+        "\n",
+        { text: 'Transport Chairs', style: 'header'},
         '\n',
         { text: 'Transport Chair Anatome SM647B', style: 'subheader'},
+        { text: 'Anatome', style: { fontSize: 0}, tocItem: 'transportChairs'},
         { text: 'Country of origin: France', style: 'parrafo' },
         { text: '\n', style: 'textotabla' },
         {
@@ -134,97 +293,18 @@ async function getTransportChairs()
                     { text: 'For fabrics see separate fabrics sheet'},
                 ]		
         },
-        {
-            table: {
-                widths: ["*", 80, 80,50],
-                body: [
-                    [
-                        {border: [false, false, false, false], text: ''},
-                        {text: 'METALARMCHAIR', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                    ],
-                    [
-                        {border: [false, false, false, false], text: ''},
-                        {text: 'SM647B', style: 'textotablaboldblack', alignment: 'center'},
-                    ],
-                    [
-                        {border: [false, false, false, false], text: ''},
-                        { image: "images/TransportChairs.png", width: 50, height: 80, alignment: 'center'},
-                    ],
-                    [
-                        {text: '4 x 125 mm single-band with central brake (R2B)', style: 'textotabla', },
-                        {text: "●", style: 'textotabla', alignment: 'center'},
-                    ],
-                    [
-                        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }
-        },
+        table1,
         { text: '\n', style: 'textotabla' },
-        {
-            table: {
-                widths: [50, 231, 80, 50],
-                body: options
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table2,
         '\n',
         '\n',
         { text: 'Accesories', style: 'subheader'},
         { text: '\n', style: 'textotabla' },
-        {
-            table: {
-                widths: [50, 80, 142, 80, 50],
-                body: accesories
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table3,
         { text: '\n', style: 'textotabla' },
-        { text: '● = standard', style: 'textotabla' },
+        { text: '* = standard', style: 'textotabla' },
         { text: '\n', style: 'textotabla' },
-        { image: "images/TransportChairs2.png", width: 240, height: 60, alignment: 'center'},
-        { text: 'Head support Overchair table Comfort seating pad Telescopic IV pole (4 hooks)', style: 'parrafo', alignment: 'center' },
+        { image: "images/TransportChairs2.png", width: 420, height: 215, alignment: 'center'},
         {text: '', pageBreak: 'after'  },
     ]
 

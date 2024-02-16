@@ -12,17 +12,18 @@ async function getTherapySurfaces()
     const bidensity2Data = res[6]
     const viscoelastic2Data = res[7]
     const usSurfacesData = res[8]
+    const usSurfacesData2 = res[9]
 
     var foamSurface =[]
     var pSItems = 0;
     foamSurface[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'SURFACE COVER', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'SIZE CODE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'SIZE (L x W x H)', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'SURFACE COVER', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'SIZE CODE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'SIZE (L x W x H)', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
     ]
     pSItems++
 
@@ -46,13 +47,13 @@ async function getTherapySurfaces()
     var foamSurfaces =[]
     pSItems = 0;
     foamSurfaces[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'SURFACE COVER', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'SIZE CODE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'SIZE (L x W x H)', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'SURFACE COVER', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'SIZE CODE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'SIZE (L x W x H)', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
     ]
     pSItems++
 
@@ -144,13 +145,13 @@ async function getTherapySurfaces()
     pSItems = 0
 
     extensions[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'SIZE CODE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'SIZE (L x W x H)', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'SIZE CODE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'SIZE (L x W x H)', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -176,13 +177,13 @@ async function getTherapySurfaces()
     pSItems = 0
 
     surfaceCovers[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'SIZE CODE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
-        {text: 'SIZE (L x W x H)', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'MODEL', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'SIZE CODE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+        {text: 'SIZE (L x W x H)', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
 
     pSItems++
@@ -278,145 +279,217 @@ async function getTherapySurfaces()
     pSItems = 0
 
     usSurfaces[pSItems] = [
-        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'KITNAME', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
 
     pSItems++
 
     /*ESTO VA EN UN CICLO*/
-    for(var i=0; i<viscoelastic2Data.length; i++)
+    for(var i=0; i<usSurfacesData.length; i++)
     {
         usSurfaces[pSItems] = [
-             {text: viscoelastic2Data[i].KitName, style: 'textotabla', alignment: 'center'},
-             {text: viscoelastic2Data[i].Item_Long_Desc, style: 'textotabla'},
-             {text: viscoelastic2Data[i].Part, style: 'textotabla', alignment: 'center'}, 
-             {text: "$" + Intl.NumberFormat("en-IN").format(viscoelastic2Data[i].Price), style: 'textotabla', alignment: 'center'}, 
+             {text: usSurfacesData[i].KitName, style: 'textotabla', alignment: 'center'},
+             {text: usSurfacesData[i].Item_Long_Desc, style: 'textotabla'},
+             {text: usSurfacesData[i].Part, style: 'textotabla', alignment: 'center'}, 
+             {text: "$" + Intl.NumberFormat("en-IN").format(usSurfacesData[i].Price), style: 'textotabla', alignment: 'center'}, 
+         ]
+     
+         pSItems++
+    }
+
+    usSurfaces[pSItems] = [
+        {border: [false, false, false, false], text: ''},
+        {border: [false, false, false, false], text: ''},
+        {border: [false, false, false, false], text: ''},
+        {border: [false, false, false, false], text: ''}, 
+    ]
+
+    pSItems++
+
+    for(var i=0; i<usSurfacesData2.length; i++)
+    {
+        usSurfaces[pSItems] = [
+             {text: usSurfacesData2[i].KitName, style: 'textotabla', alignment: 'center'},
+             {text: usSurfacesData2[i].Item_Long_Desc, style: 'textotabla'},
+             {text: usSurfacesData2[i].Part, style: 'textotabla', alignment: 'center'}, 
+             {text: "$" + Intl.NumberFormat("en-IN").format(usSurfacesData2[i].Price), style: 'textotabla', alignment: 'center'}, 
          ]
      
          pSItems++
     }
     /*TERMINA CICLO*/
 
+    var table1 = []
+    if(foamSurfaceData.length > 0)
+    {
+        table1 = [
+            {
+                table: {
+                    widths: [70, 40, "*", 60, 80, 50, 50],
+                    body: foamSurface
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+
+    var table2 = []
+    if(monodensityData.length > 0 || bidensityData.length > 0 || viscoelasticData.length > 0)
+    {
+        table2 = [
+            {
+                table: {
+                    widths: [70, 40, "*", 60, 80, 50, 50],
+                    body: foamSurfaces
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+
+    var table3 = []
+    if(extensionsData.length > 0)
+    {
+        table3 = [
+            {
+                table: {
+                    widths: [70, 40, "*", 60, 80, 50, 50],
+                    body: extensions
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+
+    var table4 = []
+    if(monodensity2Data.length > 0 || bidensity2Data.length > 0 || viscoelastic2Data.length > 0)
+    {
+        table4 = [
+            {
+                table: {
+                    widths: [70, 40, "*", 60, 80, 50, 50],
+                    body: surfaceCovers
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                } 
+            }
+        ]
+    }
+
+    var table5 = []
+    if(usSurfacesData.length > 0 || usSurfacesData2.length > 0)
+    {
+        table5 = [
+            {
+                table: {
+                    widths: [70, '*', 70, 70],
+                    body: usSurfaces
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                } 
+            }
+        ]
+    }
+
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var therapySurfaces = [
-        { text: 'THERAPY SURFACES', style: 'header', tocItem: 'therapySurfaces'},
+        "\n",
+        "\n",
+        "\n",
+        { text: 'THERAPY SURFACES', style: 'header'},
+        { text: 'NP50 / NP100 / NP150', style: { fontSize: 0}, tocItem: 'therapySurfaces'},
         { text: 'Country of origin: China\n', style: 'parrafo' },
         "\n",
         { text: 'FOAM SURFACE', style: 'textotablaboldlarge'},
-        {
-            table: {
-                widths: [70, 40, "*", 60, 80, 50, 50],
-                body: foamSurface
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table1,
         "\n",
         { text: 'FOAM SURFACES', style: 'textotablaboldlarge'},
         { text: 'Country of origin: France\n', style: 'parrafo' },
-        {
-            table: {
-                widths: [70, 40, "*", 60, 80, 50, 50],
-                body: foamSurfaces
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table2,
         '\n',
         { image: "images/TherapySurfaces.png", width: 500, height: 120, alignment: 'center'},
         {text: '', pageBreak: 'after'  },
-        '\n',
+        "\n",
+        "\n",
+        "\n",
+        { text: 'Extension / Covers / US surfaces', style: { fontSize: 0}, tocItem: 'therapySurfaces2'},
         { text: 'EXTENSIONS', style: 'textotablaboldlarge' },
-        {
-            table: {
-                widths: [70, 40, "*", 60, 80, 50, 50],
-                body: extensions
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table3,
         '\n',
         { text: 'SURFACE COVERS', style: 'textotablaboldlarge' },
-        {
-            table: {
-                widths: [70, 40, "*", 60, 80, 50, 50],
-                body: surfaceCovers
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            } 
-        },
+        table4,
         '\n',
-        { text: 'US SURFACES', style: 'textotablaboldlarge' },
-        {
-            table: {
-                widths: [70, '*', 70, 70],
-                body: usSurfaces
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            } 
-        },
+        { text: 'OTHER FOAM SURFACES', style: 'textotablaboldlarge' },
+        { text: 'Country of origin: México\n', style: 'parrafo' },
+        table5,
         {text: '', pageBreak: 'after'  },
     ]
 

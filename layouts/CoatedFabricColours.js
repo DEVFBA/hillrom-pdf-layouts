@@ -1,11 +1,17 @@
+const fecha = new Date();
+fecha.toLocaleDateString()
+
 async function getCoatedFabricColours()
 {
     var coatedFabricColours = [
         "\n",
+        "\n",
+        "\n",
         {
             columns: [
                 [
-                    { text: 'Coated Fabric Colours', style: 'header', tocItem: 'compella'},
+                    { text: 'Coated Fabric Colours', style: 'header'},
+                    { text: 'Fabrics', style: { fontSize: 0}, tocItem: 'coatedFabricColours'},
                     { text: 'For wood and metal chairs', style: 'parrafo' },
                     { text: 'Country of origin: France', style: 'parrafo' },
                 ],
@@ -24,13 +30,13 @@ async function getCoatedFabricColours()
                 widths: ["*"],
                 body: [
                     [
-                        {border: [false, false, false, false], text: 'Ginkgo', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                        {border: [false, false, false, false], text: 'Ginkgo', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
                     ],
                     [
                         {border: [false, false, false, false], image: "images/CoatedFabricColours2.png", width: 400, height: 350, alignment: 'center'},
                     ],
                     [
-                        {border: [false, false, false, false], text: 'Diabolo Club', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                        {border: [false, false, false, false], text: 'Diabolo Club', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
                     ],
                     [
                         {border: [false, false, false, false], image: "images/CoatedFabricColours3.png", width: 400, height: 170, alignment: 'center'},

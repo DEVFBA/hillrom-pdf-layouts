@@ -9,8 +9,13 @@ async function getArtOfCareRecliners()
     const permanentPole = res.data[3]
     const transportShelf = res.data[4]*/
 
+    const fecha = new Date();
+    fecha.toLocaleDateString()
+
     var artOfCareRecliners = [
-        '\n',
+        "\n",
+        "\n",
+        "\n",
         { text: 'Art of Care® Recliners (cont.)', style: 'header' },
         { text: '\n', style: 'parrafo' },
         {

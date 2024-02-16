@@ -1,12 +1,18 @@
 const dbHillrom100LowBed = require('../controllers/hillrom100lowbed')
 
+const fecha = new Date();
+fecha.toLocaleDateString()
+
 async function getHilrom100LowBed()
 {
     const res = await dbHillrom100LowBed.getHillrom100LowBed()
     const prices = res[0]
 
     var hillroom100Low = [
-        { text: 'Hillrom® 100 Low Bed', style: 'header', tocItem: 'compella'},
+        "\n",
+        "\n",
+        "\n",
+        { text: 'Hillrom® 100 Low Bed', style: 'header', tocItem: 'hillrom100LowBed'},
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
         { text:'Standard features:\n', style: 'textosubrayado', decoration: 'underline'},
@@ -47,21 +53,21 @@ async function getHilrom100LowBed()
                 body: [
                     [
                         {border: [false, false, false, false], text: ''},
-                        {text: 'LOWBED', style: 'textotablacolor', colSpan: 3, fillColor: '#546ce4',  alignment: 'center'},
+                        {text: 'LOWBED', style: 'textotablacolorlarge', colSpan: 3, fillColor: '#154898',  alignment: 'center'},
                         {},
                         {},
                     ],
                     [
                         {border: [false, false, false, false], text: ''},
-                        {text: 'P3930A2', style: 'textotablaboldblack', colSpan: 3, alignment: 'center'},
+                        {text: 'P3930A2', style: 'textotablaboldblacklarge', colSpan: 3, alignment: 'center'},
                         {},
                         {},
                     ],
                     [
-                        {border: [false, false, false, false], text: 'Special Features', style: 'textotablabold'},
-                        {text: 'LB-NONE', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                        {text: 'LB-HALFF', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: 'LB-HALFC', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        {border: [false, false, false, false], text: 'Special Features', style: 'textotablaboldlarge'},
+                        {text: 'LB-NONE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                        {text: 'LB-HALFF', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                        {text: 'LB-HALFC', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
                     ],
                     [
                         {text: 'Stone Frame Color', style: 'textotabla'},
@@ -101,9 +107,9 @@ async function getHilrom100LowBed()
                     ],
                     [
                         {text: 'Finial Style - Traditional (LB-TRAD)', style: 'textotabla'},
-                        {text: '$149', style: 'textotabla', alignment: 'center'},
-                        {text: '$149', style: 'textotabla', alignment: 'center'}, 
-                        {text: '$149', style: 'textotabla', alignment: 'center'}, 
+                        {text: '$159', style: 'textotabla', alignment: 'center'},
+                        {text: '$159', style: 'textotabla', alignment: 'center'}, 
+                        {text: '$159', style: 'textotabla', alignment: 'center'}, 
                     ],
                     [
                         {text: 'Casters (3" or NONE)', style: 'textotabla'},
@@ -112,10 +118,10 @@ async function getHilrom100LowBed()
                         {text: 'OPT', style: 'textotabla', alignment: 'center'}, 
                     ],
                     [
-                        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+                        {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
                     ],
                 ]
             },

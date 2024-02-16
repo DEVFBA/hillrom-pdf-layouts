@@ -6,7 +6,7 @@ async function getAccumax(){
     try{
         let pool = await sql.connect(config);
         let users = await pool.request()   
-            .input('pvIdLine', sql.VarChar, "ACCUMAX")
+            .input('pvLayoutRef', sql.VarChar, "ACCUMAX")
             .execute('spPDF_Layout_Get_Info_Records')
         return users.recordsets
     }catch(error){

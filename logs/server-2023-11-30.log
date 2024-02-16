@@ -1,0 +1,48 @@
+2023-12-01T00:16:51.047Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T00:16:55.230Z [32minfo[39m: 	{"idRequest":"","modality":"Distributor","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-01T00:17:12.179Z [32minfo[39m: 	{"idRequest":"","modality":"Master","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-01T00:32:48.348Z [32minfo[39m: 	{"idRequest":"","modality":"Distributor","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-01T00:33:08.897Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T00:33:10.950Z [32minfo[39m: 	{"idRequest":"","modality":"Distributor","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-01T00:33:23.811Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T00:33:25.731Z [32minfo[39m: 	{"idRequest":"","modality":"Distributor","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-01T00:34:09.943Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T00:34:14.884Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T00:34:22.367Z [32minfo[39m: 	{"idRequest":"","modality":"Distributor","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-01T00:44:43.868Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T00:44:50.623Z [32minfo[39m: 	{"idRequest":"","modality":"Master","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-01T00:45:43.317Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T00:45:47.178Z [32minfo[39m: 	{"idRequest":"","modality":"Master","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-01T00:53:05.102Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T00:53:12.585Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T00:57:25.145Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T01:08:52.217Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T01:10:31.780Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T02:13:35.574Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T02:13:58.628Z [32minfo[39m: 	{"idRequest":"","modality":"Cluster","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-01T02:14:23.641Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T02:14:56.308Z [32minfo[39m: 	{"idRequest":"","modality":"Master","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-01T02:28:49.006Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T02:29:39.635Z [32minfo[39m: 	{"idRequest":"","modality":"Master","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-01T02:31:29.277Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T02:31:47.868Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T02:31:53.950Z [32minfo[39m: 	{"idRequest":"","modality":"Master","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-01T02:35:45.523Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T02:36:01.253Z [32minfo[39m: 	{"idRequest":"","modality":"Master","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-01T02:36:59.353Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T02:37:15.421Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T02:37:16.419Z [32minfo[39m: 	{"idRequest":"","modality":"Master","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-01T02:38:12.399Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T02:38:31.319Z [32minfo[39m: 	{"idRequest":"","modality":"Master","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-01T02:39:08.094Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T02:39:09.056Z [32minfo[39m: 	{"idRequest":"","modality":"Master","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-01T02:40:53.995Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T02:41:06.347Z [32minfo[39m: 	{"idRequest":"","modality":"Master","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-01T02:46:09.241Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T02:46:18.889Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T02:46:32.363Z [32minfo[39m: 	{"idRequest":"","modality":"Master","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-01T03:16:34.467Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T03:16:40.409Z [32minfo[39m: 	{"idRequest":"","modality":"Master","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-01T03:18:05.424Z [32minfo[39m: 	{"idRequest":"","modality":"Master","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-01T03:19:15.438Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-01T03:19:19.728Z [32minfo[39m: 	{"idRequest":"","modality":"Master","idCluster":"FLCCLUCOL","idDistributor":"1","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -

@@ -11,15 +11,15 @@ async function getSeatingFurniture()
 
     mainTable[pSItems] = [
         {border: [false, false, false, false], text: ''},
-        {text: 'RECLINER', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'BARIATRICRECLINER', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+        {text: 'RECLINER', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'BARIATRICRECLINER', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
     ]
     pSItems++
 
     mainTable[pSItems] = [
-        {border: [false, false, false, false], text: 'PART #', style: 'textotablaboldblack'},
-        {text: 'P9180A', style: 'textotablaboldblack', alignment: 'center'},
-        {text: 'P9190A', style: 'textotablaboldblack', alignment: 'center'},
+        {border: [false, false, false, false], text: 'PART #', style: 'textotablaboldblacklarge'},
+        {text: 'P9180A', style: 'textotablaboldblacklarge', alignment: 'center'},
+        {text: 'P9190A', style: 'textotablaboldblacklarge', alignment: 'center'},
     ]
     pSItems++
 
@@ -44,86 +44,90 @@ async function getSeatingFurniture()
     ]
     pSItems++
 
-    /*ESTO VA EN UN CICLO*/
-    var i=0;
-    var mainTableFlag = false
-    while(mainTableFlag === false)
+    if(mainTableData.length > 0)
     {
-        var j;
-        if(i===0)
+        /*ESTO VA EN UN CICLO*/
+        var i=0;
+        var mainTableFlag = false
+        while(mainTableFlag === false)
         {
-            j=0
-        }
-        else {
-            j = i*2
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< mainTableData.length && countC<2)
-        {
-           precios[preciosCount] = mainTableData[j].Price
-           printCaracter[preciosCount] = mainTableData[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: mainTableData[j-1].Id_Item,
-            Item_Long_Desc: mainTableData[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
+            var j;
+            if(i===0)
             {
-                precio1 = "●"
+                j=0
             }
             else {
-                precio1 = "-"
+                j = i*2
             }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
+            var precios = []
+            var preciosCount = 0
+            var countC=0
+            var printCaracter = []
+            while(j< mainTableData.length && countC<2)
             {
-                precio2 = "●"
+            precios[preciosCount] = mainTableData[j].Price
+            printCaracter[preciosCount] = mainTableData[j].Print_Character
+            preciosCount++
+            j++
+            countC++
+            }
+            var data = {
+                Id_Item: mainTableData[j-1].Id_Item,
+                Item_Long_Desc: mainTableData[j-1].Item_Long_Desc,
+                Prices: precios,
+                Print_Character: printCaracter
+            }
+
+            var precio1;
+            var precio2;
+
+            if(data.Print_Character[0] !== null)
+            {
+                if(data.Print_Character[0] === "*")
+                {
+                    precio1 = "*"
+                }
+                else {
+                    precio1 = "-"
+                }
             }
             else {
-                precio2 = "-"
+                precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
             }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-        
-        mainTable[pSItems] = [
-            {text: data.Item_Long_Desc, style: 'textotablacolornormal', fillColor: '#546ce4'},
-            {text: precio1, style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-            {text: precio2, style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-        ]
 
-        pSItems++
+            if(data.Print_Character[1] !== null)
+            {
+                if(data.Print_Character[1] === "*")
+                {
+                    precio2 = "*"
+                }
+                else {
+                    precio2 = "-"
+                }
+            }
+            else {
+                precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+            }
+            
+            mainTable[pSItems] = [
+                {text: data.Item_Long_Desc, style: 'textotablacolorlarge', fillColor: '#154898'},
+                {text: precio1, style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'}, 
+                {text: precio2, style: 'textotablacolorlarge', alignment: 'center', fillColor: '#154898'}, 
+            ]
 
-        //console.log(data)
+            pSItems++
 
-        if(j >= mainTableData.length)
-        {
-            mainTableFlag = true
-        }
-        i++
-    }   
-    /*TERMINA CICLO*/
+            //console.log(data)
+
+            if(j >= mainTableData.length)
+            {
+                mainTableFlag = true
+            }
+            i++
+        }   
+        /*TERMINA CICLO*/
+    }
+    
 
     var options =[]
     pSItems = 0;
@@ -135,7 +139,7 @@ async function getSeatingFurniture()
     pSItems++
 
     /*EMPIEZA CICLO*/
-    var i=0;
+    /*var i=0;
     var optionsFlag = false
     while(optionsFlag === false)
     {
@@ -173,7 +177,7 @@ async function getSeatingFurniture()
         {
             if(data.Print_Character[0] === "*")
             {
-                precio1 = "●"
+                precio1 = "*"
             }
             else {
                 precio1 = "-"
@@ -187,7 +191,7 @@ async function getSeatingFurniture()
         {
             if(data.Print_Character[1] === "*")
             {
-                precio2 = "●"
+                precio2 = "*"
             }
             else {
                 precio2 = "-"
@@ -212,13 +216,127 @@ async function getSeatingFurniture()
             optionsFlag = true
         }
         i++
-    }   
-    /*TERMINA CICLO*/
+    }   */
+
+    /*if(optionsData.length > 0)
+    {
+        options[pSItems] = [
+            {text: optionsData[0].Item_Long_Desc, style: 'textotabla'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[0].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+    
+        options[pSItems] = [
+            {text: optionsData[1].Item_Long_Desc, style: 'textotabla'},
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(optionsData[1].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+       
+    }*/   
+    
+    options[pSItems] = [
+        {text: "Central Brake & Steer", style: 'textotabla'},
+        {text: "$615", style: 'textotabla', alignment: 'center'}, 
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    options[pSItems] = [
+        {text: "Removable Arm-Left Side", style: 'textotabla'},
+        {text: "-", style: 'textotabla', alignment: 'center'}, 
+        {text: "$348", style: 'textotabla', alignment: 'center'}, 
+    ]
+
+    pSItems++
+
+    var table1 = []
+    if(mainTableData.length > 0)
+    {
+        table1 = [
+            {
+                columns: [
+                    {
+                        width: 400,
+                        table: {
+                            widths: [140, 100, 100],
+                            body: mainTable
+                        },
+                        layout: {
+                            hLineWidth: function () {
+                                return  0.7;
+                            },
+                            vLineWidth: function () {
+                                return 0.7;
+                            },
+                            hLineColor: function () {
+                                return 'gray';
+                            },
+                            vLineColor: function () {
+                                return 'gray';
+                            },
+                        }		
+                    },
+                    {
+                        width: "*",
+                        text: [
+                            {text: '\n\n\n\n\n\n\n\n', style: 'textotablaboldblack', fillColor: '#154898'},
+                            {text: 'Arm Cap Color\n', style: 'textotablaboldblack', fillColor: '#154898'},
+                            {text: 'B - Black\n', style: 'textotabla', fillColor: '#154898'},
+                            {text: 'D - White\n', style: 'textotabla', fillColor: '#154898'},
+                            {text: 'L - Dark Grey\n', style: 'textotabla', fillColor: '#154898'},
+                            {text: 'S - Light Grey\n', style: 'textotabla', fillColor: '#154898'},
+                            {text: 'T - Toffee\n', style: 'textotabla', fillColor: '#154898'},
+                            {text: 'W -Sand\n', style: 'textotabla', fillColor: '#154898'},
+                        ]
+                    },
+                ]
+            }
+        ]
+    }
+
+    var table2 =[]
+    if(optionsData.length > 0)
+    {
+        table2 = [
+            {
+                table: {
+                    widths: [140, 100, 100],
+                    body: options
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
+   
+    const fecha = new Date();
+    fecha.toLocaleDateString()
 
     var seatingFurniture = [
-        { text: 'Seating Furniture', style: 'header' },
+        "\n",
+        "\n",
+        "\n",
+        { text: 'Healthcare Furniture', style: 'header' },
         { text: 'Country of origin: USA\n', style: 'parrafo' },
-        { text: 'RECLINERS\n', style: 'subheader', tocItem: 'seatingFurniture' },
+        { text: 'RECLINERS\n', style: 'subheader'},
+        { text: 'Recliners, Sleeper Sofa and Sleeper Chair', style: { fontSize: 0}, tocItem: 'seatingFurniture'},
         '\n',
         { text:'Features & Benefits\n', style: 'textotablaboldlarge'},
         { text: '\n', style: 'parrafo' },
@@ -265,67 +383,11 @@ async function getSeatingFurniture()
             ]
         },
         "\n",
-        {
-            columns: [
-                {
-                    width: 350,
-                    table: {
-                        widths: [140, 80, 80],
-                        body: mainTable
-                    },
-                    layout: {
-                        hLineWidth: function () {
-                            return  0.7;
-                        },
-                        vLineWidth: function () {
-                            return 0.7;
-                        },
-                        hLineColor: function () {
-                            return 'gray';
-                        },
-                        vLineColor: function () {
-                            return 'gray';
-                        },
-                    }		
-                },
-                {
-                    width: "*",
-                    text: [
-                        {text: '\n\n\n\n\n\n\n\n', style: 'textotablaboldblack', fillColor: '#546ce4'},
-                        {text: 'Arm Cap Color\n', style: 'textotablaboldblack', fillColor: '#546ce4'},
-                        {text: 'Black\n', style: 'textotabla', fillColor: '#546ce4'},
-                        {text: 'White\n', style: 'textotabla', fillColor: '#546ce4'},
-                        {text: 'Dark Grey\n', style: 'textotabla', fillColor: '#546ce4'},
-                        {text: 'Light Grey\n', style: 'textotabla', fillColor: '#546ce4'},
-                        {text: 'Toffee\n', style: 'textotabla', fillColor: '#546ce4'},
-                        {text: 'Sand\n', style: 'textotabla', fillColor: '#546ce4'},
-                    ]
-                },
-            ]
-        },
+        table1,
         "\n",
-        {
-            table: {
-                widths: [140, 80, 80],
-                body: options
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        table2,
         { text: '\n', style: 'parrafo' },
-        { text: '● = standard', style: 'parrafo' },
+        { text: '* = standard', style: 'parrafo' },
         { text: '= - not available', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
         { image: "images/SeatingFurniture.png", width: 450, height: 190, alignment: 'center'},

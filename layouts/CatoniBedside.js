@@ -10,14 +10,15 @@ async function getCatoniBedSide()
     const singleBottleData = res[4]
     const coloursContrast = res[5]
     const handlesData = res[6]
+    const castorsData = res[7]
 
     var options3 =[]
     var pSItems = 0;
     options3[pSItems] = [
-        {text: 'OPTION CODE', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'DESCRIPTION', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-        {text: 'B03', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-        {text: 'B04', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
+        {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+        {text: 'B03', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'B04', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
     pSItems++
 
@@ -30,87 +31,90 @@ async function getCatoniBedSide()
 
     pSItems++
 
-    /*ESTO VA EN UN CICLO*/
-    var i=0;
-    var overbedTableFlag = false
-    while(overbedTableFlag === false)
+    if(overbedTableData.length > 0)
     {
-        var j;
-        if(i===0)
+        /*ESTO VA EN UN CICLO*/
+        var i=0;
+        var overbedTableFlag = false
+        while(overbedTableFlag === false)
         {
-            j=0
-        }
-        else {
-            j = i*2
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< overbedTableData.length && countC<2)
-        {
-           precios[preciosCount] = overbedTableData[j].Price
-           printCaracter[preciosCount] = overbedTableData[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: overbedTableData[j-1].Id_Item,
-            Item_Long_Desc: overbedTableData[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
+            var j;
+            if(i===0)
             {
-                precio1 = "●"
+                j=0
             }
             else {
-                precio1 = "-"
+                j = i*2
             }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
+            var precios = []
+            var preciosCount = 0
+            var countC=0
+            var printCaracter = []
+            while(j< overbedTableData.length && countC<2)
             {
-                precio2 = "●"
+            precios[preciosCount] = overbedTableData[j].Price
+            printCaracter[preciosCount] = overbedTableData[j].Print_Character
+            preciosCount++
+            j++
+            countC++
+            }
+            var data = {
+                Id_Item: overbedTableData[j-1].Id_Item,
+                Item_Long_Desc: overbedTableData[j-1].Item_Long_Desc,
+                Prices: precios,
+                Print_Character: printCaracter
+            }
+
+            var precio1;
+            var precio2;
+
+            if(data.Print_Character[0] !== null)
+            {
+                if(data.Print_Character[0] === "*")
+                {
+                    precio1 = "*"
+                }
+                else {
+                    precio1 = "-"
+                }
             }
             else {
-                precio2 = "-"
+                precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
             }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-        
-        options3[pSItems] = [
-            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'}, 
-        ]
 
-        pSItems++
+            if(data.Print_Character[1] !== null)
+            {
+                if(data.Print_Character[1] === "*")
+                {
+                    precio2 = "*"
+                }
+                else {
+                    precio2 = "-"
+                }
+            }
+            else {
+                precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+            }
+            
+            options3[pSItems] = [
+                {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+                {text: data.Item_Long_Desc, style: 'textotabla'},
+                {text: precio1, style: 'textotabla', alignment: 'center'}, 
+                {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            ]
 
-        //console.log(data)
+            pSItems++
 
-        if(j >= overbedTableData.length)
-        {
-            overbedTableFlag = true
+            //console.log(data)
+
+            if(j >= overbedTableData.length)
+            {
+                overbedTableFlag = true
+            }
+            i++
         }
-        i++
-    }   
-    /*TERMINA CICLO*/
+        /*TERMINA CICLO*/
+    }
     
     options3[pSItems] = [
         {text: 'Plastic drawer insert', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
@@ -119,273 +123,320 @@ async function getCatoniBedSide()
         {text: '', border: [false, false, false, false]}, 
     ]
 
-    pSItems ++
-
-    /*ESTO VA EN UN CICLO*/
-    var i=0;
-    var plasticDrawerFlag = false
-    while(plasticDrawerFlag === false)
+    pSItems++;
+    
+    if(plasticDrawerData[0] !== undefined && plasticDrawerData[1] !== undefined)
     {
-        var j;
-        if(i===0)
-        {
-            j=0
-        }
-        else {
-            j = i*2
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< plasticDrawerData.length && countC<2)
-        {
-           precios[preciosCount] = plasticDrawerData[j].Price
-           printCaracter[preciosCount] = plasticDrawerData[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: plasticDrawerData[j-1].Id_Item,
-            Item_Long_Desc: plasticDrawerData[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
-            {
-                precio1 = "●"
-            }
-            else {
-                precio1 = "-"
-            }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
-            {
-                precio2 = "●"
-            }
-            else {
-                precio2 = "-"
-            }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-        
         options3[pSItems] = [
-            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            {text: plasticDrawerData[0].Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: plasticDrawerData[0].Item_Long_Desc, style: 'textotabla'},
+            {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[0].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[1].Price), style: 'textotabla', alignment: 'center'}, 
         ]
-
+    
         pSItems++
+    }
+    
+    if(plasticDrawerData[2] !== undefined)
+    {
+        options3[pSItems] = [
+            {text: plasticDrawerData[2].Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: plasticDrawerData[2].Item_Long_Desc, style: 'textotabla'},
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(plasticDrawerData[2].Price), style: 'textotabla', alignment: 'center'}, 
+        ]
+    
+        pSItems++
+        /*TERMINA CICLO*/
+    }
 
-        //console.log(data)
 
-        if(j >= plasticDrawerData.length)
+    options3[pSItems] = [
+        {text: 'Castors', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+    ]
+
+    pSItems++;
+
+    if(castorsData.length > 0)
+    {
+        /*ESTO VA EN UN CICLO*/
+        var i=0;
+        var castorsFlag = false
+        while(castorsFlag === false)
         {
-            plasticDrawerFlag = true
-        }
-        i++
-    }   
-    /*TERMINA CICLO*/
+            var j;
+            if(i===0)
+            {
+                j=0
+            }
+            else {
+                j = i*2
+            }
+
+            var precios = [];
+            var preciosCount = 0;
+            var countC=0;
+            var printCaracter = [];
+
+            while(j< castorsData.length && countC<2)
+            {
+                precios[preciosCount] = castorsData[j].Price;
+                printCaracter[preciosCount] = castorsData[j].Print_Character;
+                preciosCount++;
+                j++;
+                countC++;
+            }
+
+            var data = {
+                Id_Item: castorsData[j-1].Id_Item,
+                Item_Long_Desc: castorsData[j-1].Item_Long_Desc,
+                Prices: precios,
+                Print_Character: printCaracter
+            }
+
+            var precio1;
+            var precio2;
+
+            if(data.Print_Character[0] !== null)
+            {
+                if(data.Print_Character[0] === "*")
+                {
+                    precio1 = "*"
+                }
+                else {
+                    precio1 = "-"
+                }
+            }
+            else {
+                precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+            }
+
+            if(data.Print_Character[1] !== null)
+            {
+                if(data.Print_Character[1] === "*")
+                {
+                    precio2 = "*"
+                }
+                else {
+                    precio2 = "-"
+                }
+            }
+            else {
+                precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+            }
+            
+            options3[pSItems] = [
+                {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+                {text: data.Item_Long_Desc, style: 'textotabla'},
+                {text: precio1, style: 'textotabla', alignment: 'center'}, 
+                {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            ]
+
+            pSItems++
+
+            //console.log(data)
+
+            if(j >= castorsData.length)
+            {
+                castorsFlag = true
+            }
+            i++
+        }   
+        /*TERMINA CICLO*/
+    }
 
     options3[pSItems] = [
         {text: 'Towel Holder', style: 'textotablaboldlarge', border: [false, false, false, false]},
-        {text: '* Note: will be discontinued last order March 2021', style: 'textotablaboldblack', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
     ]
 
     pSItems++
 
-    /*ESTO VA EN UN CICLO*/
-    var i=0;
-    var towelHolderFlag = false
-    while(towelHolderFlag === false)
+    if(towelHolderData.length > 0)
     {
-        var j;
-        if(i===0)
+        /*ESTO VA EN UN CICLO*/
+        var i=0;
+        var towelHolderFlag = false
+        while(towelHolderFlag === false)
         {
-            j=0
-        }
-        else {
-            j = i*2
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< towelHolderData.length && countC<2)
-        {
-           precios[preciosCount] = towelHolderData[j].Price
-           printCaracter[preciosCount] = towelHolderData[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: towelHolderData[j-1].Id_Item,
-            Item_Long_Desc: towelHolderData[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
+            var j;
+            if(i===0)
             {
-                precio1 = "●"
+                j=0
             }
             else {
-                precio1 = "-"
+                j = i*2
             }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
+            var precios = []
+            var preciosCount = 0
+            var countC=0
+            var printCaracter = []
+            while(j< towelHolderData.length && countC<2)
             {
-                precio2 = "●"
+            precios[preciosCount] = towelHolderData[j].Price
+            printCaracter[preciosCount] = towelHolderData[j].Print_Character
+            preciosCount++
+            j++
+            countC++
+            }
+            var data = {
+                Id_Item: towelHolderData[j-1].Id_Item,
+                Item_Long_Desc: towelHolderData[j-1].Item_Long_Desc,
+                Prices: precios,
+                Print_Character: printCaracter
+            }
+
+            var precio1;
+            var precio2;
+
+            if(data.Print_Character[0] !== null)
+            {
+                if(data.Print_Character[0] === "*")
+                {
+                    precio1 = "*"
+                }
+                else {
+                    precio1 = "-"
+                }
             }
             else {
-                precio2 = "-"
+                precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
             }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-        
-        options3[pSItems] = [
-            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'}, 
-        ]
 
-        pSItems++
+            if(data.Print_Character[1] !== null)
+            {
+                if(data.Print_Character[1] === "*")
+                {
+                    precio2 = "*"
+                }
+                else {
+                    precio2 = "-"
+                }
+            }
+            else {
+                precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+            }
+            
+            options3[pSItems] = [
+                {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+                {text: data.Item_Long_Desc, style: 'textotabla'},
+                {text: precio1, style: 'textotabla', alignment: 'center'}, 
+                {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            ]
 
-        //console.log(data)
+            pSItems++
 
-        if(j >= towelHolderData.length)
-        {
-            towelHolderFlag = true
-        }
-        i++
-    }   
-    /*TERMINA CICLO*/
+            //console.log(data)
+
+            if(j >= towelHolderData.length)
+            {
+                towelHolderFlag = true
+            }
+            i++
+        }   
+        /*TERMINA CICLO*/
+    }
 
     options3[pSItems] = [
-        {text: '2 x single bottle hold', style: 'textotablaboldlargecatoni', border: [false, false, false, false], colSpan: 2},
-        {text: '* Note: will be discontinued last order March 2021', style: 'textotablaboldblackcatoni', border: [false, false, false, false]},
+        {text: '2 x single bottle hold', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 3},
+        {border: [false, false, false, false], text: ""},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
     ]
 
     pSItems++
 
-    /*ESTO VA EN UN CICLO*/
-    var i=0;
-    var singleBottleFlag = false
-    while(singleBottleFlag === false)
+    if(singleBottleData.length > 0)
     {
-        var j;
-        if(i===0)
+        /*ESTO VA EN UN CICLO*/
+        var i=0;
+        var singleBottleFlag = false
+        while(singleBottleFlag === false)
         {
-            j=0
-        }
-        else {
-            j = i*2
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< singleBottleData.length && countC<2)
-        {
-           precios[preciosCount] = singleBottleData[j].Price
-           printCaracter[preciosCount] = singleBottleData[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: singleBottleData[j-1].Id_Item,
-            Item_Long_Desc: singleBottleData[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
+            var j;
+            if(i===0)
             {
-                precio1 = "●"
+                j=0
             }
             else {
-                precio1 = "-"
+                j = i*2
             }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
+            var precios = []
+            var preciosCount = 0
+            var countC=0
+            var printCaracter = []
+            while(j< singleBottleData.length && countC<2)
             {
-                precio2 = "●"
+            precios[preciosCount] = singleBottleData[j].Price
+            printCaracter[preciosCount] = singleBottleData[j].Print_Character
+            preciosCount++
+            j++
+            countC++
+            }
+            var data = {
+                Id_Item: singleBottleData[j-1].Id_Item,
+                Item_Long_Desc: singleBottleData[j-1].Item_Long_Desc,
+                Prices: precios,
+                Print_Character: printCaracter
+            }
+
+            var precio1;
+            var precio2;
+
+            if(data.Print_Character[0] !== null)
+            {
+                if(data.Print_Character[0] === "*")
+                {
+                    precio1 = "*"
+                }
+                else {
+                    precio1 = "-"
+                }
             }
             else {
-                precio2 = "-"
+                precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
             }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-        
-        options3[pSItems] = [
-            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'}, 
-        ]
 
-        pSItems++
+            if(data.Print_Character[1] !== null)
+            {
+                if(data.Print_Character[1] === "*")
+                {
+                    precio2 = "*"
+                }
+                else {
+                    precio2 = "-"
+                }
+            }
+            else {
+                precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+            }
+            
+            options3[pSItems] = [
+                {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+                {text: data.Item_Long_Desc, style: 'textotabla'},
+                {text: precio1, style: 'textotabla', alignment: 'center'}, 
+                {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            ]
 
-        //console.log(data)
+            pSItems++
 
-        if(j >= singleBottleData.length)
-        {
-            singleBottleFlag = true
-        }
-        i++
-    }   
-    /*TERMINA CICLO*/
+            //console.log(data)
 
-    options3[pSItems] = [
+            if(j >= singleBottleData.length)
+            {
+                singleBottleFlag = true
+            }
+            i++
+        }   
+        /*TERMINA CICLO*/
+    }
+
+    /*options3[pSItems] = [
         {text: 'Colour contrast (only one additional colour choice is possible)', style: 'textotablaboldlargecatoni', border: [false, false, false, false], colSpan: 4},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
@@ -394,87 +445,88 @@ async function getCatoniBedSide()
 
     pSItems++
 
-    /*ESTO VA EN UN CICLO*/
-    var i=0;
-    var coloursContrastFlag = false
-    while(coloursContrastFlag === false)
+    if(coloursContrast.length > 0)
     {
-        var j;
-        if(i===0)
+        var i=0;
+        var coloursContrastFlag = false
+        while(coloursContrastFlag === false)
         {
-            j=0
-        }
-        else {
-            j = i*2
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< coloursContrast.length && countC<2)
-        {
-           precios[preciosCount] = coloursContrast[j].Price
-           printCaracter[preciosCount] = coloursContrast[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: coloursContrast[j-1].Id_Item,
-            Item_Long_Desc: coloursContrast[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
+            var j;
+            if(i===0)
             {
-                precio1 = "●"
+                j=0
             }
             else {
-                precio1 = "-"
+                j = i*2
             }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
+            var precios = []
+            var preciosCount = 0
+            var countC=0
+            var printCaracter = []
+            while(j< coloursContrast.length && countC<2)
             {
-                precio2 = "●"
+            precios[preciosCount] = coloursContrast[j].Price
+            printCaracter[preciosCount] = coloursContrast[j].Print_Character
+            preciosCount++
+            j++
+            countC++
+            }
+            var data = {
+                Id_Item: coloursContrast[j-1].Id_Item,
+                Item_Long_Desc: coloursContrast[j-1].Item_Long_Desc,
+                Prices: precios,
+                Print_Character: printCaracter
+            }
+
+            var precio1;
+            var precio2;
+
+            if(data.Print_Character[0] !== null)
+            {
+                if(data.Print_Character[0] === "*")
+                {
+                    precio1 = "*"
+                }
+                else {
+                    precio1 = "-"
+                }
             }
             else {
-                precio2 = "-"
+                precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
             }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-        
-        options3[pSItems] = [
-            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'}, 
-        ]
 
-        pSItems++
+            if(data.Print_Character[1] !== null)
+            {
+                if(data.Print_Character[1] === "*")
+                {
+                    precio2 = "*"
+                }
+                else {
+                    precio2 = "-"
+                }
+            }
+            else {
+                precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+            }
+            
+            options3[pSItems] = [
+                {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+                {text: data.Item_Long_Desc, style: 'textotabla'},
+                {text: precio1, style: 'textotabla', alignment: 'center'}, 
+                {text: precio2, style: 'textotabla', alignment: 'center'}, 
+            ]
 
-        //console.log(data)
+            pSItems++
 
-        if(j >= coloursContrast.length)
-        {
-            coloursContrastFlag = true
-        }
-        i++
-    }   
-    /*TERMINA CICLO*/
+            //console.log(data)
+
+            if(j >= coloursContrast.length)
+            {
+                coloursContrastFlag = true
+            }
+            i++
+        }   
+    }*/
 
     options3[pSItems] = [
         {text: 'Handles', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
@@ -485,165 +537,249 @@ async function getCatoniBedSide()
 
     pSItems++
 
-    /*ESTO VA EN UN CICLO*/
-    var i=0;
-    var handlesFlag= false
-    while(handlesFlag === false)
+    if(handlesData.length > 0)
     {
-        var j;
-        if(i===0)
+        /*ESTO VA EN UN CICLO*/
+        var i=0;
+        var handlesFlag= false
+        while(handlesFlag === false)
         {
-            j=0
-        }
-        else {
-            j = i*2
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< handlesData.length && countC<2)
-        {
-           precios[preciosCount] = handlesData[j].Price
-           printCaracter[preciosCount] = handlesData[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: handlesData[j-1].Id_Item,
-            Item_Long_Desc: handlesData[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
+            var j;
+            if(i===0)
             {
-                precio1 = "●"
+                j=0
             }
             else {
-                precio1 = "-"
+                j = i*2
             }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
+            var precios = []
+            var preciosCount = 0
+            var countC=0
+            var printCaracter = []
+            while(j< handlesData.length && countC<2)
             {
-                precio2 = "●"
+            precios[preciosCount] = handlesData[j].Price
+            printCaracter[preciosCount] = handlesData[j].Print_Character
+            preciosCount++
+            j++
+            countC++
+            }
+            var data = {
+                Id_Item: handlesData[j-1].Id_Item,
+                Item_Long_Desc: handlesData[j-1].Item_Long_Desc,
+                Prices: precios,
+                Print_Character: printCaracter
+            }
+
+            var precio1;
+            var precio2;
+
+            if(data.Print_Character[0] !== null)
+            {
+                if(data.Print_Character[0] === "*")
+                {
+                    precio1 = "*"
+                }
+                else {
+                    precio1 = "-"
+                }
             }
             else {
-                precio2 = "-"
+                precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
             }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-        
-        options3[pSItems] = [
-            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'},  
+
+            if(data.Print_Character[1] !== null)
+            {
+                if(data.Print_Character[1] === "*")
+                {
+                    precio2 = "*"
+                }
+                else {
+                    precio2 = "-"
+                }
+            }
+            else {
+                precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+            }
+            
+            options3[pSItems] = [
+                {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+                {text: data.Item_Long_Desc, style: 'textotabla'},
+                {text: precio1, style: 'textotabla', alignment: 'center'}, 
+                {text: precio2, style: 'textotabla', alignment: 'center'},  
+            ]
+
+            pSItems++
+
+            //console.log(data)
+
+            if(j >= handlesData.length)
+            {
+                handlesFlag = true
+            }
+            i++
+        }   
+        /*TERMINA CICLO*/
+    }
+
+    var table1 = []
+    if(prices.length > 0)
+    {
+        table1 = [
+            {
+                table: {
+                    widths: ["*", 80, 80],
+                    body: [
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'FURNACUSELECT', style: 'textotablacolorlarge', colSpan: 2, fillColor: '#154898',  alignment: 'center'},
+                            {},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'SER-CH770A', style: 'textotablaboldblacklarge', colSpan: 2,  alignment: 'center'},
+                            {},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: 'Catoni Bedside Cabinet with overbed table - bilateral functionality', style: 'textotablaboldlarge'},
+                            {text: 'B03', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: 'B04', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                        ],
+                        [
+                            {border: [false, false, false, false], ul: [
+                                { text: 'Height 870 mm - Width 605 mm - Depth 450 mm'},
+                                { text: 'Material: sides: Melamine, Top Plate/drawers/ doors : High Pressure Laminate (HPL)'},
+                                { text: 'Castors: 5 x 50 mm with 2 brakes'},
+                                { text: 'Bumpers-grey'},
+                                { text: 'For additional technical specifications see separate tech specs'},
+                                { text: 'For colour and handles see separate tech specs'},
+                            ],  style:'textolista',},
+                            { image: "images/Catoni21.png", width: 80, height: 70, alignment: 'center'},
+                            { image: "images/Catoni22.png", width: 80, height: 70, alignment: 'center'},
+                        ],
+                        [
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
         ]
+    }
+    else {
+        table1 = [
+            {
+                table: {
+                    widths: ["*", 80, 80],
+                    body: [
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'FURNACUSELECT', style: 'textotablacolorlarge', colSpan: 2, fillColor: '#154898',  alignment: 'center'},
+                            {},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: ''},
+                            {text: 'SER-CH770A', style: 'textotablaboldblacklarge', colSpan: 2,  alignment: 'center'},
+                            {},
+                        ],
+                        [
+                            {border: [false, false, false, false], text: 'Catoni Bedside Cabinet with overbed table - bilateral functionality', style: 'textotablaboldlarge'},
+                            {text: 'B03', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: 'B04', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                        ],
+                        [
+                            {border: [false, false, false, false], ul: [
+                                { text: 'Height 870 mm - Width 605 mm - Depth 450 mm'},
+                                { text: 'Material: sides: Melamine, Top Plate/drawers/ doors: High Pressure Laminate (HPL)'},
+                                { text: 'Castors: 5 x 50 mm with 2 brakes'},
+                                { text: 'Bumpers-grey'},
+                                { text: 'For additional technical specifications see separate tech specs'},
+                                { text: 'For colour and handles see separate tech specs'},
+                            ],  style:'textolista',},
+                            { image: "images/Catoni21.png", width: 80, height: 70, alignment: 'center'},
+                            { image: "images/Catoni22.png", width: 80, height: 70, alignment: 'center'},
+                        ],
+                        [
+                            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                        ],
+                    ]
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
 
-        pSItems++
+    var table2 = []
+    if(overbedTableData.length > 0 || plasticDrawerData.length > 0 || towelHolderData.length > 0
+        || singleBottleData.length > 0 || coloursContrast.length > 0 || handlesData.length > 0)
+    {
+        table2 = [
+            {
+                table: {
+                    widths: [70, "*", 80, 80],
+                    body: options3
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
 
-        //console.log(data)
 
-        if(j >= handlesData.length)
-        {
-            handlesFlag = true
-        }
-        i++
-    }   
-    /*TERMINA CICLO*/
+    const fecha = new Date();
+    fecha.toLocaleDateString()
 
     var catoni = [
-        {
-            table: {
-                widths: ["*", 80, 80],
-                body: [
-                    [
-                        {border: [false, false, false, false], text: ''},
-                        {text: 'FURNACUSELECT', style: 'textotablacolor', colSpan: 2, fillColor: '#546ce4',  alignment: 'center'},
-                        {},
-                    ],
-                    [
-                        {border: [false, false, false, false], text: ''},
-                        {text: 'SER-CH770A', style: 'textotablaboldblack', colSpan: 2,  alignment: 'center'},
-                        {},
-                    ],
-                    [
-                        {border: [false, false, false, false], text: 'Catoni Bedside Cabinet with overbed table - bilateral functionality', style: 'textotablaboldlarge', tocItem: "catoniBedSide"},
-                        {text: 'B03', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                        {text: 'B04', style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                    ],
-                    [
-                        {border: [false, false, false, false], ul: [
-                            { text: 'Height 870 mm - Width 605 mm - Depth 450 mm'},
-                            { text: 'Material: Body - Top Plate: High Pressure Laminate (HPL) - Edges: Aluminium'},
-                            { text: 'Castors : 5 x 50 mm with 2 brakes'},
-                            { text: 'Bumpers-grey'},
-                            { text: 'For additional technical specifications see separate tech specs'},
-                            { text: 'For colour and handles see separate tech specs'},
-                        ],  style:'textolista',},
-                        { image: "images/Catoni21.png", width: 60, height: 70, alignment: 'center'},
-                        { image: "images/Catoni22.png", width: 60, height: 70, alignment: 'center'},
-                    ],
-                    [
-                        {text: 'LIST PRICE', style: 'textotablacolor', fillColor: '#546ce4'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'},
-                        {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolor', fillColor: '#546ce4', alignment: 'center'}, 
-                    ],
-                ]
-            },
-            layout: {
-                hLineWidth: function () {
-                    return  0.7;
-                },
-                vLineWidth: function () {
-                    return 0.7;
-                },
-                hLineColor: function () {
-                    return 'gray';
-                },
-                vLineColor: function () {
-                    return 'gray';
-                },
-            }
-        },
         "\n",
-        {
-            table: {
-                widths: [70, "*", 60, 60],
-                body: options3
-            },
-            layout: {
-                hLineWidth: function () {
-					return  0.7;
-                },
-                vLineWidth: function () {
-					return 0.7;
-				},
-                hLineColor: function () {
-					return 'gray';
-				},
-				vLineColor: function () {
-					return 'gray';
-				},
-            }
-        },
+        "\n",
+        "\n",
+        table1,
+        "\n",
+        table2,
         { text: '\n', style: 'parrafo' },
-        { text: '● = standard', style: 'textotabla' },
+        { text: '* = standard', style: 'textotabla' },
         { text: '= - not available', style: 'textotabla' },
         { text: '\n', style: 'parrafo' },
         {
@@ -651,16 +787,16 @@ async function getCatoniBedSide()
                 widths: [67, 67, 67, 67],
                 body: [
                     [
-                        {text: 'B03 Plastic drawer insert (1BS) in top drawer', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'B03 with 2 x single bottle holder (BOH)', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'B04 with 2 x single bottle holder (BOH)', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'B03 Towel holder (TH)', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        {text: 'B03 Plastic drawer insert (1BS) in top drawer', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+                        {text: 'B03 with 2 x single bottle holder (BOH)', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+                        {text: 'B04 with 2 x single bottle holder (BOH)', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+                        {text: 'B03 Towel holder (TH)', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
                     ],
                     [
-                        { image: "images/Catoni23.png", width: 50, height: 70, alignment: 'center'},
-                        { image: "images/Catoni24.png", width: 50, height: 70, alignment: 'center'},
-                        { image: "images/Catoni25.png", width: 50, height: 70, alignment: 'center'},
-                        { image: "images/Catoni26.png", width: 50, height: 70, alignment: 'center'},
+                        { image: "images/Catoni23.png", width: 60, height: 70, alignment: 'center'},
+                        { image: "images/Catoni24.png", width: 60, height: 70, alignment: 'center'},
+                        { image: "images/Catoni25.png", width: 60, height: 70, alignment: 'center'},
+                        { image: "images/Catoni26.png", width: 60, height: 70, alignment: 'center'},
                     ],
                 ]
             },
@@ -685,14 +821,14 @@ async function getCatoniBedSide()
                 widths: [67, 67, 67],
                 body: [
                     [
-                        {text: 'B03 Contrasting colours front (drawers and doors)', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'B03 Contrasting colours front and overbed table', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'B03 Contrasting colours front (drawers and doors)', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                        {text: 'B03 Contrasting colours front (drawers and doors)', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+                        {text: 'B03 Contrasting colours front and overbed table', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+                        {text: 'B03 Contrasting colours front (drawers and doors)', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
                     ],
                     [
-                        { image: "images/Catoni27.png", width: 60, height: 60, alignment: 'center'},
-                        { image: "images/Catoni28.png", width: 60, height: 60, alignment: 'center'},
-                        { image: "images/Catoni29.png", width: 60, height: 60, alignment: 'center'},
+                        { image: "images/Catoni27.png", width: 75, height: 70, alignment: 'center'},
+                        { image: "images/Catoni28.png", width: 75, height: 70, alignment: 'center'},
+                        { image: "images/Catoni29.png", width: 75, height: 70, alignment: 'center'},
                     ],
                 ]
             },

@@ -1,5 +1,8 @@
 const axios = require('axios');
 
+const fecha = new Date();
+fecha.toLocaleDateString()
+
 async function getHealthcareFurniture()
 {
     /*const res = await axios.get("http://localhost:8091/api/pdf-hillroom/progressa")
@@ -13,9 +16,9 @@ async function getHealthcareFurniture()
     var pSItems = 0;
     options[pSItems] = [
         {text: 'Options', style: 'textotablabold', border: [false, false, false, false]},
-        {text: 'SLP-732', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-        {text: 'SLP-735', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-        {text: 'SLP-755', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
+        {text: 'SLP-732', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
+        {text: 'SLP-735', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
+        {text: 'SLP-755', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
     ]
     pSItems++
 
@@ -38,7 +41,9 @@ async function getHealthcareFurniture()
     /*TERMINA CICLO*/
 
     var healthcareFurniture = [
-        '\n',
+        "\n",
+        "\n",
+        "\n",
         { text: 'Healthcare Furniture', style: 'header' },
         { text: 'Country of origin: USA\n', style: 'parrafo' },
         { text: 'Classic Seating Products\n', style: 'subheader' },
@@ -59,7 +64,7 @@ async function getHealthcareFurniture()
                             ],
                             [
                                 {border: [false, false, false, false], text: ''},
-                                {text: 'SLEEPERSEATING', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center', colSpan: 3},
+                                {text: 'SLEEPERSEATING', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center', colSpan: 3},
                                 {},
                                 {},
                             ],
@@ -71,75 +76,75 @@ async function getHealthcareFurniture()
                             ],
                             [
                                 {border: [false, false, false, false], text: ''},
-                                {text: 'SLP-732', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                                {text: 'SLP-735', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
-                                {text: 'SLP-755', style: 'textotablacolor', fillColor: '#546ce4',  alignment: 'center'},
+                                {text: 'SLP-732', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                                {text: 'SLP-735', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                                {text: 'SLP-755', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                             ],
                             [
                                 {text: '32" (width) Sleeper Chair', style: 'textotabla'},
-                                {text: '●', style: 'textotabla', alignment: 'center'},
+                                {text: '*', style: 'textotabla', alignment: 'center'},
                                 {text: '-', style: 'textotabla', alignment: 'center'}, 
                                 {text: '-', style: 'textotabla', alignment: 'center'}, 
                             ],
                             [
                                 {text: '35" (width) Sleeper Chair', style: 'textotabla'},
                                 {text: '-', style: 'textotabla', alignment: 'center'},
-                                {text: '●', style: 'textotabla', alignment: 'center'}, 
+                                {text: '*', style: 'textotabla', alignment: 'center'}, 
                                 {text: '-', style: 'textotabla', alignment: 'center'}, 
                             ],
                             [
                                 {text: '55" (width) Sleeper Loveseat', style: 'textotablacolornormal'},
                                 {text: '-', style: 'textotablacolor', alignment: 'center'},
                                 {text: '-', style: 'textotablacolor', alignment: 'center'}, 
-                                {text: '●', style: 'textotablacolor', alignment: 'center'}, 
+                                {text: '*', style: 'textotablacolor', alignment: 'center'}, 
                             ],
                             [
-                                {text: 'Grade 1 Upholstery', style: 'textotablacolornormal', fillColor: '#546ce4'},
-                                {text: '$3,617', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+                                {text: 'Grade 1 Upholstery', style: 'textotablacolornormal', fillColor: '#154898'},
+                                {text: '$3,617', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
+                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'}, 
+                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'}, 
                             ],
                             [
-                                {text: 'Grade 2 Upholstery', style: 'textotablacolornormal', fillColor: '#546ce4'},
-                                {text: '$3,617', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+                                {text: 'Grade 2 Upholstery', style: 'textotablacolornormal', fillColor: '#154898'},
+                                {text: '$3,617', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
+                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'}, 
+                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'}, 
                             ],
                             [
-                                {text: 'Grade 3 Upholstery', style: 'textotablacolornormal', fillColor: '#546ce4'},
-                                {text: '$3,742', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: '$4,658', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+                                {text: 'Grade 3 Upholstery', style: 'textotablacolornormal', fillColor: '#154898'},
+                                {text: '$3,742', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
+                                {text: '$4,658', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'}, 
+                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'}, 
                             ],
                             [
-                                {text: 'Grade 4 Upholstery', style: 'textotablacolornormal', fillColor: '#546ce4'},
-                                {text: '$3,867', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: '$4,816', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+                                {text: 'Grade 4 Upholstery', style: 'textotablacolornormal', fillColor: '#154898'},
+                                {text: '$3,867', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
+                                {text: '$4,816', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'}, 
+                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'}, 
                             ],
                             [
-                                {text: 'Grade 5 Upholstery', style: 'textotablacolornormal', fillColor: '#546ce4'},
-                                {text: '$3,992', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: '$4,975', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+                                {text: 'Grade 5 Upholstery', style: 'textotablacolornormal', fillColor: '#154898'},
+                                {text: '$3,992', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
+                                {text: '$4,975', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'}, 
+                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'}, 
                             ],
                             [
-                                {text: 'Grade 6 Upholstery', style: 'textotablacolornormal', fillColor: '#546ce4'},
-                                {text: '$4,117', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: '$5,133', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+                                {text: 'Grade 6 Upholstery', style: 'textotablacolornormal', fillColor: '#154898'},
+                                {text: '$4,117', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
+                                {text: '$5,133', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'}, 
+                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'}, 
                             ],
                             [
-                                {text: 'Grade 7 Upholstery', style: 'textotablacolornormal', fillColor: '#546ce4'},
-                                {text: '$4,242', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: '$5,291', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
-                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'}, 
+                                {text: 'Grade 7 Upholstery', style: 'textotablacolornormal', fillColor: '#154898'},
+                                {text: '$4,242', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
+                                {text: '$5,291', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'}, 
+                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'}, 
                             ],
                             [
-                                {text: 'Grade 8 Upholstery', style: 'textotablacolornormal', fillColor: '#546ce4'},
-                                {text: '$4,992', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: '$6,241', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},
-                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#546ce4'},  
+                                {text: 'Grade 8 Upholstery', style: 'textotablacolornormal', fillColor: '#154898'},
+                                {text: '$4,992', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
+                                {text: '$6,241', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},
+                                {text: '$4,500', style: 'textotablacolor', alignment: 'center', fillColor: '#154898'},  
                             ],
                         ]
                     },
@@ -202,7 +207,7 @@ async function getHealthcareFurniture()
             ]
         },
         '\n',
-        { text: '● = standard', style: 'parrafo' },
+        { text: '* = standard', style: 'parrafo' },
         { text: '= - not available', style: 'parrafo' },
         '\n',
         { image: "images/ClassicSeating.png", width: 400, height: 140, alignment: 'center'},

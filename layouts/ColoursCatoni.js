@@ -1,6 +1,12 @@
+const fecha = new Date();
+fecha.toLocaleDateString()
+
 async function getColoursCatoni()
 {
     var catoni = [
+        "\n",
+        "\n",
+        "\n",
         { text: 'Colours for Catoni Collection', style: 'header', tocItem: 'coloursCatoni'},
         { text: 'Country of Origin : France', style: 'parrafo' },
         "\n",
@@ -12,9 +18,9 @@ async function getColoursCatoni()
                         {border: [false, false, false, false], text: ''},
                         {border: [false, false, false, false], text: ''},
                         {border: [false, false, false, false], text: ''},
-                        {text: 'Classic', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'Style', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'Select', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                        {text: 'Classic', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+                        {text: 'Style', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+                        {text: 'Select', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
                     ],
                     [
                         {text: 'M47', style: 'textotabla',  alignment: 'center'},
@@ -100,7 +106,7 @@ async function getColoursCatoni()
         { text: '\n', style: 'parrafo' },
         { text: 'x = optional', style: 'parrafo' },
         '\n',
-        { text: 'Handles for Catoni Collection', style: 'header', tocItem: 'compella'},
+        { text: 'Handles for Catoni Collection', style: 'header', tocItem: 'handlesForCatoni'},
         { text: 'Country of Origin : France', style: 'parrafo' },
         '\n',
         {
@@ -111,17 +117,17 @@ async function getColoursCatoni()
                         {border: [false, false, false, false], text: ''},
                         {border: [false, false, false, false], text: ''},
                         {border: [false, false, false, false], text: ''},
-                        {text: 'Classic', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'Style', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
-                        {text: 'Select', style: 'textotablacolorlarge', fillColor: '#546ce4',  alignment: 'center'},
+                        {text: 'Classic', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+                        {text: 'Style', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+                        {text: 'Select', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
                     ],
                     [
                         {text: 'H20', style: 'textotabla',  alignment: 'center'},
                         { image: "images/Catoni38.png", width: 50, height: 30, alignment: 'center'},
                         {text: 'H20 - Steel, chromed', style: 'textotabla'},
-                        {text: '●', style: 'textotabla', alignment: 'center'},
-                        {text: '●', style: 'textotabla', alignment: 'center'},
-                        {text: '●', style: 'textotabla', alignment: 'center'},
+                        {text: '*', style: 'textotabla', alignment: 'center'},
+                        {text: '*', style: 'textotabla', alignment: 'center'},
+                        {text: '*', style: 'textotabla', alignment: 'center'},
                     ],
                     [
                         {text: 'H22', style: 'textotabla', alignment: 'center'},

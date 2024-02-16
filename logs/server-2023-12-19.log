@@ -1,0 +1,4 @@
+2023-12-19T18:44:17.889Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-19T18:46:21.400Z [32minfo[39m: 	{"idRequest":"","modality":"Distributor","idCluster":"FLCCLUCOL","idDistributor":"16","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -
+2023-12-19T21:31:49.607Z [32minfo[39m: 	Categoría API iniciando en el puerto: 8092
+2023-12-19T21:32:40.245Z [32minfo[39m: 	{"idRequest":"","modality":"Master","idCluster":"FLCCLUCOL","idDistributor":"16","language":"ANG","user":"AGUTIERREZ","effectiveDate":"01-01-2024","ip":"0.0.0.0"}/generate-pdf/physician/ - POST -

@@ -6,7 +6,7 @@ async function getAffinity(){
     try{
         let pool = await sql.connect(config);
         let users = await pool.request()   
-            .input('pvIdLine', sql.VarChar, "AFF4P37")
+            .input('pvLayoutRef', sql.VarChar, "AFF4P37")
             .execute('spPDF_Layout_Get_Info_Records')
         return users.recordsets
     }catch(error){
