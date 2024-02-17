@@ -188,9 +188,9 @@ async function createPdfPhysician(){
                   nombreArchivo = nombreArchivo.replace(/[\/\\]/g, '');
                   console.log("Nombre archivo: " + nombreArchivo);
                   const region = "Latin America and Caribbean";
-                  const para = "";
+                  //const para = "";
                   //const region = data[0].Cluster;
-                  //const para = data[0].Distributor_Name;
+                  const para = data[0].Distributor_Name;
                   const effectiveDate = formatearFecha(params.effectiveDate);
                   const anio = obtenerAnio(params.effectiveDate);
 
@@ -339,9 +339,9 @@ async function createPdfPhysician(){
 
                 const nombreArchivo = params.modality + "_" + cluster + "_" + distributor;
                 //const region = pdf.recordsets[0][0].Cluster;
-                //const para = pdf.recordsets[0][0].Distributor_Name;
+                const para = pdf.recordsets[0][0].Distributor_Name;
                 const region = "Latin America and Caribbean";
-                const para = "";
+                //const para = "";
                 const effectiveDate = formatearFecha(params.effectiveDate);
                 const anio = obtenerAnio(params.effectiveDate);
 
