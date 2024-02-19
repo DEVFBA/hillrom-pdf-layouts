@@ -55,7 +55,7 @@ async function createDocument(discounts, data, rutaPdf, rutaPdfIp, nombreArchivo
         var from = ""
         if(para !== "")
         {
-            from = "Para: " + para;
+            from = "To: " + para;
         }
 
         const coverPage = [
