@@ -154,6 +154,7 @@ async function createDocument(discounts, data, rutaPdf, rutaPdfIp, nombreArchivo
             if(discounts[i].Product_Category === "Vision Care")
             {
                 index2.push('\n');
+                index2.push('\n');
                 index2.push({
                     table: {
                         widths: [530],

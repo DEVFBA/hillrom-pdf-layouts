@@ -36,32 +36,34 @@ async function getProgressaPlus()
 
     if(data2.length > 0)
     {
+        console.log("PROGRESA PLUS")
+        console.log(data2)
         options[pSItems] = [
             {text: data2[0].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: data2[0].Item_Long_Desc, style: 'textotabla'},
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(data2[0].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(data2[0].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(data2[0].Price), style: 'textotabla', alignment: 'center'}
         ]
 
         pSItems++;
 
         options[pSItems] = [
-            {text: data2[1].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data2[1].Item_Long_Desc, style: 'textotabla'},
+            {text: data2[3].Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data2[3].Item_Long_Desc, style: 'textotabla'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(data2[1].Price), style: 'textotabla', alignment: 'center'}
+            {text: "$" + Intl.NumberFormat("en-IN").format(data2[3].Price), style: 'textotabla', alignment: 'center'}
         ]
 
         pSItems++;
 
         options[pSItems] = [
-            {text: data2[2].Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data2[2].Item_Long_Desc, style: 'textotabla'},
-            {text: "$" + Intl.NumberFormat("en-IN").format(data2[2].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(data2[2].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(data2[2].Price), style: 'textotabla', alignment: 'center'}
+            {text: data2[4].Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data2[4].Item_Long_Desc, style: 'textotabla'},
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(data2[4].Price), style: 'textotabla', alignment: 'center'}
         ]
 
         pSItems++;
@@ -89,9 +91,29 @@ async function getProgressaPlus()
         options[pSItems] = [
             {text: data2[9].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: data2[9].Item_Long_Desc, style: 'textotabla'},
+            {text:  "$" + Intl.NumberFormat("en-IN").format(data2[9].Price), style: 'textotabla', alignment: 'center'}, 
+            {text:  "$" + Intl.NumberFormat("en-IN").format(data2[10].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(data2[11].Price), style: 'textotabla', alignment: 'center'}
+        ]
+
+        pSItems++;
+
+        options[pSItems] = [
+            {text: data2[12].Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data2[12].Item_Long_Desc, style: 'textotabla'},
             {text:  "-", style: 'textotabla', alignment: 'center'}, 
             {text:  "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(data2[9].Price), style: 'textotabla', alignment: 'center'}
+            {text: "$" + Intl.NumberFormat("en-IN").format(data2[12].Price), style: 'textotabla', alignment: 'center'}
+        ]
+
+        pSItems++;
+
+        options[pSItems] = [
+            {text: data2[13].Id_Item, style: 'textotabla', alignment: 'center'},
+            {text: data2[13].Item_Long_Desc, style: 'textotabla'},
+            {text:  "-", style: 'textotabla', alignment: 'center'}, 
+            {text:  "-", style: 'textotabla', alignment: 'center'}, 
+            {text: "$" + Intl.NumberFormat("en-IN").format(data2[13].Price), style: 'textotabla', alignment: 'center'}
         ]
 
         pSItems++;
@@ -1016,15 +1038,14 @@ async function getProgressaPlus()
         table1,
         "\n",
         table2,
+        "\n",
+        "\n",
+        { text: '\n', style: 'parrafo' },
         { text: '\n', style: 'parrafo' },
         { text: '* = standard', style: 'parrafo' },
         { text: '= - not available', style: 'parrafo' },
-        {text: '', pageBreak: 'after'  },
-        "\n",
-        "\n",
-        "\n",
-        table3,
         { text: '\n', style: 'parrafo' },
+        table3,
         table4,
         {text: '', pageBreak: 'after'  },
     ]
