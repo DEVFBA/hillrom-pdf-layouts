@@ -36,8 +36,6 @@ async function getProgressaPlus()
 
     if(data2.length > 0)
     {
-        console.log("PROGRESA PLUS")
-        console.log(data2)
         options[pSItems] = [
             {text: data2[0].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: data2[0].Item_Long_Desc, style: 'textotabla'},
