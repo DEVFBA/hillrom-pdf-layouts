@@ -68,6 +68,10 @@ async function getThermometry(data)
 
                 for(var i=0; i<dataFamily.length; i++)
                 {
+                    let commentFormatted = "";
+                    if(dataFamily[i].Comment !== null) {
+                        commentFormatted = dataFamily[i].Comment.replace(/\|\|/g, '\n');
+                    }
                     if(dataFamily[i].Obsolescence === true)
                     {
                         options[pSItems] = [
@@ -77,7 +81,7 @@ async function getThermometry(data)
                             {
                                 text: [
                                 { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
-                                { text: dataFamily[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
+                                { text: commentFormatted, style: 'textotablaD' }  // Segundo fragmento con estilo
                                 ]
                             }
                         ]
@@ -87,7 +91,7 @@ async function getThermometry(data)
                             {text: dataFamily[i].Material, style: 'textotabla', alignment: 'left'},
                             {text: dataFamily[i].Description, style: 'textotabla'},
                             {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotabla'},
-                            {text: dataFamily[i].Comment, style: 'textotabla'}
+                            {text: commentFormatted, style: 'textotabla'}
                         ]
                     }
                     
@@ -123,6 +127,8 @@ async function getThermometry(data)
     }
 
     var thermometry = [
+        { image: "v2/images/Portada-Thermometry.png", width: 620, height: 840, alignment: 'center'},
+        {text: '', pageBreak: 'after'  },
         { image: "v2/images/Thermometry.png", width: 620, height: 840, alignment: 'center'},
         {text: '', pageBreak: 'after'  },
         "\n",

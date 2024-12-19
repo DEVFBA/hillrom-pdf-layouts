@@ -1,3 +1,11 @@
+function multilineTextRenderer(text, x, y) {
+    console.log("Texto a renderizar:", text);
+    const lines = text.split('\n');
+    lines.forEach((line, index) => {
+        pdfMake.doc.text(line, x, y + index * pdfMake.doc._lineHeight);
+    });
+}
+
 async function getConnexSpotMonitor(data)
 {
     const layout = []
@@ -68,6 +76,11 @@ async function getConnexSpotMonitor(data)
 
                 for(var i=0; i<dataFamily.length; i++)
                 {
+                    
+                    let commentFormatted = "";
+                    if(dataFamily[i].Comment !== null) {
+                        commentFormatted = dataFamily[i].Comment.replace(/\|\|/g, '\n');
+                    }
                     if(dataFamily[i].Obsolescence === true)
                     {
                         options[pSItems] = [
@@ -76,8 +89,8 @@ async function getConnexSpotMonitor(data)
                             {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotablaD'},
                             {
                                 text: [
-                                { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
-                                { text: dataFamily[i].Comment, style: 'textotablaD' }  // Segundo fragmento con estilo
+                                    { text: "DISCONTINUED\n", style: 'textotablaR' }, // Primer fragmento con estilo
+                                    { text: commentFormatted, style: 'textotablaD', canvasContext: multilineTextRenderer }  // Segundo fragmento con estilo
                                 ]
                             }
                         ]
@@ -87,7 +100,7 @@ async function getConnexSpotMonitor(data)
                             {text: dataFamily[i].Material, style: 'textotabla', alignment: 'left'},
                             {text: dataFamily[i].Description, style: 'textotabla'},
                             {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotabla'},
-                            {text: dataFamily[i].Comment, style: 'textotabla'}
+                            {text: commentFormatted, style: 'textotabla', pre: true}
                         ]
                     }
                     

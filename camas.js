@@ -53,6 +53,7 @@ var overbedTables = require("./layouts/OverbedTables.js")
 var transportChairs = require("./layouts/TransportChairs.js")
 var hillromColoursCollection = require("./layouts/HillromColoursCollection.js")
 var coatedFabricColours = require("./layouts/CoatedFabricColours.js")
+var seatingFurniture9181 = require("./layouts/SeatingFurniture9181.js")
 var seatingFurniture = require("./layouts/SeatingFurniture.js")
 var sleeperSofa = require("./layouts/SleeperSofa.js")
 var sleeperChair = require("./layouts/SleeperChair.js")
@@ -551,7 +552,7 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                         ]
                     }
                 })
-    
+
                 index2.push(
                     {
                         toc: {
@@ -560,6 +561,16 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
                         }
                     }
                 )
+
+                index2.push(
+                    {
+                        toc: {
+                            id: 'seatingFurniture9181',
+                            title: { text: "", style: "indexText"}
+                        }
+                    }
+                )
+    
 
                 seatingFurnitureFlag = false
             }
@@ -774,6 +785,11 @@ async function createDocument(rutaPdf, rutaPdfIp, nombreArchivo, zona, pdfVersio
             {
                 var seatingFurnitureLayout = await seatingFurniture.getSeatingFurniture()
                 contenido.push(seatingFurnitureLayout)
+            }
+            else if(layouts[i].Id_Layout === "UHF-REC-SEAFURN-ELEC")
+            {
+                var seatingFurniture9181Layout = await seatingFurniture9181.getSeatingFurniture9181()
+                contenido.push(seatingFurniture9181Layout)
             }
             else if(layouts[i].Id_Layout === "UHF-SEF-SLEESOFA")
             {
