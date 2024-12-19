@@ -1,3 +1,4 @@
 /logs/server.log
 *.pdf
 /node_modules
+/logs
