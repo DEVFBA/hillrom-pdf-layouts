@@ -385,7 +385,8 @@ async function createPdfPhysician() {
               region,
               para,
               effectiveDate,
-              anio
+              anio,
+              params.printTermsConditions
             );
             console.log(responsePdf);
             var url;
