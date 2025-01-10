@@ -1280,7 +1280,7 @@ async function createDocument(
     contenido.push(coverPage);
 
     var distributorDiscountsLayout =
-      await distributorDiscounts.getDistributorDiscounts(discounts);
+      await distributorDiscounts.getDistributorDiscounts(discounts, printTerms); // Add Print Terms for Discounts Title -- AEGH -- 01/10/2025
     contenido.push(distributorDiscountsLayout);
 
     contenido.push(index2);
