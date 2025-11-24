@@ -42,7 +42,7 @@ async function createPdfPhysician() {
           var rutaPdfIp = rutaIp[0][0].Value;
 
           const nombreArchivo = params.modality;
-          const region = "Latin America and Caribbean";
+          const region = "Latin America North (LAN)";
           const para = "";
           var effectiveDate = formatearFecha(params.effectiveDate);
           const anio = obtenerAnio(params.effectiveDate);
@@ -196,7 +196,7 @@ async function createPdfPhysician() {
                 params.modality + "_" + cluster + "_" + distributor;
               nombreArchivo = nombreArchivo.replace(/[\/\\]/g, "");
               console.log("Nombre archivo: " + nombreArchivo);
-              const region = "Latin America and Caribbean";
+              const region = "Latin America North (LAN)";
               //const para = "";
               //const region = data[0].Cluster;
               const para = data[0].Distributor_Name;
@@ -372,7 +372,7 @@ async function createPdfPhysician() {
               params.modality + "_" + cluster + "_" + distributor;
             //const region = pdf.recordsets[0][0].Cluster;
             const para = pdf.recordsets[0][0].Distributor_Name;
-            const region = "Latin America and Caribbean";
+            const region = "Latin America North (LAN)";
             //const para = "";
             const effectiveDate = formatearFecha(params.effectiveDate);
             const anio = obtenerAnio(params.effectiveDate);
