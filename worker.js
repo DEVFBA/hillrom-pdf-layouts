@@ -58,7 +58,8 @@ async function createPdfPhysician() {
             effectiveDate,
             anio,
             params.printTermsConditions,
-            params.pdfLanguage
+            params.pdfLanguage,
+            params.modality
           );
 
           if (responsePdf.data.status === 1) {

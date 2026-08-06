@@ -6,7 +6,7 @@ function multilineTextRenderer(text, x, y) {
     });
 }
 
-async function getConnexSpotMonitor(data, pdfLanguage)
+async function getConnexSpotMonitor(data, pdfLanguage, modality)
 {
     const layout = []
 
@@ -67,7 +67,7 @@ async function getConnexSpotMonitor(data, pdfLanguage)
                 var options =[]
                 var pSItems = 0;
                 options[pSItems] = [
-                    {text: 'Discount', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
+                    ...(modality !== 'Master' ? [{text: 'Discount', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'}] : []),
                     {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
@@ -85,7 +85,7 @@ async function getConnexSpotMonitor(data, pdfLanguage)
                     if(dataFamily[i].Obsolescence === true)
                     {
                         options[pSItems] = [
-                            {text: dataFamily[i].Discount, style: 'textotablaD', alignment: 'left'},
+                            ...(modality !== 'Master' ? [{ text: dataFamily[i].Discount, style: 'textotablaD', alignment: 'left'}] : []),
                             {text: dataFamily[i].Material, style: 'textotablaD', alignment: 'left'},
                             {text: dataFamily[i].Description, style: 'textotablaD'},
                             {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotablaD'},
@@ -99,7 +99,7 @@ async function getConnexSpotMonitor(data, pdfLanguage)
                     }
                     else {
                         options[pSItems] = [
-                            {text: dataFamily[i].Discount, style: 'textotablaD', alignment: 'left'},
+                            ...(modality !== 'Master' ? [{ text: dataFamily[i].Discount, style: 'textotablaD', alignment: 'left'}] : []),
                             {text: dataFamily[i].Material, style: 'textotabla', alignment: 'left'},
                             {text: dataFamily[i].Description, style: 'textotabla'},
                             {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotabla'},
@@ -110,9 +110,11 @@ async function getConnexSpotMonitor(data, pdfLanguage)
                     pSItems++
                 }
 
+                const widthsTable = modality === 'Master' ? [80, "*", 80, 80] : [50, 65, "*", 77, 80]
+
                 data1.push({
                     table: {
-                        widths: [50, 65, "*", 77, 80],
+                        widths: widthsTable,
                         headerRows: 1,
                         body: options
                     },

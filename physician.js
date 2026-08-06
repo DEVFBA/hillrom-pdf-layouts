@@ -56,7 +56,8 @@ async function createDocument(
   effectiveDate,
   anio,
   printTerms,
-  pdfLanguage
+  pdfLanguage,
+  modality
 ) {
   try {
     const fecha = new Date();
@@ -1298,139 +1299,139 @@ async function createDocument(
 
     for (var i = 0; i < discounts.length; i++) {
       if (discounts[i].Product_Category === "EENT") {
-        var eentLayout = await eent.getEent(data, pdfLanguage);
+        var eentLayout = await eent.getEent(data, pdfLanguage, modality);
         contenido.push(eentLayout);
       }
 
       if (discounts[i].Product_Category === "Vision Care") {
-        var visionCareLayout = await visionCare.getVisionCare(data);
+        var visionCareLayout = await visionCare.getVisionCare(data, modality);
         contenido.push(visionCareLayout);
       }
 
       if (discounts[i].Product_Category === "Endoscopy") {
-        var endoscopyLayout = await endoscopy.getEndoscopy(data);
+        var endoscopyLayout = await endoscopy.getEndoscopy(data, modality);
         contenido.push(endoscopyLayout);
       }
 
       if (discounts[i].Product_Category === "Lighting") {
-        var lightingLayout = await lighting.getLighting(data, pdfLanguage);
+        var lightingLayout = await lighting.getLighting(data, pdfLanguage, modality);
         contenido.push(lightingLayout);
       }
 
       if (discounts[i].Product_Category === "Womens Health") {
-        var womensHealthLayout = await womensHealth.getWomensHealth(data, pdfLanguage);
+        var womensHealthLayout = await womensHealth.getWomensHealth(data, pdfLanguage, modality);
         contenido.push(womensHealthLayout);
       }
 
       if (discounts[i].Product_Category === "Core Blood Pressure") {
         var coreBloodPressureLayout =
-          await coreBloodPressure.getCoreBloodPressure(data);
+          await coreBloodPressure.getCoreBloodPressure(data, modality);
         contenido.push(coreBloodPressureLayout);
       }
 
       if (discounts[i].Product_Category === "Stethoscopes") {
-        var stethoscopesLayout = await stethoscopes.getStethoscopes(data);
+        var stethoscopesLayout = await stethoscopes.getStethoscopes(data, modality);
         contenido.push(stethoscopesLayout);
       }
 
       if (discounts[i].Product_Category === "Thermometry") {
-        var thermometryLayout = await thermometry.getThermometry(data, pdfLanguage);
+        var thermometryLayout = await thermometry.getThermometry(data, pdfLanguage, modality);
         contenido.push(thermometryLayout);
       }
 
       if (discounts[i].Product_Category === "Flexiport") {
-        var flexiportLayout = await flexiport.getFlexiport(data);
+        var flexiportLayout = await flexiport.getFlexiport(data, modality);
         contenido.push(flexiportLayout);
       }
 
       if (discounts[i].Product_Category === "ProBP 2000") {
-        var proBP2000Layout = await proBP2000.getProBP2000(data, pdfLanguage);
+        var proBP2000Layout = await proBP2000.getProBP2000(data, pdfLanguage, modality);
         contenido.push(proBP2000Layout);
       }
 
       if (discounts[i].Product_Category === "ProBP 3400") {
         var connexProBP3400Layout = await connexProBP3400.getConnexProBd3400(
-          data
+          data, modality
         );
         contenido.push(connexProBP3400Layout);
       }
 
       if (discounts[i].Product_Category === "Cardiology") {
-        var cardiologyLayout = await cardiology.getCardiology(data, pdfLanguage);
+        var cardiologyLayout = await cardiology.getCardiology(data, pdfLanguage, modality);
         contenido.push(cardiologyLayout);
       }
 
       if (discounts[i].Product_Category === "Respiratory") {
-        var respiratoryLayout = await respiratory.getRespiratory(data);
+        var respiratoryLayout = await respiratory.getRespiratory(data, modality);
         contenido.push(respiratoryLayout);
       }
 
       if (discounts[i].Product_Category === "Veterinary") {
-        var veterinaryLayout = await veterinary.getVeterinary(data);
+        var veterinaryLayout = await veterinary.getVeterinary(data, modality);
         contenido.push(veterinaryLayout);
       }
 
       if (discounts[i].Product_Category === "Home Health") {
-        var homeHealthLayout = await homeHealth.getHomeHealth(data);
+        var homeHealthLayout = await homeHealth.getHomeHealth(data, modality);
         contenido.push(homeHealthLayout);
       }
 
       if (discounts[i].Product_Category === "CSM") {
         var connexSpotMonitorLayout =
-          await connexSpotMonitor.getConnexSpotMonitor(data, pdfLanguage);
+          await connexSpotMonitor.getConnexSpotMonitor(data, pdfLanguage, modality);
         contenido.push(connexSpotMonitorLayout);
       }
 
       if (discounts[i].Product_Category === "CVSM") {
-        var cvsmLayout = await cvsm.getCvsm(data, pdfLanguage);
+        var cvsmLayout = await cvsm.getCvsm(data, pdfLanguage, modality);
         contenido.push(cvsmLayout);
       }
 
       if (discounts[i].Product_Category === "CIWS") {
-        var ciwsLayout = await ciws.getCiws(data, pdfLanguage);
+        var ciwsLayout = await ciws.getCiws(data, pdfLanguage, modality);
         contenido.push(ciwsLayout);
       }
 
       if (discounts[i].Product_Category === "CP50 ECG") {
-        var cp50ECGLayout = await cp50ECG.getCP50ECG(data);
+        var cp50ECGLayout = await cp50ECG.getCP50ECG(data, modality);
         contenido.push(cp50ECGLayout);
       }
 
       if (discounts[i].Product_Category === "CP150 ECG") {
-        var cp150ECGLayout = await cp150ECG.getCP150ECG(data);
+        var cp150ECGLayout = await cp150ECG.getCP150ECG(data, modality);
         contenido.push(cp150ECGLayout);
       }
 
       if (discounts[i].Product_Category === "PC-Based ECG") {
-        var pcBasedECGLayout = await pcBasedECG.getPCBasedECG(data);
+        var pcBasedECGLayout = await pcBasedECG.getPCBasedECG(data, modality);
         contenido.push(pcBasedECGLayout);
       }
 
       if (discounts[i].Product_Category === "Spirometry") {
-        var spirometryLayout = await spirometry.getSpirometry(data);
+        var spirometryLayout = await spirometry.getSpirometry(data, modality);
         contenido.push(spirometryLayout);
       }
 
       if (discounts[i].Product_Category === "ABPM Systems") {
-        var abpmSystemsLayout = await abpmSystems.getABPMSystems(data);
+        var abpmSystemsLayout = await abpmSystems.getABPMSystems(data, modality);
         contenido.push(abpmSystemsLayout);
       }
 
       if (discounts[i].Product_Category === "Holter ECG Systems") {
         var holterECGSystemsLayout = await holterECGSystems.getHolterECGSystems(
-          data
+          data, modality
         );
         contenido.push(holterECGSystemsLayout);
       }
 
       if (discounts[i].Product_Category === "SPOT 4400") {
-        var spot4400Layout = await spot4400.getSPOT4400(data, pdfLanguage);
+        var spot4400Layout = await spot4400.getSPOT4400(data, pdfLanguage, modality);
         contenido.push(spot4400Layout);
       }
 
       if (discounts[i].Product_Category === "Cardiology Welch Allyn") {
         var cardiologyWelchAllynLayout =
-          await cardiologyWelchAllyn.getCardiologyWelch(data, pdfLanguage);
+          await cardiologyWelchAllyn.getCardiologyWelch(data, pdfLanguage, modality);
         contenido.push(cardiologyWelchAllynLayout);
       }
     }
