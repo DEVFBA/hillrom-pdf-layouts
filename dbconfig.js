@@ -1,7 +1,7 @@
 const config = {
     user: "sa",
     password: "H1llr0m2020",
-    server: "129.159.85.10",
+    server: "172.16.0.201",
     //server: "172.16.0.220",
     port: 1434,
     database: "DBQS",

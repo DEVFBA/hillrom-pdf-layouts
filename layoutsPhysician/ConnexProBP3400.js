@@ -59,6 +59,7 @@ async function getConnexProBd3400(data)
                 var options =[]
                 var pSItems = 0;
                 options[pSItems] = [
+                    {text: 'Discount', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
@@ -75,6 +76,7 @@ async function getConnexProBd3400(data)
                     if(dataFamily[i].Obsolescence === true)
                     {
                         options[pSItems] = [
+                            {text: dataFamily[i].Discount, style: 'textotablaD', alignment: 'left'},
                             {text: dataFamily[i].Material, style: 'textotablaD', alignment: 'left'},
                             {text: dataFamily[i].Description, style: 'textotablaD'},
                             {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotablaD'},
@@ -88,6 +90,7 @@ async function getConnexProBd3400(data)
                     }
                     else {
                         options[pSItems] = [
+                            {text: dataFamily[i].Discount, style: 'textotablaD', alignment: 'left'},
                             {text: dataFamily[i].Material, style: 'textotabla', alignment: 'left'},
                             {text: dataFamily[i].Description, style: 'textotabla'},
                             {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotabla'},
@@ -100,7 +103,7 @@ async function getConnexProBd3400(data)
 
                 data1.push({
                     table: {
-                        widths: [80, "*", 80, 80],
+                        widths: [50, 65, "*", 77, 80],
                         headerRows: 1,
                         body: options
                     },
@@ -128,10 +131,6 @@ async function getConnexProBd3400(data)
 
     var connexProBd3400 = [
         { image: "v2/images/Connex-ProBP.png", width: 620, height: 840, alignment: 'center'},
-        {text: '', pageBreak: 'after'  },
-        "\n",
-        { text: "ProBP 3400", style: 'header3', alignment: "left" },
-        { image: "v2/images/ConnexProBP34002.png", width: 550, height: 480, alignment: 'center'},
         layout,
     ]
 

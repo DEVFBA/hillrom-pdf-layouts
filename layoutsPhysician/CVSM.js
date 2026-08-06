@@ -1,4 +1,4 @@
-async function getCvsm(data)
+async function getCvsm(data, pdfLanguage)
 {
     var layout = []
 
@@ -59,6 +59,7 @@ async function getCvsm(data)
                 var options =[]
                 var pSItems = 0;
                 options[pSItems] = [
+                    {text: 'Discount', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
@@ -75,6 +76,7 @@ async function getCvsm(data)
                     if(dataFamily[i].Obsolescence === true)
                     {
                         options[pSItems] = [
+                            {text: dataFamily[i].Discount, style: 'textotablaD', alignment: 'left'},
                             {text: dataFamily[i].Material, style: 'textotablaD', alignment: 'left'},
                             {text: dataFamily[i].Description, style: 'textotablaD'},
                             {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotablaD'},
@@ -88,6 +90,7 @@ async function getCvsm(data)
                     }
                     else {
                         options[pSItems] = [
+                            {text: dataFamily[i].Discount, style: 'textotablaD', alignment: 'left'},
                             {text: dataFamily[i].Material, style: 'textotabla', alignment: 'left'},
                             {text: dataFamily[i].Description, style: 'textotabla'},
                             {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotabla'},
@@ -100,7 +103,7 @@ async function getCvsm(data)
 
                 data1.push({
                     table: {
-                        widths: [80, "*", 80, 80],
+                        widths: [50, 65, "*", 77, 80],
                         headerRows: 1,
                         body: options
                     },
@@ -131,7 +134,7 @@ async function getCvsm(data)
         {text: '', pageBreak: 'after'  },
         "\n",
         { text: "CVSM", style: 'header3', alignment: "left" },
-        { image: "v2/images/CVSM2.png", width: 560, height: 390, alignment: 'center'},
+        { image: pdfLanguage === 'ANG' ? "v2/images/CVSM2.png" : "v2/images/CVSM2-ES.JPG", width: 560, height: pdfLanguage === 'ANG' ? 390 : 600, alignment: 'center'},
         layout
     ]
 

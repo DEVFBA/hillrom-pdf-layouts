@@ -58,6 +58,7 @@ async function getABPMSystems(data)
                 var options =[]
                 var pSItems = 0;
                 options[pSItems] = [
+                    {text: 'Discount', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
@@ -74,6 +75,7 @@ async function getABPMSystems(data)
                     if(dataFamily[i].Obsolescence === true)
                     {
                         options[pSItems] = [
+                            {text: dataFamily[i].Discount, style: 'textotablaD', alignment: 'left'},
                             {text: dataFamily[i].Material, style: 'textotablaD', alignment: 'left'},
                             {text: dataFamily[i].Description, style: 'textotablaD'},
                             {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotablaD'},
@@ -87,6 +89,7 @@ async function getABPMSystems(data)
                     }
                     else {
                         options[pSItems] = [
+                            {text: dataFamily[i].Discount, style: 'textotablaD', alignment: 'left'},
                             {text: dataFamily[i].Material, style: 'textotabla', alignment: 'left'},
                             {text: dataFamily[i].Description, style: 'textotabla'},
                             {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotabla'},
@@ -99,7 +102,7 @@ async function getABPMSystems(data)
 
                 data1.push({
                     table: {
-                        widths: [80, "*", 80, 80],
+                        widths: [50, 65, "*", 77, 80],
                         headerRows: 1,
                         body: options
                     },

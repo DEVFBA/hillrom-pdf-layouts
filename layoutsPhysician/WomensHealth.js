@@ -1,4 +1,4 @@
-async function getWomensHealth(data)
+async function getWomensHealth(data, pdfLanguage)
 {
     var layout = []
     
@@ -60,6 +60,7 @@ async function getWomensHealth(data)
                 var options =[]
                 var pSItems = 0;
                 options[pSItems] = [
+                    {text: 'Discount', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
@@ -76,6 +77,7 @@ async function getWomensHealth(data)
                     if(dataFamily[i].Obsolescence === true)
                     {
                         options[pSItems] = [
+                            {text: dataFamily[i].Discount, style: 'textotablaD', alignment: 'left'},
                             {text: dataFamily[i].Material, style: 'textotablaD', alignment: 'left'},
                             {text: dataFamily[i].Description, style: 'textotablaD'},
                             {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotablaD'},
@@ -89,6 +91,7 @@ async function getWomensHealth(data)
                     }
                     else {
                         options[pSItems] = [
+                            {text: dataFamily[i].Discount, style: 'textotablaD', alignment: 'left'},
                             {text: dataFamily[i].Material, style: 'textotabla', alignment: 'left'},
                             {text: dataFamily[i].Description, style: 'textotabla'},
                             {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotabla'},
@@ -101,7 +104,7 @@ async function getWomensHealth(data)
 
                 data1.push({
                     table: {
-                        widths: [80, "*", 80, 80],
+                        widths: [50, 65, "*", 77, 80],
                         headerRows: 1,
                         body: options
                     },
@@ -132,7 +135,7 @@ async function getWomensHealth(data)
         {text: '', pageBreak: 'after'  },
         "\n",
         { text: "Women's Health", style: 'header3', alignment: "left" },
-        { image: "v2/images/WomensHealth.png", width: 595, height: 600, alignment: 'center'},
+        { image: pdfLanguage === 'ANG' ? "v2/images/WomensHealth.png" : "v2/images/WomensHealth-ES.JPG", width: 595, height: pdfLanguage === 'ANG' ? 600 : 700, alignment: 'center'},
         layout,
     ]
 

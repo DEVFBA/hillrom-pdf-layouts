@@ -55,7 +55,8 @@ async function createDocument(
   para,
   effectiveDate,
   anio,
-  printTerms
+  printTerms,
+  pdfLanguage
 ) {
   try {
     const fecha = new Date();
@@ -1297,7 +1298,7 @@ async function createDocument(
 
     for (var i = 0; i < discounts.length; i++) {
       if (discounts[i].Product_Category === "EENT") {
-        var eentLayout = await eent.getEent(data);
+        var eentLayout = await eent.getEent(data, pdfLanguage);
         contenido.push(eentLayout);
       }
 
@@ -1312,12 +1313,12 @@ async function createDocument(
       }
 
       if (discounts[i].Product_Category === "Lighting") {
-        var lightingLayout = await lighting.getLighting(data);
+        var lightingLayout = await lighting.getLighting(data, pdfLanguage);
         contenido.push(lightingLayout);
       }
 
       if (discounts[i].Product_Category === "Womens Health") {
-        var womensHealthLayout = await womensHealth.getWomensHealth(data);
+        var womensHealthLayout = await womensHealth.getWomensHealth(data, pdfLanguage);
         contenido.push(womensHealthLayout);
       }
 
@@ -1333,7 +1334,7 @@ async function createDocument(
       }
 
       if (discounts[i].Product_Category === "Thermometry") {
-        var thermometryLayout = await thermometry.getThermometry(data);
+        var thermometryLayout = await thermometry.getThermometry(data, pdfLanguage);
         contenido.push(thermometryLayout);
       }
 
@@ -1343,7 +1344,7 @@ async function createDocument(
       }
 
       if (discounts[i].Product_Category === "ProBP 2000") {
-        var proBP2000Layout = await proBP2000.getProBP2000(data);
+        var proBP2000Layout = await proBP2000.getProBP2000(data, pdfLanguage);
         contenido.push(proBP2000Layout);
       }
 
@@ -1355,7 +1356,7 @@ async function createDocument(
       }
 
       if (discounts[i].Product_Category === "Cardiology") {
-        var cardiologyLayout = await cardiology.getCardiology(data);
+        var cardiologyLayout = await cardiology.getCardiology(data, pdfLanguage);
         contenido.push(cardiologyLayout);
       }
 
@@ -1376,17 +1377,17 @@ async function createDocument(
 
       if (discounts[i].Product_Category === "CSM") {
         var connexSpotMonitorLayout =
-          await connexSpotMonitor.getConnexSpotMonitor(data);
+          await connexSpotMonitor.getConnexSpotMonitor(data, pdfLanguage);
         contenido.push(connexSpotMonitorLayout);
       }
 
       if (discounts[i].Product_Category === "CVSM") {
-        var cvsmLayout = await cvsm.getCvsm(data);
+        var cvsmLayout = await cvsm.getCvsm(data, pdfLanguage);
         contenido.push(cvsmLayout);
       }
 
       if (discounts[i].Product_Category === "CIWS") {
-        var ciwsLayout = await ciws.getCiws(data);
+        var ciwsLayout = await ciws.getCiws(data, pdfLanguage);
         contenido.push(ciwsLayout);
       }
 
@@ -1423,13 +1424,13 @@ async function createDocument(
       }
 
       if (discounts[i].Product_Category === "SPOT 4400") {
-        var spot4400Layout = await spot4400.getSPOT4400(data);
+        var spot4400Layout = await spot4400.getSPOT4400(data, pdfLanguage);
         contenido.push(spot4400Layout);
       }
 
       if (discounts[i].Product_Category === "Cardiology Welch Allyn") {
         var cardiologyWelchAllynLayout =
-          await cardiologyWelchAllyn.getCardiologyWelch(data);
+          await cardiologyWelchAllyn.getCardiologyWelch(data, pdfLanguage);
         contenido.push(cardiologyWelchAllynLayout);
       }
     }

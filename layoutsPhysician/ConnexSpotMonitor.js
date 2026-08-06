@@ -6,7 +6,7 @@ function multilineTextRenderer(text, x, y) {
     });
 }
 
-async function getConnexSpotMonitor(data)
+async function getConnexSpotMonitor(data, pdfLanguage)
 {
     const layout = []
 
@@ -67,6 +67,7 @@ async function getConnexSpotMonitor(data)
                 var options =[]
                 var pSItems = 0;
                 options[pSItems] = [
+                    {text: 'Discount', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     {text: 'Material', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     {text: 'Description', style: 'textotablacolor', fillColor: '#154898',  alignment: 'center'},
                     {text: 'Suggested Retail Price', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
@@ -84,6 +85,7 @@ async function getConnexSpotMonitor(data)
                     if(dataFamily[i].Obsolescence === true)
                     {
                         options[pSItems] = [
+                            {text: dataFamily[i].Discount, style: 'textotablaD', alignment: 'left'},
                             {text: dataFamily[i].Material, style: 'textotablaD', alignment: 'left'},
                             {text: dataFamily[i].Description, style: 'textotablaD'},
                             {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotablaD'},
@@ -97,6 +99,7 @@ async function getConnexSpotMonitor(data)
                     }
                     else {
                         options[pSItems] = [
+                            {text: dataFamily[i].Discount, style: 'textotablaD', alignment: 'left'},
                             {text: dataFamily[i].Material, style: 'textotabla', alignment: 'left'},
                             {text: dataFamily[i].Description, style: 'textotabla'},
                             {text: "$" + (parseFloat(dataFamily[i].Suggested_Retail_Price) + 0.0001).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","), style: 'textotabla'},
@@ -109,7 +112,7 @@ async function getConnexSpotMonitor(data)
 
                 data1.push({
                     table: {
-                        widths: [80, "*", 80, 80],
+                        widths: [50, 65, "*", 77, 80],
                         headerRows: 1,
                         body: options
                     },
@@ -140,7 +143,7 @@ async function getConnexSpotMonitor(data)
         {text: '', pageBreak: 'after'  },
         "\n",
         { text: "Connex Spot Monitor", style: 'header3', alignment: "left" },
-        { image: "v2/images/ConnexSpotMonitor2.png", width: 560, height: 430, alignment: 'center'},
+        { image: pdfLanguage === 'ANG' ? "v2/images/ConnexSpotMonitor2.png" : "v2/images/ConnexSpotMonitor2-ES.JPG", width: 560, height: 430, alignment: 'center'},
         layout
     ]
 
