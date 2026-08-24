@@ -215,7 +215,9 @@ async function createPdfPhysician() {
                 para,
                 effectiveDate,
                 anio,
-                params.printTermsConditions
+                params.printTermsConditions,
+                params.pdfLanguage,
+                params.modality
               );
             } catch (error) {
               console.log(error);
@@ -389,7 +391,9 @@ async function createPdfPhysician() {
               para,
               effectiveDate,
               anio,
-              params.printTermsConditions
+              params.printTermsConditions,
+              params.pdfLanguage,
+              params.modality
             );
             console.log(responsePdf);
             var url;
