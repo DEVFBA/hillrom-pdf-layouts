@@ -3,6 +3,7 @@ const dbProgressa = require('../controllers/progressa')
 async function getProgressa()
 {
     const res = await dbProgressa.getDataProgressa()
+
     const prices = res[0]
     const patientSiderail = res[1]
     const mobility  = res[2]
@@ -12,6 +13,7 @@ async function getProgressa()
     const therapyIntegrated = res[6]
     const pulmonaryIntegrated = res[7]
     const accesoriesData = res[8]
+    const connectivity = res[9]
 
     var options =[]
     var pSItems = 0;
@@ -28,6 +30,198 @@ async function getProgressa()
         {text: 'PRO-205', style: 'textotablacolor', fillColor: '#154898', alignment: 'center'},
     ]
     pSItems++
+
+    options[pSItems] = [
+        {text: "Connectivity", style: 'textotablabold', border: [false, false, false, false], colSpan: 2},
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]}, 
+        {text: '', border: [false, false, false, false]},
+        {text: '', border: [false, false, false, false]},
+    ]
+
+    pSItems++
+
+    if(connectivity.length > 0)
+    {
+        var i=0;
+        var connectivityFlag = false
+        while(connectivityFlag === false)
+        {
+            var j;
+            if(i===0)
+            {
+                j=0
+            }
+            else {
+                j = i*8
+            }
+            var precios = []
+            var preciosCount = 0
+            var countC=0
+            var printCaracter = []
+            while(j< connectivity.length && countC<8)
+            {
+                precios[preciosCount] = connectivity[j].Price
+                printCaracter[preciosCount] = connectivity[j].Print_Character
+                preciosCount++
+                j++
+                countC++
+            }
+            var data = {
+                Id_Item: connectivity[j-1].Id_Item,
+                Item_Long_Desc: connectivity[j-1].Item_Long_Desc,
+                Prices: precios,
+                Print_Character: printCaracter
+            }
+
+            var precio1;
+            var precio2;
+            var precio3;
+            var precio4;
+            var precio5;
+            var precio6;
+            var precio7;
+            var precio8;
+
+            if(data.Print_Character[0] !== null)
+            {
+                if(data.Print_Character[0] === "*")
+                {
+                    precio1 = "*"
+                }
+                else {
+                    precio1 = "-"
+                }
+            }
+            else {
+                precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
+            }
+
+            if(data.Print_Character[1] !== null)
+            {
+                if(data.Print_Character[1] === "*")
+                {
+                    precio2 = "*"
+                }
+                else {
+                    precio2 = "-"
+                }
+            }
+            else {
+                precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
+            }
+
+            if(data.Print_Character[2] !== null)
+            {
+                if(data.Print_Character[2] === "*")
+                {
+                    precio3 = "*"
+                }
+                else {
+                    precio3 = "-"
+                }
+            }
+            else {
+                precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
+            }
+
+            if(data.Print_Character[3] !== null)
+            {
+                if(data.Print_Character[3] === "*")
+                {
+                    precio4 = "*"
+                }
+                else {
+                    precio4 = "-"
+                }
+            }
+            else {
+                precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
+            }
+
+            if(data.Print_Character[4] !== null)
+            {
+                if(data.Print_Character[4] === "*")
+                {
+                    precio5 = "*"
+                }
+                else {
+                    precio5 = "-"
+                }
+            }
+            else {
+                precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
+            }
+
+            if(data.Print_Character[5] !== null)
+            {
+                if(data.Print_Character[5] === "*")
+                {
+                    precio6 = "*"
+                }
+                else {
+                    precio6 = "-"
+                }
+            }
+            else {
+                precio6 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[5])
+            }
+
+            if(data.Print_Character[6] !== null)
+            {
+                if(data.Print_Character[6] === "*")
+                {
+                    precio7 = "*"
+                }
+                else {
+                    precio7 = "-"
+                }
+            }
+            else {
+                precio7 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[6])
+            }
+
+            if(data.Print_Character[7] !== null)
+            {
+                if(data.Print_Character[7] === "*")
+                {
+                    precio8 = "*"
+                }
+                else {
+                    precio8 = "-"
+                }
+            }
+            else {
+                precio8 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[7])
+            }
+            
+            options[pSItems] = [
+                {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
+                {text: data.Item_Long_Desc, style: 'textotabla'},
+                {text: precio1, style: 'textotabla', alignment: 'center'}, 
+                {text: precio2, style: 'textotabla', alignment: 'center'}, 
+                {text: precio3, style: 'textotabla', alignment: 'center'}, 
+                {text: precio4, style: 'textotabla', alignment: 'center'}, 
+                {text: precio5, style: 'textotabla', alignment: 'center'}, 
+                {text: precio6, style: 'textotabla', alignment: 'center'}, 
+                {text: precio7, style: 'textotabla', alignment: 'center'},
+                {text: precio8, style: 'textotabla', alignment: 'center'}
+            ]
+
+            pSItems++
+
+            if(j >= connectivity.length)
+            {
+                connectivityFlag = true
+            }
+            i++
+        }
+    }
 
     options[pSItems] = [
         {text: "Patient Siderail Com", style: 'textotablabold', border: [false, false, false, false], colSpan: 2},
@@ -1393,6 +1587,10 @@ async function getProgressa()
         { text: '\n', style: 'parrafo' },
         { text: '* = standard', style: 'parrafo' },
         { text: '= - not available', style: 'parrafo' },
+        {text: '', pageBreak: 'after'  },
+        "\n",
+        "\n",
+        "\n",
         {
             columns: [
                 [
@@ -1409,9 +1607,6 @@ async function getProgressa()
                 ],
             ]
         },
-        {text: '', pageBreak: 'after'  },
-        "\n",
-        "\n",
         "\n",
         table3,
         { text: '\n', style: 'parrafo' },

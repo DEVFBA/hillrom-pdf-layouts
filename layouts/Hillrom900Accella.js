@@ -31,8 +31,6 @@ async function getHillrom900Accella()
 
     if(optionsData.length > 0)
     {
-        console.log("Accella Therapy")
-        console.log(optionsData)
         /*ESTO VA EN UN CICLO*/
         for(var i=0; i<optionsData.length; i++)
         {

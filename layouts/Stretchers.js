@@ -27,8 +27,7 @@ async function getStretchers()
         {text: 'OPTION CODE', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
         {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
         {text: 'P8000', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
-        {text: 'P8005', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
-        {text: 'P8010', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+        {text: 'P8005', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
         {text: 'P8040', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
         {text: 'P8050', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
     ]
@@ -37,7 +36,6 @@ async function getStretchers()
     options[pSItems] = [
         {text: "Deck width", style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 2},
         {text: '', border: [false, false, false, false]},
-        {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
@@ -185,7 +183,6 @@ async function getStretchers()
             {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "*", style: 'textotabla', alignment: 'center'}, 
-            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
     
@@ -200,7 +197,6 @@ async function getStretchers()
             {text: "$" + Intl.NumberFormat("en-IN").format(deckWidth[4].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(deckWidth[5].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "*", style: 'textotabla', alignment: 'center'}, 
         ]
     
@@ -208,147 +204,15 @@ async function getStretchers()
     }
         
     options[pSItems] = [
-        {text: 'Mattress', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
+        {text: 'Mattress', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 6},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]},
     ]
 
     pSItems ++
-    
-
-    /*ESTO VA EN UN CICLO*/
-    /*i=0;
-    var surfaceFlag = false
-    while(surfaceFlag === false)
-    {
-        var j;
-        if(i===0)
-        {
-            j=0
-        }
-        else {
-            j = i*5
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< surfaceData.length && countC<5)
-        {
-           precios[preciosCount] = surfaceData[j].Price
-           printCaracter[preciosCount] = surfaceData[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: surfaceData[j-1].Id_Item,
-            Item_Long_Desc: surfaceData[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-        var precio3;
-        var precio4;
-        var precio5;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
-            {
-                precio1 = "*"
-            }
-            else {
-                precio1 = "-"
-            }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
-            {
-                precio2 = "*"
-            }
-            else {
-                precio2 = "-"
-            }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-
-        if(data.Print_Character[2] !== null)
-        {
-            if(data.Print_Character[2] === "*")
-            {
-                precio3 = "*"
-            }
-            else {
-                precio3 = "-"
-            }
-        }
-        else {
-            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
-        }
-
-        if(data.Print_Character[3] !== null)
-        {
-            if(data.Print_Character[3] === "*")
-            {
-                precio4 = "*"
-            }
-            else {
-                precio4 = "-"
-            }
-        }
-        else {
-            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
-        }
-
-        if(data.Print_Character[4] !== null)
-        {
-            if(data.Print_Character[4] === "*")
-            {
-                precio5 = "*"
-            }
-            else {
-                precio5 = "-"
-            }
-        }
-        else {
-            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
-        }
-        
-        options[pSItems] = [
-            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'}, 
-            {text: precio3, style: 'textotabla', alignment: 'center'}, 
-            {text: precio4, style: 'textotabla', alignment: 'center'}, 
-            {text: precio5, style: 'textotabla', alignment: 'center'}, 
-        ]
-
-        pSItems++
-
-        //console.log(data)
-
-        if(j >= surfaceData.length)
-        {
-            surfaceFlag = true
-        }
-        i++
-    }   */
-    /*TERMINA CICLO*/
 
     if(surfaceData[0] !== undefined)
     {
@@ -357,7 +221,6 @@ async function getStretchers()
             {text: surfaceData[0].Item_Long_Desc, style: 'textotabla'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -370,7 +233,6 @@ async function getStretchers()
         options[pSItems] = [
             {text: surfaceData[1].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: surfaceData[1].Item_Long_Desc, style: 'textotabla'},
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
@@ -387,7 +249,6 @@ async function getStretchers()
             {text: surfaceData[2].Item_Long_Desc, style: 'textotabla'},
             {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "*", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -404,7 +265,6 @@ async function getStretchers()
             {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[5].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
     
         pSItems++
@@ -417,7 +277,6 @@ async function getStretchers()
             {text: surfaceData[7].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[7].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[8].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[9].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -434,7 +293,6 @@ async function getStretchers()
             {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[11].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
     
         pSItems++
@@ -447,7 +305,6 @@ async function getStretchers()
             {text: surfaceData[12].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[12].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[13].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[14].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -464,7 +321,6 @@ async function getStretchers()
             {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[16].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
     
         pSItems++
@@ -476,8 +332,7 @@ async function getStretchers()
             {text: surfaceData[17].Id_Item, style: 'textotabla', alignment: 'center'},
             {text: surfaceData[17].Item_Long_Desc, style: 'textotabla'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[17].Price), style: 'textotabla', alignment: 'center'}, 
+            {text: "-", style: 'textotabla', alignment: 'center'},  
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -492,7 +347,6 @@ async function getStretchers()
             {text: surfaceData[18].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[18].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[19].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[20].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[21].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(surfaceData[22].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -501,146 +355,15 @@ async function getStretchers()
     }
     
     options[pSItems] = [
-        {text: 'Push handles (standard colour: grey/with O2 tank holder colour: blue)', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
+        {text: 'Push handles (standard colour: grey/with O2 tank holder colour: blue)', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 6},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
     ]
 
     pSItems++    
-    
-    /*ESTO VA EN UN CICLO*/
-    /*i=0;
-    var pushHandlesFlag = false
-    while(pushHandlesFlag === false)
-    {
-        var j;
-        if(i===0)
-        {
-            j=0
-        }
-        else {
-            j = i*5
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< pushHandlesData.length && countC<5)
-        {
-           precios[preciosCount] = pushHandlesData[j].Price
-           printCaracter[preciosCount] = pushHandlesData[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: pushHandlesData[j-1].Id_Item,
-            Item_Long_Desc: pushHandlesData[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-        var precio3;
-        var precio4;
-        var precio5;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
-            {
-                precio1 = "*"
-            }
-            else {
-                precio1 = "-"
-            }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
-            {
-                precio2 = "*"
-            }
-            else {
-                precio2 = "-"
-            }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-
-        if(data.Print_Character[2] !== null)
-        {
-            if(data.Print_Character[2] === "*")
-            {
-                precio3 = "*"
-            }
-            else {
-                precio3 = "-"
-            }
-        }
-        else {
-            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
-        }
-
-        if(data.Print_Character[3] !== null)
-        {
-            if(data.Print_Character[3] === "*")
-            {
-                precio4 = "*"
-            }
-            else {
-                precio4 = "-"
-            }
-        }
-        else {
-            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
-        }
-
-        if(data.Print_Character[4] !== null)
-        {
-            if(data.Print_Character[4] === "*")
-            {
-                precio5 = "*"
-            }
-            else {
-                precio5 = "-"
-            }
-        }
-        else {
-            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
-        }
-        
-        options[pSItems] = [
-            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'}, 
-            {text: precio3, style: 'textotabla', alignment: 'center'}, 
-            {text: precio4, style: 'textotabla', alignment: 'center'}, 
-            {text: precio5, style: 'textotabla', alignment: 'center'}, 
-        ]
-
-        pSItems++
-
-        //console.log(data)
-
-        if(j >= pushHandlesData.length)
-        {
-            pushHandlesFlag = true
-        }
-        i++
-    }*/
-    /*TERMINA CICLO*/
 
     if(pushHandlesData[0] !== undefined && pushHandlesData[1] !== undefined && pushHandlesData[2] !== undefined && pushHandlesData[3] !== undefined)
     {
@@ -649,7 +372,6 @@ async function getStretchers()
             {text: pushHandlesData[0].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(pushHandlesData[0].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(pushHandlesData[1].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(pushHandlesData[2].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(pushHandlesData[3].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -664,7 +386,6 @@ async function getStretchers()
             {text: pushHandlesData[4].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(pushHandlesData[4].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(pushHandlesData[5].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(pushHandlesData[6].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -679,7 +400,6 @@ async function getStretchers()
             {text: pushHandlesData[7].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(pushHandlesData[7].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(pushHandlesData[8].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(pushHandlesData[9].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(pushHandlesData[10].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -694,7 +414,6 @@ async function getStretchers()
             {text: pushHandlesData[11].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(pushHandlesData[11].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(pushHandlesData[12].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(pushHandlesData[13].Price), style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(pushHandlesData[14].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(pushHandlesData[15].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -703,146 +422,15 @@ async function getStretchers()
     }
     
     options[pSItems] = [
-        {text: 'IV pole type/location', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
+        {text: 'IV pole type/location', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 6},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
     ]
 
     pSItems++
-
-    /*ESTO VA EN UN CICLO*/
-    /*i=0;
-    var ivPoleTypeFlag = false
-    while(ivPoleTypeFlag === false)
-    {
-        var j;
-        if(i===0)
-        {
-            j=0
-        }
-        else {
-            j = i*5
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< ivPoleType.length && countC<5)
-        {
-           precios[preciosCount] = ivPoleType[j].Price
-           printCaracter[preciosCount] = ivPoleType[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: ivPoleType[j-1].Id_Item,
-            Item_Long_Desc: ivPoleType[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-        var precio3;
-        var precio4;
-        var precio5;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
-            {
-                precio1 = "*"
-            }
-            else {
-                precio1 = "-"
-            }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
-            {
-                precio2 = "*"
-            }
-            else {
-                precio2 = "-"
-            }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-
-        if(data.Print_Character[2] !== null)
-        {
-            if(data.Print_Character[2] === "*")
-            {
-                precio3 = "*"
-            }
-            else {
-                precio3 = "-"
-            }
-        }
-        else {
-            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
-        }
-
-        if(data.Print_Character[3] !== null)
-        {
-            if(data.Print_Character[3] === "*")
-            {
-                precio4 = "*"
-            }
-            else {
-                precio4 = "-"
-            }
-        }
-        else {
-            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
-        }
-
-        if(data.Print_Character[4] !== null)
-        {
-            if(data.Print_Character[4] === "*")
-            {
-                precio5 = "*"
-            }
-            else {
-                precio5 = "-"
-            }
-        }
-        else {
-            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
-        }
-        
-        options[pSItems] = [
-            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'}, 
-            {text: precio3, style: 'textotabla', alignment: 'center'}, 
-            {text: precio4, style: 'textotabla', alignment: 'center'}, 
-            {text: precio5, style: 'textotabla', alignment: 'center'}, 
-        ]
-
-        pSItems++
-
-        //console.log(data)
-
-        if(j >= ivPoleType.length)
-        {
-            ivPoleTypeFlag = true
-        }
-        i++
-    }*/
-    /*TERMINA CICLO*/
 
     if(ivPoleType[0] !== undefined && ivPoleType[1] !== undefined && ivPoleType[2] !== undefined && ivPoleType[3] !== undefined)
     {
@@ -851,7 +439,6 @@ async function getStretchers()
             {text: ivPoleType[0].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleType[0].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleType[1].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleType[2].Price), style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleType[3].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -866,7 +453,6 @@ async function getStretchers()
             {text: ivPoleType[4].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleType[4].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleType[5].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleType[6].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleType[7].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -881,7 +467,6 @@ async function getStretchers()
             {text: ivPoleType[8].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleType[8].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleType[9].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleType[10].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -896,7 +481,6 @@ async function getStretchers()
             {text: ivPoleType[11].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleType[11].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleType[12].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleType[13].Price), style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleType[14].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleType[15].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -905,147 +489,15 @@ async function getStretchers()
     }
     
     options[pSItems] = [
-        {text: 'IV pole transport push handles (Requires Push Handles & O2 for P8005 - requires Push Handles for other models)', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
+        {text: 'IV pole transport push handles (Requires Push Handles & O2 for P8005 - requires Push Handles for other models)', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 6},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
     ]
 
     pSItems++
-    
-
-    /*ESTO VA EN UN CICLO*/
-    /*i=0;
-    var ivPoleTransportFlag = false
-    while(ivPoleTransportFlag === false)
-    {
-        var j;
-        if(i===0)
-        {
-            j=0
-        }
-        else {
-            j = i*5
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< ivPoleTransport.length && countC<5)
-        {
-           precios[preciosCount] = ivPoleTransport[j].Price
-           printCaracter[preciosCount] = ivPoleTransport[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: ivPoleTransport[j-1].Id_Item,
-            Item_Long_Desc: ivPoleTransport[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-        var precio3;
-        var precio4;
-        var precio5;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
-            {
-                precio1 = "*"
-            }
-            else {
-                precio1 = "-"
-            }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
-            {
-                precio2 = "*"
-            }
-            else {
-                precio2 = "-"
-            }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-
-        if(data.Print_Character[2] !== null)
-        {
-            if(data.Print_Character[2] === "*")
-            {
-                precio3 = "*"
-            }
-            else {
-                precio3 = "-"
-            }
-        }
-        else {
-            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
-        }
-
-        if(data.Print_Character[3] !== null)
-        {
-            if(data.Print_Character[3] === "*")
-            {
-                precio4 = "*"
-            }
-            else {
-                precio4 = "-"
-            }
-        }
-        else {
-            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
-        }
-
-        if(data.Print_Character[4] !== null)
-        {
-            if(data.Print_Character[4] === "*")
-            {
-                precio5 = "*"
-            }
-            else {
-                precio5 = "-"
-            }
-        }
-        else {
-            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
-        }
-        
-        options[pSItems] = [
-            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'}, 
-            {text: precio3, style: 'textotabla', alignment: 'center'}, 
-            {text: precio4, style: 'textotabla', alignment: 'center'}, 
-            {text: precio5, style: 'textotabla', alignment: 'center'}, 
-        ]
-
-        pSItems++
-
-        //console.log(data)
-
-        if(j >= ivPoleTransport.length)
-        {
-            ivPoleTransportFlag = true
-        }
-        i++
-    }*/   
-    /*TERMINA CICLO*/
 
     if(ivPoleTransport[0] !== undefined && ivPoleTransport[1] !== undefined)
     {
@@ -1054,7 +506,6 @@ async function getStretchers()
             {text: ivPoleTransport[0].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[0].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[1].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1069,7 +520,6 @@ async function getStretchers()
             {text: ivPoleTransport[2].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[2].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[3].Price), style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[4].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1084,7 +534,6 @@ async function getStretchers()
             {text: ivPoleTransport[5].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[5].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[6].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[7].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[8].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1099,7 +548,6 @@ async function getStretchers()
             {text: ivPoleTransport[9].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[9].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[10].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1114,7 +562,6 @@ async function getStretchers()
             {text: ivPoleTransport[11].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[11].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[12].Price), style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[13].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1129,7 +576,6 @@ async function getStretchers()
             {text: ivPoleTransport[14].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[14].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[15].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[16].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[17].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1144,7 +590,6 @@ async function getStretchers()
             {text: ivPoleTransport[18].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[18].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[19].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1159,7 +604,6 @@ async function getStretchers()
             {text: ivPoleTransport[20].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[20].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[21].Price), style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[22].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1174,7 +618,6 @@ async function getStretchers()
             {text: ivPoleTransport[23].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[23].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[24].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[25].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(ivPoleTransport[26].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1183,146 +626,15 @@ async function getStretchers()
     }
     
     options[pSItems] = [
-        {text: 'Steering', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
+        {text: 'Steering', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 6},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
     ]
 
     pSItems++
-    
-    /*ESTO VA EN UN CICLO*/
-    /*i=0;
-    var steeringFlag = false
-    while(steeringFlag === false)
-    {
-        var j;
-        if(i===0)
-        {
-            j=0
-        }
-        else {
-            j = i*5
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< steering.length && countC<5)
-        {
-           precios[preciosCount] = steering[j].Price
-           printCaracter[preciosCount] = steering[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: steering[j-1].Id_Item,
-            Item_Long_Desc: steering[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-        var precio3;
-        var precio4;
-        var precio5;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
-            {
-                precio1 = "*"
-            }
-            else {
-                precio1 = "-"
-            }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
-            {
-                precio2 = "*"
-            }
-            else {
-                precio2 = "-"
-            }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-
-        if(data.Print_Character[2] !== null)
-        {
-            if(data.Print_Character[2] === "*")
-            {
-                precio3 = "*"
-            }
-            else {
-                precio3 = "-"
-            }
-        }
-        else {
-            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
-        }
-
-        if(data.Print_Character[3] !== null)
-        {
-            if(data.Print_Character[3] === "*")
-            {
-                precio4 = "*"
-            }
-            else {
-                precio4 = "-"
-            }
-        }
-        else {
-            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
-        }
-
-        if(data.Print_Character[4] !== null)
-        {
-            if(data.Print_Character[4] === "*")
-            {
-                precio5 = "*"
-            }
-            else {
-                precio5 = "-"
-            }
-        }
-        else {
-            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
-        }
-        
-        options[pSItems] = [
-            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'}, 
-            {text: precio3, style: 'textotabla', alignment: 'center'}, 
-            {text: precio4, style: 'textotabla', alignment: 'center'}, 
-            {text: precio5, style: 'textotabla', alignment: 'center'}, 
-        ]
-
-        pSItems++
-
-        //console.log(data)
-
-        if(j >= steering.length)
-        {
-            steeringFlag = true
-        }
-        i++
-    }*/   
-    /*TERMINA CICLO*/
 
     if(steering[0] !== undefined)
     {
@@ -1331,7 +643,6 @@ async function getStretchers()
             {text: steering[0].Item_Long_Desc, style: 'textotabla'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "*", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1346,7 +657,6 @@ async function getStretchers()
             {text: steering[1].Item_Long_Desc, style: 'textotabla'},
             {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(steering[2].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "*", style: 'textotabla', alignment: 'center'},
             {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "*", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1355,146 +665,15 @@ async function getStretchers()
     }
     
     options[pSItems] = [
-        {text: 'Brake Pedals', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
+        {text: 'Brake Pedals', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 6},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
     ]
 
     pSItems++
-
-    /*ESTO VA EN UN CICLO*/
-    /*i=0;
-    var brakePedalsFlag = false
-    while(brakePedalsFlag === false)
-    {
-        var j;
-        if(i===0)
-        {
-            j=0
-        }
-        else {
-            j = i*5
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< brakePedals.length && countC<5)
-        {
-           precios[preciosCount] = brakePedals[j].Price
-           printCaracter[preciosCount] = brakePedals[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: brakePedals[j-1].Id_Item,
-            Item_Long_Desc: brakePedals[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-        var precio3;
-        var precio4;
-        var precio5;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
-            {
-                precio1 = "*"
-            }
-            else {
-                precio1 = "-"
-            }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
-            {
-                precio2 = "*"
-            }
-            else {
-                precio2 = "-"
-            }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-
-        if(data.Print_Character[2] !== null)
-        {
-            if(data.Print_Character[2] === "*")
-            {
-                precio3 = "*"
-            }
-            else {
-                precio3 = "-"
-            }
-        }
-        else {
-            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
-        }
-
-        if(data.Print_Character[3] !== null)
-        {
-            if(data.Print_Character[3] === "*")
-            {
-                precio4 = "*"
-            }
-            else {
-                precio4 = "-"
-            }
-        }
-        else {
-            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
-        }
-
-        if(data.Print_Character[4] !== null)
-        {
-            if(data.Print_Character[4] === "*")
-            {
-                precio5 = "*"
-            }
-            else {
-                precio5 = "-"
-            }
-        }
-        else {
-            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
-        }
-        
-        options[pSItems] = [
-            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'}, 
-            {text: precio3, style: 'textotabla', alignment: 'center'}, 
-            {text: precio4, style: 'textotabla', alignment: 'center'}, 
-            {text: precio5, style: 'textotabla', alignment: 'center'}, 
-        ]
-
-        pSItems++
-
-        //console.log(data)
-
-        if(j >= brakePedals.length)
-        {
-            brakePedalsFlag = true
-        }
-        i++
-    }*/   
-    /*TERMINA CICLO*/
 
     if(brakePedals[0] !== undefined && brakePedals[1] !== undefined && brakePedals[2] !== undefined && brakePedals[3] !== undefined && brakePedals[4] !== undefined)
     {
@@ -1503,7 +682,6 @@ async function getStretchers()
             {text: brakePedals[0].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(brakePedals[0].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(brakePedals[1].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(brakePedals[2].Price), style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(brakePedals[3].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(brakePedals[4].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1518,7 +696,6 @@ async function getStretchers()
             {text: brakePedals[5].Item_Long_Desc, style: 'textotabla'},
             {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "*", style: 'textotabla', alignment: 'center'}, 
-            {text: "*", style: 'textotabla', alignment: 'center'},
             {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "*", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1530,148 +707,15 @@ async function getStretchers()
     pSItems = 0; 
 
     optionsSurface[pSItems] = [
-        {text: 'Surface', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
+        {text: 'Surface', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 6},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
     ]
 
     pSItems++
-    
-   
-
-    /*ESTO VA EN UN CICLO*/
-    /*i=0;
-    var surface2Flag = false
-    while(surface2Flag === false)
-    {
-        var j;
-        if(i===0)
-        {
-            j=0
-        }
-        else {
-            j = i*5
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< surface2Data.length && countC<5)
-        {
-           precios[preciosCount] = surface2Data[j].Price
-           printCaracter[preciosCount] = surface2Data[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: surface2Data[j-1].Id_Item,
-            Item_Long_Desc: surface2Data[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-        var precio3;
-        var precio4;
-        var precio5;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
-            {
-                precio1 = "*"
-            }
-            else {
-                precio1 = "-"
-            }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
-            {
-                precio2 = "*"
-            }
-            else {
-                precio2 = "-"
-            }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-
-        if(data.Print_Character[2] !== null)
-        {
-            if(data.Print_Character[2] === "*")
-            {
-                precio3 = "*"
-            }
-            else {
-                precio3 = "-"
-            }
-        }
-        else {
-            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
-        }
-
-        if(data.Print_Character[3] !== null)
-        {
-            if(data.Print_Character[3] === "*")
-            {
-                precio4 = "*"
-            }
-            else {
-                precio4 = "-"
-            }
-        }
-        else {
-            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
-        }
-
-        if(data.Print_Character[4] !== null)
-        {
-            if(data.Print_Character[4] === "*")
-            {
-                precio5 = "*"
-            }
-            else {
-                precio5 = "-"
-            }
-        }
-        else {
-            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
-        }
-        
-        options[pSItems] = [
-            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'}, 
-            {text: precio3, style: 'textotabla', alignment: 'center'}, 
-            {text: precio4, style: 'textotabla', alignment: 'center'}, 
-            {text: precio5, style: 'textotabla', alignment: 'center'}, 
-        ]
-
-        pSItems++
-
-        //console.log(data)
-
-        if(j >= surface2Data.length)
-        {
-            surface2Flag = true
-        }
-        i++
-    }*/   
-    /*TERMINA CICLO*/
 
     if(surface2Data[0] !== undefined)
     {
@@ -1680,7 +724,6 @@ async function getStretchers()
             {text: surface2Data[0].Item_Long_Desc, style: 'textotabla'},
             {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "*", style: 'textotabla', alignment: 'center'}, 
-            {text: "*", style: 'textotabla', alignment: 'center'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1695,7 +738,6 @@ async function getStretchers()
             {text: surface2Data[3].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(surface2Data[3].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
             {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "*", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1710,7 +752,6 @@ async function getStretchers()
             {text: surface2Data[6].Item_Long_Desc, style: 'textotabla'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(surface2Data[6].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1719,147 +760,15 @@ async function getStretchers()
     }
     
     optionsSurface[pSItems] = [
-        {text: 'Hydraulic control pedals', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 7},
+        {text: 'Hydraulic control pedals', style: 'textotablaboldlarge', border: [false, false, false, false], colSpan: 6},
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
     ]
 
     pSItems++
-    
-
-    /*ESTO VA EN UN CICLO*/
-    /*i=0;
-    var hidraulicControlFlag = false
-    while(hidraulicControlFlag === false)
-    {
-        var j;
-        if(i===0)
-        {
-            j=0
-        }
-        else {
-            j = i*5
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< hidraulicControl.length && countC<5)
-        {
-           precios[preciosCount] = hidraulicControl[j].Price
-           printCaracter[preciosCount] = hidraulicControl[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: hidraulicControl[j-1].Id_Item,
-            Item_Long_Desc: hidraulicControl[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-        var precio3;
-        var precio4;
-        var precio5;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
-            {
-                precio1 = "*"
-            }
-            else {
-                precio1 = "-"
-            }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
-            {
-                precio2 = "*"
-            }
-            else {
-                precio2 = "-"
-            }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-
-        if(data.Print_Character[2] !== null)
-        {
-            if(data.Print_Character[2] === "*")
-            {
-                precio3 = "*"
-            }
-            else {
-                precio3 = "-"
-            }
-        }
-        else {
-            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
-        }
-
-        if(data.Print_Character[3] !== null)
-        {
-            if(data.Print_Character[3] === "*")
-            {
-                precio4 = "*"
-            }
-            else {
-                precio4 = "-"
-            }
-        }
-        else {
-            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
-        }
-
-        if(data.Print_Character[4] !== null)
-        {
-            if(data.Print_Character[4] === "*")
-            {
-                precio5 = "*"
-            }
-            else {
-                precio5 = "-"
-            }
-        }
-        else {
-            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
-        }
-        
-        options[pSItems] = [
-            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'}, 
-            {text: precio3, style: 'textotabla', alignment: 'center'}, 
-            {text: precio4, style: 'textotabla', alignment: 'center'}, 
-            {text: precio5, style: 'textotabla', alignment: 'center'}, 
-        ]
-
-        pSItems++
-
-        //console.log(data)
-
-        if(j >= hidraulicControl.length)
-        {
-            hidraulicControlFlag = true
-        }
-        i++
-    }*/   
-    /*TERMINA CICLO*/
     
     if(hidraulicControl[0] !== undefined)
     {
@@ -1868,7 +777,6 @@ async function getStretchers()
             {text: hidraulicControl[0].Item_Long_Desc, style: 'textotabla'},
             {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "*", style: 'textotabla', alignment: 'center'}, 
-            {text: "*", style: 'textotabla', alignment: 'center'},
             {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "*", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1883,7 +791,6 @@ async function getStretchers()
             {text: hidraulicControl[5].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(hidraulicControl[5].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(hidraulicControl[6].Price), style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(hidraulicControl[7].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -1899,7 +806,6 @@ async function getStretchers()
         {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
         {text: 'P8000', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
         {text: 'P8005', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
-        {text: 'P8010', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
         {text: 'P8040', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
         {text: 'P8050', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
@@ -1911,142 +817,11 @@ async function getStretchers()
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
     ]
 
     pSItems ++
-
-     /*ESTO VA EN UN CICLO*/
-    /*i=0;
-    var siderailsFlag = false
-    while(siderailsFlag === false)
-    {
-        var j;
-        if(i===0)
-        {
-            j=0
-        }
-        else {
-            j = i*5
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< siderails.length && countC<5)
-        {
-           precios[preciosCount] = siderails[j].Price
-           printCaracter[preciosCount] = siderails[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: siderails[j-1].Id_Item,
-            Item_Long_Desc: siderails[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-        var precio3;
-        var precio4;
-        var precio5;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
-            {
-                precio1 = "*"
-            }
-            else {
-                precio1 = "-"
-            }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
-            {
-                precio2 = "*"
-            }
-            else {
-                precio2 = "-"
-            }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-
-        if(data.Print_Character[2] !== null)
-        {
-            if(data.Print_Character[2] === "*")
-            {
-                precio3 = "*"
-            }
-            else {
-                precio3 = "-"
-            }
-        }
-        else {
-            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
-        }
-
-        if(data.Print_Character[3] !== null)
-        {
-            if(data.Print_Character[3] === "*")
-            {
-                precio4 = "*"
-            }
-            else {
-                precio4 = "-"
-            }
-        }
-        else {
-            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
-        }
-
-        if(data.Print_Character[4] !== null)
-        {
-            if(data.Print_Character[4] === "*")
-            {
-                precio5 = "*"
-            }
-            else {
-                precio5 = "-"
-            }
-        }
-        else {
-            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
-        }
-        
-        options2[pSItems] = [
-            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'}, 
-            {text: precio3, style: 'textotabla', alignment: 'center'}, 
-            {text: precio4, style: 'textotabla', alignment: 'center'}, 
-            {text: precio5, style: 'textotabla', alignment: 'center'}, 
-        ]
-
-        pSItems++
-
-        //console.log(data)
-
-        if(j >= siderails.length)
-        {
-            siderailsFlag = true
-        }
-        i++
-    }  */ 
-    /*TERMINA CICLO*/
 
     if(siderails[0] !== undefined && siderails[2] !== undefined)
     {
@@ -2055,7 +830,6 @@ async function getStretchers()
             {text: siderails[0].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(siderails[0].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "*", style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(siderails[2].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -2070,7 +844,6 @@ async function getStretchers()
             {text: siderails[3].Item_Long_Desc, style: 'textotabla'},
             {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "*", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
             {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "*", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -2084,142 +857,12 @@ async function getStretchers()
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
     ]
 
     pSItems ++
 
-    /*ESTO VA EN UN CICLO*/
-    /*i=0;
-    var bumperColourFlag = false
-    while(bumperColourFlag === false)
-    {
-        var j;
-        if(i===0)
-        {
-            j=0
-        }
-        else {
-            j = i*5
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< bumperColour.length && countC<5)
-        {
-           precios[preciosCount] = bumperColour[j].Price
-           printCaracter[preciosCount] = bumperColour[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: bumperColour[j-1].Id_Item,
-            Item_Long_Desc: bumperColour[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-        var precio3;
-        var precio4;
-        var precio5;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
-            {
-                precio1 = "*"
-            }
-            else {
-                precio1 = "-"
-            }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
-            {
-                precio2 = "*"
-            }
-            else {
-                precio2 = "-"
-            }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-
-        if(data.Print_Character[2] !== null)
-        {
-            if(data.Print_Character[2] === "*")
-            {
-                precio3 = "*"
-            }
-            else {
-                precio3 = "-"
-            }
-        }
-        else {
-            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
-        }
-
-        if(data.Print_Character[3] !== null)
-        {
-            if(data.Print_Character[3] === "*")
-            {
-                precio4 = "*"
-            }
-            else {
-                precio4 = "-"
-            }
-        }
-        else {
-            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
-        }
-
-        if(data.Print_Character[4] !== null)
-        {
-            if(data.Print_Character[4] === "*")
-            {
-                precio5 = "*"
-            }
-            else {
-                precio5 = "-"
-            }
-        }
-        else {
-            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
-        }
-        
-        options2[pSItems] = [
-            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'}, 
-            {text: precio3, style: 'textotabla', alignment: 'center'}, 
-            {text: precio4, style: 'textotabla', alignment: 'center'}, 
-            {text: precio5, style: 'textotabla', alignment: 'center'}, 
-        ]
-
-        pSItems++
-
-        //console.log(data)
-
-        if(j >= bumperColour.length)
-        {
-            bumperColourFlag = true
-        }
-        i++
-    }*/
-    
     if(bumperColour[0] !== undefined)
     {
         options2[pSItems] = [
@@ -2227,7 +870,6 @@ async function getStretchers()
             {text: bumperColour[0].Item_Long_Desc, style: 'textotabla'},
             {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "*", style: 'textotabla', alignment: 'center'}, 
-            {text: "*", style: 'textotabla', alignment: 'center'},
             {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "*", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -2242,7 +884,6 @@ async function getStretchers()
             {text: bumperColour[5].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(bumperColour[5].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(bumperColour[6].Price), style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(bumperColour[7].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(bumperColour[8].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -2257,7 +898,6 @@ async function getStretchers()
             {text: bumperColour[9].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(bumperColour[9].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(bumperColour[10].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(bumperColour[11].Price), style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(bumperColour[12].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(bumperColour[13].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -2272,7 +912,6 @@ async function getStretchers()
             {text: bumperColour[14].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(bumperColour[14].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(bumperColour[15].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(bumperColour[16].Price), style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(bumperColour[17].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(bumperColour[18].Price), style: 'textotabla', alignment: 'center'}, 
         ]
@@ -2287,13 +926,11 @@ async function getStretchers()
             {text: bumperColour[19].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(bumperColour[19].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(bumperColour[20].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(bumperColour[21].Price), style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(bumperColour[22].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(bumperColour[23].Price), style: 'textotabla', alignment: 'center'}, 
         ]
     
         pSItems++
-         /*TERMINA CICLO*/
     }
 
     options2[pSItems] = [
@@ -2301,141 +938,11 @@ async function getStretchers()
         {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
-        {text: '', border: [false, false, false, false]},
         {text: '', border: [false, false, false, false]}, 
         {text: '', border: [false, false, false, false]}, 
     ]
 
     pSItems ++
-
-    /*ESTO VA EN UN CICLO*/
-    /*i=0;
-    var additionalOptionsFlag = false
-    while(additionalOptionsFlag === false)
-    {
-        var j;
-        if(i===0)
-        {
-            j=0
-        }
-        else {
-            j = i*5
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< additionalOptions.length && countC<5)
-        {
-           precios[preciosCount] = additionalOptions[j].Price
-           printCaracter[preciosCount] = additionalOptions[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Id_Item: additionalOptions[j-1].Id_Item,
-            Item_Long_Desc: additionalOptions[j-1].Item_Long_Desc,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-        var precio3;
-        var precio4;
-        var precio5;
-
-        if(data.Print_Character[0] !== null)
-        {
-            if(data.Print_Character[0] === "*")
-            {
-                precio1 = "*"
-            }
-            else {
-                precio1 = "-"
-            }
-        }
-        else {
-            precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        }
-
-        if(data.Print_Character[1] !== null)
-        {
-            if(data.Print_Character[1] === "*")
-            {
-                precio2 = "*"
-            }
-            else {
-                precio2 = "-"
-            }
-        }
-        else {
-            precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        }
-
-        if(data.Print_Character[2] !== null)
-        {
-            if(data.Print_Character[2] === "*")
-            {
-                precio3 = "*"
-            }
-            else {
-                precio3 = "-"
-            }
-        }
-        else {
-            precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
-        }
-
-        if(data.Print_Character[3] !== null)
-        {
-            if(data.Print_Character[3] === "*")
-            {
-                precio4 = "*"
-            }
-            else {
-                precio4 = "-"
-            }
-        }
-        else {
-            precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
-        }
-
-        if(data.Print_Character[4] !== null)
-        {
-            if(data.Print_Character[4] === "*")
-            {
-                precio5 = "*"
-            }
-            else {
-                precio5 = "-"
-            }
-        }
-        else {
-            precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
-        }
-        
-        options2[pSItems] = [
-            {text: data.Id_Item, style: 'textotabla', alignment: 'center'},
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'}, 
-            {text: precio3, style: 'textotabla', alignment: 'center'}, 
-            {text: precio4, style: 'textotabla', alignment: 'center'}, 
-            {text: precio5, style: 'textotabla', alignment: 'center'}, 
-        ]
-
-        pSItems++
-
-        //console.log(data)
-
-        if(j >= additionalOptions.length)
-        {
-            additionalOptionsFlag = true
-        }
-        i++
-    }*/
     
     if(additionalOptions[0] !== undefined)
     {
@@ -2444,7 +951,6 @@ async function getStretchers()
             {text: additionalOptions[0].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptions[0].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -2459,7 +965,6 @@ async function getStretchers()
             {text: additionalOptions[1].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptions[1].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -2474,7 +979,6 @@ async function getStretchers()
             {text: additionalOptions[2].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptions[2].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "*", style: 'textotabla', alignment: 'center'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -2489,7 +993,6 @@ async function getStretchers()
             {text: additionalOptions[4].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptions[4].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptions[5].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
             {text: "-", style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -2504,7 +1007,6 @@ async function getStretchers()
             {text: additionalOptions[6].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptions[6].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptions[7].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "-", style: 'textotabla', alignment: 'center'}, 
         ]
@@ -2519,13 +1021,11 @@ async function getStretchers()
             {text: additionalOptions[8].Item_Long_Desc, style: 'textotabla'},
             {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptions[8].Price), style: 'textotabla', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(additionalOptions[9].Price), style: 'textotabla', alignment: 'center'}, 
-            {text: "-", style: 'textotabla', alignment: 'center'},
             {text: "*", style: 'textotabla', alignment: 'center'}, 
             {text: "*", style: 'textotabla', alignment: 'center'}, 
         ]
     
         pSItems++
-         /*TERMINA CICLO*/
     }
 
     var surfaces = []
@@ -2537,80 +1037,11 @@ async function getStretchers()
         {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
         {text: 'P8000', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
         {text: 'P8005', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
-        {text: 'P8010', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
         {text: 'P8040', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
         {text: 'P8050', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
     ]
 
     pSItems++
-
-    
-    /*ESTO VA EN UN CICLO*/
-    /*i=0;
-    var surfacesFlag = false
-    while(surfacesFlag === false)
-    {
-        var j;
-        if(i===0)
-        {
-            j=0
-        }
-        else {
-            j = i*5
-        }
-        var precios = []
-        var preciosCount = 0
-        var countC=0
-        var printCaracter = []
-        while(j< surfacesData.length && countC<5)
-        {
-           precios[preciosCount] = surfacesData[j].Price
-           printCaracter[preciosCount] = surfacesData[j].Print_Character
-           preciosCount++
-           j++
-           countC++
-        }
-        var data = {
-            Kit_Name: surfacesData[j-1].KitName,
-            Item_Long_Desc: surfacesData[j-1].Item_Long_Desc,
-            Part: surfacesData[j-1].Part,
-            Prices: precios,
-            Print_Character: printCaracter
-        }
-
-        var precio1;
-        var precio2;
-        var precio3;
-        var precio4;
-        var precio5;
-
-        precio1 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[0])
-        precio2 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[1])
-        precio3 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[2])
-        precio4 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[3])
-        precio5 = "$" + Intl.NumberFormat("en-IN").format(data.Prices[4])
-        
-        surfaces[pSItems] = [
-            {text: data.Kit_Name, style: 'textotabla', alignment: 'center'},
-            {text: data.Item_Long_Desc, style: 'textotabla'},
-            {text: data.Part, style: 'textotabla', alignment: 'center'}, 
-            {text: precio1, style: 'textotabla', alignment: 'center'}, 
-            {text: precio2, style: 'textotabla', alignment: 'center'}, 
-            {text: precio3, style: 'textotabla', alignment: 'center'}, 
-            {text: precio4, style: 'textotabla', alignment: 'center'}, 
-            {text: precio5, style: 'textotabla', alignment: 'center'}, 
-        ]
-
-        pSItems++
-
-        //console.log(data)
-
-        if(j >= surfacesData.length)
-        {
-            surfacesFlag = true
-        }
-        i++
-    }*/
     
     if(surfacesData[0] !== undefined && surfacesData[1] !== undefined && surfacesData[2] !== undefined)
     {
@@ -2620,7 +1051,6 @@ async function getStretchers()
             {text: surfacesData[0].Part, style: 'textotablacatoni', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[0].Price), style: 'textotablacatoni', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[1].Price), style: 'textotablacatoni', alignment: 'center'}, 
-            {text: "-", style: 'textotablacatoni', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[2].Price), style: 'textotablacatoni', alignment: 'center'}, 
             {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
         ]
@@ -2636,7 +1066,6 @@ async function getStretchers()
             {text: surfacesData[3].Part, style: 'textotablacatoni', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[3].Price), style: 'textotablacatoni', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[4].Price), style: 'textotablacatoni', alignment: 'center'}, 
-            {text: "-", style: 'textotablacatoni', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[5].Price), style: 'textotablacatoni', alignment: 'center'}, 
             {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
         ]
@@ -2652,7 +1081,6 @@ async function getStretchers()
             {text: surfacesData[6].Part, style: 'textotablacatoni', alignment: 'center'},
             {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
             {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[6].Price), style: 'textotablacatoni', alignment: 'center'},
             {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
             {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
         ]
@@ -2668,7 +1096,6 @@ async function getStretchers()
             {text: surfacesData[7].Part, style: 'textotablacatoni', alignment: 'center'},
             {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
             {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
-            {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[7].Price), style: 'textotablacatoni', alignment: 'center'},
             {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
             {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
         ]
@@ -2684,7 +1111,6 @@ async function getStretchers()
             {text: surfacesData[8].Part, style: 'textotablacatoni', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[8].Price), style: 'textotablacatoni', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[9].Price), style: 'textotablacatoni', alignment: 'center'}, 
-            {text: "-", style: 'textotablacatoni', alignment: 'center'},
             {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
             {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
         ]
@@ -2700,7 +1126,6 @@ async function getStretchers()
             {text: surfacesData[10].Part, style: 'textotablacatoni', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[10].Price), style: 'textotablacatoni', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[10].Price), style: 'textotablacatoni', alignment: 'center'}, 
-            {text: "-", style: 'textotablacatoni', alignment: 'center'},
             {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
             {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
         ]
@@ -2716,7 +1141,6 @@ async function getStretchers()
             {text: surfacesData[12].Part, style: 'textotablacatoni', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[12].Price), style: 'textotablacatoni', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[12].Price), style: 'textotablacatoni', alignment: 'center'}, 
-            {text: "-", style: 'textotablacatoni', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[12].Price), style: 'textotablacatoni', alignment: 'center'}, 
             {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
         ]
@@ -2732,7 +1156,6 @@ async function getStretchers()
             {text: surfacesData[15].Part, style: 'textotablacatoni', alignment: 'center'},
             {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[15].Price), style: 'textotablacatoni', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[16].Price), style: 'textotablacatoni', alignment: 'center'}, 
-            {text: "-", style: 'textotablacatoni', alignment: 'center'},
             {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
             {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
         ]
@@ -2748,7 +1171,6 @@ async function getStretchers()
             {text: surfacesData[17].Part, style: 'textotablacatoni', alignment: 'center'},
             {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
             {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
-            {text: "-", style: 'textotablacatoni', alignment: 'center'},
             {text: "-", style: 'textotablacatoni', alignment: 'center'}, 
             {text: "$" + Intl.NumberFormat("en-IN").format(surfacesData[17].Price), style: 'textotablacatoni', alignment: 'center'}, 
         ]
@@ -2845,13 +1267,12 @@ async function getStretchers()
         table1 = [
             {
                 table: {
-                    widths: [80, "*", 50, 40, 40, 40, 40],
+                    widths: [80, "*", 50, 40, 40, 40],
                     body: [
                         [
                             {border: [false, false, false, false], text: 'Stretchers', style: 'header', colSpan: 2},
                             {},
-                            {text: 'STRETCHER', style: 'textotablacolorlarge', colSpan: 5, fillColor: '#154898',  alignment: 'center'},
-                            {},
+                            {text: 'STRETCHER', style: 'textotablacolorlarge', colSpan: 4, fillColor: '#154898',  alignment: 'center'},
                             {},
                             {},
                             {},
@@ -2861,7 +1282,6 @@ async function getStretchers()
                             {border: [false, false, false, false], text: ''},
                             {text: 'P8000', style: 'textotablaboldblacklarge', alignment: 'center'},
                             {text: 'P8005', style: 'textotablaboldblacklarge', alignment: 'center'},
-                            {text: 'P8010', style: 'textotablaboldblacklarge', alignment: 'center'},
                             {text: 'P8040', style: 'textotablaboldblacklarge', alignment: 'center'},
                             {text: 'P8050', style: 'textotablaboldblacklarge', alignment: 'center'},
                         ],
@@ -2874,7 +1294,6 @@ async function getStretchers()
                             {border: [false, false, false, false], text: ''},
                             {text: 'Procedural', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                             {text: 'Transport', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
-                            {text: 'Surgical', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                             {text: 'Trauma', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                             {text: 'OB/GYN', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                             
@@ -2884,7 +1303,6 @@ async function getStretchers()
                             {border: [false, false, false, false], text: ''},
                             {text: 'PS', style: 'textotablaboldblacklarge',  alignment: 'center'},
                             {text: 'TN', style: 'textotablaboldblacklarge',  alignment: 'center'},
-                            {text: 'SS', style: 'textotablaboldblacklarge',  alignment: 'center'},
                             {text: 'TS', style: 'textotablaboldblacklarge',  alignment: 'center'},
                             {text: 'OS', style: 'textotablaboldblacklarge',  alignment: 'center'},
                         ],
@@ -2893,7 +1311,6 @@ async function getStretchers()
                             {text: 'OneStep TuckAway siderails for zero-gap transfers', style: 'textotabla'},
                             {text: '*', style: 'textotabla', alignment: 'center'},
                             {text: '-', style: 'textotabla', alignment: 'center'}, 
-                            {text: '*', style: 'textotabla', alignment: 'center'},
                             {text: '*', style: 'textotabla', alignment: 'center'}, 
                             {text: '*', style: 'textotabla', alignment: 'center'},
                         ],
@@ -2902,7 +1319,6 @@ async function getStretchers()
                             {text: 'Fold-down siderails', style: 'textotabla'},
                             {text: '-', style: 'textotabla', alignment: 'center'},
                             {text: '*', style: 'textotabla', alignment: 'center'}, 
-                            {text: '-', style: 'textotabla', alignment: 'center'},
                             {text: '-', style: 'textotabla', alignment: 'center'}, 
                             {text: '-', style: 'textotabla', alignment: 'center'},
                         ],
@@ -2911,9 +1327,8 @@ async function getStretchers()
                             {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
                             {text: "$" + Intl.NumberFormat("en-IN").format(prices[0].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                             {text: "$" + Intl.NumberFormat("en-IN").format(prices[1].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
-                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[4].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[2].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
+                            {text: "$" + Intl.NumberFormat("en-IN").format(prices[3].Price), style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                         ],
                     ]
                 },
@@ -2938,13 +1353,12 @@ async function getStretchers()
         table1 = [
             {
                 table: {
-                    widths: [80, "*", 50, 40, 40, 40, 40],
+                    widths: [80, "*", 50, 40, 40, 40],
                     body: [
                         [
                             {border: [false, false, false, false], text: 'Stretchers', style: 'header', colSpan: 2},
                             {},
-                            {text: 'STRETCHER', style: 'textotablacolorlarge', colSpan: 5, fillColor: '#154898',  alignment: 'center'},
-                            {},
+                            {text: 'STRETCHER', style: 'textotablacolorlarge', colSpan: 4, fillColor: '#154898',  alignment: 'center'},
                             {},
                             {},
                             {},
@@ -2954,7 +1368,6 @@ async function getStretchers()
                             {border: [false, false, false, false], text: ''},
                             {text: 'P8000', style: 'textotablaboldblacklarge', alignment: 'center'},
                             {text: 'P8005', style: 'textotablaboldblacklarge', alignment: 'center'},
-                            {text: 'P8010', style: 'textotablaboldblacklarge', alignment: 'center'},
                             {text: 'P8040', style: 'textotablaboldblacklarge', alignment: 'center'},
                             {text: 'P8050', style: 'textotablaboldblacklarge', alignment: 'center'},
                         ],
@@ -2967,7 +1380,6 @@ async function getStretchers()
                             {border: [false, false, false, false], text: ''},
                             {text: 'Procedural', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                             {text: 'Transport', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
-                            {text: 'Surgical', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                             {text: 'Trauma', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                             {text: 'OB/GYN', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                             
@@ -2977,7 +1389,6 @@ async function getStretchers()
                             {border: [false, false, false, false], text: ''},
                             {text: 'PS', style: 'textotablaboldblacklarge',  alignment: 'center'},
                             {text: 'TN', style: 'textotablaboldblacklarge',  alignment: 'center'},
-                            {text: 'SS', style: 'textotablaboldblacklarge',  alignment: 'center'},
                             {text: 'TS', style: 'textotablaboldblacklarge',  alignment: 'center'},
                             {text: 'OS', style: 'textotablaboldblacklarge',  alignment: 'center'},
                         ],
@@ -2986,7 +1397,6 @@ async function getStretchers()
                             {text: 'OneStep TuckAway siderails for zero-gap transfers', style: 'textotabla'},
                             {text: '*', style: 'textotabla', alignment: 'center'},
                             {text: '-', style: 'textotabla', alignment: 'center'}, 
-                            {text: '*', style: 'textotabla', alignment: 'center'},
                             {text: '*', style: 'textotabla', alignment: 'center'}, 
                             {text: '*', style: 'textotabla', alignment: 'center'},
                         ],
@@ -2995,7 +1405,6 @@ async function getStretchers()
                             {text: 'Fold-down siderails', style: 'textotabla'},
                             {text: '-', style: 'textotabla', alignment: 'center'},
                             {text: '*', style: 'textotabla', alignment: 'center'}, 
-                            {text: '-', style: 'textotabla', alignment: 'center'},
                             {text: '-', style: 'textotabla', alignment: 'center'}, 
                             {text: '-', style: 'textotabla', alignment: 'center'},
                         ],
@@ -3004,7 +1413,6 @@ async function getStretchers()
                             {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898'},
                             {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                             {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
-                            {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                             {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}, 
                             {text: "NO-DATA", style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'},
                         ],
@@ -3035,7 +1443,7 @@ async function getStretchers()
         table2 = [
             {
                 table: {
-                    widths: [50, "*", 50, 40, 40, 40, 40],
+                    widths: [50, "*", 50, 40, 40, 40],
                     body: options
                 },
                 layout: {
@@ -3062,7 +1470,7 @@ async function getStretchers()
         table3 = [
             {
                 table: {
-                    widths: [50, "*", 50, 40, 40, 40, 40],
+                    widths: [50, "*", 50, 40, 40, 40],
                     body: optionsSurface
                 },
                 layout: {
@@ -3089,7 +1497,7 @@ async function getStretchers()
         table4 = [
             {
                 table: {
-                    widths: [50, "*", 50, 40, 40, 40, 40],
+                    widths: [50, "*", 50, 40, 40, 40],
                     body: options2
                 },
                 layout: {
@@ -3116,7 +1524,7 @@ async function getStretchers()
         table5 = [
             {
                 table: {
-                    widths: [60, "*", 50, 30, 30, 30, 30, 30],
+                    widths: [60, "*", 50, 30, 30, 30, 30],
                     body: surfaces
                 },
                 layout: {

@@ -456,8 +456,6 @@ async function getHillrom900()
 
     if(plugData.length > 0)
     {
-        console.log("PLUG DATA")
-        console.log(plugData)
         /*ESTO VA EN UN CICLO*/
         i=0;
         var plugFlag = false

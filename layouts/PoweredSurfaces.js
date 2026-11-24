@@ -8,6 +8,7 @@ async function getPoweredSurfaces()
     const fullAir2Data = res[2]
     const accellaTherapyData = res[3]
     const talleyFusionData = res[4]
+    const usMatressesData = res[5]
 
     /*TERMINA CICLO*/
 
@@ -166,6 +167,32 @@ async function getPoweredSurfaces()
         /*TERMINA CICLO*/
     }
 
+    var usMatresses =[]
+    var pSItems = 0;
+
+    if(usMatressesData.length > 0)
+    {
+        usMatresses[pSItems] = [
+            {text: 'PART #', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+            {text: 'DESCRIPTION', style: 'textotablacolorlarge', fillColor: '#154898',  alignment: 'center'},
+            {text: 'LIST PRICE', style: 'textotablacolorlarge', fillColor: '#154898', alignment: 'center'}
+        ]
+        pSItems++
+
+        /*ESTO VA EN UN CICLO*/
+        for(var i=0; i<usMatressesData.length; i++)
+        {
+            usMatresses[pSItems] = [
+                {text: usMatressesData[i]['Part#'], style: 'textotabla', alignment: 'center'},
+                {text: usMatressesData[i].Description, style: 'textotabla', alignment: 'left'},
+                {text: "$" + Intl.NumberFormat("en-IN").format(usMatressesData[i].Price), style: 'textotabla', alignment: 'center'}, 
+            ]
+        
+            pSItems++
+        }
+        /*TERMINA CICLO*/
+    }
+
     var table1 =[]
 
     if(overlay2Data.length > 0 || foamBase2Data.length > 0 || fullAir2Data.length > 0)
@@ -247,6 +274,33 @@ async function getPoweredSurfaces()
             }
         ]
     }
+
+    var table4 = []
+    if(usMatressesData.length > 0)
+    {
+        table4 = [
+            {
+                table: {
+                    widths: [50, "*", 60],
+                    body: usMatresses
+                },
+                layout: {
+                    hLineWidth: function () {
+                        return  0.7;
+                    },
+                    vLineWidth: function () {
+                        return 0.7;
+                    },
+                    hLineColor: function () {
+                        return 'gray';
+                    },
+                    vLineColor: function () {
+                        return 'gray';
+                    },
+                }
+            }
+        ]
+    }
     
     const fecha = new Date();
     fecha.toLocaleDateString()
@@ -297,6 +351,19 @@ async function getPoweredSurfaces()
         }
     }
 
+    var usMatressesTitle = {}
+    if(usMatressesData.length > 0)
+    {
+        usMatressesTitle = {
+            columns: [
+                [
+                    { text: 'US MATRESSES - PROPLUS SURFACES\n', style: 'subheader' }
+                ]
+            ]
+            
+        }
+    }
+
     var poweredSurfaces = [
         "\n",
         "\n",
@@ -332,6 +399,9 @@ async function getPoweredSurfaces()
         "\n",
         talleyFusionTitle,
         table3,
+        usMatressesTitle,
+        "\n",
+        table4,
         {text: '', pageBreak: 'after'  },
     ]
 
